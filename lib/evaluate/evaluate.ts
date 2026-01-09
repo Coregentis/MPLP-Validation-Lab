@@ -225,6 +225,8 @@ async function evaluateGoldenFlow(
         const verdict = evaluateRequirement(pack, reqDef);
         requirements.push(verdict);
 
+        // Phase D: failures only collects FAIL (not NOT_EVALUATED)
+        // NOT_EVALUATED from recommended/optional goes to requirements[] but not failures[]
         if (verdict.status === 'FAIL') {
             failures.push({
                 taxonomy: verdict.taxonomy || FailureTaxonomy.REQUIREMENT_EVIDENCE_MISSING,
@@ -363,6 +365,14 @@ function evaluateRequirement(
 /**
  * Severity-aware failure helper.
  * Returns NOT_EVALUATED for optional/recommended, FAIL for required.
+ * 
+ * === PHASE D FROZEN POLICY ===
+ * | Severity    | Missing      | Invalid      | Affects GF?     |
+ * |-------------|--------------|--------------|-----------------|  
+ * | required    | FAIL         | FAIL         | GF → FAIL       |
+ * | recommended | NOT_EVALUATED| NOT_EVALUATED| GF → NOT_EVAL   |
+ * | optional    | NOT_EVALUATED| NOT_EVALUATED| No (excluded)   |
+ * ============================
  */
 function createSeverityAwareFailure(
     reqDef: RequirementDefinition,
