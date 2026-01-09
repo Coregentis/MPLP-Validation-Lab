@@ -1,0 +1,138 @@
+{
+  "report_version": "1.0",
+  "ruleset_version": "ruleset-1.0",
+  "pack_id": "test-minimal-pass-001",
+  "pack_root_hash": "d97590764e87f05db64d75d500cbededc905e7d1442f06e109474dc2b2d3e504",
+  "protocol_version": "1.0.0",
+  "gf_verdicts": [
+    {
+      "gf_id": "gf-01",
+      "status": "PASS",
+      "requirements": [
+        {
+          "requirement_id": "gf-01-r01",
+          "status": "PASS",
+          "pointers": [
+            {
+              "artifact_path": "artifacts/context.json",
+              "content_hash": "",
+              "locator": "file:artifacts/context.json",
+              "requirement_id": "gf-01-r01"
+            }
+          ],
+          "message": "Evidence present: artifacts/context.json"
+        },
+        {
+          "requirement_id": "gf-01-r02",
+          "status": "PASS",
+          "pointers": [
+            {
+              "artifact_path": "artifacts/plan.json",
+              "content_hash": "",
+              "locator": "file:artifacts/plan.json",
+              "requirement_id": "gf-01-r02"
+            }
+          ],
+          "message": "Evidence present: artifacts/plan.json"
+        },
+        {
+          "requirement_id": "gf-01-r03",
+          "status": "PASS",
+          "pointers": [
+            {
+              "artifact_path": "artifacts/trace.json",
+              "content_hash": "",
+              "locator": "file:artifacts/trace.json",
+              "requirement_id": "gf-01-r03"
+            }
+          ],
+          "message": "Evidence present: artifacts/trace.json"
+        }
+      ],
+      "failures": []
+    },
+    {
+      "gf_id": "gf-02",
+      "status": "PASS",
+      "requirements": [
+        {
+          "requirement_id": "gf-02-r01",
+          "status": "PASS",
+          "pointers": [
+            {
+              "artifact_path": "timeline/events.ndjson",
+              "content_hash": "",
+              "locator": "file:timeline/events.ndjson",
+              "requirement_id": "gf-02-r01"
+            }
+          ],
+          "message": "Evidence present: timeline/events.ndjson"
+        }
+      ],
+      "failures": []
+    },
+    {
+      "gf_id": "gf-03",
+      "status": "PASS",
+      "requirements": [
+        {
+          "requirement_id": "gf-03-r01",
+          "status": "PASS",
+          "pointers": [
+            {
+              "artifact_path": "artifacts/context.json",
+              "content_hash": "",
+              "locator": "file:artifacts/context.json",
+              "requirement_id": "gf-03-r01"
+            }
+          ],
+          "message": "Evidence present: artifacts/context.json"
+        }
+      ],
+      "failures": []
+    },
+    {
+      "gf_id": "gf-04",
+      "status": "PASS",
+      "requirements": [
+        {
+          "requirement_id": "gf-04-r01",
+          "status": "PASS",
+          "pointers": [
+            {
+              "artifact_path": "manifest.json",
+              "content_hash": "",
+              "locator": "file:manifest.json",
+              "requirement_id": "gf-04-r01"
+            }
+          ],
+          "message": "Evidence present: manifest.json"
+        }
+      ],
+      "failures": []
+    },
+    {
+      "gf_id": "gf-05",
+      "status": "PASS",
+      "requirements": [
+        {
+          "requirement_id": "gf-05-r01",
+          "status": "PASS",
+          "pointers": [
+            {
+              "artifact_path": "integrity/sha256sums.txt",
+              "content_hash": "",
+              "locator": "file:integrity/sha256sums.txt",
+              "requirement_id": "gf-05-r01"
+            }
+          ],
+          "message": "Evidence present: integrity/sha256sums.txt"
+        }
+      ],
+      "failures": []
+    }
+  ],
+  "verdict_hash": "e11afbd22eb42f9dbffa81ef40a01ab3c430ac9072a5e14c085c8e499217b890",
+  "evaluated_at": "2026-01-09T17:20:15.719Z",
+  "total_duration_ms": 5
+}
