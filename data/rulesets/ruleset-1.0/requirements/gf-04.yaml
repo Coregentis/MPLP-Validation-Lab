@@ -1,81 +1,9 @@
-# GF-04 Requirements — Drift Detection & Recovery
-
-**Ruleset**: ruleset-1.0  
-**Golden Flow**: GF-04 — Drift Detection & Recovery  
-**Status**: ACTIVE  
-**Governed By**: VLAB-DGB-01
-
----
-
-## Description
-
-Validates snapshot diff and recovery mechanisms.
-Requires graph update events and observability invariants.
-
----
-
-## Requirements
-
-### gf-04-r01: Snapshot Data Present
-
-- **ID**: `gf-04-r01`
-- **Description**: Evidence pack must include snapshot data
-- **Verdict if missing**: `NOT_EVALUATED`
-- **Verdict if violated**: `FAIL`
-- **sources**:
-  - schema_ref: `mplp-trace.schema.json#/properties/snapshots`
-- **evidence_pointer**:
-  - artifact_type: `trace`
-  - json_pointer: `/snapshots`
-
----
-
-### gf-04-r02: Graph Update Events Present
-
-- **ID**: `gf-04-r02`
-- **Description**: Graph update events must be present for state changes
-- **Verdict if violated**: `FAIL`
-- **sources**:
-  - schema_ref: `events/mplp-graph-update-event.schema.json#/properties/event_type`
-- **evidence_pointer**:
-  - artifact_type: `timeline`
-  - json_pointer: `/events/*/event_type`
-
----
-
-### gf-04-r03: Observability Invariants Satisfied
-
-- **ID**: `gf-04-r03`
-- **Description**: Trace records must satisfy observability invariants
-- **Verdict if violated**: `FAIL`
-- **sources**:
-  - schema_ref: `mplp-trace.schema.json#/properties/snapshots`
-
----
-
-### gf-04-r04: Recovery Actions Traceable
-
-- **ID**: `gf-04-r04`
-- **Description**: Recovery actions must be traceable in timeline
-- **Verdict if violated**: `ADVISORY`
-- **sources**:
-  - schema_ref: `mplp-trace.schema.json#/properties/recovery_actions`
-- **evidence_pointer**:
-  - artifact_type: `trace`
-  - json_pointer: `/recovery_actions`
-
----
-
-## Coverage Summary
-
-| Requirement | Source Type | Blocking |
-|:---|:---|:---:|
-| gf-04-r01 | schema | ⚠️ (optional) |
-| gf-04-r02 | schema | ✅ |
-| gf-04-r03 | invariant | ✅ |
-| gf-04-r04 | schema | ⚠️ (advisory) |
-
----
-
-**Document Status**: Ruleset Requirement  
-**Version**: 1.0.0
+gf_id: gf-04
+name: Validation Pipeline
+requirements:
+  - id: gf-04-r01
+    description: Manifest present
+    severity: required
+    evidence:
+      type: file
+      artifact: manifest.json

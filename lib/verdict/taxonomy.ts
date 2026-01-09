@@ -116,6 +116,22 @@ export enum FailureTaxonomy {
 
     /** Timeline is not in total order */
     TIMELINE_NOT_TOTALLY_ORDERED = 'TIMELINE_NOT_TOTALLY_ORDERED',
+
+    // =========================================================================
+    // EVALUATION ISSUES (Phase D)
+    // =========================================================================
+
+    /** Ruleset is invalid (parse error, missing files, id mismatch) */
+    RULESET_INVALID = 'RULESET_INVALID',
+
+    /** Required evidence missing */
+    REQUIREMENT_EVIDENCE_MISSING = 'REQUIREMENT_EVIDENCE_MISSING',
+
+    /** Evidence is invalid (empty, malformed, unreadable) */
+    REQUIREMENT_EVIDENCE_INVALID = 'REQUIREMENT_EVIDENCE_INVALID',
+
+    /** Admission failed, evaluation not performed */
+    ADMISSION_FAILED = 'ADMISSION_FAILED',
 }
 
 /**
@@ -197,4 +213,13 @@ export const TAXONOMY_DESCRIPTIONS: Record<FailureTaxonomy, string> = {
         'Timeline events.ndjson could not be parsed',
     [FailureTaxonomy.TIMELINE_NOT_TOTALLY_ORDERED]:
         'Timeline events are not in total order (timestamp + event_id)',
+    // Phase D additions
+    [FailureTaxonomy.RULESET_INVALID]:
+        'Ruleset is invalid (parse error, missing files, id mismatch)',
+    [FailureTaxonomy.REQUIREMENT_EVIDENCE_MISSING]:
+        'Required evidence for requirement is missing',
+    [FailureTaxonomy.REQUIREMENT_EVIDENCE_INVALID]:
+        'Evidence is invalid (empty, malformed, unreadable)',
+    [FailureTaxonomy.ADMISSION_FAILED]:
+        'Admission failed, evaluation could not be performed',
 };

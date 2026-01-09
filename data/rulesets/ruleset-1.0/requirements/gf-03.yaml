@@ -1,80 +1,9 @@
-# GF-03 Requirements — Human-in-the-Loop Gating
-
-**Ruleset**: ruleset-1.0  
-**Golden Flow**: GF-03 — Human-in-the-Loop Gating  
-**Status**: ACTIVE  
-**Governed By**: VLAB-DGB-01
-
----
-
-## Description
-
-Validates confirm gate with human approval flow.
-Requires confirm module evidence and approval records.
-
----
-
-## Requirements
-
-### gf-03-r01: Confirm ID Valid
-
-- **ID**: `gf-03-r01`
-- **Description**: Confirm record must have valid confirm_id
-- **Verdict if violated**: `FAIL`
-- **sources**:
-  - schema_ref: `mplp-confirm.schema.json#/properties/confirm_id`
-- **evidence_pointer**:
-  - artifact_type: `confirm`
-  - json_pointer: `/confirm_id`
-
----
-
-### gf-03-r02: Gate Type Defined
-
-- **ID**: `gf-03-r02`
-- **Description**: Confirm record must have gate_type field
-- **Verdict if violated**: `FAIL`
-- **sources**:
-  - schema_ref: `mplp-confirm.schema.json#/properties/gate_type`
-- **evidence_pointer**:
-  - artifact_type: `confirm`
-  - json_pointer: `/gate_type`
-
----
-
-### gf-03-r03: Approval Status Present
-
-- **ID**: `gf-03-r03`
-- **Description**: Confirm record must have approval_status
-- **Verdict if violated**: `FAIL`
-- **sources**:
-  - schema_ref: `mplp-confirm.schema.json#/properties/approval_status`
-- **evidence_pointer**:
-  - artifact_type: `confirm`
-  - json_pointer: `/approval_status`
-
----
-
-### gf-03-r04: Confirm Invariants Satisfied
-
-- **ID**: `gf-03-r04`
-- **Description**: Confirm records must satisfy confirm invariants
-- **Verdict if violated**: `FAIL`
-- **sources**:
-  - invariant_ref: `tests/golden/invariants/confirm.yaml#confirm_must_have_gate_type`
-
----
-
-## Coverage Summary
-
-| Requirement | Source Type | Blocking |
-|:---|:---|:---:|
-| gf-03-r01 | schema | ✅ |
-| gf-03-r02 | schema | ✅ |
-| gf-03-r03 | schema | ✅ |
-| gf-03-r04 | invariant | ✅ |
-
----
-
-**Document Status**: Ruleset Requirement  
-**Version**: 1.0.0
+gf_id: gf-03
+name: Learning Cycle
+requirements:
+  - id: gf-03-r01
+    description: Context artifact present
+    severity: required
+    evidence:
+      type: file
+      artifact: artifacts/context.json
