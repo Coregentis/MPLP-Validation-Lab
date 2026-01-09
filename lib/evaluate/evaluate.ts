@@ -235,14 +235,19 @@ async function evaluateGoldenFlow(
         }
     }
 
-    // Determine GF status
-    const hasFailures = requirements.some(r => r.status === 'FAIL');
-    const hasNotEvaluated = requirements.some(r => r.status === 'NOT_EVALUATED');
+    // Blocker1: Severity-aware GF status aggregation
+    // Filter requirements by severity for status determination
+    const requiredReqs = requirements.filter((r, i) => gfDef.requirements[i].severity === 'required');
+    const recommendedReqs = requirements.filter((r, i) => gfDef.requirements[i].severity === 'recommended');
+    // Optional requirements do NOT participate in GF status
+
+    const hasRequiredFail = requiredReqs.some(r => r.status === 'FAIL');
+    const hasRecommendedNotEvaluated = recommendedReqs.some(r => r.status === 'NOT_EVALUATED');
 
     let status: 'PASS' | 'FAIL' | 'NOT_EVALUATED';
-    if (hasFailures) {
+    if (hasRequiredFail) {
         status = 'FAIL';
-    } else if (hasNotEvaluated) {
+    } else if (hasRecommendedNotEvaluated) {
         status = 'NOT_EVALUATED';
     } else {
         status = 'PASS';
@@ -266,20 +271,56 @@ function evaluateRequirement(
 ): RequirementVerdict {
     const evidence = reqDef.evidence;
     const artifactPath = evidence.artifact;
-    const fullPath = path.join(pack.root_path, artifactPath);
+
+    // Blocker2: Security check - prevent path traversal in artifact paths
+    if (!isPathSafe(artifactPath)) {
+        return {
+            requirement_id: reqDef.id,
+            status: 'FAIL',
+            pointers: [makeMissingEvidencePointer(artifactPath, reqDef.id, 'Path traversal detected')],
+            message: `Invalid artifact path (security): ${artifactPath}`,
+            taxonomy: FailureTaxonomy.REQUIREMENT_EVIDENCE_INVALID,
+        };
+    }
+
+    const fullPath = safeJoinPath(pack.root_path, artifactPath);
+
+    // Security: verify resolved path is within pack root
+    if (!fullPath) {
+        return {
+            requirement_id: reqDef.id,
+            status: 'FAIL',
+            pointers: [makeMissingEvidencePointer(artifactPath, reqDef.id, 'Path outside pack root')],
+            message: `Artifact path escapes pack root: ${artifactPath}`,
+            taxonomy: FailureTaxonomy.REQUIREMENT_EVIDENCE_INVALID,
+        };
+    }
 
     // Check file exists
     if (!fs.existsSync(fullPath)) {
-        // For optional requirements, mark as NOT_EVALUATED
+        // Blocker1: Severity-aware handling
         if (reqDef.severity === 'optional') {
+            // Optional: missing = NOT_EVALUATED, does not affect GF status
             return {
                 requirement_id: reqDef.id,
                 status: 'NOT_EVALUATED',
                 pointers: [makeMissingEvidencePointer(artifactPath, reqDef.id)],
                 message: `Optional evidence not present: ${artifactPath}`,
+                // No taxonomy = informational only
             };
         }
 
+        if (reqDef.severity === 'recommended') {
+            // Recommended: missing = NOT_EVALUATED, may affect GF but not FAIL
+            return {
+                requirement_id: reqDef.id,
+                status: 'NOT_EVALUATED',
+                pointers: [makeMissingEvidencePointer(artifactPath, reqDef.id)],
+                message: `Recommended evidence not present: ${artifactPath}`,
+            };
+        }
+
+        // Required: missing = FAIL
         return {
             requirement_id: reqDef.id,
             status: 'FAIL',
@@ -423,7 +464,17 @@ function evaluateNdjsonEvidence(
         // If specific line requested
         if (locator) {
             const lineIndex = parseInt(locator, 10);
-            if (isNaN(lineIndex) || lineIndex < 0 || lineIndex >= lines.length) {
+            // Blocker4: Handle NaN separately from out-of-range
+            if (isNaN(lineIndex)) {
+                return {
+                    requirement_id: reqDef.id,
+                    status: 'FAIL',
+                    pointers: [makeFilePointer(artifactPath, reqDef.id, `Invalid locator: ${locator}`)],
+                    message: `NDJSON locator is not a valid number: ${locator}`,
+                    taxonomy: FailureTaxonomy.REQUIREMENT_EVIDENCE_INVALID,
+                };
+            }
+            if (lineIndex < 0 || lineIndex >= lines.length) {
                 return {
                     requirement_id: reqDef.id,
                     status: 'FAIL',
@@ -516,7 +567,23 @@ function createNotEvaluatedReport(
         evaluated_at: new Date().toISOString(),
     };
 
-    // Add a NOT_EVALUATED verdict placeholder
+    // Blocker3: GLOBAL failure must have pointers for audit trail
+    // Aggregate blocking failures from verify report if available
+    const globalPointers: EvidencePointer[] = [];
+    if (verifyReport.blocking_failures && verifyReport.blocking_failures.length > 0) {
+        for (const bf of verifyReport.blocking_failures.slice(0, 5)) {
+            globalPointers.push(...(bf.pointers || []));
+        }
+    }
+    // If no pointers from blocking failures, add ruleset/manifest pointer
+    if (globalPointers.length === 0) {
+        globalPointers.push(makeFilePointer(
+            `data/rulesets/${rulesetVersion}/manifest.yaml`,
+            'GLOBAL',
+            reason
+        ));
+    }
+
     report.gf_verdicts.push({
         gf_id: 'GLOBAL',
         status: 'NOT_EVALUATED',
@@ -524,10 +591,53 @@ function createNotEvaluatedReport(
         failures: [{
             taxonomy: FailureTaxonomy.ADMISSION_FAILED,
             message: reason,
-            pointers: [],
+            pointers: sortPointers(globalPointers),
         }],
     });
 
     report.verdict_hash = computeVerdictHash(report);
     return report;
+}
+
+// =============================================================================
+// Security Helpers (Blocker2)
+// =============================================================================
+
+/**
+ * Check if artifact path is safe (no traversal, no absolute paths).
+ */
+function isPathSafe(artifactPath: string): boolean {
+    if (!artifactPath) return false;
+
+    // Reject absolute paths
+    if (artifactPath.startsWith('/') || /^[A-Za-z]:/.test(artifactPath)) {
+        return false;
+    }
+
+    // Reject path traversal
+    if (artifactPath.includes('..')) {
+        return false;
+    }
+
+    // Reject backslashes (Windows path separator)
+    if (artifactPath.includes('\\')) {
+        return false;
+    }
+
+    return true;
+}
+
+/**
+ * Safely join paths and verify result is within root.
+ * Returns null if path escapes root.
+ */
+function safeJoinPath(root: string, relative: string): string | null {
+    const resolved = path.resolve(root, relative);
+    const normalizedRoot = path.resolve(root) + path.sep;
+
+    if (!resolved.startsWith(normalizedRoot) && resolved !== path.resolve(root)) {
+        return null;
+    }
+
+    return resolved;
 }
