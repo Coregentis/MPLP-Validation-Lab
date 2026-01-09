@@ -1,0 +1,12 @@
+{
+  "gate_id": "GATE-06",
+  "gate_name": "Robots/Noindex Policy",
+  "status": "PASS",
+  "evaluated_at": "2026-01-09T16:39:08.642Z",
+  "findings": [],
+  "summary": {
+    "files_scanned": 0,
+    "matches": 0,
+    "note": "Run detail page not found yet; policy file checked only"
+  }
+}

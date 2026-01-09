@@ -12,7 +12,11 @@
         "sync:all": "npm run sync:schemas && npm run sync:invariants",
         "gate:vlab:00": "tsx scripts/gates/verify-upstream-pin.ts",
         "gate:vlab:01": "tsx scripts/gates/verify-schema-alignment.ts",
-        "gate:all": "npm run gate:vlab:00 && npm run gate:vlab:01"
+        "gate:04": "tsx lib/gates/gate-04-language.ts",
+        "gate:05": "tsx lib/gates/gate-05-no-exec-hosting.ts",
+        "gate:06": "tsx lib/gates/gate-06-robots-policy.ts",
+        "gate:all": "npm run gate:vlab:00 && npm run gate:vlab:01",
+        "gates": "npm run gate:04 && npm run gate:05 && npm run gate:06"
     },
     "dependencies": {
         "next": "^15.0.0",

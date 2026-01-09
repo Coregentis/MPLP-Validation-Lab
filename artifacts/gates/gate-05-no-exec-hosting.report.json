@@ -1,0 +1,11 @@
+{
+  "gate_id": "GATE-05",
+  "gate_name": "No Execution Hosting Guard",
+  "status": "PASS",
+  "evaluated_at": "2026-01-09T16:39:08.310Z",
+  "findings": [],
+  "summary": {
+    "files_scanned": 27,
+    "matches": 0
+  }
+}
