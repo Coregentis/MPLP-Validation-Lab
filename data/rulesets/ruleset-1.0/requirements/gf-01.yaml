@@ -1,0 +1,163 @@
+# GF-01 Requirements — Single Agent Lifecycle
+
+**Ruleset**: ruleset-1.0  
+**Golden Flow**: GF-01 — Single Agent Lifecycle  
+**Status**: ACTIVE  
+**Governed By**: VLAB-DGB-01
+
+---
+
+## Description
+
+Validates basic Context → Plan → Confirm → Trace chain for single-agent workflows.
+This is the baseline GF that all other flows extend.
+
+---
+
+## Requirements
+
+### gf-01-r01: Context ID Valid
+
+- **ID**: `gf-01-r01`
+- **Description**: Context must have valid context_id (UUID v4)
+- **Verdict if violated**: `FAIL`
+- **sources**:
+  - schema_ref: `mplp-context.schema.json#/properties/context_id`
+  - invariant_ref: `tests/golden/invariants/context.yaml#context_id_must_be_uuid`
+- **evidence_pointer**:
+  - artifact_type: `context`
+  - json_pointer: `/context_id`
+
+---
+
+### gf-01-r02: Context Status Valid
+
+- **ID**: `gf-01-r02`
+- **Description**: Context status must be valid enum value
+- **Verdict if violated**: `FAIL`
+- **sources**:
+  - schema_ref: `mplp-context.schema.json#/properties/status`
+  - invariant_ref: `tests/golden/invariants/context.yaml#context_status_must_be_valid`
+- **evidence_pointer**:
+  - artifact_type: `context`
+  - json_pointer: `/status`
+
+---
+
+### gf-01-r03: Plan ID Valid
+
+- **ID**: `gf-01-r03`
+- **Description**: Plan must have valid plan_id (UUID v4)
+- **Verdict if violated**: `FAIL`
+- **sources**:
+  - schema_ref: `mplp-plan.schema.json#/properties/plan_id`
+  - invariant_ref: `tests/golden/invariants/plan.yaml#plan_id_must_be_uuid`
+- **evidence_pointer**:
+  - artifact_type: `plan`
+  - json_pointer: `/plan_id`
+
+---
+
+### gf-01-r04: Plan References Valid Context
+
+- **ID**: `gf-01-r04`
+- **Description**: Plan's context_id must match Context's context_id
+- **Verdict if violated**: `FAIL`
+- **sources**:
+  - schema_ref: `mplp-plan.schema.json#/properties/context_id`
+  - invariant_ref: `tests/golden/invariants/plan.yaml#plan_context_id_match`
+- **evidence_pointer**:
+  - artifact_type: `plan`
+  - json_pointer: `/context_id`
+- **cross_reference**:
+  - from: `plan:/context_id`
+  - to: `context:/context_id`
+  - rule: `eq`
+
+---
+
+### gf-01-r05: Step IDs Valid
+
+- **ID**: `gf-01-r05`
+- **Description**: All step IDs must be valid UUID v4
+- **Verdict if violated**: `FAIL`
+- **sources**:
+  - schema_ref: `mplp-plan.schema.json#/properties/steps/items/properties/step_id`
+  - invariant_ref: `tests/golden/invariants/plan.yaml#step_ids_must_be_uuid`
+- **evidence_pointer**:
+  - artifact_type: `plan`
+  - json_pointer: `/steps/*/step_id`
+
+---
+
+### gf-01-r06: Step Descriptions Non-Empty
+
+- **ID**: `gf-01-r06`
+- **Description**: All step descriptions must be non-empty strings
+- **Verdict if violated**: `FAIL`
+- **sources**:
+  - schema_ref: `mplp-plan.schema.json#/properties/steps/items/properties/description`
+  - invariant_ref: `tests/golden/invariants/plan.yaml#step_descriptions_must_be_non_empty`
+- **evidence_pointer**:
+  - artifact_type: `plan`
+  - json_pointer: `/steps/*/description`
+
+---
+
+### gf-01-r07: Protocol Version Declared
+
+- **ID**: `gf-01-r07`
+- **Description**: All artifacts must declare protocol version
+- **Verdict if violated**: `FAIL`
+- **sources**:
+  - schema_ref: `mplp-core.schema.json#/properties/meta/properties/protocol_version`
+- **evidence_pointer**:
+  - artifact_type: `context`
+  - json_pointer: `/meta/protocol_version`
+
+---
+
+### gf-01-r08: Trace References Valid Context
+
+- **ID**: `gf-01-r08`
+- **Description**: Trace's context_id must match Context's context_id (if trace exists)
+- **Verdict if missing**: `NOT_EVALUATED`
+- **Verdict if violated**: `FAIL`
+- **sources**:
+  - schema_ref: `mplp-trace.schema.json#/properties/context_id`
+- **evidence_pointer**:
+  - artifact_type: `trace`
+  - json_pointer: `/context_id`
+- **cross_reference**:
+  - from: `trace:/context_id`
+  - to: `context:/context_id`
+  - rule: `eq`
+
+---
+
+## Coverage Summary
+
+| Requirement | Source Type | Blocking |
+|:---|:---|:---:|
+| gf-01-r01 | schema + invariant | ✅ |
+| gf-01-r02 | schema + invariant | ✅ |
+| gf-01-r03 | schema + invariant | ✅ |
+| gf-01-r04 | schema + invariant | ✅ |
+| gf-01-r05 | schema + invariant | ✅ |
+| gf-01-r06 | schema + invariant | ✅ |
+| gf-01-r07 | schema | ✅ |
+| gf-01-r08 | schema | ⚠️ (optional) |
+
+---
+
+## Amendment Process
+
+Changes to requirements require:
+1. VLAB-DGB-01 governance review
+2. Ruleset version bump
+3. Compatibility assessment
+
+---
+
+**Document Status**: Ruleset Requirement  
+**Version**: 1.0.0

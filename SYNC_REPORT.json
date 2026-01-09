@@ -1,0 +1,382 @@
+{
+  "upstream": {
+    "repo": "Coregentis/MPLP-Protocol",
+    "commit": "877029514f87dd7da1dfb559c178ce57a935d975",
+    "pinned_at": "2026-01-09T15:49:00+08:00"
+  },
+  "sync": {
+    "schemas": {
+      "source_path": "schemas/v2",
+      "target_path": "lib/schemas",
+      "files": [
+        {
+          "path": "_manifests/bundle/generator-fingerprint.json",
+          "sha256": "e197e3755b9aa982c5e82655ad2523dceb3e703bf27cbee30dd97b17267083fe",
+          "bytes": 2015
+        },
+        {
+          "path": "_manifests/bundle/truth-source-inventory.json",
+          "sha256": "12fed00f548905a3213ce8bc80a3fec308ae0ac0e4f0176d83bac5d5e5e48fda",
+          "bytes": 2739
+        },
+        {
+          "path": "_manifests/tsv/ref-closure.json",
+          "sha256": "65a8b31969686a3e5e2c703f257ef7da331b8839af6d2a61794ad7d199fb8f45",
+          "bytes": 4284
+        },
+        {
+          "path": "_manifests/xc/cross-consistency-verdict.json",
+          "sha256": "eaf5185aac5fdafb53ba197615970a8f4a23cdd02721a5e8ac90232adb4f8e79",
+          "bytes": 2360
+        },
+        {
+          "path": "_manifests/xc/xcv-points.yaml",
+          "sha256": "565663272de01ab8108aff920e9b0d4493e0fddba73c508e0e4341dc5eaa34b7",
+          "bytes": 4061
+        },
+        {
+          "path": "_manifests/yaml/scope-domain-rule.yaml",
+          "sha256": "ba1021ec39194cfcb3f16902eb4c6057704398b26cdfe0ba2e1753ea3f8c947c",
+          "bytes": 2402
+        },
+        {
+          "path": "common/common-types.schema.json",
+          "sha256": "ccb70de772b80eda344a8a9811222e5315187f7994e8018db28605e1c6bdc297",
+          "bytes": 1525
+        },
+        {
+          "path": "common/events.schema.json",
+          "sha256": "df0fb92690d5c59babd2e41dd7f9c39656985ea0909a7bfa3734f059844be091",
+          "bytes": 2444
+        },
+        {
+          "path": "common/identifiers.schema.json",
+          "sha256": "084fbc7c0f90f9bc6be4c9db8f4b9e7e810eef6f9bde5a2533c94e03a47fde92",
+          "bytes": 845
+        },
+        {
+          "path": "common/learning-sample.schema.json",
+          "sha256": "6ba0e73ff88b2332eaf2f7e25fdd14a64dd841fda51b2a797d87e34d1fac22a3",
+          "bytes": 5397
+        },
+        {
+          "path": "common/metadata.schema.json",
+          "sha256": "b48fc64f1167cca835381adf09e08d2b770e90ce7b6edac9ccd6a95ac0a5652e",
+          "bytes": 3230
+        },
+        {
+          "path": "common/trace-base.schema.json",
+          "sha256": "fd535008c28f5fa854001de7acb9c80b868aba615c8d26c370ae19595ccdcec5",
+          "bytes": 1867
+        },
+        {
+          "path": "events/mplp-event-core.schema.json",
+          "sha256": "97146962e486f28fc16aac55eebe5b8b19a092084dbcc4b74f84e2d8431f3524",
+          "bytes": 2177
+        },
+        {
+          "path": "events/mplp-graph-update-event.schema.json",
+          "sha256": "127db71d333fa57b5797c162b343e2343f34b14e39c4ff8124545b6f6c6b081d",
+          "bytes": 1853
+        },
+        {
+          "path": "events/mplp-map-event.schema.json",
+          "sha256": "74637096f9f50df299460de30ee4c378e6147ccdfad03fd5e0a9539855a5340f",
+          "bytes": 4042
+        },
+        {
+          "path": "events/mplp-pipeline-stage-event.schema.json",
+          "sha256": "f830f9f385c1b2a7ec278362542538f870e030638a02384cc90640965f31c573",
+          "bytes": 1806
+        },
+        {
+          "path": "events/mplp-runtime-execution-event.schema.json",
+          "sha256": "9052fe5b6fd167afdebdb3082422d0103186d1c9a61d7c6b7c1e5fd9dd63a11b",
+          "bytes": 1801
+        },
+        {
+          "path": "events/mplp-sa-event.schema.json",
+          "sha256": "7ee2e1b32c7dec9358de2efbec106dab40777512811371fc499a8ccc9b2bd243",
+          "bytes": 2765
+        },
+        {
+          "path": "examples/collab.minimal.json",
+          "sha256": "6956c95c0a6813dd96a939df3d83a55c4021a9ed4c5c9b95e140a5b7be4c18ee",
+          "bytes": 584
+        },
+        {
+          "path": "examples/collab.with-events.json",
+          "sha256": "a29aec7cafef5c623c805a4247a68862033fcb0870b58dcc7a787997e144cc30",
+          "bytes": 794
+        },
+        {
+          "path": "examples/confirm.minimal.json",
+          "sha256": "6587323c62483a3b47a2f1e32888060c26ec2b7bdb0c44f727f8f2f4484b50c9",
+          "bytes": 481
+        },
+        {
+          "path": "examples/confirm.with-events.json",
+          "sha256": "6144a9fe1cab6f48eaf12f461425de307841d44d59edc5e6a20a7f6806f15318",
+          "bytes": 635
+        },
+        {
+          "path": "examples/context.minimal.json",
+          "sha256": "42c96e8c9d58494841277c50e7029c46559ed859bb6e342d5a6dd6c72e6093cf",
+          "bytes": 412
+        },
+        {
+          "path": "examples/context.with-events.json",
+          "sha256": "29086525d95b5db72564b7e06efca254424fef4516e3d865fe24dd86f17a3cd8",
+          "bytes": 575
+        },
+        {
+          "path": "examples/core.minimal.json",
+          "sha256": "9f88e9e5ea8088f4ac79fffef55e12a2da874b680bc95e9415cca772782da780",
+          "bytes": 439
+        },
+        {
+          "path": "examples/core.with-events.json",
+          "sha256": "7044ac28ab2a64b740e3ceee164baa7963cd582a44e0e0b71062fde77fe23f48",
+          "bytes": 634
+        },
+        {
+          "path": "examples/dialog.minimal.json",
+          "sha256": "ddcd98b19343161cdaf5098e2f3eebc85259fa3f6050f29c8674e09a4a7a0875",
+          "bytes": 490
+        },
+        {
+          "path": "examples/dialog.with-events.json",
+          "sha256": "af38bd5b5c36e8d2009e7c3adfd728ae4ef87114f2c178f4b0743dee060cef15",
+          "bytes": 682
+        },
+        {
+          "path": "examples/event.valid.json",
+          "sha256": "9af3072560cb9d67decb0387e13f02e9c338a117b53cff2e3828c4ac454f3842",
+          "bytes": 279
+        },
+        {
+          "path": "examples/extension.minimal.json",
+          "sha256": "d1895aea4ff6b94d03f03bb0eede66668262966ce0f93a9051ad5d3ced59e1d1",
+          "bytes": 445
+        },
+        {
+          "path": "examples/extension.with-events.json",
+          "sha256": "4cd7dbe2745294c153676929f9d2375a9ede516b34652f08f6e66590be0653ca",
+          "bytes": 624
+        },
+        {
+          "path": "examples/network.minimal.json",
+          "sha256": "96ae73d1e8d58937867843bdf6e2873b7aea220cee759d0ba66141624e1cdfbd",
+          "bytes": 414
+        },
+        {
+          "path": "examples/network.with-events.json",
+          "sha256": "633f27fea8682c8f1346216a7b5f027aa424cc569e7b2c01daefdc99f14b7d19",
+          "bytes": 584
+        },
+        {
+          "path": "examples/plan.minimal.json",
+          "sha256": "1d9e89a5cafe0bc30f4ee97edf8a1bcdb41d0b5ca09b30ab11ac372a4bbb934a",
+          "bytes": 565
+        },
+        {
+          "path": "examples/plan.with-events.json",
+          "sha256": "fab7503f312763886e6817a64164c48c7ff59aa8f3648dc5ceb87629995acb5e",
+          "bytes": 796
+        },
+        {
+          "path": "examples/role.minimal.json",
+          "sha256": "dbe610950bb39550012851a34b4ef771079d86053d1806f94cebb33e99c4cb17",
+          "bytes": 297
+        },
+        {
+          "path": "examples/role.with-events.json",
+          "sha256": "dfa62fa15c01c880cbfda2aca22d927a6df26263b0d59dcfbfa542093f2c7acc",
+          "bytes": 457
+        },
+        {
+          "path": "examples/trace.minimal.json",
+          "sha256": "9357daabace02743b269cdd01ff5f3ca71e53cc3fbc5defc90b209ba9e278c7a",
+          "bytes": 486
+        },
+        {
+          "path": "examples/trace.with-events.json",
+          "sha256": "c8805f03ae98f031794bcf790fc95f08e07cf2f2c19715525080368bb5be2c3d",
+          "bytes": 669
+        },
+        {
+          "path": "integration/mplp-ci-event.schema.json",
+          "sha256": "570ad2475a15af1e7d54d675bc2bbb35799674194621e3c41e5dda081846434c",
+          "bytes": 3285
+        },
+        {
+          "path": "integration/mplp-file-update-event.schema.json",
+          "sha256": "2d8a42cfa9c46ea9e6be7cf491bd9078137a9a0cbf23b108eae48d0a94f6d542",
+          "bytes": 2140
+        },
+        {
+          "path": "integration/mplp-git-event.schema.json",
+          "sha256": "0c0dd285543016e124bd8338fa1fc623a7f872f8478132c729637556ea48726a",
+          "bytes": 2583
+        },
+        {
+          "path": "integration/mplp-tool-event.schema.json",
+          "sha256": "43e281f2306f58051e68e857ccde900c1336c9f44fb710895e4fd1bf7310144a",
+          "bytes": 2401
+        },
+        {
+          "path": "invariants/integration-invariants.yaml",
+          "sha256": "9b29f7d5a5eba2baa1828717a72e9daef436ba3dc2e820512c7d074ba6e409d2",
+          "bytes": 4356
+        },
+        {
+          "path": "invariants/learning-invariants.yaml",
+          "sha256": "b141569464fb7ea8fdaa030d3a8f52e1039de1e429ae935c2191d541462a5363",
+          "bytes": 3643
+        },
+        {
+          "path": "invariants/map-invariants.yaml",
+          "sha256": "3cb035225f51d3c19b1e883f4dc202aeb1d3868ea47633a4012575391847da5f",
+          "bytes": 2365
+        },
+        {
+          "path": "invariants/observability-invariants.yaml",
+          "sha256": "d149b5eeace8b86d73dddd02dea0d79997ebd4103c479f48bb7219a2526ea5f6",
+          "bytes": 3523
+        },
+        {
+          "path": "invariants/sa-invariants.yaml",
+          "sha256": "28711f74575dde55e84f2e455c1a4c5dd8f994456ce983f74d5ab3fa2363c50a",
+          "bytes": 1914
+        },
+        {
+          "path": "learning/mplp-learning-sample-core.schema.json",
+          "sha256": "ebf4e0d89697449d8e9578c83325a2fde98bf3e9de983b6cd4af4b6e66192c9a",
+          "bytes": 3217
+        },
+        {
+          "path": "learning/mplp-learning-sample-delta.schema.json",
+          "sha256": "9f3a551f43c2bea590153b714398cba72f6f5829f1884f2dc85b7ed0df031f63",
+          "bytes": 4442
+        },
+        {
+          "path": "learning/mplp-learning-sample-intent.schema.json",
+          "sha256": "b444842d5a9ccd81e16882fe7846bd3bf307a55c462d150f474530f498321dcc",
+          "bytes": 4209
+        },
+        {
+          "path": "mplp-collab.schema.json",
+          "sha256": "fc9505ce45bb38a7ead952dc7a53a6c8ee16daca4978d2846470c3888368cfb9",
+          "bytes": 7881
+        },
+        {
+          "path": "mplp-confirm.schema.json",
+          "sha256": "39d705523f5cc59d45efd58918af513053db42175919c1b6aa695acfa98a2f07",
+          "bytes": 7938
+        },
+        {
+          "path": "mplp-context.schema.json",
+          "sha256": "41131a5a3e1d060d58e4438fc3940e1cdd08397406122547597e2812eb3ab362",
+          "bytes": 8998
+        },
+        {
+          "path": "mplp-core.schema.json",
+          "sha256": "d202ec7b76df659a10a4f86aaa02ad4bb32bf898a7d04555fc502373885657dc",
+          "bytes": 5806
+        },
+        {
+          "path": "mplp-dialog.schema.json",
+          "sha256": "1626534a9dad84fc1e56f6d955553e46e4869ff8531fc658d7f1612ca0dce6b4",
+          "bytes": 6522
+        },
+        {
+          "path": "mplp-extension.schema.json",
+          "sha256": "2f319260c5bcde48f3932ebb1e5436862019b168c052ce9a013201ba42e39791",
+          "bytes": 6306
+        },
+        {
+          "path": "mplp-network.schema.json",
+          "sha256": "86e28505230710cb289d25c1c6555ab89359e824d37bd5e317b31881c2360956",
+          "bytes": 7137
+        },
+        {
+          "path": "mplp-plan.schema.json",
+          "sha256": "b1e866b7445f96eed7ebcc24d43f401ad8f8b9e583d4e5edb86afa0dbc2c079f",
+          "bytes": 6464
+        },
+        {
+          "path": "mplp-role.schema.json",
+          "sha256": "fee0440a8a58569a6dda514cd256ea10a61c0ce637fb616bb3cdac64d9f302d6",
+          "bytes": 5324
+        },
+        {
+          "path": "mplp-trace.schema.json",
+          "sha256": "b0d39c35a1b77a0bd91cb4fff06267e3c86785a315a5abfb24904ee68871eb96",
+          "bytes": 7682
+        },
+        {
+          "path": "profiles/map-profile.yaml",
+          "sha256": "de651211397deb79ef22a0a4f28f38ae6a1f4272a6674ba70ec18305a5287ab1",
+          "bytes": 4218
+        },
+        {
+          "path": "profiles/sa-profile.yaml",
+          "sha256": "eb396220ff04f778f2b6893c891db1464ca2208b524feec26a142ba15c844542",
+          "bytes": 3769
+        },
+        {
+          "path": "taxonomy/event-taxonomy.yaml",
+          "sha256": "a47377cfb16a73c7076b6563847fb38a2411828d643f193da7112ee3cce02fc1",
+          "bytes": 4263
+        },
+        {
+          "path": "taxonomy/integration-event-taxonomy.yaml",
+          "sha256": "683432fb27fcbd3f8e3f106246b1ee73eae44cbf02c0cc5fe255f5014e5ebd12",
+          "bytes": 12443
+        },
+        {
+          "path": "taxonomy/learning-taxonomy.yaml",
+          "sha256": "22412352a23638022294952e80aeae0a475590a303d1779ca164d283da407fb7",
+          "bytes": 10079
+        },
+        {
+          "path": "taxonomy/module-event-matrix.yaml",
+          "sha256": "4922490ad193d6ddd0361251072159577fdb2a6529fc43731c7f622f43aadb5c",
+          "bytes": 7442
+        }
+      ]
+    },
+    "invariants": {
+      "source_path": "tests/golden/invariants",
+      "target_path": "lib/invariants",
+      "files": [
+        {
+          "path": "confirm.yaml",
+          "sha256": "d652214c924dd795ddeca4bc381a899aedc36cbeb9508607e9f7939ad5a42c18",
+          "bytes": 867
+        },
+        {
+          "path": "context.yaml",
+          "sha256": "9bf1a35014f7060eea163b3c4418340103ce9facbae70bc13f75186e66c84df8",
+          "bytes": 832
+        },
+        {
+          "path": "plan.yaml",
+          "sha256": "459e83834bb5bd6ed1fba21ec0d68338f45981b09ae5eea2a587177b106cba61",
+          "bytes": 853
+        },
+        {
+          "path": "trace.yaml",
+          "sha256": "3cafe073658adc1ae1e7a00ceca38bb951d5d6f77fd1a5d5839216fe46a59638",
+          "bytes": 854
+        }
+      ]
+    }
+  },
+  "integrity": {
+    "schemas_bundle_sha256": "99804832ddc3daefb92ec74120afaab1c3278e4a79d670e1f796e67f735463aa",
+    "report_sha256": "028e0e3d3cf46a84c27a1b35af8869d467278fc04319ea1a461895a957bbbe40",
+    "invariants_bundle_sha256": "d32ed8bd0139ba2197c618f8cc057dae15ba8cd5012b25946c1e20c07fd8ebe0"
+  },
+  "generated_at": "2026-01-09T09:14:43.783Z"
+}

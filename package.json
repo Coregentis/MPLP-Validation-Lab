@@ -1,0 +1,37 @@
+{
+    "name": "validation-lab",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev --turbopack",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint",
+        "sync:schemas": "tsx scripts/sync-schemas.ts",
+        "sync:invariants": "tsx scripts/sync-invariants.ts",
+        "sync:all": "npm run sync:schemas && npm run sync:invariants",
+        "gate:vlab:00": "tsx scripts/gates/verify-upstream-pin.ts",
+        "gate:vlab:01": "tsx scripts/gates/verify-schema-alignment.ts",
+        "gate:all": "npm run gate:vlab:00 && npm run gate:vlab:01"
+    },
+    "dependencies": {
+        "next": "^15.0.0",
+        "react": "^19.0.0",
+        "react-dom": "^19.0.0",
+        "tailwindcss": "^4.1.18"
+    },
+    "devDependencies": {
+        "@types/js-yaml": "^4.0.9",
+        "@types/node": "^22",
+        "@types/react": "^19",
+        "@types/react-dom": "^19",
+        "eslint": "^9",
+        "eslint-config-next": "^15.0.0",
+        "js-yaml": "^4.1.0",
+        "tsx": "^4.19.0",
+        "typescript": "^5"
+    },
+    "engines": {
+        "node": ">=20"
+    }
+}

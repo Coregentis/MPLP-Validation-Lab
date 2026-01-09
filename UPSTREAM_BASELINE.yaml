@@ -1,0 +1,59 @@
+# MPLP Validation Lab — Upstream Baseline
+# This file pins all truth sources to a specific upstream commit.
+# Sync scripts MUST read this file and only import from the pinned commit.
+
+upstream:
+  # Upstream repository reference
+  repo: "Coregentis/MPLP-Protocol"
+  repo_local_path: ".."  # Relative path when used as sibling directory
+  
+  # REQUIRED: Pin to specific commit SHA
+  commit: "877029514f87dd7da1dfb559c178ce57a935d975"
+  
+  # Human-readable tag (informational)
+  tag: "v1.0.0"
+  
+  # Protocol version this baseline aligns with
+  protocol_version: "1.0.0"
+  
+  # When this baseline was created
+  baseline_created: "2026-01-09T15:49:00+08:00"
+
+# Synced paths from upstream to local
+synced_paths:
+  # Schema truth sources
+  - source: "schemas/v2/mplp-context.schema.json"
+    target: "lib/schemas/mplp-context.schema.json"
+  - source: "schemas/v2/mplp-plan.schema.json"
+    target: "lib/schemas/mplp-plan.schema.json"
+  - source: "schemas/v2/mplp-confirm.schema.json"
+    target: "lib/schemas/mplp-confirm.schema.json"
+  - source: "schemas/v2/mplp-trace.schema.json"
+    target: "lib/schemas/mplp-trace.schema.json"
+  - source: "schemas/v2/mplp-core.schema.json"
+    target: "lib/schemas/mplp-core.schema.json"
+  - source: "schemas/v2/mplp-collab.schema.json"
+    target: "lib/schemas/mplp-collab.schema.json"
+  - source: "schemas/v2/mplp-dialog.schema.json"
+    target: "lib/schemas/mplp-dialog.schema.json"
+  - source: "schemas/v2/mplp-network.schema.json"
+    target: "lib/schemas/mplp-network.schema.json"
+  - source: "schemas/v2/mplp-role.schema.json"
+    target: "lib/schemas/mplp-role.schema.json"
+  - source: "schemas/v2/mplp-extension.schema.json"
+    target: "lib/schemas/mplp-extension.schema.json"
+  
+  # Invariants truth sources
+  - source: "tests/golden/invariants/"
+    target: "lib/invariants/"
+
+# Governance constraints
+governance:
+  # Sync scripts MUST verify commit SHA before importing
+  require_commit_verification: true
+  
+  # Changes to this file require governance review
+  change_requires_review: true
+  
+  # Gate that enforces this baseline
+  enforcing_gate: "VLAB-GATE-00-upstream-pin"

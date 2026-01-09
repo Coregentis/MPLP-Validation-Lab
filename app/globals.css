@@ -1,0 +1,202 @@
+/* Validation Lab - Global Styles */
+/* Phase A: Minimal CSS without Tailwind */
+
+:root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    --amber-200: #fde68a;
+    --amber-400: #fbbf24;
+    --amber-900: #78350f;
+    --amber-950: #451a03;
+    --zinc-500: #71717a;
+    --zinc-700: #3f3f46;
+    --zinc-900: #18181b;
+    --gray-400: #9ca3af;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: var(--foreground);
+    background: var(--background);
+    font-family: system-ui, -apple-system, sans-serif;
+    line-height: 1.5;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Utility classes */
+.min-h-screen {
+    min-height: 100vh;
+}
+
+.p-4 {
+    padding: 1rem;
+}
+
+.p-6 {
+    padding: 1.5rem;
+}
+
+.p-8 {
+    padding: 2rem;
+}
+
+.px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.py-3 {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+}
+
+.mb-2 {
+    margin-bottom: 0.5rem;
+}
+
+.mb-4 {
+    margin-bottom: 1rem;
+}
+
+.mb-8 {
+    margin-bottom: 2rem;
+}
+
+.mt-2 {
+    margin-top: 0.5rem;
+}
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.max-w-4xl {
+    max-width: 56rem;
+}
+
+.block {
+    display: block;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.grid {
+    display: grid;
+}
+
+.gap-4 {
+    gap: 1rem;
+}
+
+.space-y-1>*+* {
+    margin-top: 0.25rem;
+}
+
+.text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+}
+
+.text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+}
+
+.text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+}
+
+.text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+}
+
+.text-xs {
+    font-size: 0.75rem;
+    line-height: 1rem;
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+.font-semibold {
+    font-weight: 600;
+}
+
+.text-gray-400 {
+    color: var(--gray-400);
+}
+
+.text-amber-200 {
+    color: var(--amber-200);
+}
+
+.text-amber-400 {
+    color: var(--amber-400);
+}
+
+.bg-zinc-900 {
+    background-color: var(--zinc-900);
+}
+
+.bg-amber-950\/30 {
+    background-color: rgba(69, 26, 3, 0.3);
+}
+
+.border {
+    border-width: 1px;
+}
+
+.border-b {
+    border-bottom-width: 1px;
+}
+
+.border-zinc-700 {
+    border-color: var(--zinc-700);
+}
+
+.border-amber-900\/50 {
+    border-color: rgba(120, 53, 15, 0.5);
+}
+
+.rounded-lg {
+    border-radius: 0.5rem;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.transition {
+    transition: all 0.15s ease-in-out;
+}
+
+/* Hover states */
+a:hover {
+    opacity: 0.9;
+}
+
+.card:hover {
+    border-color: var(--zinc-500);
+}
+
+/* Grid responsive */
+@media (min-width: 768px) {
+    .md\:grid-cols-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
