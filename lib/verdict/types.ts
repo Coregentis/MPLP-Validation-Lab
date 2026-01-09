@@ -80,8 +80,8 @@ export interface EvidencePointer {
     /** Requirement ID this pointer supports (e.g., "gf-01-r01") */
     requirement_id: string;
 
-    /** Short descriptive note (evidence purpose, not implementation advice) */
-    note: string;
+    /** Short descriptive note (optional, for audit clarity) */
+    note?: string;
 }
 
 // =============================================================================

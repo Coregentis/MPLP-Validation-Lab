@@ -1,0 +1,3 @@
+{"event_id":"evt-001","event_type":"context.created","timestamp":"2026-01-09T00:00:00Z","source_module":"context","payload":{}}
+{"event_id":"evt-002","event_type":"plan.created","timestamp":"2026-01-09T00:00:01Z","source_module":"plan","payload":{}}
+{"event_id":"evt-003","event_type":"trace.started","timestamp":"2026-01-09T00:00:02Z","source_module":"trace","payload":{}}

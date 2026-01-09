@@ -1,0 +1,10 @@
+{
+    "plan_id": "plan-001",
+    "context_id": "ctx-001",
+    "steps": [
+        {
+            "step_id": "step-001",
+            "description": "Test step"
+        }
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "pack_version": "1.0",
+    "pack_id": "test-minimal-pass-001",
+    "created_at": "2026-01-09T00:00:00Z",
+    "generator": {
+        "name": "test-generator",
+        "version": "1.0.0",
+        "fingerprint": "abc123def456"
+    },
+    "mplp_protocol_version": "1.0.0",
+    "scenario_id": "test-scenario-minimal",
+    "artifacts_included": [
+        "context",
+        "plan",
+        "trace"
+    ],
+    "compatibility": {
+        "min_ruleset_version": "1.0",
+        "max_ruleset_version": "1.x"
+    }
+}

@@ -80,6 +80,42 @@ export enum FailureTaxonomy {
 
     /** Executable or prohibited content detected */
     EVIDENCE_PACK_PROHIBITED_CONTENT = 'EVIDENCE_PACK_PROHIBITED_CONTENT',
+
+    // =========================================================================
+    // ADMISSION ISSUES (Phase C)
+    // =========================================================================
+
+    /** Pack exceeds file count or size limit */
+    PACK_TOO_LARGE = 'PACK_TOO_LARGE',
+
+    /** Disallowed file type/extension */
+    DISALLOWED_FILE_TYPE = 'DISALLOWED_FILE_TYPE',
+
+    /** Path traversal detected */
+    PATH_TRAVERSAL_DETECTED = 'PATH_TRAVERSAL_DETECTED',
+
+    /** Required artifact missing */
+    REQUIRED_ARTIFACT_MISSING = 'REQUIRED_ARTIFACT_MISSING',
+
+    /** Manifest parse failed */
+    MANIFEST_PARSE_FAILED = 'MANIFEST_PARSE_FAILED',
+
+    // =========================================================================
+    // VERSION BINDING ISSUES (Phase C)
+    // =========================================================================
+
+    /** Version binding failed */
+    VERSION_BINDING_FAILED = 'VERSION_BINDING_FAILED',
+
+    // =========================================================================
+    // TIMELINE ISSUES (Phase C)
+    // =========================================================================
+
+    /** Timeline parse failed */
+    TIMELINE_PARSE_FAILED = 'TIMELINE_PARSE_FAILED',
+
+    /** Timeline is not in total order */
+    TIMELINE_NOT_TOTALLY_ORDERED = 'TIMELINE_NOT_TOTALLY_ORDERED',
 }
 
 /**
@@ -144,4 +180,21 @@ export const TAXONOMY_DESCRIPTIONS: Record<FailureTaxonomy, string> = {
         'Path traversal attempt detected in archive',
     [FailureTaxonomy.EVIDENCE_PACK_PROHIBITED_CONTENT]:
         'Prohibited content detected (executable, node_modules, etc.)',
+    // Phase C additions
+    [FailureTaxonomy.PACK_TOO_LARGE]:
+        'Pack exceeds file count or size limit',
+    [FailureTaxonomy.DISALLOWED_FILE_TYPE]:
+        'File type/extension is not allowed',
+    [FailureTaxonomy.PATH_TRAVERSAL_DETECTED]:
+        'Path traversal pattern detected in file paths',
+    [FailureTaxonomy.REQUIRED_ARTIFACT_MISSING]:
+        'Required artifact or directory is missing',
+    [FailureTaxonomy.MANIFEST_PARSE_FAILED]:
+        'Manifest.json could not be parsed',
+    [FailureTaxonomy.VERSION_BINDING_FAILED]:
+        'Version binding verification failed',
+    [FailureTaxonomy.TIMELINE_PARSE_FAILED]:
+        'Timeline events.ndjson could not be parsed',
+    [FailureTaxonomy.TIMELINE_NOT_TOTALLY_ORDERED]:
+        'Timeline events are not in total order (timestamp + event_id)',
 };
