@@ -1,0 +1,94 @@
+# GF-05 Requirements — External Tool Integration
+
+**Ruleset**: ruleset-1.0  
+**Golden Flow**: GF-05 — External Tool Integration  
+**Status**: ACTIVE  
+**Governed By**: VLAB-DGB-01
+
+---
+
+## Description
+
+Validates tool invocation and result handling.
+Requires tool events and integration invariants.
+
+---
+
+## Requirements
+
+### gf-05-r01: Tool Event Type Valid
+
+- **ID**: `gf-05-r01`
+- **Description**: Tool events must have valid event_type
+- **Verdict if violated**: `FAIL`
+- **sources**:
+  - schema_ref: `integration/mplp-tool-event.schema.json#/properties/event_type`
+- **evidence_pointer**:
+  - artifact_type: `timeline`
+  - json_pointer: `/events/*/event_type`
+
+---
+
+### gf-05-r02: Tool ID Present
+
+- **ID**: `gf-05-r02`
+- **Description**: Tool events must have tool_id field
+- **Verdict if violated**: `FAIL`
+- **sources**:
+  - schema_ref: `integration/mplp-tool-event.schema.json#/properties/tool_id`
+- **evidence_pointer**:
+  - artifact_type: `timeline`
+  - json_pointer: `/events/*/tool_id`
+
+---
+
+### gf-05-r03: Tool Result Recorded
+
+- **ID**: `gf-05-r03`
+- **Description**: Tool events must have result field
+- **Verdict if violated**: `FAIL`
+- **sources**:
+  - schema_ref: `integration/mplp-tool-event.schema.json#/properties/result`
+- **evidence_pointer**:
+  - artifact_type: `timeline`
+  - json_pointer: `/events/*/result`
+
+---
+
+### gf-05-r04: Integration Invariants Satisfied
+
+- **ID**: `gf-05-r04`
+- **Description**: Tool integration must satisfy invariants
+- **Verdict if violated**: `FAIL`
+- **sources**:
+  - schema_ref: `integration/mplp-tool-event.schema.json#/properties/status`
+
+---
+
+### gf-05-r05: Tool Traceable to Context
+
+- **ID**: `gf-05-r05`
+- **Description**: Tool events must be traceable to parent context
+- **Verdict if violated**: `FAIL`
+- **sources**:
+  - schema_ref: `mplp-trace.schema.json#/properties/tool_invocations`
+- **evidence_pointer**:
+  - artifact_type: `trace`
+  - json_pointer: `/tool_invocations`
+
+---
+
+## Coverage Summary
+
+| Requirement | Source Type | Blocking |
+|:---|:---|:---:|
+| gf-05-r01 | schema | ✅ |
+| gf-05-r02 | schema | ✅ |
+| gf-05-r03 | schema | ✅ |
+| gf-05-r04 | invariant | ✅ |
+| gf-05-r05 | schema | ✅ |
+
+---
+
+**Document Status**: Ruleset Requirement  
+**Version**: 1.0.0

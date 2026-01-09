@@ -144,7 +144,51 @@ These boundaries MUST be structurally enforced across all pages:
 
 ---
 
-## 9. Amendment Process
+## 9. Repo Authority & Mirror Policy
+
+### Authority Repository
+
+The **authoritative development repository** for MPLP Validation Lab is:
+
+```
+https://github.com/Coregentis/MPLP-Validation-Lab
+```
+
+All feature branches, PRs, and releases originate from this repository.
+
+### Mirror Directory
+
+The main MPLP-Protocol repository contains a **mirror directory**:
+
+```
+mplp_prerelease/Validation_Lab/
+```
+
+This mirror:
+- ✅ Provides visibility for integration verification
+- ✅ Contains frozen snapshots aligned with Lab releases
+- ❌ Is NOT the development authority
+- ❌ PRs should NOT originate here
+
+### Sync Policy
+
+1. Lab development occurs on `MPLP-Validation-Lab` branches
+2. After Lab release/merge, a **sync PR** is created for the mirror
+3. Mirror PR must reference the Lab commit hash
+4. Hash/Gate alignment is verified before mirror merge
+
+### Branch Naming
+
+| Repo | Branch | Purpose |
+|:---|:---|:---|
+| MPLP-Validation-Lab | `main` | Stable release |
+| MPLP-Validation-Lab | `phase-*/*` | Feature development |
+| mplp_prerelease | `dev` | Contains mirror, not authority |
+| mplp_prerelease | `sync/vlab-*` | Mirror sync PRs |
+
+---
+
+## 10. Amendment Process
 
 Changes to this baseline require:
 1. Governance review
