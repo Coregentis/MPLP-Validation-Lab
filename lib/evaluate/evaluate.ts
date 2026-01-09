@@ -330,16 +330,16 @@ function evaluateRequirement(
         };
     }
 
-    // Evidence type-specific checks
+    // Evidence type-specific checks (pass validated fullPath)
     switch (evidence.type) {
         case 'file':
-            return evaluateFileEvidence(pack, reqDef, artifactPath);
+            return evaluateFileEvidence(fullPath, reqDef, artifactPath);
 
         case 'json_pointer':
-            return evaluateJsonPointerEvidence(pack, reqDef, artifactPath, evidence.locator || '');
+            return evaluateJsonPointerEvidence(fullPath, reqDef, artifactPath, evidence.locator || '');
 
         case 'ndjson_line':
-            return evaluateNdjsonEvidence(pack, reqDef, artifactPath, evidence.locator);
+            return evaluateNdjsonEvidence(fullPath, reqDef, artifactPath, evidence.locator);
 
         case 'cross_ref':
             // Cross-reference checks are Phase D+ feature
@@ -360,24 +360,53 @@ function evaluateRequirement(
     }
 }
 
+/**
+ * Severity-aware failure helper.
+ * Returns NOT_EVALUATED for optional/recommended, FAIL for required.
+ */
+function createSeverityAwareFailure(
+    reqDef: RequirementDefinition,
+    artifactPath: string,
+    message: string,
+    pointer: EvidencePointer
+): RequirementVerdict {
+    // Blocker B: Severity Policy for invalid evidence
+    // - required invalid → FAIL
+    // - recommended invalid → NOT_EVALUATED
+    // - optional invalid → NOT_EVALUATED
+    if (reqDef.severity === 'required') {
+        return {
+            requirement_id: reqDef.id,
+            status: 'FAIL',
+            pointers: [pointer],
+            message,
+            taxonomy: FailureTaxonomy.REQUIREMENT_EVIDENCE_INVALID,
+        };
+    }
+
+    // recommended or optional: NOT_EVALUATED (not FAIL)
+    return {
+        requirement_id: reqDef.id,
+        status: 'NOT_EVALUATED',
+        pointers: [pointer],
+        message: `[${reqDef.severity}] ${message}`,
+    };
+}
+
 function evaluateFileEvidence(
-    pack: PackHandle,
+    fullPath: string,  // Blocker A: use validated fullPath
     reqDef: RequirementDefinition,
     artifactPath: string
 ): RequirementVerdict {
-    // File exists and is readable = PASS
-    const fullPath = path.join(pack.root_path, artifactPath);
-
     try {
         const stat = fs.statSync(fullPath);
         if (stat.size === 0) {
-            return {
-                requirement_id: reqDef.id,
-                status: 'FAIL',
-                pointers: [makeFilePointer(artifactPath, reqDef.id, 'File is empty')],
-                message: `Evidence file is empty: ${artifactPath}`,
-                taxonomy: FailureTaxonomy.REQUIREMENT_EVIDENCE_INVALID,
-            };
+            return createSeverityAwareFailure(
+                reqDef,
+                artifactPath,
+                `Evidence file is empty: ${artifactPath}`,
+                makeFilePointer(artifactPath, reqDef.id, 'File is empty')
+            );
         }
 
         return {
@@ -387,24 +416,21 @@ function evaluateFileEvidence(
             message: `Evidence present: ${artifactPath}`,
         };
     } catch (e) {
-        return {
-            requirement_id: reqDef.id,
-            status: 'FAIL',
-            pointers: [makeFilePointer(artifactPath, reqDef.id)],
-            message: `Evidence file read error: ${artifactPath}`,
-            taxonomy: FailureTaxonomy.REQUIREMENT_EVIDENCE_INVALID,
-        };
+        return createSeverityAwareFailure(
+            reqDef,
+            artifactPath,
+            `Evidence file read error: ${artifactPath}`,
+            makeFilePointer(artifactPath, reqDef.id)
+        );
     }
 }
 
 function evaluateJsonPointerEvidence(
-    pack: PackHandle,
+    fullPath: string,  // Blocker A: use validated fullPath
     reqDef: RequirementDefinition,
     artifactPath: string,
     jsonPointer: string
 ): RequirementVerdict {
-    const fullPath = path.join(pack.root_path, artifactPath);
-
     try {
         const content = fs.readFileSync(fullPath, 'utf-8');
         const data = JSON.parse(content);
@@ -413,12 +439,21 @@ function evaluateJsonPointerEvidence(
         const value = resolveSimpleJsonPointer(data, jsonPointer);
 
         if (value === undefined) {
+            // Pointer not found is semantic MISSING (not INVALID)
+            if (reqDef.severity === 'required') {
+                return {
+                    requirement_id: reqDef.id,
+                    status: 'FAIL',
+                    pointers: [makeJsonPointer(artifactPath, jsonPointer, reqDef.id)],
+                    message: `JSON pointer not found: ${jsonPointer}`,
+                    taxonomy: FailureTaxonomy.REQUIREMENT_EVIDENCE_MISSING,
+                };
+            }
             return {
                 requirement_id: reqDef.id,
-                status: 'FAIL',
+                status: 'NOT_EVALUATED',
                 pointers: [makeJsonPointer(artifactPath, jsonPointer, reqDef.id)],
-                message: `JSON pointer not found: ${jsonPointer}`,
-                taxonomy: FailureTaxonomy.REQUIREMENT_EVIDENCE_MISSING,
+                message: `[${reqDef.severity}] JSON pointer not found: ${jsonPointer}`,
             };
         }
 
@@ -429,36 +464,32 @@ function evaluateJsonPointerEvidence(
             message: `Evidence found at: ${jsonPointer}`,
         };
     } catch (e) {
-        return {
-            requirement_id: reqDef.id,
-            status: 'FAIL',
-            pointers: [makeJsonPointer(artifactPath, jsonPointer, reqDef.id)],
-            message: `JSON parse error in ${artifactPath}`,
-            taxonomy: FailureTaxonomy.REQUIREMENT_EVIDENCE_INVALID,
-        };
+        return createSeverityAwareFailure(
+            reqDef,
+            artifactPath,
+            `JSON parse error in ${artifactPath}`,
+            makeJsonPointer(artifactPath, jsonPointer, reqDef.id)
+        );
     }
 }
 
 function evaluateNdjsonEvidence(
-    pack: PackHandle,
+    fullPath: string,  // Blocker A: use validated fullPath
     reqDef: RequirementDefinition,
     artifactPath: string,
     locator?: string
 ): RequirementVerdict {
-    const fullPath = path.join(pack.root_path, artifactPath);
-
     try {
         const content = fs.readFileSync(fullPath, 'utf-8');
         const lines = content.split('\n').filter(l => l.trim());
 
         if (lines.length === 0) {
-            return {
-                requirement_id: reqDef.id,
-                status: 'FAIL',
-                pointers: [makeFilePointer(artifactPath, reqDef.id)],
-                message: `NDJSON file is empty: ${artifactPath}`,
-                taxonomy: FailureTaxonomy.REQUIREMENT_EVIDENCE_INVALID,
-            };
+            return createSeverityAwareFailure(
+                reqDef,
+                artifactPath,
+                `NDJSON file is empty: ${artifactPath}`,
+                makeFilePointer(artifactPath, reqDef.id)
+            );
         }
 
         // If specific line requested
@@ -466,21 +497,29 @@ function evaluateNdjsonEvidence(
             const lineIndex = parseInt(locator, 10);
             // Blocker4: Handle NaN separately from out-of-range
             if (isNaN(lineIndex)) {
-                return {
-                    requirement_id: reqDef.id,
-                    status: 'FAIL',
-                    pointers: [makeFilePointer(artifactPath, reqDef.id, `Invalid locator: ${locator}`)],
-                    message: `NDJSON locator is not a valid number: ${locator}`,
-                    taxonomy: FailureTaxonomy.REQUIREMENT_EVIDENCE_INVALID,
-                };
+                return createSeverityAwareFailure(
+                    reqDef,
+                    artifactPath,
+                    `NDJSON locator is not a valid number: ${locator}`,
+                    makeFilePointer(artifactPath, reqDef.id, `Invalid locator: ${locator}`)
+                );
             }
             if (lineIndex < 0 || lineIndex >= lines.length) {
+                // Line not found = MISSING semantic
+                if (reqDef.severity === 'required') {
+                    return {
+                        requirement_id: reqDef.id,
+                        status: 'FAIL',
+                        pointers: [makeNdjsonLinePointer(artifactPath, lineIndex, reqDef.id)],
+                        message: `NDJSON line not found: ${locator}`,
+                        taxonomy: FailureTaxonomy.REQUIREMENT_EVIDENCE_MISSING,
+                    };
+                }
                 return {
                     requirement_id: reqDef.id,
-                    status: 'FAIL',
+                    status: 'NOT_EVALUATED',
                     pointers: [makeNdjsonLinePointer(artifactPath, lineIndex, reqDef.id)],
-                    message: `NDJSON line not found: ${locator}`,
-                    taxonomy: FailureTaxonomy.REQUIREMENT_EVIDENCE_MISSING,
+                    message: `[${reqDef.severity}] NDJSON line not found: ${locator}`,
                 };
             }
 
@@ -488,13 +527,12 @@ function evaluateNdjsonEvidence(
             try {
                 JSON.parse(lines[lineIndex]);
             } catch {
-                return {
-                    requirement_id: reqDef.id,
-                    status: 'FAIL',
-                    pointers: [makeNdjsonLinePointer(artifactPath, lineIndex, reqDef.id)],
-                    message: `NDJSON line ${lineIndex} is invalid JSON`,
-                    taxonomy: FailureTaxonomy.REQUIREMENT_EVIDENCE_INVALID,
-                };
+                return createSeverityAwareFailure(
+                    reqDef,
+                    artifactPath,
+                    `NDJSON line ${lineIndex} is invalid JSON`,
+                    makeNdjsonLinePointer(artifactPath, lineIndex, reqDef.id)
+                );
             }
         }
 
@@ -505,13 +543,12 @@ function evaluateNdjsonEvidence(
             message: `NDJSON evidence present: ${lines.length} lines`,
         };
     } catch (e) {
-        return {
-            requirement_id: reqDef.id,
-            status: 'FAIL',
-            pointers: [makeFilePointer(artifactPath, reqDef.id)],
-            message: `NDJSON read error: ${artifactPath}`,
-            taxonomy: FailureTaxonomy.REQUIREMENT_EVIDENCE_INVALID,
-        };
+        return createSeverityAwareFailure(
+            reqDef,
+            artifactPath,
+            `NDJSON read error: ${artifactPath}`,
+            makeFilePointer(artifactPath, reqDef.id)
+        );
     }
 }
 
