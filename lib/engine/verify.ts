@@ -1137,12 +1137,18 @@ async function computeHashes(pack: PackHandle, syncReportPath: string): Promise<
         manifestHash = hashFile(manifestPath);
     }
 
-    // Bundle hashes from SYNC_REPORT
+    // Bundle hashes from SYNC_REPORT (prefer integrity.*, fallback to root for legacy)
     if (fs.existsSync(syncReportPath)) {
         try {
             const syncReport = JSON.parse(fs.readFileSync(syncReportPath, 'utf-8'));
-            schemasBundleHash = syncReport.schemas_bundle_sha256 || '';
-            invariantsBundleHash = syncReport.invariants_bundle_sha256 || '';
+            // Primary: integrity.* (current format)
+            // Fallback: root level (legacy compatibility)
+            schemasBundleHash = syncReport.integrity?.schemas_bundle_sha256
+                || syncReport.schemas_bundle_sha256
+                || '';
+            invariantsBundleHash = syncReport.integrity?.invariants_bundle_sha256
+                || syncReport.invariants_bundle_sha256
+                || '';
         } catch {
             // Ignore parse errors
         }
