@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { NonEndorsementBanner } from "@/components/layout/non-endorsement-banner";
+import { Nav } from "@/components/Nav";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -14,9 +15,10 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body>
+            <body className="bg-zinc-950 text-white min-h-screen">
                 <NonEndorsementBanner />
-                <main>{children}</main>
+                <Nav />
+                <main className="max-w-6xl mx-auto px-6 py-8">{children}</main>
             </body>
         </html>
     );
