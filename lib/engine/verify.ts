@@ -50,31 +50,52 @@ export async function verify(
     const rulesetVersion = options.ruleset_version || 'ruleset-1.0';
     const labRoot = path.resolve(__dirname, '../..');
 
+    // D6: Build skip set for efficient lookup
+    const skipSet = new Set(options.skip_checks || []);
+
+    // Helper to run a check or skip it
+    const runOrSkip = async (
+        checkFn: () => Promise<CheckResult>,
+        checkId: string
+    ): Promise<CheckResult> => {
+        if (skipSet.has(checkId)) {
+            return {
+                check_id: checkId,
+                name: `Skipped: ${checkId}`,
+                category: 'ADMISSION_SECURITY', // Will be overwritten by actual category
+                status: 'SKIP',
+                message: 'Skipped by options.skip_checks',
+                duration_ms: 0,
+            };
+        }
+        return await checkFn();
+    };
+
     // Execute checks in order per admission-criteria-v1.0.md
 
     // === ADMISSION: Security Checks ===
-    checks.push(await checkFileCount(pack));
-    checks.push(await checkTotalSize(pack));
-    checks.push(await checkAllowedExtensions(pack));
-    checks.push(await checkPathTraversal(pack));
+    checks.push(await runOrSkip(() => checkFileCount(pack), 'ADM-SEC-001'));
+    checks.push(await runOrSkip(() => checkTotalSize(pack), 'ADM-SEC-002'));
+    checks.push(await runOrSkip(() => checkAllowedExtensions(pack), 'ADM-SEC-003'));
+    checks.push(await runOrSkip(() => checkPathTraversal(pack), 'ADM-SEC-004'));
 
     // === ADMISSION: Structure Checks ===
-    checks.push(await checkRequiredFiles(pack));
-    checks.push(await checkRequiredDirs(pack));
-    checks.push(await checkLayoutVersion(pack));
+    checks.push(await runOrSkip(() => checkRequiredFiles(pack), 'ADM-STR-001'));
+    checks.push(await runOrSkip(() => checkRequiredDirs(pack), 'ADM-STR-002'));
+    checks.push(await runOrSkip(() => checkLayoutVersion(pack), 'ADM-STR-003'));
 
     // === INTEGRITY Checks ===
-    const integrityChecks = await runIntegrityChecks(pack);
+    const integrityChecks = await runIntegrityChecks(pack, skipSet);
     checks.push(...integrityChecks);
 
     // === MANIFEST Checks ===
-    const manifestChecks = await runManifestChecks(pack);
+    const manifestChecks = await runManifestChecks(pack, skipSet);
     checks.push(...manifestChecks);
 
     // === VERSION BINDING Checks ===
     const syncReportPath = options.sync_report_path || path.join(labRoot, 'SYNC_REPORT.json');
     const rulesetPath = path.join(labRoot, 'data/rulesets', rulesetVersion);
-    const versionChecks = await runVersionBindingChecks(pack, rulesetPath, syncReportPath);
+    const versionChecks = await runVersionBindingChecks(pack, rulesetPath, syncReportPath, skipSet);
     checks.push(...versionChecks);
 
     // === TIMELINE Checks ===
@@ -362,7 +383,7 @@ async function checkLayoutVersion(pack: PackHandle): Promise<CheckResult> {
 // Integrity Checks
 // =============================================================================
 
-async function runIntegrityChecks(pack: PackHandle): Promise<CheckResult[]> {
+async function runIntegrityChecks(pack: PackHandle, skipSet: Set<string> = new Set()): Promise<CheckResult[]> {
     const checks: CheckResult[] = [];
 
     // Check sha256sums.txt file verification
@@ -642,7 +663,7 @@ function normalizeSha256Sums(content: string): string {
 // Manifest Checks
 // =============================================================================
 
-async function runManifestChecks(pack: PackHandle): Promise<CheckResult[]> {
+async function runManifestChecks(pack: PackHandle, skipSet: Set<string> = new Set()): Promise<CheckResult[]> {
     const checks: CheckResult[] = [];
     const start = Date.now();
 
@@ -728,7 +749,8 @@ async function runManifestChecks(pack: PackHandle): Promise<CheckResult[]> {
 async function runVersionBindingChecks(
     pack: PackHandle,
     rulesetPath: string,
-    syncReportPath: string
+    syncReportPath: string,
+    skipSet: Set<string> = new Set()
 ): Promise<CheckResult[]> {
     const checks: CheckResult[] = [];
     const start = Date.now();
