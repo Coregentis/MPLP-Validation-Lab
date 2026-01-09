@@ -106,21 +106,28 @@ Examples:
 
 ### Snapshot (`snapshot:`)
 
-For snapshot references:
+For snapshot content files (per EPC §2.2 `snapshots/<snapshot_id>.json`):
 
 ```
-snapshot:<snapshot-id>#<jsonptr>
+snapshot:<snapshot_id>#<jsonptr>
 ```
+
+Resolution:
+1. Locate `snapshots/<snapshot_id>.json` in pack
+2. Apply JSON Pointer to content
 
 Examples:
 - `snapshot:snap-001#/context/status`
+- `snapshot:snap-002#/plan/steps/0`
+
+> **Note**: If `snapshots/<snapshot_id>.json` does not exist, pointer resolves to `POINTER_UNRESOLVABLE`. Evaluator should fall back to diff-based resolution or mark GF-04 as `NOT_EVALUATED`.
 
 ### Snapshot Index (`snapshot-index:`)
 
 For snapshot index entries:
 
 ```
-snapshot-index:<file>#<entry-id>
+snapshot-index:snapshots/index.json#<snapshot_id>
 ```
 
 Examples:

@@ -108,10 +108,19 @@ requirements:
 ### Sources Field (CRITICAL)
 
 Every requirement MUST have `sources` that trace to:
-- `schema`: JSON Schema file + JSON Pointer
-- `invariant`: Invariant file + rule ID
+- `schema`: JSON Schema file (with optional JSON Pointer)
+- `invariant`: Invariant file (with optional rule ID)
 
-> VLAB-GATE-01 verifies all sources are resolvable.
+#### Source Reference Levels
+
+| Level | Format | Required | Description |
+|:---|:---|:---:|:---|
+| **Level 1** | `schema: <file>` / `invariant: <file>` | ✅ | File-level reference (always valid) |
+| **Level 2** | `schema: <file>#<jsonptr>` / `invariant: <file>#<rule-id>` | Optional | Fragment-level reference (when file supports stable IDs) |
+
+> **Note**: VLAB-GATE-01 validates Level 1 (file existence). Level 2 validation is evaluator responsibility.
+>
+> Phase C evaluators MAY implement Level 2 resolution when invariant files declare stable rule-ids.
 
 ---
 

@@ -35,12 +35,14 @@ evidence-pack/
 │   └── ...                 # Additional module artifacts
 ├── timeline/               # Required: Event sequence
 │   └── events.ndjson       # Newline-delimited JSON events
-├── snapshots/              # Optional: State snapshots
+├── snapshots/              # Optional: State snapshots (GF-04)
 │   ├── index.json          # Snapshot index
+│   ├── <snapshot_id>.json  # Snapshot content (optional per-id files)
 │   └── diffs/              # State diffs
+│       └── <snapshot_id>.json
 └── integrity/              # Required: Integrity proofs
     ├── sha256sums.txt      # File hashes
-    └── pack.sha256         # Overall pack hash
+    └── pack.sha256         # Pack root hash
 ```
 
 ---
@@ -127,7 +129,11 @@ Each event MUST conform to `events/mplp-event-core.schema.json`:
 
 ### Ordering Constraint
 
-Events MUST be ordered by `timestamp` (ascending).
+Events MUST be ordered by:
+1. **Primary**: `timestamp` (ascending, ISO 8601)
+2. **Secondary (tie-breaker)**: `event_id` (lexicographic ascending)
+
+> **Generator Requirement**: The generator MUST produce a total ordering. If timestamps are identical, `event_id` MUST be unique and deterministically orderable.
 
 ---
 
@@ -173,14 +179,27 @@ e5f6g7h8...  artifacts/plan.json
 
 ### pack.sha256
 
-Single file containing the SHA-256 hash of the entire pack (excluding this file).
+The pack root hash, computed as:
+
+```
+pack_root_hash = SHA-256( normalized(sha256sums.txt) )
+```
+
+**Normalization rules**:
+- Entries sorted by path (lexicographic ascending)
+- LF line endings (no CR)
+- No trailing newline after last entry
+- No BOM
+
+This ensures cross-platform reproducibility without depending on archive format or file metadata.
 
 ### Verification Requirement
 
 Before evaluation, Lab MUST:
 1. Verify all files against `sha256sums.txt`
-2. Verify aggregate hash against `pack.sha256`
-3. On mismatch → `NOT_ADMISSIBLE` with `INTEGRITY_HASH_MISMATCH`
+2. Recompute `pack_root_hash` from normalized `sha256sums.txt`
+3. Verify computed hash matches `pack.sha256`
+4. On mismatch → `NOT_ADMISSIBLE` with `INTEGRITY_HASH_MISMATCH`
 
 ---
 
