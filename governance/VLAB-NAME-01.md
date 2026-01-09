@@ -96,12 +96,34 @@ When implementing verdict export, include:
     "formal_definition": "Evidence & Conformance Laboratory for MPLP Lifecycle Invariants (Non-certifying)",
     "citation": "MPLP Evidence & Conformance Lab",
     "version": "1.0",
+    "domain": "lab.mplp.io",
     "repo": "https://github.com/Coregentis/MPLP-Validation-Lab"
   }
 }
 ```
 
 > Note: These are Lab metadata fields, not MPLP protocol fields.
+
+---
+
+## Domain Policy
+
+### Canonical Domain
+
+```
+lab.mplp.io
+```
+
+Use as: Primary URL, canonical link, sitemap, all external references
+
+### Redirect Domains (Optional)
+
+The following may redirect 301 to `lab.mplp.io`:
+- `validation.mplp.io`
+- `validate.mplp.io`
+- `val.mplp.io`
+
+> **Note**: Only `lab.mplp.io` participates in indexing and sitemap. Redirect domains must NOT be indexed.
 
 ---
 
