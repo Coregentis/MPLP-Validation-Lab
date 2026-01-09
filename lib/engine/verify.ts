@@ -118,7 +118,7 @@ export async function verify(
         blocking_failures: blockingFailures,
         hashes,
         ruleset_version: rulesetVersion,
-        protocol_version: pack.manifest_raw?.mplp_protocol_version,
+        protocol_version: pack.manifest_raw?.protocol_version,
         total_duration_ms: endTime - startTime,
     };
 
@@ -365,11 +365,14 @@ async function checkLayoutVersion(pack: PackHandle): Promise<CheckResult> {
 async function runIntegrityChecks(pack: PackHandle): Promise<CheckResult[]> {
     const checks: CheckResult[] = [];
 
-    // Check sha256sums.txt
+    // Check sha256sums.txt file verification
     checks.push(await checkSha256Sums(pack));
 
     // Check pack.sha256
     checks.push(await checkPackHash(pack));
+
+    // Check coverage: all pack files must be in sha256sums.txt (C-HARD-03)
+    checks.push(await checkSha256Coverage(pack));
 
     return checks;
 }
@@ -512,6 +515,111 @@ async function checkPackHash(pack: PackHandle): Promise<CheckResult> {
 }
 
 /**
+ * C-HARD-03: Check that all pack files are covered by sha256sums.txt
+ * This prevents attacks where extra files are added but not hashed.
+ */
+async function checkSha256Coverage(pack: PackHandle): Promise<CheckResult> {
+    const start = Date.now();
+    const sumsPath = path.join(pack.root_path, 'integrity/sha256sums.txt');
+
+    // Files that are excluded from coverage check (per EPC §7)
+    const excludedFiles = new Set([
+        'integrity/pack.sha256',  // Self-reference excluded
+        'integrity/sha256sums.txt', // Self-reference
+    ]);
+
+    if (!fs.existsSync(sumsPath)) {
+        return {
+            check_id: 'INT-003',
+            name: 'SHA256 Coverage',
+            category: 'INTEGRITY',
+            status: 'SKIP',
+            message: 'sha256sums.txt not found',
+            duration_ms: Date.now() - start,
+        };
+    }
+
+    try {
+        const content = fs.readFileSync(sumsPath, 'utf-8');
+        const lines = content.trim().split('\n');
+
+        // Build set of files declared in sha256sums.txt
+        const declaredFiles = new Set<string>();
+        for (const line of lines) {
+            const match = line.match(/^[a-f0-9]{64}\s+(.+)$/);
+            if (match) {
+                declaredFiles.add(match[1]);
+            }
+        }
+
+        // Check coverage: all pack files must be in sha256sums
+        const uncovered: string[] = [];
+        for (const file of pack.file_inventory) {
+            if (!excludedFiles.has(file) && !declaredFiles.has(file)) {
+                uncovered.push(file);
+            }
+        }
+
+        // Check orphans: all declared files must exist in pack
+        const orphans: string[] = [];
+        for (const declaredFile of declaredFiles) {
+            if (!pack.file_inventory.includes(declaredFile)) {
+                orphans.push(declaredFile);
+            }
+        }
+
+        if (uncovered.length > 0) {
+            return {
+                check_id: 'INT-003',
+                name: 'SHA256 Coverage',
+                category: 'INTEGRITY',
+                status: 'FAIL',
+                message: `Uncovered files: ${uncovered.slice(0, 3).join(', ')}${uncovered.length > 3 ? '...' : ''}`,
+                taxonomy: FailureTaxonomy.INTEGRITY_HASH_MISMATCH,
+                pointers: uncovered.slice(0, 3).map(f => ({
+                    artifact_path: f,
+                    content_hash: '',
+                    locator: `file:${f}`,
+                    requirement_id: 'EPC-§7',
+                })),
+                duration_ms: Date.now() - start,
+            };
+        }
+
+        if (orphans.length > 0) {
+            return {
+                check_id: 'INT-003',
+                name: 'SHA256 Coverage',
+                category: 'INTEGRITY',
+                status: 'FAIL',
+                message: `Orphan entries in sha256sums: ${orphans.slice(0, 3).join(', ')}`,
+                taxonomy: FailureTaxonomy.INTEGRITY_HASH_MISMATCH,
+                duration_ms: Date.now() - start,
+            };
+        }
+
+        return {
+            check_id: 'INT-003',
+            name: 'SHA256 Coverage',
+            category: 'INTEGRITY',
+            status: 'PASS',
+            message: `Coverage complete: ${pack.file_inventory.length - excludedFiles.size} files covered`,
+            duration_ms: Date.now() - start,
+        };
+    } catch (e) {
+        return {
+            check_id: 'INT-003',
+            name: 'SHA256 Coverage',
+            category: 'INTEGRITY',
+            status: 'FAIL',
+            message: `Error checking coverage: ${e}`,
+            taxonomy: FailureTaxonomy.INTEGRITY_HASH_MISMATCH,
+            duration_ms: Date.now() - start,
+        };
+    }
+}
+
+/**
  * Normalize sha256sums.txt per EPC v1.0:
  * - Sort by path (lexicographic ascending)
  * - LF line endings
@@ -554,7 +662,7 @@ async function runManifestChecks(pack: PackHandle): Promise<CheckResult[]> {
     const manifest = pack.manifest_raw;
 
     // Check required fields
-    const requiredFields = ['pack_version', 'pack_id', 'created_at', 'mplp_protocol_version', 'scenario_id'];
+    const requiredFields = ['pack_version', 'pack_id', 'created_at', 'protocol_version', 'scenario_id'];
     const missing = requiredFields.filter(f => !(f in manifest));
 
     if (missing.length > 0) {
@@ -654,7 +762,13 @@ async function runVersionBindingChecks(
 
     try {
         const syncReport = JSON.parse(fs.readFileSync(syncReportPath, 'utf-8'));
+        const rulesetManifestContent = fs.readFileSync(rulesetManifestPath, 'utf-8');
 
+        // Parse ruleset manifest (simple YAML parsing for key fields)
+        const rulesetSchemaHash = extractYamlValue(rulesetManifestContent, 'schemas_bundle_sha256');
+        const rulesetInvariantHash = extractYamlValue(rulesetManifestContent, 'invariants_bundle_sha256');
+
+        // VER-001: Sync Report valid
         checks.push({
             check_id: 'VER-001',
             name: 'Sync Report Loaded',
@@ -664,30 +778,98 @@ async function runVersionBindingChecks(
             duration_ms: Date.now() - start,
         });
 
-        // Protocol version check
-        if (pack.manifest_raw?.mplp_protocol_version) {
+        // VER-002: Protocol version present
+        if (pack.manifest_raw?.protocol_version) {
             checks.push({
                 check_id: 'VER-002',
                 name: 'Protocol Version',
                 category: 'VERSION_BINDING',
                 status: 'PASS',
-                message: `Protocol version: ${pack.manifest_raw.mplp_protocol_version}`,
+                message: `Protocol version: ${pack.manifest_raw.protocol_version}`,
+                duration_ms: Date.now() - start,
+            });
+        } else {
+            checks.push({
+                check_id: 'VER-002',
+                name: 'Protocol Version',
+                category: 'VERSION_BINDING',
+                status: 'FAIL',
+                message: 'Pack manifest missing protocol_version',
+                taxonomy: FailureTaxonomy.VERSION_BINDING_FAILED,
                 duration_ms: Date.now() - start,
             });
         }
+
+        // VER-003: Schemas bundle hash binding (C-HARD-02)
+        if (rulesetSchemaHash && syncReport.schemas_bundle_sha256) {
+            if (rulesetSchemaHash === syncReport.schemas_bundle_sha256) {
+                checks.push({
+                    check_id: 'VER-003',
+                    name: 'Schemas Bundle Hash',
+                    category: 'VERSION_BINDING',
+                    status: 'PASS',
+                    message: `Schemas hash: ${rulesetSchemaHash.slice(0, 16)}...`,
+                    duration_ms: Date.now() - start,
+                });
+            } else {
+                checks.push({
+                    check_id: 'VER-003',
+                    name: 'Schemas Bundle Hash',
+                    category: 'VERSION_BINDING',
+                    status: 'FAIL',
+                    message: `Schemas hash mismatch: ruleset=${rulesetSchemaHash.slice(0, 16)}... sync=${syncReport.schemas_bundle_sha256.slice(0, 16)}...`,
+                    taxonomy: FailureTaxonomy.VERSION_BINDING_FAILED,
+                    duration_ms: Date.now() - start,
+                });
+            }
+        }
+
+        // VER-004: Invariants bundle hash binding (C-HARD-02)
+        if (rulesetInvariantHash && syncReport.invariants_bundle_sha256) {
+            if (rulesetInvariantHash === syncReport.invariants_bundle_sha256) {
+                checks.push({
+                    check_id: 'VER-004',
+                    name: 'Invariants Bundle Hash',
+                    category: 'VERSION_BINDING',
+                    status: 'PASS',
+                    message: `Invariants hash: ${rulesetInvariantHash.slice(0, 16)}...`,
+                    duration_ms: Date.now() - start,
+                });
+            } else {
+                checks.push({
+                    check_id: 'VER-004',
+                    name: 'Invariants Bundle Hash',
+                    category: 'VERSION_BINDING',
+                    status: 'FAIL',
+                    message: `Invariants hash mismatch: ruleset=${rulesetInvariantHash.slice(0, 16)}... sync=${syncReport.invariants_bundle_sha256.slice(0, 16)}...`,
+                    taxonomy: FailureTaxonomy.VERSION_BINDING_FAILED,
+                    duration_ms: Date.now() - start,
+                });
+            }
+        }
+
     } catch (e) {
         checks.push({
-            check_id: 'VER-002',
-            name: 'Sync Report Parse',
+            check_id: 'VER-001',
+            name: 'Version Binding Parse',
             category: 'VERSION_BINDING',
             status: 'FAIL',
-            message: `Error parsing SYNC_REPORT.json: ${e}`,
+            message: `Error parsing version binding files: ${e}`,
             taxonomy: FailureTaxonomy.VERSION_BINDING_FAILED,
             duration_ms: Date.now() - start,
         });
     }
 
     return checks;
+}
+
+/**
+ * Simple YAML value extractor (avoids full YAML parser dependency)
+ */
+function extractYamlValue(content: string, key: string): string | null {
+    const regex = new RegExp(`${key}:\\s*["']?([^"'\\n]+)["']?`);
+    const match = content.match(regex);
+    return match ? match[1].trim() : null;
 }
 
 // =============================================================================

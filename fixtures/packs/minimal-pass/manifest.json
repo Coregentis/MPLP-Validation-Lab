@@ -7,7 +7,7 @@
         "version": "1.0.0",
         "fingerprint": "abc123def456"
     },
-    "mplp_protocol_version": "1.0.0",
+    "protocol_version": "1.0.0",
     "scenario_id": "test-scenario-minimal",
     "artifacts_included": [
         "context",

@@ -50,7 +50,7 @@ export interface PackManifest {
         version: string;
         fingerprint: string;
     };
-    mplp_protocol_version: string;
+    protocol_version: string;
     scenario_id: string;
     artifacts_included: string[];
     compatibility?: {
