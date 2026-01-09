@@ -765,8 +765,15 @@ async function runVersionBindingChecks(
         const rulesetManifestContent = fs.readFileSync(rulesetManifestPath, 'utf-8');
 
         // Parse ruleset manifest (simple YAML parsing for key fields)
+        // Note: These are under "protocol:" section in manifest
         const rulesetSchemaHash = extractYamlValue(rulesetManifestContent, 'schemas_bundle_sha256');
         const rulesetInvariantHash = extractYamlValue(rulesetManifestContent, 'invariants_bundle_sha256');
+        // protocol.version is nested, but our simple extractor will find it
+        const rulesetProtocolVersion = extractYamlNestedValue(rulesetManifestContent, 'protocol', 'version');
+
+        // SYNC_REPORT has integrity.* structure
+        const syncSchemaHash = syncReport.integrity?.schemas_bundle_sha256;
+        const syncInvariantHash = syncReport.integrity?.invariants_bundle_sha256;
 
         // VER-001: Sync Report valid
         checks.push({
@@ -778,20 +785,20 @@ async function runVersionBindingChecks(
             duration_ms: Date.now() - start,
         });
 
-        // VER-002: Protocol version present
+        // VER-002: Protocol version present in pack
         if (pack.manifest_raw?.protocol_version) {
             checks.push({
                 check_id: 'VER-002',
-                name: 'Protocol Version',
+                name: 'Protocol Version Present',
                 category: 'VERSION_BINDING',
                 status: 'PASS',
-                message: `Protocol version: ${pack.manifest_raw.protocol_version}`,
+                message: `Pack protocol version: ${pack.manifest_raw.protocol_version}`,
                 duration_ms: Date.now() - start,
             });
         } else {
             checks.push({
                 check_id: 'VER-002',
-                name: 'Protocol Version',
+                name: 'Protocol Version Present',
                 category: 'VERSION_BINDING',
                 status: 'FAIL',
                 message: 'Pack manifest missing protocol_version',
@@ -800,52 +807,132 @@ async function runVersionBindingChecks(
             });
         }
 
-        // VER-003: Schemas bundle hash binding (C-HARD-02)
-        if (rulesetSchemaHash && syncReport.schemas_bundle_sha256) {
-            if (rulesetSchemaHash === syncReport.schemas_bundle_sha256) {
-                checks.push({
-                    check_id: 'VER-003',
-                    name: 'Schemas Bundle Hash',
-                    category: 'VERSION_BINDING',
-                    status: 'PASS',
-                    message: `Schemas hash: ${rulesetSchemaHash.slice(0, 16)}...`,
-                    duration_ms: Date.now() - start,
-                });
-            } else {
-                checks.push({
-                    check_id: 'VER-003',
-                    name: 'Schemas Bundle Hash',
-                    category: 'VERSION_BINDING',
-                    status: 'FAIL',
-                    message: `Schemas hash mismatch: ruleset=${rulesetSchemaHash.slice(0, 16)}... sync=${syncReport.schemas_bundle_sha256.slice(0, 16)}...`,
-                    taxonomy: FailureTaxonomy.VERSION_BINDING_FAILED,
-                    duration_ms: Date.now() - start,
-                });
-            }
+        // VER-003: Schemas bundle hash binding (C-HARD-02) - REQUIRED
+        if (!rulesetSchemaHash) {
+            checks.push({
+                check_id: 'VER-003',
+                name: 'Schemas Bundle Hash',
+                category: 'VERSION_BINDING',
+                status: 'FAIL',
+                message: 'Ruleset manifest missing schemas_bundle_sha256',
+                taxonomy: FailureTaxonomy.VERSION_BINDING_FAILED,
+                duration_ms: Date.now() - start,
+            });
+        } else if (!syncSchemaHash) {
+            checks.push({
+                check_id: 'VER-003',
+                name: 'Schemas Bundle Hash',
+                category: 'VERSION_BINDING',
+                status: 'FAIL',
+                message: 'SYNC_REPORT missing integrity.schemas_bundle_sha256',
+                taxonomy: FailureTaxonomy.VERSION_BINDING_FAILED,
+                duration_ms: Date.now() - start,
+            });
+        } else if (rulesetSchemaHash === syncSchemaHash) {
+            checks.push({
+                check_id: 'VER-003',
+                name: 'Schemas Bundle Hash',
+                category: 'VERSION_BINDING',
+                status: 'PASS',
+                message: `Schemas hash: ${rulesetSchemaHash.slice(0, 16)}...`,
+                duration_ms: Date.now() - start,
+            });
+        } else {
+            checks.push({
+                check_id: 'VER-003',
+                name: 'Schemas Bundle Hash',
+                category: 'VERSION_BINDING',
+                status: 'FAIL',
+                message: `Schemas hash mismatch: ruleset=${rulesetSchemaHash.slice(0, 16)}... sync=${syncSchemaHash.slice(0, 16)}...`,
+                taxonomy: FailureTaxonomy.VERSION_BINDING_FAILED,
+                duration_ms: Date.now() - start,
+            });
         }
 
-        // VER-004: Invariants bundle hash binding (C-HARD-02)
-        if (rulesetInvariantHash && syncReport.invariants_bundle_sha256) {
-            if (rulesetInvariantHash === syncReport.invariants_bundle_sha256) {
-                checks.push({
-                    check_id: 'VER-004',
-                    name: 'Invariants Bundle Hash',
-                    category: 'VERSION_BINDING',
-                    status: 'PASS',
-                    message: `Invariants hash: ${rulesetInvariantHash.slice(0, 16)}...`,
-                    duration_ms: Date.now() - start,
-                });
-            } else {
-                checks.push({
-                    check_id: 'VER-004',
-                    name: 'Invariants Bundle Hash',
-                    category: 'VERSION_BINDING',
-                    status: 'FAIL',
-                    message: `Invariants hash mismatch: ruleset=${rulesetInvariantHash.slice(0, 16)}... sync=${syncReport.invariants_bundle_sha256.slice(0, 16)}...`,
-                    taxonomy: FailureTaxonomy.VERSION_BINDING_FAILED,
-                    duration_ms: Date.now() - start,
-                });
-            }
+        // VER-004: Invariants bundle hash binding (C-HARD-02) - REQUIRED
+        if (!rulesetInvariantHash) {
+            checks.push({
+                check_id: 'VER-004',
+                name: 'Invariants Bundle Hash',
+                category: 'VERSION_BINDING',
+                status: 'FAIL',
+                message: 'Ruleset manifest missing invariants_bundle_sha256',
+                taxonomy: FailureTaxonomy.VERSION_BINDING_FAILED,
+                duration_ms: Date.now() - start,
+            });
+        } else if (!syncInvariantHash) {
+            checks.push({
+                check_id: 'VER-004',
+                name: 'Invariants Bundle Hash',
+                category: 'VERSION_BINDING',
+                status: 'FAIL',
+                message: 'SYNC_REPORT missing integrity.invariants_bundle_sha256',
+                taxonomy: FailureTaxonomy.VERSION_BINDING_FAILED,
+                duration_ms: Date.now() - start,
+            });
+        } else if (rulesetInvariantHash === syncInvariantHash) {
+            checks.push({
+                check_id: 'VER-004',
+                name: 'Invariants Bundle Hash',
+                category: 'VERSION_BINDING',
+                status: 'PASS',
+                message: `Invariants hash: ${rulesetInvariantHash.slice(0, 16)}...`,
+                duration_ms: Date.now() - start,
+            });
+        } else {
+            checks.push({
+                check_id: 'VER-004',
+                name: 'Invariants Bundle Hash',
+                category: 'VERSION_BINDING',
+                status: 'FAIL',
+                message: `Invariants hash mismatch: ruleset=${rulesetInvariantHash.slice(0, 16)}... sync=${syncInvariantHash.slice(0, 16)}...`,
+                taxonomy: FailureTaxonomy.VERSION_BINDING_FAILED,
+                duration_ms: Date.now() - start,
+            });
+        }
+
+        // VER-005: Protocol Version Binding (C-HARD-04) - REQUIRED
+        // Ruleset protocol.version must match pack protocol_version
+        const packProtocolVersion = pack.manifest_raw?.protocol_version;
+        if (!rulesetProtocolVersion) {
+            checks.push({
+                check_id: 'VER-005',
+                name: 'Protocol Version Binding',
+                category: 'VERSION_BINDING',
+                status: 'FAIL',
+                message: 'Ruleset manifest missing protocol.version',
+                taxonomy: FailureTaxonomy.VERSION_BINDING_FAILED,
+                duration_ms: Date.now() - start,
+            });
+        } else if (!packProtocolVersion) {
+            checks.push({
+                check_id: 'VER-005',
+                name: 'Protocol Version Binding',
+                category: 'VERSION_BINDING',
+                status: 'FAIL',
+                message: 'Pack missing protocol_version for binding check',
+                taxonomy: FailureTaxonomy.VERSION_BINDING_FAILED,
+                duration_ms: Date.now() - start,
+            });
+        } else if (rulesetProtocolVersion === packProtocolVersion) {
+            checks.push({
+                check_id: 'VER-005',
+                name: 'Protocol Version Binding',
+                category: 'VERSION_BINDING',
+                status: 'PASS',
+                message: `Protocol versions match: ${rulesetProtocolVersion}`,
+                duration_ms: Date.now() - start,
+            });
+        } else {
+            checks.push({
+                check_id: 'VER-005',
+                name: 'Protocol Version Binding',
+                category: 'VERSION_BINDING',
+                status: 'FAIL',
+                message: `Protocol version mismatch: ruleset=${rulesetProtocolVersion} pack=${packProtocolVersion}`,
+                taxonomy: FailureTaxonomy.VERSION_BINDING_FAILED,
+                duration_ms: Date.now() - start,
+            });
         }
 
     } catch (e) {
@@ -870,6 +957,38 @@ function extractYamlValue(content: string, key: string): string | null {
     const regex = new RegExp(`${key}:\\s*["']?([^"'\\n]+)["']?`);
     const match = content.match(regex);
     return match ? match[1].trim() : null;
+}
+
+/**
+ * Extract nested YAML value (e.g., protocol.version from "protocol:\n  version: 1.0")
+ * Simple approach: find parent key, then find child key in subsequent indented lines
+ */
+function extractYamlNestedValue(content: string, parent: string, child: string): string | null {
+    const lines = content.split('\n');
+    let inParent = false;
+
+    for (const line of lines) {
+        // Check if this is the parent key
+        if (line.match(new RegExp(`^${parent}:\\s*$`))) {
+            inParent = true;
+            continue;
+        }
+
+        // If we're in parent section and line is indented
+        if (inParent) {
+            if (line.match(/^\s+\w/)) {
+                // Check for child key
+                const childMatch = line.match(new RegExp(`^\\s+${child}:\\s*["']?([^"'\\n]+)["']?`));
+                if (childMatch) {
+                    return childMatch[1].trim();
+                }
+            } else if (line.match(/^\w/)) {
+                // New top-level key, exit parent section
+                inParent = false;
+            }
+        }
+    }
+    return null;
 }
 
 // =============================================================================
