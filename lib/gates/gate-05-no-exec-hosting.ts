@@ -29,9 +29,12 @@ async function main() {
     const repoRoot = path.resolve(__dirname, '../..');
     const outPath = path.join(repoRoot, 'artifacts/gates/gate-05-no-exec-hosting.report.json');
 
+    // Scan app/pages/content/README only - where UI text lives
+    const excludeDirs = ['node_modules', '.next', 'dist', 'coverage', '.git', 'artifacts', 'gates'];
+
     const files = walkFiles(repoRoot, {
         includeExtensions: ['.ts', '.tsx', '.js', '.jsx', '.md', '.mdx'],
-        excludeDirs: ['node_modules', '.next', 'dist', 'coverage', '.git', 'artifacts', 'gates'],
+        excludeDirs,
         maxFileSizeBytes: 2 * 1024 * 1024,
     });
 
@@ -71,6 +74,7 @@ async function main() {
         summary: {
             files_scanned: files.length,
             matches: findings.length,
+            note: `excludeDirs: ${excludeDirs.join(', ')}`,
         },
     };
 

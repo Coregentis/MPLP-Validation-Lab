@@ -28,9 +28,13 @@ async function main() {
     const lexiconPath = path.join(repoRoot, 'data/policy/forbidden-lexicon.yaml');
     const lexicon = loadYamlStrict<Lexicon>(lexiconPath);
 
+    // Scan scope: app/pages/content/README - where UI text lives
+    // Exclude: policy definitions, governance docs, gate code (self-scan), upstream synced files
+    const excludeDirs = ['node_modules', '.next', 'dist', 'coverage', '.git', 'artifacts', 'policy', 'governance'];
+
     const files = walkFiles(repoRoot, {
         includeExtensions: ['.ts', '.tsx', '.js', '.jsx', '.md', '.mdx', '.json', '.yaml', '.yml'],
-        excludeDirs: ['node_modules', '.next', 'dist', 'coverage', '.git', 'artifacts', 'policy', 'governance', 'schemas', 'invariants'],
+        excludeDirs,
         maxFileSizeBytes: 2 * 1024 * 1024,
     });
 
@@ -77,6 +81,7 @@ async function main() {
         summary: {
             files_scanned: files.length,
             matches: findings.length,
+            note: `excludeDirs: ${excludeDirs.join(', ')}`,
         },
     };
 

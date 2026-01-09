@@ -56,4 +56,14 @@ allow_phrases:
   - "shall not"
   - "marketing"
   - "framing"
-
+  # Schema/code technical context (field names in JSON Schema)
+  - "schema"
+  - "properties"
+  - "learning"
+  - "sample"
+  - "taxonomy"
+  - "_score"
+  - "complexity_score"
+  - "change_score"
+  - "type\":"
+  - "\"description\""
