@@ -1,8 +1,7 @@
 {
   "report_version": "1.0",
-  "verified_at": "2026-01-10T04:32:15.322Z",
+  "verified_at": "2026-01-10T09:38:16.541Z",
   "pack_id": "test-minimal-pass-001",
-  "pack_path": "/Users/jasonwang/Documents/AI_Dev/V1.0_release/Validation_Lab/fixtures/packs/minimal-pass",
   "admission_status": "ADMISSIBLE",
   "checks": [
     {
@@ -75,7 +74,7 @@
       "category": "INTEGRITY",
       "status": "PASS",
       "message": "Pack root hash verified: d97590764e87f05d...",
-      "duration_ms": 6
+      "duration_ms": 5
     },
     {
       "check_id": "INT-003",
@@ -106,7 +105,7 @@
       "name": "Sync Report Loaded",
       "category": "VERSION_BINDING",
       "status": "PASS",
-      "message": "Upstream commit: undefined...",
+      "message": "Upstream commit: not_bound (optional in v1.0)",
       "duration_ms": 0
     },
     {
@@ -156,7 +155,7 @@
     "manifest_hash": "7bfb5c5595efd5b9228074a01d7c6e5483be891eeea7f9e7f162dda0154d9134",
     "schemas_bundle_hash": "99804832ddc3daefb92ec74120afaab1c3278e4a79d670e1f796e67f735463aa",
     "invariants_bundle_hash": "d32ed8bd0139ba2197c618f8cc057dae15ba8cd5012b25946c1e20c07fd8ebe0",
-    "report_hash": "2e58498eaed721e8f519ea44f1402d6e5efa7c233dc4a76ed9ed21b965e90f5b"
+    "report_hash": "030e02fa1a2e4513c3f91a0bc3df591c2395d02222aa876d8ed6e871034e017e"
   },
   "ruleset_version": "ruleset-1.0",
   "protocol_version": "1.0.0",

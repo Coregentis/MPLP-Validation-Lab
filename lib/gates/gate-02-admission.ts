@@ -76,7 +76,7 @@ function createErrorReport(packPath: string, error: string): VerificationReport 
         report_version: '1.0',
         verified_at: new Date().toISOString(),
         pack_id: 'unknown',
-        pack_path: packPath,
+        // NOTE: pack_path removed for privacy (P0-2)
         admission_status: 'NOT_ADMISSIBLE',
         checks: [],
         blocking_failures: [{

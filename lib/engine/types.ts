@@ -143,8 +143,7 @@ export interface VerificationReport {
     /** Pack identifier */
     pack_id: string;
 
-    /** Pack path that was verified */
-    pack_path: string;
+    // NOTE: pack_path removed for privacy (P0-2: no absolute paths in output)
 
     /** Final admission status */
     admission_status: AdmissionStatus;
