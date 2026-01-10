@@ -1,0 +1,9 @@
+gf_id: gf-03
+name: Learning Cycle
+requirements:
+  - id: gf-03-r01
+    description: Context artifact present
+    severity: required
+    evidence:
+      type: file
+      artifact: artifacts/context.json

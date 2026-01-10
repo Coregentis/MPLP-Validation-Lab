@@ -1,0 +1,29 @@
+{
+    "name": "@mplp/recompute",
+    "version": "0.1.0",
+    "description": "Third-party verdict recomputation CLI for MPLP evidence packs",
+    "main": "dist/index.js",
+    "bin": {
+        "mplp-recompute": "dist/index.js"
+    },
+    "scripts": {
+        "build": "tsc",
+        "test": "node dist/index.js ../../../data/runs/sample-pass --ruleset 1.0"
+    },
+    "keywords": [
+        "mplp",
+        "verification",
+        "recompute",
+        "vendor-neutral"
+    ],
+    "author": "MPLP Protocol",
+    "license": "MIT",
+    "dependencies": {},
+    "devDependencies": {
+        "@types/node": "^20.0.0",
+        "typescript": "^5.0.0"
+    },
+    "engines": {
+        "node": ">=18.0.0"
+    }
+}

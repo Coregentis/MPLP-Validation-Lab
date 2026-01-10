@@ -1,0 +1,9 @@
+gf_id: gf-05
+name: Integrity Validation
+requirements:
+  - id: gf-05-r01
+    description: SHA256 sums file present
+    severity: required
+    evidence:
+      type: file
+      artifact: integrity/sha256sums.txt

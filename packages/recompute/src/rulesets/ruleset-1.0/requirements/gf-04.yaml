@@ -1,0 +1,9 @@
+gf_id: gf-04
+name: Validation Pipeline
+requirements:
+  - id: gf-04-r01
+    description: Manifest present
+    severity: required
+    evidence:
+      type: file
+      artifact: manifest.json

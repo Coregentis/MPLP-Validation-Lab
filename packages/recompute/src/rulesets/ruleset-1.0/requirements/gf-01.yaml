@@ -1,0 +1,29 @@
+gf_id: gf-01
+name: Single Agent Lifecycle
+requirements:
+  - id: gf-01-r01
+    description: Context artifact must be present
+    severity: required
+    evidence:
+      type: file
+      artifact: artifacts/context.json
+    sources:
+      schema_ref: mplp-context.schema.json
+
+  - id: gf-01-r02
+    description: Plan artifact must be present
+    severity: required
+    evidence:
+      type: file
+      artifact: artifacts/plan.json
+    sources:
+      schema_ref: mplp-plan.schema.json
+
+  - id: gf-01-r03
+    description: Trace artifact must be present
+    severity: required
+    evidence:
+      type: file
+      artifact: artifacts/trace.json
+    sources:
+      schema_ref: mplp-trace.schema.json

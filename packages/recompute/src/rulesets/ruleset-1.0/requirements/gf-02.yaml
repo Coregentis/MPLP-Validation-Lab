@@ -1,0 +1,9 @@
+gf_id: gf-02
+name: Multi-Agent Collaboration
+requirements:
+  - id: gf-02-r01
+    description: Timeline events must be present
+    severity: required
+    evidence:
+      type: file
+      artifact: timeline/events.ndjson
