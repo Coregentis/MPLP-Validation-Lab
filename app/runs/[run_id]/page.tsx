@@ -280,6 +280,21 @@ export default async function RunDetailPage({ params }: Props) {
                         </ul>
                     </div>
                 </div>
+
+                {/* Proof Download */}
+                <div className="mt-4 pt-4 border-t border-zinc-800">
+                    <p className="text-zinc-500 text-xs mb-2">Portable Proof</p>
+                    <a
+                        href={`/api/runs/${run_id}/proof`}
+                        className="inline-flex items-center gap-2 px-3 py-2 bg-blue-900/30 border border-blue-800 rounded text-blue-400 hover:bg-blue-900/50 text-sm"
+                        download
+                    >
+                        ↓ Download Adjudication Proof
+                    </a>
+                    <p className="text-zinc-600 text-xs mt-2">
+                        Portable proof file for offline verification and audit archival.
+                    </p>
+                </div>
             </section>
 
             {/* Section 4: Execution (Evidence Files from Pointers) */}
