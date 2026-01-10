@@ -1,0 +1,14 @@
+{
+    "pack_id": "gf-01-langchain-pass",
+    "protocol_version": "1.0.0",
+    "created_at": "2026-01-10T14:00:00Z",
+    "generator": {
+        "name": "langchain-evidence-producer",
+        "version": "0.1.0"
+    },
+    "substrate": {
+        "type": "langchain",
+        "version": "0.1.0",
+        "python_version": "3.9+"
+    }
+}
