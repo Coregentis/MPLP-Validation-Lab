@@ -2,7 +2,7 @@
   "gate_id": "GATE-05",
   "gate_name": "No Execution Hosting Guard",
   "status": "FAIL",
-  "evaluated_at": "2026-01-10T14:20:03.570Z",
+  "evaluated_at": "2026-01-10T14:22:23.949Z",
   "findings": [
     {
       "file": "docs/evidence-producer-spec.md",

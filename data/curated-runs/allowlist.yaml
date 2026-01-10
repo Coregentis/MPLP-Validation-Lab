@@ -1,54 +1,44 @@
-# Curated Runs Allowlist - v0.1 Schema
-#
-# This allowlist contains evidence packs that have been curated and frozen
-# by the MPLP Validation Lab for inclusion in the Cross-Vendor Evidence Spine.
-#
-# Schema: governance/schemas/curated-run.schema.yaml
-# Registry: data/scenarios/*.yaml
-
-version: "0.1"
+version: '0.1'
 runs:
-  - run_id: gf-01-a2a-pass
-    scenario_id: gf-01-single-agent-lifecycle
-    ruleset_version: ruleset-1.0
-    substrate: a2a
-    substrate_claim_level: declared
-    repro_ref: examples/evidence-producers/a2a/README.md#repro-steps
-    exporter_version: "0.1.0"
-    pack_root_hash: d5dc6f94ef353843b850839d1a3ae23b8c31d3545cdf95a2b9901abbdf3746d1
-    verdict_hash: b1dfcb3adee361cebd3155a679404814da10157574991f8cee589b612d9a10d7
-    verify_report_hash: ""
-    evaluation_report_hash: ""
-    status: frozen
-    indexable: true
-    created_at: "2026-01-10T14:00:00Z"
-
-  - run_id: gf-01-langchain-pass
-    scenario_id: gf-01-single-agent-lifecycle
-    ruleset_version: ruleset-1.0
-    substrate: langchain
-    substrate_claim_level: reproduced
-    repro_ref: examples/evidence-producers/langchain/README.md#repro-steps
-    exporter_version: "0.1.0"
-    pack_root_hash: 4b805707802d5b5294ffeaddfd48a6e4e789b4d3384e2523b97595fcbcda38aa
-    verdict_hash: 742f6b1793dc908174b2ff5f8cd7c2f6332e84fb5a88dd69fecad43808387e23
-    verify_report_hash: ""
-    evaluation_report_hash: ""
-    status: frozen
-    indexable: true
-    created_at: "2026-01-10T14:00:00Z"
-
-  - run_id: gf-01-mcp-pass
-    scenario_id: gf-01-single-agent-lifecycle
-    ruleset_version: ruleset-1.0
-    substrate: mcp
-    substrate_claim_level: declared
-    repro_ref: examples/evidence-producers/mcp/README.md#repro-steps
-    exporter_version: "0.1.0"
-    pack_root_hash: f5957802eb45ec49313c6617af826338f212acd634fd65c4beb4d3b6466e0864
-    verdict_hash: 0289f81d99bf1a377e1f3902823c44d492b355168d3ffa82c54c6beace3396b8
-    verify_report_hash: ""
-    evaluation_report_hash: ""
-    status: frozen
-    indexable: true
-    created_at: "2026-01-10T14:00:00Z"
+- run_id: gf-01-a2a-pass
+  scenario_id: gf-01-single-agent-lifecycle
+  ruleset_version: ruleset-1.0
+  substrate: a2a
+  substrate_claim_level: declared
+  repro_ref: examples/evidence-producers/a2a/README.md#repro-steps
+  exporter_version: 0.1.0
+  pack_root_hash: d5dc6f94ef353843b850839d1a3ae23b8c31d3545cdf95a2b9901abbdf3746d1
+  verdict_hash: b1dfcb3adee361cebd3155a679404814da10157574991f8cee589b612d9a10d7
+  verify_report_hash: ''
+  evaluation_report_hash: ''
+  status: frozen
+  indexable: true
+  created_at: '2026-01-10T14:00:00Z'
+- run_id: gf-01-langchain-pass
+  scenario_id: gf-01-single-agent-lifecycle
+  ruleset_version: ruleset-1.0
+  substrate: langchain
+  substrate_claim_level: reproduced
+  repro_ref: examples/evidence-producers/langchain/README.md#repro-steps
+  exporter_version: 0.1.0
+  pack_root_hash: 4b805707802d5b5294ffeaddfd48a6e4e789b4d3384e2523b97595fcbcda38aa
+  verdict_hash: 742f6b1793dc908174b2ff5f8cd7c2f6332e84fb5a88dd69fecad43808387e23
+  verify_report_hash: ''
+  evaluation_report_hash: ''
+  status: frozen
+  indexable: true
+  created_at: '2026-01-10T14:00:00Z'
+- run_id: gf-01-mcp-pass
+  scenario_id: gf-01-single-agent-lifecycle
+  ruleset_version: ruleset-1.0
+  substrate: mcp
+  substrate_claim_level: declared
+  repro_ref: examples/evidence-producers/mcp/README.md#repro-steps
+  exporter_version: 0.1.0
+  pack_root_hash: f5957802eb45ec49313c6617af826338f212acd634fd65c4beb4d3b6466e0864
+  verdict_hash: 0289f81d99bf1a377e1f3902823c44d492b355168d3ffa82c54c6beace3396b8
+  verify_report_hash: ''
+  evaluation_report_hash: ''
+  status: frozen
+  indexable: true
+  created_at: '2026-01-10T14:00:00Z'

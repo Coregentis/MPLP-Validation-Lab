@@ -1,0 +1,11 @@
+scenario_id: gf-01-single-agent-lifecycle
+name: "GF-01: Single Agent Lifecycle"
+description: "Demonstrates a single agent's complete lifecycle from context to plan to trace execution"
+target_gf: gf-01
+ruleset_version: ruleset-1.0
+required_artifacts:
+  - artifacts/context.json
+  - artifacts/plan.json
+  - artifacts/trace.json
+status: active
+created_at: "2026-01-10T00:00:00Z"

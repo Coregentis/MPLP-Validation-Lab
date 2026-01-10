@@ -22,7 +22,7 @@ This specification defines how third parties can generate evidence packs compati
 > **Substrate Definition**: "Substrate" refers to the execution environment (e.g., A2A runtime, Langchain framework, MCP server). The substrate is NOT the verdict authority. Verdicts are determined solely by the Validation Lab's evaluation against frozen rulesets.
 
 > [!NOTE]
-> **Lab Does Not Host Execution**: The MPLP Validation Lab does NOT host, execute, or run agent code. All evidence generation occurs in third-party environments.
+> **Lab Does Not Host Execution**: The MPLP Validation Lab does NOT run agent code on its infrastructure. All evidence generation occurs in third-party environments.
 
 ---
 
