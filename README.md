@@ -54,17 +54,33 @@ All schemas, invariants, and rulesets are derived from:
 
 ```bash
 # Install dependencies
-pnpm install
+npm install
 
 # Run development server
-pnpm dev
+npm run dev
 
-# Verify upstream pin
-pnpm verify:upstream-pin
+# Run governance gates
+npm run gates
 
-# Run all gates
-pnpm verify:gates
+# Generate sample run
+npx tsx scripts/generate-sample-run.ts ./fixtures/packs/minimal-pass my-run
+
+# Build for production
+npm run build
 ```
+
+---
+
+## Routes
+
+| Route | Description |
+|:---|:---|
+| `/` | Home |
+| `/runs` | Runs Index |
+| `/runs/[run_id]` | Run Detail (Overview, Guarantees, Export, Execution) |
+| `/rulesets` | Rulesets Index |
+| `/rulesets/[version]` | Ruleset Detail |
+| `/guarantees` | Golden Flows Overview (non-normative) |
 
 ---
 
@@ -78,16 +94,22 @@ Validation_Lab/
 │   ├── contracts/            # Data contracts
 │   └── gates/                # CI gate definitions
 ├── lib/                      # Core logic
-│   ├── engine/               # Ingest/Verify/Index/Evaluate
+│   ├── engine/               # Ingest/Verify/Evaluate
+│   ├── gates/                # GATE-04/05/06
+│   ├── evaluate/             # Phase D Evaluation
+│   ├── runs/                 # Run loader
+│   ├── rulesets/             # Ruleset loader
+│   ├── policy/               # Curation policy
 │   ├── schemas/              # Synced from upstream
 │   ├── invariants/           # Synced from upstream
 │   └── verdict/              # Types and taxonomy
 ├── data/
 │   ├── rulesets/             # Versioned rulesets
-│   ├── scenarios/            # Scenario catalog
-│   └── curated-runs/         # Frozen reference runs
-├── app/                      # Next.js pages
-└── components/               # UI components
+│   ├── runs/                 # Sample runs (engine output)
+│   └── policy/               # Governance policies
+├── app/                      # Next.js App Router
+├── components/               # UI components
+└── scripts/                  # Utilities
 ```
 
 ---
@@ -96,13 +118,15 @@ Validation_Lab/
 
 This project is governed by **VLAB-DGB-01** (Validation Lab Development Governance Baseline).
 
-Key gates:
-- `VLAB-GATE-00`: Upstream pin verification
-- `VLAB-GATE-01`: Schema alignment
-- `VLAB-GATE-02`: Integrity-first enforcement
-- `VLAB-GATE-03`: Deterministic verdict
-- `VLAB-GATE-04`: Non-endorsement language
-- `VLAB-GATE-05`: NoIndex policy
+### Gates
+
+| Gate | Name | Purpose |
+|:---|:---|:---|
+| GATE-02 | Admission | Integrity-first enforcement |
+| GATE-03 | Determinism | Same input = same verdict |
+| GATE-04 | Language Lint | Non-endorsement language |
+| GATE-05 | No Exec Hosting | No execution hosting phrases |
+| GATE-06 | Robots Policy | Run detail noindex by default |
 
 ---
 
