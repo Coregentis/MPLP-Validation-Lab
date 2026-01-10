@@ -1,7 +1,16 @@
 {
-    "pack_id": "test-gf01-only-pack",
     "pack_version": "1.0",
-    "protocol_version": "1.0.0",
+    "pack_id": "test-without-scenario",
     "created_at": "2026-01-10T00:00:00Z",
-    "description": "PF-1b test pack: GF-01 artifacts only, for validating v0.1 scope behavior"
+    "generator": {
+        "name": "test",
+        "version": "1.0.0",
+        "fingerprint": "test"
+    },
+    "protocol_version": "1.0.0",
+    "artifacts_included": ["context", "plan", "trace"],
+    "compatibility": {
+        "min_ruleset_version": "1.0",
+        "max_ruleset_version": "1.x"
+    }
 }

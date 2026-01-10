@@ -321,6 +321,65 @@ async function checkRequiredFiles(pack: PackHandle): Promise<CheckResult> {
     };
 }
 
+/**
+ * Check: Required Manifest Fields
+ */
+async function checkManifestRequiredFields(pack: PackHandle): Promise<CheckResult> {
+    const start = Date.now();
+
+    // Per evidence-pack-contract-v1.0.md + ruleset-1.0 governance:
+    // Required fields for container-layer contract compliance
+    // NOTE: scenario_id is OPTIONAL (belongs in curated allowlist/registry, not pack manifest)
+    // Per Sprint v0.1 Constraint 1: scenario_id/target_gf/claim_level/repro_ref → allowlist ONLY
+    const requiredFields = ['pack_version', 'pack_id', 'created_at', 'protocol_version'];
+
+    const manifest = pack.manifest_raw || {};
+    const missing: string[] = [];
+
+    for (const field of requiredFields) {
+        if (!(field in manifest)) {
+            missing.push(field);
+        }
+    }
+
+    // Optional fields validation (if present, validate format)
+    // scenario_id: if present, must be non-empty string
+    if ('scenario_id' in manifest) {
+        if (typeof manifest.scenario_id !== 'string' || !manifest.scenario_id.trim()) {
+            return {
+                check_id: 'MAN-FLD-001',
+                name: 'Required Manifest Fields',
+                category: 'MANIFEST',
+                status: 'FAIL',
+                message: 'scenario_id present but invalid (must be non-empty string)',
+                taxonomy: FailureTaxonomy.MANIFEST_PARSE_FAILED,
+                duration_ms: Date.now() - start,
+            };
+        }
+    }
+
+    if (missing.length > 0) {
+        return {
+            check_id: 'MAN-FLD-001',
+            name: 'Required Manifest Fields',
+            category: 'MANIFEST',
+            status: 'FAIL',
+            message: `Missing required manifest fields: ${missing.join(', ')}`,
+            taxonomy: FailureTaxonomy.MANIFEST_PARSE_FAILED,
+            duration_ms: Date.now() - start,
+        };
+    }
+
+    return {
+        check_id: 'MAN-FLD-001',
+        name: 'Required Manifest Fields',
+        category: 'MANIFEST',
+        status: 'PASS',
+        message: 'All required manifest fields present and valid',
+        duration_ms: Date.now() - start,
+    };
+}
+
 async function checkRequiredDirs(pack: PackHandle): Promise<CheckResult> {
     const start = Date.now();
     const missing: string[] = [];
@@ -683,7 +742,8 @@ async function runManifestChecks(pack: PackHandle, skipSet: Set<string> = new Se
     const manifest = pack.manifest_raw;
 
     // Check required fields
-    const requiredFields = ['pack_version', 'pack_id', 'created_at', 'protocol_version', 'scenario_id'];
+    // Per Sprint v0.1 Constraint 1: scenario_id → allowlist ONLY, not required in manifest
+    const requiredFields = ['pack_version', 'pack_id', 'created_at', 'protocol_version'];
     const missing = requiredFields.filter(f => !(f in manifest));
 
     if (missing.length > 0) {

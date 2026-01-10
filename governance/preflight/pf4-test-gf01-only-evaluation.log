@@ -1,0 +1,14 @@
+=== Phase D Test: Evaluation Engine ===
+
+Pack: data/runs/test-gf01-only
+Ruleset: ruleset-1.0
+
+Step 1: Ingesting pack...
+  Pack ID: test-gf01-only-pack
+  Files: 6
+
+Step 2: Running GATE-02 (Verify)...
+  Admission: NOT_ADMISSIBLE
+  Checks: 14/17 PASS
+
+❌ GATE-02 FAILED - Stopping

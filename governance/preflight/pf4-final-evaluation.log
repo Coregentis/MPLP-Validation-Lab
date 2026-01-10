@@ -1,0 +1,37 @@
+=== Phase D Test: Evaluation Engine ===
+
+Pack: data/runs/test-gf01-only
+Ruleset: ruleset-1.0
+
+Step 1: Ingesting pack...
+  Pack ID: test-gf01-only-pack
+  Files: 7
+
+Step 2: Running GATE-02 (Verify)...
+  Admission: ADMISSIBLE
+  Checks: 18/18 PASS
+  ✓ GATE-02 PASSED
+
+Step 3: Evaluating GFs...
+
+=== EVALUATION REPORT ===
+Ruleset: ruleset-1.0
+Pack Root Hash: c379ef7d84d88dfa...
+Verdict Hash: 4eb4017e25add485...
+  ✓ [gf-01] PASS (3/3 requirements)
+  ✓ [gf-02] PASS (1/1 requirements)
+  ✓ [gf-03] PASS (1/1 requirements)
+  ✓ [gf-04] PASS (1/1 requirements)
+  ✓ [gf-05] PASS (1/1 requirements)
+
+Step 4: Running GATE-03 (Determinism)...
+  Hash 1: 4eb4017e25add485...
+  Hash 2: 4eb4017e25add485...
+  ✓ GATE-03 PASSED - Deterministic
+
+=== SUMMARY ===
+GF Verdicts: 5/5 PASS
+GATE-02: PASS
+GATE-03: PASS (Deterministic)
+
+✓ Phase D Verification Complete

@@ -1,0 +1,75 @@
+============================================================
+PF-4 GATE-02 Debug Runner
+============================================================
+
+Pack: /Users/jasonwang/Documents/AI_Dev/V1.0_release/Validation_Lab/data/runs/test-gf01-only
+
+Pack ID: test-gf01-only-pack
+
+============================================================
+GATE-02 Verification Results
+============================================================
+
+Admission: NOT_ADMISSIBLE
+Checks: 14/17 PASS
+
+Detailed Check Results:
+------------------------------------------------------------
+
+✅ PASS File Count Limit
+
+✅ PASS Pack Size Limit
+
+✅ PASS Allowed Extensions
+
+✅ PASS Path Traversal
+
+❌ FAIL Required Files
+  Reason: Missing required files: integrity/pack.sha256
+  Taxonomy: REQUIRED_ARTIFACT_MISSING
+
+✅ PASS Required Directories
+
+✅ PASS Layout Version
+
+✅ PASS SHA256 Sums Verification
+
+❌ FAIL Pack Root Hash
+  Reason: integrity/pack.sha256 not found
+  Taxonomy: INTEGRITY_HASH_MISMATCH
+
+✅ PASS SHA256 Coverage
+
+❌ FAIL Required Manifest Fields
+  Reason: Missing required fields: scenario_id
+  Taxonomy: MANIFEST_PARSE_FAILED
+
+✅ PASS Sync Report Loaded
+
+✅ PASS Protocol Version Present
+
+✅ PASS Schemas Bundle Hash
+
+✅ PASS Invariants Bundle Hash
+
+✅ PASS Protocol Version Binding
+
+✅ PASS Timeline Total Order
+
+============================================================
+Blocking Failures:
+============================================================
+
+- REQUIRED_ARTIFACT_MISSING
+  Message: Missing required files: integrity/pack.sha256
+
+- INTEGRITY_HASH_MISMATCH
+  Message: integrity/pack.sha256 not found
+
+- MANIFEST_PARSE_FAILED
+  Message: Missing required fields: scenario_id
+
+============================================================
+❌ NOT_ADMISSIBLE
+============================================================
+
