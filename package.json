@@ -16,10 +16,13 @@
         "gate:05": "tsx lib/gates/gate-05-no-exec-hosting.ts",
         "gate:06": "tsx lib/gates/gate-06-robots-policy.ts",
         "gate:07": "tsx lib/gates/gate-07-pii-leak.ts",
+        "gate:08": "tsx lib/gates/gate-08-curated-immutability.ts",
+        "generate:curated": "node scripts/generate-curated-runs.mjs",
         "gate:all": "npm run gate:vlab:00 && npm run gate:vlab:01",
-        "gates": "npm run gate:04 && npm run gate:05 && npm run gate:06 && npm run gate:07"
+        "gates": "npm run generate:curated && npm run gate:04 && npm run gate:05 && npm run gate:06 && npm run gate:07 && npm run gate:08"
     },
     "dependencies": {
+        "js-yaml": "^4.1.0",
         "next": "^15.0.0",
         "react": "^19.0.0",
         "react-dom": "^19.0.0",
@@ -33,7 +36,7 @@
         "@types/react-dom": "^19",
         "eslint": "^9",
         "eslint-config-next": "^15.0.0",
-        "js-yaml": "^4.1.0",
+        "js-yaml": "^4.1.1",
         "tsx": "^4.19.0",
         "typescript": "^5"
     },

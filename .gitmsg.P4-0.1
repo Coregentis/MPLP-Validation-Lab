@@ -1,0 +1,13 @@
+fix(phase-4): Apply P4-0.1 preflight fixes
+
+Critical fixes before Phase 4 execution:
+1. EvidencePackBrowser: Remove encodeURIComponent (blocking - route mismatch)
+2. ProvenanceFooter: Props injection for ssot (blocking - fs in client)
+3. CuratedRunRecord: Align types with allowlist SSOT (high-risk - schema drift)
+4. Generator: Add structure validation (high-risk - parse errors)
+5. gates: Restore GATE-08 for curated immutability (consistency)
+6. GATE-09: Strict allowlist path matching (consistency)
+
+All TypeScript errors resolved
+Gates 04-09 PASS
+Ready for P4-0.1.1 supplemental fixes
