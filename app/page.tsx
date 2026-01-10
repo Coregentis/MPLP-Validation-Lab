@@ -57,8 +57,31 @@ export default function Home() {
                 </a>
             </section>
 
+            {/* Authority Map */}
+            <section className="mt-12 border border-zinc-700 rounded-lg p-6">
+                <h3 className="text-sm font-semibold mb-4 text-center">Authority Map</h3>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-xs text-center">
+                    <a href="https://github.com/Coregentis/MPLP-Protocol" target="_blank" rel="noopener" className="hover:text-white transition">
+                        <p className="text-zinc-500">Repo</p>
+                        <p className="text-zinc-300">Truth Source</p>
+                    </a>
+                    <a href="https://docs.mplp.io" target="_blank" rel="noopener" className="hover:text-white transition">
+                        <p className="text-zinc-500">Docs</p>
+                        <p className="text-zinc-300">Specification</p>
+                    </a>
+                    <a href="https://www.mplp.io" target="_blank" rel="noopener" className="hover:text-white transition">
+                        <p className="text-zinc-500">Website</p>
+                        <p className="text-zinc-300">Discovery</p>
+                    </a>
+                    <div>
+                        <p className="text-zinc-500">Lab</p>
+                        <p className="text-amber-400">Evidence Verdict</p>
+                    </div>
+                </div>
+            </section>
+
             {/* Governance Banner */}
-            <footer className="mt-12 text-center text-xs text-zinc-500">
+            <footer className="mt-8 text-center text-xs text-zinc-500">
                 <p>Non-certification. Non-endorsement. Evidence-based verdicts under versioned rulesets.</p>
                 <p className="mt-1">No execution hosting. The Lab evaluates evidence only.</p>
             </footer>
