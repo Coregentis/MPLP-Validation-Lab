@@ -43,20 +43,26 @@ async function main() {
     console.log(`  Pack ID: ${pack.manifest_raw?.pack_id || 'unknown'}`);
     console.log(`  Files: ${pack.file_inventory.length}`);
 
-    // Save manifest (if exists in pack)
-    const manifestSrcPath = path.join(pack.root_path, 'manifest.yaml');
-    const manifestDstPath = path.join(outDir, 'manifest.yaml');
-    if (fs.existsSync(manifestSrcPath)) {
-        fs.copyFileSync(manifestSrcPath, manifestDstPath);
+    // Save manifest (yaml or json)
+    const manifestYamlSrc = path.join(pack.root_path, 'manifest.yaml');
+    const manifestJsonSrc = path.join(pack.root_path, 'manifest.json');
+    if (fs.existsSync(manifestYamlSrc)) {
+        fs.copyFileSync(manifestYamlSrc, path.join(outDir, 'manifest.yaml'));
         console.log('  Copied manifest.yaml');
+    } else if (fs.existsSync(manifestJsonSrc)) {
+        fs.copyFileSync(manifestJsonSrc, path.join(outDir, 'manifest.json'));
+        console.log('  Copied manifest.json');
     }
 
-    // Save sha256sums (if exists)
-    const sumsSrcPath = path.join(pack.root_path, 'sha256sums.txt');
-    const sumsDstPath = path.join(outDir, 'sha256sums.txt');
-    if (fs.existsSync(sumsSrcPath)) {
-        fs.copyFileSync(sumsSrcPath, sumsDstPath);
+    // Save sha256sums (root or integrity/)
+    const sumsRootSrc = path.join(pack.root_path, 'sha256sums.txt');
+    const sumsIntegritySrc = path.join(pack.root_path, 'integrity', 'sha256sums.txt');
+    if (fs.existsSync(sumsRootSrc)) {
+        fs.copyFileSync(sumsRootSrc, path.join(outDir, 'sha256sums.txt'));
         console.log('  Copied sha256sums.txt');
+    } else if (fs.existsSync(sumsIntegritySrc)) {
+        fs.copyFileSync(sumsIntegritySrc, path.join(outDir, 'sha256sums.txt'));
+        console.log('  Copied integrity/sha256sums.txt');
     }
 
     // Step 2: Verify
