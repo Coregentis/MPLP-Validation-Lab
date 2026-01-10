@@ -2,7 +2,7 @@
   "gate_id": "GATE-04",
   "gate_name": "Non-endorsement Language Lint",
   "status": "PASS",
-  "evaluated_at": "2026-01-10T09:48:39.601Z",
+  "evaluated_at": "2026-01-10T09:56:55.839Z",
   "findings": [],
   "summary": {
     "files_scanned": 143,

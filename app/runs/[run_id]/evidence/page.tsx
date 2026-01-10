@@ -5,14 +5,28 @@
  * Path: /runs/{run_id}/evidence?file=<artifact_path>&loc=<locator>
  * 
  * SECURITY: Read-only access to evidence files within run directory.
+ * SEO: Always noindex (evidence content should not be indexed).
  */
 
 import Link from 'next/link';
 import { loadEvidence } from '@/lib/runs/loadEvidence';
+import type { Metadata } from 'next';
 
 interface PageProps {
     params: Promise<{ run_id: string }>;
     searchParams: Promise<{ file?: string; loc?: string }>;
+}
+
+// GATE-06: Evidence pages are ALWAYS noindex (regardless of curation)
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+    const { run_id } = await params;
+    return {
+        title: `Evidence Preview | Run: ${run_id} | MPLP Validation Lab`,
+        robots: {
+            index: false,
+            follow: false,
+        },
+    };
 }
 
 export default async function EvidencePreviewPage({ params, searchParams }: PageProps) {
