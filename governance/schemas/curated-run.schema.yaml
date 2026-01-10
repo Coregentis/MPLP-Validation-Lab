@@ -1,0 +1,60 @@
+---
+# Curated Run Schema v1.0
+# Sprint: Cross-Vendor Evidence Spine v0.1
+# Purpose: Structure & completeness requirements for curated allowlist entries
+
+version: "1.0"
+
+# Required fields for all curated run entries
+required:
+  - run_id
+  - scenario_id
+  - ruleset_version
+  - substrate
+  - substrate_claim_level
+  - repro_ref
+  - exporter_version
+  - pack_root_hash
+  - verdict_hash
+  - verify_report_hash
+  - evaluation_report_hash
+  - status
+  - indexable
+  - created_at
+
+# Enum constraints
+enums:
+  substrate_claim_level:
+    - declared
+    - reproduced
+  status:
+    - frozen
+    - deprecated
+
+# Field descriptions (for documentation)
+field_descriptions:
+  run_id: "Unique identifier for the curated run"
+  scenario_id: "Reference to data/scenarios/*.yaml"
+  ruleset_version: "Ruleset version used for evaluation (e.g., ruleset-1.0)"
+  substrate: "Execution substrate (e.g., a2a, langchain, mcp)"
+  substrate_claim_level: "declared = structure compliant | reproduced = has repro steps"
+  repro_ref: "Path or URL to reproducibility steps (required for reproduced)"
+  exporter_version: "Version of evidence producer/exporter"
+  pack_root_hash: "SHA-256 hash of normalized sha256sums.txt (immutability anchor)"
+  verdict_hash: "Deterministic verdict hash from evaluation (recomputability anchor)"
+  verify_report_hash: "SHA-256 of verify.report.json"
+  evaluation_report_hash: "SHA-256 of evaluation.report.json"
+  status: "frozen = permanent | deprecated = historical"
+  indexable: "Whether this run appears in public Lab UI"
+  created_at: "ISO 8601 timestamp (UTC)"
+
+# Constraints for substrate_claim_level=reproduced
+reproduced_constraints:
+  repro_ref_required: true
+  repro_ref_must_contain_anchor: "#repro-steps"
+  repro_ref_target_must_exist: true
+  repro_readme_required_sections:
+    - "Prerequisites"
+    - "Execution"
+    - "Expected Artifacts"
+    - "Verification"
