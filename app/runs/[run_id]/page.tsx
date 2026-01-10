@@ -6,6 +6,11 @@ import { EvidencePackBrowser } from './_components/EvidencePackBrowser';
 import { GovernancePanel } from './_components/GovernancePanel';
 import { ProvenanceFooter } from '@/components/ProvenanceFooter';
 
+// GATE-06: Default to noindex for run detail pages
+export const metadata = {
+    robots: { index: false, follow: false }
+};
+
 export async function generateStaticParams() {
     const data = getCuratedRuns();
     return data.runs.map(run => ({ run_id: run.run_id }));

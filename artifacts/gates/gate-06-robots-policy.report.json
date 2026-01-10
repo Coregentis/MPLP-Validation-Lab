@@ -1,20 +1,11 @@
 {
   "gate_id": "GATE-06",
   "gate_name": "Robots/Noindex Policy",
-  "status": "FAIL",
-  "evaluated_at": "2026-01-10T17:51:47.694Z",
-  "findings": [
-    {
-      "file": "app/runs/[run_id]/page.tsx",
-      "line": 1,
-      "column": 1,
-      "match": "missing noindex",
-      "rule": "RUN_DETAIL_NOINDEX_REQUIRED",
-      "message": "Run detail page must set robots noindex by default"
-    }
-  ],
+  "status": "PASS",
+  "evaluated_at": "2026-01-10T17:58:40.723Z",
+  "findings": [],
   "summary": {
     "files_scanned": 1,
-    "matches": 1
+    "matches": 0
   }
 }
