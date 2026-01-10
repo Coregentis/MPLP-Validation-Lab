@@ -1,13 +1,14 @@
 {
     "name": "@mplp/recompute",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "Third-party verdict recomputation CLI for MPLP evidence packs",
     "main": "dist/index.js",
     "bin": {
         "mplp-recompute": "dist/index.js"
     },
     "scripts": {
-        "build": "tsc",
+        "build": "tsc && npm run copy-rulesets",
+        "copy-rulesets": "mkdir -p dist/rulesets && cp -r src/rulesets/* dist/rulesets/",
         "test": "node dist/index.js ../../../data/runs/sample-pass --ruleset 1.0"
     },
     "keywords": [

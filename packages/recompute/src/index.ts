@@ -1,11 +1,17 @@
 #!/usr/bin/env node
 /**
- * @mplp/recompute - Third-party verdict recomputation CLI
+ * @mplp/recompute v0.1.1 - Third-party verdict recomputation CLI
  * 
  * Purpose: Enable repo-external, offline verification of MPLP evidence pack verdicts
  * Strategy: Bundled ruleset-1.0 (no network dependencies)
  * 
  * Sprint: Cross-Vendor Evidence Spine v0.1
+ * 
+ * PHASE 2.1 HOTFIX: Now performs TRUE recomputation by:
+ * - Loading pack artifacts
+ * - Executing evaluation logic (bundled ruleset-1.0)
+ * - Computing verdict_hash from evaluation results
+ * - NOT depending on pre-existing evaluation.report.json
  */
 
 import * as fs from 'fs';
@@ -19,6 +25,37 @@ interface RecomputeResult {
     verdict_hash: string;
     match: boolean | null;
     curated_hash: string | null;
+}
+
+interface EvaluationReport {
+    report_version: string;
+    ruleset_version: string;
+    pack_id: string;
+    pack_root_hash: string;
+    protocol_version: string;
+    gf_verdicts: GFVerdict[];
+}
+
+interface GFVerdict {
+    gf_id: string;
+    status: 'PASS' | 'FAIL' | 'NOT_EVALUATED';
+    requirements: RequirementVerdict[];
+    failures: any[];
+}
+
+interface RequirementVerdict {
+    requirement_id: string;
+    status: 'PASS' | 'FAIL';
+    pointers: EvidencePointer[];
+    message: string;
+    taxonomy?: string;
+}
+
+interface EvidencePointer {
+    artifact_path: string;
+    content_hash: string;
+    locator: string;
+    requirement_id: string;
 }
 
 /**
@@ -66,8 +103,14 @@ async function main() {
     const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf-8'));
     const packId = manifest.pack_id || 'unknown';
 
-    // Recompute verdict_hash
-    const verdictHash = await recomputeVerdictHash(packPath);
+    // Compute pack_root_hash
+    const packRootHash = await computePackRootHash(packPath);
+
+    // Execute evaluation (bundled ruleset-1.0)
+    const evaluationReport = await evaluatePack(packPath, packId, packRootHash, manifest);
+
+    // Compute verdict_hash
+    const verdictHash = computeVerdictHash(evaluationReport);
 
     // Prepare result
     const result: RecomputeResult = {
@@ -75,7 +118,7 @@ async function main() {
         ruleset_version: '1.0',
         pack_id: packId,
         verdict_hash: verdictHash,
-        match: null, // Will be true if curated_hash provided and matches
+        match: null,
         curated_hash: null,
     };
 
@@ -85,31 +128,171 @@ async function main() {
 }
 
 /**
- * Recompute verdict_hash from evaluation.report.json
- * 
- * Note: This is a simplified implementation for v0.1
- * Full implementation would use canonicalize.ts logic
+ * Compute pack_root_hash from integrity/sha256sums.txt
  */
-async function recomputeVerdictHash(packPath: string): Promise<string> {
-    const evalPath = path.join(packPath, 'evaluation.report.json');
+async function computePackRootHash(packPath: string): Promise<string> {
+    const sumsPath = path.join(packPath, 'integrity/sha256sums.txt');
 
-    if (!fs.existsSync(evalPath)) {
-        // Pack not yet evaluated - return placeholder
-        return '0000000000000000000000000000000000000000000000000000000000000000';
+    if (!fs.existsSync(sumsPath)) {
+        return '0'.repeat(64); // Fallback if no sha256sums
     }
 
-    const evalContent = fs.readFileSync(evalPath, 'utf-8');
-    const evalReport = JSON.parse(evalContent);
+    const content = fs.readFileSync(sumsPath, 'utf-8');
+    const lines = content.split('\n').filter(l => l.trim());
 
-    // Extract verdict_hash if already computed
-    if (evalReport.verdict_hash) {
-        return evalReport.verdict_hash;
+    // Parse and sort by path (per contract v1.0)
+    const entries = lines.map(l => {
+        const match = l.match(/^([0-9a-f]{64})\s+(.+)$/);
+        if (!match) return null;
+        return { hash: match[1], path: match[2] };
+    }).filter(e => e !== null) as { hash: string; path: string }[];
+
+    entries.sort((a, b) => a.path.localeCompare(b.path));
+
+    // Normalize: sorted, LF, no trailing newline
+    const normalized = entries.map(e => `${e.hash}  ${e.path}`).join('\n');
+
+    return crypto.createHash('sha256').update(normalized, 'utf-8').digest('hex');
+}
+
+/**
+ * Evaluate pack against bundled ruleset-1.0
+ */
+async function evaluatePack(
+    packPath: string,
+    packId: string,
+    packRootHash: string,
+    manifest: any
+): Promise<EvaluationReport> {
+    const protocolVersion = manifest.protocol_version || '1.0.0';
+
+    // Bundled ruleset-1.0: hardcoded structure (no YAML parsing needed)
+    // ruleset-1.0 defines gf-01 through gf-05
+    const gfIds = ['gf-01', 'gf-02', 'gf-03', 'gf-04', 'gf-05'];
+    const gfVerdicts: GFVerdict[] = [];
+
+    for (const gfId of gfIds) {
+        const verdict = await evaluateGF(packPath, gfId);
+        gfVerdicts.push(verdict);
     }
 
-    // Simplified canonicalization for v0.1
-    // Full implementation would remove non-deterministic fields and sort
-    const canonical = JSON.stringify(evalReport);
-    return crypto.createHash('sha256').update(canonical, 'utf-8').digest('hex');
+    return {
+        report_version: '1.0',
+        ruleset_version: 'ruleset-1.0',
+        pack_id: packId,
+        pack_root_hash: packRootHash,
+        protocol_version: protocolVersion,
+        gf_verdicts: gfVerdicts,
+    };
+}
+
+/**
+ * Evaluate a single Golden Flow
+ */
+/**
+ * Evaluate a single Golden Flow
+ * 
+ * For ruleset-1.0 (presence-level): checks if context/plan/trace exist
+ */
+async function evaluateGF(packPath: string, gfId: string): Promise<GFVerdict> {
+    // For ruleset-1.0, all GFs have same requirements: context/plan/trace presence
+    const requirements: RequirementVerdict[] = [];
+    
+    // Simplified presence checks (ruleset-1.0 is presence-level only)
+    const artifactChecks = [
+        { id: `${gfId}-r01`, artifact: 'context.json' },
+        { id: `${gfId}-r02`, artifact: 'plan.json' },
+        { id: `${gfId}-r03`, artifact: 'trace.json' },
+    ];
+
+    for (const check of artifactChecks) {
+        const artifactPath = path.join(packPath, 'artifacts', check.artifact);
+        const exists = fs.existsSync(artifactPath);
+
+        if (exists) {
+            requirements.push({
+                requirement_id: check.id,
+                status: 'PASS',
+                pointers: [{
+                    artifact_path: `artifacts/${check.artifact}`,
+                    content_hash: '',
+                    locator: `file:artifacts/${check.artifact}`,
+                    requirement_id: check.id,
+                }],
+                message: `Evidence present: artifacts/${check.artifact}`,
+            });
+        } else {
+            requirements.push({
+                requirement_id: check.id,
+                status: 'FAIL',
+                pointers: [],
+                message: `Evidence missing: artifacts/${check.artifact}`,
+                taxonomy: 'REQUIRED_ARTIFACT_MISSING',
+            });
+        }
+    }
+
+    const allPass = requirements.every(r => r.status === 'PASS');
+
+    return {
+        gf_id: gfId,
+        status: allPass ? 'PASS' : 'FAIL',
+        requirements,
+        failures: allPass ? [] : [{ taxonomy: 'REQUIRED_ARTIFACT_MISSING', message: 'One or more artifacts missing' }],
+    };
+}
+
+
+/**
+ * Compute deterministic verdict_hash from evaluation report
+ * Per lib/verdict/canonicalize.ts SSOT
+ */
+function computeVerdictHash(report: EvaluationReport): string {
+    // Canonicalize: only include deterministic fields
+    const canonical = {
+        report_version: report.report_version,
+        ruleset_version: report.ruleset_version,
+        pack_id: report.pack_id,
+        pack_root_hash: report.pack_root_hash,
+        protocol_version: report.protocol_version,
+        gf_verdicts: report.gf_verdicts.map(gf => ({
+            gf_id: gf.gf_id,
+            status: gf.status,
+            requirements: gf.requirements.map(req => ({
+                requirement_id: req.requirement_id,
+                status: req.status,
+                pointers: req.pointers.map(p => ({
+                    artifact_path: p.artifact_path,
+                    content_hash: p.content_hash,
+                    locator: p.locator,
+                    requirement_id: p.requirement_id,
+                })),
+                message: req.message,
+                ...(req.taxonomy ? { taxonomy: req.taxonomy } : {}),
+            })),
+            failures: gf.failures,
+        })),
+    };
+
+    // Stable stringify (sort keys)
+    const serialized = stableStringify(canonical);
+
+    return crypto.createHash('sha256').update(serialized, 'utf-8').digest('hex');
+}
+
+/**
+ * Stable JSON stringify with sorted keys
+ */
+function stableStringify(obj: any): string {
+    if (obj === null) return 'null';
+    if (typeof obj !== 'object') return JSON.stringify(obj);
+    if (Array.isArray(obj)) {
+        return '[' + obj.map(stableStringify).join(',') + ']';
+    }
+
+    const keys = Object.keys(obj).sort();
+    const pairs = keys.map(k => `"${k}":${stableStringify(obj[k])}`);
+    return '{' + pairs.join(',') + '}';
 }
 
 // Run CLI
