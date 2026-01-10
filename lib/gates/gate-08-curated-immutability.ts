@@ -58,9 +58,9 @@ export async function runGate08(labRoot: string = process.cwd()): Promise<Gate08
     }
 
     const allowlistContent = fs.readFileSync(allowlistPath, 'utf-8');
-    const allowlist = yaml.load(allowlistContent) as { curated_runs?: CuratedRunEntry[] };
+    const allowlist = yaml.load(allowlistContent) as { runs?: CuratedRunEntry[] };
 
-    if (!allowlist.curated_runs || allowlist.curated_runs.length === 0) {
+    if (!allowlist.runs || allowlist.runs.length === 0) {
         // Empty allowlist - PASS
         return { passed: true, entriesChecked: 0, failures: [] };
     }
@@ -74,7 +74,7 @@ export async function runGate08(labRoot: string = process.cwd()): Promise<Gate08
     const enumConstraints = schema.enums || {};
 
     // Validate each curated run
-    for (const entry of allowlist.curated_runs) {
+    for (const entry of allowlist.runs) {
         entriesChecked++;
         const runId = entry.run_id || `entry_${entriesChecked}`;
 

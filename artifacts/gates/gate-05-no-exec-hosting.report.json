@@ -1,12 +1,21 @@
 {
   "gate_id": "GATE-05",
   "gate_name": "No Execution Hosting Guard",
-  "status": "PASS",
-  "evaluated_at": "2026-01-10T10:50:35.043Z",
-  "findings": [],
+  "status": "FAIL",
+  "evaluated_at": "2026-01-10T14:20:03.570Z",
+  "findings": [
+    {
+      "file": "docs/evidence-producer-spec.md",
+      "line": 25,
+      "column": 18,
+      "match": "host execution",
+      "rule": "NO_EXEC_HOSTING",
+      "message": "Forbidden phrase suggests execution hosting / implementation submission"
+    }
+  ],
   "summary": {
-    "files_scanned": 54,
-    "matches": 0,
+    "files_scanned": 69,
+    "matches": 1,
     "note": "excludeDirs: node_modules, .next, dist, coverage, .git, artifacts, gates"
   }
 }

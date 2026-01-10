@@ -16,7 +16,7 @@ This specification defines how third parties can generate evidence packs compati
 > **NOT Official SDKs**: The reference implementations provided are examples only. They are NOT official, supported, or maintained SDKs.
 
 > [!WARNING]
-> **NOT Endorsement**: Inclusion of a substrate in examples does NOT constitute endorsement, certification, or recommendation by the MPLP Validation Lab.
+> **NOT Endorsement**: Inclusion of a substrate in examples does NOT constitute endorsement, qualification, or recommendation by the MPLP Validation Lab.
 
 > [!IMPORTANT]
 > **Substrate Definition**: "Substrate" refers to the execution environment (e.g., A2A runtime, Langchain framework, MCP server). The substrate is NOT the verdict authority. Verdicts are determined solely by the Validation Lab's evaluation against frozen rulesets.
