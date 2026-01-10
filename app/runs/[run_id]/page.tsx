@@ -179,11 +179,15 @@ export default async function RunDetailPage({ params }: Props) {
                                                 <li key={idx} className="bg-red-900/10 border border-red-900/30 rounded p-2">
                                                     <p className="text-zinc-300">{fail.message}</p>
                                                     {fail.pointers && fail.pointers.length > 0 && (
-                                                        <div className="mt-1 text-xs text-zinc-500">
+                                                        <div className="mt-1 text-xs">
                                                             {fail.pointers.map((ptr, pIdx) => (
-                                                                <div key={pIdx} className="font-mono">
-                                                                    {ptr.artifact_path}{ptr.locator ? `#${ptr.locator}` : ''}
-                                                                </div>
+                                                                <a
+                                                                    key={pIdx}
+                                                                    href={`/runs/${run_id}/evidence?file=${encodeURIComponent(ptr.artifact_path)}${ptr.locator ? `&loc=${encodeURIComponent(ptr.locator)}` : ''}`}
+                                                                    className="font-mono text-blue-400 hover:underline block"
+                                                                >
+                                                                    → {ptr.artifact_path}{ptr.locator ? `#${ptr.locator}` : ''}
+                                                                </a>
                                                             ))}
                                                         </div>
                                                     )}
@@ -203,28 +207,76 @@ export default async function RunDetailPage({ params }: Props) {
             {/* Section 3: Export */}
             <section className="bg-zinc-900 border border-zinc-800 rounded-lg p-6">
                 <h2 className="text-xl font-semibold mb-4">Export</h2>
+                <p className="text-zinc-500 text-xs mb-4">
+                    Download reports and evidence for offline verification and archival.
+                </p>
                 <div className="grid grid-cols-2 gap-4">
                     <div className="text-sm">
                         <p className="text-zinc-500 mb-2">Reports</p>
-                        <ul className="space-y-1">
-                            <li className={data.missing.includes('verify.report.json') ? 'text-zinc-600' : 'text-zinc-300'}>
-                                verify.report.json {data.missing.includes('verify.report.json') && '(missing)'}
-                            </li>
-                            <li className={data.missing.includes('evaluation.report.json') ? 'text-zinc-600' : 'text-zinc-300'}>
-                                evaluation.report.json {data.missing.includes('evaluation.report.json') && '(missing)'}
-                            </li>
+                        <ul className="space-y-2">
+                            {/* Verify Report */}
+                            {!data.missing.includes('verify.report.json') ? (
+                                <li>
+                                    <a
+                                        href={`/api/runs/${run_id}/download?file=verify.report.json`}
+                                        className="text-blue-400 hover:underline"
+                                        download
+                                    >
+                                        ↓ verify.report.json
+                                    </a>
+                                </li>
+                            ) : (
+                                <li className="text-zinc-600">verify.report.json (missing)</li>
+                            )}
+                            {/* Evaluation Report - only show if ADMISSIBLE */}
+                            {verifyReport?.admission_status === 'ADMISSIBLE' && !data.missing.includes('evaluation.report.json') ? (
+                                <li>
+                                    <a
+                                        href={`/api/runs/${run_id}/download?file=evaluation.report.json`}
+                                        className="text-blue-400 hover:underline"
+                                        download
+                                    >
+                                        ↓ evaluation.report.json
+                                    </a>
+                                </li>
+                            ) : verifyReport?.admission_status !== 'ADMISSIBLE' ? (
+                                <li className="text-zinc-600">evaluation.report.json (not evaluated)</li>
+                            ) : (
+                                <li className="text-zinc-600">evaluation.report.json (missing)</li>
+                            )}
                         </ul>
                     </div>
                     <div className="text-sm">
                         <p className="text-zinc-500 mb-2">Evidence</p>
-                        <ul className="space-y-1">
-                            {/* Manifest: show actual file or missing indicator */}
-                            <li className={data.manifest ? 'text-zinc-300' : 'text-zinc-600'}>
-                                manifest {data.manifest ? '✓' : '(missing)'}
-                            </li>
-                            <li className={data.missing.includes('sha256sums.txt') ? 'text-zinc-600' : 'text-zinc-300'}>
-                                sha256sums.txt {data.missing.includes('sha256sums.txt') && '(missing)'}
-                            </li>
+                        <ul className="space-y-2">
+                            {/* Manifest */}
+                            {data.manifest ? (
+                                <li>
+                                    <a
+                                        href={`/api/runs/${run_id}/download?file=manifest.json`}
+                                        className="text-blue-400 hover:underline"
+                                        download
+                                    >
+                                        ↓ manifest.json
+                                    </a>
+                                </li>
+                            ) : (
+                                <li className="text-zinc-600">manifest (missing)</li>
+                            )}
+                            {/* SHA256 Sums */}
+                            {!data.missing.includes('sha256sums.txt') ? (
+                                <li>
+                                    <a
+                                        href={`/api/runs/${run_id}/download?file=sha256sums.txt`}
+                                        className="text-blue-400 hover:underline"
+                                        download
+                                    >
+                                        ↓ sha256sums.txt
+                                    </a>
+                                </li>
+                            ) : (
+                                <li className="text-zinc-600">sha256sums.txt (missing)</li>
+                            )}
                         </ul>
                     </div>
                 </div>

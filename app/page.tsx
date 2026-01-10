@@ -18,28 +18,33 @@ export default function Home() {
             <section className="bg-zinc-900 border border-zinc-700 rounded-lg p-6 mb-8">
                 <h2 className="text-lg font-semibold mb-4">Lab Status</h2>
                 <p className="text-gray-400">
-                    Phase A Complete — Foundation &amp; Upstream Sync verified.
+                    Phase F Complete — UI Projection + Sample Runs verified.
+                </p>
+                <p className="text-xs text-zinc-500 mt-2">
+                    A–F: Foundation → Schema → Admission → Evaluation → Governance → UI
                 </p>
             </section>
 
             <section className="grid gap-4 md:grid-cols-2">
-                <a href="/runs" className="card block p-4 bg-zinc-900 border border-zinc-700 rounded-lg transition">
+                <a href="/runs" className="card block p-4 bg-zinc-900 border border-zinc-700 rounded-lg transition hover:border-zinc-500">
                     <h3 className="font-semibold mb-2">Runs</h3>
                     <p className="text-sm text-gray-400">Browse evaluation runs</p>
                 </a>
-                <a href="/rulesets" className="card block p-4 bg-zinc-900 border border-zinc-700 rounded-lg transition">
+                <a href="/rulesets" className="card block p-4 bg-zinc-900 border border-zinc-700 rounded-lg transition hover:border-zinc-500">
                     <h3 className="font-semibold mb-2">Rulesets</h3>
                     <p className="text-sm text-gray-400">View versioned rulesets</p>
                 </a>
-                <a href="/scenarios" className="card block p-4 bg-zinc-900 border border-zinc-700 rounded-lg transition">
-                    <h3 className="font-semibold mb-2">Scenarios</h3>
-                    <p className="text-sm text-gray-400">Explore test scenarios</p>
-                </a>
-                <a href="/guarantees" className="card block p-4 bg-zinc-900 border border-zinc-700 rounded-lg transition">
+                <a href="/guarantees" className="card block p-4 bg-zinc-900 border border-zinc-700 rounded-lg transition hover:border-zinc-500">
                     <h3 className="font-semibold mb-2">Guarantees</h3>
-                    <p className="text-sm text-gray-400">GF-01 ~ GF-05 overview</p>
+                    <p className="text-sm text-gray-400">GF-01 ~ GF-05 overview (non-normative)</p>
                 </a>
             </section>
+
+            {/* Governance Banner */}
+            <footer className="mt-12 text-center text-xs text-zinc-500">
+                <p>Non-certification. Non-endorsement. Evidence-based verdicts under versioned rulesets.</p>
+                <p className="mt-1">No execution hosting. The Lab evaluates evidence only.</p>
+            </footer>
         </div>
     );
 }
