@@ -1,0 +1,14 @@
+feat(phase-4): Add /runs index page with P0.7 awareness (M1)
+
+Phase 4 Main - Commit M1 (Data + UI Foundation):
+- P4-1: Curated artifact pipeline (verified)
+- P4-2: Typed loader + SSOT constants (verified)
+- P4-3: /runs index page with ScenarioAwareBanner
+
+Components:
+- CuratedRunsTable: 3-run display with claim levels
+- HashCell: Copy-friendly hash display
+- ScenarioAwareBanner: P0.7 presence-level context
+
+Gates: 04-10 ALL PASS
+Frozen: CLEAN
