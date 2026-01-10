@@ -188,77 +188,58 @@ async function evaluatePack(
 
 /**
  * Evaluate a single Golden Flow
- */
-/**
- * Evaluate a single Golden Flow
- * 
- * For ruleset-1.0 (presence-level): checks required artifacts per GF
+ * Per bundled ruleset-1.0 YAML files (hardcoded for v0.1)
  */
 async function evaluateGF(packPath: string, gfId: string): Promise<GFVerdict> {
     const requirements: RequirementVerdict[] = [];
 
-    // Per bundled ruleset-1.0 YAML files:
-    // - GF-01: requires context.json, plan.json, trace.json (3 requirements)
-    // - GF-02~05: requires timeline/events.ndjson (1 requirement each)
+    // Per actual ruleset-1.0 YAML files:
+    let checks: Array<{ id: string; artifact: string }> = [];
 
-    if (gfId === 'gf-01') {
-        // GF-01: Single Agent Lifecycle (3 requirements)
-        const artifactChecks = [
-            { id: 'gf-01-r01', artifact: 'context.json' },
-            { id: 'gf-01-r02', artifact: 'plan.json' },
-            { id: 'gf-01-r03', artifact: 'trace.json' },
-        ];
+    switch (gfId) {
+        case 'gf-01':
+            checks = [
+                { id: 'gf-01-r01', artifact: 'artifacts/context.json' },
+                { id: 'gf-01-r02', artifact: 'artifacts/plan.json' },
+                { id: 'gf-01-r03', artifact: 'artifacts/trace.json' },
+            ];
+            break;
+        case 'gf-02':
+            checks = [{ id: 'gf-02-r01', artifact: 'timeline/events.ndjson' }];
+            break;
+        case 'gf-03':
+            checks = [{ id: 'gf-03-r01', artifact: 'artifacts/context.json' }];
+            break;
+        case 'gf-04':
+            checks = [{ id: 'gf-04-r01', artifact: 'manifest.json' }];
+            break;
+        case 'gf-05':
+            checks = [{ id: 'gf-05-r01', artifact: 'integrity/sha256sums.txt' }];
+            break;
+    }
 
-        for (const check of artifactChecks) {
-            const artifactPath = path.join(packPath, 'artifacts', check.artifact);
-            const exists = fs.existsSync(artifactPath);
-
-            if (exists) {
-                requirements.push({
-                    requirement_id: check.id,
-                    status: 'PASS',
-                    pointers: [{
-                        artifact_path: `artifacts/${check.artifact}`,
-                        content_hash: '',
-                        locator: `file:artifacts/${check.artifact}`,
-                        requirement_id: check.id,
-                    }],
-                    message: `Evidence present: artifacts/${check.artifact}`,
-                });
-            } else {
-                requirements.push({
-                    requirement_id: check.id,
-                    status: 'FAIL',
-                    pointers: [],
-                    message: `Evidence missing: artifacts/${check.artifact}`,
-                    taxonomy: 'REQUIRED_ARTIFACT_MISSING',
-                });
-            }
-        }
-    } else {
-        // GF-02 through GF-05: requires timeline/events.ndjson (1 requirement)
-        const requirementId = `${gfId}-r01`;
-        const timelinePath = path.join(packPath, 'timeline/events.ndjson');
-        const exists = fs.existsSync(timelinePath);
+    for (const check of checks) {
+        const artifactPath = path.join(packPath, check.artifact);
+        const exists = fs.existsSync(artifactPath);
 
         if (exists) {
             requirements.push({
-                requirement_id: requirementId,
+                requirement_id: check.id,
                 status: 'PASS',
                 pointers: [{
-                    artifact_path: 'timeline/events.ndjson',
+                    artifact_path: check.artifact,
                     content_hash: '',
-                    locator: 'file:timeline/events.ndjson',
-                    requirement_id: requirementId,
+                    locator: `file:${check.artifact}`,
+                    requirement_id: check.id,
                 }],
-                message: 'Evidence present: timeline/events.ndjson',
+                message: `Evidence present: ${check.artifact}`,
             });
         } else {
             requirements.push({
-                requirement_id: requirementId,
+                requirement_id: check.id,
                 status: 'FAIL',
                 pointers: [],
-                message: 'Evidence missing: timeline/events.ndjson',
+                message: `Evidence missing: ${check.artifact}`,
                 taxonomy: 'REQUIRED_ARTIFACT_MISSING',
             });
         }
@@ -273,7 +254,6 @@ async function evaluateGF(packPath: string, gfId: string): Promise<GFVerdict> {
         failures: allPass ? [] : [{ taxonomy: 'REQUIRED_ARTIFACT_MISSING', message: 'One or more artifacts missing' }],
     };
 }
-
 
 /**
  * Compute deterministic verdict_hash from evaluation report
