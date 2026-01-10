@@ -192,41 +192,73 @@ async function evaluatePack(
 /**
  * Evaluate a single Golden Flow
  * 
- * For ruleset-1.0 (presence-level): checks if context/plan/trace exist
+ * For ruleset-1.0 (presence-level): checks required artifacts per GF
  */
 async function evaluateGF(packPath: string, gfId: string): Promise<GFVerdict> {
-    // For ruleset-1.0, all GFs have same requirements: context/plan/trace presence
     const requirements: RequirementVerdict[] = [];
-    
-    // Simplified presence checks (ruleset-1.0 is presence-level only)
-    const artifactChecks = [
-        { id: `${gfId}-r01`, artifact: 'context.json' },
-        { id: `${gfId}-r02`, artifact: 'plan.json' },
-        { id: `${gfId}-r03`, artifact: 'trace.json' },
-    ];
 
-    for (const check of artifactChecks) {
-        const artifactPath = path.join(packPath, 'artifacts', check.artifact);
-        const exists = fs.existsSync(artifactPath);
+    // Per bundled ruleset-1.0 YAML files:
+    // - GF-01: requires context.json, plan.json, trace.json (3 requirements)
+    // - GF-02~05: requires timeline/events.ndjson (1 requirement each)
+
+    if (gfId === 'gf-01') {
+        // GF-01: Single Agent Lifecycle (3 requirements)
+        const artifactChecks = [
+            { id: 'gf-01-r01', artifact: 'context.json' },
+            { id: 'gf-01-r02', artifact: 'plan.json' },
+            { id: 'gf-01-r03', artifact: 'trace.json' },
+        ];
+
+        for (const check of artifactChecks) {
+            const artifactPath = path.join(packPath, 'artifacts', check.artifact);
+            const exists = fs.existsSync(artifactPath);
+
+            if (exists) {
+                requirements.push({
+                    requirement_id: check.id,
+                    status: 'PASS',
+                    pointers: [{
+                        artifact_path: `artifacts/${check.artifact}`,
+                        content_hash: '',
+                        locator: `file:artifacts/${check.artifact}`,
+                        requirement_id: check.id,
+                    }],
+                    message: `Evidence present: artifacts/${check.artifact}`,
+                });
+            } else {
+                requirements.push({
+                    requirement_id: check.id,
+                    status: 'FAIL',
+                    pointers: [],
+                    message: `Evidence missing: artifacts/${check.artifact}`,
+                    taxonomy: 'REQUIRED_ARTIFACT_MISSING',
+                });
+            }
+        }
+    } else {
+        // GF-02 through GF-05: requires timeline/events.ndjson (1 requirement)
+        const requirementId = `${gfId}-r01`;
+        const timelinePath = path.join(packPath, 'timeline/events.ndjson');
+        const exists = fs.existsSync(timelinePath);
 
         if (exists) {
             requirements.push({
-                requirement_id: check.id,
+                requirement_id: requirementId,
                 status: 'PASS',
                 pointers: [{
-                    artifact_path: `artifacts/${check.artifact}`,
+                    artifact_path: 'timeline/events.ndjson',
                     content_hash: '',
-                    locator: `file:artifacts/${check.artifact}`,
-                    requirement_id: check.id,
+                    locator: 'file:timeline/events.ndjson',
+                    requirement_id: requirementId,
                 }],
-                message: `Evidence present: artifacts/${check.artifact}`,
+                message: 'Evidence present: timeline/events.ndjson',
             });
         } else {
             requirements.push({
-                requirement_id: check.id,
+                requirement_id: requirementId,
                 status: 'FAIL',
                 pointers: [],
-                message: `Evidence missing: artifacts/${check.artifact}`,
+                message: 'Evidence missing: timeline/events.ndjson',
                 taxonomy: 'REQUIRED_ARTIFACT_MISSING',
             });
         }
