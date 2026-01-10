@@ -9,6 +9,21 @@
  */
 
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+const LAB_CANONICAL_HOST = 'https://lab.mplp.io';
+
+export const metadata: Metadata = {
+    title: 'Ruleset Strength Policy — MPLP Validation Lab',
+    description: 'Anti-drift governance for ruleset strength. Stronger claims require new ruleset version. ruleset-1.0 = presence-level only.',
+    alternates: {
+        canonical: `${LAB_CANONICAL_HOST}/policies/strength`,
+    },
+    robots: {
+        index: true,
+        follow: true,
+    },
+};
 
 export default function StrengthPolicyPage() {
     return (

@@ -15,7 +15,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className="bg-zinc-950 text-white min-h-screen">
+            <body className="bg-zinc-950 text-white min-h-screen" suppressHydrationWarning>
                 <NonEndorsementBanner />
                 <Nav />
                 <main className="max-w-6xl mx-auto px-6 py-8">{children}</main>

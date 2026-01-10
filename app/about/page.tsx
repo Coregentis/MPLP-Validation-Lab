@@ -9,6 +9,21 @@
  */
 
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+const LAB_CANONICAL_HOST = 'https://lab.mplp.io';
+
+export const metadata: Metadata = {
+    title: 'About — MPLP Validation Lab',
+    description: 'Four Boundaries of MPLP Validation Lab: Non-certification, Non-normative, No execution hosting, Deterministic ruleset. Evidence-based verdicts only.',
+    alternates: {
+        canonical: `${LAB_CANONICAL_HOST}/about`,
+    },
+    robots: {
+        index: true,
+        follow: true,
+    },
+};
 
 export default function AboutPage() {
     return (

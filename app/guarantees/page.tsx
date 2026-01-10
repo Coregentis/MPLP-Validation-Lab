@@ -10,6 +10,21 @@
  */
 
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+const LAB_CANONICAL_HOST = 'https://lab.mplp.io';
+
+export const metadata: Metadata = {
+    title: 'Guarantees — MPLP Validation Lab',
+    description: 'Golden Flows GF-01 ~ GF-05 overview. Non-normative guide to MPLP lifecycle invariants. ruleset-1.0 performs presence-level adjudication.',
+    alternates: {
+        canonical: `${LAB_CANONICAL_HOST}/guarantees`,
+    },
+    robots: {
+        index: true,
+        follow: true,
+    },
+};
 
 /**
  * Golden Flows - Aligned to ruleset-1.0 (presence-level)

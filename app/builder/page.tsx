@@ -8,6 +8,21 @@
  */
 
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+const LAB_CANONICAL_HOST = 'https://lab.mplp.io';
+
+export const metadata: Metadata = {
+    title: 'Builder Guide — MPLP Validation Lab',
+    description: 'How to generate evidence packs for MPLP Validation Lab. BYO Evidence workflow: no uploads, no hosted execution.',
+    alternates: {
+        canonical: `${LAB_CANONICAL_HOST}/builder`,
+    },
+    robots: {
+        index: true,
+        follow: true,
+    },
+};
 
 export default function BuilderGuidePage() {
     return (

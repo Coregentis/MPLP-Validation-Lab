@@ -9,6 +9,21 @@
  */
 
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+const LAB_CANONICAL_HOST = 'https://lab.mplp.io';
+
+export const metadata: Metadata = {
+    title: 'Evidence Pack Contract v1.0 — MPLP Validation Lab',
+    description: 'Minimal evidence pack file structure for ruleset-1.0. Required files: manifest.json, sha256sums.txt, events.ndjson, artifacts/*. Non-normative.',
+    alternates: {
+        canonical: `${LAB_CANONICAL_HOST}/policies/contract`,
+    },
+    robots: {
+        index: true,
+        follow: true,
+    },
+};
 
 export default function ContractPage() {
     return (

@@ -12,6 +12,7 @@ const NAV_ITEMS = [
     { href: '/runs', label: 'Runs' },
     { href: '/rulesets', label: 'Rulesets' },
     { href: '/guarantees', label: 'Guarantees' },
+    { href: '/policies/contract', label: 'Contract' },
 ];
 
 export function Nav() {

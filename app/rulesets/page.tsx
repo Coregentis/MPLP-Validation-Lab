@@ -7,6 +7,21 @@
 
 import Link from 'next/link';
 import { listRulesets } from '@/lib/rulesets/loadRuleset';
+import type { Metadata } from 'next';
+
+const LAB_CANONICAL_HOST = 'https://lab.mplp.io';
+
+export const metadata: Metadata = {
+    title: 'Rulesets — MPLP Validation Lab',
+    description: 'Versioned rulesets for MPLP evidence-based verdicts. Each ruleset defines requirements for Golden Flows evaluation.',
+    alternates: {
+        canonical: `${LAB_CANONICAL_HOST}/rulesets`,
+    },
+    robots: {
+        index: true,
+        follow: true,
+    },
+};
 
 export default function RulesetsPage() {
     const rulesets = listRulesets();
@@ -37,8 +52,8 @@ export default function RulesetsPage() {
                                 </div>
                                 <div className="text-right">
                                     <span className={`inline-block px-2 py-1 rounded text-xs font-medium ${rs.status === 'active'
-                                            ? 'bg-green-900/30 text-green-400'
-                                            : 'bg-zinc-700 text-zinc-400'
+                                        ? 'bg-green-900/30 text-green-400'
+                                        : 'bg-zinc-700 text-zinc-400'
                                         }`}>
                                         {rs.status}
                                     </span>

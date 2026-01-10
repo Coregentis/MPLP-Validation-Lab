@@ -2,10 +2,10 @@
   "gate_id": "GATE-04",
   "gate_name": "Non-endorsement Language Lint",
   "status": "PASS",
-  "evaluated_at": "2026-01-10T09:56:55.839Z",
+  "evaluated_at": "2026-01-10T10:42:32.270Z",
   "findings": [],
   "summary": {
-    "files_scanned": 143,
+    "files_scanned": 145,
     "matches": 0,
     "note": "excludeDirs: node_modules, .next, dist, coverage, .git, artifacts, policy, governance"
   }
