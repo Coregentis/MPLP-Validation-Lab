@@ -125,7 +125,19 @@ export default function GuaranteesPage() {
             </div>
 
             {/* Links */}
-            <div className="mt-8 flex gap-4">
+            <div className="mt-8 flex flex-wrap gap-4">
+                <Link
+                    href="/policies/strength"
+                    className="inline-block bg-amber-900/30 hover:bg-amber-900/50 text-amber-300 px-4 py-2 rounded text-sm transition"
+                >
+                    Strength Policy →
+                </Link>
+                <Link
+                    href="/policies/contract"
+                    className="inline-block bg-zinc-800 hover:bg-zinc-700 px-4 py-2 rounded text-sm transition"
+                >
+                    Evidence Contract →
+                </Link>
                 <Link
                     href="/rulesets"
                     className="inline-block bg-zinc-800 hover:bg-zinc-700 px-4 py-2 rounded text-sm transition"
