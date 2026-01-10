@@ -218,8 +218,9 @@ export default async function RunDetailPage({ params }: Props) {
                     <div className="text-sm">
                         <p className="text-zinc-500 mb-2">Evidence</p>
                         <ul className="space-y-1">
-                            <li className={data.missing.includes('manifest.yaml') ? 'text-zinc-600' : 'text-zinc-300'}>
-                                manifest.yaml {data.missing.includes('manifest.yaml') && '(missing)'}
+                            {/* Manifest: show actual file or missing indicator */}
+                            <li className={data.manifest ? 'text-zinc-300' : 'text-zinc-600'}>
+                                manifest {data.manifest ? '✓' : '(missing)'}
                             </li>
                             <li className={data.missing.includes('sha256sums.txt') ? 'text-zinc-600' : 'text-zinc-300'}>
                                 sha256sums.txt {data.missing.includes('sha256sums.txt') && '(missing)'}

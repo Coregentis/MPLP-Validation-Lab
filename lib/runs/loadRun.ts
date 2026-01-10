@@ -69,16 +69,22 @@ export function loadRun(runId: string): RunData {
         missing: [],
     };
 
-    // Manifest
-    const manifestPath = path.join(base, 'manifest.yaml');
-    if (fs.existsSync(manifestPath)) {
+    // Manifest: prefer manifest.yaml, fallback to manifest.json
+    const manifestYamlPath = path.join(base, 'manifest.yaml');
+    const manifestJsonPath = path.join(base, 'manifest.json');
+
+    if (fs.existsSync(manifestYamlPath)) {
         try {
-            out.manifest = loadYamlStrict<RunData['manifest']>(manifestPath);
+            out.manifest = loadYamlStrict<RunData['manifest']>(manifestYamlPath);
         } catch {
             out.missing.push('manifest.yaml (parse error)');
         }
+    } else if (fs.existsSync(manifestJsonPath)) {
+        const data = readJsonSafe(manifestJsonPath);
+        if (data) out.manifest = data as RunData['manifest'];
+        else out.missing.push('manifest.json (parse error)');
     } else {
-        out.missing.push('manifest.yaml');
+        out.missing.push('manifest.yaml | manifest.json');
     }
 
     // Verify Report
