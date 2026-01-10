@@ -133,7 +133,7 @@ export async function verify(
         report_version: '1.0',
         verified_at: new Date().toISOString(),
         pack_id: pack.manifest_raw?.pack_id || 'unknown',
-        pack_path: pack.root_path,
+        // NOTE: pack_path removed for privacy (P0-2: no absolute paths in output)
         admission_status: admissionStatus,
         checks,
         blocking_failures: blockingFailures,
@@ -798,12 +798,15 @@ async function runVersionBindingChecks(
         const syncInvariantHash = syncReport.integrity?.invariants_bundle_sha256;
 
         // VER-001: Sync Report valid
+        const upstreamCommit = syncReport.upstream_commit;
         checks.push({
             check_id: 'VER-001',
             name: 'Sync Report Loaded',
             category: 'VERSION_BINDING',
             status: 'PASS',
-            message: `Upstream commit: ${syncReport.upstream_commit?.slice(0, 8)}...`,
+            message: upstreamCommit
+                ? `Upstream commit: ${upstreamCommit.slice(0, 8)}...`
+                : 'Upstream commit: not_bound (optional in v1.0)',
             duration_ms: Date.now() - start,
         });
 

@@ -64,10 +64,11 @@ export default function BuilderGuidePage() {
                                 Run your agent in your own environment (local, CI, staging) and capture:
                             </p>
                             <ul className="text-zinc-500 text-sm mt-2 space-y-1">
-                                <li>• <code className="text-zinc-400">manifest.json</code> — pack metadata</li>
-                                <li>• <code className="text-zinc-400">integrity/sha256sums.txt</code> — file checksums</li>
-                                <li>• <code className="text-zinc-400">timeline/events.ndjson</code> — lifecycle events</li>
-                                <li>• <code className="text-zinc-400">snapshots/</code> — state snapshots</li>
+                                <li>• <code className="text-zinc-400">manifest.json</code> — pack metadata (required)</li>
+                                <li>• <code className="text-zinc-400">integrity/sha256sums.txt</code> — file checksums (required)</li>
+                                <li>• <code className="text-zinc-400">timeline/events.ndjson</code> — lifecycle events (required)</li>
+                                <li>• <code className="text-zinc-400">artifacts/</code> — context.json, plan.json, trace.json (required)</li>
+                                <li>• <code className="text-zinc-400">snapshots/</code> — state snapshots <span className="text-zinc-600">(optional)</span></li>
                             </ul>
                         </div>
                     </div>
