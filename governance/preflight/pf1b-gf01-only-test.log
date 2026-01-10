@@ -1,0 +1,8 @@
+============================================================
+Phase 0.5 Preflight: GF Coverage Test
+============================================================
+
+Analyzing pack: /Users/jasonwang/Documents/AI_Dev/V1.0_release/Validation_Lab/data/runs/test-gf01-only
+
+❌ evaluation.report.json not found at /Users/jasonwang/Documents/AI_Dev/V1.0_release/Validation_Lab/data/runs/test-gf01-only/evaluation.report.json
+   Run evaluation first: npx tsx scripts/test-evaluate.ts test-gf01-only

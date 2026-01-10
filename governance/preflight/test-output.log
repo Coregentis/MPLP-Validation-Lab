@@ -1,0 +1,37 @@
+============================================================
+Phase 0.5 Preflight: GF Coverage Test
+============================================================
+
+Analyzing pack: /Users/jasonwang/Documents/AI_Dev/V1.0_release/Validation_Lab/data/runs/sample-pass
+
+GF Verdict Summary:
+------------------------------------------------------------
+✅ GF-01      PASS            (has requirements)
+✅ GF-02      PASS            (has requirements)
+✅ GF-03      PASS            (has requirements)
+✅ GF-04      PASS            (has requirements)
+✅ GF-05      PASS            (has requirements)
+
+============================================================
+Preflight Analysis:
+============================================================
+✅ GF-01: PASS (as expected for GF-01 spine)
+
+GF-02~05 Behavior:
+   GF-02: PASS
+   GF-03: PASS
+   GF-04: PASS
+   GF-05: PASS
+
+============================================================
+Conclusion:
+============================================================
+✅ Mixed behavior: Some GF-02~05 FAIL, some NOT_EVALUATED.
+   Ensure UI distinguishes FAIL vs NOT_EVALUATED semantics.
+
+============================================================
+Next Steps:
+============================================================
+1. Generate preflight report: governance/preflight/ruleset-1.0-gf-coverage.md
+2. Proceed to Phase 1 if conclusion is SAFE TO PROCEED
+
