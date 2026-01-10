@@ -98,7 +98,46 @@ export default async function RunDetailPage({ params }: Props) {
             {/* Section 2: Guarantees (GF Verdicts) */}
             <section className="bg-zinc-900 border border-zinc-800 rounded-lg p-6">
                 <h2 className="text-xl font-semibold mb-4">Guarantees (Golden Flows)</h2>
-                {evalReport?.gf_verdicts && evalReport.gf_verdicts.length > 0 ? (
+
+                {/* HARD BOUNDARY: NOT_ADMISSIBLE → no GF verdicts displayed */}
+                {verifyReport?.admission_status !== 'ADMISSIBLE' ? (
+                    <div className="space-y-4">
+                        <div className="bg-red-900/20 border border-red-700/30 rounded-lg p-4">
+                            <p className="text-red-400 font-semibold mb-2">
+                                Admission Failed — Guarantees Not Evaluated
+                            </p>
+                            <p className="text-zinc-400 text-sm">
+                                Evidence pack did not pass admission checks. GF evaluation is skipped to prevent verdicts on untrusted evidence.
+                            </p>
+                        </div>
+
+                        {/* Show blocking failures from verify report */}
+                        {verifyReport?.blocking_failures && verifyReport.blocking_failures.length > 0 && (
+                            <div className="text-sm">
+                                <p className="text-zinc-500 mb-2">Blocking Failures:</p>
+                                <ul className="space-y-2">
+                                    {verifyReport.blocking_failures.map((fail: { check_id?: string; taxonomy?: string; message?: string; pointers?: Array<{ artifact_path: string; locator?: string }> }, idx: number) => (
+                                        <li key={idx} className="bg-zinc-800 border border-zinc-700 rounded p-2">
+                                            <p className="text-zinc-300">{fail.message}</p>
+                                            {fail.taxonomy && (
+                                                <span className="text-xs text-zinc-500 font-mono">{fail.taxonomy}</span>
+                                            )}
+                                            {fail.pointers && fail.pointers.length > 0 && (
+                                                <div className="mt-1 text-xs text-zinc-500">
+                                                    {fail.pointers.map((ptr, pIdx) => (
+                                                        <div key={pIdx} className="font-mono">
+                                                            {ptr.artifact_path}{ptr.locator ? `#${ptr.locator}` : ''}
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                            )}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        )}
+                    </div>
+                ) : evalReport?.gf_verdicts && evalReport.gf_verdicts.length > 0 ? (
                     <div className="space-y-4">
                         {evalReport.gf_verdicts.map((gf) => (
                             <div key={gf.gf_id} className="border border-zinc-700 rounded-lg p-4">
