@@ -17,9 +17,11 @@
         "gate:06": "tsx lib/gates/gate-06-robots-policy.ts",
         "gate:07": "tsx lib/gates/gate-07-pii-leak.ts",
         "gate:08": "tsx lib/gates/gate-08-curated-immutability.ts",
+        "gate:09": "tsx lib/gates/gate-09-ssot-projection.ts",
+        "gate:10": "tsx lib/gates/gate-10-curated-invariants.ts",
         "generate:curated": "node scripts/generate-curated-runs.mjs",
         "gate:all": "npm run gate:vlab:00 && npm run gate:vlab:01",
-        "gates": "npm run generate:curated && npm run gate:04 && npm run gate:05 && npm run gate:06 && npm run gate:07 && npm run gate:08"
+        "gates": "npm run generate:curated && npm run gate:04 && npm run gate:05 && npm run gate:06 && npm run gate:07 && npm run gate:08 && npm run gate:09 && npm run gate:10"
     },
     "dependencies": {
         "js-yaml": "^4.1.0",

@@ -1,12 +1,14 @@
 #!/usr/bin/env node
 /**
- * GATE-09: SSOT Projection Guard
+ * GATE-09: SSOT Projection Guard (FINAL)
  * 
  * Prevents hash hardcoding in UI/docs by scanning for:
  * - verdict_hash / pack_root_hash field assignments with 64-hex values
  * - Raw 64-hex literals in non-allowlisted files
  * 
- * Allowlisted paths: allowlist.yaml, curated-runs.json, governance/preflight
+ * Uses strict repo-relative path matching to avoid false positives.
+ * 
+ * Allowlisted: allowlist.yaml, curated-runs.json, governance/preflight/, .gemini/antigravity/
  */
 
 import fs from 'fs';
@@ -27,11 +29,13 @@ interface Match {
 
 const SCAN_DIRS = ['app', 'components', 'lib', 'docs'];
 const EXCLUDE_DIRS = ['node_modules', '.next', 'dist', 'coverage', '.git'];
-const ALLOWLIST_PATHS = [
+const ALLOWLIST_FILES = [
     'data/curated-runs/allowlist.yaml',
-    'public/_data/curated-runs.json',
-    'phase-3-seal.md',
-    'governance/preflight'
+    'public/_data/curated-runs.json'
+];
+const ALLOWLIST_DIRS = [
+    'governance/preflight/',
+    '.gemini/antigravity/'
 ];
 
 const FORBIDDEN_PATTERNS = [
@@ -39,6 +43,23 @@ const FORBIDDEN_PATTERNS = [
     { term: 'pack_root_hash:', pattern: /pack_root_hash:\s*["']?[a-f0-9]{64}/ },
     { term: '64-hex-literal', pattern: /\b[a-f0-9]{64}\b/ }
 ];
+
+function isAllowlisted(filePath: string): boolean {
+    // Convert to repo-relative posix path
+    const rel = path.relative(process.cwd(), filePath).split(path.sep).join('/');
+
+    // Check exact file matches
+    if (ALLOWLIST_FILES.includes(rel)) {
+        return true;
+    }
+
+    // Check directory prefixes
+    if (ALLOWLIST_DIRS.some(dir => rel.startsWith(dir))) {
+        return true;
+    }
+
+    return false;
+}
 
 function runGate09(): Gate09Result {
     const matches: Match[] = [];
@@ -61,7 +82,7 @@ function runGate09(): Gate09Result {
                 }
             } else if (entry.isFile()) {
                 // Check if in allowlist
-                if (ALLOWLIST_PATHS.some(allowed => fullPath.includes(allowed))) {
+                if (isAllowlisted(fullPath)) {
                     continue;
                 }
 
