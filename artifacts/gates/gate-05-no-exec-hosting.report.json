@@ -2,10 +2,10 @@
   "gate_id": "GATE-05",
   "gate_name": "No Execution Hosting Guard",
   "status": "PASS",
-  "evaluated_at": "2026-01-10T17:01:16.753Z",
+  "evaluated_at": "2026-01-10T17:30:02.888Z",
   "findings": [],
   "summary": {
-    "files_scanned": 76,
+    "files_scanned": 80,
     "matches": 0,
     "note": "excludeDirs: node_modules, .next, dist, coverage, .git, artifacts, gates"
   }
