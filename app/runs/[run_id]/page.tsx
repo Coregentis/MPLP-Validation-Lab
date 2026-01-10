@@ -179,11 +179,15 @@ export default async function RunDetailPage({ params }: Props) {
                                                 <li key={idx} className="bg-red-900/10 border border-red-900/30 rounded p-2">
                                                     <p className="text-zinc-300">{fail.message}</p>
                                                     {fail.pointers && fail.pointers.length > 0 && (
-                                                        <div className="mt-1 text-xs text-zinc-500">
+                                                        <div className="mt-1 text-xs">
                                                             {fail.pointers.map((ptr, pIdx) => (
-                                                                <div key={pIdx} className="font-mono">
-                                                                    {ptr.artifact_path}{ptr.locator ? `#${ptr.locator}` : ''}
-                                                                </div>
+                                                                <a
+                                                                    key={pIdx}
+                                                                    href={`/runs/${run_id}/evidence?file=${encodeURIComponent(ptr.artifact_path)}${ptr.locator ? `&loc=${encodeURIComponent(ptr.locator)}` : ''}`}
+                                                                    className="font-mono text-blue-400 hover:underline block"
+                                                                >
+                                                                    → {ptr.artifact_path}{ptr.locator ? `#${ptr.locator}` : ''}
+                                                                </a>
                                                             ))}
                                                         </div>
                                                     )}
