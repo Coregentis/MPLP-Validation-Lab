@@ -1,31 +1,9 @@
-# Curated Runs Allowlist
+# Curated Runs Allowlist v0.1
+# 
+# Governance: Only entries conforming to governance/schemas/curated-run.schema.yaml
+# Validation: GATE-08 enforces immutability and schema completeness
+# 
+# Sprint: Cross-Vendor Evidence Spine v0.1
+# Status: Active (validated by GATE-08)
 
-# This file defines which runs are allowed to be indexed by search engines.
-# All other runs default to noindex.
-#
-# GOVERNANCE: Changes to this file require review.
-# Adding a run to this list makes it publicly discoverable.
-
-curated_runs:
-  # Reference implementation baseline
-  - run_id: "flow-01-reference-2026-01"
-    scenario: "flow-01-single-agent-plan"
-    profile: "Core"
-    status: "frozen"
-    indexable: true
-    description: "Reference implementation baseline for GF-01"
-    created_at: "2026-01-09T00:00:00Z"
-    
-  # Additional curated runs can be added here
-  # - run_id: "..."
-  #   scenario: "..."
-  #   profile: "..."
-  #   status: "frozen"
-  #   indexable: true
-  #   description: "..."
-  #   created_at: "..."
-
-# Policy notes:
-# - Only frozen runs may be marked indexable
-# - Each curated run must have a clear purpose documented
-# - Indexable runs become part of the public record
+curated_runs: []
