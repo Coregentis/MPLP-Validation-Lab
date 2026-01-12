@@ -253,9 +253,9 @@
     "curated_runs": {
         "count": 3,
         "runs": [
+            "gf-01-a2a-pass",
             "gf-01-langchain-pass",
-            "sample-pass",
-            "sample-not-admissible"
+            "gf-01-mcp-pass"
         ],
         "ssot_source": "data/curated-runs/allowlist.yaml",
         "generated_artifact": "public/_data/curated-runs.json"
