@@ -10,6 +10,8 @@ export interface CuratedRunRecord {
     // Substrate metadata
     substrate: string;
     substrate_claim_level: ClaimLevel;
+    substrate_execution: 'real' | 'mocked' | 'static';
+    inference_mode: 'real_llm' | 'fake_llm' | 'record_replay' | 'none';
     repro_ref: string;
     exporter_version: string;
 

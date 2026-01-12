@@ -19,9 +19,12 @@ export function RunSummaryCard({ run }: { run: CuratedRunRecord }) {
                             </span>
                         ) : (
                             <span className="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium">
-                                Declared
+                                Declared (Specimen)
                             </span>
                         )}
+                        <div className="text-xs text-gray-400 mt-1 font-mono">
+                            Exec: {run.substrate_execution} / Inf: {run.inference_mode}
+                        </div>
                     </dd>
                 </div>
                 <div>
