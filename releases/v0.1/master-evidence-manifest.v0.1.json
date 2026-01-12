@@ -125,7 +125,7 @@
         ],
         "phase_6_1_hygiene": [
             {
-                "sha": "pending",
+                "sha": "3bd77181acad9376d033c8032686b13ad37dabd3",
                 "message": "chore(entry-hygiene): add lite SEO guardrails (robots/sitemap/meta) for v0.1",
                 "description": "Robots/Sitemap strict allowlist, metadata title templates, non-cert descriptions"
             }
@@ -164,6 +164,11 @@
         "phase_6": [
             "phase-6-final-gates.log",
             "phase-6-frozen-boundaries-check.log"
+        ],
+        "phase_6_1": [
+            "phase-6.1-build.log",
+            "phase-6.1-forbidden-terms.log",
+            "phase-6.1-robots-sitemap-check.log"
         ]
     },
     "gates_status": {
@@ -269,7 +274,7 @@
     "metadata": {
         "manifest_version": "1.1",
         "generated_date": "2026-01-12",
-        "total_commits": 11,
+        "total_commits": 12,
         "total_phases": 5,
         "acceptance_verdict": "ACCEPTED",
         "release_readiness": true

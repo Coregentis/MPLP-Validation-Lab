@@ -3,6 +3,8 @@
 **Date**: 2026-01-12
 **Status**: SEALED
 **Component**: Validation Lab (v0.1 patch)
+**Commit SHA**: 3bd77181acad9376d033c8032686b13ad37dabd3
+**Verification Date**: 2026-01-12
 
 ## 1. Scope
 Implementation of "Lite SEO/GEO" guardrails to ensure Validation Lab is discoverable but not misinterpreted as a certification body. This is a non-functional hygiene patch for v0.1.
