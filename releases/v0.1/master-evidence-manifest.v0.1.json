@@ -64,6 +64,10 @@
         "phase_6_1": {
             "document": "phase-6.1-entry-hygiene-seal.md",
             "description": "Entry hygiene patch (Lite SEO/GEO guardrails + robots/sitemap strict allowlist)"
+        },
+        "phase_6_2": {
+            "document": "phase-6.2-truth-seal.md",
+            "description": "Truthful Boundary Patch (Explicit Specimen/Declared labels)"
         }
     },
     "commit_chains": {
@@ -128,6 +132,13 @@
                 "sha": "3bd77181acad9376d033c8032686b13ad37dabd3",
                 "message": "chore(entry-hygiene): add lite SEO guardrails (robots/sitemap/meta) for v0.1",
                 "description": "Robots/Sitemap strict allowlist, metadata title templates, non-cert descriptions"
+            }
+        ],
+        "phase_6_2_truth": [
+            {
+                "sha": "58fd8b457fb8e39042fdd81f33a5b9fca9d9ae21",
+                "message": "chore(truth): explicit static/mocked execution claims for v0.1",
+                "description": "Transparency update: downgraded specimens to Declared, added substrate_execution mode"
             }
         ]
     },
@@ -272,10 +283,10 @@
         ]
     },
     "metadata": {
-        "manifest_version": "1.1",
+        "manifest_version": "1.2",
         "generated_date": "2026-01-12",
-        "total_commits": 12,
-        "total_phases": 5,
+        "total_commits": 13,
+        "total_phases": 6,
         "acceptance_verdict": "ACCEPTED",
         "release_readiness": true
     }
