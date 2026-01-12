@@ -43,7 +43,8 @@ async function main() {
     console.log('Detailed Check Results:');
     console.log('-'.repeat(60));
 
-    for (const check of checks) {
+    for (const checkItem of checks) {
+        const check = checkItem as any;
         const status = check.status === 'PASS' ? '✅ PASS' : '❌ FAIL';
         console.log(`\n${status} ${check.id || check.name || 'UNKNOWN_CHECK'}`);
 

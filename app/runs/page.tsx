@@ -5,7 +5,8 @@ import { ProvenanceFooter } from '@/components/ProvenanceFooter';
 
 export const metadata = {
     title: 'Curated Runs | MPLP Validation Lab',
-    description: 'Vendor-neutral evidence packs for third-party verification'
+    description: 'Vendor-neutral evidence packs for third-party verification',
+    robots: { index: false, follow: false }
 };
 
 export default function RunsPage() {

@@ -1,0 +1,277 @@
+{
+    "release_version": "v0.1",
+    "release_date": "2026-01-11",
+    "release_type": "initial_public_release",
+    "acceptance_status": "ACCEPTED",
+    "entry_points": {
+        "lab": {
+            "url": "https://lab.mplp.io",
+            "status": "deployed",
+            "key_routes": [
+                "/runs",
+                "/runs/[run_id]",
+                "/api/runs/[run_id]/files/[...path]",
+                "/api/runs/[run_id]/download/[...path]",
+                "/about",
+                "/builder"
+            ]
+        },
+        "website": {
+            "url": "https://mplp.io",
+            "integration_page": "/governance/evidence-chain",
+            "commit": "f2a0af1d5d93fd6d05c6f362067acd122e73a3e1",
+            "boundary_statement": "Evidence-based verdict viewing and export; not a certification program and does not host execution"
+        },
+        "docs": {
+            "url": "https://docs.mplp.io",
+            "integration_page": "/evaluation/conformance",
+            "commit": "aa86b28aadd330d9e80a29c24473985ae926b394",
+            "branch": "dev",
+            "boundary_statement": "External reference (non-normative): evidence viewing/export site",
+            "note": "Committed to dev branch; may require merge to main for public visibility"
+        }
+    },
+    "seals": {
+        "phase_3": {
+            "document": "phase-3-seal.md",
+            "commit": "c988e71",
+            "description": "Evidence chain implementation (curated runs, allowlist, frozen ruleset)"
+        },
+        "phase_4": {
+            "document": "phase-4-seal.md",
+            "commits": [
+                "315ea3d",
+                "cd7cd7d",
+                "f6c63c0",
+                "779b392",
+                "7a77783",
+                "7df9dfc"
+            ],
+            "description": "UI updates (scenario-aware projection + evidence drilldown + API routes)"
+        },
+        "phase_5": {
+            "document": "phase-5-seal.md",
+            "commits": [
+                "f2a0af1d5d93fd6d05c6f362067acd122e73a3e1",
+                "aa86b28aadd330d9e80a29c24473985ae926b394"
+            ],
+            "description": "Website/Docs minimal cross-linking (link-only strategy)"
+        },
+        "phase_6": {
+            "document": "phase-6-final-acceptance.md",
+            "description": "Final acceptance + release notes + evidence manifest"
+        },
+        "phase_6_1": {
+            "document": "phase-6.1-entry-hygiene-seal.md",
+            "description": "Entry hygiene patch (Lite SEO/GEO guardrails + robots/sitemap strict allowlist)"
+        }
+    },
+    "commit_chains": {
+        "phase_3": [
+            {
+                "sha": "c988e71",
+                "message": "fix(phase-3): FINAL - All gates PASS including GATE-08",
+                "description": "Evidence chain implementation complete"
+            }
+        ],
+        "phase_4_preflight": [
+            {
+                "sha": "315ea3d",
+                "message": "fix(phase-4): Apply P4-0.1 preflight fixes",
+                "description": "6 critical fixes (types, generator, gates 08-09)"
+            },
+            {
+                "sha": "cd7cd7d",
+                "message": "fix(phase-4): Apply P4-0.1.1 supplemental fixes (FINAL)",
+                "description": "4 fixes + hygiene (ruleset display, gate-09 final, gate-10, js-yaml)"
+            }
+        ],
+        "phase_4_main": [
+            {
+                "sha": "f6c63c0",
+                "message": "feat(phase-4): Add /runs index page with P0.7 awareness (M1)",
+                "description": "Data + UI foundation"
+            },
+            {
+                "sha": "779b392",
+                "message": "feat(phase-4): Add /runs/[run_id] detail pages (M2)",
+                "description": "Run detail components"
+            },
+            {
+                "sha": "7a77783",
+                "message": "feat(phase-4): Add secure API routes for evidence files (M3)",
+                "description": "5-layer security API routes"
+            },
+            {
+                "sha": "7df9dfc",
+                "message": "fix: Add metadata robots noindex for GATE-06 compliance",
+                "description": "GATE-06 compliance fix"
+            }
+        ],
+        "phase_5": [
+            {
+                "sha": "f2a0af1d5d93fd6d05c6f362067acd122e73a3e1",
+                "message": "chore(phase-5): Add website link-only entry to Validation Lab (no semantic expansion)",
+                "repository": "MPLP_website",
+                "file": "app/governance/evidence-chain/page.tsx"
+            },
+            {
+                "sha": "aa86b28aadd330d9e80a29c24473985ae926b394",
+                "message": "chore(phase-5): Add docs external reference link to Validation Lab (non-normative)",
+                "repository": "docs",
+                "file": "docs/evaluation/conformance/index.mdx",
+                "branch": "dev"
+            }
+        ],
+        "phase_6_1_hygiene": [
+            {
+                "sha": "pending",
+                "message": "chore(entry-hygiene): add lite SEO guardrails (robots/sitemap/meta) for v0.1",
+                "description": "Robots/Sitemap strict allowlist, metadata title templates, non-cert descriptions"
+            }
+        ]
+    },
+    "logs": {
+        "phase_3": [
+            "Evidence logs (referenced in phase-3-seal.md)"
+        ],
+        "phase_4_preflight": [
+            "phase-4-preflight-tsc.A.log",
+            "phase-4-preflight-gates.A.log",
+            "phase-4-preflight-tsc.B.log",
+            "phase-4-preflight-gates.B.log",
+            "phase-4-preflight-production.B.ci.log",
+            "phase-4-preflight-production.B.generate.log"
+        ],
+        "phase_4_main": [
+            "phase-4-main-tsc.M1.log",
+            "phase-4-main-gates.M1.log",
+            "phase-4-main-tsc.M2.log",
+            "phase-4-main-gates.M2.log",
+            "phase-4-main-tsc.M3.log",
+            "phase-4-main-gates.M3.log",
+            "phase-4-main-final-gates.log",
+            "phase-4-main-commits.txt"
+        ],
+        "phase_5": [
+            "phase-5-website-build.log",
+            "phase-5-docs-build.log",
+            "phase-5-website-forbidden-check.log",
+            "phase-5-docs-normative-check.log",
+            "phase-5-commit-W1.sha",
+            "phase-5-commit-D1.sha"
+        ],
+        "phase_6": [
+            "phase-6-final-gates.log",
+            "phase-6-frozen-boundaries-check.log"
+        ]
+    },
+    "gates_status": {
+        "verification_date": "2026-01-11",
+        "log_file": "phase-6-final-gates.log",
+        "generator_commit": "7df9dfc",
+        "results": {
+            "gate_04": {
+                "name": "Non-endorsement Language Lint",
+                "status": "PASS",
+                "files_scanned": 188,
+                "matches": 0
+            },
+            "gate_05": {
+                "name": "No Execution Hosting Guard",
+                "status": "PASS",
+                "files_scanned": 82,
+                "matches": 0
+            },
+            "gate_06": {
+                "name": "Robots/Noindex Policy",
+                "status": "PASS",
+                "files_scanned": 1,
+                "matches": 0
+            },
+            "gate_07": {
+                "name": "PII/Path Leak Lint",
+                "status": "PASS",
+                "files_scanned": 6,
+                "matches": 0
+            },
+            "gate_08": {
+                "name": "Curated Immutability",
+                "status": "PASS",
+                "entries_checked": 3
+            },
+            "gate_09": {
+                "name": "SSOT Projection Guard",
+                "status": "PASS",
+                "files_scanned": 64,
+                "hash_hardcoding_detected": false
+            },
+            "gate_10": {
+                "name": "Curated Runs Invariants",
+                "status": "PASS",
+                "checks_performed": 4
+            }
+        }
+    },
+    "frozen_boundaries": {
+        "status": "CLEAN",
+        "verification_date": "2026-01-11",
+        "log_file": "phase-6-frozen-boundaries-check.log",
+        "protected_paths": [
+            "data/rulesets/ruleset-1.0",
+            "app/policies/contract",
+            "app/policies/strength"
+        ],
+        "modifications": []
+    },
+    "production_verification": {
+        "status": "PASS",
+        "phase": "phase_4_preflight",
+        "logs": [
+            "phase-4-preflight-production.B.ci.log",
+            "phase-4-preflight-production.B.generate.log"
+        ],
+        "command": "npm ci --omit=dev",
+        "result": "SUCCESS"
+    },
+    "curated_runs": {
+        "count": 3,
+        "runs": [
+            "gf-01-langchain-pass",
+            "sample-pass",
+            "sample-not-admissible"
+        ],
+        "ssot_source": "data/curated-runs/allowlist.yaml",
+        "generated_artifact": "public/_data/curated-runs.json"
+    },
+    "documentation": {
+        "seals": [
+            "phase-3-seal.md",
+            "phase-4-seal.md",
+            "phase-5-seal.md",
+            "phase-6-final-acceptance.md"
+        ],
+        "runbooks": [
+            "phase-4-preflight-runbook.md",
+            "phase-4-main-runbook.md"
+        ],
+        "strategies": [
+            "phase-5-link-only-strategy.md",
+            "phase-5-website-docs-research.md"
+        ],
+        "explanations": [
+            "phase-4-commit-sha-explanation.md"
+        ],
+        "release_notes": [
+            "release-notes-v0.1.md"
+        ]
+    },
+    "metadata": {
+        "manifest_version": "1.1",
+        "generated_date": "2026-01-12",
+        "total_commits": 11,
+        "total_phases": 5,
+        "acceptance_verdict": "ACCEPTED",
+        "release_readiness": true
+    }
+}

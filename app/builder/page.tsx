@@ -19,8 +19,8 @@ export const metadata: Metadata = {
         canonical: `${LAB_CANONICAL_HOST}/builder`,
     },
     robots: {
-        index: true,
-        follow: true,
+        index: false,
+        follow: false,
     },
 };
 

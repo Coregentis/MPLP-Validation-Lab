@@ -14,8 +14,8 @@ import type { Metadata } from 'next';
 const LAB_CANONICAL_HOST = 'https://lab.mplp.io';
 
 export const metadata: Metadata = {
-    title: 'About — MPLP Validation Lab',
-    description: 'Four Boundaries of MPLP Validation Lab: Non-certification, Non-normative, No execution hosting, Deterministic ruleset. Evidence-based verdicts only.',
+    title: 'About (Non-Normative)',
+    description: 'Four Boundaries of MPLP Validation Lab: Non-certification, Non-normative, No execution hosting, Deterministic ruleset. Evidence generated in third-party environments.',
     alternates: {
         canonical: `${LAB_CANONICAL_HOST}/about`,
     },

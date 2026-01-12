@@ -3,8 +3,10 @@ import type { Metadata } from 'next';
 const LAB_CANONICAL_HOST = 'https://lab.mplp.io';
 
 export const metadata: Metadata = {
-    title: 'MPLP Validation Lab — Evidence Verdict Gateway',
-    description: 'Evidence & Conformance Laboratory for MPLP Lifecycle Invariants. Non-certifying, non-normative, no execution hosting. Deterministic verdicts from versioned rulesets.',
+    title: {
+        absolute: 'MPLP Validation Lab — Evidence Viewing & Export (Non-Certification)'
+    },
+    description: 'Evidence-based verdict viewing and export for MPLP conformance evaluation. Not a certification program. Does not host execution.',
     alternates: {
         canonical: LAB_CANONICAL_HOST,
     },

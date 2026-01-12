@@ -16,9 +16,10 @@ export async function generateStaticParams() {
     return data.runs.map(run => ({ run_id: run.run_id }));
 }
 
-export default function RunDetailPage({ params }: { params: { run_id: string } }) {
+export default async function RunDetailPage({ params }: { params: Promise<{ run_id: string }> }) {
+    const { run_id } = await params;
     const data = getCuratedRuns();
-    const run = data.runs.find(r => r.run_id === params.run_id);
+    const run = data.runs.find(r => r.run_id === run_id);
 
     if (!run) {
         notFound();

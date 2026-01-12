@@ -45,7 +45,7 @@ export function CuratedRunsTable({ runs }: { runs: CuratedRunRecord[] }) {
                             <td className="p-3">
                                 {run.substrate_claim_level === 'reproduced' && (
                                     <a
-                                        href={run.repro_ref}
+                                        href={`/examples/evidence-producers/${run.substrate}#repro-steps`}
                                         className="text-blue-600 hover:underline text-sm"
                                         target="_blank"
                                         rel="noopener noreferrer"

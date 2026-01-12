@@ -31,10 +31,11 @@ function safeJsonError(message: string, status: number): NextResponse {
 
 export async function GET(
     _request: NextRequest,
-    { params }: { params: { run_id: string; path: string[] } }
+    { params }: { params: Promise<{ run_id: string; path: string[] }> }
 ) {
-    const runId = params.run_id;
-    const rel = params.path.join('/');
+    const { run_id, path: pathParam } = await params;
+    const runId = run_id;
+    const rel = pathParam.join('/');
 
     // 1) Whitelist check
     if (!ALLOWED_FILES.has(rel)) {

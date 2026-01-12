@@ -37,8 +37,8 @@ export function VerificationPanel({ run }: { run: CuratedRunRecord }) {
                 <div className="mt-4 bg-green-50 border-l-4 border-green-500 p-4 rounded">
                     <h3 className="font-semibold text-green-900">Reproduction Available</h3>
                     <p className="text-sm mt-1 text-green-800">
-                        Full reproduction steps: <a href={run.repro_ref} className="text-blue-600 hover:underline font-semibold">
-                            {run.repro_ref.split('/').pop()}
+                        Full reproduction steps: <a href={`/examples/evidence-producers/${run.substrate}#repro-steps`} className="text-blue-600 hover:underline font-semibold" target="_blank" rel="noopener noreferrer">
+                            README.md#repro-steps
                         </a>
                     </p>
                 </div>
