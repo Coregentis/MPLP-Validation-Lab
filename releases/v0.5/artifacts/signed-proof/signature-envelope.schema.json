@@ -1,0 +1,74 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "signature-envelope.schema.json",
+    "$comment": {
+        "authority": "Validation Lab",
+        "normativity": "Non-Normative",
+        "scope": "Evidence artifacts for adjudication; not part of MPLP Protocol",
+        "version": "1.0"
+    },
+    "title": "Signature Envelope (Non-Normative)",
+    "description": "Contains signature over canonical payload with algorithm and key info",
+    "type": "object",
+    "required": [
+        "envelope_version",
+        "algorithm",
+        "key_id",
+        "payload_sha256",
+        "signature"
+    ],
+    "properties": {
+        "envelope_version": {
+            "type": "string",
+            "enum": [
+                "1"
+            ]
+        },
+        "algorithm": {
+            "type": "string",
+            "enum": [
+                "ed25519",
+                "rsa-pss-sha256"
+            ],
+            "description": "Frozen at ed25519 for v0.5"
+        },
+        "key_id": {
+            "type": "string",
+            "description": "Identifier for signing public key"
+        },
+        "payload_sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+        },
+        "signature": {
+            "type": "string",
+            "description": "Base64 signature over canonical payload bytes"
+        },
+        "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Optional; excluded from canonicalization"
+        },
+        "canonicalization": {
+            "type": "object",
+            "required": [
+                "mode",
+                "ignored_fields"
+            ],
+            "properties": {
+                "mode": {
+                    "type": "string",
+                    "enum": [
+                        "json-c14n-lite"
+                    ]
+                },
+                "ignored_fields": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+}

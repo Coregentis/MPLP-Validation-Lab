@@ -1,0 +1,50 @@
+{
+    "release_version": "0.5.0",
+    "release_date": "2026-01-14",
+    "protocol_version": "1.0.0",
+    "evidence_regime_version": "1.0",
+    "p2_signed_proof_version": "1",
+    "authority": "Validation Lab",
+    "scope": "Non-normative evidence artifacts",
+    "seal_document": "Validation_Lab/releases/v0.5/phase-2-p2-signed-proof-seal.md",
+    "evidence_schema_bundle": {
+        "authority": "Validation Lab",
+        "scope": "Non-normative evidence artifacts",
+        "schemas": [
+            "artifacts/signed-proof/signed-proof.schema.json",
+            "artifacts/signed-proof/signature-envelope.schema.json"
+        ]
+    },
+    "artifacts": {
+        "signed_proofs": [
+            {
+                "signed_proof_id": "SIGN-01",
+                "target_release": "0.4.0",
+                "target_root": "Validation_Lab/releases/v0.4/",
+                "path": "artifacts/signed-proof/SIGN-01/",
+                "algorithm": "ed25519",
+                "key_id": "mplp-validation-lab-release-key-01",
+                "files_covered": 16,
+                "envelope": "artifacts/signed-proof/SIGN-01/signature.json",
+                "payload": "artifacts/signed-proof/SIGN-01/payload.json",
+                "sha256sums": "artifacts/signed-proof/SIGN-01/sha256sums.txt",
+                "public_key": "artifacts/signed-proof/SIGN-01/public_key.txt",
+                "statement": "artifacts/signed-proof/SIGN-01/statement.md"
+            }
+        ]
+    },
+    "gates_passed": [
+        "P2-SIGN"
+    ],
+    "gate_reports": [
+        "gates/p2-sign-gate.report.json"
+    ],
+    "compatibility": {
+        "references_releases": [
+            "v0.2.0",
+            "v0.3.0",
+            "v0.4.0"
+        ],
+        "does_not_modify_prior_releases": true
+    }
+}

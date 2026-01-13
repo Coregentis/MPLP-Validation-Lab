@@ -1,0 +1,15 @@
+{
+    "envelope_version": "1",
+    "algorithm": "ed25519",
+    "key_id": "mplp-validation-lab-release-key-01",
+    "payload_sha256": "d10558c5a3b14cb0c2f325385fb543cf067c2c1ccce1d0365850ba846b834e56",
+    "signature": "jA317F17kyhTInwMWivTb6ggfZLS9dhIVtiG9sujZBp01/ILfgDisVLh/hhilhMqcE8NxnW7e0JgGhTzFz7LBQ==",
+    "created_at": "2026-01-14T01:00:00+08:00",
+    "canonicalization": {
+        "mode": "json-c14n-lite",
+        "ignored_fields": [
+            "created_at",
+            "timestamp"
+        ]
+    }
+}

@@ -1,0 +1,124 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "signed-proof.schema.json",
+    "$comment": {
+        "authority": "Validation Lab",
+        "normativity": "Non-Normative",
+        "scope": "Evidence artifacts for adjudication; not part of MPLP Protocol",
+        "version": "1.0"
+    },
+    "title": "Validation Lab Signed Proof (Non-Normative)",
+    "description": "Describes a signed proof package covering release artifacts",
+    "type": "object",
+    "required": [
+        "signed_proof_id",
+        "release_version",
+        "scope",
+        "envelope",
+        "coverage",
+        "non_certification"
+    ],
+    "properties": {
+        "signed_proof_id": {
+            "type": "string",
+            "description": "e.g. SIGN-01"
+        },
+        "release_version": {
+            "type": "string",
+            "description": "e.g. 0.5.0"
+        },
+        "scope": {
+            "type": "object",
+            "required": [
+                "authority",
+                "normativity"
+            ],
+            "properties": {
+                "authority": {
+                    "type": "string",
+                    "enum": [
+                        "Validation Lab"
+                    ]
+                },
+                "normativity": {
+                    "type": "string",
+                    "enum": [
+                        "Non-Normative"
+                    ]
+                },
+                "notes": {
+                    "type": "string"
+                }
+            }
+        },
+        "envelope": {
+            "type": "object",
+            "required": [
+                "schema",
+                "signature_path",
+                "payload_path",
+                "sha256sums_path"
+            ],
+            "properties": {
+                "schema": {
+                    "type": "string"
+                },
+                "signature_path": {
+                    "type": "string"
+                },
+                "payload_path": {
+                    "type": "string"
+                },
+                "sha256sums_path": {
+                    "type": "string"
+                },
+                "public_key_path": {
+                    "type": "string"
+                }
+            }
+        },
+        "coverage": {
+            "type": "object",
+            "required": [
+                "release_artifacts_root",
+                "files"
+            ],
+            "properties": {
+                "release_artifacts_root": {
+                    "type": "string"
+                },
+                "files": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                        "type": "object",
+                        "required": [
+                            "path",
+                            "sha256"
+                        ],
+                        "properties": {
+                            "path": {
+                                "type": "string"
+                            },
+                            "sha256": {
+                                "type": "string",
+                                "pattern": "^[a-f0-9]{64}$"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "non_certification": {
+            "type": "object",
+            "required": [
+                "statement_path"
+            ],
+            "properties": {
+                "statement_path": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

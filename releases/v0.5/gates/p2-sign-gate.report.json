@@ -1,0 +1,56 @@
+{
+  "gate_id": "P2-SIGN",
+  "timestamp": "2026-01-13T17:03:42.414Z",
+  "checks": [
+    {
+      "check": "signed_proof_schema_exists",
+      "passed": true
+    },
+    {
+      "check": "envelope_schema_exists",
+      "passed": true
+    },
+    {
+      "check": "signature_exists:SIGN-01",
+      "passed": true
+    },
+    {
+      "check": "payload_exists:SIGN-01",
+      "passed": true
+    },
+    {
+      "check": "sha256sums_exists:SIGN-01",
+      "passed": true
+    },
+    {
+      "check": "public_key_exists:SIGN-01",
+      "passed": true
+    },
+    {
+      "check": "statement_exists:SIGN-01",
+      "passed": true
+    },
+    {
+      "check": "non_certification_phrase:SIGN-01",
+      "passed": true
+    },
+    {
+      "check": "payload_hash_match:SIGN-01",
+      "passed": true
+    },
+    {
+      "check": "sha256sums_hash_match:SIGN-01",
+      "passed": true
+    },
+    {
+      "check": "signature_valid:SIGN-01",
+      "passed": true
+    },
+    {
+      "check": "sha256sums_verified:SIGN-01",
+      "passed": true,
+      "files_checked": 16
+    }
+  ],
+  "verdict": "PASS"
+}

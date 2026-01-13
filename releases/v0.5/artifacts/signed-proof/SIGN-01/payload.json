@@ -1,0 +1,20 @@
+{
+    "payload_version": "1",
+    "signed_target_release": "0.4.0",
+    "target_root": "Validation_Lab/releases/v0.4/",
+    "target_manifest_sha256": "cd73be6c84dd9e7f2c7f607a4559a3b9e515187226199486da51eafdd777a665",
+    "target_seal_sha256": "0b36b27dab706ff4700b2d1a094d092d14eb9e68eb43755f3aef1ac8b7acf974",
+    "sha256sums_sha256": "36ef54c0089d8671bab752b7bd6f2d797daf403af67f26a076fa0380cd14ccdb",
+    "gate_reports": [
+        "gates/p1-snap-gate.report.json",
+        "gates/p1-vfy-gate.report.json"
+    ],
+    "files_covered": 16,
+    "canonicalization": {
+        "mode": "json-c14n-lite",
+        "ignored_fields": [
+            "created_at",
+            "timestamp"
+        ]
+    }
+}
