@@ -1,0 +1,35 @@
+{
+  "gate_id": "P1-SNAP",
+  "timestamp": "2026-01-13T16:39:45.905Z",
+  "checks": [
+    {
+      "check": "index_schema_exists",
+      "passed": true
+    },
+    {
+      "check": "diff_schema_exists",
+      "passed": true
+    },
+    {
+      "check": "index_exists:gf-01-langchain-official-v0.2",
+      "passed": true
+    },
+    {
+      "check": "snapshot_exists:gf-01-langchain-official-v0.2/000",
+      "passed": true
+    },
+    {
+      "check": "snapshot_exists:gf-01-langchain-official-v0.2/001",
+      "passed": true
+    },
+    {
+      "check": "diff_exists:gf-01-langchain-official-v0.2/000_001",
+      "passed": true
+    },
+    {
+      "check": "source_hash_valid:gf-01-langchain-official-v0.2",
+      "passed": true
+    }
+  ],
+  "verdict": "PASS"
+}

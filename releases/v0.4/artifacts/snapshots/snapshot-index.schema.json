@@ -1,0 +1,153 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "snapshot-index.schema.json",
+    "$comment": {
+        "authority": "Validation Lab",
+        "normativity": "Non-Normative",
+        "scope": "Evidence artifacts for adjudication; not part of MPLP Protocol",
+        "version": "1.0"
+    },
+    "title": "Validation Lab Snapshot Index (Non-Normative)",
+    "description": "Indexes state snapshots and diffs for a run, enabling state evolution evidence",
+    "type": "object",
+    "required": [
+        "run_id",
+        "scenario_id",
+        "snapshot_version",
+        "snapshots",
+        "diffs",
+        "canonicalization"
+    ],
+    "properties": {
+        "run_id": {
+            "type": "string"
+        },
+        "scenario_id": {
+            "type": "string"
+        },
+        "snapshot_version": {
+            "type": "string",
+            "description": "Version for snapshot artifact format, e.g. 1"
+        },
+        "source": {
+            "type": "object",
+            "required": [
+                "evidence_ref",
+                "pack_root_hash",
+                "verdict_hash"
+            ],
+            "properties": {
+                "evidence_ref": {
+                    "type": "string",
+                    "description": "Path to referenced evidence (v0.2/v0.3 run)"
+                },
+                "pack_root_hash": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                },
+                "verdict_hash": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                }
+            }
+        },
+        "snapshots": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+                "type": "object",
+                "required": [
+                    "id",
+                    "path",
+                    "logical_time"
+                ],
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Monotonic id, e.g. 000, 001"
+                    },
+                    "path": {
+                        "type": "string",
+                        "description": "Relative path to snapshot state file"
+                    },
+                    "logical_time": {
+                        "type": "integer",
+                        "minimum": 0
+                    },
+                    "event_ref": {
+                        "type": "string",
+                        "description": "Pointer to timeline/event in evidence pack"
+                    },
+                    "notes": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "diffs": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "required": [
+                    "from",
+                    "to",
+                    "path",
+                    "diff_schema_ref"
+                ],
+                "properties": {
+                    "from": {
+                        "type": "string"
+                    },
+                    "to": {
+                        "type": "string"
+                    },
+                    "path": {
+                        "type": "string",
+                        "description": "Relative path to diff file"
+                    },
+                    "diff_schema_ref": {
+                        "type": "string",
+                        "description": "Path to snapshot-diff schema"
+                    }
+                }
+            }
+        },
+        "canonicalization": {
+            "type": "object",
+            "required": [
+                "mode",
+                "ignored_fields"
+            ],
+            "properties": {
+                "mode": {
+                    "type": "string",
+                    "enum": [
+                        "json-c14n-lite"
+                    ]
+                },
+                "ignored_fields": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Fields ignored for determinism checks"
+                }
+            }
+        },
+        "integrity": {
+            "type": "object",
+            "properties": {
+                "index_sha256": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                },
+                "states_sha256sums": {
+                    "type": "string"
+                },
+                "diffs_sha256sums": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

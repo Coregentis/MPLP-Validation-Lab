@@ -1,0 +1,119 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "verifier-record.schema.json",
+    "$comment": {
+        "authority": "Validation Lab",
+        "normativity": "Non-Normative",
+        "scope": "Evidence artifacts for adjudication; not part of MPLP Protocol",
+        "version": "1.0"
+    },
+    "title": "Validation Lab Third-party Verifier Record (Non-Normative)",
+    "description": "Records independent reproduction of evaluator outputs under stated environment",
+    "type": "object",
+    "required": [
+        "verifier_id",
+        "verified_release",
+        "run_id",
+        "env_ref",
+        "reports",
+        "integrity",
+        "non_certification"
+    ],
+    "properties": {
+        "verifier_id": {
+            "type": "string",
+            "description": "Opaque id, e.g. VFY-01"
+        },
+        "verified_release": {
+            "type": "string",
+            "description": "Release being verified, e.g. v0.3.0"
+        },
+        "run_id": {
+            "type": "string"
+        },
+        "env_ref": {
+            "type": "string",
+            "description": "Path to env.json fingerprint"
+        },
+        "reports": {
+            "type": "object",
+            "required": [
+                "verify_report",
+                "eval_report"
+            ],
+            "properties": {
+                "verify_report": {
+                    "type": "string"
+                },
+                "eval_report": {
+                    "type": "string"
+                }
+            }
+        },
+        "expected": {
+            "type": "object",
+            "properties": {
+                "verdict": {
+                    "type": "string",
+                    "enum": [
+                        "PASS",
+                        "FAIL"
+                    ]
+                },
+                "verdict_hash": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                }
+            }
+        },
+        "integrity": {
+            "type": "object",
+            "required": [
+                "record_sha256"
+            ],
+            "properties": {
+                "record_sha256": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                },
+                "env_sha256": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                },
+                "verify_report_sha256": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                },
+                "eval_report_sha256": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                }
+            }
+        },
+        "canonicalization": {
+            "type": "object",
+            "required": [
+                "ignored_fields"
+            ],
+            "properties": {
+                "ignored_fields": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "non_certification": {
+            "type": "object",
+            "required": [
+                "statement_path"
+            ],
+            "properties": {
+                "statement_path": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

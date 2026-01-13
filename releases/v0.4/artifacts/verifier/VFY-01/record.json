@@ -1,0 +1,29 @@
+{
+    "verifier_id": "VFY-01",
+    "verified_release": "v0.2.0",
+    "run_id": "gf-01-langchain-official-v0.2",
+    "env_ref": "env.json",
+    "reports": {
+        "verify_report": "verify_report.json",
+        "eval_report": "eval_report.json"
+    },
+    "expected": {
+        "verdict": "PASS",
+        "verdict_hash": "25102cd201fd8b54f53416b21ef9d3b609fbca34718a0b4eb5ec58db16971c56"
+    },
+    "integrity": {
+        "record_sha256": "__TO_BE_COMPUTED__",
+        "env_sha256": "__TO_BE_COMPUTED__",
+        "verify_report_sha256": "__TO_BE_COMPUTED__",
+        "eval_report_sha256": "__TO_BE_COMPUTED__"
+    },
+    "canonicalization": {
+        "ignored_fields": [
+            "timestamp",
+            "captured_at"
+        ]
+    },
+    "non_certification": {
+        "statement_path": "statement.md"
+    }
+}

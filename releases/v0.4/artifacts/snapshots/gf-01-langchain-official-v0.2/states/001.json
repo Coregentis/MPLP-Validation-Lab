@@ -1,0 +1,22 @@
+{
+    "snapshot_id": "001",
+    "logical_time": 1,
+    "state_type": "agent_lifecycle",
+    "agent": {
+        "id": "gf-01-agent",
+        "status": "completed",
+        "context_loaded": true,
+        "plan_created": true,
+        "execution_started": true,
+        "artifacts_generated": [
+            "context.json",
+            "plan.json",
+            "trace.json"
+        ]
+    },
+    "context": {
+        "project_id": "gf-01-project",
+        "requirements_present": true
+    },
+    "timeline_position": 5
+}

@@ -1,0 +1,53 @@
+{
+    "release_version": "0.4.0",
+    "release_date": "2026-01-14",
+    "protocol_version": "1.0.0",
+    "evidence_regime_version": "1.0",
+    "p1_state_evolution_version": "1",
+    "authority": "Validation Lab",
+    "scope": "Non-normative evidence artifacts",
+    "seal_document": "Validation_Lab/releases/v0.4/phase-1-p1-state-evolution-seal.md",
+    "evidence_schema_bundle": {
+        "authority": "Validation Lab",
+        "scope": "Non-normative evidence artifacts",
+        "schemas": [
+            "artifacts/snapshots/snapshot-index.schema.json",
+            "artifacts/snapshots/snapshot-diff.schema.json",
+            "artifacts/verifier/verifier-record.schema.json"
+        ]
+    },
+    "artifacts": {
+        "snapshots": [
+            {
+                "run_id": "gf-01-langchain-official-v0.2",
+                "path": "artifacts/snapshots/gf-01-langchain-official-v0.2/index.json",
+                "states_count": 2,
+                "diffs_count": 1
+            }
+        ],
+        "verifier_records": [
+            {
+                "verifier_id": "VFY-01",
+                "path": "artifacts/verifier/VFY-01/",
+                "verified_run": "gf-01-langchain-official-v0.2",
+                "verified_release": "v0.2.0",
+                "verdict": "PASS"
+            }
+        ]
+    },
+    "gates_passed": [
+        "P1-SNAP",
+        "P1-VFY"
+    ],
+    "gate_reports": [
+        "gates/p1-snap-gate.report.json",
+        "gates/p1-vfy-gate.report.json"
+    ],
+    "compatibility": {
+        "references_releases": [
+            "v0.2.0",
+            "v0.3.0"
+        ],
+        "does_not_modify_prior_releases": true
+    }
+}

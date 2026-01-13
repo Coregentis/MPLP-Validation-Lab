@@ -1,0 +1,53 @@
+{
+    "from": "000",
+    "to": "001",
+    "diff_type": "rfc6902-json-patch",
+    "patch": [
+        {
+            "op": "replace",
+            "path": "/agent/status",
+            "value": "completed"
+        },
+        {
+            "op": "replace",
+            "path": "/agent/plan_created",
+            "value": true
+        },
+        {
+            "op": "replace",
+            "path": "/agent/execution_started",
+            "value": true
+        },
+        {
+            "op": "add",
+            "path": "/agent/artifacts_generated/0",
+            "value": "context.json"
+        },
+        {
+            "op": "add",
+            "path": "/agent/artifacts_generated/1",
+            "value": "plan.json"
+        },
+        {
+            "op": "add",
+            "path": "/agent/artifacts_generated/2",
+            "value": "trace.json"
+        },
+        {
+            "op": "replace",
+            "path": "/timeline_position",
+            "value": 5
+        }
+    ],
+    "canonicalization": {
+        "mode": "json-c14n-lite",
+        "ignored_fields": [
+            "timestamp"
+        ]
+    },
+    "summary": {
+        "adds": 3,
+        "removes": 0,
+        "replaces": 4
+    }
+}

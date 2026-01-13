@@ -1,0 +1,17 @@
+{
+    "verification_type": "pack_integrity",
+    "pack_path": "tests/cross-substrate/gf-01/langchain/pack",
+    "files_checked": [
+        "manifest.json",
+        "artifacts/context.json",
+        "artifacts/plan.json",
+        "artifacts/trace.json",
+        "timeline/events.ndjson",
+        "integrity/sha256sums.txt"
+    ],
+    "integrity_results": {
+        "all_files_present": true,
+        "sha256sums_verified": true
+    },
+    "verdict": "PASS"
+}

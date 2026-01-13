@@ -1,0 +1,103 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "snapshot-diff.schema.json",
+    "$comment": {
+        "authority": "Validation Lab",
+        "normativity": "Non-Normative",
+        "scope": "Evidence artifacts for adjudication; not part of MPLP Protocol",
+        "version": "1.0"
+    },
+    "title": "Validation Lab Snapshot Diff (Non-Normative)",
+    "description": "RFC 6902 JSON Patch based diff between two snapshots",
+    "type": "object",
+    "required": [
+        "from",
+        "to",
+        "diff_type",
+        "patch",
+        "canonicalization"
+    ],
+    "properties": {
+        "from": {
+            "type": "string"
+        },
+        "to": {
+            "type": "string"
+        },
+        "diff_type": {
+            "type": "string",
+            "enum": [
+                "rfc6902-json-patch"
+            ]
+        },
+        "patch": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "required": [
+                    "op",
+                    "path"
+                ],
+                "properties": {
+                    "op": {
+                        "type": "string",
+                        "enum": [
+                            "add",
+                            "remove",
+                            "replace",
+                            "move",
+                            "copy",
+                            "test"
+                        ]
+                    },
+                    "path": {
+                        "type": "string"
+                    },
+                    "from": {
+                        "type": "string"
+                    },
+                    "value": {}
+                },
+                "additionalProperties": false
+            }
+        },
+        "canonicalization": {
+            "type": "object",
+            "required": [
+                "mode",
+                "ignored_fields"
+            ],
+            "properties": {
+                "mode": {
+                    "type": "string",
+                    "enum": [
+                        "json-c14n-lite"
+                    ]
+                },
+                "ignored_fields": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "summary": {
+            "type": "object",
+            "properties": {
+                "adds": {
+                    "type": "integer",
+                    "minimum": 0
+                },
+                "removes": {
+                    "type": "integer",
+                    "minimum": 0
+                },
+                "replaces": {
+                    "type": "integer",
+                    "minimum": 0
+                }
+            }
+        }
+    }
+}
