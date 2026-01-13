@@ -1,0 +1,33 @@
+
+> docusaurus-temp@1.0.0 prebuild
+> node ../scripts/03-docs/render-mermaid.mjs
+
+🎨 MPLP Mermaid Renderer - Build-Time SVG Generation
+========================================\n
+Found 162 documentation files\n
+\n========================================
+✨ Complete!
+   Files processed: 0
+   Diagrams rendered: 0
+   Output: docs/static/mermaid/
+========================================\n
+
+> docusaurus-temp@1.0.0 build
+> docusaurus build
+
+[INFO] [en] Creating an optimized production build...
+[webpackbar] ℹ Compiling Client
+[webpackbar] ℹ Compiling Server
+[webpackbar] ✔ Server: Compiled successfully in 795.37ms
+[webpackbar] ✔ Client: Compiled successfully in 1.70s
+docusaurus-lunr-search:: Building search docs and lunr index file
+docusaurus-lunr-search:: Start scanning documents in 14 threads
+docusaurus-lunr-search:: Indexing time: 613.842ms
+docusaurus-lunr-search:: indexed 160 documents out of 176
+docusaurus-lunr-search:: writing search-doc.json
+docusaurus-lunr-search:: writing search-doc-1768093397952.json
+docusaurus-lunr-search:: writing lunr-index.json
+docusaurus-lunr-search:: writing lunr-index-1768093397952.json
+docusaurus-lunr-search:: End of process
+[SUCCESS] Generated static files in "build".
+[INFO] Use `npm run serve` command to test your build locally.

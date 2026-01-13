@@ -1,0 +1,7 @@
+
+> validation-lab@1.0.0 generate:curated
+> node scripts/generate-curated-runs.mjs
+
+✅ Generated public/_data/curated-runs.json
+   Runs: 3
+   Commit: 315ea3d

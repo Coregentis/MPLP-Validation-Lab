@@ -1,0 +1,90 @@
+{
+  "version": "1.0.0",
+  "generated_at": "2026-01-12T09:15:00Z",
+  "capabilities": [
+    {
+      "capability_id": "CAP-SCHEMA-001",
+      "surface": "schema",
+      "name": "Core Schema Surface",
+      "truth_source": { "type": "schema", "path": "schemas/v2/" },
+      "strength": "S0",
+      "status": "PROVEN",
+      "projection_allowed": ["website", "docs", "lab"],
+      "note": "30 schemas provide field-level definitions"
+    },
+    {
+      "capability_id": "CAP-FLOW-001",
+      "surface": "golden_flow",
+      "name": "GF-01 Single Agent Plan",
+      "truth_source": { "type": "test", "path": "tests/golden/flows/flow-01-single-agent-plan" },
+      "strength": "S1",
+      "status": "PROVEN",
+      "projection_allowed": ["docs", "lab"],
+      "expected_ref": "tests/golden/flows/flow-01-single-agent-plan/expected",
+      "note": "Artifacts exist but no invariants"
+    },
+    {
+      "capability_id": "CAP-FLOW-002",
+      "surface": "golden_flow",
+      "name": "GF-02 Single Agent Large Plan",
+      "truth_source": { "type": "invariant", "path": "tests/golden/flows/flow-02-single-agent-large-plan/invariants.yaml" },
+      "strength": "S2",
+      "status": "PROVEN",
+      "projection_allowed": ["docs", "lab"],
+      "invariants_ref": "tests/golden/flows/flow-02-single-agent-large-plan/invariants.yaml",
+      "note": "4 invariants: plan scope"
+    },
+    {
+      "capability_id": "CAP-FLOW-003",
+      "surface": "golden_flow",
+      "name": "GF-03 Single Agent With Tools",
+      "truth_source": { "type": "invariant", "path": "tests/golden/flows/flow-03-single-agent-with-tools/invariants.yaml" },
+      "strength": "S2",
+      "status": "PROVEN",
+      "projection_allowed": ["docs", "lab"],
+      "invariants_ref": "tests/golden/flows/flow-03-single-agent-with-tools/invariants.yaml"
+    },
+    {
+      "capability_id": "CAP-FLOW-004",
+      "surface": "golden_flow",
+      "name": "SA-01 Basic",
+      "truth_source": { "type": "invariant", "path": "tests/golden/flows/sa-flow-01-basic/invariants.yaml" },
+      "strength": "S2",
+      "status": "PROVEN",
+      "projection_allowed": ["docs", "lab"],
+      "invariants_ref": "tests/golden/flows/sa-flow-01-basic/invariants.yaml",
+      "note": "7 invariants: context + plan scope"
+    },
+    {
+      "capability_id": "CAP-SUBSTRATE-001",
+      "surface": "golden_flow",
+      "name": "Substrate Support (LangChain/A2A/MCP)",
+      "truth_source": { "type": "curated_run", "path": "Validation_Lab/data/curated-runs/allowlist.yaml" },
+      "strength": "S1",
+      "status": "PROVEN",
+      "projection_allowed": ["website", "docs", "lab"],
+      "note": "Specimen-only / declared; not reproduced in v1.0.0"
+    },
+    {
+      "capability_id": "CAP-RULESET-001",
+      "surface": "ruleset",
+      "name": "Ruleset 1.0",
+      "truth_source": { "type": "harness", "path": "Validation_Lab/data/rulesets/ruleset-1.0" },
+      "strength": "S2",
+      "status": "PROVEN",
+      "projection_allowed": ["docs", "lab"],
+      "harness_ref": "Validation_Lab/data/rulesets/ruleset-1.0/manifest.yaml"
+    },
+    {
+      "capability_id": "CAP-GATE-001",
+      "surface": "gate",
+      "name": "CI Gate Suite",
+      "truth_source": { "type": "gate", "path": "scripts/gates/" },
+      "strength": "S2",
+      "status": "PROVEN",
+      "projection_allowed": ["docs"],
+      "harness_ref": ".github/workflows/gates.yml",
+      "note": "11 gate scripts, 7 CI workflows"
+    }
+  ]
+}

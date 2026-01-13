@@ -18,7 +18,9 @@ export default function robots(): MetadataRoute.Robots {
                     "/policies",
                     "/policies/",
                     "/builder",
-                    "/builder/"
+                    "/builder/",
+                    "/coverage",
+                    "/coverage/"
                 ],
             },
         ],

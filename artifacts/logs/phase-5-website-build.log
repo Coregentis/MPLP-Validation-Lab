@@ -1,0 +1,117 @@
+
+> mplp-site@1.0.0 build
+> next build
+
+⚠ Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of /Users/jasonwang/Documents/AI_Dev/V1.0_release/pnpm-lock.yaml as the root directory.
+ To silence this warning, set `turbopack.root` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack#root-directory for more information.
+ Detected additional lockfiles: 
+   * /Users/jasonwang/Documents/AI_Dev/V1.0_release/MPLP_website/package-lock.json
+
+▲ Next.js 16.1.0 (Turbopack)
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 2.0s
+  Running TypeScript ...
+  Collecting page data using 13 workers ...
+  Generating static pages using 13 workers (0/61) ...
+  Generating static pages using 13 workers (15/61) 
+  Generating static pages using 13 workers (30/61) 
+  Generating static pages using 13 workers (45/61) 
+✓ Generating static pages using 13 workers (61/61) in 337.7ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ○ /adoption
+├ ƒ /api/subscribe
+├ ○ /architecture
+├ ○ /blog
+├ ● /blog/[slug]
+│ ├ /blog/mplp-launch
+│ ├ /blog/protocol-legitimacy
+│ ├ /blog/vs-frameworks
+│ └ /blog/why-protocol
+├ ○ /conformance
+├ ○ /definition
+├ ○ /ecosystem
+├ ○ /enterprise
+├ ○ /faq
+├ ○ /golden-flows
+├ ● /golden-flows/[slug]
+│ ├ /golden-flows/flow-01
+│ ├ /golden-flows/flow-02
+│ ├ /golden-flows/flow-03
+│ └ [+6 more paths]
+├ ○ /governance
+├ ○ /governance/agentos-protocol
+├ ○ /governance/evidence-chain
+├ ○ /governance/governed-stack
+├ ○ /governance/iso-iec-42001
+├ ○ /governance/nist-ai-rmf
+├ ○ /governance/overview
+├ ○ /governance/positioning/agentic-state-sovereignty
+├ ○ /governance/positioning/semantic-drift-control
+├ ○ /icon.png
+├ ○ /kernel-duties
+├ ○ /modules
+├ ● /modules/[slug]
+│ ├ /modules/context
+│ ├ /modules/plan
+│ ├ /modules/confirm
+│ └ [+7 more paths]
+├ ○ /posix-analogy
+├ ○ /references
+├ ○ /robots.txt
+├ ○ /search
+├ ○ /sitemap.xml
+├ ○ /specification
+├ ○ /standards/positioning
+├ ○ /standards/protocol-evaluation
+├ ○ /standards/regulatory-positioning
+├ ○ /standards/what-mplp-is-not
+├ ○ /validation-lab
+├ ○ /what-is-mplp
+└ ○ /why-mplp
+
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+
+
+> mplp-site@1.0.0 postbuild
+> npx pagefind --site .next --output-path public/pagefind
+
+
+Running Pagefind v1.4.0 (Extended)
+Running from: "/Users/jasonwang/Documents/AI_Dev/V1.0_release/MPLP_website"
+Source:       ".next"
+Output:       "public/pagefind"
+
+[Walking source directory]
+Found 59 files matching **/*.{html}
+
+[Parsing files]
+Did not find a data-pagefind-body element on the site.
+↳ Indexing all <body> elements on the site.
+
+[Reading languages]
+Discovered 2 languages: unknown, en
+2 pages found without an html lang attribute. 
+Merging these pages with the en language, as that is the main language on this site. 
+Run Pagefind with --verbose for more information.
+  * "/server/app/_global-error.html" has no html lang attribute
+  * "/server/pages/500.html" has no html lang attribute
+
+[Building search indexes]
+Total: 
+  Indexed 1 language
+  Indexed 59 pages
+  Indexed 1945 words
+  Indexed 0 filters
+  Indexed 0 sorts
+
+Finished in 0.079 seconds

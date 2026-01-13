@@ -1,17 +1,17 @@
 # Langchain Evidence Producer Reference
 
 **Substrate**: Langchain (Python)  
-**Claim Level**: reproduced  
+**Claim Level**: declared  
 **Status**: Reference template with reproduction steps
 
 ---
 
 ## Overview
 
-This reference demonstrates evidence pack generation for Langchain-based agents with full reproduction capability.
+This reference demonstrates evidence pack generation for Langchain-based agents.
 
 > [!IMPORTANT]
-> This template achieves `reproduced` claim level through deterministic pack generation.
+> This template is currently at `declared` claim level (static specimen). See v0.2 roadmap for `reproduced` upgrade.
 
 ---
 

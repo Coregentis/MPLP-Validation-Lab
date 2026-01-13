@@ -1,0 +1,67 @@
+
+> validation-lab@1.0.0 gates
+> npm run generate:curated && npm run gate:04 && npm run gate:05 && npm run gate:06 && npm run gate:07 && npm run gate:08 && npm run gate:09 && npm run gate:10
+
+
+> validation-lab@1.0.0 generate:curated
+> node scripts/generate-curated-runs.mjs
+
+✅ Generated public/_data/curated-runs.json
+   Runs: 3
+   Commit: 7df9dfc
+
+> validation-lab@1.0.0 gate:04
+> tsx lib/gates/gate-04-language.ts
+
+[GATE-04] Non-endorsement Language Lint: PASS (files=188, matches=0)
+   Note: excludeDirs: node_modules, .next, dist, coverage, .git, artifacts, policy, governance
+
+> validation-lab@1.0.0 gate:05
+> tsx lib/gates/gate-05-no-exec-hosting.ts
+
+[GATE-05] No Execution Hosting Guard: PASS (files=82, matches=0)
+   Note: excludeDirs: node_modules, .next, dist, coverage, .git, artifacts, gates
+
+> validation-lab@1.0.0 gate:06
+> tsx lib/gates/gate-06-robots-policy.ts
+
+[GATE-06] Robots/Noindex Policy: PASS (files=1, matches=0)
+
+> validation-lab@1.0.0 gate:07
+> tsx lib/gates/gate-07-pii-leak.ts
+
+[GATE-07] PII/Path Leak Lint: PASS (files=6, matches=0)
+   Note: scanDirs: data/runs, artifacts
+
+> validation-lab@1.0.0 gate:08
+> tsx lib/gates/gate-08-curated-immutability.ts
+
+============================================================
+GATE-08: Curated Immutability
+============================================================
+
+Entries checked: 3
+
+✅ GATE-08 PASSED (3 entries validated)
+
+> validation-lab@1.0.0 gate:09
+> tsx lib/gates/gate-09-ssot-projection.ts
+
+============================================================
+GATE-09: SSOT Projection Guard
+============================================================
+
+Files scanned: 64
+
+✅ GATE-09 PASSED (no hash hardcoding detected)
+
+> validation-lab@1.0.0 gate:10
+> tsx lib/gates/gate-10-curated-invariants.ts
+
+============================================================
+GATE-10: Curated Runs Invariants
+============================================================
+
+Checks performed: 4
+
+✅ GATE-10 PASSED

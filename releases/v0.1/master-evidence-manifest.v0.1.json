@@ -68,6 +68,14 @@
         "phase_6_2": {
             "document": "phase-6.2-truth-seal.md",
             "description": "Truthful Boundary Patch (Explicit Specimen/Declared labels)"
+        },
+        "phase_6_3": {
+            "document": "phase-6.3-ctpp-v0.1.1-seal.md",
+            "description": "CTPP v0.1.1: Capability census + claim catalog + projection audit"
+        },
+        "phase_6_3_1": {
+            "document": "phase-6.3.1-coverage-seal.md",
+            "description": "P1 Coverage Page (Strategy A noindex + 6-point audit)"
         }
     },
     "commit_chains": {

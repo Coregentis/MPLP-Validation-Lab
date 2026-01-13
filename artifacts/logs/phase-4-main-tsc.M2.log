@@ -1,0 +1,7 @@
+.next/types/app/runs/[run_id]/page.ts(34,29): error TS2344: Type '{ params: { run_id: string; }; }' does not satisfy the constraint 'PageProps'.
+  Types of property 'params' are incompatible.
+    Type '{ run_id: string; }' is missing the following properties from type 'Promise<any>': then, catch, finally, [Symbol.toStringTag]
+scripts/preflight/debug-gate02.ts(48,42): error TS2339: Property 'id' does not exist on type 'CheckResult'.
+scripts/preflight/debug-gate02.ts(51,61): error TS2339: Property 'reason' does not exist on type 'CheckResult'.
+scripts/preflight/debug-gate02.ts(52,23): error TS2339: Property 'details' does not exist on type 'CheckResult'.
+scripts/preflight/debug-gate02.ts(53,64): error TS2339: Property 'details' does not exist on type 'CheckResult'.

@@ -1,8 +1,8 @@
 {
   "ssot": {
     "source": "data/curated-runs/allowlist.yaml",
-    "generated_at": "2026-01-10T17:58:39.768Z",
-    "git_commit": "7a77783"
+    "generated_at": "2026-01-12T08:10:56.140Z",
+    "git_commit": "621fa4d"
   },
   "runs": [
     {
@@ -11,6 +11,8 @@
       "ruleset_version": "ruleset-1.0",
       "substrate": "a2a",
       "substrate_claim_level": "declared",
+      "substrate_execution": "static",
+      "inference_mode": "none",
       "repro_ref": "examples/evidence-producers/a2a/README.md#repro-steps",
       "exporter_version": "0.1.0",
       "pack_root_hash": "04b5b65e13c284a0aea7d1028ad0d088b77ad14953e07892b159e628d24a57e0",
@@ -26,7 +28,9 @@
       "scenario_id": "gf-01-single-agent-lifecycle",
       "ruleset_version": "ruleset-1.0",
       "substrate": "langchain",
-      "substrate_claim_level": "reproduced",
+      "substrate_claim_level": "declared",
+      "substrate_execution": "static",
+      "inference_mode": "fake_llm",
       "repro_ref": "examples/evidence-producers/langchain/README.md#repro-steps",
       "exporter_version": "0.1.0",
       "pack_root_hash": "998af103166f173037b938886e625854fcd32c29aad412763fd04e983ccf3762",
@@ -43,6 +47,8 @@
       "ruleset_version": "ruleset-1.0",
       "substrate": "mcp",
       "substrate_claim_level": "declared",
+      "substrate_execution": "static",
+      "inference_mode": "none",
       "repro_ref": "examples/evidence-producers/mcp/README.md#repro-steps",
       "exporter_version": "0.1.0",
       "pack_root_hash": "8ee39335b2d62f0bad67c1a78bebb892c7e62615b35d7c8ebb5ad97f126b396a",
