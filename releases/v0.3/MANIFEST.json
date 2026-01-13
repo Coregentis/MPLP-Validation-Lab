@@ -1,0 +1,77 @@
+{
+    "release_version": "0.3.0",
+    "release_date": "2026-01-14",
+    "protocol_version": "1.0.0",
+    "evidence_regime_version": "1.0",
+    "authority": "Validation Lab",
+    "scope": "Non-normative evidence artifacts",
+    "seal_document": "Validation_Lab/releases/v0.3/phase-0-p0-regime-seal.md",
+    "evidence_schema_bundle": {
+        "authority": "Validation Lab",
+        "scope": "Non-normative evidence artifacts",
+        "schemas": [
+            "artifacts/env/env-fingerprint.schema.json",
+            "artifacts/repro/repro-bundle.schema.json"
+        ]
+    },
+    "artifacts": {
+        "env_fingerprints": [
+            {
+                "run_id": "gf-01-langchain-official-v0.2",
+                "path": "artifacts/env/gf-01-langchain-official-v0.2.env.json"
+            },
+            {
+                "run_id": "gf-01-a2a-official-v0.2",
+                "path": "artifacts/env/gf-01-a2a-official-v0.2.env.json"
+            },
+            {
+                "run_id": "gf-01-mcp-official-v0.2",
+                "path": "artifacts/env/gf-01-mcp-official-v0.2.env.json"
+            }
+        ],
+        "repro_bundles": [
+            {
+                "run_id": "gf-01-langchain-official-v0.2",
+                "json_path": "artifacts/repro/gf-01-langchain-official-v0.2.repro.json",
+                "script_path": "artifacts/repro/gf-01-langchain-official-v0.2.repro.sh"
+            },
+            {
+                "run_id": "gf-01-a2a-official-v0.2",
+                "json_path": "artifacts/repro/gf-01-a2a-official-v0.2.repro.json",
+                "script_path": "artifacts/repro/gf-01-a2a-official-v0.2.repro.sh"
+            },
+            {
+                "run_id": "gf-01-mcp-official-v0.2",
+                "json_path": "artifacts/repro/gf-01-mcp-official-v0.2.repro.json",
+                "script_path": "artifacts/repro/gf-01-mcp-official-v0.2.repro.sh"
+            }
+        ],
+        "negative_packs": [
+            {
+                "pack_id": "NEG-01",
+                "path": "artifacts/negative/NEG-01/pack",
+                "eval_report": "artifacts/negative/NEG-01/eval-report.json",
+                "expected_verdict": "FAIL",
+                "missing_artifact": "artifacts/trace.json"
+            }
+        ]
+    },
+    "gates_passed": [
+        "P0-ENV",
+        "P0-REPRO",
+        "P0-NEGATIVE"
+    ],
+    "gate_reports": [
+        "gates/p0-env-gate.report.json",
+        "gates/p0-repro-gate.report.json",
+        "gates/p0-negative-gate.report.json"
+    ],
+    "evaluator": {
+        "version": "local-cli-v0.3.0",
+        "report_version": "1",
+        "features": [
+            "structured_fail",
+            "invariant_mapping"
+        ]
+    }
+}

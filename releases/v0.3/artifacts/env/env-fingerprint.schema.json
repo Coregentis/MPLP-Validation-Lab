@@ -1,0 +1,80 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "env-fingerprint.schema.json",
+    "$comment": {
+        "authority": "Validation Lab",
+        "normativity": "Non-Normative",
+        "scope": "Evidence artifacts for adjudication; not part of MPLP Protocol",
+        "version": "1.0"
+    },
+    "title": "Environment Fingerprint",
+    "description": "Captures execution environment for third-party reproducibility verification",
+    "type": "object",
+    "required": [
+        "run_id",
+        "captured_at",
+        "os",
+        "arch",
+        "runtime"
+    ],
+    "properties": {
+        "run_id": {
+            "type": "string",
+            "description": "Reference to the run this fingerprint belongs to"
+        },
+        "captured_at": {
+            "type": "string",
+            "format": "date-time",
+            "description": "ISO 8601 timestamp of fingerprint capture"
+        },
+        "os": {
+            "type": "object",
+            "required": [
+                "platform",
+                "release"
+            ],
+            "properties": {
+                "platform": {
+                    "type": "string",
+                    "description": "e.g., darwin, linux, win32"
+                },
+                "release": {
+                    "type": "string",
+                    "description": "OS version/release string"
+                }
+            }
+        },
+        "arch": {
+            "type": "string",
+            "description": "CPU architecture, e.g., x64, arm64"
+        },
+        "runtime": {
+            "type": "object",
+            "properties": {
+                "node_version": {
+                    "type": "string",
+                    "description": "Node.js version if applicable"
+                },
+                "python_version": {
+                    "type": "string",
+                    "description": "Python version if applicable"
+                }
+            }
+        },
+        "dependencies": {
+            "type": "object",
+            "description": "Key package versions keyed by package name",
+            "additionalProperties": {
+                "type": "string"
+            }
+        },
+        "hash_tool": {
+            "type": "string",
+            "description": "SHA256 tool used, e.g., shasum 6.0"
+        },
+        "evaluator_version": {
+            "type": "string",
+            "description": "Version of the local evaluator used"
+        }
+    }
+}

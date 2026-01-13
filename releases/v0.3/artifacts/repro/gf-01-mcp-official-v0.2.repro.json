@@ -1,0 +1,16 @@
+{
+    "run_id": "gf-01-mcp-official-v0.2",
+    "entry_script": "./gf-01-mcp-official-v0.2.repro.sh",
+    "commands": [
+        "npm install --silent",
+        "node generate_pack.mjs"
+    ],
+    "expected_outputs": {
+        "pack_dir": "./output/mcp/pack"
+    },
+    "constraints": {
+        "no_absolute_paths": true,
+        "deterministic": true
+    },
+    "source_generator": "tests/golden/flows/tool-call-flow/generate_pack.mjs"
+}

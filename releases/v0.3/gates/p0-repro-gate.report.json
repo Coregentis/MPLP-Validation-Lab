@@ -1,0 +1,59 @@
+{
+  "gate_id": "P0-REPRO",
+  "timestamp": "2026-01-13T16:14:37.812Z",
+  "checks": [
+    {
+      "check": "schema_exists",
+      "passed": true
+    },
+    {
+      "check": "repro_json_exists:gf-01-langchain-official-v0.2",
+      "passed": true
+    },
+    {
+      "check": "repro_sh_exists:gf-01-langchain-official-v0.2",
+      "passed": true
+    },
+    {
+      "check": "repro_sh_executable:gf-01-langchain-official-v0.2",
+      "passed": true
+    },
+    {
+      "check": "no_absolute_paths:gf-01-langchain-official-v0.2",
+      "passed": true
+    },
+    {
+      "check": "repro_json_exists:gf-01-a2a-official-v0.2",
+      "passed": true
+    },
+    {
+      "check": "repro_sh_exists:gf-01-a2a-official-v0.2",
+      "passed": true
+    },
+    {
+      "check": "repro_sh_executable:gf-01-a2a-official-v0.2",
+      "passed": true
+    },
+    {
+      "check": "no_absolute_paths:gf-01-a2a-official-v0.2",
+      "passed": true
+    },
+    {
+      "check": "repro_json_exists:gf-01-mcp-official-v0.2",
+      "passed": true
+    },
+    {
+      "check": "repro_sh_exists:gf-01-mcp-official-v0.2",
+      "passed": true
+    },
+    {
+      "check": "repro_sh_executable:gf-01-mcp-official-v0.2",
+      "passed": true
+    },
+    {
+      "check": "no_absolute_paths:gf-01-mcp-official-v0.2",
+      "passed": true
+    }
+  ],
+  "verdict": "PASS"
+}

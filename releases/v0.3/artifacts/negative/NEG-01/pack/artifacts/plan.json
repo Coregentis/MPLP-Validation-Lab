@@ -1,0 +1,7 @@
+{
+    "plan_id": "neg-01-plan",
+    "context_ref": "neg-01-context",
+    "created_at": "2026-01-14T00:12:00Z",
+    "approach": "Negative test case",
+    "steps": []
+}

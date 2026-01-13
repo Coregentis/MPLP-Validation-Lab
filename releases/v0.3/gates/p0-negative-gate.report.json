@@ -1,0 +1,31 @@
+{
+  "gate_id": "P0-NEGATIVE",
+  "timestamp": "2026-01-13T16:14:37.860Z",
+  "checks": [
+    {
+      "check": "neg01_pack_exists",
+      "passed": true
+    },
+    {
+      "check": "eval_report_exists",
+      "passed": true
+    },
+    {
+      "check": "verdict_is_fail",
+      "passed": true
+    },
+    {
+      "check": "has_report_version",
+      "passed": true
+    },
+    {
+      "check": "has_failed_checks",
+      "passed": true
+    },
+    {
+      "check": "failed_checks_have_invariant_id",
+      "passed": true
+    }
+  ],
+  "verdict": "PASS"
+}

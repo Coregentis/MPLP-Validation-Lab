@@ -1,0 +1,15 @@
+{
+    "pack_id": "neg-01-missing-trace",
+    "protocol_version": "1.0.0",
+    "scenario_id": "negative-test",
+    "created_at": "2026-01-14T00:12:00Z",
+    "purpose": "Intentionally broken pack for failure evidence testing",
+    "missing_artifacts": [
+        "artifacts/trace.json"
+    ],
+    "expected_verdict": "FAIL",
+    "generator": {
+        "name": "negative-pack-generator",
+        "version": "0.3.0"
+    }
+}

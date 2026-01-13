@@ -1,0 +1,44 @@
+{
+  "gate_id": "P0-ENV",
+  "timestamp": "2026-01-13T16:14:37.764Z",
+  "checks": [
+    {
+      "check": "schema_exists",
+      "passed": true
+    },
+    {
+      "check": "env_exists:gf-01-langchain-official-v0.2",
+      "passed": true
+    },
+    {
+      "check": "env_valid:gf-01-langchain-official-v0.2",
+      "passed": {
+        "node_version": null,
+        "python_version": "3.9.6"
+      }
+    },
+    {
+      "check": "env_exists:gf-01-a2a-official-v0.2",
+      "passed": true
+    },
+    {
+      "check": "env_valid:gf-01-a2a-official-v0.2",
+      "passed": {
+        "node_version": null,
+        "python_version": "3.9.6"
+      }
+    },
+    {
+      "check": "env_exists:gf-01-mcp-official-v0.2",
+      "passed": true
+    },
+    {
+      "check": "env_valid:gf-01-mcp-official-v0.2",
+      "passed": {
+        "node_version": "v25.2.1",
+        "python_version": null
+      }
+    }
+  ],
+  "verdict": "PASS"
+}

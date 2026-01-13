@@ -1,0 +1,75 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "repro-bundle.schema.json",
+    "$comment": {
+        "authority": "Validation Lab",
+        "normativity": "Non-Normative",
+        "scope": "Evidence artifacts for adjudication; not part of MPLP Protocol",
+        "version": "1.0"
+    },
+    "title": "Repro Bundle",
+    "description": "Defines executable reproducibility entry point for third-party verification",
+    "type": "object",
+    "required": [
+        "run_id",
+        "entry_script",
+        "commands",
+        "expected_outputs"
+    ],
+    "properties": {
+        "run_id": {
+            "type": "string",
+            "description": "Reference to the run this bundle reproduces"
+        },
+        "entry_script": {
+            "type": "string",
+            "description": "Relative path to repro.sh from this file's directory"
+        },
+        "commands": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "description": "Shell commands executed by entry_script (for documentation)"
+        },
+        "expected_outputs": {
+            "type": "object",
+            "required": [
+                "pack_dir"
+            ],
+            "properties": {
+                "pack_dir": {
+                    "type": "string",
+                    "description": "Relative path to generated pack directory"
+                },
+                "verify_report": {
+                    "type": "string",
+                    "description": "Relative path to verification report (optional)"
+                },
+                "eval_report": {
+                    "type": "string",
+                    "description": "Relative path to evaluator report (optional)"
+                }
+            }
+        },
+        "constraints": {
+            "type": "object",
+            "properties": {
+                "no_absolute_paths": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Entry script must not contain absolute paths"
+                },
+                "deterministic": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Multiple runs produce identical pack"
+                }
+            }
+        },
+        "source_generator": {
+            "type": "string",
+            "description": "Path to the original generator script in tests/"
+        }
+    }
+}

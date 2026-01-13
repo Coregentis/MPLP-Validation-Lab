@@ -1,0 +1,16 @@
+{
+    "run_id": "gf-01-langchain-official-v0.2",
+    "entry_script": "./gf-01-langchain-official-v0.2.repro.sh",
+    "commands": [
+        "pip3 install -q -r requirements.txt",
+        "python3 generate_pack.py"
+    ],
+    "expected_outputs": {
+        "pack_dir": "./output/langchain/pack"
+    },
+    "constraints": {
+        "no_absolute_paths": true,
+        "deterministic": true
+    },
+    "source_generator": "tests/cross-substrate/gf-01/langchain/generate_pack.py"
+}
