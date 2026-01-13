@@ -48,3 +48,51 @@ runs:
   status: frozen
   indexable: true
   created_at: '2026-01-10T14:00:00Z'
+
+# v0.2 Official Substrate Upgraded Runs
+- run_id: gf-01-langchain-official-v0.2
+  scenario_id: gf-01-single-agent-lifecycle
+  ruleset_version: ruleset-1.0
+  substrate: langchain
+  substrate_claim_level: reproduced
+  substrate_execution: reproduced
+  inference_mode: fake_llm
+  repro_ref: tests/cross-substrate/gf-01/langchain/generate_pack.py
+  equivalence_ref: Validation_Lab/releases/v0.2/artifacts/equivalence/gf-01.json
+  supersedes: gf-01-langchain-pass
+  status: active
+  notes: "Official LangChain SDK (FakeListLLM) with equivalence record verified"
+  indexable: true
+  created_at: '2026-01-13T00:00:00Z'
+
+- run_id: gf-01-a2a-official-v0.2
+  scenario_id: gf-01-single-agent-lifecycle
+  ruleset_version: ruleset-1.0
+  substrate: a2a
+  substrate_claim_level: declared
+  substrate_execution: static
+  inference_mode: none
+  repro_ref: tests/cross-substrate/gf-01/a2a/generate_pack.py
+  equivalence_ref: Validation_Lab/releases/v0.2/artifacts/equivalence/gf-01.json
+  supersedes: gf-01-a2a-pass
+  status: eligible_for_upgrade
+  notes: "Declared (Static Evidence): mocked producer; eligible for upgrade when live SDK producer available"
+  indexable: true
+  created_at: '2026-01-13T00:00:00Z'
+
+- run_id: gf-01-mcp-official-v0.2
+  scenario_id: gf-01-single-agent-lifecycle
+  ruleset_version: ruleset-1.0
+  substrate: mcp
+  substrate_claim_level: reproduced
+  substrate_execution: reproduced
+  inference_mode: none
+  repro_ref: tests/golden/flows/tool-call-flow/generate_pack.mjs
+  flow_id: tool-call-flow
+  supersedes: gf-01-mcp-pass
+  status: active
+  notes: "Official @modelcontextprotocol/server SDK; reproduced as static event capture (not live client/server execution)"
+  verdict_hash: e7f5b31e40d6a645782d219428c731ebed338739b5eadf831ec206fc7d002011
+  indexable: true
+  created_at: '2026-01-13T00:00:00Z'
+

@@ -1,0 +1,18 @@
+# Legacy Run Supersession Mapping
+# Purpose: Track v0.1.1 → v0.2 official substrate upgrades
+# Schema: legacy_run_id, upgraded_run_id, reason, status
+
+- legacy_run_id: gf-01-langchain-pass
+  upgraded_run_id: gf-01-langchain-official-v0.2
+  reason: "Official LangChain packages + FakeListLLM deterministic"
+  status: active
+
+- legacy_run_id: gf-01-a2a-pass
+  upgraded_run_id: gf-01-a2a-official-v0.2
+  reason: "A2A SDK declared: generator uses mocked responses, not actual SDK calls"
+  status: downgraded
+
+- legacy_run_id: gf-01-mcp-pass
+  upgraded_run_id: gf-01-mcp-official-v0.2
+  reason: "Official MCP server SDK stdio transport"
+  status: active

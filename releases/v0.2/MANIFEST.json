@@ -1,0 +1,91 @@
+{
+    "release_version": "0.2.0",
+    "release_date": "2026-01-13",
+    "protocol_version": "1.0.0",
+    "ruleset_version": "ruleset-1.0",
+    "seal_document": "Validation_Lab/releases/v0.2/phase-6-v0.2-seal.md",
+    "scenarios": [
+        {
+            "scenario_id": "gf-01-single-agent-lifecycle",
+            "description": "Single agent lifecycle flow validation",
+            "flow_ids": [
+                "tool-call-flow"
+            ]
+        }
+    ],
+    "runs": [
+        {
+            "run_id": "gf-01-langchain-official-v0.2",
+            "substrate": "langchain",
+            "substrate_version": "0.2.16",
+            "claim_level": "reproduced",
+            "execution": "reproduced",
+            "status": "active",
+            "pack_root_hash": "1a499c7e9be2b9fb40202130640c33551971c1650f1497fd0f3cf7bebe6a47a4",
+            "verdict_hash": "25102cd201fd8b54f53416b21ef9d3b609fbca34718a0b4eb5ec58db16971c56",
+            "repro_ref": "tests/cross-substrate/gf-01/langchain/generate_pack.py",
+            "equivalence_ref": "Validation_Lab/releases/v0.2/artifacts/equivalence/gf-01.json"
+        },
+        {
+            "run_id": "gf-01-a2a-official-v0.2",
+            "substrate": "a2a",
+            "substrate_version": "0.1.5",
+            "claim_level": "declared",
+            "claim_level_display": "Declared (Static Evidence)",
+            "execution": "static",
+            "status": "eligible_for_upgrade",
+            "pack_root_hash": "80025729808627f4a475fc5cfa536afdc05a3f4cb6601651b957b7910fcc2214",
+            "verdict_hash": "25102cd201fd8b54f53416b21ef9d3b609fbca34718a0b4eb5ec58db16971c56",
+            "repro_ref": "tests/cross-substrate/gf-01/a2a/generate_pack.py",
+            "equivalence_ref": "Validation_Lab/releases/v0.2/artifacts/equivalence/gf-01.json",
+            "notes": "Static evidence producer (mocked responses); eligible for upgrade to Reproduced when live SDK producer is available"
+        },
+        {
+            "run_id": "gf-01-mcp-official-v0.2",
+            "substrate": "mcp",
+            "substrate_version": "0.5.0",
+            "claim_level": "reproduced",
+            "execution": "reproduced",
+            "status": "active",
+            "pack_root_hash": "403b0c41336ae4c674031c53d52447e441fd86fca5c0bf38982e5b29486cf2ca",
+            "verdict_hash": "e7f5b31e40d6a645782d219428c731ebed338739b5eadf831ec206fc7d002011",
+            "repro_ref": "tests/golden/flows/tool-call-flow/generate_pack.mjs",
+            "flow_id": "tool-call-flow",
+            "notes": "Reproduced as static event capture (not live client/server execution)"
+        }
+    ],
+    "artifacts": [
+        {
+            "type": "equivalence_record",
+            "path": "Validation_Lab/releases/v0.2/artifacts/equivalence/gf-01.json",
+            "scenario_id": "gf-01-single-agent-lifecycle"
+        },
+        {
+            "type": "evaluation_evidence",
+            "path": "Validation_Lab/releases/v0.2/artifacts/evaluations/tool-call-flow.local-cli.md",
+            "flow_id": "tool-call-flow"
+        }
+    ],
+    "gates_passed": [
+        "S0-SUB-GATE-01",
+        "GOVERNANCE-SCHEMA-VALIDATOR",
+        "PHASE-IV-MCP",
+        "V-0-EVIDENCE",
+        "PJT-02-EXTENSION",
+        "PJT-03-STATS",
+        "PJT-04-PREMANIFEST"
+    ],
+    "waivers": [
+        {
+            "waiver_id": "PJT-01-SKIP-2026-01-13",
+            "gate": "PJT-01",
+            "reason": "Claim Catalog does not use allowlist line-anchored references",
+            "disposition": "not_applicable"
+        }
+    ],
+    "statistics": {
+        "reproduced_count": 2,
+        "declared_count": 1,
+        "legacy_excluded_count": 3
+    }
+}

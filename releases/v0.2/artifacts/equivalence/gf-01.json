@@ -1,0 +1,27 @@
+{
+  "scenario_id": "gf-01-single-agent-lifecycle",
+  "ruleset_version": "1.0",
+  "evaluator": "local-cli",
+  "evaluator_version": "local-cli-v0.2.0",
+  "equivalence_type": "cross_substrate",
+  "packs": [
+    {
+      "substrate": "langchain",
+      "pack_root_hash": "1a499c7e9be2b9fb40202130640c33551971c1650f1497fd0f3cf7bebe6a47a4",
+      "verdict_hash": "25102cd201fd8b54f53416b21ef9d3b609fbca34718a0b4eb5ec58db16971c56"
+    },
+    {
+      "substrate": "a2a",
+      "pack_root_hash": "80025729808627f4a475fc5cfa536afdc05a3f4cb6601651b957b7910fcc2214",
+      "verdict_hash": "25102cd201fd8b54f53416b21ef9d3b609fbca34718a0b4eb5ec58db16971c56"
+    }
+  ],
+  "evidence_minimums": {
+    "context_present": true,
+    "plan_present": true,
+    "trace_present": true,
+    "timeline_present": true,
+    "integrity_present": true
+  },
+  "verdict_match": true
+}
