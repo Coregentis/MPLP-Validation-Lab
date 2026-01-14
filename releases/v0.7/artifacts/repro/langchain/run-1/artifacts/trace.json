@@ -1,0 +1,29 @@
+{
+  "agent_summaries": [
+    {
+      "agent_id": "coordinator",
+      "artifacts_created": [
+        "context.json",
+        "plan.json"
+      ],
+      "events_count": 4
+    },
+    {
+      "agent_id": "executor",
+      "artifacts_created": [
+        "trace.json"
+      ],
+      "events_count": 4
+    }
+  ],
+  "completed_by": "executor",
+  "created_at": "2026-01-14T00:00:00Z",
+  "execution_summary": {
+    "handoffs": 1,
+    "outcome": "success",
+    "total_agents": 2,
+    "total_events": 8
+  },
+  "plan_ref": "562fb6a8-4cba-5d54-abe5-f0085493deb0",
+  "trace_id": "a262a061-f460-503a-9151-0206d062074c"
+}

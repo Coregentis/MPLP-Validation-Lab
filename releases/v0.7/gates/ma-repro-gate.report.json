@@ -1,0 +1,56 @@
+{
+    "gate_id": "MA-REPRO",
+    "report_version": "1",
+    "executed_at": "2026-01-14T09:50:00Z",
+    "canonicalization": {
+        "timestamps_in_hash_scope": false,
+        "note": "Timestamps excluded from pack content; pack_root_hash is stable"
+    },
+    "substrates": [
+        {
+            "substrate": "langchain",
+            "run_id": "gf-01-ma-langchain-official-v0.7",
+            "generator": "tests/cross-substrate/gf-01/langchain/generate_ma_pack.py",
+            "deps_lock": "tests/cross-substrate/gf-01/langchain/requirements_ma.txt",
+            "executed": true,
+            "determinism": {
+                "runs": 2,
+                "pack_root_hash_run1": "e35b8cef684a2cfc1509097ed4b0c154027fb67e0db632fcdad3a13c6c92f534",
+                "pack_root_hash_run2": "e35b8cef684a2cfc1509097ed4b0c154027fb67e0db632fcdad3a13c6c92f534",
+                "match": true
+            },
+            "evaluator": {
+                "verdict_run1": "PASS",
+                "verdict_run2": "PASS",
+                "report_ref": "artifacts/repro/langchain/run-1/eval_report.json"
+            },
+            "verdict": "PASS"
+        },
+        {
+            "substrate": "pydanticai",
+            "run_id": "gf-01-ma-pydanticai-official-v0.7",
+            "generator": "tests/cross-substrate/gf-01/pydanticai/generate_ma_pack.py",
+            "deps_lock": "tests/cross-substrate/gf-01/pydanticai/requirements_ma.txt",
+            "executed": true,
+            "determinism": {
+                "runs": 2,
+                "pack_root_hash_run1": "8cbad37ea509e07eafeb8b856af3258bce8ec8c883f216c76902d96c5213b7fe",
+                "pack_root_hash_run2": "8cbad37ea509e07eafeb8b856af3258bce8ec8c883f216c76902d96c5213b7fe",
+                "match": true
+            },
+            "evaluator": {
+                "verdict_run1": "PASS",
+                "verdict_run2": "PASS",
+                "report_ref": "artifacts/repro/pydanticai/run-1/eval_report.json"
+            },
+            "verdict": "PASS"
+        }
+    ],
+    "summary": {
+        "substrates_total": 2,
+        "deterministic_pass": 2,
+        "evaluator_pass": 2,
+        "failed": 0
+    },
+    "overall_verdict": "PASS"
+}

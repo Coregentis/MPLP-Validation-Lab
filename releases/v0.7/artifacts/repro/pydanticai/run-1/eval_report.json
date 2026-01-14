@@ -1,0 +1,31 @@
+{
+  "report_version": "1",
+  "evaluator_version": "local-cli-v0.3.0",
+  "timestamp": "2026-01-14T01:53:22.103Z",
+  "pack_path": "Validation_Lab/releases/v0.7/artifacts/repro/pydanticai/run-1",
+  "checks": [
+    {
+      "check": "file_exists:manifest.json",
+      "invariant_id": "INV-PACK-001",
+      "passed": true
+    },
+    {
+      "check": "file_exists:artifacts/context.json",
+      "invariant_id": "INV-PACK-003",
+      "passed": true
+    },
+    {
+      "check": "file_exists:artifacts/plan.json",
+      "invariant_id": "INV-PACK-004",
+      "passed": true
+    },
+    {
+      "check": "file_exists:artifacts/trace.json",
+      "invariant_id": "INV-PACK-002",
+      "passed": true
+    }
+  ],
+  "failed_checks": [],
+  "verdict": "PASS",
+  "verdict_hash": "fb3fe05a3fb05975d9b1158cb2fd50c75e1ff5c18f2b24c91c9c760e11eaf49c"
+}

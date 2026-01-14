@@ -1,0 +1,92 @@
+{
+    "release_version": "0.7.0",
+    "release_date": "2026-01-14",
+    "release_type": "ma_repro_pilot",
+    "protocol_version": "1.0.0",
+    "evidence_regime_version": "1.0",
+    "multi_agent_version": "1",
+    "authority": "Validation Lab",
+    "scope": "Non-normative evidence artifacts",
+    "seal_document": "phase-4-v0.7-ma-repro-pilot-seal.md",
+    "evidence_classification": {
+        "type": "Type-B",
+        "name": "Generator-Based Reproduction (Pilot)",
+        "substrates_in_scope": [
+            "langchain",
+            "pydanticai"
+        ],
+        "out_of_scope": [
+            "autogen",
+            "magnetic-one",
+            "mcp",
+            "a2a"
+        ],
+        "includes_execution_reproduction": true,
+        "run_twice_determinism": true
+    },
+    "runs": [
+        {
+            "run_id": "gf-01-ma-langchain-official-v0.7",
+            "scenario_id": "gf-01-multi-agent-lifecycle",
+            "substrate": "langchain",
+            "substrate_version": "0.2.16",
+            "execution_mode": "type-b_generator_reproduction",
+            "generator_ref": "tests/cross-substrate/gf-01/langchain/generate_ma_pack.py",
+            "deps_lock_ref": "tests/cross-substrate/gf-01/langchain/requirements_ma.txt",
+            "determinism": {
+                "runs": 2,
+                "pack_root_hash_run1": "e35b8cef684a2cfc1509097ed4b0c154027fb67e0db632fcdad3a13c6c92f534",
+                "pack_root_hash_run2": "e35b8cef684a2cfc1509097ed4b0c154027fb67e0db632fcdad3a13c6c92f534",
+                "match": true
+            },
+            "evaluator_verdict": "PASS"
+        },
+        {
+            "run_id": "gf-01-ma-pydanticai-official-v0.7",
+            "scenario_id": "gf-01-multi-agent-lifecycle",
+            "substrate": "pydanticai",
+            "substrate_version": "0.0.14",
+            "execution_mode": "type-b_generator_reproduction",
+            "generator_ref": "tests/cross-substrate/gf-01/pydanticai/generate_ma_pack.py",
+            "deps_lock_ref": "tests/cross-substrate/gf-01/pydanticai/requirements_ma.txt",
+            "determinism": {
+                "runs": 2,
+                "pack_root_hash_run1": "8cbad37ea509e07eafeb8b856af3258bce8ec8c883f216c76902d96c5213b7fe",
+                "pack_root_hash_run2": "8cbad37ea509e07eafeb8b856af3258bce8ec8c883f216c76902d96c5213b7fe",
+                "match": true
+            },
+            "evaluator_verdict": "PASS"
+        }
+    ],
+    "artifacts": {
+        "repro_evidence": [
+            {
+                "substrate": "langchain",
+                "path": "artifacts/repro/langchain/"
+            },
+            {
+                "substrate": "pydanticai",
+                "path": "artifacts/repro/pydanticai/"
+            }
+        ]
+    },
+    "gates_passed": [
+        "MA-REPRO"
+    ],
+    "gate_reports": [
+        "gates/ma-repro-gate.report.json"
+    ],
+    "compatibility": {
+        "references_releases": [
+            "v0.2.0",
+            "v0.3.0",
+            "v0.4.0",
+            "v0.5.0",
+            "v0.6.0",
+            "v0.6.1",
+            "v0.6.2"
+        ],
+        "supersedes_type_a": "v0.6.2",
+        "does_not_modify_prior_releases": true
+    }
+}

@@ -1,0 +1,11 @@
+{
+  "context_id": "687c2003-7564-59da-8254-702829e57e33",
+  "created_at": "2026-01-14T00:00:00Z",
+  "created_by": "coordinator",
+  "project_id": "dca0fcdf-7323-5f83-ab8a-5218340f23b1",
+  "requirements": {
+    "agents_required": 2,
+    "handoff_required": true,
+    "summary": "Multi-agent lifecycle validation with handoff"
+  }
+}

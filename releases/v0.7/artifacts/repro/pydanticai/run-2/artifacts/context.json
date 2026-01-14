@@ -1,0 +1,11 @@
+{
+  "context_id": "beebc621-71c7-5a46-96f8-ad0627d547bd",
+  "created_at": "2026-01-14T00:00:00Z",
+  "created_by": "planner",
+  "project_id": "ee1d4d6f-3ef6-5707-a8da-88765ce5bbf2",
+  "requirements": {
+    "agents_required": 2,
+    "handoff_required": true,
+    "summary": "Multi-agent lifecycle validation with PydanticAI lightweight pattern"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "approach": "Planner creates structured plan, hands off to runner for typed execution",
+  "context_ref": "beebc621-71c7-5a46-96f8-ad0627d547bd",
+  "created_at": "2026-01-14T00:00:00Z",
+  "created_by": "planner",
+  "plan_id": "932835a6-f087-5b05-adf8-c884de0caac6",
+  "steps": [
+    {
+      "action": "analyze_requirements",
+      "agent": "planner",
+      "step_id": "1"
+    },
+    {
+      "action": "create_structured_plan",
+      "agent": "planner",
+      "step_id": "2"
+    },
+    {
+      "action": "handoff_to_runner",
+      "agent": "planner",
+      "step_id": "3"
+    },
+    {
+      "action": "receive_handoff",
+      "agent": "runner",
+      "step_id": "4"
+    },
+    {
+      "action": "execute_typed_tasks",
+      "agent": "runner",
+      "step_id": "5"
+    },
+    {
+      "action": "report_completion",
+      "agent": "runner",
+      "step_id": "6"
+    }
+  ]
+}
