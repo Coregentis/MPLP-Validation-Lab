@@ -1,0 +1,69 @@
+{
+    "release_version": "0.6.2",
+    "release_date": "2026-01-14",
+    "release_type": "boundary_hardening_patch",
+    "supersedes": "0.6.1",
+    "protocol_version": "1.0.0",
+    "evidence_regime_version": "1.0",
+    "multi_agent_version": "1",
+    "authority": "Validation Lab",
+    "scope": "Non-normative evidence artifacts",
+    "evidence_classification": {
+        "type": "Type-A",
+        "name": "Static Evidence Validation",
+        "includes_execution_reproduction": false,
+        "generator_based_reproduction": {
+            "available": false,
+            "planned_gate": "MA-REPRO",
+            "target_release": "v0.7.0+"
+        },
+        "notes": "This release evaluates submitted evidence packs under MA-STRUCT/MA-EQUIV. It does not re-run substrate SDKs to regenerate packs."
+    },
+    "references": {
+        "artifacts_from": "v0.6.1",
+        "packs_dir": "../v0.6/artifacts/packs/",
+        "gates_dir": "../v0.6/gates/",
+        "scenario_file": "../v0.6/artifacts/scenarios/gf-01-multi-agent-lifecycle.scenario.json"
+    },
+    "runs": [
+        {
+            "run_id": "gf-01-ma-langchain-official-v0.6",
+            "substrate": "langchain",
+            "execution_mode": "static_pack_validation"
+        },
+        {
+            "run_id": "gf-01-ma-autogen-official-v0.6",
+            "substrate": "autogen",
+            "execution_mode": "static_pack_validation"
+        },
+        {
+            "run_id": "gf-01-ma-magnetic-one-official-v0.6",
+            "substrate": "magnetic-one",
+            "execution_mode": "static_pack_validation"
+        },
+        {
+            "run_id": "gf-01-ma-pydanticai-official-v0.6",
+            "substrate": "pydanticai",
+            "execution_mode": "static_pack_validation"
+        },
+        {
+            "run_id": "gf-01-ma-mcp-official-v0.6",
+            "substrate": "mcp",
+            "execution_mode": "static_pack_validation"
+        },
+        {
+            "run_id": "gf-01-ma-a2a-official-v0.6",
+            "substrate": "a2a",
+            "execution_mode": "static_pack_validation"
+        }
+    ],
+    "gates_passed": [
+        "MA-STRUCT",
+        "MA-EQUIV"
+    ],
+    "gates_pending": [
+        "MA-REPRO"
+    ],
+    "upgrade_path": "UPGRADE_PATH.md",
+    "seal_document": "phase-3-v0.6.2-boundary-hardening-seal.md"
+}
