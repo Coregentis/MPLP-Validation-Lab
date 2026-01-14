@@ -1,0 +1,116 @@
+{
+    "release_version": "0.7.2",
+    "release_date": "2026-01-14",
+    "release_type": "full_6_substrates",
+    "protocol_version": "1.0.0",
+    "evidence_regime_version": "1.0",
+    "multi_agent_version": "1",
+    "authority": "Validation Lab",
+    "scope": "Non-normative evidence artifacts",
+    "seal_document": "phase-4-v0.7.2-full6-seal.md",
+    "evidence_classification": {
+        "type": "Type-B",
+        "name": "Generator-Based Reproduction (Full 6 Substrates)",
+        "substrates_in_scope": [
+            "langchain",
+            "autogen",
+            "magnetic-one",
+            "pydanticai",
+            "mcp",
+            "a2a"
+        ],
+        "out_of_scope": [],
+        "includes_execution_reproduction": true,
+        "run_twice_determinism": true,
+        "full_coverage_achieved": true
+    },
+    "runs": [
+        {
+            "run_id": "gf-01-ma-langchain-official-v0.7",
+            "substrate": "langchain",
+            "substrate_version": "0.2.16",
+            "pack_root_hash": "e35b8cef684a2cfc1509097ed4b0c154027fb67e0db632fcdad3a13c6c92f534",
+            "determinism_match": true
+        },
+        {
+            "run_id": "gf-01-ma-autogen-official-v0.7.1",
+            "substrate": "autogen",
+            "substrate_version": "0.4.0",
+            "pack_root_hash": "2af6a0481930f8cd86ec1cebca0b449e2535f1120439463e154002c19e7a67e7",
+            "determinism_match": true
+        },
+        {
+            "run_id": "gf-01-ma-magnetic-one-official-v0.7.1",
+            "substrate": "magnetic-one",
+            "substrate_version": "0.1.0",
+            "pack_root_hash": "15787a8b5a456656d6d9ec758fd51a5337a2418985d74260d05f0a6487407fc7",
+            "determinism_match": true
+        },
+        {
+            "run_id": "gf-01-ma-pydanticai-official-v0.7",
+            "substrate": "pydanticai",
+            "substrate_version": "0.0.14",
+            "pack_root_hash": "8cbad37ea509e07eafeb8b856af3258bce8ec8c883f216c76902d96c5213b7fe",
+            "determinism_match": true
+        },
+        {
+            "run_id": "gf-01-ma-mcp-official-v0.7.2",
+            "substrate": "mcp",
+            "substrate_version": "2024-11-05",
+            "pack_root_hash": "b5237c83e51026e058964c6e9b58fe6f2664c63616f4e35b353ef58ba04ddb03",
+            "determinism_match": true
+        },
+        {
+            "run_id": "gf-01-ma-a2a-official-v0.7.2",
+            "substrate": "a2a",
+            "substrate_version": "0.2.1",
+            "pack_root_hash": "6728e24aa07bdf9610a4a62d6c6c2fa261e8718e946896addf88940c6a6d45c1",
+            "determinism_match": true
+        }
+    ],
+    "artifacts": {
+        "repro_evidence": [
+            {
+                "substrate": "langchain",
+                "path": "artifacts/repro/langchain/"
+            },
+            {
+                "substrate": "autogen",
+                "path": "artifacts/repro/autogen/"
+            },
+            {
+                "substrate": "magnetic-one",
+                "path": "artifacts/repro/magnetic-one/"
+            },
+            {
+                "substrate": "pydanticai",
+                "path": "artifacts/repro/pydanticai/"
+            },
+            {
+                "substrate": "mcp",
+                "path": "artifacts/repro/mcp/"
+            },
+            {
+                "substrate": "a2a",
+                "path": "artifacts/repro/a2a/"
+            }
+        ]
+    },
+    "gates_passed": [
+        "MA-REPRO"
+    ],
+    "gate_reports": [
+        "gates/ma-repro-gate.report.json"
+    ],
+    "compatibility": {
+        "references_releases": [
+            "v0.7.0",
+            "v0.7.1"
+        ],
+        "supersedes": [
+            "v0.6.2",
+            "v0.7.1"
+        ],
+        "does_not_modify_prior_releases": true
+    }
+}

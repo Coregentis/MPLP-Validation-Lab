@@ -1,0 +1,29 @@
+{
+  "agent_summaries": [
+    {
+      "agent_id": "assistant",
+      "artifacts_created": [
+        "context.json",
+        "plan.json"
+      ],
+      "events_count": 4
+    },
+    {
+      "agent_id": "user_proxy",
+      "artifacts_created": [
+        "trace.json"
+      ],
+      "events_count": 4
+    }
+  ],
+  "completed_by": "user_proxy",
+  "created_at": "2026-01-14T00:00:00Z",
+  "execution_summary": {
+    "handoffs": 1,
+    "outcome": "success",
+    "total_agents": 2,
+    "total_events": 8
+  },
+  "plan_ref": "4fbb3aa3-346c-513e-9441-6790c4f4578d",
+  "trace_id": "60eb31d0-ec7f-5eac-b93a-9252c9819e4c"
+}

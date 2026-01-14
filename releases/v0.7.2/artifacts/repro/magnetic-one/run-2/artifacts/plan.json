@@ -1,0 +1,39 @@
+{
+  "approach": "Orchestrator decomposes task and delegates to worker for execution",
+  "context_ref": "80ba6307-9e6c-5f0a-99a2-e55aaaf0333a",
+  "created_at": "2026-01-14T00:00:00Z",
+  "created_by": "orchestrator",
+  "plan_id": "939134ba-f062-511d-ab17-357d81c23715",
+  "steps": [
+    {
+      "action": "initialize_orchestration",
+      "agent": "orchestrator",
+      "step_id": "1"
+    },
+    {
+      "action": "decompose_task",
+      "agent": "orchestrator",
+      "step_id": "2"
+    },
+    {
+      "action": "delegate_to_worker",
+      "agent": "orchestrator",
+      "step_id": "3"
+    },
+    {
+      "action": "receive_delegation",
+      "agent": "worker",
+      "step_id": "4"
+    },
+    {
+      "action": "execute_subtask",
+      "agent": "worker",
+      "step_id": "5"
+    },
+    {
+      "action": "return_result",
+      "agent": "worker",
+      "step_id": "6"
+    }
+  ]
+}

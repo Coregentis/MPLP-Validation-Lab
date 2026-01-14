@@ -1,0 +1,31 @@
+{
+  "report_version": "1",
+  "evaluator_version": "local-cli-v0.3.0",
+  "timestamp": "2026-01-14T02:10:40.770Z",
+  "pack_path": "Validation_Lab/releases/v0.7.2/artifacts/repro/a2a/run-1",
+  "checks": [
+    {
+      "check": "file_exists:manifest.json",
+      "invariant_id": "INV-PACK-001",
+      "passed": true
+    },
+    {
+      "check": "file_exists:artifacts/context.json",
+      "invariant_id": "INV-PACK-003",
+      "passed": true
+    },
+    {
+      "check": "file_exists:artifacts/plan.json",
+      "invariant_id": "INV-PACK-004",
+      "passed": true
+    },
+    {
+      "check": "file_exists:artifacts/trace.json",
+      "invariant_id": "INV-PACK-002",
+      "passed": true
+    }
+  ],
+  "failed_checks": [],
+  "verdict": "PASS",
+  "verdict_hash": "8d69405c7ca2c83660cf5957a3b9ce376f2b78ea674a712d8ed28e391a40880f"
+}

@@ -1,0 +1,116 @@
+{
+    "gate_id": "MA-REPRO",
+    "report_version": "1",
+    "release": "v0.7.2",
+    "scope": "full_6_substrates",
+    "executed_at": "2026-01-14T10:15:00Z",
+    "canonicalization": {
+        "timestamps_in_hash_scope": false
+    },
+    "substrates": [
+        {
+            "substrate": "langchain",
+            "run_id": "gf-01-ma-langchain-official-v0.7",
+            "executed": true,
+            "determinism": {
+                "runs": 2,
+                "pack_root_hash_run1": "e35b8cef684a2cfc1509097ed4b0c154027fb67e0db632fcdad3a13c6c92f534",
+                "pack_root_hash_run2": "e35b8cef684a2cfc1509097ed4b0c154027fb67e0db632fcdad3a13c6c92f534",
+                "match": true
+            },
+            "evaluator": {
+                "verdict_run1": "PASS",
+                "verdict_run2": "PASS"
+            },
+            "verdict": "PASS"
+        },
+        {
+            "substrate": "autogen",
+            "run_id": "gf-01-ma-autogen-official-v0.7.1",
+            "executed": true,
+            "determinism": {
+                "runs": 2,
+                "pack_root_hash_run1": "2af6a0481930f8cd86ec1cebca0b449e2535f1120439463e154002c19e7a67e7",
+                "pack_root_hash_run2": "2af6a0481930f8cd86ec1cebca0b449e2535f1120439463e154002c19e7a67e7",
+                "match": true
+            },
+            "evaluator": {
+                "verdict_run1": "PASS",
+                "verdict_run2": "PASS"
+            },
+            "verdict": "PASS"
+        },
+        {
+            "substrate": "magnetic-one",
+            "run_id": "gf-01-ma-magnetic-one-official-v0.7.1",
+            "executed": true,
+            "determinism": {
+                "runs": 2,
+                "pack_root_hash_run1": "15787a8b5a456656d6d9ec758fd51a5337a2418985d74260d05f0a6487407fc7",
+                "pack_root_hash_run2": "15787a8b5a456656d6d9ec758fd51a5337a2418985d74260d05f0a6487407fc7",
+                "match": true
+            },
+            "evaluator": {
+                "verdict_run1": "PASS",
+                "verdict_run2": "PASS"
+            },
+            "verdict": "PASS"
+        },
+        {
+            "substrate": "pydanticai",
+            "run_id": "gf-01-ma-pydanticai-official-v0.7",
+            "executed": true,
+            "determinism": {
+                "runs": 2,
+                "pack_root_hash_run1": "8cbad37ea509e07eafeb8b856af3258bce8ec8c883f216c76902d96c5213b7fe",
+                "pack_root_hash_run2": "8cbad37ea509e07eafeb8b856af3258bce8ec8c883f216c76902d96c5213b7fe",
+                "match": true
+            },
+            "evaluator": {
+                "verdict_run1": "PASS",
+                "verdict_run2": "PASS"
+            },
+            "verdict": "PASS"
+        },
+        {
+            "substrate": "mcp",
+            "run_id": "gf-01-ma-mcp-official-v0.7.2",
+            "executed": true,
+            "determinism": {
+                "runs": 2,
+                "pack_root_hash_run1": "b5237c83e51026e058964c6e9b58fe6f2664c63616f4e35b353ef58ba04ddb03",
+                "pack_root_hash_run2": "b5237c83e51026e058964c6e9b58fe6f2664c63616f4e35b353ef58ba04ddb03",
+                "match": true
+            },
+            "evaluator": {
+                "verdict_run1": "PASS",
+                "verdict_run2": "PASS"
+            },
+            "verdict": "PASS"
+        },
+        {
+            "substrate": "a2a",
+            "run_id": "gf-01-ma-a2a-official-v0.7.2",
+            "executed": true,
+            "determinism": {
+                "runs": 2,
+                "pack_root_hash_run1": "6728e24aa07bdf9610a4a62d6c6c2fa261e8718e946896addf88940c6a6d45c1",
+                "pack_root_hash_run2": "6728e24aa07bdf9610a4a62d6c6c2fa261e8718e946896addf88940c6a6d45c1",
+                "match": true
+            },
+            "evaluator": {
+                "verdict_run1": "PASS",
+                "verdict_run2": "PASS"
+            },
+            "verdict": "PASS"
+        }
+    ],
+    "summary": {
+        "substrates_total": 6,
+        "deterministic_pass": 6,
+        "evaluator_pass": 6,
+        "failed": 0,
+        "full_coverage_achieved": true
+    },
+    "overall_verdict": "PASS"
+}

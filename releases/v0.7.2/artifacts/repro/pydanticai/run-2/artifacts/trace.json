@@ -1,0 +1,29 @@
+{
+  "agent_summaries": [
+    {
+      "agent_id": "planner",
+      "artifacts_created": [
+        "context.json",
+        "plan.json"
+      ],
+      "events_count": 4
+    },
+    {
+      "agent_id": "runner",
+      "artifacts_created": [
+        "trace.json"
+      ],
+      "events_count": 4
+    }
+  ],
+  "completed_by": "runner",
+  "created_at": "2026-01-14T00:00:00Z",
+  "execution_summary": {
+    "handoffs": 1,
+    "outcome": "success",
+    "total_agents": 2,
+    "total_events": 8
+  },
+  "plan_ref": "932835a6-f087-5b05-adf8-c884de0caac6",
+  "trace_id": "8230dcbe-cc58-526f-8d65-48460cd69b33"
+}

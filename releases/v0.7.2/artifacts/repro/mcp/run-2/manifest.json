@@ -1,0 +1,10 @@
+{
+  "created_at": "2026-01-14T00:00:00Z",
+  "generator": {},
+  "multi_agent": {},
+  "pack_id": "gf-01-ma-mcp-official-v0.7.2",
+  "protocol_version": "1.0.0",
+  "scenario_id": "gf-01-multi-agent-lifecycle",
+  "substrate": "mcp",
+  "substrate_version": "2024-11-05"
+}
