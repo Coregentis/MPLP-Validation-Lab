@@ -1,0 +1,43 @@
+{
+    "from": "001",
+    "to": "002",
+    "diff_type": "rfc6902-json-patch",
+    "patch": [
+        {
+            "op": "replace",
+            "path": "/agents/executor/status",
+            "value": "completed"
+        },
+        {
+            "op": "replace",
+            "path": "/agents/executor/events_count",
+            "value": 4
+        },
+        {
+            "op": "add",
+            "path": "/artifacts/2",
+            "value": "trace.json"
+        },
+        {
+            "op": "replace",
+            "path": "/timeline_position",
+            "value": 8
+        },
+        {
+            "op": "add",
+            "path": "/outcome",
+            "value": "success"
+        }
+    ],
+    "canonicalization": {
+        "mode": "json-c14n-lite",
+        "ignored_fields": [
+            "ts"
+        ]
+    },
+    "summary": {
+        "adds": 2,
+        "removes": 0,
+        "replaces": 3
+    }
+}

@@ -1,0 +1,76 @@
+{
+    "release_version": "0.6.0",
+    "release_date": "2026-01-14",
+    "protocol_version": "1.0.0",
+    "evidence_regime_version": "1.0",
+    "multi_agent_version": "1",
+    "authority": "Validation Lab",
+    "scope": "Non-normative evidence artifacts",
+    "seal_document": "Validation_Lab/releases/v0.6/phase-3-v0.6-multi-agent-seal.md",
+    "scenarios": [
+        {
+            "scenario_id": "gf-01-multi-agent-lifecycle",
+            "family": "gf-01",
+            "agents_min": 2,
+            "handoff_required": true,
+            "extends": "gf-01-single-agent-lifecycle"
+        }
+    ],
+    "runs": [
+        {
+            "run_id": "gf-01-ma-langchain-official-v0.6",
+            "scenario_id": "gf-01-multi-agent-lifecycle",
+            "substrate": "langchain",
+            "substrate_version": "0.2.16",
+            "claim_level": "reproduced",
+            "execution": "reproduced",
+            "status": "active",
+            "pack_root_hash": "27b1409239ff8d8431132862593b7ca8e05ea3385a233b44c3a07a78e97a0916",
+            "verdict_hash": "66baac271d25ea2a2ea7a272b53d52d8d0b22fdf7a423ea7c2c76ba4d5743293",
+            "multi_agent": {
+                "agent_count": 2,
+                "handoff_count": 1
+            },
+            "notes": "Multi-agent evidence: coordinator→executor handoff; no concurrency implied"
+        }
+    ],
+    "artifacts": {
+        "scenarios": [
+            {
+                "scenario_id": "gf-01-multi-agent-lifecycle",
+                "path": "artifacts/scenarios/gf-01-multi-agent-lifecycle.scenario.json"
+            }
+        ],
+        "packs": [
+            {
+                "run_id": "gf-01-ma-langchain-official-v0.6",
+                "path": "artifacts/packs/gf-01-ma-langchain-official-v0.6/"
+            }
+        ],
+        "snapshots": [
+            {
+                "run_id": "gf-01-ma-langchain-official-v0.6",
+                "path": "artifacts/snapshots/gf-01-ma-langchain-official-v0.6/index.json",
+                "states_count": 3,
+                "diffs_count": 2
+            }
+        ]
+    },
+    "gates_passed": [
+        "MA-STRUCT",
+        "MA-EQUIV"
+    ],
+    "gate_reports": [
+        "gates/ma-struct-gate.report.json",
+        "gates/ma-equiv-gate.report.json"
+    ],
+    "compatibility": {
+        "references_releases": [
+            "v0.2.0",
+            "v0.3.0",
+            "v0.4.0",
+            "v0.5.0"
+        ],
+        "does_not_modify_prior_releases": true
+    }
+}

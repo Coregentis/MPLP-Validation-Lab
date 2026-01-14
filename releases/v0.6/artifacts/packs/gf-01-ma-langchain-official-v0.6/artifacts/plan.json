@@ -1,0 +1,39 @@
+{
+    "plan_id": "gf-01-ma-plan",
+    "context_ref": "gf-01-ma-context",
+    "created_at": "2026-01-14T09:00:01Z",
+    "created_by": "coordinator",
+    "approach": "Coordinator creates plan, hands off to executor for implementation",
+    "steps": [
+        {
+            "step_id": "1",
+            "agent": "coordinator",
+            "action": "analyze_requirements"
+        },
+        {
+            "step_id": "2",
+            "agent": "coordinator",
+            "action": "create_plan"
+        },
+        {
+            "step_id": "3",
+            "agent": "coordinator",
+            "action": "handoff_to_executor"
+        },
+        {
+            "step_id": "4",
+            "agent": "executor",
+            "action": "receive_handoff"
+        },
+        {
+            "step_id": "5",
+            "agent": "executor",
+            "action": "execute_plan"
+        },
+        {
+            "step_id": "6",
+            "agent": "executor",
+            "action": "report_completion"
+        }
+    ]
+}

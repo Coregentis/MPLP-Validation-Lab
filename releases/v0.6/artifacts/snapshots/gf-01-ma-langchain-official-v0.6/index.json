@@ -1,0 +1,52 @@
+{
+    "run_id": "gf-01-ma-langchain-official-v0.6",
+    "scenario_id": "gf-01-multi-agent-lifecycle",
+    "snapshot_version": "1",
+    "source": {
+        "evidence_ref": "Validation_Lab/releases/v0.6/artifacts/packs/gf-01-ma-langchain-official-v0.6/",
+        "pack_root_hash": "__TO_BE_COMPUTED__",
+        "verdict_hash": "__TO_BE_COMPUTED__"
+    },
+    "snapshots": [
+        {
+            "id": "000",
+            "path": "states/000.json",
+            "logical_time": 0,
+            "notes": "Coordinator initialized"
+        },
+        {
+            "id": "001",
+            "path": "states/001.json",
+            "logical_time": 1,
+            "notes": "Handoff completed, executor initialized"
+        },
+        {
+            "id": "002",
+            "path": "states/002.json",
+            "logical_time": 2,
+            "notes": "Execution complete, all artifacts generated"
+        }
+    ],
+    "diffs": [
+        {
+            "from": "000",
+            "to": "001",
+            "path": "diffs/000_001.json",
+            "diff_schema_ref": "../../v0.4/artifacts/snapshots/snapshot-diff.schema.json"
+        },
+        {
+            "from": "001",
+            "to": "002",
+            "path": "diffs/001_002.json",
+            "diff_schema_ref": "../../v0.4/artifacts/snapshots/snapshot-diff.schema.json"
+        }
+    ],
+    "canonicalization": {
+        "mode": "json-c14n-lite",
+        "ignored_fields": [
+            "ts",
+            "timestamp",
+            "created_at"
+        ]
+    }
+}

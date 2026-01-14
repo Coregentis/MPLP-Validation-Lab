@@ -1,0 +1,11 @@
+{
+    "context_id": "gf-01-ma-context",
+    "project_id": "gf-01-multi-agent-project",
+    "created_at": "2026-01-14T09:00:00Z",
+    "created_by": "coordinator",
+    "requirements": {
+        "summary": "Multi-agent lifecycle validation with handoff",
+        "agents_required": 2,
+        "handoff_required": true
+    }
+}

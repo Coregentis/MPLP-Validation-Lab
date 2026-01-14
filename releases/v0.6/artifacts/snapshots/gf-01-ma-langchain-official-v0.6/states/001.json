@@ -1,0 +1,27 @@
+{
+    "snapshot_id": "001",
+    "logical_time": 1,
+    "state_type": "multi_agent_lifecycle",
+    "agents": {
+        "coordinator": {
+            "status": "completed",
+            "events_count": 4
+        },
+        "executor": {
+            "status": "initialized",
+            "events_count": 1
+        }
+    },
+    "artifacts": [
+        "context.json",
+        "plan.json"
+    ],
+    "handoffs": [
+        {
+            "from": "coordinator",
+            "to": "executor",
+            "context_ref": "artifacts/plan.json"
+        }
+    ],
+    "timeline_position": 5
+}

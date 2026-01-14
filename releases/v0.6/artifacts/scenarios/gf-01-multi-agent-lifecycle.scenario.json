@@ -1,0 +1,70 @@
+{
+    "$schema": "scenario.schema.json",
+    "$comment": {
+        "authority": "Validation Lab",
+        "normativity": "Non-Normative",
+        "scope": "Evidence artifacts for adjudication; not part of MPLP Protocol",
+        "version": "1.0"
+    },
+    "scenario_id": "gf-01-multi-agent-lifecycle",
+    "family": "gf-01",
+    "title": "GF-01 Multi-Agent Lifecycle",
+    "description": "Extends GF-01 single-agent lifecycle invariants to multi-agent collaboration with handoff",
+    "invariants_inherited": [
+        "INV-GF01-001: Context must be created before plan",
+        "INV-GF01-002: Plan must reference context",
+        "INV-GF01-003: Trace must reference plan",
+        "INV-GF01-004: All artifacts deterministically hashable"
+    ],
+    "invariants_multi_agent": [
+        "INV-MA-STRUCT-001: At least 2 distinct agent_ids in timeline",
+        "INV-MA-STRUCT-002: Each agent has minimum 2 events",
+        "INV-MA-STRUCT-003: At least 1 handoff/delegate event exists",
+        "INV-MA-STRUCT-004: Handoff event references traceable context",
+        "INV-MA-STRUCT-005: Timeline events canonically orderable"
+    ],
+    "constraints": {
+        "agents_min": 2,
+        "handoff_required": true,
+        "concurrency_implied": false
+    },
+    "evidence_requirements": {
+        "pack_structure": {
+            "required_artifacts": [
+                "context.json",
+                "plan.json",
+                "trace.json"
+            ],
+            "required_timeline": "events.ndjson",
+            "required_integrity": "sha256sums.txt"
+        },
+        "timeline_fields": {
+            "required": [
+                "event_id",
+                "agent_id",
+                "type"
+            ],
+            "recommended": [
+                "ts",
+                "payload_ref",
+                "role"
+            ]
+        },
+        "handoff_event": {
+            "type": "handoff|delegate|transfer",
+            "required_fields": [
+                "from_agent",
+                "to_agent",
+                "context_ref"
+            ]
+        }
+    },
+    "gates": [
+        "MA-STRUCT",
+        "MA-EQUIV"
+    ],
+    "compatibility": {
+        "extends_scenario": "gf-01-single-agent-lifecycle",
+        "evaluator_version": "local-cli-v0.3.0+"
+    }
+}

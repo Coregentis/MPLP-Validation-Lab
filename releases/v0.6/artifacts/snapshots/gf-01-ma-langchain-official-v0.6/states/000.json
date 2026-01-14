@@ -1,0 +1,18 @@
+{
+    "snapshot_id": "000",
+    "logical_time": 0,
+    "state_type": "multi_agent_lifecycle",
+    "agents": {
+        "coordinator": {
+            "status": "initialized",
+            "events_count": 1
+        },
+        "executor": {
+            "status": "not_started",
+            "events_count": 0
+        }
+    },
+    "artifacts": [],
+    "handoffs": [],
+    "timeline_position": 1
+}

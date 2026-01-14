@@ -1,0 +1,46 @@
+{
+  "gate_id": "MA-STRUCT",
+  "timestamp": "2026-01-14T01:03:55.584Z",
+  "checks": [
+    {
+      "check": "manifest_exists:gf-01-ma-langchain-official-v0.6",
+      "passed": true
+    },
+    {
+      "check": "timeline_exists:gf-01-ma-langchain-official-v0.6",
+      "passed": true
+    },
+    {
+      "check": "agent_count:gf-01-ma-langchain-official-v0.6",
+      "invariant_id": "INV-MA-STRUCT-001",
+      "passed": true,
+      "agent_count": 2
+    },
+    {
+      "check": "agent_min_events:gf-01-ma-langchain-official-v0.6",
+      "invariant_id": "INV-MA-STRUCT-002",
+      "passed": true,
+      "agent_events": {
+        "coordinator": 4,
+        "executor": 4
+      }
+    },
+    {
+      "check": "handoff_exists:gf-01-ma-langchain-official-v0.6",
+      "invariant_id": "INV-MA-STRUCT-003",
+      "passed": true,
+      "handoff_count": 1
+    },
+    {
+      "check": "handoff_valid:gf-01-ma-langchain-official-v0.6",
+      "invariant_id": "INV-MA-STRUCT-004",
+      "passed": true
+    },
+    {
+      "check": "events_orderable:gf-01-ma-langchain-official-v0.6",
+      "invariant_id": "INV-MA-STRUCT-005",
+      "passed": true
+    }
+  ],
+  "verdict": "PASS"
+}

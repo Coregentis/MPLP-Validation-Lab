@@ -1,0 +1,26 @@
+{
+    "pack_id": "gf-01-ma-langchain-official-v0.6",
+    "protocol_version": "1.0.0",
+    "scenario_id": "gf-01-multi-agent-lifecycle",
+    "created_at": "2026-01-14T09:00:00Z",
+    "substrate": "langchain",
+    "substrate_version": "0.2.16",
+    "multi_agent": {
+        "agent_count": 2,
+        "agents": [
+            {
+                "agent_id": "coordinator",
+                "role": "coordinator"
+            },
+            {
+                "agent_id": "executor",
+                "role": "executor"
+            }
+        ],
+        "handoff_count": 1
+    },
+    "generator": {
+        "name": "langchain-multi-agent-generator",
+        "version": "0.6.0"
+    }
+}

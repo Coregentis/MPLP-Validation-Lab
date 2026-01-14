@@ -1,0 +1,50 @@
+{
+  "gate_id": "MA-EQUIV",
+  "timestamp": "2026-01-14T01:03:55.632Z",
+  "checks": [
+    {
+      "check": "context_exists:gf-01-ma-langchain-official-v0.6",
+      "invariant_id": "INV-MA-EQUIV-002",
+      "passed": true
+    },
+    {
+      "check": "plan_exists:gf-01-ma-langchain-official-v0.6",
+      "invariant_id": "INV-MA-EQUIV-002",
+      "passed": true
+    },
+    {
+      "check": "trace_exists:gf-01-ma-langchain-official-v0.6",
+      "invariant_id": "INV-MA-EQUIV-002",
+      "passed": true
+    },
+    {
+      "check": "plan_refs_context:gf-01-ma-langchain-official-v0.6",
+      "invariant_id": "INV-GF01-002",
+      "passed": true
+    },
+    {
+      "check": "trace_refs_plan:gf-01-ma-langchain-official-v0.6",
+      "invariant_id": "INV-GF01-003",
+      "passed": true
+    },
+    {
+      "check": "pack_root_hash_valid:gf-01-ma-langchain-official-v0.6",
+      "invariant_id": "INV-MA-EQUIV-003",
+      "passed": true,
+      "pack_root_hash": "27b1409239ff8d8431132862593b7ca8e05ea3385a233b44c3a07a78e97a0916"
+    },
+    {
+      "check": "verdict_hash_valid:gf-01-ma-langchain-official-v0.6",
+      "invariant_id": "INV-MA-EQUIV-004",
+      "passed": true,
+      "verdict_hash": "66baac271d25ea2a2ea7a272b53d52d8d0b22fdf7a423ea7c2c76ba4d5743293"
+    },
+    {
+      "check": "evaluator_pass:gf-01-ma-langchain-official-v0.6",
+      "invariant_id": "INV-MA-EQUIV-001",
+      "passed": true,
+      "verdict": "PASS"
+    }
+  ],
+  "verdict": "PASS"
+}
