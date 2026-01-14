@@ -1,0 +1,36 @@
+{
+    "release_version": "0.7.3",
+    "release_date": "2026-01-14",
+    "release_type": "signed_proof_extension",
+    "protocol_version": "1.0.0",
+    "authority": "Validation Lab",
+    "scope": "Non-normative evidence artifacts",
+    "seal_document": "phase-4-v0.7.3-signed-seal.md",
+    "proof_extension": {
+        "proof_id": "SIGN-02",
+        "covers_release": "v0.7.2",
+        "source_tree_digest": "04bcce1631b4f70c2589d78abe9eaebbaf268a808bb82ea20a5fcf9852a76f7a",
+        "files_covered": 97,
+        "coverage": [
+            "langchain",
+            "autogen",
+            "magnetic-one",
+            "pydanticai",
+            "mcp",
+            "a2a"
+        ]
+    },
+    "gates_passed": [
+        "P2-SIGN"
+    ],
+    "gate_reports": [
+        "gates/p2-sign-gate.report.json"
+    ],
+    "artifacts": {
+        "signed_proof": "artifacts/signed-proof/SIGN-02/"
+    },
+    "compatibility": {
+        "extends": "v0.7.2",
+        "does_not_modify_v072": true
+    }
+}

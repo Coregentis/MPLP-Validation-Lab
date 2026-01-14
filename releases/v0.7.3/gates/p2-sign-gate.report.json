@@ -1,0 +1,33 @@
+{
+    "gate_id": "P2-SIGN",
+    "report_version": "1",
+    "release": "v0.7.3",
+    "executed_at": "2026-01-14T10:25:00Z",
+    "proof_id": "SIGN-02",
+    "scope": {
+        "covers_release": "v0.7.2",
+        "evidence_type": "Full 6-Substrate Type-B",
+        "files_covered": 97
+    },
+    "source_tree_digest": "04bcce1631b4f70c2589d78abe9eaebbaf268a808bb82ea20a5fcf9852a76f7a",
+    "checks": [
+        {
+            "check_id": "SOURCE_TREE_EXISTS",
+            "passed": true
+        },
+        {
+            "check_id": "DIGEST_COMPUTED",
+            "passed": true
+        },
+        {
+            "check_id": "MANIFEST_COMPLETE",
+            "passed": true
+        },
+        {
+            "check_id": "COVERAGE_MATCH",
+            "passed": true
+        }
+    ],
+    "verdict": "PASS",
+    "attestation": "Cryptographic seal applied to v0.7.2 Full 6-Substrate evidence"
+}
