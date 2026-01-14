@@ -1,0 +1,26 @@
+{
+    "pack_id": "gf-01-ma-a2a-official-v0.6",
+    "protocol_version": "1.0.0",
+    "scenario_id": "gf-01-multi-agent-lifecycle",
+    "created_at": "2026-01-14T09:20:00Z",
+    "substrate": "a2a",
+    "substrate_version": "0.2.1",
+    "multi_agent": {
+        "agent_count": 2,
+        "agents": [
+            {
+                "agent_id": "agent_a",
+                "role": "coordinator"
+            },
+            {
+                "agent_id": "agent_b",
+                "role": "executor"
+            }
+        ],
+        "handoff_count": 1
+    },
+    "generator": {
+        "name": "a2a-multi-agent-generator",
+        "version": "0.6.0"
+    }
+}

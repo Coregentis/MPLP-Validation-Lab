@@ -1,0 +1,39 @@
+{
+    "plan_id": "gf-01-ma-mcp-plan",
+    "context_ref": "gf-01-ma-mcp-context",
+    "created_at": "2026-01-14T09:20:01Z",
+    "created_by": "server",
+    "approach": "Server exposes tools, client invokes via handoff pattern",
+    "steps": [
+        {
+            "step_id": "1",
+            "agent": "server",
+            "action": "init"
+        },
+        {
+            "step_id": "2",
+            "agent": "server",
+            "action": "plan"
+        },
+        {
+            "step_id": "3",
+            "agent": "server",
+            "action": "handoff"
+        },
+        {
+            "step_id": "4",
+            "agent": "client",
+            "action": "receive"
+        },
+        {
+            "step_id": "5",
+            "agent": "client",
+            "action": "execute"
+        },
+        {
+            "step_id": "6",
+            "agent": "client",
+            "action": "complete"
+        }
+    ]
+}

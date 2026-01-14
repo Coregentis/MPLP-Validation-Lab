@@ -1,0 +1,8 @@
+{"event_id":"evt-001","agent_id":"agent_a","type":"agent.init","ts":"2026-01-14T09:20:00Z","role":"coordinator"}
+{"event_id":"evt-002","agent_id":"agent_a","type":"artifact.create","ts":"2026-01-14T09:20:01Z","artifact_type":"context","artifact_ref":"artifacts/context.json"}
+{"event_id":"evt-003","agent_id":"agent_a","type":"artifact.create","ts":"2026-01-14T09:20:02Z","artifact_type":"plan","artifact_ref":"artifacts/plan.json"}
+{"event_id":"evt-004","agent_id":"agent_a","type":"handoff","ts":"2026-01-14T09:20:03Z","from_agent":"agent_a","to_agent":"agent_b","context_ref":"artifacts/plan.json","payload":{"task":"execute"}}
+{"event_id":"evt-005","agent_id":"agent_b","type":"agent.init","ts":"2026-01-14T09:20:03Z","role":"executor","received_from":"agent_a"}
+{"event_id":"evt-006","agent_id":"agent_b","type":"task.start","ts":"2026-01-14T09:20:04Z","task_ref":"execute"}
+{"event_id":"evt-007","agent_id":"agent_b","type":"artifact.create","ts":"2026-01-14T09:20:05Z","artifact_type":"trace","artifact_ref":"artifacts/trace.json"}
+{"event_id":"evt-008","agent_id":"agent_b","type":"agent.complete","ts":"2026-01-14T09:20:05Z","outcome":"success"}

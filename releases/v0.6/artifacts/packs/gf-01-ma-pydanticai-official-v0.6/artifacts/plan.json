@@ -1,0 +1,39 @@
+{
+    "plan_id": "gf-01-ma-pydanticai-plan",
+    "context_ref": "gf-01-ma-pydanticai-context",
+    "created_at": "2026-01-14T09:20:01Z",
+    "created_by": "planner",
+    "approach": "Planner creates structured plan, hands off to runner for typed execution",
+    "steps": [
+        {
+            "step_id": "1",
+            "agent": "planner",
+            "action": "analyze"
+        },
+        {
+            "step_id": "2",
+            "agent": "planner",
+            "action": "plan"
+        },
+        {
+            "step_id": "3",
+            "agent": "planner",
+            "action": "handoff"
+        },
+        {
+            "step_id": "4",
+            "agent": "runner",
+            "action": "receive"
+        },
+        {
+            "step_id": "5",
+            "agent": "runner",
+            "action": "execute"
+        },
+        {
+            "step_id": "6",
+            "agent": "runner",
+            "action": "complete"
+        }
+    ]
+}

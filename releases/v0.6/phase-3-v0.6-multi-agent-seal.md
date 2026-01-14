@@ -1,6 +1,6 @@
-# Phase 3 Seal — Validation Lab v0.6 (Multi-Agent)
+# Phase 3 Seal — Validation Lab v0.6.1 (Multi-Agent Full Coverage)
 
-> **Release ID**: Validation Lab v0.6  
+> **Release ID**: Validation Lab v0.6.1  
 > **Seal Date**: 2026-01-14  
 > **Evidence Regime Version**: 1.0  
 > **Multi-Agent Version**: 1  
@@ -10,93 +10,86 @@
 
 ## Overview
 
-v0.6 introduces **Multi-Agent Evidence** — extending GF-01 lifecycle invariants to multi-agent collaboration:
+v0.6.1 achieves **full multi-agent coverage** across 6 substrates under unified MA-STRUCT/MA-EQUIV gates:
 
-- **Scenario**: `gf-01-multi-agent-lifecycle` (extends single-agent)
-- **Structural Invariants**: 2+ agents, handoff events, orderable timeline
-- **Equivalence Invariants**: GF-01 artifacts (context→plan→trace) preserved
-
----
-
-## Multi-Agent Scenario
-
-### gf-01-multi-agent-lifecycle
-
-| Constraint | Value |
-|------------|-------|
-| Agents Minimum | 2 |
-| Handoff Required | Yes |
-| Concurrency Implied | No |
-| Extends | gf-01-single-agent-lifecycle |
-
-### Invariants (MA-STRUCT)
-
-| ID | Description |
-|----|-------------|
-| INV-MA-STRUCT-001 | At least 2 distinct agent_ids |
-| INV-MA-STRUCT-002 | Each agent has ≥2 events |
-| INV-MA-STRUCT-003 | At least 1 handoff event |
-| INV-MA-STRUCT-004 | Handoff has from/to/context_ref |
-| INV-MA-STRUCT-005 | Events canonically orderable |
+| Substrate | Role |
+|-----------|------|
+| **LangChain** | Foundation substrate |
+| **AutoGen** | Strong differentiator (conversation pattern) |
+| **Magnetic-One** | Strong differentiator (orchestration pattern) |
+| **PydanticAI** | Lightweight slot (minimal framework) |
+| **MCP** | Protocol substrate (server-client) |
+| **A2A** | Protocol substrate (agent-to-agent) |
 
 ---
 
-## Run: gf-01-ma-langchain-official-v0.6
+## Coverage Summary
 
-| Field | Value |
-|-------|-------|
-| Substrate | langchain 0.2.16 |
-| Agents | coordinator, executor |
-| Handoffs | 1 |
-| Events | 8 |
-| pack_root_hash | `27b1409239ff8d8431132862593b7ca8e05ea3385a233b44c3a07a78e97a0916` |
-| verdict_hash | `66baac271d25ea2a2ea7a272b53d52d8d0b22fdf7a423ea7c2c76ba4d5743293` |
-
-### Timeline Summary
-
-| Event | Agent | Type |
-|-------|-------|------|
-| evt-001 | coordinator | agent.init |
-| evt-002 | coordinator | artifact.create (context) |
-| evt-003 | coordinator | artifact.create (plan) |
-| evt-004 | coordinator | **handoff** → executor |
-| evt-005 | executor | agent.init |
-| evt-006 | executor | task.start |
-| evt-007 | executor | artifact.create (trace) |
-| evt-008 | executor | agent.complete |
+| Metric | Value |
+|--------|-------|
+| Substrates | 6 |
+| Runs | 6 |
+| Agents per run | 2 |
+| Handoffs per run | 1 |
+| Total events | 48 (8 × 6) |
+| Three-point plane | LangChain + AutoGen + Magnetic-One |
 
 ---
 
-## State Evolution
+## Runs
 
-| Snapshot | Logical Time | Description |
-|----------|--------------|-------------|
-| 000 | 0 | Coordinator initialized |
-| 001 | 1 | Handoff completed, executor initialized |
-| 002 | 2 | Execution complete, all artifacts generated |
+| Run ID | Substrate | pack_root_hash |
+|--------|-----------|----------------|
+| gf-01-ma-langchain-official-v0.6 | langchain 0.2.16 | `27b14092...` |
+| gf-01-ma-autogen-official-v0.6 | autogen 0.4.0 | `4478b1f3...` |
+| gf-01-ma-magnetic-one-official-v0.6 | magnetic-one 0.1.0 | `fb33bbb1...` |
+| gf-01-ma-pydanticai-official-v0.6 | pydanticai 0.0.14 | `a1913a0c...` |
+| gf-01-ma-mcp-official-v0.6 | mcp 2024-11-05 | `a953303e...` |
+| gf-01-ma-a2a-official-v0.6 | a2a 0.2.1 | `db6214d4...` |
 
 ---
 
 ## Gate Verdicts
 
-| Gate | Verdict | Report |
-|------|---------|--------|
-| MA-STRUCT | ✅ PASS | gates/ma-struct-gate.report.json |
-| MA-EQUIV | ✅ PASS | gates/ma-equiv-gate.report.json |
+| Gate | Checks | Verdict |
+|------|--------|---------|
+| MA-STRUCT | 42 (7 × 6 runs) | ✅ PASS |
+| MA-EQUIV | 48 (8 × 6 runs) | ✅ PASS |
 
 ---
 
 ## Non-Endorsement Boundary
 
 > **MPLP does not endorse, certify, or rank any agent framework.**  
-> This release demonstrates that GF-01 lifecycle invariants can be evaluated under multi-agent evidence structures.  
-> "Multi-agent" describes evidence structure, not framework capability.
+> Labels describe **evidence strength**, not framework quality.  
+> All 6 substrates are evaluated under identical structural invariants.
+
+---
+
+## Validation Type Boundary
+
+> [!IMPORTANT]
+> **MA-STRUCT/MA-EQUIV gates validate the submitted evidence packs.**  
+> They do NOT imply that packs were regenerated during this release.  
+> This is **Type A: Static Evidence Validation**, not **Type B: Repro Execution**.
+
+**What this release proves:**
+- Evidence packs are internally consistent (hash / structure / reference closure)
+- All packs satisfy GF-01 multi-agent structural invariants
+- All packs pass evaluator checks with stable verdict_hash
+
+**What this release does NOT prove:**
+- Substrates were executed during this release cycle
+- Packs are reproducible via runtime invocation
+- Environment fingerprints match execution environments
+
+**Future upgrade path:** MA-REPRO gate (v0.7+) will add mandatory repro execution validation.
 
 ---
 
 ## Compatibility
 
-- References releases: v0.2.0, v0.3.0, v0.4.0, v0.5.0
+- References: v0.2.0 → v0.6.0
 - Does not modify prior releases: ✅
 
 ---
@@ -104,6 +97,6 @@ v0.6 introduces **Multi-Agent Evidence** — extending GF-01 lifecycle invariant
 ## Seal Attestation
 
 - **Sealed By**: Antigravity Agent
-- **Seal Date**: 2026-01-14T09:10:00+08:00
-- **manifest_sha256**: `3580aae977ff4926e2b81fc07fb01d5188bf3e96f3412798bb9a1ef3d1f4b6c1`
-- **content_sha256** (lines 1-90): `7a2acd95ec0fb4f473f20daa97e493fecfd9956a2821fc1c9ee6ae7763623022`
+- **Seal Date**: 2026-01-14T09:30:00+08:00
+- **manifest_sha256**: `75a160b33a96d744d6328fd2680f45b8223c194e91fb7b016f06f04780359a46`
+- **content_sha256** (lines 1-90): `72f19dabc2b94b78105c095e7cbef0c8671f0671de821a439a90a8e2c9fd2e1f`

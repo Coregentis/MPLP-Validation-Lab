@@ -1,0 +1,29 @@
+{
+    "trace_id": "gf-01-ma-autogen-trace",
+    "plan_ref": "gf-01-ma-autogen-plan",
+    "created_at": "2026-01-14T09:20:05Z",
+    "completed_by": "assistant",
+    "execution_summary": {
+        "total_agents": 2,
+        "total_events": 8,
+        "handoffs": 1,
+        "outcome": "success"
+    },
+    "agent_summaries": [
+        {
+            "agent_id": "user_proxy",
+            "events_count": 4,
+            "artifacts_created": [
+                "context.json",
+                "plan.json"
+            ]
+        },
+        {
+            "agent_id": "assistant",
+            "events_count": 4,
+            "artifacts_created": [
+                "trace.json"
+            ]
+        }
+    ]
+}

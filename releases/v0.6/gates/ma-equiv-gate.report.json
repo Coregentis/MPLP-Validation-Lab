@@ -1,7 +1,93 @@
 {
   "gate_id": "MA-EQUIV",
-  "timestamp": "2026-01-14T01:03:55.632Z",
+  "timestamp": "2026-01-14T01:21:53.859Z",
   "checks": [
+    {
+      "check": "context_exists:gf-01-ma-a2a-official-v0.6",
+      "invariant_id": "INV-MA-EQUIV-002",
+      "passed": true
+    },
+    {
+      "check": "plan_exists:gf-01-ma-a2a-official-v0.6",
+      "invariant_id": "INV-MA-EQUIV-002",
+      "passed": true
+    },
+    {
+      "check": "trace_exists:gf-01-ma-a2a-official-v0.6",
+      "invariant_id": "INV-MA-EQUIV-002",
+      "passed": true
+    },
+    {
+      "check": "plan_refs_context:gf-01-ma-a2a-official-v0.6",
+      "invariant_id": "INV-GF01-002",
+      "passed": true
+    },
+    {
+      "check": "trace_refs_plan:gf-01-ma-a2a-official-v0.6",
+      "invariant_id": "INV-GF01-003",
+      "passed": true
+    },
+    {
+      "check": "pack_root_hash_valid:gf-01-ma-a2a-official-v0.6",
+      "invariant_id": "INV-MA-EQUIV-003",
+      "passed": true,
+      "pack_root_hash": "db6214d4c402d7ab342add910221c2c5452cf21db902290a168da97572afd2e2"
+    },
+    {
+      "check": "verdict_hash_valid:gf-01-ma-a2a-official-v0.6",
+      "invariant_id": "INV-MA-EQUIV-004",
+      "passed": true,
+      "verdict_hash": "ee8e644721d35dfd793ba6d9fa357c4d355eb12672c2b5ba50ede7273b648f44"
+    },
+    {
+      "check": "evaluator_pass:gf-01-ma-a2a-official-v0.6",
+      "invariant_id": "INV-MA-EQUIV-001",
+      "passed": true,
+      "verdict": "PASS"
+    },
+    {
+      "check": "context_exists:gf-01-ma-autogen-official-v0.6",
+      "invariant_id": "INV-MA-EQUIV-002",
+      "passed": true
+    },
+    {
+      "check": "plan_exists:gf-01-ma-autogen-official-v0.6",
+      "invariant_id": "INV-MA-EQUIV-002",
+      "passed": true
+    },
+    {
+      "check": "trace_exists:gf-01-ma-autogen-official-v0.6",
+      "invariant_id": "INV-MA-EQUIV-002",
+      "passed": true
+    },
+    {
+      "check": "plan_refs_context:gf-01-ma-autogen-official-v0.6",
+      "invariant_id": "INV-GF01-002",
+      "passed": true
+    },
+    {
+      "check": "trace_refs_plan:gf-01-ma-autogen-official-v0.6",
+      "invariant_id": "INV-GF01-003",
+      "passed": true
+    },
+    {
+      "check": "pack_root_hash_valid:gf-01-ma-autogen-official-v0.6",
+      "invariant_id": "INV-MA-EQUIV-003",
+      "passed": true,
+      "pack_root_hash": "4478b1f3ce7b3841776fb7552ee7a135fbad53cc1196e65af6a3c93dd77542db"
+    },
+    {
+      "check": "verdict_hash_valid:gf-01-ma-autogen-official-v0.6",
+      "invariant_id": "INV-MA-EQUIV-004",
+      "passed": true,
+      "verdict_hash": "e740afe87e268f464366f5a7770027ed848daef10c7c8778d0d0ea184bf41351"
+    },
+    {
+      "check": "evaluator_pass:gf-01-ma-autogen-official-v0.6",
+      "invariant_id": "INV-MA-EQUIV-001",
+      "passed": true,
+      "verdict": "PASS"
+    },
     {
       "check": "context_exists:gf-01-ma-langchain-official-v0.6",
       "invariant_id": "INV-MA-EQUIV-002",
@@ -41,6 +127,135 @@
     },
     {
       "check": "evaluator_pass:gf-01-ma-langchain-official-v0.6",
+      "invariant_id": "INV-MA-EQUIV-001",
+      "passed": true,
+      "verdict": "PASS"
+    },
+    {
+      "check": "context_exists:gf-01-ma-magnetic-one-official-v0.6",
+      "invariant_id": "INV-MA-EQUIV-002",
+      "passed": true
+    },
+    {
+      "check": "plan_exists:gf-01-ma-magnetic-one-official-v0.6",
+      "invariant_id": "INV-MA-EQUIV-002",
+      "passed": true
+    },
+    {
+      "check": "trace_exists:gf-01-ma-magnetic-one-official-v0.6",
+      "invariant_id": "INV-MA-EQUIV-002",
+      "passed": true
+    },
+    {
+      "check": "plan_refs_context:gf-01-ma-magnetic-one-official-v0.6",
+      "invariant_id": "INV-GF01-002",
+      "passed": true
+    },
+    {
+      "check": "trace_refs_plan:gf-01-ma-magnetic-one-official-v0.6",
+      "invariant_id": "INV-GF01-003",
+      "passed": true
+    },
+    {
+      "check": "pack_root_hash_valid:gf-01-ma-magnetic-one-official-v0.6",
+      "invariant_id": "INV-MA-EQUIV-003",
+      "passed": true,
+      "pack_root_hash": "fb33bbb1cf452bcda0fa02a7b07ed53d6cb0e14edd0981e36742ad73ddfad1ec"
+    },
+    {
+      "check": "verdict_hash_valid:gf-01-ma-magnetic-one-official-v0.6",
+      "invariant_id": "INV-MA-EQUIV-004",
+      "passed": true,
+      "verdict_hash": "e4a8e852891edb0f5ba1e9cede3d5d1dc5d1f09ff7270a5693236b12bc43a587"
+    },
+    {
+      "check": "evaluator_pass:gf-01-ma-magnetic-one-official-v0.6",
+      "invariant_id": "INV-MA-EQUIV-001",
+      "passed": true,
+      "verdict": "PASS"
+    },
+    {
+      "check": "context_exists:gf-01-ma-mcp-official-v0.6",
+      "invariant_id": "INV-MA-EQUIV-002",
+      "passed": true
+    },
+    {
+      "check": "plan_exists:gf-01-ma-mcp-official-v0.6",
+      "invariant_id": "INV-MA-EQUIV-002",
+      "passed": true
+    },
+    {
+      "check": "trace_exists:gf-01-ma-mcp-official-v0.6",
+      "invariant_id": "INV-MA-EQUIV-002",
+      "passed": true
+    },
+    {
+      "check": "plan_refs_context:gf-01-ma-mcp-official-v0.6",
+      "invariant_id": "INV-GF01-002",
+      "passed": true
+    },
+    {
+      "check": "trace_refs_plan:gf-01-ma-mcp-official-v0.6",
+      "invariant_id": "INV-GF01-003",
+      "passed": true
+    },
+    {
+      "check": "pack_root_hash_valid:gf-01-ma-mcp-official-v0.6",
+      "invariant_id": "INV-MA-EQUIV-003",
+      "passed": true,
+      "pack_root_hash": "a953303e5d19e8c52db0d12284ecd1518d70d4b6e5f4fcba8665f6ddbc2ce7f4"
+    },
+    {
+      "check": "verdict_hash_valid:gf-01-ma-mcp-official-v0.6",
+      "invariant_id": "INV-MA-EQUIV-004",
+      "passed": true,
+      "verdict_hash": "dd7ab34508fa48fbc04896df8cc8f294daa4b1a7f69d5f9fa524dbf8cbc17435"
+    },
+    {
+      "check": "evaluator_pass:gf-01-ma-mcp-official-v0.6",
+      "invariant_id": "INV-MA-EQUIV-001",
+      "passed": true,
+      "verdict": "PASS"
+    },
+    {
+      "check": "context_exists:gf-01-ma-pydanticai-official-v0.6",
+      "invariant_id": "INV-MA-EQUIV-002",
+      "passed": true
+    },
+    {
+      "check": "plan_exists:gf-01-ma-pydanticai-official-v0.6",
+      "invariant_id": "INV-MA-EQUIV-002",
+      "passed": true
+    },
+    {
+      "check": "trace_exists:gf-01-ma-pydanticai-official-v0.6",
+      "invariant_id": "INV-MA-EQUIV-002",
+      "passed": true
+    },
+    {
+      "check": "plan_refs_context:gf-01-ma-pydanticai-official-v0.6",
+      "invariant_id": "INV-GF01-002",
+      "passed": true
+    },
+    {
+      "check": "trace_refs_plan:gf-01-ma-pydanticai-official-v0.6",
+      "invariant_id": "INV-GF01-003",
+      "passed": true
+    },
+    {
+      "check": "pack_root_hash_valid:gf-01-ma-pydanticai-official-v0.6",
+      "invariant_id": "INV-MA-EQUIV-003",
+      "passed": true,
+      "pack_root_hash": "a1913a0c3a5d4fc7dd0b00eee3ba2aed4f9f04da551b07c29ec2b128f43af5e9"
+    },
+    {
+      "check": "verdict_hash_valid:gf-01-ma-pydanticai-official-v0.6",
+      "invariant_id": "INV-MA-EQUIV-004",
+      "passed": true,
+      "verdict_hash": "fcef8fd237444edb2642ddf463f73378594ee1209011573989121e275fd15569"
+    },
+    {
+      "check": "evaluator_pass:gf-01-ma-pydanticai-official-v0.6",
       "invariant_id": "INV-MA-EQUIV-001",
       "passed": true,
       "verdict": "PASS"

@@ -1,0 +1,29 @@
+{
+    "trace_id": "gf-01-ma-mcp-trace",
+    "plan_ref": "gf-01-ma-mcp-plan",
+    "created_at": "2026-01-14T09:20:05Z",
+    "completed_by": "client",
+    "execution_summary": {
+        "total_agents": 2,
+        "total_events": 8,
+        "handoffs": 1,
+        "outcome": "success"
+    },
+    "agent_summaries": [
+        {
+            "agent_id": "server",
+            "events_count": 4,
+            "artifacts_created": [
+                "context.json",
+                "plan.json"
+            ]
+        },
+        {
+            "agent_id": "client",
+            "events_count": 4,
+            "artifacts_created": [
+                "trace.json"
+            ]
+        }
+    ]
+}

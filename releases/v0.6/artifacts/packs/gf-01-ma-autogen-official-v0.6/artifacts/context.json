@@ -1,0 +1,11 @@
+{
+    "context_id": "gf-01-ma-autogen-context",
+    "project_id": "gf-01-multi-agent-project",
+    "created_at": "2026-01-14T09:20:00Z",
+    "created_by": "user_proxy",
+    "requirements": {
+        "summary": "Multi-agent lifecycle validation with AutoGen conversation pattern",
+        "agents_required": 2,
+        "handoff_required": true
+    }
+}

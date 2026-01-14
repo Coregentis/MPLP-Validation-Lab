@@ -1,0 +1,39 @@
+{
+    "plan_id": "gf-01-ma-a2a-plan",
+    "context_ref": "gf-01-ma-a2a-context",
+    "created_at": "2026-01-14T09:20:01Z",
+    "created_by": "agent_a",
+    "approach": "Agent A creates plan and delegates to Agent B via A2A message pattern",
+    "steps": [
+        {
+            "step_id": "1",
+            "agent": "agent_a",
+            "action": "init"
+        },
+        {
+            "step_id": "2",
+            "agent": "agent_a",
+            "action": "plan"
+        },
+        {
+            "step_id": "3",
+            "agent": "agent_a",
+            "action": "handoff"
+        },
+        {
+            "step_id": "4",
+            "agent": "agent_b",
+            "action": "receive"
+        },
+        {
+            "step_id": "5",
+            "agent": "agent_b",
+            "action": "execute"
+        },
+        {
+            "step_id": "6",
+            "agent": "agent_b",
+            "action": "complete"
+        }
+    ]
+}

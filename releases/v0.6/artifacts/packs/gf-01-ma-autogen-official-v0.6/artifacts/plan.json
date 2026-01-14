@@ -1,0 +1,39 @@
+{
+    "plan_id": "gf-01-ma-autogen-plan",
+    "context_ref": "gf-01-ma-autogen-context",
+    "created_at": "2026-01-14T09:20:01Z",
+    "created_by": "user_proxy",
+    "approach": "UserProxyAgent initiates conversation, AssistantAgent generates response with handoff",
+    "steps": [
+        {
+            "step_id": "1",
+            "agent": "user_proxy",
+            "action": "initiate_chat"
+        },
+        {
+            "step_id": "2",
+            "agent": "user_proxy",
+            "action": "send_message"
+        },
+        {
+            "step_id": "3",
+            "agent": "user_proxy",
+            "action": "handoff_to_assistant"
+        },
+        {
+            "step_id": "4",
+            "agent": "assistant",
+            "action": "receive_message"
+        },
+        {
+            "step_id": "5",
+            "agent": "assistant",
+            "action": "generate_response"
+        },
+        {
+            "step_id": "6",
+            "agent": "assistant",
+            "action": "complete_task"
+        }
+    ]
+}

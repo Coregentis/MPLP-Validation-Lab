@@ -1,0 +1,11 @@
+{
+    "context_id": "gf-01-ma-a2a-context",
+    "project_id": "gf-01-multi-agent-project",
+    "created_at": "2026-01-14T09:20:00Z",
+    "created_by": "agent_a",
+    "requirements": {
+        "summary": "Multi-agent lifecycle validation with A2A agent-to-agent pattern",
+        "agents_required": 2,
+        "handoff_required": true
+    }
+}

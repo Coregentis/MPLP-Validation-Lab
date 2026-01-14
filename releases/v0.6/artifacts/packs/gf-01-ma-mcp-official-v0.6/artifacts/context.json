@@ -1,0 +1,11 @@
+{
+    "context_id": "gf-01-ma-mcp-context",
+    "project_id": "gf-01-multi-agent-project",
+    "created_at": "2026-01-14T09:20:00Z",
+    "created_by": "server",
+    "requirements": {
+        "summary": "Multi-agent lifecycle validation with MCP server-client pattern",
+        "agents_required": 2,
+        "handoff_required": true
+    }
+}

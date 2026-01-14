@@ -1,7 +1,85 @@
 {
   "gate_id": "MA-STRUCT",
-  "timestamp": "2026-01-14T01:03:55.584Z",
+  "timestamp": "2026-01-14T01:21:53.810Z",
   "checks": [
+    {
+      "check": "manifest_exists:gf-01-ma-a2a-official-v0.6",
+      "passed": true
+    },
+    {
+      "check": "timeline_exists:gf-01-ma-a2a-official-v0.6",
+      "passed": true
+    },
+    {
+      "check": "agent_count:gf-01-ma-a2a-official-v0.6",
+      "invariant_id": "INV-MA-STRUCT-001",
+      "passed": true,
+      "agent_count": 2
+    },
+    {
+      "check": "agent_min_events:gf-01-ma-a2a-official-v0.6",
+      "invariant_id": "INV-MA-STRUCT-002",
+      "passed": true,
+      "agent_events": {
+        "agent_a": 4,
+        "agent_b": 4
+      }
+    },
+    {
+      "check": "handoff_exists:gf-01-ma-a2a-official-v0.6",
+      "invariant_id": "INV-MA-STRUCT-003",
+      "passed": true,
+      "handoff_count": 1
+    },
+    {
+      "check": "handoff_valid:gf-01-ma-a2a-official-v0.6",
+      "invariant_id": "INV-MA-STRUCT-004",
+      "passed": true
+    },
+    {
+      "check": "events_orderable:gf-01-ma-a2a-official-v0.6",
+      "invariant_id": "INV-MA-STRUCT-005",
+      "passed": true
+    },
+    {
+      "check": "manifest_exists:gf-01-ma-autogen-official-v0.6",
+      "passed": true
+    },
+    {
+      "check": "timeline_exists:gf-01-ma-autogen-official-v0.6",
+      "passed": true
+    },
+    {
+      "check": "agent_count:gf-01-ma-autogen-official-v0.6",
+      "invariant_id": "INV-MA-STRUCT-001",
+      "passed": true,
+      "agent_count": 2
+    },
+    {
+      "check": "agent_min_events:gf-01-ma-autogen-official-v0.6",
+      "invariant_id": "INV-MA-STRUCT-002",
+      "passed": true,
+      "agent_events": {
+        "user_proxy": 4,
+        "assistant": 4
+      }
+    },
+    {
+      "check": "handoff_exists:gf-01-ma-autogen-official-v0.6",
+      "invariant_id": "INV-MA-STRUCT-003",
+      "passed": true,
+      "handoff_count": 1
+    },
+    {
+      "check": "handoff_valid:gf-01-ma-autogen-official-v0.6",
+      "invariant_id": "INV-MA-STRUCT-004",
+      "passed": true
+    },
+    {
+      "check": "events_orderable:gf-01-ma-autogen-official-v0.6",
+      "invariant_id": "INV-MA-STRUCT-005",
+      "passed": true
+    },
     {
       "check": "manifest_exists:gf-01-ma-langchain-official-v0.6",
       "passed": true
@@ -38,6 +116,123 @@
     },
     {
       "check": "events_orderable:gf-01-ma-langchain-official-v0.6",
+      "invariant_id": "INV-MA-STRUCT-005",
+      "passed": true
+    },
+    {
+      "check": "manifest_exists:gf-01-ma-magnetic-one-official-v0.6",
+      "passed": true
+    },
+    {
+      "check": "timeline_exists:gf-01-ma-magnetic-one-official-v0.6",
+      "passed": true
+    },
+    {
+      "check": "agent_count:gf-01-ma-magnetic-one-official-v0.6",
+      "invariant_id": "INV-MA-STRUCT-001",
+      "passed": true,
+      "agent_count": 2
+    },
+    {
+      "check": "agent_min_events:gf-01-ma-magnetic-one-official-v0.6",
+      "invariant_id": "INV-MA-STRUCT-002",
+      "passed": true,
+      "agent_events": {
+        "orchestrator": 4,
+        "worker": 4
+      }
+    },
+    {
+      "check": "handoff_exists:gf-01-ma-magnetic-one-official-v0.6",
+      "invariant_id": "INV-MA-STRUCT-003",
+      "passed": true,
+      "handoff_count": 1
+    },
+    {
+      "check": "handoff_valid:gf-01-ma-magnetic-one-official-v0.6",
+      "invariant_id": "INV-MA-STRUCT-004",
+      "passed": true
+    },
+    {
+      "check": "events_orderable:gf-01-ma-magnetic-one-official-v0.6",
+      "invariant_id": "INV-MA-STRUCT-005",
+      "passed": true
+    },
+    {
+      "check": "manifest_exists:gf-01-ma-mcp-official-v0.6",
+      "passed": true
+    },
+    {
+      "check": "timeline_exists:gf-01-ma-mcp-official-v0.6",
+      "passed": true
+    },
+    {
+      "check": "agent_count:gf-01-ma-mcp-official-v0.6",
+      "invariant_id": "INV-MA-STRUCT-001",
+      "passed": true,
+      "agent_count": 2
+    },
+    {
+      "check": "agent_min_events:gf-01-ma-mcp-official-v0.6",
+      "invariant_id": "INV-MA-STRUCT-002",
+      "passed": true,
+      "agent_events": {
+        "server": 4,
+        "client": 4
+      }
+    },
+    {
+      "check": "handoff_exists:gf-01-ma-mcp-official-v0.6",
+      "invariant_id": "INV-MA-STRUCT-003",
+      "passed": true,
+      "handoff_count": 1
+    },
+    {
+      "check": "handoff_valid:gf-01-ma-mcp-official-v0.6",
+      "invariant_id": "INV-MA-STRUCT-004",
+      "passed": true
+    },
+    {
+      "check": "events_orderable:gf-01-ma-mcp-official-v0.6",
+      "invariant_id": "INV-MA-STRUCT-005",
+      "passed": true
+    },
+    {
+      "check": "manifest_exists:gf-01-ma-pydanticai-official-v0.6",
+      "passed": true
+    },
+    {
+      "check": "timeline_exists:gf-01-ma-pydanticai-official-v0.6",
+      "passed": true
+    },
+    {
+      "check": "agent_count:gf-01-ma-pydanticai-official-v0.6",
+      "invariant_id": "INV-MA-STRUCT-001",
+      "passed": true,
+      "agent_count": 2
+    },
+    {
+      "check": "agent_min_events:gf-01-ma-pydanticai-official-v0.6",
+      "invariant_id": "INV-MA-STRUCT-002",
+      "passed": true,
+      "agent_events": {
+        "planner": 4,
+        "runner": 4
+      }
+    },
+    {
+      "check": "handoff_exists:gf-01-ma-pydanticai-official-v0.6",
+      "invariant_id": "INV-MA-STRUCT-003",
+      "passed": true,
+      "handoff_count": 1
+    },
+    {
+      "check": "handoff_valid:gf-01-ma-pydanticai-official-v0.6",
+      "invariant_id": "INV-MA-STRUCT-004",
+      "passed": true
+    },
+    {
+      "check": "events_orderable:gf-01-ma-pydanticai-official-v0.6",
       "invariant_id": "INV-MA-STRUCT-005",
       "passed": true
     }

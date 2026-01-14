@@ -1,0 +1,11 @@
+{
+    "context_id": "gf-01-ma-magnetic-one-context",
+    "project_id": "gf-01-multi-agent-project",
+    "created_at": "2026-01-14T09:20:00Z",
+    "created_by": "orchestrator",
+    "requirements": {
+        "summary": "Multi-agent lifecycle validation with Magnetic-One orchestration pattern",
+        "agents_required": 2,
+        "handoff_required": true
+    }
+}
