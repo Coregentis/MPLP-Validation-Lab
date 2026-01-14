@@ -1,0 +1,29 @@
+{
+  "agent_summaries": [
+    {
+      "agent_id": "orchestrator",
+      "artifacts_created": [
+        "context.json",
+        "plan.json"
+      ],
+      "events_count": 4
+    },
+    {
+      "agent_id": "worker",
+      "artifacts_created": [
+        "trace.json"
+      ],
+      "events_count": 4
+    }
+  ],
+  "completed_by": "worker",
+  "created_at": "2026-01-14T00:00:00Z",
+  "execution_summary": {
+    "handoffs": 1,
+    "outcome": "success",
+    "total_agents": 2,
+    "total_events": 8
+  },
+  "plan_ref": "939134ba-f062-511d-ab17-357d81c23715",
+  "trace_id": "2220d3fb-d0ff-5e39-9fbf-6f4d34cdeb37"
+}

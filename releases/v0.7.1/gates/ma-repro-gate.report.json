@@ -1,0 +1,73 @@
+{
+    "gate_id": "MA-REPRO",
+    "report_version": "1",
+    "release": "v0.7.1",
+    "scope": "three_point_plane",
+    "executed_at": "2026-01-14T10:05:00Z",
+    "canonicalization": {
+        "timestamps_in_hash_scope": false,
+        "note": "Timestamps excluded from pack content; pack_root_hash is stable"
+    },
+    "substrates": [
+        {
+            "substrate": "langchain",
+            "run_id": "gf-01-ma-langchain-official-v0.7",
+            "generator": "tests/cross-substrate/gf-01/langchain/generate_ma_pack.py",
+            "executed": true,
+            "determinism": {
+                "runs": 2,
+                "pack_root_hash_run1": "e35b8cef684a2cfc1509097ed4b0c154027fb67e0db632fcdad3a13c6c92f534",
+                "pack_root_hash_run2": "e35b8cef684a2cfc1509097ed4b0c154027fb67e0db632fcdad3a13c6c92f534",
+                "match": true
+            },
+            "evaluator": {
+                "verdict_run1": "PASS",
+                "verdict_run2": "PASS"
+            },
+            "note": "Reference from v0.7.0",
+            "verdict": "PASS"
+        },
+        {
+            "substrate": "autogen",
+            "run_id": "gf-01-ma-autogen-official-v0.7.1",
+            "generator": "tests/cross-substrate/gf-01/autogen/generate_ma_pack.py",
+            "executed": true,
+            "determinism": {
+                "runs": 2,
+                "pack_root_hash_run1": "2af6a0481930f8cd86ec1cebca0b449e2535f1120439463e154002c19e7a67e7",
+                "pack_root_hash_run2": "2af6a0481930f8cd86ec1cebca0b449e2535f1120439463e154002c19e7a67e7",
+                "match": true
+            },
+            "evaluator": {
+                "verdict_run1": "PASS",
+                "verdict_run2": "PASS"
+            },
+            "verdict": "PASS"
+        },
+        {
+            "substrate": "magnetic-one",
+            "run_id": "gf-01-ma-magnetic-one-official-v0.7.1",
+            "generator": "tests/cross-substrate/gf-01/magnetic-one/generate_ma_pack.py",
+            "executed": true,
+            "determinism": {
+                "runs": 2,
+                "pack_root_hash_run1": "15787a8b5a456656d6d9ec758fd51a5337a2418985d74260d05f0a6487407fc7",
+                "pack_root_hash_run2": "15787a8b5a456656d6d9ec758fd51a5337a2418985d74260d05f0a6487407fc7",
+                "match": true
+            },
+            "evaluator": {
+                "verdict_run1": "PASS",
+                "verdict_run2": "PASS"
+            },
+            "verdict": "PASS"
+        }
+    ],
+    "summary": {
+        "substrates_total": 3,
+        "deterministic_pass": 3,
+        "evaluator_pass": 3,
+        "failed": 0,
+        "three_point_plane_achieved": true
+    },
+    "overall_verdict": "PASS"
+}

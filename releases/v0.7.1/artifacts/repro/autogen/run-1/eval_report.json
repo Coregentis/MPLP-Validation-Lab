@@ -1,0 +1,31 @@
+{
+  "report_version": "1",
+  "evaluator_version": "local-cli-v0.3.0",
+  "timestamp": "2026-01-14T02:02:56.956Z",
+  "pack_path": "Validation_Lab/releases/v0.7.1/artifacts/repro/autogen/run-1",
+  "checks": [
+    {
+      "check": "file_exists:manifest.json",
+      "invariant_id": "INV-PACK-001",
+      "passed": true
+    },
+    {
+      "check": "file_exists:artifacts/context.json",
+      "invariant_id": "INV-PACK-003",
+      "passed": true
+    },
+    {
+      "check": "file_exists:artifacts/plan.json",
+      "invariant_id": "INV-PACK-004",
+      "passed": true
+    },
+    {
+      "check": "file_exists:artifacts/trace.json",
+      "invariant_id": "INV-PACK-002",
+      "passed": true
+    }
+  ],
+  "failed_checks": [],
+  "verdict": "PASS",
+  "verdict_hash": "ba3780af5d86e5db48668294334ff4776cf3214a0d43a01a139bb33f42f954d6"
+}

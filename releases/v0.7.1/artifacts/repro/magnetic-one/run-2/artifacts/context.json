@@ -1,0 +1,11 @@
+{
+  "context_id": "80ba6307-9e6c-5f0a-99a2-e55aaaf0333a",
+  "created_at": "2026-01-14T00:00:00Z",
+  "created_by": "orchestrator",
+  "project_id": "eef60b4e-251b-5ae2-8055-875a5b078fbe",
+  "requirements": {
+    "agents_required": 2,
+    "handoff_required": true,
+    "summary": "Multi-agent lifecycle with Magnetic-One orchestrator-worker pattern"
+  }
+}
