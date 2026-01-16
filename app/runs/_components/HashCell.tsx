@@ -13,15 +13,15 @@ export function HashCell({ hash, label }: { hash: string; label: string }) {
 
     return (
         <div className="flex items-center gap-2">
-            <code className="text-xs bg-gray-100 px-2 py-1 rounded font-mono" title={hash}>
-                {hash.slice(0, 8)}...{hash.slice(-8)}
+            <code className="text-xs bg-zinc-900 border border-zinc-800 px-2 py-1 rounded font-mono text-amber-400" title={hash}>
+                {hash.slice(0, 16)}...
             </code>
             <button
                 onClick={handleCopy}
-                className="text-xs text-blue-600 hover:text-blue-800 transition"
+                className="text-xs text-zinc-500 hover:text-zinc-300 transition"
                 title={`Copy ${label}_hash`}
             >
-                {copied ? '✓ Copied' : 'Copy'}
+                {copied ? '✓' : '📋'}
             </button>
         </div>
     );

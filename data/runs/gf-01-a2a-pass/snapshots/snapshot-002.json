@@ -1,0 +1,10 @@
+{
+    "snapshot_id": "snapshot-002",
+    "timestamp": "2026-01-10T00:00:02Z",
+    "state": {
+        "context_id": "test-ctx-001",
+        "plan_id": "test-plan-001",
+        "trace_id": "test-trace-001",
+        "status": "completed"
+    }
+}

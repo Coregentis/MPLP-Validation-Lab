@@ -6,7 +6,24 @@
  */
 
 import { notFound } from 'next/navigation';
+import Link from 'next/link';
 import { loadRuleset, rulesetExists } from '@/lib/rulesets/loadRuleset';
+
+/**
+ * SSOT: Map internal gf-xx to external LG-xx.
+ * Fallback to 'LG-UNKNOWN' ensures no gf-xx leakage for unmapped IDs.
+ */
+const GF_TO_LG: Record<string, string> = {
+    'gf-01': 'LG-01',
+    'gf-02': 'LG-02',
+    'gf-03': 'LG-03',
+    'gf-04': 'LG-04',
+    'gf-05': 'LG-05',
+};
+
+function getExternalId(gfId: string): string {
+    return GF_TO_LG[gfId.toLowerCase()] ?? 'LG-UNKNOWN';
+}
 
 interface Props {
     params: Promise<{ version: string }>;
@@ -50,8 +67,8 @@ export default async function RulesetDetailPage({ params }: Props) {
                         <dt className="text-zinc-500">Status</dt>
                         <dd>
                             <span className={`inline-block px-2 py-1 rounded text-xs font-medium ${manifest?.status === 'active'
-                                    ? 'bg-green-900/30 text-green-400'
-                                    : 'bg-zinc-700 text-zinc-400'
+                                ? 'bg-green-900/30 text-green-400'
+                                : 'bg-zinc-700 text-zinc-400'
                                 }`}>
                                 {manifest?.status || 'N/A'}
                             </span>
@@ -62,8 +79,12 @@ export default async function RulesetDetailPage({ params }: Props) {
                         <dd>{manifest?.protocol?.version || 'N/A'}</dd>
                     </div>
                     <div>
-                        <dt className="text-zinc-500">Evidence Pack Contract</dt>
-                        <dd>{manifest?.compatibility?.evidence_pack_contract || 'N/A'}</dd>
+                        <dt className="text-zinc-500">Export Contract</dt>
+                        <dd>
+                            <Link href="/policies/contract" className="text-mplp-blue-soft hover:text-mplp-blue-light transition-colors">
+                                v1.2 →
+                            </Link>
+                        </dd>
                     </div>
                     <div>
                         <dt className="text-zinc-500">Created</dt>
@@ -72,11 +93,11 @@ export default async function RulesetDetailPage({ params }: Props) {
                 </dl>
             </section>
 
-            {/* Golden Flows */}
+            {/* Lifecycle Guarantees */}
             <section className="bg-zinc-900 border border-zinc-800 rounded-lg p-6">
-                <h2 className="text-xl font-semibold mb-4">Golden Flows</h2>
+                <h2 className="text-xl font-semibold mb-4">Lifecycle Guarantees</h2>
                 <p className="text-zinc-500 text-sm mb-4">
-                    Requirements for each Golden Flow defined in this ruleset.
+                    Requirements for each Lifecycle Guarantee (LG-01 ~ LG-05) defined in this ruleset.
                 </p>
 
                 <div className="space-y-4">
@@ -84,15 +105,17 @@ export default async function RulesetDetailPage({ params }: Props) {
                         const reqs = data.requirements[gfId] || [];
                         return (
                             <div key={gfId} className="border border-zinc-700 rounded-lg p-4">
-                                <h3 className="font-semibold mb-2">{gfId.toUpperCase()}</h3>
+                                <h3 className="font-semibold mb-2">
+                                    <span className="text-mplp-blue-soft">{getExternalId(gfId)}</span>
+                                </h3>
 
                                 {reqs.length > 0 ? (
                                     <ul className="space-y-2 text-sm">
                                         {reqs.map((req) => (
                                             <li key={req.id} className="flex items-start gap-2">
                                                 <span className={`inline-block px-1.5 py-0.5 rounded text-xs font-medium mt-0.5 ${req.severity === 'required' ? 'bg-red-900/30 text-red-400' :
-                                                        req.severity === 'recommended' ? 'bg-amber-900/30 text-amber-400' :
-                                                            'bg-zinc-700 text-zinc-400'
+                                                    req.severity === 'recommended' ? 'bg-amber-900/30 text-amber-400' :
+                                                        'bg-zinc-700 text-zinc-400'
                                                     }`}>
                                                     {req.severity || 'optional'}
                                                 </span>
@@ -113,7 +136,7 @@ export default async function RulesetDetailPage({ params }: Props) {
                                 )}
                             </div>
                         );
-                    }) || <p className="text-zinc-500">No Golden Flows defined.</p>}
+                    }) || <p className="text-zinc-500">No Lifecycle Guarantees defined.</p>}
                 </div>
             </section>
         </div>

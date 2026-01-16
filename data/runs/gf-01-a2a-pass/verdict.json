@@ -1,0 +1,39 @@
+{
+    "run_id": "gf-01-a2a-pass",
+    "scenario_id": "a2a-evidence-producer",
+    "admission": "ADMISSIBLE",
+    "gf_verdicts": [
+        {
+            "gf_id": "gf-01",
+            "status": "PASS",
+            "pointers": [
+                {
+                    "artifact_path": "timeline/events.ndjson",
+                    "locator": "event:test-ctx-001",
+                    "requirement_id": "gf-01-r01",
+                    "content_hash": "58de21c37fc1993e0fd1a6452364c5855a9dcf10f6e1275819948bf3f5a3c440",
+                    "note": "Context creation event"
+                },
+                {
+                    "artifact_path": "snapshots/diffs/diff-001-002.json",
+                    "locator": "diff:snapshots/diffs/diff-001-002.json",
+                    "requirement_id": "gf-01-r02",
+                    "content_hash": "8e4ec852ad465292c84d2681bb4960e6675e0059f0f8f1f8cac076ea4da7cde9",
+                    "note": "State transition diff"
+                }
+            ],
+            "coverage": {
+                "total": 3,
+                "passed": 3,
+                "failed": 0,
+                "not_evaluated": 0
+            }
+        }
+    ],
+    "versions": {
+        "protocol": "1.0.0",
+        "schema": "1.0.0",
+        "ruleset": "1.0.0"
+    },
+    "evaluated_at": "2026-01-10T14:00:00Z"
+}
