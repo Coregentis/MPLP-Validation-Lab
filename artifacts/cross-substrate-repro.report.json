@@ -1,6 +1,6 @@
 {
   "gate_id": "GATE-CROSS-SUBSTRATE-REPRO",
-  "executed_at": "2026-01-19T03:08:26.952Z",
+  "executed_at": "2026-01-19T05:44:06.805Z",
   "status": "PASS",
   "summary": {
     "substrates": 3,
@@ -391,5 +391,5 @@
   },
   "match_dimension": "clause_vector_parity",
   "match_definition": "topline_verdict + reason_code + clauses[].status + clauses[].reason_code",
-  "duration_ms": 53
+  "duration_ms": 70
 }

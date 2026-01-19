@@ -35,10 +35,10 @@
     "algorithm": "Ed25519",
     "signature": "y/H1fEOK26l2VKyNlz2tBfdUjGRmtigFBntOqrtmOrLpi3ZDkqksPkX359RGNbkZ7Sk4AomZsaqtiL65k7n4CA==",
     "key_id": "vlab-v0.5-test-001",
-    "signed_at": "2026-01-19T03:35:53.868Z"
+    "signed_at": "2026-01-19T05:45:59.882Z"
   },
   "metadata": {
-    "generated_at": "2026-01-19T03:35:53.868Z",
+    "generated_at": "2026-01-19T05:45:59.882Z",
     "generator_version": "0.5.5"
   }
 }

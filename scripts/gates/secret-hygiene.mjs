@@ -41,6 +41,14 @@ const EXCLUDE_PATTERNS = [
     'package-lock.json',
 ];
 
+// Files allowed to contain staging/test keys (NOT production keys)
+// These are intentionally hardcoded test keys for local development only
+const ALLOWED_STAGING_KEY_FILES = [
+    'scripts/gates/proof-signature.mjs',  // Contains STAGING_PRIVATE_KEY for local dev
+    'tools/gen-ed25519.mjs',              // Key generation tool (output only)
+    'lib/proof/sign.ts',                  // PEM template construction (not actual key)
+];
+
 // Files to explicitly check (even if normally excluded)
 const ALWAYS_CHECK_FILES = [
     '.env',
@@ -110,6 +118,12 @@ async function main() {
                 for (const pattern of PRIVATE_KEY_PATTERNS) {
                     const match = content.match(pattern);
                     if (match) {
+                        // Check if this file is allowed to have staging keys
+                        if (ALLOWED_STAGING_KEY_FILES.includes(relPath)) {
+                            console.log(`  ⚠️ ${relPath} (allowed staging key)`);
+                            continue;
+                        }
+
                         results.violations.push({
                             file: relPath,
                             pattern: pattern.toString(),

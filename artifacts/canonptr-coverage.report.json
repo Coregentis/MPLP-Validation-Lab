@@ -1,6 +1,6 @@
 {
   "gate_id": "GATE-CANONPTR-COVERAGE",
-  "executed_at": "2026-01-19T03:08:26.498Z",
+  "executed_at": "2026-01-19T05:44:05.198Z",
   "status": "PASS",
   "phase": "A",
   "phase_thresholds": {
@@ -187,5 +187,5 @@
     }
   ],
   "issues": [],
-  "duration_ms": 30
+  "duration_ms": 9
 }
