@@ -55,6 +55,8 @@ jobs:
       # v0.5 Gates
       - name: Proof Signature Gate
         run: npm run gate:proof-signature
+        env:
+          VLAB_SIGNING_KEY_ED25519_PROD: ${{ secrets.VLAB_SIGNING_KEY_ED25519_PROD }}
 
       - name: Test Vectors Coverage Gate
         run: npm run gate:test-vectors-coverage
