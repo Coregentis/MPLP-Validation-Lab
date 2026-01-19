@@ -1145,7 +1145,7 @@ async function runTimelineChecks(pack: PackHandle): Promise<CheckResult[]> {
         }
 
         // Check total order (timestamp primary, event_id secondary)
-        let orderViolations: number[] = [];
+        const orderViolations: number[] = [];
 
         for (let i = 1; i < events.length; i++) {
             const prev = events[i - 1];

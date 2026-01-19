@@ -20,7 +20,7 @@ export function GovernancePanel() {
                     <h3 className="font-bold text-mplp-text mb-2">Presence-Level Validation</h3>
                     <p className="text-mplp-text-muted">
                         ruleset-1.0 verifies artifact <em>presence</em>, not semantic correctness.
-                        A "PASS" for LG-02~05 indicates required files exist, not that they are semantically valid for those Lifecycle Guarantees.
+                        A &quot;PASS&quot; for LG-02~05 indicates required files exist, not that they are semantically valid for those Lifecycle Guarantees.
                     </p>
                 </div>
 
