@@ -28,7 +28,7 @@ export function Footer() {
                             Non-certifying, vendor-neutral conformance evaluation for MPLP lifecycle invariants.
                         </p>
                         <div className="mt-4 inline-block px-2 py-1 bg-mplp-dark-soft border border-mplp-border rounded text-xs text-mplp-text-muted">
-                            v0.2 Frozen
+                            v0.5 Frozen
                         </div>
                     </div>
 
@@ -68,6 +68,16 @@ export function Footer() {
                                 <li>
                                     <Link href="/adjudication" className="text-mplp-text-muted hover:text-mplp-blue-light text-13 transition-colors font-medium block py-0.5">
                                         Adjudication Bundles
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="/coverage" className="text-mplp-text-muted hover:text-mplp-blue-light text-13 transition-colors font-medium block py-0.5">
+                                        Test Vector Coverage
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="/examples/evidence-producers/langgraph" className="text-mplp-text-muted hover:text-mplp-blue-light text-13 transition-colors font-medium block py-0.5">
+                                        Evidence Producers
                                     </Link>
                                 </li>
                                 <li>

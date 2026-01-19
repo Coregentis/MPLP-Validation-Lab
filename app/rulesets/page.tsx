@@ -70,7 +70,9 @@ export default function RulesetsPage() {
 
                             <div className="relative z-10 flex items-center justify-between pt-6 border-t border-mplp-border/30">
                                 <span className="text-xs font-bold uppercase tracking-widest text-mplp-text-muted/60 group-hover:text-mplp-text-muted transition-colors">
-                                    {rs.golden_flows?.length || 0} Lifecycle Guarantees
+                                    {rs.clauses?.length
+                                        ? `${rs.clauses.length} Clauses`
+                                        : `${rs.golden_flows?.length || 0} Lifecycle Guarantees`}
                                 </span>
                                 <span className="text-mplp-blue-soft opacity-0 group-hover:opacity-100 transition-all transform translate-x-[-10px] group-hover:translate-x-0">
                                     →

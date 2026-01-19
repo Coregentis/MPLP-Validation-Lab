@@ -21,8 +21,39 @@ const GF_TO_LG: Record<string, string> = {
     'gf-05': 'LG-05',
 };
 
+/**
+ * Map CL-Dx-xx clause IDs to Domain labels
+ */
+const CLAUSE_DOMAIN_LABELS: Record<string, string> = {
+    'D1': 'Budget Decision Record',
+    'D2': 'Terminal Lifecycle State',
+    'D3': 'Authorization Decision',
+    'D4': 'Termination & Recovery',
+};
+
 function getExternalId(gfId: string): string {
     return GF_TO_LG[gfId.toLowerCase()] ?? 'LG-UNKNOWN';
+}
+
+/**
+ * Extract domain from CL-Dx-xx clause ID
+ */
+function getClauseDomain(clauseId: string): string | null {
+    const match = clauseId.match(/CL-D(\d)/i);
+    return match ? `D${match[1]}` : null;
+}
+
+/**
+ * Group clauses by domain for v0.4+ rulesets
+ */
+function groupClausesByDomain(clauses: string[]): Record<string, string[]> {
+    const grouped: Record<string, string[]> = {};
+    for (const clause of clauses) {
+        const domain = getClauseDomain(clause) || 'OTHER';
+        if (!grouped[domain]) grouped[domain] = [];
+        grouped[domain].push(clause);
+    }
+    return grouped;
 }
 
 interface Props {
@@ -93,51 +124,96 @@ export default async function RulesetDetailPage({ params }: Props) {
                 </dl>
             </section>
 
-            {/* Lifecycle Guarantees */}
+            {/* Clauses / Lifecycle Guarantees Section */}
             <section className="bg-zinc-900 border border-zinc-800 rounded-lg p-6">
-                <h2 className="text-xl font-semibold mb-4">Lifecycle Guarantees</h2>
-                <p className="text-zinc-500 text-sm mb-4">
-                    Requirements for each Lifecycle Guarantee (LG-01 ~ LG-05) defined in this ruleset.
-                </p>
+                {/* v0.4+ Twelve-Clause format (ruleset-1.2) */}
+                {manifest?.clauses && manifest.clauses.length > 0 ? (
+                    <>
+                        <h2 className="text-xl font-semibold mb-4">Semantic Invariant Clauses</h2>
+                        <p className="text-zinc-500 text-sm mb-4">
+                            This ruleset defines {manifest.clauses.length} clauses across 4 domains (D1-D4).
+                            <br />
+                            <span className="text-xs text-zinc-600">
+                                SSOT: data/rulesets/{version}/manifest.yaml → clauses
+                            </span>
+                        </p>
 
-                <div className="space-y-4">
-                    {manifest?.golden_flows?.map((gfId) => {
-                        const reqs = data.requirements[gfId] || [];
-                        return (
-                            <div key={gfId} className="border border-zinc-700 rounded-lg p-4">
-                                <h3 className="font-semibold mb-2">
-                                    <span className="text-mplp-blue-soft">{getExternalId(gfId)}</span>
-                                </h3>
-
-                                {reqs.length > 0 ? (
+                        <div className="space-y-4">
+                            {Object.entries(groupClausesByDomain(manifest.clauses)).map(([domain, domainClauses]) => (
+                                <div key={domain} className="border border-zinc-700 rounded-lg p-4">
+                                    <h3 className="font-semibold mb-3">
+                                        <span className="text-mplp-blue-soft">{domain}</span>
+                                        <span className="text-zinc-500 ml-2 text-sm font-normal">
+                                            {CLAUSE_DOMAIN_LABELS[domain] || 'Unknown Domain'}
+                                        </span>
+                                    </h3>
                                     <ul className="space-y-2 text-sm">
-                                        {reqs.map((req) => (
-                                            <li key={req.id} className="flex items-start gap-2">
-                                                <span className={`inline-block px-1.5 py-0.5 rounded text-xs font-medium mt-0.5 ${req.severity === 'required' ? 'bg-red-900/30 text-red-400' :
-                                                    req.severity === 'recommended' ? 'bg-amber-900/30 text-amber-400' :
-                                                        'bg-zinc-700 text-zinc-400'
-                                                    }`}>
-                                                    {req.severity || 'optional'}
+                                        {domainClauses.map((clauseId) => (
+                                            <li key={clauseId} className="flex items-center gap-2">
+                                                <span className="inline-block px-1.5 py-0.5 rounded text-xs font-medium bg-blue-900/30 text-blue-400">
+                                                    invariant
                                                 </span>
-                                                <div className="flex-1">
-                                                    <span className="font-mono text-zinc-300">{req.id}</span>
-                                                    {req.name && (
-                                                        <span className="text-zinc-400 ml-2">{req.name}</span>
-                                                    )}
-                                                    {req.description && (
-                                                        <p className="text-zinc-500 text-xs mt-1">{req.description}</p>
-                                                    )}
-                                                </div>
+                                                <span className="font-mono text-zinc-300">{clauseId}</span>
                                             </li>
                                         ))}
                                     </ul>
-                                ) : (
-                                    <p className="text-zinc-500 text-sm">No requirements found.</p>
-                                )}
-                            </div>
-                        );
-                    }) || <p className="text-zinc-500">No Lifecycle Guarantees defined.</p>}
-                </div>
+                                </div>
+                            ))}
+                        </div>
+                    </>
+                ) : manifest?.golden_flows && manifest.golden_flows.length > 0 ? (
+                    /* v0.2/v0.3 Golden Flows format (ruleset-1.0, 1.1) */
+                    <>
+                        <h2 className="text-xl font-semibold mb-4">Lifecycle Guarantees</h2>
+                        <p className="text-zinc-500 text-sm mb-4">
+                            Requirements for each Lifecycle Guarantee (LG-01 ~ LG-05) defined in this ruleset.
+                        </p>
+
+                        <div className="space-y-4">
+                            {manifest.golden_flows.map((gfId) => {
+                                const reqs = data.requirements[gfId] || [];
+                                return (
+                                    <div key={gfId} className="border border-zinc-700 rounded-lg p-4">
+                                        <h3 className="font-semibold mb-2">
+                                            <span className="text-mplp-blue-soft">{getExternalId(gfId)}</span>
+                                        </h3>
+
+                                        {reqs.length > 0 ? (
+                                            <ul className="space-y-2 text-sm">
+                                                {reqs.map((req) => (
+                                                    <li key={req.id} className="flex items-start gap-2">
+                                                        <span className={`inline-block px-1.5 py-0.5 rounded text-xs font-medium mt-0.5 ${req.severity === 'required' ? 'bg-red-900/30 text-red-400' :
+                                                            req.severity === 'recommended' ? 'bg-amber-900/30 text-amber-400' :
+                                                                'bg-zinc-700 text-zinc-400'
+                                                            }`}>
+                                                            {req.severity || 'optional'}
+                                                        </span>
+                                                        <div className="flex-1">
+                                                            <span className="font-mono text-zinc-300">{req.id}</span>
+                                                            {req.name && (
+                                                                <span className="text-zinc-400 ml-2">{req.name}</span>
+                                                            )}
+                                                            {req.description && (
+                                                                <p className="text-zinc-500 text-xs mt-1">{req.description}</p>
+                                                            )}
+                                                        </div>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        ) : (
+                                            <p className="text-zinc-500 text-sm">No requirements found.</p>
+                                        )}
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    </>
+                ) : (
+                    <div>
+                        <h2 className="text-xl font-semibold mb-4">Clauses / Lifecycle Guarantees</h2>
+                        <p className="text-zinc-500">No clauses or lifecycle guarantees defined in this ruleset manifest.</p>
+                    </div>
+                )}
             </section>
         </div>
     );

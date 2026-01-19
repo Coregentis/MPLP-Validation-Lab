@@ -14,6 +14,7 @@ const NAV_ITEMS = [
     { href: '/adjudication', label: 'Adjudication' },
     { href: '/rulesets', label: 'Rulesets' },
     { href: '/guarantees', label: 'Guarantees' },
+    { href: '/coverage', label: 'Coverage' },
     { href: '/policies/contract', label: 'Contract' },
 ];
 

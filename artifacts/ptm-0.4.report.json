@@ -1,6 +1,6 @@
 {
   "gate_id": "GATE-PTM-0.5",
-  "executed_at": "2026-01-19T10:11:56.055Z",
+  "executed_at": "2026-01-19T16:08:44.898Z",
   "status": "PASS",
   "checks": {
     "ptm_loaded": true,
@@ -65,5 +65,5 @@
     ]
   },
   "issues": [],
-  "duration_ms": 52
+  "duration_ms": 72
 }
