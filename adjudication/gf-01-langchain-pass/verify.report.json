@@ -1,6 +1,6 @@
 {
   "report_version": "1.0",
-  "verified_at": "2026-01-19T17:32:29.792Z",
+  "verified_at": "2026-01-19T17:36:57.975Z",
   "pack_id": "gf-01-langchain-pass",
   "admission_status": "ADMISSIBLE",
   "checks": [
@@ -66,7 +66,7 @@
       "category": "INTEGRITY",
       "status": "PASS",
       "message": "6 files verified",
-      "duration_ms": 1
+      "duration_ms": 0
     },
     {
       "check_id": "INT-002",
@@ -147,7 +147,7 @@
     "manifest_hash": "bdc1dbc222c281561addafa574469a668da42aa13efddad30bf9bc4847336d48",
     "schemas_bundle_hash": "99804832ddc3daefb92ec74120afaab1c3278e4a79d670e1f796e67f735463aa",
     "invariants_bundle_hash": "d32ed8bd0139ba2197c618f8cc057dae15ba8cd5012b25946c1e20c07fd8ebe0",
-    "report_hash": "b68b9fe40f3e7252f28d5b79d03bdb979c156cefbf4b50d15614cb8efc00a577"
+    "report_hash": "935ae2950d3ca8c135974a90861210c7c124533931a61c7a3e6186110c2c6546"
   },
   "ruleset_version": "ruleset-1.0",
   "protocol_version": "1.0.0",
