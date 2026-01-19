@@ -58,8 +58,14 @@ export function Footer() {
                                         Decision Rules (LG-01~05)
                                     </Link>
                                 </li>
+                                <li>
+                                    <Link href="/policies/substrate-scope" className="text-mplp-text-muted hover:text-mplp-blue-light text-13 transition-colors font-medium block py-0.5">
+                                        Substrate Scope
+                                    </Link>
+                                </li>
                             </ul>
                         </div>
+
 
                         {/* Resources */}
                         <div>

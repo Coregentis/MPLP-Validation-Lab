@@ -10,6 +10,7 @@ import Link from 'next/link';
 // Internal Lab navigation
 const NAV_ITEMS = [
     { href: '/', label: 'Home' },
+    { href: '/about', label: 'About' },
     { href: '/runs', label: 'Runs' },
     { href: '/adjudication', label: 'Adjudication' },
     { href: '/rulesets', label: 'Rulesets' },
@@ -17,6 +18,7 @@ const NAV_ITEMS = [
     { href: '/coverage', label: 'Coverage' },
     { href: '/policies/contract', label: 'Contract' },
 ];
+
 
 // External links (Ecosystem backlinks)
 const EXTERNAL_LINKS = [
