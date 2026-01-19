@@ -1,8 +1,9 @@
 {
   "ssot": {
     "source": "data/curated-runs/allowlist.yaml",
-    "generated_at": "2026-01-19T05:58:54.534Z",
-    "git_commit": "38109bd"
+    "adjudication_source": "export/adjudication-index.json",
+    "generated_at": "2026-01-19T17:15:02.710Z",
+    "git_commit": "7a03eba"
   },
   "runs": [
     {
@@ -17,7 +18,10 @@
       "status": "active",
       "notes": "NOT_ADMISSIBLE sample: broken admission gate (structural integrity failure)",
       "indexable": true,
-      "created_at": "2026-01-14T00:00:00Z"
+      "created_at": "2026-01-14T00:00:00Z",
+      "adjudication_status": "NOT_ADMISSIBLE",
+      "adjudication_verdict_hash": "bb50519dec88035de3d24853c489eae4f4a58dcabd23a34e855f9956b0fbe58b",
+      "adjudication_admission_status": "NOT_ADMISSIBLE"
     },
     {
       "run_id": "arb-d1-budget-fail-deny-missing-gate-v0.4",
@@ -31,7 +35,10 @@
       "status": "active",
       "notes": "v0.4 D1 FAIL: Deny without gate enforcement - CL-D1-03",
       "indexable": true,
-      "created_at": "2026-01-18T00:00:00Z"
+      "created_at": "2026-01-18T00:00:00Z",
+      "adjudication_status": "NOT_ADJUDICATED",
+      "adjudication_verdict_hash": null,
+      "adjudication_admission_status": null
     },
     {
       "run_id": "arb-d1-budget-fail-fixture-v0.3",
@@ -45,7 +52,10 @@
       "status": "active",
       "notes": "v0.3 D1 FAIL: Missing evidence pointer for RQ-D1-01",
       "indexable": true,
-      "created_at": "2026-01-17T00:00:00Z"
+      "created_at": "2026-01-17T00:00:00Z",
+      "adjudication_status": "NOT_ADJUDICATED",
+      "adjudication_verdict_hash": null,
+      "adjudication_admission_status": null
     },
     {
       "run_id": "arb-d1-budget-fail-outcome-invalid-v0.4",
@@ -59,7 +69,10 @@
       "status": "active",
       "notes": "v0.4 D1 FAIL: Invalid budget outcome (maybe_later) - CL-D1-02",
       "indexable": true,
-      "created_at": "2026-01-18T00:00:00Z"
+      "created_at": "2026-01-18T00:00:00Z",
+      "adjudication_status": "NOT_ADJUDICATED",
+      "adjudication_verdict_hash": null,
+      "adjudication_admission_status": null
     },
     {
       "run_id": "arb-d1-budget-pass-fixture-v0.3",
@@ -73,7 +86,10 @@
       "status": "active",
       "notes": "v0.3 D1 PASS: Budget decision with valid outcome (allow)",
       "indexable": true,
-      "created_at": "2026-01-17T00:00:00Z"
+      "created_at": "2026-01-17T00:00:00Z",
+      "adjudication_status": "NOT_ADJUDICATED",
+      "adjudication_verdict_hash": null,
+      "adjudication_admission_status": null
     },
     {
       "run_id": "arb-d2-lifecycle-fail-post-terminal-exec-v0.4",
@@ -87,7 +103,10 @@
       "status": "active",
       "notes": "v0.4 D2 FAIL: Post-terminal execution detected - CL-D2-03",
       "indexable": true,
-      "created_at": "2026-01-18T00:00:00Z"
+      "created_at": "2026-01-18T00:00:00Z",
+      "adjudication_status": "NOT_ADJUDICATED",
+      "adjudication_verdict_hash": null,
+      "adjudication_admission_status": null
     },
     {
       "run_id": "arb-d2-lifecycle-fail-terminal-state-invalid-v0.4",
@@ -101,7 +120,10 @@
       "status": "active",
       "notes": "v0.4 D2 FAIL: Terminal state not in allowed set - CL-D2-02",
       "indexable": true,
-      "created_at": "2026-01-18T00:00:00Z"
+      "created_at": "2026-01-18T00:00:00Z",
+      "adjudication_status": "NOT_ADJUDICATED",
+      "adjudication_verdict_hash": null,
+      "adjudication_admission_status": null
     },
     {
       "run_id": "arb-d2-lifecycle-state-fail-fixture-v0.3",
@@ -115,7 +137,10 @@
       "status": "active",
       "notes": "v0.3 D2 FAIL: Missing evidence pointer for RQ-D2-01",
       "indexable": true,
-      "created_at": "2026-01-17T00:00:00Z"
+      "created_at": "2026-01-17T00:00:00Z",
+      "adjudication_status": "NOT_ADJUDICATED",
+      "adjudication_verdict_hash": null,
+      "adjudication_admission_status": null
     },
     {
       "run_id": "arb-d2-lifecycle-state-pass-fixture-v0.3",
@@ -129,7 +154,10 @@
       "status": "active",
       "notes": "v0.3 D2 PASS: Terminal state transition to 'success'",
       "indexable": true,
-      "created_at": "2026-01-17T00:00:00Z"
+      "created_at": "2026-01-17T00:00:00Z",
+      "adjudication_status": "NOT_ADJUDICATED",
+      "adjudication_verdict_hash": null,
+      "adjudication_admission_status": null
     },
     {
       "run_id": "arb-d3-authz-decision-fail-fixture-v0.3",
@@ -143,7 +171,10 @@
       "status": "active",
       "notes": "v0.3 D3 FAIL: Missing evidence pointer for RQ-D3-01",
       "indexable": true,
-      "created_at": "2026-01-17T00:00:00Z"
+      "created_at": "2026-01-17T00:00:00Z",
+      "adjudication_status": "NOT_ADJUDICATED",
+      "adjudication_verdict_hash": null,
+      "adjudication_admission_status": null
     },
     {
       "run_id": "arb-d3-authz-decision-pass-fixture-v0.3",
@@ -157,7 +188,10 @@
       "status": "active",
       "notes": "v0.3 D3 PASS: Authorization decision with 'allow' outcome",
       "indexable": true,
-      "created_at": "2026-01-17T00:00:00Z"
+      "created_at": "2026-01-17T00:00:00Z",
+      "adjudication_status": "NOT_ADJUDICATED",
+      "adjudication_verdict_hash": null,
+      "adjudication_admission_status": null
     },
     {
       "run_id": "arb-d3-authz-fail-deny-no-confirm-v0.4",
@@ -171,7 +205,10 @@
       "status": "active",
       "notes": "v0.4 D3 FAIL: Deny without confirm gate - CL-D3-03",
       "indexable": true,
-      "created_at": "2026-01-18T00:00:00Z"
+      "created_at": "2026-01-18T00:00:00Z",
+      "adjudication_status": "NOT_ADJUDICATED",
+      "adjudication_verdict_hash": null,
+      "adjudication_admission_status": null
     },
     {
       "run_id": "arb-d3-authz-fail-sra-incomplete-v0.4",
@@ -185,7 +222,10 @@
       "status": "active",
       "notes": "v0.4 D3 FAIL: S/R/A triple incomplete - CL-D3-02",
       "indexable": true,
-      "created_at": "2026-01-18T00:00:00Z"
+      "created_at": "2026-01-18T00:00:00Z",
+      "adjudication_status": "NOT_ADJUDICATED",
+      "adjudication_verdict_hash": null,
+      "adjudication_admission_status": null
     },
     {
       "run_id": "arb-d4-termination-fail-reason-invalid-v0.4",
@@ -199,7 +239,10 @@
       "status": "active",
       "notes": "v0.4 D4 FAIL: Invalid termination reason category - CL-D4-02",
       "indexable": true,
-      "created_at": "2026-01-18T00:00:00Z"
+      "created_at": "2026-01-18T00:00:00Z",
+      "adjudication_status": "NOT_ADJUDICATED",
+      "adjudication_verdict_hash": null,
+      "adjudication_admission_status": null
     },
     {
       "run_id": "arb-d4-termination-fail-uncontrolled-recovery-v0.4",
@@ -213,7 +256,10 @@
       "status": "active",
       "notes": "v0.4 D4 FAIL: Uncontrolled recovery after termination - CL-D4-03",
       "indexable": true,
-      "created_at": "2026-01-18T00:00:00Z"
+      "created_at": "2026-01-18T00:00:00Z",
+      "adjudication_status": "NOT_ADJUDICATED",
+      "adjudication_verdict_hash": null,
+      "adjudication_admission_status": null
     },
     {
       "run_id": "arb-d4-termination-recovery-fail-fixture-v0.3",
@@ -227,7 +273,10 @@
       "status": "active",
       "notes": "v0.3 D4 FAIL: Missing evidence pointer for RQ-D4-01",
       "indexable": true,
-      "created_at": "2026-01-17T00:00:00Z"
+      "created_at": "2026-01-17T00:00:00Z",
+      "adjudication_status": "NOT_ADJUDICATED",
+      "adjudication_verdict_hash": null,
+      "adjudication_admission_status": null
     },
     {
       "run_id": "arb-d4-termination-recovery-pass-fixture-v0.3",
@@ -241,7 +290,10 @@
       "status": "active",
       "notes": "v0.3 D4 PASS: Termination decision recorded",
       "indexable": true,
-      "created_at": "2026-01-17T00:00:00Z"
+      "created_at": "2026-01-17T00:00:00Z",
+      "adjudication_status": "NOT_ADJUDICATED",
+      "adjudication_verdict_hash": null,
+      "adjudication_admission_status": null
     },
     {
       "run_id": "gf-01-a2a-fail",
@@ -260,7 +312,10 @@
       "status": "frozen",
       "indexable": true,
       "notes": "P1.1 ADMISSIBLE+FAIL sample: loop_detected triggers execution failure",
-      "created_at": "2026-01-16T09:00:00Z"
+      "created_at": "2026-01-16T09:00:00Z",
+      "adjudication_status": "NOT_ADJUDICATED",
+      "adjudication_verdict_hash": null,
+      "adjudication_admission_status": null
     },
     {
       "run_id": "gf-01-a2a-official-v0.2",
@@ -276,7 +331,10 @@
       "status": "eligible_for_upgrade",
       "notes": "Declared (Static Evidence): mocked producer; eligible for upgrade when live SDK producer available",
       "indexable": true,
-      "created_at": "2026-01-13T00:00:00Z"
+      "created_at": "2026-01-13T00:00:00Z",
+      "adjudication_status": "NOT_ADJUDICATED",
+      "adjudication_verdict_hash": null,
+      "adjudication_admission_status": null
     },
     {
       "run_id": "gf-01-a2a-pass",
@@ -294,7 +352,10 @@
       "evaluation_report_hash": "",
       "status": "frozen",
       "indexable": true,
-      "created_at": "2026-01-10T14:00:00Z"
+      "created_at": "2026-01-10T14:00:00Z",
+      "adjudication_status": "NOT_ADJUDICATED",
+      "adjudication_verdict_hash": null,
+      "adjudication_admission_status": null
     },
     {
       "run_id": "gf-01-adjudicated-fail-01",
@@ -308,7 +369,10 @@
       "status": "active",
       "notes": "ADJUDICATED+FAIL sample: ADMISSIBLE but GF-01 fails due to __INVALID_MARKER__ in artifacts",
       "indexable": true,
-      "created_at": "2026-01-14T00:00:00Z"
+      "created_at": "2026-01-14T00:00:00Z",
+      "adjudication_status": "ADJUDICATED",
+      "adjudication_verdict_hash": "79e5b0713db3f2b78c84975f4e4e8c5f78b0fea07f16e5ad8d7bafda0395da3c",
+      "adjudication_admission_status": "ADMISSIBLE"
     },
     {
       "run_id": "gf-01-langchain-official-v0.2",
@@ -324,7 +388,10 @@
       "status": "active",
       "notes": "Official LangChain SDK (FakeListLLM) with equivalence record verified",
       "indexable": true,
-      "created_at": "2026-01-13T00:00:00Z"
+      "created_at": "2026-01-13T00:00:00Z",
+      "adjudication_status": "NOT_ADJUDICATED",
+      "adjudication_verdict_hash": null,
+      "adjudication_admission_status": null
     },
     {
       "run_id": "gf-01-langchain-pass",
@@ -342,7 +409,10 @@
       "evaluation_report_hash": "",
       "status": "frozen",
       "indexable": true,
-      "created_at": "2026-01-10T14:00:00Z"
+      "created_at": "2026-01-10T14:00:00Z",
+      "adjudication_status": "NOT_ADJUDICATED",
+      "adjudication_verdict_hash": null,
+      "adjudication_admission_status": null
     },
     {
       "run_id": "gf-01-mcp-official-v0.2",
@@ -359,7 +429,10 @@
       "notes": "Official @modelcontextprotocol/server SDK; reproduced as static event capture (not live client/server execution)",
       "verdict_hash": "e7f5b31e40d6a645782d219428c731ebed338739b5eadf831ec206fc7d002011",
       "indexable": true,
-      "created_at": "2026-01-13T00:00:00Z"
+      "created_at": "2026-01-13T00:00:00Z",
+      "adjudication_status": "NOT_ADJUDICATED",
+      "adjudication_verdict_hash": null,
+      "adjudication_admission_status": null
     },
     {
       "run_id": "gf-01-mcp-pass",
@@ -377,7 +450,27 @@
       "evaluation_report_hash": "",
       "status": "frozen",
       "indexable": true,
-      "created_at": "2026-01-10T14:00:00Z"
+      "created_at": "2026-01-10T14:00:00Z",
+      "adjudication_status": "NOT_ADJUDICATED",
+      "adjudication_verdict_hash": null,
+      "adjudication_admission_status": null
+    },
+    {
+      "run_id": "gf-01-smoke",
+      "scenario_id": "gf-01-single-agent-lifecycle",
+      "ruleset_version": "ruleset-1.0",
+      "substrate": "fixture",
+      "substrate_claim_level": "declared",
+      "substrate_execution": "static",
+      "inference_mode": "none",
+      "repro_ref": "adjudication/gf-01-smoke/",
+      "status": "active",
+      "notes": "ADJUDICATED smoke test: GF-01~05 all PASS with complete evidence artifacts",
+      "indexable": true,
+      "created_at": "2026-01-14T00:00:00Z",
+      "adjudication_status": "ADJUDICATED",
+      "adjudication_verdict_hash": "6afde43633358e9a423fa50e0d838091a07737bb39004c0e4b2dc0a224279f67",
+      "adjudication_admission_status": "ADMISSIBLE"
     },
     {
       "run_id": "gf-02-fail",
@@ -391,7 +484,10 @@
       "status": "active",
       "notes": "NOT_ADMISSIBLE sample: missing plan.json artifact triggers admission failure",
       "indexable": true,
-      "created_at": "2026-01-14T00:00:00Z"
+      "created_at": "2026-01-14T00:00:00Z",
+      "adjudication_status": "NOT_ADMISSIBLE",
+      "adjudication_verdict_hash": "0dbf54c129f682747cffd8739f6cd45a2e3ea93b686fa44ee2ea4eb620af277c",
+      "adjudication_admission_status": "NOT_ADMISSIBLE"
     }
   ]
 }

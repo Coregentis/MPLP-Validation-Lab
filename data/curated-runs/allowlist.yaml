@@ -153,6 +153,19 @@ runs:
   indexable: true
   created_at: '2026-01-14T00:00:00Z'
 
+- run_id: gf-01-smoke
+  scenario_id: gf-01-single-agent-lifecycle
+  ruleset_version: ruleset-1.0
+  substrate: fixture
+  substrate_claim_level: declared
+  substrate_execution: static
+  inference_mode: none
+  repro_ref: adjudication/gf-01-smoke/
+  status: active
+  notes: "ADJUDICATED smoke test: GF-01~05 all PASS with complete evidence artifacts"
+  indexable: true
+  created_at: '2026-01-14T00:00:00Z'
+
 # ============================================================================
 # v0.3 Arbitration Packs (Four-Domain Adjudication)
 # ============================================================================

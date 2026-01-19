@@ -82,7 +82,7 @@ export function CuratedRunsTable({ runs }: { runs: CuratedRunRecord[] }) {
                                                 disabled
                                                 aria-disabled="true"
                                                 className="px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider rounded bg-mplp-dark-soft/50 border border-mplp-border/30 text-mplp-text-muted/50 cursor-not-allowed opacity-50"
-                                                title="No adjudication bundle available (NOT_ADJUDICATED)"
+                                                title="This run has no adjudication bundle. Bundles are listed in export/adjudication-index.json."
                                             >
                                                 Verdict
                                             </button>
@@ -102,7 +102,7 @@ export function CuratedRunsTable({ runs }: { runs: CuratedRunRecord[] }) {
                                                 disabled
                                                 aria-disabled="true"
                                                 className="px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider rounded bg-mplp-dark-soft/50 border border-mplp-border/30 text-mplp-text-muted/50 cursor-not-allowed opacity-50"
-                                                title="Recheck requires adjudication bundle (NOT_ADJUDICATED)"
+                                                title="Recheck requires a deterministic verdict_hash from an adjudication bundle."
                                             >
                                                 Recheck
                                             </button>

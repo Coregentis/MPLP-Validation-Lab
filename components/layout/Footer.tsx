@@ -39,6 +39,11 @@ export function Footer() {
                             <h3 className="text-xs font-bold uppercase tracking-wider text-mplp-text mb-4 border-b border-mplp-border/50 pb-2">Governance</h3>
                             <ul className="space-y-2">
                                 <li>
+                                    <Link href="/about" className="text-mplp-text-muted hover:text-mplp-blue-light text-13 transition-colors font-medium block py-0.5">
+                                        About (Four Boundaries)
+                                    </Link>
+                                </li>
+                                <li>
                                     <Link href="/policies/contract" className="text-mplp-text-muted hover:text-mplp-blue-light text-13 transition-colors font-medium block py-0.5">
                                         Export Contract (v1.2)
                                     </Link>

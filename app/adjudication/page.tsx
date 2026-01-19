@@ -50,11 +50,15 @@ export default function AdjudicationPage() {
                 </p>
             </div>
 
-            {/* Boundary statement - Flowing style */}
-            <div className="mb-10 pl-4 border-l-2 border-amber-500/30">
+            {/* Boundary Statement - Standardized Four Boundaries */}
+            <div className="mb-10 p-4 bg-amber-900/20 border border-amber-500/30 rounded-lg">
+                <p className="text-xs text-amber-400/90 font-medium uppercase tracking-wider mb-2">
+                    Governance Boundary
+                </p>
                 <p className="text-sm text-mplp-text-muted">
-                    <strong className="text-mplp-text font-semibold uppercase tracking-wider text-xs mr-2 text-amber-500">Governance Note</strong>
-                    Reviewability ≠ Reproducibility. The Lab rechecks evidence, not execution environments.
+                    <strong className="text-amber-400">Non-certification</strong> · Evidence-based verdicts only ·
+                    <strong className="text-amber-400"> No endorsement</strong> · No execution hosting ·{' '}
+                    <Link href="/about" className="text-mplp-blue-soft hover:underline">Full statement →</Link>
                 </p>
             </div>
 

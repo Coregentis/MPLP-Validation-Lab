@@ -1,6 +1,7 @@
 import { getCuratedRuns } from '@/lib/curated/load-curated-runs';
 import { CuratedRunsTable } from './_components/CuratedRunsTable';
 import { ScenarioAwareBanner } from './_components/ScenarioAwareBanner';
+import { RunsStatusSummary } from './_components/RunsStatusSummary';
 import { ProvenanceFooter } from '@/components/ProvenanceFooter';
 import Link from 'next/link';
 
@@ -18,6 +19,14 @@ export default function RunsPage() {
     const v03Runs = data.runs.filter(r => r.run_id.startsWith('arb-') && r.run_id.endsWith('-v0.3'));
     const v04Runs = data.runs.filter(r => r.run_id.startsWith('arb-') && r.run_id.endsWith('-v0.4'));
 
+    // Count adjudicated runs (those with adjudication_status === 'ADJUDICATED')
+    const adjudicatedCount = data.runs.filter(r => {
+        const adjStatus = (r as unknown as Record<string, unknown>).adjudication_status;
+        return adjStatus === 'ADJUDICATED';
+    }).length;
+    const totalRuns = data.runs.length;
+    const pendingCount = totalRuns - adjudicatedCount;
+
     return (
         <div className="pt-8">
             <div className="mb-12">
@@ -29,6 +38,13 @@ export default function RunsPage() {
                     independently recomputed locally.
                 </p>
             </div>
+
+            {/* Status Summary Bar */}
+            <RunsStatusSummary
+                totalRuns={totalRuns}
+                adjudicatedCount={adjudicatedCount}
+                pendingCount={pendingCount}
+            />
 
             <ScenarioAwareBanner />
 

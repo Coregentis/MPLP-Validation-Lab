@@ -1,0 +1,256 @@
+# Substrate Index — Machine-Readable SSOT
+#
+# Single Source of Truth for substrate-to-run mapping.
+# Used by: /coverage, /runs, generate-curated-runs.mjs
+#
+# Governance: SUBSTRATE_SCOPE_POLICY.md defines admission criteria.
+# This file only describes current state, not endorsement.
+
+schema_version: "1.0.0"
+generated_at: "2026-01-20"
+
+# =============================================================================
+# Tier-0 Execution Frameworks (Target: Reproduced)
+# =============================================================================
+
+substrates:
+
+  - id: langgraph
+    display_name: LangGraph
+    type: framework
+    tier: 0
+    ecosystem: langchain
+    target_level: reproduced
+    current_level: declared
+    runs:
+      - run_id: v05-d1-langgraph-pass-budget-allow
+        gfs: [D1]
+        status: REGISTERED
+      - run_id: v05-d1-langgraph-fail-outcome-invalid
+        gfs: [D1]
+        status: REGISTERED
+      - run_id: v05-d2-langgraph-pass-terminal-success
+        gfs: [D2]
+        status: REGISTERED
+      - run_id: v05-d2-langgraph-fail-invalid-terminal
+        gfs: [D2]
+        status: REGISTERED
+      - run_id: v05-d3-langgraph-pass-authz-allow
+        gfs: [D3]
+        status: REGISTERED
+      - run_id: v05-d3-langgraph-fail-subject-missing
+        gfs: [D3]
+        status: REGISTERED
+      - run_id: v05-d4-langgraph-pass-reason-success
+        gfs: [D4]
+        status: REGISTERED
+      - run_id: v05-d4-langgraph-fail-reason-invalid
+        gfs: [D4]
+        status: REGISTERED
+
+  - id: autogen
+    display_name: AutoGen
+    type: framework
+    tier: 0
+    ecosystem: microsoft
+    target_level: reproduced
+    current_level: declared
+    runs:
+      - run_id: v05-d1-autogen-pass-budget-allow
+        gfs: [D1]
+        status: REGISTERED
+      - run_id: v05-d1-autogen-fail-outcome-invalid
+        gfs: [D1]
+        status: REGISTERED
+      - run_id: v05-d2-autogen-pass-terminal-success
+        gfs: [D2]
+        status: REGISTERED
+      - run_id: v05-d2-autogen-fail-invalid-terminal
+        gfs: [D2]
+        status: REGISTERED
+      - run_id: v05-d3-autogen-pass-authz-allow
+        gfs: [D3]
+        status: REGISTERED
+      - run_id: v05-d3-autogen-fail-subject-missing
+        gfs: [D3]
+        status: REGISTERED
+      - run_id: v05-d4-autogen-pass-reason-success
+        gfs: [D4]
+        status: REGISTERED
+      - run_id: v05-d4-autogen-fail-reason-invalid
+        gfs: [D4]
+        status: REGISTERED
+
+  - id: semantic-kernel
+    display_name: Semantic Kernel
+    type: framework
+    tier: 0
+    ecosystem: microsoft
+    target_level: reproduced
+    current_level: declared
+    runs:
+      - run_id: v05-d1-sk-pass-budget-allow
+        gfs: [D1]
+        status: REGISTERED
+      - run_id: v05-d1-sk-fail-outcome-invalid
+        gfs: [D1]
+        status: REGISTERED
+      - run_id: v05-d2-sk-pass-terminal-success
+        gfs: [D2]
+        status: REGISTERED
+      - run_id: v05-d2-sk-fail-invalid-terminal
+        gfs: [D2]
+        status: REGISTERED
+      - run_id: v05-d3-sk-pass-authz-allow
+        gfs: [D3]
+        status: REGISTERED
+      - run_id: v05-d3-sk-fail-subject-missing
+        gfs: [D3]
+        status: REGISTERED
+      - run_id: v05-d4-sk-pass-reason-success
+        gfs: [D4]
+        status: REGISTERED
+      - run_id: v05-d4-sk-fail-reason-invalid
+        gfs: [D4]
+        status: REGISTERED
+
+# =============================================================================
+# Tier-0 Protocol Rails
+# =============================================================================
+
+  - id: a2a
+    display_name: A2A
+    type: protocol
+    tier: 0
+    ecosystem: rail
+    target_level: declared
+    current_level: declared
+    runs:
+      - run_id: gf-01-a2a-pass
+        gfs: [GF-01]
+        status: REGISTERED
+      - run_id: gf-01-a2a-fail
+        gfs: [GF-01]
+        status: REGISTERED
+
+  - id: mcp
+    display_name: MCP
+    type: protocol
+    tier: 0
+    ecosystem: rail
+    target_level: reproduced
+    current_level: declared
+    runs:
+      - run_id: gf-01-mcp-pass
+        gfs: [GF-01]
+        status: REGISTERED
+
+  - id: langchain
+    display_name: LangChain
+    type: framework
+    tier: 0
+    ecosystem: langchain
+    target_level: reproduced
+    current_level: declared
+    runs:
+      - run_id: gf-01-langchain-pass
+        gfs: [GF-01]
+        status: REGISTERED
+
+# =============================================================================
+# Fixture/Test Substrates (Internal)
+# =============================================================================
+
+  - id: fixture
+    display_name: Fixture (Internal)
+    type: fixture
+    tier: 99
+    ecosystem: internal
+    target_level: declared
+    current_level: declared
+    notes: "Static mocked evidence for testing. Not a real substrate."
+    runs:
+      # v0.2 GF packs - ADJUDICATED samples
+      - run_id: gf-01-smoke
+        gfs: [GF-01, GF-02, GF-03, GF-04, GF-05]
+        status: ADJUDICATED
+        adjudication_ref: adjudication/gf-01-smoke/verdict.json
+        notes: "Smoke test: GF-01~05 all PASS"
+      - run_id: gf-01-adjudicated-fail-01
+        gfs: [GF-01]
+        status: ADJUDICATED
+        adjudication_ref: adjudication/gf-01-adjudicated-fail-01/verdict.json
+      - run_id: gf-02-fail
+        gfs: [GF-02]
+        status: NOT_ADMISSIBLE
+        adjudication_ref: adjudication/gf-02-fail/verdict.json
+      - run_id: admission-not-admissible-01
+        gfs: [GF-01]
+        status: NOT_ADMISSIBLE
+        adjudication_ref: adjudication/admission-not-admissible-01/verdict.json
+      # v0.3 arbiter packs
+      - run_id: arb-d1-budget-pass-fixture-v0.3
+        gfs: [D1]
+        status: REGISTERED
+      - run_id: arb-d1-budget-fail-fixture-v0.3
+        gfs: [D1]
+        status: REGISTERED
+      - run_id: arb-d2-lifecycle-state-pass-fixture-v0.3
+        gfs: [D2]
+        status: REGISTERED
+      - run_id: arb-d2-lifecycle-state-fail-fixture-v0.3
+        gfs: [D2]
+        status: REGISTERED
+      - run_id: arb-d3-authz-decision-pass-fixture-v0.3
+        gfs: [D3]
+        status: REGISTERED
+      - run_id: arb-d3-authz-decision-fail-fixture-v0.3
+        gfs: [D3]
+        status: REGISTERED
+      - run_id: arb-d4-termination-recovery-pass-fixture-v0.3
+        gfs: [D4]
+        status: REGISTERED
+      - run_id: arb-d4-termination-recovery-fail-fixture-v0.3
+        gfs: [D4]
+        status: REGISTERED
+      # v0.4 semantic invariant packs
+      - run_id: arb-d1-budget-fail-outcome-invalid-v0.4
+        gfs: [D1]
+        status: REGISTERED
+      - run_id: arb-d1-budget-fail-deny-missing-gate-v0.4
+        gfs: [D1]
+        status: REGISTERED
+      - run_id: arb-d2-lifecycle-fail-terminal-state-invalid-v0.4
+        gfs: [D2]
+        status: REGISTERED
+      - run_id: arb-d2-lifecycle-fail-post-terminal-exec-v0.4
+        gfs: [D2]
+        status: REGISTERED
+      - run_id: arb-d3-authz-fail-sra-incomplete-v0.4
+        gfs: [D3]
+        status: REGISTERED
+      - run_id: arb-d3-authz-fail-deny-no-confirm-v0.4
+        gfs: [D3]
+        status: REGISTERED
+      - run_id: arb-d4-termination-fail-reason-invalid-v0.4
+        gfs: [D4]
+        status: REGISTERED
+      - run_id: arb-d4-termination-fail-uncontrolled-recovery-v0.4
+        gfs: [D4]
+        status: REGISTERED
+
+# =============================================================================
+# Status Taxonomy
+# =============================================================================
+#
+# REGISTERED: Run is in allowlist, pack exists but not adjudicated
+# EVIDENCE_READY: Pack is closure-complete with pack_root_hash
+# ADJUDICATED: verdict.json exists with verdict_hash
+# NOT_ADMISSIBLE: Failed admission gates (structural/schema issues)
+# NOT_EVALUATED: Deliberately not evaluated (out of scope)
+#
+# =============================================================================
+
+# Non-Endorsement Boundary
+# This index describes evidence adjudication coverage, not framework capability.
+# The Lab does not certify, endorse, or rank any substrate.

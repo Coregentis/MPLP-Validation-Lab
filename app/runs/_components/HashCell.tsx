@@ -13,7 +13,14 @@ export function HashCell({ hash, label }: { hash: string; label: string }) {
     };
 
     if (!hash) {
-        return <span className="text-xs text-mplp-text-muted italic">—</span>;
+        return (
+            <span
+                className="text-xs text-mplp-text-muted italic cursor-help"
+                title="No verdict_hash: run not adjudicated or pack not closure-complete"
+            >
+                —
+            </span>
+        );
     }
 
     return (
