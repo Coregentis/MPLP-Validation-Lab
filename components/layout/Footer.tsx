@@ -63,6 +63,11 @@ export function Footer() {
                                         Substrate Scope
                                     </Link>
                                 </li>
+                                <li>
+                                    <Link href="/policies/intake" className="text-mplp-text-muted hover:text-mplp-blue-light text-13 transition-colors font-medium block py-0.5">
+                                        Intake Policy
+                                    </Link>
+                                </li>
                             </ul>
                         </div>
 
@@ -87,8 +92,8 @@ export function Footer() {
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link href="/examples/evidence-producers/langgraph" className="text-mplp-text-muted hover:text-mplp-blue-light text-13 transition-colors font-medium block py-0.5">
-                                        Evidence Producers
+                                    <Link href="/coverage/adjudication" className="text-mplp-text-muted hover:text-mplp-blue-light text-13 transition-colors font-medium block py-0.5">
+                                        Adjudication Coverage
                                     </Link>
                                 </li>
                                 <li>

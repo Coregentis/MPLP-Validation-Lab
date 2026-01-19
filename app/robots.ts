@@ -5,25 +5,32 @@ export default function robots(): MetadataRoute.Robots {
         rules: [
             {
                 userAgent: "*",
-                allow: ["/", "/about"],
-                disallow: [
+                allow: [
+                    "/",
+                    "/about",
                     "/runs",
-                    "/runs/",
+                    "/adjudication",
+                    "/rulesets",
+                    "/guarantees",
+                    "/coverage",
+                    "/coverage/adjudication",
+                    "/policies/contract",
+                    "/policies/intake",
+                    "/policies/substrate-scope",
+                ],
+                disallow: [
                     "/api",
                     "/api/",
                     "/examples",
                     "/examples/",
-                    "/rulesets",
-                    "/rulesets/",
-                    "/policies",
-                    "/policies/",
                     "/builder",
                     "/builder/",
-                    "/coverage",
-                    "/coverage/"
+                    "/statement",
+                    "/statement/",
                 ],
             },
         ],
         sitemap: "https://lab.mplp.io/sitemap.xml",
     };
 }
+
