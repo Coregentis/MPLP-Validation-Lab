@@ -2,7 +2,7 @@
   "gate_id": "GATE-04",
   "gate_name": "Non-endorsement Language Lint",
   "status": "FAIL",
-  "evaluated_at": "2026-01-16T03:34:46.956Z",
+  "evaluated_at": "2026-01-19T10:07:57.800Z",
   "findings": [
     {
       "file": "app/_shared/VerdictHashBadge.tsx",
@@ -77,6 +77,30 @@
       "message": "Forbidden term implies certification/endorsement risk"
     },
     {
+      "file": "app/runs/[run_id]/_components/RulesetEvaluationPanel.tsx",
+      "line": 27,
+      "column": 11,
+      "match": "badge",
+      "rule": "FORBIDDEN_TERM",
+      "message": "Forbidden term implies certification/endorsement risk"
+    },
+    {
+      "file": "app/runs/[run_id]/_components/RulesetEvaluationPanel.tsx",
+      "line": 165,
+      "column": 26,
+      "match": "badge",
+      "rule": "FORBIDDEN_TERM",
+      "message": "Forbidden term implies certification/endorsement risk"
+    },
+    {
+      "file": "app/runs/[run_id]/_components/RulesetEvaluationPanel.tsx",
+      "line": 191,
+      "column": 18,
+      "match": "badge",
+      "rule": "FORBIDDEN_TERM",
+      "message": "Forbidden term implies certification/endorsement risk"
+    },
+    {
       "file": "app/runs/[run_id]/_components/StateDiffPanel.tsx",
       "line": 78,
       "column": 47,
@@ -94,8 +118,8 @@
     }
   ],
   "summary": {
-    "files_scanned": 46,
-    "matches": 11,
+    "files_scanned": 50,
+    "matches": 14,
     "note": "scope: PUBLIC_SURFACE only (app, components, public)"
   }
 }

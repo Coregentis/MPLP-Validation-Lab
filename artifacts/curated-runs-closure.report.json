@@ -1,6 +1,6 @@
 {
   "gate_id": "GATE-CURATED-RUNS-CLOSURE",
-  "executed_at": "2026-01-19T05:58:57.628Z",
+  "executed_at": "2026-01-19T10:08:36.483Z",
   "status": "PASS",
   "runs": [
     {
@@ -326,5 +326,5 @@
     "load_errors": 0,
     "ruleset_errors": 0
   },
-  "duration_ms": 84
+  "duration_ms": 88
 }
