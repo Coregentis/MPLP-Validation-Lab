@@ -2,7 +2,9 @@ import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const base = "https://lab.mplp.io";
-    const lastModified = new Date();
+    // Fixed to release date for stable indexing
+    const lastModified = "2026-01-20";
+
 
     return [
         { url: `${base}/`, lastModified },
