@@ -1,7 +1,7 @@
 {
   "evaluate_version": "1.0",
   "run_id": "gf-01-langchain-pass",
-  "evaluated_at": "2026-01-19T17:21:49.601Z",
+  "evaluated_at": "2026-01-19T17:32:29.793Z",
   "ruleset_version": "1.0",
   "golden_flows": [
     {

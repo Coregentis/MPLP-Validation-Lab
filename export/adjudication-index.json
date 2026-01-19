@@ -26,23 +26,23 @@
       "run_id": "gf-01-langchain-pass",
       "bundle_path": "adjudication/gf-01-langchain-pass/",
       "verdict_path": "adjudication/gf-01-langchain-pass/verdict.json",
-      "verdict_hash": "dfbbc7bb356b57a35d578b0c2d151756541c974413acc51a8ba1c5c87d93fea0",
+      "verdict_hash": "4372ae42ce357fdbd540c20de850849cb814e8dd16f976ed48245ecb69eb25ac",
       "ruleset_version": "1.0",
       "protocol_pin": "unknown",
-      "admission_status": "NOT_ADMISSIBLE",
-      "overall_status": "NOT_ADMISSIBLE",
-      "adjudicated_at": "2026-01-19T17:21:49.602Z"
+      "admission_status": "ADMISSIBLE",
+      "overall_status": "ADJUDICATED",
+      "adjudicated_at": "2026-01-19T17:32:29.794Z"
     },
     {
       "run_id": "gf-01-mcp-pass",
       "bundle_path": "adjudication/gf-01-mcp-pass/",
       "verdict_path": "adjudication/gf-01-mcp-pass/verdict.json",
-      "verdict_hash": "b413e22d1655a4f7b9a2f8d826ba7ef3abdd77f27fedc78d3eb95b579e51072d",
+      "verdict_hash": "3db969b9cdda1f0a654ae20be6cfba47f9f62bce4030e267a9b98325728f6594",
       "ruleset_version": "1.0",
       "protocol_pin": "unknown",
-      "admission_status": "NOT_ADMISSIBLE",
-      "overall_status": "NOT_ADMISSIBLE",
-      "adjudicated_at": "2026-01-19T17:21:05.983Z"
+      "admission_status": "ADMISSIBLE",
+      "overall_status": "ADJUDICATED",
+      "adjudicated_at": "2026-01-19T17:32:29.501Z"
     },
     {
       "run_id": "gf-01-smoke",

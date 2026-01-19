@@ -143,9 +143,8 @@ substrates:
     runs:
       - run_id: gf-01-mcp-pass
         gfs: [GF-01]
-        status: NOT_ADMISSIBLE
+        status: ADJUDICATED
         adjudication_ref: adjudication/gf-01-mcp-pass/verdict.json
-        notes: "Admission failed (pack structure); GF 5/5 passed"
 
   - id: langchain
     display_name: LangChain
@@ -157,9 +156,8 @@ substrates:
     runs:
       - run_id: gf-01-langchain-pass
         gfs: [GF-01]
-        status: NOT_ADMISSIBLE
+        status: ADJUDICATED
         adjudication_ref: adjudication/gf-01-langchain-pass/verdict.json
-        notes: "Admission failed (pack structure); GF 5/5 passed"
 
 # =============================================================================
 # Fixture/Test Substrates (Internal)

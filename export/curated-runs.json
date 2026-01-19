@@ -56,8 +56,8 @@
       "status": "frozen",
       "indexable": true,
       "created_at": "2026-01-10T14:00:00Z",
-      "adjudication_status": "NOT_ADMISSIBLE",
-      "adjudication_verdict_hash": "dfbbc7bb356b57a35d578b0c2d151756541c974413acc51a8ba1c5c87d93fea0",
+      "adjudication_status": "ADJUDICATED",
+      "adjudication_verdict_hash": "4372ae42ce357fdbd540c20de850849cb814e8dd16f976ed48245ecb69eb25ac",
       "adjudication_ruleset": "1.0",
       "adjudication_protocol_pin": "unknown"
     },
@@ -78,8 +78,8 @@
       "status": "frozen",
       "indexable": true,
       "created_at": "2026-01-10T14:00:00Z",
-      "adjudication_status": "NOT_ADMISSIBLE",
-      "adjudication_verdict_hash": "b413e22d1655a4f7b9a2f8d826ba7ef3abdd77f27fedc78d3eb95b579e51072d",
+      "adjudication_status": "ADJUDICATED",
+      "adjudication_verdict_hash": "3db969b9cdda1f0a654ae20be6cfba47f9f62bce4030e267a9b98325728f6594",
       "adjudication_ruleset": "1.0",
       "adjudication_protocol_pin": "unknown"
     },

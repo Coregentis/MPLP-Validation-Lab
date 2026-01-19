@@ -2,8 +2,8 @@
   "ssot": {
     "source": "data/curated-runs/allowlist.yaml",
     "adjudication_source": "export/adjudication-index.json",
-    "generated_at": "2026-01-19T17:23:31.223Z",
-    "git_commit": "430c5d2"
+    "generated_at": "2026-01-19T17:33:09.876Z",
+    "git_commit": "a2ec24d"
   },
   "runs": [
     {
@@ -410,9 +410,9 @@
       "status": "frozen",
       "indexable": true,
       "created_at": "2026-01-10T14:00:00Z",
-      "adjudication_status": "NOT_ADMISSIBLE",
-      "adjudication_verdict_hash": "dfbbc7bb356b57a35d578b0c2d151756541c974413acc51a8ba1c5c87d93fea0",
-      "adjudication_admission_status": "NOT_ADMISSIBLE"
+      "adjudication_status": "ADJUDICATED",
+      "adjudication_verdict_hash": "4372ae42ce357fdbd540c20de850849cb814e8dd16f976ed48245ecb69eb25ac",
+      "adjudication_admission_status": "ADMISSIBLE"
     },
     {
       "run_id": "gf-01-mcp-official-v0.2",
@@ -451,9 +451,9 @@
       "status": "frozen",
       "indexable": true,
       "created_at": "2026-01-10T14:00:00Z",
-      "adjudication_status": "NOT_ADMISSIBLE",
-      "adjudication_verdict_hash": "b413e22d1655a4f7b9a2f8d826ba7ef3abdd77f27fedc78d3eb95b579e51072d",
-      "adjudication_admission_status": "NOT_ADMISSIBLE"
+      "adjudication_status": "ADJUDICATED",
+      "adjudication_verdict_hash": "3db969b9cdda1f0a654ae20be6cfba47f9f62bce4030e267a9b98325728f6594",
+      "adjudication_admission_status": "ADMISSIBLE"
     },
     {
       "run_id": "gf-01-smoke",

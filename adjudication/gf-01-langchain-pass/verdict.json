@@ -1,14 +1,14 @@
 {
   "adjudication_version": "1.0",
   "run_id": "gf-01-langchain-pass",
-  "adjudicated_at": "2026-01-19T17:21:49.602Z",
+  "adjudicated_at": "2026-01-19T17:32:29.794Z",
   "verifier": {
     "id": "validation-lab-verifier",
     "version": "1.0.0"
   },
   "ruleset_version": "1.0",
   "protocol_pin": "unknown",
-  "admission_status": "NOT_ADMISSIBLE",
+  "admission_status": "ADMISSIBLE",
   "golden_flow_results": [
     {
       "gf_id": "GF-01",
@@ -56,8 +56,8 @@
       "message": "Cryptographic binding present"
     }
   ],
-  "overall_status": "NOT_ADMISSIBLE",
-  "verdict_hash": "dfbbc7bb356b57a35d578b0c2d151756541c974413acc51a8ba1c5c87d93fea0",
+  "overall_status": "ADJUDICATED",
+  "verdict_hash": "4372ae42ce357fdbd540c20de850849cb814e8dd16f976ed48245ecb69eb25ac",
   "_meta": {
     "generated_by": "vlab-adjudicate"
   }
