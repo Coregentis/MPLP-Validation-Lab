@@ -1,6 +1,6 @@
 {
   "gate_id": "GATE-KEY-POLICY",
-  "executed_at": "2026-01-19T05:44:01.490Z",
+  "executed_at": "2026-01-19T06:01:47.662Z",
   "status": "PASS",
   "checks": {
     "identity_exists": true,

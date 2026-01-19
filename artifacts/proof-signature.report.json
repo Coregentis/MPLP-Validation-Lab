@@ -1,6 +1,6 @@
 {
   "gate_id": "GATE-PROOF-SIGNATURE",
-  "executed_at": "2026-01-19T05:45:59.792Z",
+  "executed_at": "2026-01-19T06:01:41.243Z",
   "status": "FAIL",
   "summary": {
     "total_runs": 26,
@@ -168,5 +168,5 @@
   ],
   "errors": [],
   "failure_reason": "Some proofs failed verification",
-  "duration_ms": 99
+  "duration_ms": 93
 }

@@ -1,8 +1,8 @@
 {
   "ssot": {
     "source": "data/curated-runs/allowlist.yaml",
-    "generated_at": "2026-01-18T14:38:02.633Z",
-    "git_commit": "fa1daab"
+    "generated_at": "2026-01-19T05:58:54.534Z",
+    "git_commit": "38109bd"
   },
   "runs": [
     {

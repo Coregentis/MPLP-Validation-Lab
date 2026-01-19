@@ -1,6 +1,6 @@
 {
   "gate_id": "GATE-REASON-CODES-TAXONOMY",
-  "executed_at": "2026-01-18T14:39:27.483Z",
+  "executed_at": "2026-01-19T05:58:58.113Z",
   "status": "PASS",
   "taxonomy_stats": {
     "common": 18,
@@ -20,5 +20,5 @@
     "unknown_codes": 0,
     "missing_codes": 0
   },
-  "duration_ms": 90
+  "duration_ms": 84
 }

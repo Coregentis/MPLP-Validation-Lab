@@ -12,18 +12,13 @@
 import type { VerdictStatus, EvidencePointer, RequirementCoverage } from '@/lib/verdict/types';
 
 // Canonical mapping from internal gf-xx to external LG-xx
+// NOTE: Only lowercase keys - canonicalizeToLG handles uppercase via .toLowerCase()
 const GF_TO_LG_MAP: Record<string, string> = {
     'gf-01': 'LG-01',
     'gf-02': 'LG-02',
     'gf-03': 'LG-03',
     'gf-04': 'LG-04',
     'gf-05': 'LG-05',
-    // Uppercase variants (legacy compatibility)
-    'GF-01': 'LG-01',
-    'GF-02': 'LG-02',
-    'GF-03': 'LG-03',
-    'GF-04': 'LG-04',
-    'GF-05': 'LG-05',
 };
 
 const LG_NAMES: Record<string, string> = {

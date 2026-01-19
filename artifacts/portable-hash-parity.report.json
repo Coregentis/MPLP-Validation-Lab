@@ -1,6 +1,6 @@
 {
   "gate_id": "GATE-PORTABLE-HASH-PARITY",
-  "executed_at": "2026-01-19T05:44:06.279Z",
+  "executed_at": "2026-01-19T06:01:50.773Z",
   "status": "PASS",
   "hash_scope": "HASH_SCOPE_PORTABLE_V1",
   "summary": {
@@ -76,5 +76,5 @@
   },
   "issues": [],
   "hash_scope_version": "1.0.0",
-  "duration_ms": 93
+  "duration_ms": 47
 }

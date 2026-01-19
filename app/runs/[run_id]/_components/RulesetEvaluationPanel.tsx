@@ -156,21 +156,22 @@ function EvidenceRefCard({ ref, index }: {
     index: number
 }) {
     const pointer = ref.pointer as Record<string, unknown> | null;
+    const locatorStr = pointer?.locator != null ? String(pointer.locator) : null;
 
     return (
         <div className="bg-mplp-dark rounded-lg p-3 border border-mplp-border/30">
             <div className="flex items-center gap-2 mb-2">
                 <span className="text-xs text-mplp-text-muted">#{index + 1}</span>
                 <ResolvedBadge resolved={ref.resolved as 'event' | 'snapshot' | 'none'} />
-                {pointer?.locator && (
+                {locatorStr ? (
                     <code className="text-xs text-mplp-blue-soft font-mono">
-                        {String(pointer.locator)}
+                        {locatorStr}
                     </code>
-                )}
+                ) : null}
             </div>
 
             {/* Resolved content */}
-            {ref.content && Object.keys(ref.content).length > 0 && (
+            {ref.content && Object.keys(ref.content).length > 0 ? (
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-2 text-xs mt-2">
                     {Object.entries(ref.content)
                         .filter(([k]) => !k.startsWith('_'))
@@ -182,7 +183,7 @@ function EvidenceRefCard({ ref, index }: {
                             </div>
                         ))}
                 </div>
-            )}
+            ) : null}
         </div>
     );
 }
