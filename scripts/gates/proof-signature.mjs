@@ -23,6 +23,8 @@ const PROJECT_ROOT = path.resolve(__dirname, '../..');
 // =============================================================================
 
 const IS_CI = !!process.env.CI;
+const IS_GITHUB_ACTIONS = process.env.GITHUB_ACTIONS === 'true';
+const IS_VERCEL = !!process.env.VERCEL;
 const SIGN_MODE = process.env.VLAB_SIGN_MODE || (IS_CI ? 'production' : 'staging');
 const GITHUB_REPOSITORY = process.env.GITHUB_REPOSITORY || '';
 
@@ -40,6 +42,19 @@ const STAGING_KEY_ID = 'vlab-v0.5-test-001';
 // Determine signing key based on mode
 function getSigningConfig() {
     if (SIGN_MODE === 'production') {
+        // SECURITY: Production signing ONLY allowed in GitHub Actions
+        if (IS_VERCEL) {
+            console.error('❌ FATAL: Production signing is NOT allowed in Vercel');
+            console.error('   Production signing must only run in GitHub Actions CI');
+            process.exit(1);
+        }
+
+        if (!IS_GITHUB_ACTIONS && IS_CI) {
+            console.error('❌ FATAL: Production signing requires GitHub Actions');
+            console.error('   CI environment detected but not GitHub Actions');
+            process.exit(1);
+        }
+
         if (!PROD_PRIVATE_KEY) {
             if (IS_CI) {
                 // CI MUST have prod key
