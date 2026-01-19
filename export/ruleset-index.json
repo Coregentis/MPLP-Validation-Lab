@@ -4,6 +4,16 @@
       "version": "ruleset-1.0",
       "path": "data/rulesets/ruleset-1.0/",
       "manifest_path": null
+    },
+    {
+      "version": "ruleset-1.1",
+      "path": "data/rulesets/ruleset-1.1/",
+      "manifest_path": null
+    },
+    {
+      "version": "ruleset-1.2",
+      "path": "data/rulesets/ruleset-1.2/",
+      "manifest_path": null
     }
   ]
 }

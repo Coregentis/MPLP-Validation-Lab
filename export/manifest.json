@@ -1,6 +1,6 @@
 {
   "export_version": "1.2",
-  "generated_at": "2026-01-14T11:53:45.843Z",
+  "generated_at": "2026-01-19T17:22:50.574Z",
   "verifier": {
     "id": "validation-lab-verifier",
     "version": "1.0.0",
@@ -16,11 +16,11 @@
   },
   "stats": {
     "releases": 11,
-    "rulesets": 1,
-    "curated_runs": 9,
+    "rulesets": 3,
+    "curated_runs": 27,
     "verdicts": 8,
     "reverified_count": 2,
-    "adjudications": 4,
+    "adjudications": 6,
     "adjudicated_count": 2
   }
 }

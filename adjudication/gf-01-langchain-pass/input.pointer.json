@@ -1,0 +1,5 @@
+{
+    "pack_path": "data/runs/gf-01-langchain-pass",
+    "pack_layout": "1.0",
+    "notes": "LangChain Framework (FakeListLLM) - GF-01 single agent lifecycle"
+}
