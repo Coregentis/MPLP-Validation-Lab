@@ -161,8 +161,57 @@ export default async function RulesetDetailPage({ params }: Props) {
                             ))}
                         </div>
                     </>
+                ) : manifest?.four_domain_clauses && manifest.four_domain_clauses.length > 0 ? (
+                    /* v0.3 Four-Domain Clauses format (ruleset-1.1) */
+                    <>
+                        <h2 className="text-xl font-semibold mb-4">Four-Domain Adjudication Clauses</h2>
+                        <p className="text-zinc-500 text-sm mb-4">
+                            This ruleset defines {manifest.four_domain_clauses.length} domain-level clauses for evidence adjudication.
+                        </p>
+
+                        <div className="space-y-4">
+                            {Object.entries(groupClausesByDomain(manifest.four_domain_clauses)).map(([domain, domainClauses]) => (
+                                <div key={domain} className="border border-zinc-700 rounded-lg p-4">
+                                    <h3 className="font-semibold mb-3">
+                                        <span className="text-mplp-blue-soft">{domain}</span>
+                                        <span className="text-zinc-500 ml-2 text-sm font-normal">
+                                            {CLAUSE_DOMAIN_LABELS[domain] || 'Unknown Domain'}
+                                        </span>
+                                    </h3>
+                                    <ul className="space-y-2 text-sm">
+                                        {domainClauses.map((clauseId) => (
+                                            <li key={clauseId} className="flex items-center gap-2">
+                                                <span className="inline-block px-1.5 py-0.5 rounded text-xs font-medium bg-amber-900/30 text-amber-400">
+                                                    domain clause
+                                                </span>
+                                                <span className="font-mono text-zinc-300">{clauseId}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            ))}
+                        </div>
+
+                        {/* LG mapping summary for 1.1 */}
+                        {manifest.golden_flows && manifest.golden_flows.length > 0 && (
+                            <div className="mt-6 pt-4 border-t border-zinc-700">
+                                <h3 className="font-semibold mb-3 text-sm">Lifecycle Guarantee Mapping</h3>
+                                <p className="text-zinc-500 text-xs mb-3">
+                                    LG-01~05 are evaluated via Four-Domain clauses. Detailed requirements in{' '}
+                                    <Link href="/guarantees" className="text-mplp-blue-soft hover:underline">Guarantees →</Link>
+                                </p>
+                                <div className="flex flex-wrap gap-2">
+                                    {manifest.golden_flows.map((gfId) => (
+                                        <span key={gfId} className="px-2 py-1 bg-zinc-800 rounded text-xs font-mono text-zinc-400">
+                                            {getExternalId(gfId)}
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
+                        )}
+                    </>
                 ) : manifest?.golden_flows && manifest.golden_flows.length > 0 ? (
-                    /* v0.2/v0.3 Golden Flows format (ruleset-1.0, 1.1) */
+                    /* v0.2 Golden Flows format with requirements (ruleset-1.0) */
                     <>
                         <h2 className="text-xl font-semibold mb-4">Lifecycle Guarantees</h2>
                         <p className="text-zinc-500 text-sm mb-4">
@@ -201,7 +250,13 @@ export default async function RulesetDetailPage({ params }: Props) {
                                                 ))}
                                             </ul>
                                         ) : (
-                                            <p className="text-zinc-500 text-sm">No requirements found.</p>
+                                            <div className="text-zinc-500 text-sm">
+                                                <p className="mb-2">No detailed requirements in this ruleset version.</p>
+                                                <p className="text-xs">
+                                                    See <Link href="/guarantees" className="text-mplp-blue-soft hover:underline">Guarantees scope</Link>{' '}
+                                                    for evaluation criteria.
+                                                </p>
+                                            </div>
                                         )}
                                     </div>
                                 );
@@ -210,11 +265,16 @@ export default async function RulesetDetailPage({ params }: Props) {
                     </>
                 ) : (
                     <div>
-                        <h2 className="text-xl font-semibold mb-4">Clauses / Lifecycle Guarantees</h2>
-                        <p className="text-zinc-500">No clauses or lifecycle guarantees defined in this ruleset manifest.</p>
+                        <h2 className="text-xl font-semibold mb-4">Adjudication Scope</h2>
+                        <p className="text-zinc-500 mb-4">No clauses or lifecycle guarantees defined in this ruleset manifest.</p>
+                        <div className="flex gap-4 text-sm">
+                            <Link href="/guarantees" className="text-mplp-blue-soft hover:underline">Guarantees scope →</Link>
+                            <Link href="/rulesets" className="text-mplp-blue-soft hover:underline">Other rulesets →</Link>
+                        </div>
                     </div>
                 )}
             </section>
         </div>
     );
 }
+
