@@ -40,7 +40,7 @@
         "vlab-prod-2026-01b": {
             "algorithm": "Ed25519",
             "key_id": "vlab-prod-2026-01b",
-            "public_key_ed25519": "MCowBQYDK2VwAyEA0cZJyzMkTVEPXWChqd/Dkfc/14XeAdjkvheAYUtuzZY=",
+            "public_key_ed25519": "MCowBQYDK2VwAyEAxdxYSDAS0pwaKkpX30xS/LRv74K2l+xEaGJA3f7XUeA=",
             "created_at": "2026-01-19T03:30:28Z",
             "not_before": "2026-01-19T03:30:00Z",
             "not_after": "2027-01-19T00:00:00Z",
