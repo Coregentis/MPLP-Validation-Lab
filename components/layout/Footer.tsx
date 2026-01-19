@@ -32,7 +32,7 @@ export function Footer() {
                         </div>
                     </div>
 
-                    {/* Links Columns */}
+                    {/* Links Columns - 3 Column IA Structure */}
                     <div className="md:col-span-8 grid grid-cols-1 sm:grid-cols-3 gap-8" role="navigation" aria-label="Footer Navigation">
                         {/* Governance */}
                         <div>
@@ -44,8 +44,8 @@ export function Footer() {
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link href="/policies/contract" className="text-mplp-text-muted hover:text-mplp-blue-light text-13 transition-colors font-medium block py-0.5">
-                                        Export Contract (v1.2)
+                                    <Link href="/guarantees" className="text-mplp-text-muted hover:text-mplp-blue-light text-13 transition-colors font-medium block py-0.5">
+                                        Lifecycle Guarantees
                                     </Link>
                                 </li>
                                 <li>
@@ -54,8 +54,8 @@ export function Footer() {
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link href="/guarantees" className="text-mplp-text-muted hover:text-mplp-blue-light text-13 transition-colors font-medium block py-0.5">
-                                        Decision Rules (LG-01~05)
+                                    <Link href="/policies/contract" className="text-mplp-text-muted hover:text-mplp-blue-light text-13 transition-colors font-medium block py-0.5">
+                                        Export Contract
                                     </Link>
                                 </li>
                                 <li>
@@ -71,24 +71,13 @@ export function Footer() {
                             </ul>
                         </div>
 
-
-                        {/* Resources */}
+                        {/* Evidence */}
                         <div>
-                            <h3 className="text-xs font-bold uppercase tracking-wider text-mplp-text mb-4 border-b border-mplp-border/50 pb-2">Resources</h3>
+                            <h3 className="text-xs font-bold uppercase tracking-wider text-mplp-text mb-4 border-b border-mplp-border/50 pb-2">Evidence</h3>
                             <ul className="space-y-2">
-                                <li>
-                                    <Link href="/runs" className="text-mplp-text-muted hover:text-mplp-blue-light text-13 transition-colors font-medium block py-0.5">
-                                        Curated Runs
-                                    </Link>
-                                </li>
                                 <li>
                                     <Link href="/adjudication" className="text-mplp-text-muted hover:text-mplp-blue-light text-13 transition-colors font-medium block py-0.5">
                                         Adjudication Bundles
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link href="/coverage" className="text-mplp-text-muted hover:text-mplp-blue-light text-13 transition-colors font-medium block py-0.5">
-                                        Test Vector Coverage
                                     </Link>
                                 </li>
                                 <li>
@@ -97,9 +86,14 @@ export function Footer() {
                                     </Link>
                                 </li>
                                 <li>
-                                    <a href="https://docs.mplp.io" target="_blank" rel="noopener noreferrer" className="text-mplp-text-muted hover:text-mplp-blue-light text-13 transition-colors font-medium block py-0.5">
-                                        Documentation ↗
-                                    </a>
+                                    <Link href="/coverage" className="text-mplp-text-muted hover:text-mplp-blue-light text-13 transition-colors font-medium block py-0.5">
+                                        Test Vector Coverage
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="/runs" className="text-mplp-text-muted hover:text-mplp-blue-light text-13 transition-colors font-medium block py-0.5">
+                                        Curated Runs
+                                    </Link>
                                 </li>
                             </ul>
                         </div>
@@ -118,9 +112,15 @@ export function Footer() {
                                         Protocol Website ↗
                                     </a>
                                 </li>
+                                <li>
+                                    <a href="https://docs.mplp.io" target="_blank" rel="noopener noreferrer" className="text-mplp-text-muted hover:text-mplp-blue-light text-13 transition-colors font-medium block py-0.5">
+                                        Documentation ↗
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                     </div>
+
                 </div>
 
                 {/* Bottom Bar */}

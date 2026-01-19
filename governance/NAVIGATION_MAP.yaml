@@ -1,0 +1,251 @@
+# MPLP Validation Lab Navigation Map
+# SSOT for all site navigation links
+# Version: v0.5 (2026-01-20)
+# Purpose: CI Gate validation, link integrity, semantic conformance
+
+metadata:
+  version: "0.5"
+  frozen_at: "2026-01-20"
+  canonical_host: "https://lab.mplp.io"
+
+# =============================================================================
+# NAVBAR (Primary Navigation)
+# Principle: Main user journey paths only
+# =============================================================================
+navbar:
+  internal:
+    - href: "/"
+      label: "Home"
+      indexable: true
+      
+    - href: "/about"
+      label: "About"
+      indexable: true
+      description: "Four Boundaries, trust signal"
+      
+    - href: "/adjudication"
+      label: "Adjudication"
+      indexable: true
+      description: "Bundles, verdict hashes, recheck"
+      
+    - href: "/coverage"
+      label: "Coverage"
+      indexable: true
+      description: "Test vectors + adjudication matrix entry"
+      
+    - href: "/rulesets"
+      label: "Rulesets"
+      indexable: true
+      description: "Versioned evaluation logic"
+      
+    - href: "/guarantees"
+      label: "Guarantees"
+      indexable: true
+      description: "LG-01~05 scope & limits"
+      
+    - href: "/policies/contract"
+      label: "Contract"
+      indexable: true
+      description: "Export contract, pack structure"
+      
+  external:
+    - href: "https://www.mplp.io"
+      label: "Protocol"
+      icon: "↗"
+      
+    - href: "https://docs.mplp.io"
+      label: "Docs"
+      icon: "↗"
+      
+    - href: "https://github.com/Coregentis/MPLP-Protocol"
+      label: "GitHub"
+      icon: null
+      has_icon_svg: true
+
+# =============================================================================
+# FOOTER (Full Site Accessibility)
+# Principle: Three columns - Governance, Evidence, Community
+# =============================================================================
+footer:
+  governance:
+    title: "Governance"
+    links:
+      - href: "/about"
+        label: "About (Four Boundaries)"
+        indexable: true
+        
+      - href: "/guarantees"
+        label: "Lifecycle Guarantees"
+        indexable: true
+        
+      - href: "/rulesets"
+        label: "Rulesets"
+        indexable: true
+        
+      - href: "/policies/contract"
+        label: "Export Contract"
+        indexable: true
+        
+      - href: "/policies/substrate-scope"
+        label: "Substrate Scope"
+        indexable: true
+        
+      - href: "/policies/intake"
+        label: "Intake Policy"
+        indexable: true
+
+  evidence:
+    title: "Evidence"
+    links:
+      - href: "/adjudication"
+        label: "Adjudication Bundles"
+        indexable: true
+        
+      - href: "/coverage/adjudication"
+        label: "Adjudication Coverage"
+        indexable: true
+        
+      - href: "/coverage"
+        label: "Test Vector Coverage"
+        indexable: true
+        
+      - href: "/runs"
+        label: "Curated Runs"
+        indexable: false
+        note: "Not indexed (list page)"
+
+  community:
+    title: "Community"
+    links:
+      - href: "https://github.com/Coregentis/MPLP-Protocol"
+        label: "GitHub"
+        external: true
+        
+      - href: "https://www.mplp.io"
+        label: "Protocol Website"
+        external: true
+        
+      - href: "https://docs.mplp.io"
+        label: "Documentation"
+        external: true
+
+# =============================================================================
+# HOME PAGE NAVIGATION CARDS
+# =============================================================================
+home_cards:
+  resource_cards:
+    - href: "/adjudication"
+      title: "Adjudication Bundles"
+      description: "Browse verdict hashes & recheck status"
+      
+    - href: "/runs"
+      title: "Curated Runs"
+      description: "MPLP evidence packs for third-party verification"
+      
+    - href: "/rulesets"
+      title: "Rulesets"
+      description: "Versioned decision logic"
+      
+    - href: "/coverage"
+      title: "Test Vector Coverage"
+      description: "D1-D4 domain coverage matrix"
+
+  governance_cards:
+    - href: "/about"
+      title: "About"
+      description: "Four Boundaries & scope"
+      
+    - href: "/guarantees"
+      title: "Lifecycle Guarantees"
+      description: "LG-01~05 adjudication targets"
+      
+    - href: "/policies/contract"
+      title: "Export Contract"
+      description: "Pack structure & recheck"
+
+# =============================================================================
+# COVERAGE PAGE NAVIGATION CARDS
+# =============================================================================
+coverage_cards:
+  - href: "/coverage/adjudication"
+    title: "Adjudication Coverage Matrix"
+    description: "Substrate × GF/Domain matrix with clickable verdicts"
+    
+  - href: "/adjudication"
+    title: "All Adjudication Bundles"
+    description: "Browse bundles, verdict hashes & recheck status"
+
+# =============================================================================
+# CROSS-PAGE LINKS (Policy inter-linking)
+# =============================================================================
+cross_links:
+  coverage_adjudication:
+    - href: "/policies/substrate-scope"
+      label: "Admission criteria →"
+      
+    - href: "/coverage"
+      label: "← Test Vector Coverage"
+      
+    - href: "/adjudication"
+      label: "All Adjudications"
+      
+    - href: "/policies/intake"
+      label: "Intake Policy"
+
+  policies_intake:
+    - href: "/runs"
+      label: "Curated Runs"
+      
+    - href: "/adjudication"
+      label: "Adjudication Bundles"
+      
+    - href: "/policies/contract"
+      label: "Export Contract"
+
+  policies_substrate_scope:
+    - href: "/coverage/adjudication"
+      label: "← Adjudication Coverage"
+      
+    - href: "/policies/intake"
+      label: "Intake Policy →"
+
+# =============================================================================
+# DISALLOWED ROUTES (CI Gate: must NOT appear in UI)
+# =============================================================================
+disallowed_routes:
+  - "/api"
+  - "/builder"
+  - "/statement"
+  - "/examples"
+  - "/_next"
+  - "/_data"
+
+# =============================================================================
+# INDEXING POLICY (Cross-reference with sitemap/robots)
+# =============================================================================
+indexing_policy:
+  indexable:
+    - "/"
+    - "/about"
+    - "/adjudication"
+    - "/coverage"
+    - "/coverage/adjudication"
+    - "/rulesets"
+    - "/guarantees"
+    - "/policies/contract"
+    - "/policies/intake"
+    - "/policies/substrate-scope"
+    
+  noindex:
+    - "/runs"
+    - "/runs/[run_id]"
+    - "/runs/[run_id]/replay"
+    - "/runs/[run_id]/evidence"
+    - "/rulesets/[version]"
+    - "/adjudication/[run_id]"
+    
+  disallow:
+    - "/api"
+    - "/builder"
+    - "/statement"
+    - "/examples"
