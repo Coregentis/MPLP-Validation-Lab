@@ -1,0 +1,337 @@
+# Gates Registry - v0.5
+#
+# SSOT for all CI gates and their relationship to routes and truth sources.
+# Gate IDs are canonical (matching npm scripts exactly).
+#
+# Governance: REPO_SHAPE.md / VLAB-DGB-01
+
+version: "0.5"
+schema_version: "1.0.0"
+description: |
+  Registry of all CI gates with their entrypoints, verification targets,
+  applicable routes, and truth source dependencies.
+  
+  Gate ID naming convention:
+  - scripts/gates/*.mjs: gate:{name} (e.g., gate:registry, gate:ptm)
+  - lib/gates/*.ts: gate:{number} (e.g., gate:04, gate:05) - to be renamed to lib/runtime-checks
+
+# =============================================================================
+# Gate Definitions
+# =============================================================================
+
+gates:
+  # ---------------------------------------------------------------------------
+  # Terminology & Language Gates
+  # ---------------------------------------------------------------------------
+  - gate_id: "gate:terminology"
+    entrypoint: "scripts/gates/terminology-gate.mjs"
+    npm_script: null  # run directly with node
+    verifies:
+      - "LG-xx displayed in external UI (not GF-xx)"
+      - "No 'Golden Flow' in external display"
+    applies_to_routes:
+      - "/runs"
+      - "/runs/*"
+      - "/guarantees"
+    depends_on:
+      - "ts.terminology"
+    failure_impact: "Terminology collision with main repo"
+
+  - gate_id: "gate:04"
+    entrypoint: "lib/gates/gate-04-language.ts"
+    npm_script: "gate:04"
+    verifies:
+      - "Non-endorsement language compliance"
+    applies_to_routes:
+      - "/*"
+    depends_on: []
+    failure_impact: "Endorsement boundary violation"
+
+  - gate_id: "gate:05"
+    entrypoint: "lib/gates/gate-05-no-exec-hosting.ts"
+    npm_script: "gate:05"
+    verifies:
+      - "No execution hosting claims"
+    applies_to_routes:
+      - "/*"
+    depends_on: []
+    failure_impact: "Execution hosting boundary violation"
+
+  # ---------------------------------------------------------------------------
+  # Policy Gates
+  # ---------------------------------------------------------------------------
+  - gate_id: "gate:06"
+    entrypoint: "lib/gates/gate-06-robots-policy.ts"
+    npm_script: "gate:06"
+    verifies:
+      - "Run detail pages have noindex by default"
+    applies_to_routes:
+      - "/runs/*"
+    depends_on: []
+    failure_impact: "SEO policy violation"
+
+  - gate_id: "gate:07"
+    entrypoint: "lib/gates/gate-07-pii-leak.ts"
+    npm_script: "gate:07"
+    verifies:
+      - "No PII leaks in evidence"
+    applies_to_routes:
+      - "/runs/*"
+    depends_on:
+      - "ts.run_bundles"
+    failure_impact: "Privacy violation"
+
+  # ---------------------------------------------------------------------------
+  # Curated Runs Gates
+  # ---------------------------------------------------------------------------
+  - gate_id: "gate:08"
+    entrypoint: "lib/gates/gate-08-curated-immutability.ts"
+    npm_script: "gate:08"
+    verifies:
+      - "Curated runs are immutable"
+    applies_to_routes:
+      - "/runs"
+    depends_on:
+      - "ts.curated_allowlist"
+      - "ts.run_bundles"
+    failure_impact: "Evidence reproducibility broken"
+
+  - gate_id: "gate:curated-runs"
+    entrypoint: "scripts/gates/curated-runs-closure.mjs"
+    npm_script: "gate:curated-runs"
+    verifies:
+      - "All curated runs are adjudicable"
+      - "No missing reason codes"
+    applies_to_routes:
+      - "/runs"
+      - "/runs/*"
+    depends_on:
+      - "ts.curated_allowlist"
+      - "ts.registry"
+    failure_impact: "Run evaluation broken"
+
+  - gate_id: "gate:09"
+    entrypoint: "lib/gates/gate-09-ssot-projection.ts"
+    npm_script: "gate:09"
+    verifies:
+      - "UI projection matches SSOT"
+    applies_to_routes:
+      - "/runs"
+    depends_on:
+      - "ts.curated_allowlist"
+      - "ts.curated_json"
+    failure_impact: "UI/data drift"
+
+  - gate_id: "gate:10"
+    entrypoint: "lib/gates/gate-10-curated-invariants.ts"
+    npm_script: "gate:10"
+    verifies:
+      - "Curated runs meet invariants"
+    applies_to_routes:
+      - "/runs/*"
+    depends_on:
+      - "ts.run_bundles"
+    failure_impact: "Invariant violation"
+
+  # ---------------------------------------------------------------------------
+  # Registry & Ruleset Gates
+  # ---------------------------------------------------------------------------
+  - gate_id: "gate:registry"
+    entrypoint: "scripts/gates/registry-contract.mjs"
+    npm_script: "gate:registry"
+    verifies:
+      - "All rulesets loadable from registry"
+      - "Each ruleset has adjudicator"
+    applies_to_routes:
+      - "/rulesets"
+      - "/rulesets/*"
+    depends_on:
+      - "ts.registry"
+      - "ts.ruleset_manifests"
+    failure_impact: "Ruleset loading broken"
+
+  - gate_id: "gate:reason-codes"
+    entrypoint: "scripts/gates/reason-codes.mjs"
+    npm_script: "gate:reason-codes"
+    verifies:
+      - "All reason codes are in taxonomy"
+    applies_to_routes:
+      - "/runs/*"
+    depends_on:
+      - "ts.run_bundles"
+    failure_impact: "Unknown reason codes in verdicts"
+
+  # ---------------------------------------------------------------------------
+  # Shadow Parity & Consistency Gates
+  # ---------------------------------------------------------------------------
+  - gate_id: "gate:shadow-parity"
+    entrypoint: "scripts/gates/shadow-parity.mjs"
+    npm_script: "gate:shadow-parity"
+    verifies:
+      - "Lab verdict = local recompute verdict"
+    applies_to_routes:
+      - "/runs/*"
+    depends_on:
+      - "ts.runsets"
+      - "ts.registry"
+    failure_impact: "Third-party reproducibility broken"
+
+  - gate_id: "gate:runset-consistency"
+    entrypoint: "scripts/gates/runset-consistency.mjs"
+    npm_script: "gate:runset-consistency"
+    verifies:
+      - "Curated and cross-substrate sets are disjoint"
+    applies_to_routes:
+      - "/runs"
+    depends_on:
+      - "ts.runsets"
+    failure_impact: "Runset integrity violation"
+
+  # ---------------------------------------------------------------------------
+  # v0.5 Signing & Key Gates
+  # ---------------------------------------------------------------------------
+  - gate_id: "gate:proof-signature"
+    entrypoint: "scripts/gates/proof-signature.mjs"
+    npm_script: "gate:proof-signature"
+    verifies:
+      - "All proofs are signed and verifiable"
+    applies_to_routes:
+      - "/runs/*"
+    depends_on:
+      - "ts.identity"
+      - "ts.run_bundles"
+    failure_impact: "Signature chain broken"
+
+  - gate_id: "gate:key-policy"
+    entrypoint: "scripts/gates/key-policy.mjs"
+    npm_script: "gate:key-policy"
+    verifies:
+      - "Signing keys comply with key policy"
+      - "No revoked keys accepted"
+    applies_to_routes:
+      - "/"
+      - "/about"
+    depends_on:
+      - "ts.identity"
+    failure_impact: "Key governance violation"
+
+  - gate_id: "gate:secret-hygiene"
+    entrypoint: "scripts/gates/secret-hygiene.mjs"
+    npm_script: "gate:secret-hygiene"
+    verifies:
+      - "No private keys in repository"
+    applies_to_routes: []
+    depends_on: []
+    failure_impact: "Secret leak"
+
+  # ---------------------------------------------------------------------------
+  # v0.5 Cross-Substrate Gates
+  # ---------------------------------------------------------------------------
+  - gate_id: "gate:cross-substrate"
+    entrypoint: "scripts/gates/cross-substrate-repro.mjs"
+    npm_script: "gate:cross-substrate"
+    verifies:
+      - "Cross-platform reproduction parity"
+      - "Clause vector parity across substrates"
+    applies_to_routes:
+      - "/examples/evidence-producers/*"
+    depends_on:
+      - "ts.producer_manifests"
+      - "ts.producer_packs"
+    failure_impact: "Cross-substrate reproducibility broken"
+
+  - gate_id: "gate:test-vectors-coverage"
+    entrypoint: "scripts/gates/test-vectors-coverage.mjs"
+    npm_script: "gate:test-vectors-coverage"
+    verifies:
+      - "Test vector coverage per domain"
+    applies_to_routes:
+      - "/coverage"
+    depends_on:
+      - "ts.test_vectors_allowlist"
+      - "ts.test_vectors"
+    failure_impact: "Test coverage gap"
+
+  - gate_id: "gate:canonptr-coverage"
+    entrypoint: "scripts/gates/canonptr-coverage.mjs"
+    npm_script: "gate:canonptr-coverage"
+    verifies:
+      - "CanonPtr v1 coverage in cross-substrate packs"
+    applies_to_routes:
+      - "/examples/evidence-producers/*"
+    depends_on:
+      - "ts.producer_packs"
+    failure_impact: "CanonPtr not universal"
+
+  - gate_id: "gate:portable-hash-parity"
+    entrypoint: "scripts/gates/portable-hash-parity.mjs"
+    npm_script: "gate:portable-hash-parity"
+    verifies:
+      - "Portable verdict hash parity across substrates"
+    applies_to_routes:
+      - "/examples/evidence-producers/*"
+    depends_on:
+      - "ts.producer_packs"
+    failure_impact: "Hash parity broken"
+
+  # ---------------------------------------------------------------------------
+  # PTM Gate
+  # ---------------------------------------------------------------------------
+  - gate_id: "gate:ptm"
+    entrypoint: "scripts/gates/page-truth-map.mjs"
+    npm_script: "gate:ptm"
+    verifies:
+      - "Page Truth Map coverage = 18/18"
+      - "Each route has truth source"
+      - "Each route has gate or exemption"
+    applies_to_routes:
+      - "/*"
+    depends_on:
+      - "governance/registry/ROUTES.yaml"
+      - "governance/registry/TRUTH_SOURCES.yaml"
+      - "governance/registry/GATES.yaml"
+    failure_impact: "PTM coverage gap"
+
+  # ---------------------------------------------------------------------------
+  # Upstream Sync Gates
+  # ---------------------------------------------------------------------------
+  - gate_id: "gate:vlab:00"
+    entrypoint: "scripts/gates/verify-upstream-pin.ts"
+    npm_script: "gate:vlab:00"
+    verifies:
+      - "Upstream pin is valid"
+    applies_to_routes: []
+    depends_on: []
+    failure_impact: "Upstream sync broken"
+
+  - gate_id: "gate:vlab:01"
+    entrypoint: "scripts/gates/verify-schema-alignment.ts"
+    npm_script: "gate:vlab:01"
+    verifies:
+      - "Schemas aligned with upstream"
+    applies_to_routes: []
+    depends_on: []
+    failure_impact: "Schema drift"
+
+# =============================================================================
+# Exemptions (routes with no gate, must have explicit reason)
+# =============================================================================
+
+exemptions:
+  - route: "/builder"
+    reason: "Development tool, no production data dependency"
+    
+  - route: "/adjudication"
+    reason: "Entry page only, detail pages covered by /runs/* gates"
+
+# =============================================================================
+# Summary
+# =============================================================================
+
+summary:
+  total_gates: 23
+  by_location:
+    scripts_gates: 14
+    lib_gates: 9
+  covered_routes: 16
+  exempted_routes: 2

@@ -1,0 +1,233 @@
+# Route Registry - v0.5
+#
+# SSOT for all Validation Lab UI routes.
+# Defines: route path, introduction version, surface type, priority, family grouping.
+#
+# Governance: REPO_SHAPE.md / VLAB-DGB-01
+
+version: "0.5"
+schema_version: "1.0.0"
+generated_at: null  # Set by generator if auto-generated
+description: |
+  Complete route registry for Validation Lab.
+  All UI routes must be registered here with their truth sources and validation strategy.
+
+# =============================================================================
+# Route Definitions (18 routes)
+# =============================================================================
+
+routes:
+  # ---------------------------------------------------------------------------
+  # Home & Static Pages (v0.1)
+  # ---------------------------------------------------------------------------
+  - route: "/"
+    introduced_in: "v0.1"
+    surface_type: "home"
+    priority: "P0"
+    ptm_validation: "static"
+    description: "Validation Lab home page"
+
+  - route: "/about"
+    introduced_in: "v0.1"
+    surface_type: "static"
+    priority: "P2"
+    ptm_validation: "static"
+    description: "About Validation Lab"
+
+  - route: "/statement"
+    introduced_in: "v0.1"
+    surface_type: "static"
+    priority: "P2"
+    ptm_validation: "static"
+    description: "Non-endorsement statement"
+
+  # ---------------------------------------------------------------------------
+  # Runs (v0.2)
+  # ---------------------------------------------------------------------------
+  - route: "/runs"
+    introduced_in: "v0.2"
+    surface_type: "runs"
+    priority: "P0"
+    ptm_validation: "static"
+    description: "Curated runs index"
+
+  - route: "/runs/[run_id]"
+    introduced_in: "v0.2"
+    surface_type: "runs"
+    priority: "P0"
+    route_family: true
+    family_pattern: "/runs/*"
+    ptm_validation: "sampled"
+    rendered_samples:
+      selector: "runsets.curated"
+      count: 3
+      samples:
+        - "arb-d1-budget-pass-fixture-v0.3"
+        - "arb-d1-budget-fail-outcome-invalid-v0.4"
+        - "v05-d1-langgraph-pass-budget-allow"
+    description: "Run detail page"
+
+  - route: "/runs/[run_id]/replay"
+    introduced_in: "v0.3"
+    surface_type: "runs"
+    priority: "P1"
+    route_family: true
+    family_pattern: "/runs/*/replay"
+    ptm_validation: "sampled"
+    rendered_samples:
+      selector: "runsets.curated"
+      count: 2
+      samples:
+        - "arb-d1-budget-pass-fixture-v0.3"
+        - "arb-d1-budget-fail-fixture-v0.3"
+    description: "Run replay page with timeline"
+
+  - route: "/runs/[run_id]/evidence"
+    introduced_in: "v0.3"
+    surface_type: "runs"
+    priority: "P1"
+    route_family: true
+    family_pattern: "/runs/*/evidence"
+    ptm_validation: "sampled"
+    rendered_samples:
+      selector: "runsets.curated"
+      count: 2
+      samples:
+        - "arb-d1-budget-pass-fixture-v0.3"
+        - "arb-d1-budget-fail-outcome-invalid-v0.4"
+    description: "Run evidence detail page"
+
+  # ---------------------------------------------------------------------------
+  # Guarantees (v0.2)
+  # ---------------------------------------------------------------------------
+  - route: "/guarantees"
+    introduced_in: "v0.2"
+    surface_type: "guarantees"
+    priority: "P1"
+    ptm_validation: "static"
+    description: "Lifecycle Guarantees (LG-01~05) overview"
+
+  # ---------------------------------------------------------------------------
+  # Rulesets (v0.3)
+  # ---------------------------------------------------------------------------
+  - route: "/rulesets"
+    introduced_in: "v0.3"
+    surface_type: "rulesets"
+    priority: "P1"
+    ptm_validation: "static"
+    description: "Rulesets index"
+
+  - route: "/rulesets/[version]"
+    introduced_in: "v0.3"
+    surface_type: "rulesets"
+    priority: "P1"
+    route_family: true
+    family_pattern: "/rulesets/*"
+    ptm_validation: "sampled"
+    rendered_samples:
+      selector: "rulesets_required"
+      count: 3
+      samples:
+        - "ruleset-1.0"
+        - "ruleset-1.1"
+        - "ruleset-1.2"
+    description: "Ruleset detail page"
+
+  # ---------------------------------------------------------------------------
+  # Adjudication (v0.3)
+  # ---------------------------------------------------------------------------
+  - route: "/adjudication"
+    introduced_in: "v0.3"
+    surface_type: "adjudication"
+    priority: "P2"
+    ptm_validation: "static"
+    description: "Adjudication entry page"
+
+  - route: "/adjudication/[run_id]"
+    introduced_in: "v0.3"
+    surface_type: "adjudication"
+    priority: "P2"
+    route_family: true
+    family_pattern: "/adjudication/*"
+    ptm_validation: "sampled"
+    rendered_samples:
+      selector: "runsets.curated"
+      count: 2
+      samples:
+        - "arb-d1-budget-pass-fixture-v0.3"
+        - "arb-d1-budget-fail-fixture-v0.3"
+    description: "Adjudication detail page"
+
+  # ---------------------------------------------------------------------------
+  # Policies (v0.3)
+  # ---------------------------------------------------------------------------
+  - route: "/policies/contract"
+    introduced_in: "v0.3"
+    surface_type: "policies"
+    priority: "P2"
+    ptm_validation: "static"
+    description: "Evidence pack contract policy"
+
+  - route: "/policies/strength"
+    introduced_in: "v0.3"
+    surface_type: "policies"
+    priority: "P2"
+    ptm_validation: "static"
+    description: "Evidence strength policy"
+
+  # ---------------------------------------------------------------------------
+  # Builder & Coverage (v0.4)
+  # ---------------------------------------------------------------------------
+  - route: "/builder"
+    introduced_in: "v0.4"
+    surface_type: "tools"
+    priority: "P3"
+    ptm_validation: "static"
+    description: "Evidence pack builder tool"
+
+  - route: "/coverage"
+    introduced_in: "v0.4"
+    surface_type: "tools"
+    priority: "P2"
+    ptm_validation: "static"
+    description: "Test coverage overview"
+
+  # ---------------------------------------------------------------------------
+  # Examples - Cross-Substrate Producers (v0.5)
+  # ---------------------------------------------------------------------------
+  - route: "/examples/evidence-producers/[substrate]"
+    introduced_in: "v0.5"
+    surface_type: "examples"
+    priority: "P1"
+    route_family: true
+    family_pattern: "/examples/evidence-producers/*"
+    ptm_validation: "sampled"
+    rendered_samples:
+      selector: "producers"
+      count: 3
+      samples:
+        - "langgraph"
+        - "autogen"
+        - "sk"
+    description: "Cross-substrate evidence producer examples"
+
+# =============================================================================
+# Summary
+# =============================================================================
+
+summary:
+  total_routes: 18
+  by_version:
+    v0.1: 3
+    v0.2: 3
+    v0.3: 7
+    v0.4: 2
+    v0.5: 1
+  by_validation:
+    static: 10
+    sampled: 8
+  by_priority:
+    P0: 3
+    P1: 7
+    P2: 6
+    P3: 2

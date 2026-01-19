@@ -115,3 +115,32 @@ totals:
   cross_substrate: 24
   test_vectors: 40
   all_unique: 87
+
+# ============================================================================
+# Source Paths (for truth source resolution)
+# ============================================================================
+
+source_paths:
+  curated: "data/runs/"
+  cross_substrate: "producers/*/packs/"
+  test_vectors: "test-vectors/v0.5/vectors/"
+
+# ============================================================================
+# Consumer References (routes that consume this SSOT)
+# ============================================================================
+
+consumers:
+  ui_routes:
+    - "/runs"
+    - "/runs/*"
+    - "/coverage"
+    - "/examples/evidence-producers/*"
+  gates:
+    - "gate:curated-runs"
+    - "gate:runset-consistency"
+    - "gate:shadow-parity"
+    - "gate:cross-substrate"
+    - "gate:test-vectors-coverage"
+  ptm:
+    - "governance/page-truth/ptm-0.5.yaml"
+

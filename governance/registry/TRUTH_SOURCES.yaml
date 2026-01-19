@@ -1,0 +1,222 @@
+# Truth Sources Registry - v0.5
+#
+# SSOT for all truth sources used by Validation Lab.
+# Each truth source has a canonical ID and resolver strategy.
+#
+# Governance: REPO_SHAPE.md / VLAB-DGB-01
+
+version: "0.5"
+schema_version: "1.0.0"
+description: |
+  Registry of all truth sources referenced by PTM and gates.
+  Every truth source must be registered with its resolver type and audit output location.
+
+# =============================================================================
+# Audit Configuration
+# =============================================================================
+
+audit:
+  output_file: "artifacts/truth-source-inventory.json"
+  include_glob_expansion: true
+  include_file_hashes: true
+
+# =============================================================================
+# Truth Source Definitions
+# =============================================================================
+
+sources:
+  # ---------------------------------------------------------------------------
+  # L1 Governance: Identity & Policies
+  # ---------------------------------------------------------------------------
+  ts.identity:
+    path: "verifier/VERIFIER_IDENTITY.json"
+    resolver: "file"
+    type: "json"
+    description: "Verifier identity, signing keys, and key policy"
+    used_by_routes:
+      - "/"
+      - "/about"
+    
+  ts.terminology:
+    path: "governance/TERMINOLOGY_MAPPING.md"
+    resolver: "file"
+    type: "markdown"
+    description: "LG/GF terminology mapping (frozen)"
+    used_by_routes:
+      - "/guarantees"
+      - "/runs/*"
+    
+  ts.dgb:
+    path: "governance/VLAB-DGB-01.md"
+    resolver: "file"
+    type: "markdown"
+    description: "Development Governance Baseline"
+    used_by_routes:
+      - "/statement"
+      - "/"
+
+  # ---------------------------------------------------------------------------
+  # L1 Governance: Contracts
+  # ---------------------------------------------------------------------------
+  ts.contracts:
+    paths:
+      - "governance/contracts/evidence-pack-contract-v1.0.md"
+      - "governance/contracts/evidence-pack-contract-v1.1.md"
+      - "governance/contracts/admission-criteria-v1.0.md"
+      - "governance/contracts/ruleset-contract-v1.0.md"
+      - "governance/contracts/pointer-contract-v1.0.md"
+    resolver: "file_list"
+    type: "markdown"
+    description: "Evidence pack and ruleset contracts"
+    used_by_routes:
+      - "/policies/contract"
+
+  ts.strength:
+    path: "governance/evidence/EVIDENCE_STRENGTH.md"
+    resolver: "file"
+    type: "markdown"
+    description: "Evidence strength policy (E-A/E-B/E-S)"
+    used_by_routes:
+      - "/policies/strength"
+
+  # ---------------------------------------------------------------------------
+  # L2 Data: Runsets
+  # ---------------------------------------------------------------------------
+  ts.runsets:
+    path: "governance/runsets.yaml"
+    resolver: "file"
+    type: "yaml"
+    description: "Runsets SSOT (curated / cross_substrate / test_vectors)"
+    used_by_routes:
+      - "/runs"
+      - "/runs/*"
+      - "/coverage"
+
+  ts.curated_allowlist:
+    path: "data/curated-runs/allowlist.yaml"
+    resolver: "file"
+    type: "yaml"
+    description: "Curated runs allowlist"
+    used_by_routes:
+      - "/runs"
+
+  ts.curated_json:
+    path: "public/_data/curated-runs.json"
+    resolver: "file"
+    type: "json"
+    description: "Generated curated runs data for UI"
+    used_by_routes:
+      - "/runs"
+
+  # ---------------------------------------------------------------------------
+  # L2 Data: Rulesets
+  # ---------------------------------------------------------------------------
+  ts.registry:
+    path: "lib/rulesets/registry.ts"
+    resolver: "module_export"
+    type: "code"
+    exports:
+      - "getRuleset"
+      - "getAllRulesets"
+    description: "Ruleset registry (code module)"
+    used_by_routes:
+      - "/rulesets"
+      - "/rulesets/*"
+      - "/runs/*"
+
+  ts.ruleset_manifests:
+    path: "data/rulesets/*/manifest.yaml"
+    resolver: "glob"
+    type: "yaml"
+    audit_output: "artifacts/truth-source-inventory.json#ts.ruleset_manifests"
+    description: "Ruleset manifest files"
+    used_by_routes:
+      - "/rulesets"
+      - "/rulesets/*"
+
+  # ---------------------------------------------------------------------------
+  # L2 Data: Run Bundles
+  # ---------------------------------------------------------------------------
+  ts.run_bundles:
+    path: "data/runs/*"
+    resolver: "glob"
+    type: "directory"
+    audit_output: "artifacts/truth-source-inventory.json#ts.run_bundles"
+    description: "Curated run bundle directories"
+    used_by_routes:
+      - "/runs/*"
+      - "/runs/*/replay"
+      - "/runs/*/evidence"
+
+  # ---------------------------------------------------------------------------
+  # L2 Data: Cross-Substrate Producers (v0.5)
+  # ---------------------------------------------------------------------------
+  ts.producer_contract:
+    path: "producers/contract/PRODUCER_CONTRACT.md"
+    resolver: "file"
+    type: "markdown"
+    description: "Cross-substrate producer contract"
+    used_by_routes:
+      - "/examples/evidence-producers/*"
+
+  ts.producer_manifests:
+    path: "producers/*/manifest.yaml"
+    resolver: "glob"
+    type: "yaml"
+    audit_output: "artifacts/truth-source-inventory.json#ts.producer_manifests"
+    description: "Producer manifest files for each substrate"
+    used_by_routes:
+      - "/examples/evidence-producers/*"
+
+  ts.producer_packs:
+    path: "producers/*/packs/*"
+    resolver: "glob"
+    type: "directory"
+    audit_output: "artifacts/truth-source-inventory.json#ts.producer_packs"
+    description: "Cross-substrate evidence packs"
+    used_by_routes:
+      - "/examples/evidence-producers/*"
+
+  # ---------------------------------------------------------------------------
+  # L2 Data: Test Vectors (v0.5)
+  # ---------------------------------------------------------------------------
+  ts.test_vectors_allowlist:
+    path: "test-vectors/v0.5/allowlist-v0.5.yaml"
+    resolver: "file"
+    type: "yaml"
+    description: "Test vectors allowlist"
+    used_by_routes:
+      - "/coverage"
+
+  ts.test_vectors:
+    path: "test-vectors/v0.5/vectors/*"
+    resolver: "glob"
+    type: "directory"
+    audit_output: "artifacts/truth-source-inventory.json#ts.test_vectors"
+    description: "Public test vector packs"
+    used_by_routes:
+      - "/coverage"
+
+  # ---------------------------------------------------------------------------
+  # L4 UI: Schemas (for builder)
+  # ---------------------------------------------------------------------------
+  ts.pack_schema:
+    path: "lib/schemas/evidence-pack/*.yaml"
+    resolver: "glob"
+    type: "yaml"
+    audit_output: "artifacts/truth-source-inventory.json#ts.pack_schema"
+    description: "Evidence pack JSON schemas"
+    used_by_routes:
+      - "/builder"
+
+# =============================================================================
+# Summary
+# =============================================================================
+
+summary:
+  total_sources: 18
+  by_resolver:
+    file: 9
+    file_list: 1
+    glob: 7
+    module_export: 1
