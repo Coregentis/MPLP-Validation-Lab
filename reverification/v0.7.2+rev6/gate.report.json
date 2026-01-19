@@ -1,0 +1,37 @@
+{
+  "total": 6,
+  "passed": 6,
+  "failed": 0,
+  "results": [
+    {
+      "id": "04",
+      "name": "language",
+      "status": "PASS"
+    },
+    {
+      "id": "05",
+      "name": "no-exec-hosting",
+      "status": "PASS"
+    },
+    {
+      "id": "06",
+      "name": "robots-policy",
+      "status": "PASS"
+    },
+    {
+      "id": "07",
+      "name": "pii-leak",
+      "status": "PASS"
+    },
+    {
+      "id": "09",
+      "name": "ssot-projection",
+      "status": "PASS"
+    },
+    {
+      "id": "10",
+      "name": "curated-invariants",
+      "status": "PASS"
+    }
+  ]
+}

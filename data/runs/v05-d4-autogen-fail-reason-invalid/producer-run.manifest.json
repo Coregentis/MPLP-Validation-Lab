@@ -1,0 +1,18 @@
+{
+  "producer_id": "autogen",
+  "substrate": "autogen",
+  "version": "0.5.2",
+  "substrate_version": "langgraph@0.2.0",
+  "run_id": "v05-d4-autogen-fail-reason-invalid",
+  "generated_at": "2026-01-19T03:08:07.389Z",
+  "ruleset_ref": "ruleset-1.2",
+  "scenario": "d4-reason-invalid",
+  "expected_verdict": "FAIL",
+  "expected_reason_code": "D4_TERMINATION_REASON_NOT_IN_ALLOWED_SET",
+  "environment": {
+    "node_version": "v25.2.1",
+    "platform": "darwin",
+    "deterministic_seed": 42
+  },
+  "repro_command": "node producers/langgraph/run.mjs d4-reason-invalid"
+}

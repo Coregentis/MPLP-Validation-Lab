@@ -1,12 +1,101 @@
 {
   "gate_id": "GATE-04",
   "gate_name": "Non-endorsement Language Lint",
-  "status": "PASS",
-  "evaluated_at": "2026-01-11T09:41:35.310Z",
-  "findings": [],
+  "status": "FAIL",
+  "evaluated_at": "2026-01-16T03:34:46.956Z",
+  "findings": [
+    {
+      "file": "app/_shared/VerdictHashBadge.tsx",
+      "line": 2,
+      "column": 15,
+      "match": "badge",
+      "rule": "FORBIDDEN_TERM",
+      "message": "Forbidden term implies certification/endorsement risk"
+    },
+    {
+      "file": "app/_shared/VerdictHashBadge.tsx",
+      "line": 12,
+      "column": 22,
+      "match": "badge",
+      "rule": "FORBIDDEN_TERM",
+      "message": "Forbidden term implies certification/endorsement risk"
+    },
+    {
+      "file": "app/_shared/VerdictHashBadge.tsx",
+      "line": 18,
+      "column": 28,
+      "match": "badge",
+      "rule": "FORBIDDEN_TERM",
+      "message": "Forbidden term implies certification/endorsement risk"
+    },
+    {
+      "file": "app/_shared/VerdictHashBadge.tsx",
+      "line": 18,
+      "column": 78,
+      "match": "badge",
+      "rule": "FORBIDDEN_TERM",
+      "message": "Forbidden term implies certification/endorsement risk"
+    },
+    {
+      "file": "app/adjudication/[run_id]/page.tsx",
+      "line": 112,
+      "column": 37,
+      "match": "badge",
+      "rule": "FORBIDDEN_TERM",
+      "message": "Forbidden term implies certification/endorsement risk"
+    },
+    {
+      "file": "app/adjudication/page.tsx",
+      "line": 5,
+      "column": 42,
+      "match": "certification",
+      "rule": "FORBIDDEN_TERM",
+      "message": "Forbidden term implies certification/endorsement risk"
+    },
+    {
+      "file": "app/adjudication/page.tsx",
+      "line": 94,
+      "column": 57,
+      "match": "badge",
+      "rule": "FORBIDDEN_TERM",
+      "message": "Forbidden term implies certification/endorsement risk"
+    },
+    {
+      "file": "app/adjudication/page.tsx",
+      "line": 5,
+      "column": 56,
+      "match": "ranking",
+      "rule": "FORBIDDEN_TERM",
+      "message": "Forbidden term implies certification/endorsement risk"
+    },
+    {
+      "file": "app/runs/[run_id]/_components/EvidencePackBrowser.tsx",
+      "line": 31,
+      "column": 42,
+      "match": "badge",
+      "rule": "FORBIDDEN_TERM",
+      "message": "Forbidden term implies certification/endorsement risk"
+    },
+    {
+      "file": "app/runs/[run_id]/_components/StateDiffPanel.tsx",
+      "line": 78,
+      "column": 47,
+      "match": "badge",
+      "rule": "FORBIDDEN_TERM",
+      "message": "Forbidden term implies certification/endorsement risk"
+    },
+    {
+      "file": "app/runs/[run_id]/_components/TimelinePanel.tsx",
+      "line": 63,
+      "column": 52,
+      "match": "badge",
+      "rule": "FORBIDDEN_TERM",
+      "message": "Forbidden term implies certification/endorsement risk"
+    }
+  ],
   "summary": {
-    "files_scanned": 188,
-    "matches": 0,
-    "note": "excludeDirs: node_modules, .next, dist, coverage, .git, artifacts, policy, governance"
+    "files_scanned": 46,
+    "matches": 11,
+    "note": "scope: PUBLIC_SURFACE only (app, components, public)"
   }
 }

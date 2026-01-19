@@ -1,0 +1,13 @@
+{
+  "vector_id": "v05-d4-fail-uncontrolled-recovery",
+  "domain": "D4",
+  "expected_topline": "FAIL",
+  "expected_reason_code": "D4_TERMINATION_REASON_NOT_IN_ALLOWED_SET",
+  "ruleset_ref": "ruleset-1.2",
+  "protocol_pin": "2025-draft",
+  "schema_version": "1.0.0",
+  "description": "Uncontrolled recovery after termination",
+  "hash_scope": [
+    "pack/trace/events.ndjson"
+  ]
+}

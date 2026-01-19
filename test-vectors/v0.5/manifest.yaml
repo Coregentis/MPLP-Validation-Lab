@@ -1,0 +1,99 @@
+# Test Vectors v0.5
+# 
+# Public, standardized test vectors for MPLP Protocol adjudication.
+# Each vector is a complete evidence pack that can be:
+#   1. Adjudicated by ruleset-1.2
+#   2. Shadow-validated for parity
+#   3. Signed and verified
+#
+# Coverage Target: ≥5 PASS + ≥5 FAIL per domain (D1-D4)
+
+version: "0.5"
+created_at: "2026-01-18T00:00:00Z"
+ruleset_ref: "ruleset-1.2"
+protocol_pin: "2025-draft"
+schema_version: "1.0.0"
+
+description: |
+  v0.5 Test Vectors provide a standardized, publicly-verifiable set of
+  evidence packs for third-party validation. Any party can:
+  - Download vectors and verify independently
+  - Generate signed proofs using the public verifier CLI
+  - Compare their adjudication results with Lab baseline
+
+# ============================================================================
+# Coverage Requirements (Gate Enforced)
+# ============================================================================
+
+coverage_requirements:
+  per_domain:
+    min_pass: 5
+    min_fail: 5
+  total:
+    min_vectors: 40
+
+# ============================================================================
+# Vector Registry
+# ============================================================================
+
+domains:
+  D1:
+    name: "Budget Control"
+    description: "Budget decision events with allow/deny outcomes"
+    clauses:
+      - CL-D1-01  # Evidence presence
+      - CL-D1-02  # Outcome semantics
+      - CL-D1-03  # Gate invariants
+    vectors:
+      PASS: []  # Populated by gate scan
+      FAIL: []
+
+  D2:
+    name: "Lifecycle State"
+    description: "Agent lifecycle transitions and terminal states"
+    clauses:
+      - CL-D2-01
+      - CL-D2-02
+      - CL-D2-03
+    vectors:
+      PASS: []
+      FAIL: []
+
+  D3:
+    name: "AuthZ Decision"
+    description: "Authorization decisions with S/R/A triplets"
+    clauses:
+      - CL-D3-01
+      - CL-D3-02
+      - CL-D3-03
+    vectors:
+      PASS: []
+      FAIL: []
+
+  D4:
+    name: "Termination"
+    description: "Termination reasons and recovery controls"
+    clauses:
+      - CL-D4-01
+      - CL-D4-02
+      - CL-D4-03
+    vectors:
+      PASS: []
+      FAIL: []
+
+# ============================================================================
+# Hash Scope (for signed proofs)
+# ============================================================================
+
+hash_scope:
+  version: "1.0.0"
+  included:
+    - ruleset_id
+    - run_id
+    - topline_verdict
+    - reason_code
+    - clauses[].status
+    - clauses[].reason_code
+  excluded:
+    - evaluated_at
+    - metadata.generated_at

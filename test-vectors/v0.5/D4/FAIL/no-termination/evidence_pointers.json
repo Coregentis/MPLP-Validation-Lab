@@ -1,0 +1,28 @@
+{
+  "pointers": [
+    {
+      "requirement_id": "RQ-D1-01",
+      "artifact_path": "pack/trace/events.ndjson",
+      "locator": "event_id:evt-v05-d4-fail-no-termination-1",
+      "status": "PRESENT"
+    },
+    {
+      "requirement_id": "RQ-D2-01",
+      "artifact_path": "pack/trace/events.ndjson",
+      "locator": "event_id:evt-v05-d4-fail-no-termination-2",
+      "status": "PRESENT"
+    },
+    {
+      "requirement_id": "RQ-D3-01",
+      "artifact_path": "pack/trace/events.ndjson",
+      "locator": "event_id:evt-v05-d4-fail-no-termination-3",
+      "status": "PRESENT"
+    },
+    {
+      "requirement_id": "RQ-D4-01",
+      "artifact_path": "pack/trace/events.ndjson",
+      "locator": "event_id:evt-v05-d4-fail-no-termination-4",
+      "status": "PRESENT"
+    }
+  ]
+}

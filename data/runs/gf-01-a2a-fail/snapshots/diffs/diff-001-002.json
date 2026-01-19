@@ -1,0 +1,26 @@
+{
+    "from": "snapshots/snapshot-001.json",
+    "to": "snapshots/snapshot-002.json",
+    "ops": [
+        {
+            "op": "replace",
+            "path": "/state/trace_id",
+            "value": "fail-trace-001"
+        },
+        {
+            "op": "replace",
+            "path": "/state/status",
+            "value": "failed"
+        },
+        {
+            "op": "replace",
+            "path": "/state/loop_count",
+            "value": 3
+        },
+        {
+            "op": "add",
+            "path": "/state/error",
+            "value": "Loop guard triggered"
+        }
+    ]
+}

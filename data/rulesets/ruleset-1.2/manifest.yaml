@@ -1,0 +1,43 @@
+# Ruleset 1.2 Manifest
+# v0.4: Semantic Invariant Strength - 12 Clauses (3 per domain)
+
+id: ruleset-1.2
+version: "1.2.0"
+name: MPLP Validation Lab Ruleset (Semantic Invariant Adjudication)
+status: draft
+
+protocol:
+  version: "1.0.0"
+  upstream_commit: "877029514f87dd7da1dfb559c178ce57a935d975"
+  schemas_bundle_sha256: "99804832ddc3daefb92ec74120afaab1c3278e4a79d670e1f796e67f735463aa"
+  invariants_bundle_sha256: "d32ed8bd0139ba2197c618f8cc057dae15ba8cd5012b25946c1e20c07fd8ebe0"
+
+compatibility:
+  evidence_pack_contract: "1.0"
+  min_pack_version: "1.0"
+  max_pack_version: "1.x"
+
+# v0.4 Twelve-Clause Semantic Invariants
+# Pattern: Existence → Field Semantics → Gate/Post-action Invariant
+clauses:
+  # D1: Budget Decision Record
+  - CL-D1-01  # Decision evidence exists
+  - CL-D1-02  # Outcome is valid and locatable
+  - CL-D1-03  # Deny/throttle triggers gate enforcement
+
+  # D2: Terminal Lifecycle State
+  - CL-D2-01  # Terminal state evidence exists
+  - CL-D2-02  # Terminal state is in allowed set
+  - CL-D2-03  # No post-terminal execution events
+
+  # D3: Authorization Decision
+  - CL-D3-01  # Authz decision evidence exists
+  - CL-D3-02  # Subject/Resource/Action triple complete
+  - CL-D3-03  # Deny triggers confirm gate
+
+  # D4: Termination & Recovery
+  - CL-D4-01  # Termination evidence exists
+  - CL-D4-02  # Termination reason is valid category
+  - CL-D4-03  # Post-termination is controlled recovery only
+
+created_at: "2026-01-18T00:00:00Z"

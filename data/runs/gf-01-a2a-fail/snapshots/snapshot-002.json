@@ -1,0 +1,12 @@
+{
+    "snapshot_id": "snapshot-002",
+    "timestamp": "2026-01-16T09:00:03Z",
+    "state": {
+        "context_id": "fail-ctx-001",
+        "plan_id": "fail-plan-001",
+        "trace_id": "fail-trace-001",
+        "status": "failed",
+        "loop_count": 3,
+        "error": "Loop guard triggered"
+    }
+}

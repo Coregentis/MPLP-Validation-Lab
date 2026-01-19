@@ -1,0 +1,127 @@
+# Cross-Substrate Reproduction Matrix
+#
+# Defines which scenarios must exist across which substrates.
+# This is the SSOT for gate:cross-substrate-repro.
+#
+# For v0.5, we require:
+#   - 3 substrates minimum
+#   - Each domain (D1-D4) has at least 1 PASS + 1 FAIL per substrate
+#   - Same scenario across substrates must produce same verdict
+
+version: "0.5"
+schema_version: "1.0.0"
+
+# ============================================================================
+# Substrates
+# ============================================================================
+
+substrates:
+  langgraph:
+    name: "LangGraph/LangChain"
+    producer_path: "producers/langgraph"
+    status: "planned"
+  autogen:
+    name: "AutoGen / Magnetic-One"
+    producer_path: "producers/autogen"
+    status: "planned"
+  semantic-kernel:
+    name: "Semantic Kernel"
+    producer_path: "producers/semantic-kernel"
+    status: "planned"
+
+# ============================================================================
+# Scenarios
+# ============================================================================
+
+scenarios:
+  # D1: Budget Control
+  d1-budget-allow:
+    domain: "D1"
+    expected_verdict: "PASS"
+    description: "Valid budget allow decision"
+    substrates:
+      langgraph: "v05-d1-langgraph-pass-budget-allow"
+      autogen: "v05-d1-autogen-pass-budget-allow"
+      semantic-kernel: "v05-d1-sk-pass-budget-allow"
+
+  d1-budget-deny-invalid:
+    domain: "D1"
+    expected_verdict: "FAIL"
+    description: "Invalid budget outcome"
+    expected_reason_code: "D1_OUTCOME_INVALID"
+    substrates:
+      langgraph: "v05-d1-langgraph-fail-outcome-invalid"
+      autogen: "v05-d1-autogen-fail-outcome-invalid"
+      semantic-kernel: "v05-d1-sk-fail-outcome-invalid"
+
+  # D2: Lifecycle State
+  d2-terminal-success:
+    domain: "D2"
+    expected_verdict: "PASS"
+    description: "Clean terminal state"
+    substrates:
+      langgraph: "v05-d2-langgraph-pass-terminal-success"
+      autogen: "v05-d2-autogen-pass-terminal-success"
+      semantic-kernel: "v05-d2-sk-pass-terminal-success"
+
+  d2-invalid-terminal:
+    domain: "D2"
+    expected_verdict: "FAIL"
+    description: "Invalid terminal state"
+    expected_reason_code: "D2_TERMINAL_STATE_NOT_IN_ALLOWED_SET"
+    substrates:
+      langgraph: "v05-d2-langgraph-fail-invalid-terminal"
+      autogen: "v05-d2-autogen-fail-invalid-terminal"
+      semantic-kernel: "v05-d2-sk-fail-invalid-terminal"
+
+  # D3: AuthZ Decision
+  d3-authz-allow:
+    domain: "D3"
+    expected_verdict: "PASS"
+    description: "Valid authz with complete S/R/A"
+    substrates:
+      langgraph: "v05-d3-langgraph-pass-authz-allow"
+      autogen: "v05-d3-autogen-pass-authz-allow"
+      semantic-kernel: "v05-d3-sk-pass-authz-allow"
+
+  d3-subject-missing:
+    domain: "D3"
+    expected_verdict: "FAIL"
+    description: "Missing subject in authz"
+    expected_reason_code: "D3_SUBJECT_MISSING"
+    substrates:
+      langgraph: "v05-d3-langgraph-fail-subject-missing"
+      autogen: "v05-d3-autogen-fail-subject-missing"
+      semantic-kernel: "v05-d3-sk-fail-subject-missing"
+
+  # D4: Termination
+  d4-reason-success:
+    domain: "D4"
+    expected_verdict: "PASS"
+    description: "Valid termination reason"
+    substrates:
+      langgraph: "v05-d4-langgraph-pass-reason-success"
+      autogen: "v05-d4-autogen-pass-reason-success"
+      semantic-kernel: "v05-d4-sk-pass-reason-success"
+
+  d4-reason-invalid:
+    domain: "D4"
+    expected_verdict: "FAIL"
+    description: "Invalid termination reason"
+    expected_reason_code: "D4_TERMINATION_REASON_NOT_IN_ALLOWED_SET"
+    substrates:
+      langgraph: "v05-d4-langgraph-fail-reason-invalid"
+      autogen: "v05-d4-autogen-fail-reason-invalid"
+      semantic-kernel: "v05-d4-sk-fail-reason-invalid"
+
+# ============================================================================
+# Coverage Requirements
+# ============================================================================
+
+coverage:
+  min_substrates: 3
+  per_domain:
+    min_pass: 1
+    min_fail: 1
+  per_substrate:
+    min_runs: 8  # 4 domains x 2 verdicts

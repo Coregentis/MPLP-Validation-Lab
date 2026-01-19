@@ -1,0 +1,28 @@
+{
+  "pointers": [
+    {
+      "requirement_id": "RQ-D1-01",
+      "artifact_path": "pack/trace/events.ndjson",
+      "locator": "event_id:evt-v05-d3-fail-deny-no-confirm-1",
+      "status": "PRESENT"
+    },
+    {
+      "requirement_id": "RQ-D2-01",
+      "artifact_path": "pack/trace/events.ndjson",
+      "locator": "event_id:evt-v05-d3-fail-deny-no-confirm-2",
+      "status": "PRESENT"
+    },
+    {
+      "requirement_id": "RQ-D3-01",
+      "artifact_path": "pack/trace/events.ndjson",
+      "locator": "event_id:evt-v05-d3-fail-deny-no-confirm-3",
+      "status": "PRESENT"
+    },
+    {
+      "requirement_id": "RQ-D4-01",
+      "artifact_path": "pack/trace/events.ndjson",
+      "locator": "event_id:evt-v05-d3-fail-deny-no-confirm-4",
+      "status": "PRESENT"
+    }
+  ]
+}

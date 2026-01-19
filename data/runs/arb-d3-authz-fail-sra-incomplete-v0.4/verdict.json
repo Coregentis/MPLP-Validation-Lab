@@ -1,0 +1,22 @@
+{
+  "run_id": "arb-d3-authz-fail-sra-incomplete-v0.4",
+  "scenario_id": "d3-fail-cl-d3-02-scenario",
+  "admission": "ADMISSIBLE",
+  "topline": "FAIL",
+  "gf_verdicts": [],
+  "domain_verdicts": [
+    {
+      "domain": "D3",
+      "clause_id": "CL-D3-02",
+      "status": "FAIL",
+      "reason_code": "D3_SUBJECT_RESOURCE_ACTION_INCOMPLETE"
+    }
+  ],
+  "versions": {
+    "protocol": "2025-draft",
+    "schema": "v0.4.0",
+    "ruleset": "ruleset-1.2"
+  },
+  "evaluated_at": "2026-01-18T14:37:17.974Z",
+  "reason_code": "D3_SUBJECT_RESOURCE_ACTION_INCOMPLETE"
+}

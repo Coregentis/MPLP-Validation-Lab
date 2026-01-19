@@ -1,0 +1,10 @@
+{
+  "pointers": [
+    {
+      "requirement_id": "RQ-D1-01",
+      "artifact_path": "pack/trace/events.ndjson",
+      "locator": "event_id:evt-budget-001",
+      "status": "PRESENT"
+    }
+  ]
+}

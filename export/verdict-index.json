@@ -1,0 +1,124 @@
+{
+  "verdicts": [
+    {
+      "release": "v0.7.2",
+      "bundle_name": "v0.7.2",
+      "bundle_path": "reverification/v0.7.2/",
+      "verdict_path": "reverification/v0.7.2/verdict.json",
+      "overall_status": "REVERIFICATION_INCOMPLETE",
+      "verified_at": "2026-01-14T07:20:40.563Z",
+      "verifier_version": "1.0.0",
+      "ruleset_version": "1.0",
+      "gate_results": {
+        "total": 7,
+        "passed": 4,
+        "failed": 3
+      }
+    },
+    {
+      "release": "v0.7.2",
+      "bundle_name": "v0.7.2+rev2",
+      "bundle_path": "reverification/v0.7.2+rev2/",
+      "verdict_path": "reverification/v0.7.2+rev2/verdict.json",
+      "overall_status": "REVERIFICATION_INCOMPLETE",
+      "verified_at": "2026-01-14T07:36:39.164Z",
+      "verifier_version": "1.0.0",
+      "ruleset_version": "1.0",
+      "gate_results": {
+        "total": 7,
+        "passed": 4,
+        "failed": 3
+      }
+    },
+    {
+      "release": "v0.7.2",
+      "bundle_name": "v0.7.2+rev3",
+      "bundle_path": "reverification/v0.7.2+rev3/",
+      "verdict_path": "reverification/v0.7.2+rev3/verdict.json",
+      "overall_status": "REVERIFICATION_INCOMPLETE",
+      "verified_at": "2026-01-14T09:14:35.075Z",
+      "verifier_version": "1.0.0",
+      "ruleset_version": "1.0",
+      "gate_results": {
+        "total": 7,
+        "passed": 4,
+        "failed": 3
+      }
+    },
+    {
+      "release": "v0.7.2",
+      "bundle_name": "v0.7.2+rev4",
+      "bundle_path": "reverification/v0.7.2+rev4/",
+      "verdict_path": "reverification/v0.7.2+rev4/verdict.json",
+      "overall_status": "REVERIFICATION_INCOMPLETE",
+      "verified_at": "2026-01-14T09:15:44.822Z",
+      "verifier_version": "1.0.0",
+      "ruleset_version": "1.0",
+      "gate_results": {
+        "total": 7,
+        "passed": 5,
+        "failed": 2
+      }
+    },
+    {
+      "release": "v0.7.2",
+      "bundle_name": "v0.7.2+rev5",
+      "bundle_path": "reverification/v0.7.2+rev5/",
+      "verdict_path": "reverification/v0.7.2+rev5/verdict.json",
+      "overall_status": "REVERIFICATION_INCOMPLETE",
+      "verified_at": "2026-01-14T09:17:07.590Z",
+      "verifier_version": "1.0.0",
+      "ruleset_version": "1.0",
+      "gate_results": {
+        "total": 7,
+        "passed": 6,
+        "failed": 1
+      }
+    },
+    {
+      "release": "v0.7.2",
+      "bundle_name": "v0.7.2+rev6",
+      "bundle_path": "reverification/v0.7.2+rev6/",
+      "verdict_path": "reverification/v0.7.2+rev6/verdict.json",
+      "overall_status": "REVERIFIED",
+      "verified_at": "2026-01-14T09:18:51.122Z",
+      "verifier_version": "1.0.0",
+      "ruleset_version": "1.0",
+      "gate_results": {
+        "total": 6,
+        "passed": 6,
+        "failed": 0
+      }
+    },
+    {
+      "release": "v0.7.3",
+      "bundle_name": "v0.7.3",
+      "bundle_path": "reverification/v0.7.3/",
+      "verdict_path": "reverification/v0.7.3/verdict.json",
+      "overall_status": "REVERIFICATION_INCOMPLETE",
+      "verified_at": "2026-01-14T07:21:04.804Z",
+      "verifier_version": "1.0.0",
+      "ruleset_version": "1.0",
+      "gate_results": {
+        "total": 7,
+        "passed": 4,
+        "failed": 3
+      }
+    },
+    {
+      "release": "v0.7.3",
+      "bundle_name": "v0.7.3+rev2",
+      "bundle_path": "reverification/v0.7.3+rev2/",
+      "verdict_path": "reverification/v0.7.3+rev2/verdict.json",
+      "overall_status": "REVERIFIED",
+      "verified_at": "2026-01-14T09:19:03.261Z",
+      "verifier_version": "1.0.0",
+      "ruleset_version": "1.0",
+      "gate_results": {
+        "total": 6,
+        "passed": 6,
+        "failed": 0
+      }
+    }
+  ]
+}

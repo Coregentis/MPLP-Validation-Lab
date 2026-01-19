@@ -1,0 +1,371 @@
+{
+    "schema_version": "0.1",
+    "authority": "Validation Lab (Non-Normative)",
+    "as_of": "2026-01-14",
+    "repo": "Validation_Lab",
+    "assets": [
+        {
+            "id": "ASSET-RELEASE-V0.1",
+            "category": "release_snapshot",
+            "mutability": "immutable",
+            "scope": [
+                "S1"
+            ],
+            "strength": [
+                "E-A"
+            ],
+            "description": "Initial release - phase seals and release documentation",
+            "anchors": [
+                "releases/v0.1/"
+            ],
+            "depends_on": [],
+            "truth_source": "releases/"
+        },
+        {
+            "id": "ASSET-RELEASE-V0.5",
+            "category": "release_snapshot",
+            "mutability": "immutable",
+            "scope": [
+                "S1"
+            ],
+            "strength": [
+                "E-A",
+                "E-S"
+            ],
+            "description": "P2 signed proof snapshot with cryptographic seal",
+            "anchors": [
+                "releases/v0.5/",
+                "releases/v0.5/artifacts/signed-proof/"
+            ],
+            "depends_on": [],
+            "truth_source": "releases/"
+        },
+        {
+            "id": "ASSET-RELEASE-V0.6",
+            "category": "release_snapshot",
+            "mutability": "immutable",
+            "scope": [
+                "S1",
+                "S2"
+            ],
+            "strength": [
+                "E-A"
+            ],
+            "description": "Type-A multi-substrate evidence packs (6 substrates)",
+            "anchors": [
+                "releases/v0.6/",
+                "releases/v0.6/artifacts/packs/"
+            ],
+            "depends_on": [],
+            "truth_source": "releases/"
+        },
+        {
+            "id": "ASSET-RELEASE-V0.7.2",
+            "category": "release_snapshot",
+            "mutability": "immutable",
+            "scope": [
+                "S1",
+                "S2"
+            ],
+            "strength": [
+                "E-B"
+            ],
+            "description": "Full 6-substrate Type-B reproduction snapshot with REPRODUCE.md",
+            "anchors": [
+                "releases/v0.7.2/",
+                "releases/v0.7.2/REPRODUCE.md",
+                "releases/v0.7.2/MANIFEST.json"
+            ],
+            "depends_on": [],
+            "truth_source": "releases/"
+        },
+        {
+            "id": "ASSET-SEAL-SIGN-02",
+            "category": "cryptographic_seal",
+            "mutability": "immutable",
+            "scope": [
+                "S1",
+                "S2"
+            ],
+            "strength": [
+                "E-S"
+            ],
+            "description": "SIGN-02 cryptographic seal over v0.7.2 Type-B snapshot",
+            "anchors": [
+                "releases/v0.7.3/",
+                "releases/v0.7.3/artifacts/signed-proof/SIGN-02/"
+            ],
+            "depends_on": [
+                "ASSET-RELEASE-V0.7.2"
+            ],
+            "truth_source": "releases/"
+        },
+        {
+            "id": "ASSET-RULESET-1.0",
+            "category": "ruleset",
+            "mutability": "versioned",
+            "scope": [
+                "S1",
+                "S2",
+                "S3"
+            ],
+            "strength": [],
+            "description": "ruleset-1.0 adjudication requirements for GF-01 through GF-05",
+            "anchors": [
+                "data/rulesets/ruleset-1.0/"
+            ],
+            "depends_on": [],
+            "truth_source": "data/rulesets/"
+        },
+        {
+            "id": "ASSET-CURATED-ALLOWLIST",
+            "category": "governance_ssot",
+            "mutability": "versioned",
+            "scope": [
+                "S1",
+                "S2"
+            ],
+            "strength": [],
+            "description": "Curated runs SSOT - allowlist of approved runs with supersedes tracking",
+            "anchors": [
+                "data/curated-runs/allowlist.yaml",
+                "data/curated-runs/supersedes.yaml"
+            ],
+            "depends_on": [],
+            "truth_source": "data/curated-runs/"
+        },
+        {
+            "id": "ASSET-GATE-SYSTEM",
+            "category": "executable_logic",
+            "mutability": "mutable",
+            "scope": [
+                "S1",
+                "S2"
+            ],
+            "strength": [],
+            "description": "Executable gate system (gate-02 through gate-10)",
+            "anchors": [
+                "lib/gates/"
+            ],
+            "depends_on": [
+                "ASSET-RULESET-1.0",
+                "ASSET-CURATED-ALLOWLIST"
+            ],
+            "truth_source": "lib/gates/"
+        },
+        {
+            "id": "ASSET-LIB-CORE",
+            "category": "executable_logic",
+            "mutability": "mutable",
+            "scope": [
+                "S1",
+                "S2"
+            ],
+            "strength": [],
+            "description": "Core adjudication pipeline: 13 modules forming the complete evidence evaluation system",
+            "anchors": [
+                "lib/"
+            ],
+            "components": {
+                "engine": {
+                    "path": "lib/engine/",
+                    "purpose": "Core verification engine (ingest.ts, verify.ts 1249 LOC, types.ts)",
+                    "implements": "evidence-pack-contract-v1.0, admission-criteria-v1.0"
+                },
+                "evaluate": {
+                    "path": "lib/evaluate/",
+                    "purpose": "Phase D evaluation logic"
+                },
+                "verdict": {
+                    "path": "lib/verdict/",
+                    "purpose": "Verdict types, taxonomy, and classification system"
+                },
+                "gates": {
+                    "path": "lib/gates/",
+                    "purpose": "9 executable runtime gates (02-10)",
+                    "note": "Tracked separately as ASSET-GATE-SYSTEM"
+                },
+                "curated": {
+                    "path": "lib/curated/",
+                    "purpose": "Curation logic for allowlist-based run filtering"
+                },
+                "runs": {
+                    "path": "lib/runs/",
+                    "purpose": "Run loader and run management utilities"
+                },
+                "rulesets": {
+                    "path": "lib/rulesets/",
+                    "purpose": "Ruleset loader for versioned adjudication requirements"
+                },
+                "proof": {
+                    "path": "lib/proof/",
+                    "purpose": "Proof generation and verification logic"
+                },
+                "policy": {
+                    "path": "lib/policy/",
+                    "purpose": "Policy enforcement implementation"
+                },
+                "schemas": {
+                    "path": "lib/schemas/",
+                    "purpose": "67 schema files synced from upstream MPLP-Protocol",
+                    "note": "Tracked separately as ASSET-SYNCED-SCHEMAS"
+                },
+                "invariants": {
+                    "path": "lib/invariants/",
+                    "purpose": "Invariants synced from upstream",
+                    "note": "Tracked separately as ASSET-SYNCED-INVARIANTS"
+                },
+                "security": {
+                    "path": "lib/security/",
+                    "purpose": "Security checks and admission controls"
+                },
+                "utils": {
+                    "path": "lib/utils/",
+                    "purpose": "Shared utility functions"
+                }
+            },
+            "depends_on": [
+                "ASSET-SYNCED-SCHEMAS",
+                "ASSET-SYNCED-INVARIANTS",
+                "ASSET-RULESET-1.0"
+            ],
+            "truth_source": "lib/"
+        },
+        {
+            "id": "ASSET-RECOMPUTE-PKG",
+            "category": "package",
+            "mutability": "versioned",
+            "scope": [
+                "S1",
+                "S2"
+            ],
+            "strength": [
+                "E-B"
+            ],
+            "description": "Standalone recompute package for third-party reproduction",
+            "anchors": [
+                "packages/recompute/"
+            ],
+            "depends_on": [],
+            "truth_source": "packages/"
+        },
+        {
+            "id": "ASSET-SYNCED-SCHEMAS",
+            "category": "synced_upstream",
+            "mutability": "versioned",
+            "scope": [
+                "S1",
+                "S2",
+                "S3"
+            ],
+            "strength": [],
+            "description": "Schemas synced from upstream MPLP-Protocol (10 schema files)",
+            "anchors": [
+                "lib/schemas/",
+                "UPSTREAM_BASELINE.yaml"
+            ],
+            "depends_on": [],
+            "truth_source": "lib/schemas/",
+            "upstream_source": "Coregentis/MPLP-Protocol schemas/v2/"
+        },
+        {
+            "id": "ASSET-SYNCED-INVARIANTS",
+            "category": "synced_upstream",
+            "mutability": "versioned",
+            "scope": [
+                "S1",
+                "S2",
+                "S3"
+            ],
+            "strength": [],
+            "description": "Invariants synced from upstream MPLP-Protocol",
+            "anchors": [
+                "lib/invariants/",
+                "UPSTREAM_BASELINE.yaml"
+            ],
+            "depends_on": [],
+            "truth_source": "lib/invariants/",
+            "upstream_source": "Coregentis/MPLP-Protocol tests/golden/invariants/"
+        },
+        {
+            "id": "ASSET-ADJUDICATION-MODEL",
+            "category": "governance_doc",
+            "mutability": "versioned",
+            "scope": [
+                "S1",
+                "S2",
+                "S3"
+            ],
+            "strength": [
+                "E-A",
+                "E-B",
+                "E-S"
+            ],
+            "description": "Adjudication model defining S1/S2/S3 scopes and E-A/E-B/E-S strengths",
+            "anchors": [
+                "adjudication/",
+                "adjudication/matrix/coverage.gf-01.yaml"
+            ],
+            "depends_on": [],
+            "truth_source": "adjudication/"
+        },
+        {
+            "id": "ASSET-GOVERNANCE-CONTRACTS",
+            "category": "governance_doc",
+            "mutability": "versioned",
+            "scope": [
+                "S1"
+            ],
+            "strength": [],
+            "description": "Data contracts (evidence-pack, ruleset, pointer, admission)",
+            "anchors": [
+                "governance/contracts/"
+            ],
+            "depends_on": [],
+            "truth_source": "governance/contracts/"
+        },
+        {
+            "id": "ASSET-GOVERNANCE-GATES",
+            "category": "governance_doc",
+            "mutability": "versioned",
+            "scope": [
+                "S1"
+            ],
+            "strength": [],
+            "description": "Gate definitions (VLAB-GATE-00 through VLAB-GATE-05)",
+            "anchors": [
+                "governance/gates/"
+            ],
+            "depends_on": [],
+            "truth_source": "governance/gates/"
+        },
+        {
+            "id": "ASSET-UI-PROJECTION",
+            "category": "ui",
+            "mutability": "mutable",
+            "scope": [
+                "S1"
+            ],
+            "strength": [],
+            "description": "Next.js UI for runs, rulesets, and guarantees display",
+            "anchors": [
+                "app/",
+                "components/"
+            ],
+            "depends_on": [
+                "ASSET-GATE-SYSTEM",
+                "ASSET-CURATED-ALLOWLIST"
+            ],
+            "truth_source": "app/"
+        }
+    ],
+    "cross_repo_dependencies": {
+        "count": 26,
+        "detail_document": "inventory/CROSS_REPO_DEPS.md",
+        "summary": "Main repo scripts/gates/ contains 26+ hard-coded references to Validation_Lab paths"
+    },
+    "non_endorsement_boundary": [
+        "MPLP does not endorse, certify, or rank any agent framework.",
+        "This inventory describes assets for evidence adjudication only."
+    ]
+}

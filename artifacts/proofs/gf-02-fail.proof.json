@@ -1,0 +1,26 @@
+{
+  "payload": {
+    "schema_version": "1.0.0",
+    "ruleset_id": "ruleset-1.0",
+    "run_id": "gf-02-fail",
+    "topline_verdict": "NOT_EVALUATED",
+    "reason_code": "VERDICT_MISSING",
+    "verdict_hash": "948fca901852dce5fcb73547a91090226533263e045d1498fa3ed30c36ca763c",
+    "clause_summary": {
+      "total": 0,
+      "pass": 0,
+      "fail": 0,
+      "not_evaluated": 0
+    }
+  },
+  "signature": {
+    "algorithm": "Ed25519",
+    "signature": "US3Bpn8ePp/2eq1wVNDMXqf8mQLvVzzceUaipzd1LhqeGfb7M/mob1QVh9GtTRAoOFf9gZ+rlHPpAv6Pk+eJDQ==",
+    "key_id": "vlab-v0.5-test-001",
+    "signed_at": "2026-01-19T03:35:53.876Z"
+  },
+  "metadata": {
+    "generated_at": "2026-01-19T03:35:53.876Z",
+    "generator_version": "0.5.5"
+  }
+}

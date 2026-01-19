@@ -1,0 +1,169 @@
+# v0.5 Test Vectors Allowlist
+#
+# Curated set of test vectors for v0.5 coverage validation.
+# Each vector must meet the v0.5 contract:
+#   - Ruleset: ruleset-1.2
+#   - Adjudicable via shadow-validator
+#   - Signable via proof-signature gate
+#
+# Coverage Target: ≥5 PASS + ≥5 FAIL per domain
+
+version: "0.5"
+schema_version: "1.0.0"
+ruleset_pin: "ruleset-1.2"
+
+# ============================================================================
+# D1: Budget Control Vectors
+# ============================================================================
+
+D1:
+  PASS:
+    - vector_id: v05-d1-pass-budget-allow-basic
+      description: "Basic budget allow decision with valid outcome"
+      path: test-vectors/v0.5/D1/PASS/budget-allow-basic
+    - vector_id: v05-d1-pass-budget-allow-multi
+      description: "Multiple budget allow decisions in sequence"
+      path: test-vectors/v0.5/D1/PASS/budget-allow-multi
+    - vector_id: v05-d1-pass-budget-allow-quota
+      description: "Budget allow with quota tracking"
+      path: test-vectors/v0.5/D1/PASS/budget-allow-quota
+    - vector_id: v05-d1-pass-budget-deny-gated
+      description: "Budget deny with proper gate verification"
+      path: test-vectors/v0.5/D1/PASS/budget-deny-gated
+    - vector_id: v05-d1-pass-budget-allow-resource
+      description: "Budget allow with resource specification"
+      path: test-vectors/v0.5/D1/PASS/budget-allow-resource
+
+  FAIL:
+    - vector_id: v05-d1-fail-outcome-invalid
+      description: "Invalid outcome value (not allow/deny)"
+      path: test-vectors/v0.5/D1/FAIL/outcome-invalid
+    - vector_id: v05-d1-fail-deny-no-gate
+      description: "Deny decision without gate verification"
+      path: test-vectors/v0.5/D1/FAIL/deny-no-gate
+    - vector_id: v05-d1-fail-missing-decision
+      description: "Missing budget decision event"
+      path: test-vectors/v0.5/D1/FAIL/missing-decision
+    - vector_id: v05-d1-fail-invalid-amount
+      description: "Budget decision with invalid amount"
+      path: test-vectors/v0.5/D1/FAIL/invalid-amount
+    - vector_id: v05-d1-fail-no-resource
+      description: "Budget decision without resource"
+      path: test-vectors/v0.5/D1/FAIL/no-resource
+
+# ============================================================================
+# D2: Lifecycle State Vectors
+# ============================================================================
+
+D2:
+  PASS:
+    - vector_id: v05-d2-pass-terminal-success
+      description: "Clean terminal state: success"
+      path: test-vectors/v0.5/D2/PASS/terminal-success
+    - vector_id: v05-d2-pass-terminal-failure
+      description: "Clean terminal state: failure"
+      path: test-vectors/v0.5/D2/PASS/terminal-failure
+    - vector_id: v05-d2-pass-terminal-timeout
+      description: "Clean terminal state: timeout"
+      path: test-vectors/v0.5/D2/PASS/terminal-timeout
+    - vector_id: v05-d2-pass-lifecycle-complete
+      description: "Complete lifecycle with valid transitions"
+      path: test-vectors/v0.5/D2/PASS/lifecycle-complete
+    - vector_id: v05-d2-pass-terminal-cancelled
+      description: "Clean terminal state: cancelled"
+      path: test-vectors/v0.5/D2/PASS/terminal-cancelled
+
+  FAIL:
+    - vector_id: v05-d2-fail-invalid-terminal
+      description: "Invalid terminal state value"
+      path: test-vectors/v0.5/D2/FAIL/invalid-terminal
+    - vector_id: v05-d2-fail-post-terminal-exec
+      description: "Execution after terminal state"
+      path: test-vectors/v0.5/D2/FAIL/post-terminal-exec
+    - vector_id: v05-d2-fail-missing-transition
+      description: "Missing lifecycle transition event"
+      path: test-vectors/v0.5/D2/FAIL/missing-transition
+    - vector_id: v05-d2-fail-no-terminal
+      description: "No terminal state reached"
+      path: test-vectors/v0.5/D2/FAIL/no-terminal
+    - vector_id: v05-d2-fail-invalid-state-seq
+      description: "Invalid state transition sequence"
+      path: test-vectors/v0.5/D2/FAIL/invalid-state-seq
+
+# ============================================================================
+# D3: AuthZ Decision Vectors
+# ============================================================================
+
+D3:
+  PASS:
+    - vector_id: v05-d3-pass-sra-complete-allow
+      description: "Complete S/R/A triplet with allow"
+      path: test-vectors/v0.5/D3/PASS/sra-complete-allow
+    - vector_id: v05-d3-pass-sra-complete-deny-gated
+      description: "Complete S/R/A with deny and gate"
+      path: test-vectors/v0.5/D3/PASS/sra-complete-deny-gated
+    - vector_id: v05-d3-pass-multi-authz
+      description: "Multiple authz decisions"
+      path: test-vectors/v0.5/D3/PASS/multi-authz
+    - vector_id: v05-d3-pass-resource-action
+      description: "Authz with specific resource-action"
+      path: test-vectors/v0.5/D3/PASS/resource-action
+    - vector_id: v05-d3-pass-subject-verified
+      description: "Authz with verified subject"
+      path: test-vectors/v0.5/D3/PASS/subject-verified
+
+  FAIL:
+    - vector_id: v05-d3-fail-sra-incomplete
+      description: "Incomplete S/R/A triplet"
+      path: test-vectors/v0.5/D3/FAIL/sra-incomplete
+    - vector_id: v05-d3-fail-deny-no-confirm
+      description: "Deny without confirm gate"
+      path: test-vectors/v0.5/D3/FAIL/deny-no-confirm
+    - vector_id: v05-d3-fail-missing-subject
+      description: "Missing subject in authz"
+      path: test-vectors/v0.5/D3/FAIL/missing-subject
+    - vector_id: v05-d3-fail-missing-resource
+      description: "Missing resource in authz"
+      path: test-vectors/v0.5/D3/FAIL/missing-resource
+    - vector_id: v05-d3-fail-missing-action
+      description: "Missing action in authz"
+      path: test-vectors/v0.5/D3/FAIL/missing-action
+
+# ============================================================================
+# D4: Termination Vectors
+# ============================================================================
+
+D4:
+  PASS:
+    - vector_id: v05-d4-pass-reason-timeout
+      description: "Valid termination reason: timeout"
+      path: test-vectors/v0.5/D4/PASS/reason-timeout
+    - vector_id: v05-d4-pass-reason-success
+      description: "Valid termination reason: success"
+      path: test-vectors/v0.5/D4/PASS/reason-success
+    - vector_id: v05-d4-pass-reason-failure
+      description: "Valid termination reason: failure"
+      path: test-vectors/v0.5/D4/PASS/reason-failure
+    - vector_id: v05-d4-pass-reason-cancelled
+      description: "Valid termination reason: cancelled"
+      path: test-vectors/v0.5/D4/PASS/reason-cancelled
+    - vector_id: v05-d4-pass-controlled-recovery
+      description: "Controlled recovery after termination"
+      path: test-vectors/v0.5/D4/PASS/controlled-recovery
+
+  FAIL:
+    - vector_id: v05-d4-fail-invalid-reason
+      description: "Invalid termination reason"
+      path: test-vectors/v0.5/D4/FAIL/invalid-reason
+    - vector_id: v05-d4-fail-uncontrolled-recovery
+      description: "Uncontrolled recovery after termination"
+      path: test-vectors/v0.5/D4/FAIL/uncontrolled-recovery
+    - vector_id: v05-d4-fail-missing-reason
+      description: "Missing termination reason"
+      path: test-vectors/v0.5/D4/FAIL/missing-reason
+    - vector_id: v05-d4-fail-no-termination
+      description: "No termination event"
+      path: test-vectors/v0.5/D4/FAIL/no-termination
+    - vector_id: v05-d4-fail-multi-terminal
+      description: "Multiple conflicting terminal states"
+      path: test-vectors/v0.5/D4/FAIL/multi-terminal

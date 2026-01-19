@@ -1,0 +1,26 @@
+{
+  "payload": {
+    "schema_version": "1.0.0",
+    "ruleset_id": "ruleset-1.0",
+    "run_id": "gf-01-a2a-fail",
+    "topline_verdict": "FAIL",
+    "reason_code": "GF-GF-01-FAILED",
+    "verdict_hash": "b02d5e766f63452ba05cecf9ebcfa1efcf9986bf7ce0166250a3f6125bc1add1",
+    "clause_summary": {
+      "total": 1,
+      "pass": 0,
+      "fail": 1,
+      "not_evaluated": 0
+    }
+  },
+  "signature": {
+    "algorithm": "Ed25519",
+    "signature": "gMeI3RHRVhMxzx5uKyBHN9jh61SKqIm/ln08fmpjZSoPpj/61ylKqY2pXl/w0U6rKjmt3GWh+UbyADLzHyj3Dg==",
+    "key_id": "vlab-v0.5-test-001",
+    "signed_at": "2026-01-19T03:35:53.874Z"
+  },
+  "metadata": {
+    "generated_at": "2026-01-19T03:35:53.874Z",
+    "generator_version": "0.5.5"
+  }
+}

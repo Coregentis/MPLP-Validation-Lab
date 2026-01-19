@@ -1,0 +1,58 @@
+version: "0.1"
+authority: "Validation Lab (Non-Normative)"
+scenario_id: "GF-01"
+last_updated: "2026-01-14"
+
+adjudication_scopes:
+  S1:
+    description: "Single-substrate evidence validation"
+    status: "implemented"
+    anchors:
+      curated_ssot: "data/curated-runs/allowlist.yaml"
+      ruleset: "data/rulesets/ruleset-1.0/"
+      gates: "lib/gates/"
+      recompute: "packages/recompute/"
+      ui_runs: "app/runs/"
+  S2:
+    description: "Cross-substrate equivalence adjudication"
+    status: "partial"
+    anchors:
+      type_a_snapshot: "releases/v0.6/artifacts/packs/"
+      type_b_snapshot: "releases/v0.7.2/artifacts/repro/"
+      upstream_gate_impl: "(main repo) scripts/gates/ma-equiv-gate.mjs"
+    gaps:
+      - "Equivalence basis is implicit in gate code; must be externalized as rule-basis doc."
+  S3:
+    description: "Cross-substrate end-to-end equivalence adjudication"
+    status: "not_implemented"
+    planned_artifacts:
+      - "e2e evidence bundle contract"
+      - "versioned e2e ruleset requirements"
+      - "at least one minimal e2e scenario"
+
+evidence_strength:
+  E-A:
+    name: "Static Evidence"
+    implemented: true
+    anchors:
+      example_snapshot: "releases/v0.6/"
+  E-B:
+    name: "Generator-Based Reproduction"
+    implemented: true
+    anchors:
+      full_snapshot: "releases/v0.7.2/"
+      reproduce: "releases/v0.7.2/REPRODUCE.md"
+  E-S:
+    name: "Cryptographic Seal"
+    implemented: true
+    anchors:
+      signed_proof_p2: "releases/v0.5/artifacts/signed-proof/"
+      sign_02: "releases/v0.7.3/artifacts/signed-proof/SIGN-02/"
+
+non_endorsement_boundary:
+  - "MPLP does not endorse, certify, or rank any agent framework."
+  - "This coverage describes evidence adjudication capability only."
+
+determinism_boundary:
+  - "Run-twice determinism is valid under declared generator + lock + env conditions only."
+  - "No claim is made about distributed runtime determinism."

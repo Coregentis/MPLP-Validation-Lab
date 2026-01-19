@@ -1,0 +1,164 @@
+# Key Ceremony Procedure - v0.6
+#
+# This document defines the production key ceremony process.
+# STATUS: DESIGN PHASE - NOT YET EXECUTED
+#
+# Last updated: 2026-01-19
+
+version: "1.0.0"
+status: "design"
+
+# ============================================================================
+# Roles
+# ============================================================================
+
+roles:
+  key_custodian:
+    description: "Generates and secures root signing key (offline)"
+    count: 2
+    requirements:
+      - "Must use air-gapped device for key generation"
+      - "Must store key material in HSM or password-protected vault"
+      - "Must not share private key material"
+  
+  ci_operator:
+    description: "Manages online signing key for CI"
+    count: 1
+    requirements:
+      - "Stores online key in CI secret (VLAB_SIGNING_KEY_ED25519)"
+      - "Can request key rotation from custodian"
+  
+  verifier_maintainer:
+    description: "Updates VERIFIER_IDENTITY.json"
+    count: 1
+    requirements:
+      - "Commits public key and policy changes"
+      - "Never commits private key material"
+
+# ============================================================================
+# Key Tiers
+# ============================================================================
+
+key_tiers:
+  root:
+    description: "Offline root key for signing online keys"
+    storage: "HSM or encrypted vault (offline)"
+    rotation: "On compromise or every 5 years"
+    usage: "Signs online key certificates or rotation statements"
+  
+  online:
+    description: "CI signing key for daily proof generation"
+    storage: "CI secret (VLAB_SIGNING_KEY_ED25519)"
+    rotation: "Annual or on compromise"
+    usage: "Signs proof bundles"
+
+# ============================================================================
+# Ceremony Steps (Not yet executed)
+# ============================================================================
+
+ceremony_steps:
+  - id: "1"
+    name: "Generate Root Key"
+    actor: "key_custodian"
+    procedure:
+      - "Use air-gapped device"
+      - "Run: node tools/gen-ed25519.mjs"
+      - "Record public key hash (SHA256)"
+      - "Store private key in HSM/vault"
+      - "Never connect device to network"
+    outputs:
+      - "root_public_key_ed25519 (hex or base64)"
+      - "root_key_id (e.g., vlab-root-2026-001)"
+      - "root_key_hash (SHA256 of public key)"
+  
+  - id: "2"
+    name: "Generate Online Key"
+    actor: "key_custodian"
+    procedure:
+      - "Generate on secure workstation"
+      - "Run: node tools/gen-ed25519.mjs"
+      - "Record public key"
+      - "Encrypt private key for CI"
+    outputs:
+      - "online_public_key_ed25519"
+      - "online_key_id (e.g., vlab-prod-2026-001)"
+      - "encrypted_private_key (for CI secret)"
+  
+  - id: "3"
+    name: "Update VERIFIER_IDENTITY.json"
+    actor: "verifier_maintainer"
+    procedure:
+      - "Add new keys to signing_keys section"
+      - "Update active_signing_key"
+      - "Set appropriate not_before/not_after"
+      - "Commit and push"
+    outputs:
+      - "Updated VERIFIER_IDENTITY.json"
+      - "Git commit hash"
+  
+  - id: "4"
+    name: "Configure CI Secret"
+    actor: "ci_operator"
+    procedure:
+      - "Add VLAB_SIGNING_KEY_ED25519 to GitHub secrets"
+      - "Verify gate:proof-signature passes"
+    outputs:
+      - "CI secret configured"
+      - "Passing gate:proof-signature"
+  
+  - id: "5"
+    name: "Log Ceremony"
+    actor: "verifier_maintainer"
+    procedure:
+      - "Add entry to key_ceremony_log in VERIFIER_IDENTITY.json"
+      - "Include: date, key_id, custodians, git_commit"
+    outputs:
+      - "Ceremony log entry"
+
+# ============================================================================
+# Rotation Procedure
+# ============================================================================
+
+rotation:
+  trigger:
+    - "Annual rotation"
+    - "Suspected compromise"
+    - "Custodian change"
+  
+  steps:
+    - "Generate new online key (steps 2-4)"
+    - "Set old key status to 'retired'"
+    - "Set not_after on old key to now + grace_period"
+    - "Update active_signing_key to new key"
+    - "Old proofs remain valid during grace period"
+
+# ============================================================================
+# Revocation Procedure
+# ============================================================================
+
+revocation:
+  trigger:
+    - "Confirmed key compromise"
+    - "Unauthorized key usage"
+  
+  steps:
+    - "Add entry to revocations array"
+    - "Set key status to 'revoked'"
+    - "Proofs signed with revoked key FAIL verification"
+    - "No grace period for revoked keys"
+
+# ============================================================================
+# CI Environment Variables
+# ============================================================================
+
+ci_environment:
+  VLAB_SIGNING_KEY_ED25519:
+    description: "Base64-encoded Ed25519 private key (DER PKCS#8)"
+    source: "GitHub Secret"
+    required: true
+    fallback: "mode=staging (test key, gate warns)"
+  
+  VLAB_KEY_MODE:
+    description: "production or staging"
+    default: "staging"
+    production_requires: "VLAB_SIGNING_KEY_ED25519 set"

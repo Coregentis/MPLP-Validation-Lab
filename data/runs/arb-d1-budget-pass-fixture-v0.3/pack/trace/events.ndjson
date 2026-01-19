@@ -1,0 +1,3 @@
+{"event_id":"evt-init-001","event_type":"agent.init","timestamp":"2026-01-17T09:59:00Z","agent_id":"agent-001"}
+{"event_id":"evt-budget-001","event_type":"budget.decision","timestamp":"2026-01-17T10:00:00Z","decision_kind":"budget","outcome":"allow","resource":"token_quota","amount":1000}
+{"event_id":"evt-end-001","event_type":"agent.end","timestamp":"2026-01-17T10:15:00Z","agent_id":"agent-001"}

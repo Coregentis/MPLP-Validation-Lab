@@ -1,0 +1,13 @@
+{
+  "vector_id": "v05-d1-fail-deny-no-gate",
+  "domain": "D1",
+  "expected_topline": "FAIL",
+  "expected_reason_code": "D1_OUTCOME_INVALID",
+  "ruleset_ref": "ruleset-1.2",
+  "protocol_pin": "2025-draft",
+  "schema_version": "1.0.0",
+  "description": "Deny decision without gate verification",
+  "hash_scope": [
+    "pack/trace/events.ndjson"
+  ]
+}

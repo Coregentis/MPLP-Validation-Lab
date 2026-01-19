@@ -1,0 +1,39 @@
+{
+    "run_id": "gf-01-a2a-fail",
+    "scenario_id": "a2a-evidence-producer",
+    "admission": "ADMISSIBLE",
+    "gf_verdicts": [
+        {
+            "gf_id": "gf-01",
+            "status": "FAIL",
+            "pointers": [
+                {
+                    "artifact_path": "timeline/events.ndjson",
+                    "locator": "event:fail-trace-001",
+                    "requirement_id": "gf-01-r01",
+                    "content_hash": "9479bb1300bc469848765c146d718ca2d22617ab1aa42dd2e3bbea8484644860",
+                    "note": "Failure trigger: loop_detected event"
+                },
+                {
+                    "artifact_path": "snapshots/diffs/diff-001-002.json",
+                    "locator": "diff:snapshots/diffs/diff-001-002.json",
+                    "requirement_id": "gf-01-r02",
+                    "content_hash": "7bf2c0604bb820f8a6e0b6d5baacb7f8a1a92db0a8413d56158942943ab3a3b3",
+                    "note": "Failure state transition diff"
+                }
+            ],
+            "coverage": {
+                "total": 3,
+                "passed": 2,
+                "failed": 1,
+                "not_evaluated": 0
+            }
+        }
+    ],
+    "versions": {
+        "protocol": "1.0.0",
+        "schema": "1.0.0",
+        "ruleset": "1.0.0"
+    },
+    "evaluated_at": "2026-01-16T09:00:00Z"
+}

@@ -1,0 +1,61 @@
+{
+    "run_id": "minimal-replay-pass-001",
+    "scenario_id": "gf-01-single-agent-lifecycle",
+    "admission": "ADMISSIBLE",
+    "gf_verdicts": [
+        {
+            "gf_id": "gf-01",
+            "status": "PASS",
+            "pointers": [
+                {
+                    "artifact_path": "artifacts/context.json",
+                    "content_hash": "sha256:placeholder-context-hash",
+                    "locator": "jsonptr:/context_id",
+                    "requirement_id": "gf-01-r01",
+                    "note": "Context artifact present"
+                },
+                {
+                    "artifact_path": "artifacts/plan.json",
+                    "content_hash": "sha256:placeholder-plan-hash",
+                    "locator": "jsonptr:/plan_id",
+                    "requirement_id": "gf-01-r02",
+                    "note": "Plan artifact present"
+                },
+                {
+                    "artifact_path": "artifacts/trace.json",
+                    "content_hash": "sha256:placeholder-trace-hash",
+                    "locator": "jsonptr:/trace_id",
+                    "requirement_id": "gf-01-r03",
+                    "note": "Trace artifact present"
+                },
+                {
+                    "artifact_path": "timeline/events.ndjson",
+                    "content_hash": "sha256:placeholder-events-hash",
+                    "locator": "event:evt-001",
+                    "requirement_id": "gf-01-r01",
+                    "note": "Context creation event"
+                },
+                {
+                    "artifact_path": "snapshots/diffs/diff-001-002.json",
+                    "content_hash": "sha256:placeholder-diff-hash",
+                    "locator": "diff:snapshots/diffs/diff-001-002.json",
+                    "requirement_id": "gf-01-r03",
+                    "note": "State transition from start to completion"
+                }
+            ],
+            "coverage": {
+                "total": 3,
+                "passed": 3,
+                "failed": 0,
+                "not_evaluated": 0
+            }
+        }
+    ],
+    "versions": {
+        "protocol": "1.0.0",
+        "schema": "1.0.0",
+        "ruleset": "1.0"
+    },
+    "evaluated_at": "2026-01-16T00:00:10Z",
+    "determinism_hash": "sha256:placeholder-determinism-hash"
+}

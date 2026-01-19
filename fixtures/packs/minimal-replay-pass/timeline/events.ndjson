@@ -1,0 +1,6 @@
+{"event_id":"evt-001","event_type":"context.created","timestamp":"2026-01-16T00:00:00Z","source_module":"context","payload":{"context_id":"ctx-001"}}
+{"event_id":"evt-002","event_type":"plan.created","timestamp":"2026-01-16T00:00:01Z","source_module":"plan","payload":{"plan_id":"plan-001","steps_count":2}}
+{"event_id":"evt-003","event_type":"trace.started","timestamp":"2026-01-16T00:00:02Z","source_module":"trace","payload":{"trace_id":"trace-001"}}
+{"event_id":"evt-004","event_type":"step.executed","timestamp":"2026-01-16T00:00:03Z","source_module":"trace","payload":{"step_id":"step-001","status":"completed"}}
+{"event_id":"evt-005","event_type":"step.executed","timestamp":"2026-01-16T00:00:04Z","source_module":"trace","payload":{"step_id":"step-002","status":"completed"}}
+{"event_id":"evt-006","event_type":"trace.completed","timestamp":"2026-01-16T00:00:05Z","source_module":"trace","payload":{"trace_id":"trace-001","final_status":"success"}}

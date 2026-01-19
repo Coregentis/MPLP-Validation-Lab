@@ -1,0 +1,48 @@
+{
+  "adjudications": [
+    {
+      "run_id": "admission-not-admissible-01",
+      "bundle_path": "adjudication/admission-not-admissible-01/",
+      "verdict_path": "adjudication/admission-not-admissible-01/verdict.json",
+      "verdict_hash": "bb50519dec88035de3d24853c489eae4f4a58dcabd23a34e855f9956b0fbe58b",
+      "ruleset_version": "1.0",
+      "protocol_pin": "unknown",
+      "admission_status": "NOT_ADMISSIBLE",
+      "overall_status": "NOT_ADMISSIBLE",
+      "adjudicated_at": "2026-01-14T11:30:15.508Z"
+    },
+    {
+      "run_id": "gf-01-adjudicated-fail-01",
+      "bundle_path": "adjudication/gf-01-adjudicated-fail-01/",
+      "verdict_path": "adjudication/gf-01-adjudicated-fail-01/verdict.json",
+      "verdict_hash": "79e5b0713db3f2b78c84975f4e4e8c5f78b0fea07f16e5ad8d7bafda0395da3c",
+      "ruleset_version": "1.0",
+      "protocol_pin": "unknown",
+      "admission_status": "ADMISSIBLE",
+      "overall_status": "ADJUDICATED",
+      "adjudicated_at": "2026-01-14T11:52:50.862Z"
+    },
+    {
+      "run_id": "gf-01-smoke",
+      "bundle_path": "adjudication/gf-01-smoke/",
+      "verdict_path": "adjudication/gf-01-smoke/verdict.json",
+      "verdict_hash": "6afde43633358e9a423fa50e0d838091a07737bb39004c0e4b2dc0a224279f67",
+      "ruleset_version": "1.0",
+      "protocol_pin": "unknown",
+      "admission_status": "ADMISSIBLE",
+      "overall_status": "ADJUDICATED",
+      "adjudicated_at": "2026-01-14T10:12:29.810Z"
+    },
+    {
+      "run_id": "gf-02-fail",
+      "bundle_path": "adjudication/gf-02-fail/",
+      "verdict_path": "adjudication/gf-02-fail/verdict.json",
+      "verdict_hash": "0dbf54c129f682747cffd8739f6cd45a2e3ea93b686fa44ee2ea4eb620af277c",
+      "ruleset_version": "1.0",
+      "protocol_pin": "unknown",
+      "admission_status": "NOT_ADMISSIBLE",
+      "overall_status": "NOT_ADMISSIBLE",
+      "adjudicated_at": "2026-01-14T11:30:02.522Z"
+    }
+  ]
+}

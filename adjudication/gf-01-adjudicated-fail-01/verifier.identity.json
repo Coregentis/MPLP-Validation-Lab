@@ -1,0 +1,41 @@
+{
+    "verifier_id": "validation-lab-verifier",
+    "version": "1.0.0",
+    "description": "Validation Lab Canonical Verifier Identity",
+    "authority": "Validation Lab (Non-Normative)",
+    "upstream_pin": {
+        "repo": "Coregentis/MPLP-Protocol",
+        "commit": "877029514f87dd7da1dfb559c178ce57a935d975",
+        "tag": "v1.0.0",
+        "protocol_version": "1.0.0"
+    },
+    "ruleset": {
+        "version": "1.0",
+        "path": "data/rulesets/ruleset-1.0/",
+        "manifest": "data/rulesets/ruleset-1.0/manifest.yaml"
+    },
+    "engine": {
+        "verify": "lib/engine/verify.ts",
+        "ingest": "lib/engine/ingest.ts",
+        "evaluate": "lib/evaluate/evaluate.ts"
+    },
+    "gates": {
+        "range": "02-10",
+        "path": "lib/gates/",
+        "count": 9
+    },
+    "contracts": [
+        "governance/contracts/evidence-pack-contract-v1.0.md",
+        "governance/contracts/evidence-pack-contract-v1.1.md",
+        "governance/contracts/admission-criteria-v1.0.md",
+        "governance/contracts/ruleset-contract-v1.0.md",
+        "governance/contracts/pointer-contract-v1.0.md"
+    ],
+    "cli_entry": "src/cli/vlab.ts",
+    "non_endorsement_boundary": [
+        "This verifier does NOT endorse, certify, or rank any agent framework.",
+        "Adjudication is based on evidence and deterministic rules only."
+    ],
+    "created_at": "2026-01-14",
+    "schema_version": "1.0"
+}

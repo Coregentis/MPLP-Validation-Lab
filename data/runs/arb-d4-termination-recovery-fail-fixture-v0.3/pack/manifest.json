@@ -1,0 +1,10 @@
+{
+  "pack_id": "arb-d4-termination-recovery-fail-fixture-v0.3",
+  "version": "0.3.0",
+  "substrate": "fixture",
+  "created_at": "2026-01-17T15:29:18.207Z",
+  "trace_format": "ndjson",
+  "files": [
+    "trace/events.ndjson"
+  ]
+}

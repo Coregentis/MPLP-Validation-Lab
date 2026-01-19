@@ -1,0 +1,6 @@
+{"event_id":"evt-v05-d4-pass-reason-success-0","event_type":"agent.init","timestamp":"2026-01-18T10:00:00Z"}
+{"event_id":"evt-v05-d4-pass-reason-success-1","event_type":"budget.decision","timestamp":"2026-01-18T10:01:00Z","decision_kind":"budget","outcome":"allow","resource":"token_quota","amount":1000}
+{"event_id":"evt-v05-d4-pass-reason-success-2","event_type":"lifecycle.transition","timestamp":"2026-01-18T10:02:00Z","to_state":"success"}
+{"event_id":"evt-v05-d4-pass-reason-success-3","event_type":"authz.decision","timestamp":"2026-01-18T10:03:00Z","decision_kind":"authz","outcome":"allow","subject":"user-001","resource":"doc-001","action":"read"}
+{"event_id":"evt-v05-d4-pass-reason-success-4","event_type":"termination.decision","timestamp":"2026-01-18T10:04:00Z","decision_kind":"terminate","termination_reason":"success"}
+{"event_id":"evt-v05-d4-pass-reason-success-5","event_type":"agent.end","timestamp":"2026-01-18T10:05:00Z"}

@@ -1,0 +1,205 @@
+{
+  "report_version": "1.0",
+  "verified_at": "2026-01-14T11:30:02.520Z",
+  "pack_id": "gf-02-fail-missing-plan",
+  "admission_status": "NOT_ADMISSIBLE",
+  "checks": [
+    {
+      "check_id": "ADM-SEC-001",
+      "name": "File Count Limit",
+      "category": "ADMISSION_SECURITY",
+      "status": "PASS",
+      "message": "6 files (limit: 1000)",
+      "duration_ms": 0
+    },
+    {
+      "check_id": "ADM-SEC-002",
+      "name": "Pack Size Limit",
+      "category": "ADMISSION_SECURITY",
+      "status": "PASS",
+      "message": "0.00 MB (limit: 50 MB)",
+      "duration_ms": 0
+    },
+    {
+      "check_id": "ADM-SEC-003",
+      "name": "Allowed Extensions",
+      "category": "ADMISSION_SECURITY",
+      "status": "PASS",
+      "message": "All file extensions are allowed",
+      "duration_ms": 0
+    },
+    {
+      "check_id": "ADM-SEC-004",
+      "name": "Path Traversal",
+      "category": "ADMISSION_SECURITY",
+      "status": "PASS",
+      "message": "No path traversal patterns detected",
+      "duration_ms": 0
+    },
+    {
+      "check_id": "ADM-STR-001",
+      "name": "Required Files",
+      "category": "ADMISSION_STRUCTURE",
+      "status": "PASS",
+      "message": "All required files present",
+      "duration_ms": 0
+    },
+    {
+      "check_id": "ADM-STR-002",
+      "name": "Required Directories",
+      "category": "ADMISSION_STRUCTURE",
+      "status": "PASS",
+      "message": "All required directories present",
+      "duration_ms": 0
+    },
+    {
+      "check_id": "ADM-STR-003",
+      "name": "Layout Version",
+      "category": "ADMISSION_STRUCTURE",
+      "status": "PASS",
+      "message": "EPC layout version: 1.0",
+      "duration_ms": 0
+    },
+    {
+      "check_id": "INT-001",
+      "name": "SHA256 Sums Verification",
+      "category": "INTEGRITY",
+      "status": "FAIL",
+      "message": "Hash verification failed: artifacts/plan.json (missing), manifest.json (hash mismatch)",
+      "taxonomy": "INTEGRITY_HASH_MISMATCH",
+      "pointers": [
+        {
+          "artifact_path": "artifacts/plan.json",
+          "content_hash": "",
+          "locator": "file:artifacts/plan.json",
+          "requirement_id": "EPC-§7"
+        },
+        {
+          "artifact_path": "manifest.json",
+          "content_hash": "",
+          "locator": "file:manifest.json",
+          "requirement_id": "EPC-§7"
+        }
+      ],
+      "duration_ms": 0
+    },
+    {
+      "check_id": "INT-002",
+      "name": "Pack Root Hash",
+      "category": "INTEGRITY",
+      "status": "PASS",
+      "message": "Pack root hash verified: d97590764e87f05d...",
+      "duration_ms": 5
+    },
+    {
+      "check_id": "INT-003",
+      "name": "SHA256 Coverage",
+      "category": "INTEGRITY",
+      "status": "FAIL",
+      "message": "Orphan entries in sha256sums: artifacts/plan.json",
+      "taxonomy": "INTEGRITY_HASH_MISMATCH",
+      "duration_ms": 1
+    },
+    {
+      "check_id": "MAN-001",
+      "name": "Required Manifest Fields",
+      "category": "MANIFEST",
+      "status": "PASS",
+      "message": "All required fields present",
+      "duration_ms": 0
+    },
+    {
+      "check_id": "MAN-002",
+      "name": "Artifacts Consistency",
+      "category": "MANIFEST",
+      "status": "PASS",
+      "message": "Declared artifacts match actual files",
+      "duration_ms": 0
+    },
+    {
+      "check_id": "VER-001",
+      "name": "Sync Report Loaded",
+      "category": "VERSION_BINDING",
+      "status": "PASS",
+      "message": "Upstream commit: not_bound (optional in v1.0)",
+      "duration_ms": 0
+    },
+    {
+      "check_id": "VER-002",
+      "name": "Protocol Version Present",
+      "category": "VERSION_BINDING",
+      "status": "PASS",
+      "message": "Pack protocol version: 1.0.0",
+      "duration_ms": 0
+    },
+    {
+      "check_id": "VER-003",
+      "name": "Schemas Bundle Hash",
+      "category": "VERSION_BINDING",
+      "status": "PASS",
+      "message": "Schemas hash: 99804832ddc3daef...",
+      "duration_ms": 0
+    },
+    {
+      "check_id": "VER-004",
+      "name": "Invariants Bundle Hash",
+      "category": "VERSION_BINDING",
+      "status": "PASS",
+      "message": "Invariants hash: d32ed8bd0139ba21...",
+      "duration_ms": 0
+    },
+    {
+      "check_id": "VER-005",
+      "name": "Protocol Version Binding",
+      "category": "VERSION_BINDING",
+      "status": "PASS",
+      "message": "Protocol versions match: 1.0.0",
+      "duration_ms": 0
+    },
+    {
+      "check_id": "TL-002",
+      "name": "Timeline Total Order",
+      "category": "TIMELINE",
+      "status": "PASS",
+      "message": "3 events in total order",
+      "duration_ms": 0
+    }
+  ],
+  "blocking_failures": [
+    {
+      "check_id": "INT-001",
+      "taxonomy": "INTEGRITY_HASH_MISMATCH",
+      "message": "Hash verification failed: artifacts/plan.json (missing), manifest.json (hash mismatch)",
+      "pointers": [
+        {
+          "artifact_path": "artifacts/plan.json",
+          "content_hash": "",
+          "locator": "file:artifacts/plan.json",
+          "requirement_id": "EPC-§7"
+        },
+        {
+          "artifact_path": "manifest.json",
+          "content_hash": "",
+          "locator": "file:manifest.json",
+          "requirement_id": "EPC-§7"
+        }
+      ]
+    },
+    {
+      "check_id": "INT-003",
+      "taxonomy": "INTEGRITY_HASH_MISMATCH",
+      "message": "Orphan entries in sha256sums: artifacts/plan.json",
+      "pointers": []
+    }
+  ],
+  "hashes": {
+    "pack_root_hash": "d97590764e87f05db64d75d500cbededc905e7d1442f06e109474dc2b2d3e504",
+    "manifest_hash": "b80af2c750467534183f99aac6a7c2ba1793b4853ed7f235c520c057d42676f5",
+    "schemas_bundle_hash": "99804832ddc3daefb92ec74120afaab1c3278e4a79d670e1f796e67f735463aa",
+    "invariants_bundle_hash": "d32ed8bd0139ba2197c618f8cc057dae15ba8cd5012b25946c1e20c07fd8ebe0",
+    "report_hash": "ad2eb4d3aacfe488b0eb71da67f320e09658fc701f8d573961a3a14d532676c8"
+  },
+  "ruleset_version": "ruleset-1.0",
+  "protocol_version": "1.0.0",
+  "total_duration_ms": 6
+}

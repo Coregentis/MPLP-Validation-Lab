@@ -6,10 +6,15 @@ export function HashCell({ hash, label }: { hash: string; label: string }) {
     const [copied, setCopied] = useState(false);
 
     const handleCopy = async () => {
+        if (!hash) return;
         await navigator.clipboard.writeText(hash);
         setCopied(true);
         setTimeout(() => setCopied(false), 2000);
     };
+
+    if (!hash) {
+        return <span className="text-xs text-mplp-text-muted italic">—</span>;
+    }
 
     return (
         <div className="flex items-center gap-2">

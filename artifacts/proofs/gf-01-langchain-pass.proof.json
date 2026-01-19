@@ -1,0 +1,26 @@
+{
+  "payload": {
+    "schema_version": "1.0.0",
+    "ruleset_id": "ruleset-1.0",
+    "run_id": "gf-01-langchain-pass",
+    "topline_verdict": "NOT_EVALUATED",
+    "reason_code": "VERDICT_MISSING",
+    "verdict_hash": "9bdcde57bdbf71f6dee10a714c29d4109dfcbd77ef8570b55b6ad1dc702726dc",
+    "clause_summary": {
+      "total": 0,
+      "pass": 0,
+      "fail": 0,
+      "not_evaluated": 0
+    }
+  },
+  "signature": {
+    "algorithm": "Ed25519",
+    "signature": "nOhA7FbyLNyPAjAZrsMd1E6YPo+QHO0avxOgqulZr3jFZwbcFZ4gICXeB6KA4OIkfA/+TS8/iBGKXtOSSRC/Cw==",
+    "key_id": "vlab-v0.5-test-001",
+    "signed_at": "2026-01-19T03:35:53.875Z"
+  },
+  "metadata": {
+    "generated_at": "2026-01-19T03:35:53.875Z",
+    "generator_version": "0.5.5"
+  }
+}

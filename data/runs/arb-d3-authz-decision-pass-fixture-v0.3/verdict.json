@@ -1,0 +1,21 @@
+{
+  "run_id": "arb-d3-authz-decision-pass-fixture-v0.3",
+  "scenario_id": "d3-pass-scenario",
+  "admission": "ADMISSIBLE",
+  "topline": "PASS",
+  "gf_verdicts": [],
+  "domain_verdicts": [
+    {
+      "domain": "D3",
+      "clause_id": "CL-D3-01",
+      "status": "PASS"
+    }
+  ],
+  "versions": {
+    "protocol": "2025-draft",
+    "schema": "v0.3.0",
+    "ruleset": "ruleset-1.1"
+  },
+  "evaluated_at": "2026-01-17T15:29:18.204Z",
+  "reason_code": null
+}

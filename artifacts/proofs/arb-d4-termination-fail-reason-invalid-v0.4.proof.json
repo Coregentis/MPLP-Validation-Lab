@@ -1,0 +1,44 @@
+{
+  "payload": {
+    "schema_version": "1.0.0",
+    "ruleset_id": "ruleset-1.2",
+    "run_id": "arb-d4-termination-fail-reason-invalid-v0.4",
+    "topline_verdict": "FAIL",
+    "reason_code": "D4_TERMINATION_REASON_NOT_IN_ALLOWED_SET",
+    "verdict_hash": "baa5ce990b4cb2843cf629a0fe88e3de0670815eb8c1dd50044f91c90a2373ec",
+    "clause_summary": {
+      "total": 12,
+      "pass": 11,
+      "fail": 1,
+      "not_evaluated": 0
+    },
+    "domain_summary": [
+      {
+        "domain_id": "D1",
+        "status": "PASS"
+      },
+      {
+        "domain_id": "D2",
+        "status": "PASS"
+      },
+      {
+        "domain_id": "D3",
+        "status": "PASS"
+      },
+      {
+        "domain_id": "D4",
+        "status": "FAIL"
+      }
+    ]
+  },
+  "signature": {
+    "algorithm": "Ed25519",
+    "signature": "1a9mJVopPFdnhzVXifp5rtkK912LE8IWvMsFTrfTUKgkTywU7s/l6wfa4/a4C56YI1Azezons0xZnPBQZkwWAA==",
+    "key_id": "vlab-v0.5-test-001",
+    "signed_at": "2026-01-19T03:35:53.872Z"
+  },
+  "metadata": {
+    "generated_at": "2026-01-19T03:35:53.872Z",
+    "generator_version": "0.5.5"
+  }
+}

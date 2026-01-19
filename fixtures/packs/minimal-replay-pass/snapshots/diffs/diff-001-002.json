@@ -1,0 +1,35 @@
+{
+    "from": "snapshots/snapshot-001.json",
+    "to": "snapshots/snapshot-002.json",
+    "created_at": "2026-01-16T00:00:05Z",
+    "event_refs": [
+        "evt-004",
+        "evt-005",
+        "evt-006"
+    ],
+    "ops": [
+        {
+            "op": "replace",
+            "path": "/state/plan/steps/0/status",
+            "value": "completed"
+        },
+        {
+            "op": "replace",
+            "path": "/state/plan/steps/1/status",
+            "value": "completed"
+        },
+        {
+            "op": "replace",
+            "path": "/state/trace/status",
+            "value": "success"
+        },
+        {
+            "op": "add",
+            "path": "/state/trace/completed_steps",
+            "value": [
+                "step-001",
+                "step-002"
+            ]
+        }
+    ]
+}

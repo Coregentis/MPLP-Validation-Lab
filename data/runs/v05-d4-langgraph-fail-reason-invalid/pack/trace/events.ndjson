@@ -1,0 +1,6 @@
+{"event_type":"agent.init","event_id":"evt-v05-d4-langgraph-fail-reason-invalid-000","timestamp":"2026-01-18T10:00:00.000Z"}
+{"event_type":"budget.decision","decision_kind":"budget","outcome":"allow","resource":"token_quota","amount":1000,"event_id":"evt-v05-d4-langgraph-fail-reason-invalid-001","timestamp":"2026-01-18T10:01:00.000Z"}
+{"event_type":"lifecycle.transition","to_state":"success","event_id":"evt-v05-d4-langgraph-fail-reason-invalid-002","timestamp":"2026-01-18T10:02:00.000Z"}
+{"event_type":"authz.decision","decision_kind":"authz","outcome":"allow","subject":"user-001","resource":"doc-001","action":"read","event_id":"evt-v05-d4-langgraph-fail-reason-invalid-003","timestamp":"2026-01-18T10:03:00.000Z"}
+{"event_type":"termination.decision","decision_kind":"terminate","termination_reason":"pizza","event_id":"evt-v05-d4-langgraph-fail-reason-invalid-004","timestamp":"2026-01-18T10:04:00.000Z"}
+{"event_type":"agent.end","event_id":"evt-v05-d4-langgraph-fail-reason-invalid-005","timestamp":"2026-01-18T10:05:00.000Z"}

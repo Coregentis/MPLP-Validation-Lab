@@ -34,6 +34,15 @@ allow_phrases:
   - "no compliance"
   - "not certification"
   - "not compliance"
+  - "not a certification"
+  - "not host execution"
+  - "not host"
+  - "does not host"
+  - "product certification"
+  # HTML-aware patterns (for JSX with <strong>NOT</strong>)
+  - ">NOT<"
+  - ">NOT</strong> a certification"
+  - ">NOT</strong> host"
   - "❌"
   - "non-normative"
   # Gate/policy names (technical references)
@@ -67,3 +76,10 @@ allow_phrases:
   - "change_score"
   - "type\":"
   - "\"description\""
+  # React component names (StrengthBadge, StatusBadge etc.)
+  - "StrengthBadge"
+  - "StatusBadge"
+  - "<StrengthBadge"
+  - "<StatusBadge"
+  - "function StrengthBadge"
+  - "function StatusBadge"

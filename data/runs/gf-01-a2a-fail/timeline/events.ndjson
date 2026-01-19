@@ -1,0 +1,4 @@
+{"type":"lifecycle","timestamp":"2026-01-16T09:00:00Z","event":"context_created","context_id":"fail-ctx-001"}
+{"type":"lifecycle","timestamp":"2026-01-16T09:00:01Z","event":"plan_created","plan_id":"fail-plan-001"}
+{"type":"lifecycle","timestamp":"2026-01-16T09:00:02Z","event":"loop_detected","trace_id":"fail-trace-001","error":"Infinite loop detected in execution"}
+{"type":"lifecycle","timestamp":"2026-01-16T09:00:03Z","event":"execution_failed","trace_id":"fail-trace-001","reason":"Loop guard triggered after 3 iterations"}

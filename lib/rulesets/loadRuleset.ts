@@ -29,6 +29,8 @@ export interface RulesetManifest {
         max_pack_version?: string;
     };
     golden_flows: string[];
+    /** v0.3+: Four-domain clauses for ruleset-1.1 */
+    four_domain_clauses?: string[];
     created_at?: string;
 }
 

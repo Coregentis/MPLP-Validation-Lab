@@ -90,7 +90,7 @@ export default function AboutPage() {
                     </li>
                     <li className="flex items-center gap-2">
                         <span className="text-green-500">✓</span>
-                        Golden Flow (GF-01~05) verdict generation
+                        Lifecycle Guarantee (LG-01~05) verdict generation
                     </li>
                     <li className="flex items-center gap-2">
                         <span className="text-green-500">✓</span>
@@ -133,7 +133,7 @@ export default function AboutPage() {
             {/* Navigation */}
             <section className="flex gap-4 text-sm">
                 <Link href="/guarantees" className="text-blue-400 hover:underline">
-                    View Golden Flows →
+                    View Lifecycle Guarantees →
                 </Link>
                 <Link href="/rulesets" className="text-blue-400 hover:underline">
                     Browse Rulesets →

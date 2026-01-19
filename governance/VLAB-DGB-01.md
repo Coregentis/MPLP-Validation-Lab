@@ -202,6 +202,8 @@ Changes to this baseline require:
 - [TERMINOLOGY_MAPPING.md](./TERMINOLOGY_MAPPING.md)
 - [admission-criteria-v1.0.md](./contracts/admission-criteria-v1.0.md)
 - [VLAB-GATE-00-upstream-pin.md](./gates/VLAB-GATE-00-upstream-pin.md)
+- [SUBSTRATE_SCOPE_POLICY.md](./SUBSTRATE_SCOPE_POLICY.md) — Tier-0/1/2 substrate scope & inclusion policy
+- [ADJUDICATION_MATURITY_MODEL.md](./ADJUDICATION_MATURITY_MODEL.md) — v0.2→v0.5 strength ladder & stop criteria
 
 ---
 

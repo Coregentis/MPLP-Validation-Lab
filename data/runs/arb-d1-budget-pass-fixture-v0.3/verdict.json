@@ -1,0 +1,21 @@
+{
+  "run_id": "arb-d1-budget-pass-fixture-v0.3",
+  "scenario_id": "d1-pass-scenario",
+  "admission": "ADMISSIBLE",
+  "topline": "PASS",
+  "gf_verdicts": [],
+  "domain_verdicts": [
+    {
+      "domain": "D1",
+      "clause_id": "CL-D1-01",
+      "status": "PASS"
+    }
+  ],
+  "versions": {
+    "protocol": "2025-draft",
+    "schema": "v0.3.0",
+    "ruleset": "ruleset-1.1"
+  },
+  "evaluated_at": "2026-01-17T15:29:18.201Z",
+  "reason_code": null
+}

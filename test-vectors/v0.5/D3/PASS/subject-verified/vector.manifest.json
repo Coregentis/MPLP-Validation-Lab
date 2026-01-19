@@ -1,0 +1,13 @@
+{
+  "vector_id": "v05-d3-pass-subject-verified",
+  "domain": "D3",
+  "expected_topline": "PASS",
+  "expected_reason_code": null,
+  "ruleset_ref": "ruleset-1.2",
+  "protocol_pin": "2025-draft",
+  "schema_version": "1.0.0",
+  "description": "Authz with verified subject",
+  "hash_scope": [
+    "pack/trace/events.ndjson"
+  ]
+}

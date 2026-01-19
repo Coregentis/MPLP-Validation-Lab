@@ -1,0 +1,10 @@
+{
+    "pack_path": "fixtures/packs/gf-01-admissible-fail",
+    "scenario_id": "gf-01-single-agent-lifecycle",
+    "description": "ADJUDICATED+FAIL sample: ADMISSIBLE but GF-01 fails due to __INVALID_MARKER__ in artifacts",
+    "expected_outcome": {
+        "admission_status": "ADMISSIBLE",
+        "overall_status": "ADJUDICATED",
+        "gf_01_status": "FAIL"
+    }
+}

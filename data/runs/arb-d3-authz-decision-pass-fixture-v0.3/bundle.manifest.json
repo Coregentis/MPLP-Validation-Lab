@@ -1,0 +1,18 @@
+{
+  "run_id": "arb-d3-authz-decision-pass-fixture-v0.3",
+  "pack_root": "pack",
+  "ruleset_ref": "ruleset-1.1",
+  "protocol_pin": "2025-draft",
+  "schema_bundle_sha256": "v0.3.0-placeholder",
+  "hash_scope": [
+    "verdict.json",
+    "pack/trace/events.ndjson"
+  ],
+  "reason_code": null,
+  "scenario_meta": {
+    "domain": "D3",
+    "clause_id": "CL-D3-01",
+    "privileged_action": true,
+    "termination_case": false
+  }
+}

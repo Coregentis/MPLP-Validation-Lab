@@ -1,0 +1,130 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Producer Output Contract",
+    "description": "Schema for evidence pack output from any substrate producer. All producers must generate packs conforming to this contract.",
+    "type": "object",
+    "required": [
+        "bundle.manifest.json",
+        "evidence_pointers.json",
+        "pack"
+    ],
+    "properties": {
+        "bundle.manifest.json": {
+            "type": "object",
+            "required": [
+                "run_id",
+                "pack_root",
+                "ruleset_ref",
+                "protocol_pin",
+                "schema_bundle_sha256"
+            ],
+            "properties": {
+                "run_id": {
+                    "type": "string",
+                    "description": "Unique run identifier",
+                    "pattern": "^[a-z0-9-]+$"
+                },
+                "pack_root": {
+                    "type": "string",
+                    "description": "Path to pack directory relative to bundle root",
+                    "default": "pack"
+                },
+                "ruleset_ref": {
+                    "type": "string",
+                    "description": "Ruleset reference for adjudication",
+                    "enum": [
+                        "ruleset-1.0",
+                        "ruleset-1.1",
+                        "ruleset-1.2"
+                    ]
+                },
+                "protocol_pin": {
+                    "type": "string",
+                    "description": "Protocol version pin",
+                    "default": "2025-draft"
+                },
+                "schema_bundle_sha256": {
+                    "type": "string",
+                    "description": "Schema bundle hash for verification"
+                },
+                "hash_scope": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Files included in verdict hash"
+                }
+            }
+        },
+        "evidence_pointers.json": {
+            "type": "object",
+            "required": [
+                "pointers"
+            ],
+            "properties": {
+                "pointers": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "required": [
+                            "requirement_id",
+                            "artifact_path",
+                            "status"
+                        ],
+                        "properties": {
+                            "requirement_id": {
+                                "type": "string",
+                                "pattern": "^RQ-D[1-4]-[0-9]{2}$"
+                            },
+                            "artifact_path": {
+                                "type": "string"
+                            },
+                            "locator": {
+                                "type": "string"
+                            },
+                            "status": {
+                                "type": "string",
+                                "enum": [
+                                    "PRESENT",
+                                    "ABSENT",
+                                    "PARTIAL"
+                                ]
+                            }
+                        }
+                    },
+                    "minItems": 4,
+                    "description": "Must include at least D1-D4 evidence pointers"
+                }
+            }
+        },
+        "pack": {
+            "type": "object",
+            "description": "Pack directory structure",
+            "required": [
+                "trace"
+            ],
+            "properties": {
+                "trace": {
+                    "type": "object",
+                    "required": [
+                        "events.ndjson"
+                    ],
+                    "properties": {
+                        "events.ndjson": {
+                            "type": "string",
+                            "description": "Path to NDJSON event trace"
+                        }
+                    }
+                },
+                "snapshots": {
+                    "type": "object",
+                    "description": "Optional state snapshots"
+                },
+                "diffs": {
+                    "type": "object",
+                    "description": "Optional state diffs"
+                }
+            }
+        }
+    }
+}

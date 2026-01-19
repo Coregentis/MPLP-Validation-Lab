@@ -1,0 +1,18 @@
+{
+  "producer_id": "autogen",
+  "substrate": "autogen",
+  "version": "0.5.2",
+  "substrate_version": "langgraph@0.2.0",
+  "run_id": "v05-d2-autogen-pass-terminal-success",
+  "generated_at": "2026-01-19T03:08:07.388Z",
+  "ruleset_ref": "ruleset-1.2",
+  "scenario": "d2-terminal-success",
+  "expected_verdict": "PASS",
+  "expected_reason_code": null,
+  "environment": {
+    "node_version": "v25.2.1",
+    "platform": "darwin",
+    "deterministic_seed": 42
+  },
+  "repro_command": "node producers/langgraph/run.mjs d2-terminal-success"
+}

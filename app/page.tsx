@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 
 const LAB_CANONICAL_HOST = 'https://lab.mplp.io';
 
@@ -14,79 +15,160 @@ export const metadata: Metadata = {
         index: true,
         follow: true,
     },
-    keywords: ['MPLP', 'Validation Lab', 'Evidence', 'Golden Flows', 'Lifecycle Invariants', 'Non-certifying'],
+    keywords: ['MPLP', 'Validation Lab', 'Evidence', 'Lifecycle Guarantees', 'Lifecycle Invariants', 'Non-certifying'],
 };
 
 export default function Home() {
     return (
-        <div className="min-h-screen p-8 max-w-4xl mx-auto">
-            {/* Hero Section - Per VLAB-NAME-01 */}
-            <header className="mb-8">
-                <h1 className="text-4xl font-bold mb-2">MPLP Validation Lab</h1>
-                <p className="text-xl text-gray-400 mb-4">
-                    Evidence &amp; Conformance Laboratory for MPLP Lifecycle Invariants (Non-certifying)
-                </p>
-                <p className="text-sm text-gray-400">
-                    Deterministic verdicts from versioned rulesets + reproducible evidence packs.
-                </p>
-                <p className="text-xs text-amber-400 mt-2">
-                    Not certification. Not regulatory compliance. Not hosted execution.
-                </p>
-            </header>
+        <>
+            {/* Hero Section - Clean, no heavy borders */}
+            <section className="relative overflow-hidden flex flex-col min-h-[60vh] justify-center">
+                {/* Premium Glow Spots */}
+                <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 w-[600px] h-[600px] bg-mplp-blue-soft/10 blur-[120px] rounded-full opacity-60 pointer-events-none" />
+                <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/4 w-[400px] h-[400px] bg-mplp-indigo/10 blur-[100px] rounded-full opacity-40 pointer-events-none" />
 
-            <section className="bg-zinc-900 border border-zinc-700 rounded-lg p-6 mb-8">
-                <h2 className="text-lg font-semibold mb-4">Lab Status</h2>
-                <p className="text-gray-400">
-                    Phase F Complete — UI Projection + Sample Runs verified.
-                </p>
-                <p className="text-xs text-zinc-500 mt-2">
-                    A–F: Foundation → Schema → Admission → Evaluation → Governance → UI
-                </p>
-            </section>
+                <div className="relative z-10 text-center pt-12 pb-16">
+                    {/* Status Pill */}
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-mplp-blue-soft/30 bg-mplp-blue-soft/10 text-[10px] font-bold uppercase tracking-[0.2em] text-mplp-blue-soft mb-8">
+                        <span className="status-dot" />
+                        System Operational
+                    </div>
 
-            <section className="grid gap-4 md:grid-cols-2">
-                <a href="/runs" className="card block p-4 bg-zinc-900 border border-zinc-700 rounded-lg transition hover:border-zinc-500">
-                    <h3 className="font-semibold mb-2">Runs</h3>
-                    <p className="text-sm text-gray-400">Browse evaluation runs</p>
-                </a>
-                <a href="/rulesets" className="card block p-4 bg-zinc-900 border border-zinc-700 rounded-lg transition hover:border-zinc-500">
-                    <h3 className="font-semibold mb-2">Rulesets</h3>
-                    <p className="text-sm text-gray-400">View versioned rulesets</p>
-                </a>
-                <a href="/guarantees" className="card block p-4 bg-zinc-900 border border-zinc-700 rounded-lg transition hover:border-zinc-500">
-                    <h3 className="font-semibold mb-2">Guarantees</h3>
-                    <p className="text-sm text-gray-400">GF-01 ~ GF-05 overview (non-normative)</p>
-                </a>
-            </section>
+                    {/* Wordmark */}
+                    <p className="text-xs font-bold uppercase tracking-[0.4em] text-mplp-text-muted/80 mb-4">Multi-Agent Lifecycle Protocol</p>
+                    <h1 className="font-bold text-mplp-text mb-6 leading-[1.1] tracking-tight">
+                        <span className="block text-4xl sm:text-5xl lg:text-6xl text-gradient pb-2">
+                            Validation Lab
+                        </span>
+                    </h1>
+                    <p className="text-sm font-bold uppercase tracking-[0.3em] text-mplp-blue-soft/90 mb-8">Evidence & Conformance Laboratory</p>
 
-            {/* Authority Map */}
-            <section className="mt-12 border border-zinc-700 rounded-lg p-6">
-                <h3 className="text-sm font-semibold mb-4 text-center">Authority Map</h3>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-xs text-center">
-                    <a href="https://github.com/Coregentis/MPLP-Protocol" target="_blank" rel="noopener" className="hover:text-white transition">
-                        <p className="text-zinc-500">Repo</p>
-                        <p className="text-zinc-300">Truth Source</p>
-                    </a>
-                    <a href="https://docs.mplp.io" target="_blank" rel="noopener" className="hover:text-white transition">
-                        <p className="text-zinc-500">Docs</p>
-                        <p className="text-zinc-300">Specification</p>
-                    </a>
-                    <a href="https://www.mplp.io" target="_blank" rel="noopener" className="hover:text-white transition">
-                        <p className="text-zinc-500">Website</p>
-                        <p className="text-zinc-300">Discovery</p>
-                    </a>
-                    <div>
-                        <p className="text-zinc-500">Lab</p>
-                        <p className="text-amber-400">Evidence Verdict</p>
+                    <p className="max-w-xl mx-auto text-base leading-relaxed text-mplp-text-muted mb-6">
+                        Download evidence packs, recheck verdicts locally, and view deterministic verdict hashes.
+                    </p>
+
+                    {/* Direct Action Flow - P1-1 */}
+                    <p className="max-w-lg mx-auto text-sm text-mplp-text mb-8 bg-mplp-dark-soft/60 px-4 py-2 rounded-lg border border-mplp-border/30">
+                        <span className="text-mplp-blue-soft font-bold">↓</span> Download an evidence pack → verify locally → get the same verdict hash.
+                    </p>
+
+                    {/* Hard Boundary - P0-3 */}
+                    <p className="text-sm font-bold text-amber-400/90 tracking-wide mb-8 px-4 py-2 rounded-lg border border-amber-500/30 bg-amber-900/10 inline-block">
+                        We verify evidence integrity and determinism — not runtime performance, not certification.
+                    </p>
+
+                    {/* Primary CTAs - P0-4 */}
+                    <div className="flex flex-wrap justify-center gap-4 mb-12">
+                        <Link
+                            href="/runs"
+                            className="inline-flex items-center gap-2 px-8 py-3 bg-mplp-blue hover:bg-mplp-blue-soft text-white font-bold rounded-lg transition text-sm tracking-wide shadow-lg shadow-mplp-blue/20"
+                        >
+                            Browse Curated Runs →
+                        </Link>
+                        <Link
+                            href="/policies/contract#how-to-recheck"
+                            className="inline-flex items-center gap-2 px-8 py-3 bg-mplp-emerald/10 hover:bg-mplp-emerald/20 text-mplp-emerald font-bold rounded-lg transition border border-mplp-emerald/30 text-sm tracking-wide"
+                        >
+                            How to Recheck Locally
+                        </Link>
+                    </div>
+
+                    {/* Status Row with Human-Readable Explanations */}
+                    <div className="grid grid-cols-3 gap-8 pt-8 border-t border-mplp-border/30 max-w-2xl mx-auto">
+                        <div className="text-center">
+                            <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-mplp-text-muted mb-2">Export</p>
+                            <p className="text-xs font-bold text-mplp-text">v1.2 Stable</p>
+                            <p className="text-[10px] text-mplp-text-muted/60 mt-1">Public JSON contract for consumers</p>
+                        </div>
+                        <div className="text-center">
+                            <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-mplp-text-muted mb-2">Integrity</p>
+                            <p className="text-xs font-bold text-mplp-text">SSOT Locked</p>
+                            <p className="text-[10px] text-mplp-text-muted/60 mt-1">Pack hashes stable across OS</p>
+                        </div>
+                        <div className="text-center">
+                            <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-mplp-text-muted mb-2">Version</p>
+                            <p className="text-xs font-bold text-mplp-text">v0.2 Frozen</p>
+                            <p className="text-[10px] text-mplp-text-muted/60 mt-1">Curated runs immutable</p>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            {/* Governance Banner */}
-            <footer className="mt-8 text-center text-xs text-zinc-500">
-                <p>Non-certification. Non-endorsement. Evidence-based verdicts under versioned rulesets.</p>
-                <p className="mt-1">No execution hosting. The Lab evaluates evidence only.</p>
-            </footer>
-        </div>
+            {/* Protocol Status Bar */}
+            <div className="bg-slate-950/30 border-y border-mplp-border/30 py-4 mb-16">
+                <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] font-bold uppercase tracking-[0.2em] text-mplp-text-muted">
+                    <div className="flex items-center gap-4">
+                        <span className="flex items-center gap-2" title="Gate-14/15: Contract enforcement, not quality rating">
+                            <span className="status-dot" />
+                            Gates: 14/15 Enforced
+                        </span>
+                        <div className="h-3 w-px bg-mplp-border/50" />
+                        <span className="text-mplp-text">Deterministic Verdicts</span>
+                    </div>
+                    <div className="flex items-center gap-6">
+                        <Link href="/policies/contract" className="hover:text-mplp-blue-soft transition-colors">Export Contract</Link>
+                        <Link href="/rulesets" className="hover:text-mplp-blue-soft transition-colors">Rulesets</Link>
+                        <Link href="/guarantees" className="hover:text-amber-400 transition-colors">Guarantees</Link>
+                    </div>
+                </div>
+            </div>
+
+            {/* Hard Boundary - Subtle, not boxy */}
+            <section className="mb-16 px-4 py-3 rounded-xl border border-amber-500/20 bg-amber-900/5">
+                <div className="flex items-center gap-3">
+                    <span className="text-amber-400 text-sm">⚠</span>
+                    <p className="text-sm text-mplp-text-muted">
+                        <strong className="text-mplp-text">Reviewability ≠ Reproducibility.</strong>
+                        {' '}The Lab rechecks evidence, not execution.
+                    </p>
+                </div>
+            </section>
+
+            {/* Quick Start - Enhanced with specific example */}
+            <section className="mb-16 bg-mplp-dark-soft/40 border border-mplp-border/30 rounded-2xl p-6">
+                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-mplp-blue-soft mb-4 flex items-center gap-2">
+                    <span className="h-1 w-1 rounded-full bg-mplp-blue-soft" />
+                    Quick Start
+                </p>
+                <div className="mb-4">
+                    <p className="text-sm text-mplp-text mb-2">
+                        Start with: <Link href="/adjudication/gf-01-smoke" className="text-mplp-blue-soft hover:text-mplp-blue-light font-mono">gf-01-smoke</Link>
+                        <span className="ml-2 text-xs text-emerald-400 bg-emerald-900/20 px-2 py-0.5 rounded">ADJUDICATED + PASS</span>
+                    </p>
+                </div>
+                <div className="bg-black/30 rounded-lg p-4 font-mono text-xs text-mplp-text-muted overflow-x-auto">
+                    <p className="text-mplp-text-muted/60 mb-2"># Verify locally (read-only)</p>
+                    <p>npm run vlab:recheck-hash gf-01-smoke</p>
+                </div>
+                <div className="mt-4 flex gap-4 text-xs">
+                    <Link href="/runs" className="text-mplp-blue-soft hover:text-mplp-blue-light">Browse Runs →</Link>
+                    <Link href="/adjudication" className="text-mplp-blue-soft hover:text-mplp-blue-light">View Adjudications →</Link>
+                    <a href="https://docs.mplp.io/evaluation/conformance/reviewability" target="_blank" rel="noopener noreferrer" className="text-mplp-text-muted hover:text-mplp-text">How to Recheck Locally ↗</a>
+                </div>
+            </section>
+
+            {/* Navigation Cards - Subtle borders, not boxy */}
+            <section className="mb-16">
+                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-mplp-text-muted mb-6">Resources</p>
+                <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+                    <Link href="/runs" className="group block p-6 rounded-2xl border border-mplp-border/40 bg-mplp-dark-soft/40 hover:border-mplp-blue-soft/30 transition-all">
+                        <h3 className="text-sm font-bold text-mplp-text uppercase tracking-widest mb-3 group-hover:text-mplp-blue-soft transition-colors">Runs</h3>
+                        <p className="text-xs text-mplp-text-muted leading-relaxed">Curated evidence packs including PASS, FAIL, and NOT_ADMISSIBLE.</p>
+                    </Link>
+                    <Link href="/adjudication" className="group block p-6 rounded-2xl border border-mplp-border/40 bg-mplp-dark-soft/40 hover:border-mplp-blue-soft/30 transition-all">
+                        <h3 className="text-sm font-bold text-mplp-text uppercase tracking-widest mb-3 group-hover:text-mplp-blue-soft transition-colors">Adjudication</h3>
+                        <p className="text-xs text-mplp-text-muted leading-relaxed">Verdict summaries and deterministic verdict_hash for local recheck.</p>
+                    </Link>
+                    <Link href="/rulesets" className="group block p-6 rounded-2xl border border-mplp-border/40 bg-mplp-dark-soft/40 hover:border-mplp-blue-soft/30 transition-all">
+                        <h3 className="text-sm font-bold text-mplp-text uppercase tracking-widest mb-3 group-hover:text-mplp-blue-soft transition-colors">Rulesets</h3>
+                        <p className="text-xs text-mplp-text-muted leading-relaxed">Evaluation rules and versioned decision logic.</p>
+                    </Link>
+                    <Link href="/guarantees" className="group block p-6 rounded-2xl border border-mplp-border/40 bg-mplp-dark-soft/40 hover:border-mplp-blue-soft/30 transition-all">
+                        <h3 className="text-sm font-bold text-mplp-text uppercase tracking-widest mb-3 group-hover:text-mplp-blue-soft transition-colors">Guarantees</h3>
+                        <p className="text-xs text-mplp-text-muted leading-relaxed">LG-01 ~ LG-05 scope limits and boundaries.</p>
+                    </Link>
+                </div>
+            </section>
+        </>
     );
 }

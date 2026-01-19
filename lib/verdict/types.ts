@@ -44,20 +44,28 @@ export type AdmissionStatus =
     | 'PARTIALLY_ADMISSIBLE';
 
 // =============================================================================
-// GOLDEN FLOW IDENTIFIERS
+// LIFECYCLE GUARANTEE IDENTIFIERS (Internal: gf-xx)
 // =============================================================================
 
 /**
- * Golden Flow identifiers.
- * These are the lifecycle invariants being evaluated, NOT scenario names.
- * See TERMINOLOGY_MAPPING.md for distinction.
+ * Lifecycle Guarantee identifiers (internal).
+ * 
+ * TERMINOLOGY:
+ *   - External display: LG-01~05 (Lifecycle Guarantees)
+ *   - Internal ID: GF-01~05 / gf-01~05 (frozen, do not change)
+ *   - Registry SSOT: lib/registry/lifecycle-guarantees.ts
+ * 
+ * These are ADJUDICATION TARGETS (lifecycle invariants), NOT test scenarios.
+ * Test scenarios are FLOW-01~05 in main repo (tests/golden/flows/).
+ * 
+ * See TERMINOLOGY_MAPPING.md for full terminology partition.
  */
 export type GoldenFlowId =
-    | 'GF-01'   // Single Agent Lifecycle
-    | 'GF-02'   // Multi-Agent Coordination
-    | 'GF-03'   // Human-in-the-Loop Gating
-    | 'GF-04'   // Drift Detection & Recovery
-    | 'GF-05';  // External Tool Integration
+    | 'GF-01'   // LG-01: Single Agent Lifecycle
+    | 'GF-02'   // LG-02: Multi-Agent Collaboration
+    | 'GF-03'   // LG-03: Human-in-the-Loop Gating
+    | 'GF-04'   // LG-04: Drift Detection & Recovery
+    | 'GF-05';  // LG-05: External Tool Integration
 
 // =============================================================================
 // EVIDENCE POINTER

@@ -1,0 +1,9 @@
+{
+    "pack_path": "fixtures/packs/broken-admission",
+    "scenario_id": "gf-01-single-agent-lifecycle",
+    "description": "NOT_ADMISSIBLE sample: broken admission gate",
+    "expected_outcome": {
+        "admission_status": "NOT_ADMISSIBLE",
+        "overall_status": "NOT_ADMISSIBLE"
+    }
+}

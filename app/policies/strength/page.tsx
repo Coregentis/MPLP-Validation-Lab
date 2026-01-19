@@ -136,8 +136,8 @@ export default function StrengthPolicyPage() {
                         <p className="text-amber-400">presence-level</p>
                     </div>
                     <div>
-                        <p className="text-zinc-500">Golden Flows</p>
-                        <p className="text-zinc-300">GF-01 ~ GF-05</p>
+                        <p className="text-zinc-500">Lifecycle Guarantees</p>
+                        <p className="text-zinc-300">LG-01 ~ LG-05</p>
                     </div>
                     <div>
                         <p className="text-zinc-500">Contract</p>

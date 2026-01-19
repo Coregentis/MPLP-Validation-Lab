@@ -1,4 +1,4 @@
-version: '0.1'
+version: '0.2'
 runs:
 - run_id: gf-01-a2a-pass
   scenario_id: gf-01-single-agent-lifecycle
@@ -16,6 +16,23 @@ runs:
   status: frozen
   indexable: true
   created_at: '2026-01-10T14:00:00Z'
+- run_id: gf-01-a2a-fail
+  scenario_id: gf-01-single-agent-lifecycle
+  ruleset_version: ruleset-1.0
+  substrate: a2a
+  substrate_claim_level: declared
+  substrate_execution: static
+  inference_mode: none
+  repro_ref: data/runs/gf-01-a2a-fail/
+  exporter_version: 0.1.0
+  pack_root_hash: ''
+  verdict_hash: 94d802b0923db249b6e75888836a3c146446184a44e6ff363ef86e0454a8d516
+  verify_report_hash: ''
+  evaluation_report_hash: ''
+  status: frozen
+  indexable: true
+  notes: "P1.1 ADMISSIBLE+FAIL sample: loop_detected triggers execution failure"
+  created_at: '2026-01-16T09:00:00Z'
 - run_id: gf-01-langchain-pass
   scenario_id: gf-01-single-agent-lifecycle
   ruleset_version: ruleset-1.0
@@ -95,4 +112,265 @@ runs:
   verdict_hash: e7f5b31e40d6a645782d219428c731ebed338739b5eadf831ec206fc7d002011
   indexable: true
   created_at: '2026-01-13T00:00:00Z'
+
+# PR-11: Negative Sample Runs (demonstrating NOT_ADMISSIBLE verdicts)
+- run_id: gf-02-fail
+  scenario_id: gf-01-single-agent-lifecycle
+  ruleset_version: ruleset-1.0
+  substrate: fixture
+  substrate_claim_level: declared
+  substrate_execution: static
+  inference_mode: none
+  repro_ref: fixtures/packs/gf-fail-missing-plan/
+  status: active
+  notes: "NOT_ADMISSIBLE sample: missing plan.json artifact triggers admission failure"
+  indexable: true
+  created_at: '2026-01-14T00:00:00Z'
+
+- run_id: admission-not-admissible-01
+  scenario_id: gf-01-single-agent-lifecycle
+  ruleset_version: ruleset-1.0
+  substrate: fixture
+  substrate_claim_level: declared
+  substrate_execution: static
+  inference_mode: none
+  repro_ref: fixtures/packs/broken-admission/
+  status: active
+  notes: "NOT_ADMISSIBLE sample: broken admission gate (structural integrity failure)"
+  indexable: true
+  created_at: '2026-01-14T00:00:00Z'
+
+- run_id: gf-01-adjudicated-fail-01
+  scenario_id: gf-01-single-agent-lifecycle
+  ruleset_version: ruleset-1.0
+  substrate: fixture
+  substrate_claim_level: declared
+  substrate_execution: static
+  inference_mode: none
+  repro_ref: fixtures/packs/gf-01-admissible-fail/
+  status: active
+  notes: "ADJUDICATED+FAIL sample: ADMISSIBLE but GF-01 fails due to __INVALID_MARKER__ in artifacts"
+  indexable: true
+  created_at: '2026-01-14T00:00:00Z'
+
+# ============================================================================
+# v0.3 Arbitration Packs (Four-Domain Adjudication)
+# ============================================================================
+
+# D1: Budget Decision Record
+- run_id: arb-d1-budget-pass-fixture-v0.3
+  scenario_id: d1-budget-pass-scenario
+  ruleset_version: ruleset-1.1
+  substrate: fixture
+  substrate_claim_level: declared
+  substrate_execution: static
+  inference_mode: none
+  repro_ref: scripts/generate-v03-packs.mjs
+  status: active
+  notes: "v0.3 D1 PASS: Budget decision with valid outcome (allow)"
+  indexable: true
+  created_at: '2026-01-17T00:00:00Z'
+
+- run_id: arb-d1-budget-fail-fixture-v0.3
+  scenario_id: d1-budget-fail-scenario
+  ruleset_version: ruleset-1.1
+  substrate: fixture
+  substrate_claim_level: declared
+  substrate_execution: static
+  inference_mode: none
+  repro_ref: scripts/generate-v03-packs.mjs
+  status: active
+  notes: "v0.3 D1 FAIL: Missing evidence pointer for RQ-D1-01"
+  indexable: true
+  created_at: '2026-01-17T00:00:00Z'
+
+# D2: Terminal Lifecycle State
+- run_id: arb-d2-lifecycle-state-pass-fixture-v0.3
+  scenario_id: d2-lifecycle-pass-scenario
+  ruleset_version: ruleset-1.1
+  substrate: fixture
+  substrate_claim_level: declared
+  substrate_execution: static
+  inference_mode: none
+  repro_ref: scripts/generate-v03-packs.mjs
+  status: active
+  notes: "v0.3 D2 PASS: Terminal state transition to 'success'"
+  indexable: true
+  created_at: '2026-01-17T00:00:00Z'
+
+- run_id: arb-d2-lifecycle-state-fail-fixture-v0.3
+  scenario_id: d2-lifecycle-fail-scenario
+  ruleset_version: ruleset-1.1
+  substrate: fixture
+  substrate_claim_level: declared
+  substrate_execution: static
+  inference_mode: none
+  repro_ref: scripts/generate-v03-packs.mjs
+  status: active
+  notes: "v0.3 D2 FAIL: Missing evidence pointer for RQ-D2-01"
+  indexable: true
+  created_at: '2026-01-17T00:00:00Z'
+
+# D3: Authorization Decision
+- run_id: arb-d3-authz-decision-pass-fixture-v0.3
+  scenario_id: d3-authz-pass-scenario
+  ruleset_version: ruleset-1.1
+  substrate: fixture
+  substrate_claim_level: declared
+  substrate_execution: static
+  inference_mode: none
+  repro_ref: scripts/generate-v03-packs.mjs
+  status: active
+  notes: "v0.3 D3 PASS: Authorization decision with 'allow' outcome"
+  indexable: true
+  created_at: '2026-01-17T00:00:00Z'
+
+- run_id: arb-d3-authz-decision-fail-fixture-v0.3
+  scenario_id: d3-authz-fail-scenario
+  ruleset_version: ruleset-1.1
+  substrate: fixture
+  substrate_claim_level: declared
+  substrate_execution: static
+  inference_mode: none
+  repro_ref: scripts/generate-v03-packs.mjs
+  status: active
+  notes: "v0.3 D3 FAIL: Missing evidence pointer for RQ-D3-01"
+  indexable: true
+  created_at: '2026-01-17T00:00:00Z'
+
+# D4: Termination Decision
+- run_id: arb-d4-termination-recovery-pass-fixture-v0.3
+  scenario_id: d4-termination-pass-scenario
+  ruleset_version: ruleset-1.1
+  substrate: fixture
+  substrate_claim_level: declared
+  substrate_execution: static
+  inference_mode: none
+  repro_ref: scripts/generate-v03-packs.mjs
+  status: active
+  notes: "v0.3 D4 PASS: Termination decision recorded"
+  indexable: true
+  created_at: '2026-01-17T00:00:00Z'
+
+- run_id: arb-d4-termination-recovery-fail-fixture-v0.3
+  scenario_id: d4-termination-fail-scenario
+  ruleset_version: ruleset-1.1
+  substrate: fixture
+  substrate_claim_level: declared
+  substrate_execution: static
+  inference_mode: none
+  repro_ref: scripts/generate-v03-packs.mjs
+  status: active
+  notes: "v0.3 D4 FAIL: Missing evidence pointer for RQ-D4-01"
+  indexable: true
+  created_at: '2026-01-17T00:00:00Z'
+
+# ============================================================================
+# v0.4 Semantic Invariant FAIL Packs (8 packs)
+# Targets clause-02 (field semantics) and clause-03 (gate invariants)
+# ============================================================================
+
+- run_id: arb-d1-budget-fail-outcome-invalid-v0.4
+  scenario_id: d1-fail-cl-d1-02-scenario
+  ruleset_version: ruleset-1.2
+  substrate: fixture
+  substrate_claim_level: declared
+  substrate_execution: static
+  inference_mode: none
+  repro_ref: scripts/generate-v04-packs.mjs
+  status: active
+  notes: "v0.4 D1 FAIL: Invalid budget outcome (maybe_later) - CL-D1-02"
+  indexable: true
+  created_at: '2026-01-18T00:00:00Z'
+
+- run_id: arb-d1-budget-fail-deny-missing-gate-v0.4
+  scenario_id: d1-fail-cl-d1-03-scenario
+  ruleset_version: ruleset-1.2
+  substrate: fixture
+  substrate_claim_level: declared
+  substrate_execution: static
+  inference_mode: none
+  repro_ref: scripts/generate-v04-packs.mjs
+  status: active
+  notes: "v0.4 D1 FAIL: Deny without gate enforcement - CL-D1-03"
+  indexable: true
+  created_at: '2026-01-18T00:00:00Z'
+
+- run_id: arb-d2-lifecycle-fail-terminal-state-invalid-v0.4
+  scenario_id: d2-fail-cl-d2-02-scenario
+  ruleset_version: ruleset-1.2
+  substrate: fixture
+  substrate_claim_level: declared
+  substrate_execution: static
+  inference_mode: none
+  repro_ref: scripts/generate-v04-packs.mjs
+  status: active
+  notes: "v0.4 D2 FAIL: Terminal state not in allowed set - CL-D2-02"
+  indexable: true
+  created_at: '2026-01-18T00:00:00Z'
+
+- run_id: arb-d2-lifecycle-fail-post-terminal-exec-v0.4
+  scenario_id: d2-fail-cl-d2-03-scenario
+  ruleset_version: ruleset-1.2
+  substrate: fixture
+  substrate_claim_level: declared
+  substrate_execution: static
+  inference_mode: none
+  repro_ref: scripts/generate-v04-packs.mjs
+  status: active
+  notes: "v0.4 D2 FAIL: Post-terminal execution detected - CL-D2-03"
+  indexable: true
+  created_at: '2026-01-18T00:00:00Z'
+
+- run_id: arb-d3-authz-fail-sra-incomplete-v0.4
+  scenario_id: d3-fail-cl-d3-02-scenario
+  ruleset_version: ruleset-1.2
+  substrate: fixture
+  substrate_claim_level: declared
+  substrate_execution: static
+  inference_mode: none
+  repro_ref: scripts/generate-v04-packs.mjs
+  status: active
+  notes: "v0.4 D3 FAIL: S/R/A triple incomplete - CL-D3-02"
+  indexable: true
+  created_at: '2026-01-18T00:00:00Z'
+
+- run_id: arb-d3-authz-fail-deny-no-confirm-v0.4
+  scenario_id: d3-fail-cl-d3-03-scenario
+  ruleset_version: ruleset-1.2
+  substrate: fixture
+  substrate_claim_level: declared
+  substrate_execution: static
+  inference_mode: none
+  repro_ref: scripts/generate-v04-packs.mjs
+  status: active
+  notes: "v0.4 D3 FAIL: Deny without confirm gate - CL-D3-03"
+  indexable: true
+  created_at: '2026-01-18T00:00:00Z'
+
+- run_id: arb-d4-termination-fail-reason-invalid-v0.4
+  scenario_id: d4-fail-cl-d4-02-scenario
+  ruleset_version: ruleset-1.2
+  substrate: fixture
+  substrate_claim_level: declared
+  substrate_execution: static
+  inference_mode: none
+  repro_ref: scripts/generate-v04-packs.mjs
+  status: active
+  notes: "v0.4 D4 FAIL: Invalid termination reason category - CL-D4-02"
+  indexable: true
+  created_at: '2026-01-18T00:00:00Z'
+
+- run_id: arb-d4-termination-fail-uncontrolled-recovery-v0.4
+  scenario_id: d4-fail-cl-d4-03-scenario
+  ruleset_version: ruleset-1.2
+  substrate: fixture
+  substrate_claim_level: declared
+  substrate_execution: static
+  inference_mode: none
+  repro_ref: scripts/generate-v04-packs.mjs
+  status: active
+  notes: "v0.4 D4 FAIL: Uncontrolled recovery after termination - CL-D4-03"
+  indexable: true
+  created_at: '2026-01-18T00:00:00Z'
 

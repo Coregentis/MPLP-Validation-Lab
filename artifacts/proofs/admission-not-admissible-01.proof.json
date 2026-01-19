@@ -1,0 +1,26 @@
+{
+  "payload": {
+    "schema_version": "1.0.0",
+    "ruleset_id": "ruleset-1.0",
+    "run_id": "admission-not-admissible-01",
+    "topline_verdict": "NOT_EVALUATED",
+    "reason_code": "VERDICT_MISSING",
+    "verdict_hash": "f15626c527424c83e4f30dd8566f0ed613c5be4bd1b312a823ee4722defbe065",
+    "clause_summary": {
+      "total": 0,
+      "pass": 0,
+      "fail": 0,
+      "not_evaluated": 0
+    }
+  },
+  "signature": {
+    "algorithm": "Ed25519",
+    "signature": "9H1Pu+Ov+Z8j1h+GtRWcsQ3PbEfpfoM3Q8uAx6joklXadqhrq2XytN8B85yWGEbDvRyqg42Y3vC9ANpTlDTQCA==",
+    "key_id": "vlab-v0.5-test-001",
+    "signed_at": "2026-01-19T03:35:53.844Z"
+  },
+  "metadata": {
+    "generated_at": "2026-01-19T03:35:53.844Z",
+    "generator_version": "0.5.5"
+  }
+}

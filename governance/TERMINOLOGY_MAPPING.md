@@ -61,20 +61,22 @@ All implementations, documentation, and UI MUST use these terms consistently.
 
 ---
 
-## Golden Flows (GF-01 ~ GF-05)
+## Lifecycle Guarantees (LG-01 ~ LG-05)
 
 > [!IMPORTANT]
-> **Navigation Labels Only**
+> **External Display: LG | Internal ID: gf**
 >
-> This table provides **labels for navigation only**. Authoritative evaluability and requirements are defined by **ruleset requirements + upstream truth sources**, not this table.
+> - External display uses **LG-xx** (Lifecycle Guarantees)
+> - Internal ID remains **gf-xx** (frozen, do not change)
+> - Registry SSOT: `lib/registry/lifecycle-guarantees.ts`
 
-| GF ID | Name | Validates |
-|:---|:---|:---|
-| GF-01 | Single Agent Lifecycle | Context → Plan → Confirm → Trace chain (L1/L2) |
-| GF-02 | Multi-Agent Coordination | Agent collaboration patterns (L2) |
-| GF-03 | Human-in-the-Loop Gating | Confirm gate with human approval (L2) |
-| GF-04 | Drift Detection & Recovery | Snapshot diff and recovery (L3) |
-| GF-05 | External Tool Integration | Tool invocation and result handling (L3/L4) |
+| LG ID | Internal ID | Name | Validates |
+|:---|:---|:---|:---|
+| LG-01 | gf-01 | Single Agent Lifecycle | Context → Plan → Confirm → Trace chain (L1/L2) |
+| LG-02 | gf-02 | Multi-Agent Collaboration | Agent collaboration patterns (L2) |
+| LG-03 | gf-03 | Human-in-the-Loop Gating | Confirm gate with human approval (L2) |
+| LG-04 | gf-04 | Drift Detection & Recovery | Snapshot diff and recovery (L3) |
+| LG-05 | gf-05 | External Tool Integration | Tool invocation and result handling (L3/L4) |
 
 ---
 
@@ -107,6 +109,8 @@ The following terms are **FORBIDDEN** in Validation Lab:
 | score | Implies numeric rating | (none) |
 | official compliance | Implies regulatory approval | `evidence-based verdict` |
 | approved | Implies endorsement | `PASS (evidence-based)` |
+| **Golden Flow** (external) | Causes terminology collision with main repo FLOW | **Lifecycle Guarantee (LG)** |
+| **GF-xx** (external display) | Reserved for internal ID only | **LG-xx** |
 
 ---
 

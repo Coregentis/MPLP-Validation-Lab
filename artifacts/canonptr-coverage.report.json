@@ -1,0 +1,191 @@
+{
+  "gate_id": "GATE-CANONPTR-COVERAGE",
+  "executed_at": "2026-01-19T03:08:26.498Z",
+  "status": "PASS",
+  "phase": "A",
+  "phase_thresholds": {
+    "A": "≥1 canonptr per run",
+    "B": "≥80% coverage",
+    "C": "≥95% coverage"
+  },
+  "summary": {
+    "total_runs": 24,
+    "runs_with_canonptr": 24,
+    "runs_without_canonptr": 0,
+    "total_pointers": 72,
+    "canonptr_pointers": 72,
+    "coverage_pct": 100
+  },
+  "runs": [
+    {
+      "run_id": "v05-d1-langgraph-pass-budget-allow",
+      "has_canonptr": true,
+      "canonptr_count": 3,
+      "total_pointers": 3,
+      "coverage_pct": 100
+    },
+    {
+      "run_id": "v05-d1-autogen-pass-budget-allow",
+      "has_canonptr": true,
+      "canonptr_count": 3,
+      "total_pointers": 3,
+      "coverage_pct": 100
+    },
+    {
+      "run_id": "v05-d1-sk-pass-budget-allow",
+      "has_canonptr": true,
+      "canonptr_count": 3,
+      "total_pointers": 3,
+      "coverage_pct": 100
+    },
+    {
+      "run_id": "v05-d1-langgraph-fail-outcome-invalid",
+      "has_canonptr": true,
+      "canonptr_count": 3,
+      "total_pointers": 3,
+      "coverage_pct": 100
+    },
+    {
+      "run_id": "v05-d1-autogen-fail-outcome-invalid",
+      "has_canonptr": true,
+      "canonptr_count": 3,
+      "total_pointers": 3,
+      "coverage_pct": 100
+    },
+    {
+      "run_id": "v05-d1-sk-fail-outcome-invalid",
+      "has_canonptr": true,
+      "canonptr_count": 3,
+      "total_pointers": 3,
+      "coverage_pct": 100
+    },
+    {
+      "run_id": "v05-d2-langgraph-pass-terminal-success",
+      "has_canonptr": true,
+      "canonptr_count": 3,
+      "total_pointers": 3,
+      "coverage_pct": 100
+    },
+    {
+      "run_id": "v05-d2-autogen-pass-terminal-success",
+      "has_canonptr": true,
+      "canonptr_count": 3,
+      "total_pointers": 3,
+      "coverage_pct": 100
+    },
+    {
+      "run_id": "v05-d2-sk-pass-terminal-success",
+      "has_canonptr": true,
+      "canonptr_count": 3,
+      "total_pointers": 3,
+      "coverage_pct": 100
+    },
+    {
+      "run_id": "v05-d2-langgraph-fail-invalid-terminal",
+      "has_canonptr": true,
+      "canonptr_count": 3,
+      "total_pointers": 3,
+      "coverage_pct": 100
+    },
+    {
+      "run_id": "v05-d2-autogen-fail-invalid-terminal",
+      "has_canonptr": true,
+      "canonptr_count": 3,
+      "total_pointers": 3,
+      "coverage_pct": 100
+    },
+    {
+      "run_id": "v05-d2-sk-fail-invalid-terminal",
+      "has_canonptr": true,
+      "canonptr_count": 3,
+      "total_pointers": 3,
+      "coverage_pct": 100
+    },
+    {
+      "run_id": "v05-d3-langgraph-pass-authz-allow",
+      "has_canonptr": true,
+      "canonptr_count": 3,
+      "total_pointers": 3,
+      "coverage_pct": 100
+    },
+    {
+      "run_id": "v05-d3-autogen-pass-authz-allow",
+      "has_canonptr": true,
+      "canonptr_count": 3,
+      "total_pointers": 3,
+      "coverage_pct": 100
+    },
+    {
+      "run_id": "v05-d3-sk-pass-authz-allow",
+      "has_canonptr": true,
+      "canonptr_count": 3,
+      "total_pointers": 3,
+      "coverage_pct": 100
+    },
+    {
+      "run_id": "v05-d3-langgraph-fail-subject-missing",
+      "has_canonptr": true,
+      "canonptr_count": 3,
+      "total_pointers": 3,
+      "coverage_pct": 100
+    },
+    {
+      "run_id": "v05-d3-autogen-fail-subject-missing",
+      "has_canonptr": true,
+      "canonptr_count": 3,
+      "total_pointers": 3,
+      "coverage_pct": 100
+    },
+    {
+      "run_id": "v05-d3-sk-fail-subject-missing",
+      "has_canonptr": true,
+      "canonptr_count": 3,
+      "total_pointers": 3,
+      "coverage_pct": 100
+    },
+    {
+      "run_id": "v05-d4-langgraph-pass-reason-success",
+      "has_canonptr": true,
+      "canonptr_count": 3,
+      "total_pointers": 3,
+      "coverage_pct": 100
+    },
+    {
+      "run_id": "v05-d4-autogen-pass-reason-success",
+      "has_canonptr": true,
+      "canonptr_count": 3,
+      "total_pointers": 3,
+      "coverage_pct": 100
+    },
+    {
+      "run_id": "v05-d4-sk-pass-reason-success",
+      "has_canonptr": true,
+      "canonptr_count": 3,
+      "total_pointers": 3,
+      "coverage_pct": 100
+    },
+    {
+      "run_id": "v05-d4-langgraph-fail-reason-invalid",
+      "has_canonptr": true,
+      "canonptr_count": 3,
+      "total_pointers": 3,
+      "coverage_pct": 100
+    },
+    {
+      "run_id": "v05-d4-autogen-fail-reason-invalid",
+      "has_canonptr": true,
+      "canonptr_count": 3,
+      "total_pointers": 3,
+      "coverage_pct": 100
+    },
+    {
+      "run_id": "v05-d4-sk-fail-reason-invalid",
+      "has_canonptr": true,
+      "canonptr_count": 3,
+      "total_pointers": 3,
+      "coverage_pct": 100
+    }
+  ],
+  "issues": [],
+  "duration_ms": 30
+}

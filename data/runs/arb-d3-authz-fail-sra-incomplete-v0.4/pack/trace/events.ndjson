@@ -1,0 +1,6 @@
+{"event_id":"evt-init-001","event_type":"agent.init","timestamp":"2026-01-18T10:00:00Z","agent_id":"agent-001"}
+{"event_id":"evt-budget-001","event_type":"budget.decision","timestamp":"2026-01-18T10:01:00Z","decision_kind":"budget","outcome":"allow","resource":"token_quota","amount":1000}
+{"event_id":"evt-state-001","event_type":"lifecycle.transition","timestamp":"2026-01-18T10:02:00Z","to_state":"success","agent_id":"agent-001"}
+{"event_id":"evt-terminate-001","event_type":"termination.decision","timestamp":"2026-01-18T10:04:00Z","decision_kind":"terminate","termination_reason":"timeout"}
+{"event_id":"evt-authz-001","event_type":"authz.decision","timestamp":"2026-01-18T10:01:00Z","decision_kind":"authz","outcome":"allow","subject":"user-123"}
+{"event_id":"evt-end-001","event_type":"agent.end","timestamp":"2026-01-18T10:15:00Z","agent_id":"agent-001"}

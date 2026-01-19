@@ -1,0 +1,5 @@
+{
+  "pack_id": "arb-d1-budget-fail-deny-missing-gate-v0.4",
+  "version": "1.0.0",
+  "trace_path": "trace/events.ndjson"
+}

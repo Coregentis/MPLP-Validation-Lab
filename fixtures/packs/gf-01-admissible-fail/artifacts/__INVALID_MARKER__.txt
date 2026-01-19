@@ -1,0 +1,5 @@
+This file marks the evidence pack as containing invalid/corrupt evidence for testing purposes.
+It triggers GF-01 FAIL while maintaining ADMISSIBLE status.
+
+Purpose: PR-11.2 ADJUDICATED+FAIL sample
+Created: 2026-01-14

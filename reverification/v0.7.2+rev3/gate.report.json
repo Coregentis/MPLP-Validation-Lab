@@ -1,0 +1,45 @@
+{
+  "total": 7,
+  "passed": 4,
+  "failed": 3,
+  "results": [
+    {
+      "id": "04",
+      "name": "language",
+      "status": "FAIL",
+      "message": "[GATE-04] Non-endorsement Language Lint: FAIL (files=34, matches=8)\n - app/coverage/page.tsx:76:46 [FORBIDDEN_TERM] Forbidden term implies certification/endorsement risk (match=\"certification\")\n - app"
+    },
+    {
+      "id": "05",
+      "name": "no-exec-hosting",
+      "status": "FAIL",
+      "message": "[GATE-05] No Execution Hosting Guard: FAIL (files=32, matches=1)\n - app/coverage/page.tsx:77:49 [NO_EXEC_HOSTING] Forbidden phrase suggests execution hosting / implementation submission (match=\"host e"
+    },
+    {
+      "id": "06",
+      "name": "robots-policy",
+      "status": "PASS"
+    },
+    {
+      "id": "07",
+      "name": "pii-leak",
+      "status": "PASS"
+    },
+    {
+      "id": "08",
+      "name": "curated-immutability",
+      "status": "FAIL",
+      "message": "============================================================\nGATE-08: Curated Immutability\n============================================================\n\nEntries checked: 6\n\n❌ GATE-08 FAILED (21 failur"
+    },
+    {
+      "id": "09",
+      "name": "ssot-projection",
+      "status": "PASS"
+    },
+    {
+      "id": "10",
+      "name": "curated-invariants",
+      "status": "PASS"
+    }
+  ]
+}

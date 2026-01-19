@@ -1,0 +1,18 @@
+{
+  "run_id": "arb-d2-lifecycle-fail-terminal-state-invalid-v0.4",
+  "pack_root": "pack",
+  "ruleset_ref": "ruleset-1.2",
+  "protocol_pin": "2025-draft",
+  "schema_bundle_sha256": "v0.4.0-placeholder",
+  "hash_scope": [
+    "verdict.json",
+    "pack/trace/events.ndjson"
+  ],
+  "reason_code": null,
+  "scenario_meta": {
+    "domain": "D2",
+    "clause_id": "CL-D2-02",
+    "privileged_action": false,
+    "termination_case": false
+  }
+}

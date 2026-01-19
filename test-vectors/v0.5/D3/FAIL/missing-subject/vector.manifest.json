@@ -1,0 +1,13 @@
+{
+  "vector_id": "v05-d3-fail-missing-subject",
+  "domain": "D3",
+  "expected_topline": "FAIL",
+  "expected_reason_code": "D3_SUBJECT_MISSING",
+  "ruleset_ref": "ruleset-1.2",
+  "protocol_pin": "2025-draft",
+  "schema_version": "1.0.0",
+  "description": "Missing subject in authz",
+  "hash_scope": [
+    "pack/trace/events.ndjson"
+  ]
+}

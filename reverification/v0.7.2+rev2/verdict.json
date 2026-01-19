@@ -1,0 +1,28 @@
+{
+  "reverification_version": "1.0",
+  "release": "v0.7.2",
+  "bundle_name": "v0.7.2+rev2",
+  "release_path": "releases/v0.7.2/",
+  "verified_at": "2026-01-14T07:36:39.164Z",
+  "verifier": {
+    "id": "validation-lab-verifier",
+    "version": "1.0.0",
+    "fingerprint": {
+      "engine_hash": "35dd34ee9c546b3c9216a134f38cf10b296883511aaaaada73adff1332b8029b",
+      "ingest_hash": "c76bc9bf48e6eb6e91aae4442b51ea64c462bf6aa7cde3c70e440679829f6704",
+      "evaluate_hash": "e8f8770500abe8ee125f65b169ede8259f41b4c10d01d68f0a104aca2d088fc0",
+      "gates_hash": "66d6811354b2cda58fb27488ed57421ffef68f51b3c278bafa908ea97361f931",
+      "ruleset_hash": "df5ed98e271ad6229007ca3f38ae248acf68df4fe6d18b29c447e8c6f956c23a",
+      "computed_at": "2026-01-14T07:36:36.681Z"
+    }
+  },
+  "ruleset_version": "1.0",
+  "gate_results": {
+    "total": 7,
+    "passed": 4,
+    "failed": 3,
+    "status": "HAS_FAILURES"
+  },
+  "overall_status": "REVERIFICATION_INCOMPLETE",
+  "note": "Historical release reverified by canonical Validation Lab verifier."
+}

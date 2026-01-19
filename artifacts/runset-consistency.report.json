@@ -1,0 +1,33 @@
+{
+  "gate_id": "GATE-RUNSET-CONSISTENCY",
+  "executed_at": "2026-01-18T16:02:47.161Z",
+  "status": "PASS",
+  "sets": {
+    "curated": {
+      "declared": 23,
+      "listed": 23,
+      "found": 23,
+      "missing": []
+    },
+    "cross_substrate": {
+      "declared": 24,
+      "listed": 24,
+      "found": 24,
+      "missing": [],
+      "substrates": [
+        "langgraph",
+        "autogen",
+        "sk"
+      ],
+      "scenarios": 8
+    },
+    "totals": {
+      "curated": 23,
+      "cross_substrate": 24,
+      "declared_curated": 23,
+      "declared_cross_substrate": 24
+    }
+  },
+  "issues": [],
+  "duration_ms": 5
+}

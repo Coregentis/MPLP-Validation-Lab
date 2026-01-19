@@ -1,0 +1,78 @@
+{
+  "gate_id": "GATE-PTM-0.4",
+  "executed_at": "2026-01-18T14:59:54.526Z",
+  "status": "PASS",
+  "checks": {
+    "ptm_loaded": true,
+    "truth_sources_exist": [
+      {
+        "route": "/runs",
+        "source": "data/curated-runs/allowlist.yaml",
+        "exists": true
+      },
+      {
+        "route": "/runs",
+        "source": "public/_data/curated-runs.json",
+        "exists": true
+      },
+      {
+        "route": "/runs/arb-d1-budget-pass-fixture-v0.3",
+        "source": "data/runs/arb-d1-budget-pass-fixture-v0.3",
+        "exists": true
+      },
+      {
+        "route": "/runs/arb-d1-budget-fail-outcome-invalid-v0.4",
+        "source": "data/runs/arb-d1-budget-fail-outcome-invalid-v0.4",
+        "exists": true
+      }
+    ],
+    "rulesets_loadable": [
+      {
+        "id": "ruleset-1.0",
+        "manifest_exists": true,
+        "adjudicator_exists": true,
+        "registry_loadable": true
+      },
+      {
+        "id": "ruleset-1.1",
+        "manifest_exists": true,
+        "adjudicator_exists": true,
+        "registry_loadable": true
+      },
+      {
+        "id": "ruleset-1.2",
+        "manifest_exists": true,
+        "adjudicator_exists": true,
+        "registry_loadable": true
+      }
+    ],
+    "sample_runs_valid": [
+      {
+        "key": "v03_pass",
+        "run_id": "arb-d1-budget-pass-fixture-v0.3",
+        "in_allowlist": true,
+        "bundle_exists": true
+      },
+      {
+        "key": "v03_fail",
+        "run_id": "arb-d1-budget-fail-fixture-v0.3",
+        "in_allowlist": true,
+        "bundle_exists": true
+      },
+      {
+        "key": "v04_pass",
+        "run_id": "arb-d1-budget-pass-fixture-v0.3",
+        "in_allowlist": true,
+        "bundle_exists": true
+      },
+      {
+        "key": "v04_fail",
+        "run_id": "arb-d1-budget-fail-outcome-invalid-v0.4",
+        "in_allowlist": true,
+        "bundle_exists": true
+      }
+    ]
+  },
+  "issues": [],
+  "duration_ms": 52
+}

@@ -13,7 +13,7 @@ const LAB_CANONICAL_HOST = 'https://lab.mplp.io';
 
 export const metadata: Metadata = {
     title: 'Rulesets — MPLP Validation Lab',
-    description: 'Versioned rulesets for MPLP evidence-based verdicts. Each ruleset defines requirements for Golden Flows evaluation.',
+    description: 'Versioned rulesets for MPLP evidence-based verdicts. Each ruleset defines requirements for Lifecycle Guarantees evaluation.',
     alternates: {
         canonical: `${LAB_CANONICAL_HOST}/rulesets`,
     },
@@ -27,40 +27,54 @@ export default function RulesetsPage() {
     const rulesets = listRulesets();
 
     return (
-        <div>
-            <h1 className="text-3xl font-bold mb-6">Rulesets</h1>
-            <p className="text-zinc-400 mb-8">
-                Versioned rulesets for evidence-based verdicts. Each ruleset defines requirements for Golden Flows.
-            </p>
+        <div className="pt-8">
+            <div className="mb-12">
+                <p className="text-xs font-bold uppercase tracking-[0.4em] text-mplp-text-muted/80 mb-3">Evaluation Logic</p>
+                <h1 className="text-3xl sm:text-4xl font-bold text-mplp-text mb-6">Rulesets</h1>
+                <p className="max-w-2xl text-mplp-text-muted leading-relaxed">
+                    Versioned rulesets for evidence-based verdicts. Each ruleset defines requirements for Lifecycle Guarantees evaluation.
+                </p>
+            </div>
 
             {rulesets.length === 0 ? (
-                <div className="bg-zinc-900 border border-zinc-800 rounded-lg p-8 text-center">
-                    <p className="text-zinc-500">No rulesets available.</p>
+                <div className="p-8 text-center border border-mplp-border/30 rounded-xl bg-mplp-dark-soft/20">
+                    <p className="text-mplp-text-muted">No rulesets available.</p>
                 </div>
             ) : (
-                <div className="space-y-4">
+                <div className="grid gap-6 md:grid-cols-2">
                     {rulesets.map((rs) => (
                         <Link
                             key={rs.id}
                             href={`/rulesets/${rs.id}`}
-                            className="block bg-zinc-900 border border-zinc-800 rounded-lg p-4 hover:border-zinc-600 transition"
+                            className="group block p-8 bg-glass border border-mplp-border/40 rounded-2xl hover:border-mplp-blue-soft/40 transition-all relative overflow-hidden"
                         >
-                            <div className="flex items-center justify-between">
+                            {/* Hover Glow */}
+                            <div className="absolute inset-0 bg-mplp-blue-soft/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                            <div className="relative z-10 flex items-start justify-between">
                                 <div>
-                                    <h2 className="font-semibold text-lg">{rs.name || rs.id}</h2>
-                                    <p className="text-zinc-500 text-sm">Version: {rs.version}</p>
+                                    <div className="flex items-center gap-3 mb-2">
+                                        <h2 className="font-bold text-xl text-mplp-text group-hover:text-mplp-blue-soft transition-colors tracking-tight">
+                                            {rs.name || rs.id}
+                                        </h2>
+                                        <span className={`inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider ${rs.status === 'active'
+                                            ? 'bg-mplp-blue-soft/10 text-mplp-blue-soft border border-mplp-blue-soft/20'
+                                            : 'bg-mplp-dark-soft text-mplp-text-muted border border-mplp-border/40'
+                                            }`}>
+                                            {rs.status}
+                                        </span>
+                                    </div>
+                                    <p className="text-sm text-mplp-text-muted font-mono mb-6">v{rs.version}</p>
                                 </div>
-                                <div className="text-right">
-                                    <span className={`inline-block px-2 py-1 rounded text-xs font-medium ${rs.status === 'active'
-                                        ? 'bg-green-900/30 text-green-400'
-                                        : 'bg-zinc-700 text-zinc-400'
-                                        }`}>
-                                        {rs.status}
-                                    </span>
-                                    <p className="text-zinc-600 text-xs mt-1">
-                                        {rs.golden_flows?.length || 0} Golden Flows
-                                    </p>
-                                </div>
+                            </div>
+
+                            <div className="relative z-10 flex items-center justify-between pt-6 border-t border-mplp-border/30">
+                                <span className="text-xs font-bold uppercase tracking-widest text-mplp-text-muted/60 group-hover:text-mplp-text-muted transition-colors">
+                                    {rs.golden_flows?.length || 0} Lifecycle Guarantees
+                                </span>
+                                <span className="text-mplp-blue-soft opacity-0 group-hover:opacity-100 transition-all transform translate-x-[-10px] group-hover:translate-x-0">
+                                    →
+                                </span>
                             </div>
                         </Link>
                     ))}

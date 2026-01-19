@@ -1,0 +1,99 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Producer Run Manifest",
+    "description": "Metadata about a producer run, including reproducibility information",
+    "type": "object",
+    "required": [
+        "producer_id",
+        "substrate",
+        "version",
+        "run_id",
+        "generated_at",
+        "ruleset_ref"
+    ],
+    "properties": {
+        "producer_id": {
+            "type": "string",
+            "description": "Unique identifier for this producer",
+            "enum": [
+                "langgraph",
+                "autogen",
+                "semantic-kernel"
+            ]
+        },
+        "substrate": {
+            "type": "string",
+            "description": "Substrate/framework name",
+            "enum": [
+                "langgraph",
+                "langchain",
+                "autogen",
+                "semantic-kernel",
+                "crewai"
+            ]
+        },
+        "version": {
+            "type": "string",
+            "description": "Producer version"
+        },
+        "substrate_version": {
+            "type": "string",
+            "description": "Version of the underlying substrate/framework"
+        },
+        "run_id": {
+            "type": "string",
+            "description": "Generated run ID"
+        },
+        "generated_at": {
+            "type": "string",
+            "format": "date-time",
+            "description": "ISO timestamp of generation"
+        },
+        "ruleset_ref": {
+            "type": "string",
+            "description": "Target ruleset for adjudication"
+        },
+        "scenario": {
+            "type": "string",
+            "description": "Scenario identifier"
+        },
+        "expected_verdict": {
+            "type": "string",
+            "enum": [
+                "PASS",
+                "FAIL"
+            ],
+            "description": "Expected adjudication result"
+        },
+        "expected_reason_code": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "Expected reason code for FAIL cases"
+        },
+        "environment": {
+            "type": "object",
+            "properties": {
+                "node_version": {
+                    "type": "string"
+                },
+                "platform": {
+                    "type": "string"
+                },
+                "deterministic_seed": {
+                    "type": "integer"
+                }
+            },
+            "description": "Environment fingerprint for reproducibility"
+        },
+        "repro_command": {
+            "type": "string",
+            "description": "Command to reproduce this run"
+        },
+        "notes": {
+            "type": "string",
+            "description": "Optional notes about this run"
+        }
+    }
+}

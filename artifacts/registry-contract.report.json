@@ -1,0 +1,41 @@
+{
+  "gate_id": "GATE-REGISTRY-CONTRACT",
+  "executed_at": "2026-01-18T14:30:43.747Z",
+  "status": "PASS",
+  "rulesets": [
+    {
+      "id": "ruleset-1.0",
+      "manifest_loaded": true,
+      "adjudicator_exists": true,
+      "adjudicator_callable": true,
+      "output_valid": true,
+      "status": "PASS",
+      "errors": []
+    },
+    {
+      "id": "ruleset-1.1",
+      "manifest_loaded": true,
+      "adjudicator_exists": true,
+      "adjudicator_callable": true,
+      "output_valid": true,
+      "status": "PASS",
+      "errors": []
+    },
+    {
+      "id": "ruleset-1.2",
+      "manifest_loaded": true,
+      "adjudicator_exists": true,
+      "adjudicator_callable": true,
+      "output_valid": true,
+      "status": "PASS",
+      "errors": []
+    }
+  ],
+  "summary": {
+    "total": 3,
+    "passed": 3,
+    "failed": 0,
+    "errors": []
+  },
+  "duration_ms": 97
+}

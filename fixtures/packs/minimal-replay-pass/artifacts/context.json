@@ -1,0 +1,11 @@
+{
+    "context_id": "ctx-001",
+    "status": "active",
+    "created_at": "2026-01-16T00:00:00Z",
+    "meta": {
+        "protocol_version": "1.0.0"
+    },
+    "task": {
+        "objective": "Demonstrate single agent lifecycle for replay"
+    }
+}

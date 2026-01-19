@@ -1,0 +1,45 @@
+{
+  "gate_id": "GATE-KEY-POLICY",
+  "executed_at": "2026-01-19T03:32:05.716Z",
+  "status": "PASS",
+  "checks": {
+    "identity_exists": true,
+    "schema_version": "1.4",
+    "key_policy_exists": true,
+    "active_key_valid": true,
+    "all_keys_valid": true,
+    "no_expired_active": true,
+    "revocations_valid": true
+  },
+  "issues": [],
+  "keys_summary": [
+    {
+      "key_id": "vlab-prod-2026-01b",
+      "status": "active",
+      "tier": "online",
+      "purpose": "production",
+      "not_before": "2026-01-19T03:30:00Z",
+      "not_after": "2027-01-19T00:00:00Z",
+      "issues": []
+    },
+    {
+      "key_id": "vlab-prod-2026-01",
+      "status": "revoked",
+      "tier": "online",
+      "purpose": "production",
+      "not_before": "2026-01-19T00:00:00Z",
+      "not_after": "2026-01-19T03:30:00Z",
+      "issues": []
+    },
+    {
+      "key_id": "vlab-v0.5-test-001",
+      "status": "grace",
+      "tier": "online",
+      "purpose": "test",
+      "not_before": "2026-01-01T00:00:00Z",
+      "not_after": "2026-02-18T00:00:00Z",
+      "issues": []
+    }
+  ],
+  "duration_ms": 1
+}

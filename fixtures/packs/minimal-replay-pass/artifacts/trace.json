@@ -1,0 +1,20 @@
+{
+    "trace_id": "trace-001",
+    "context_id": "ctx-001",
+    "plan_id": "plan-001",
+    "started_at": "2026-01-16T00:00:02Z",
+    "completed_at": "2026-01-16T00:00:05Z",
+    "status": "success",
+    "step_results": [
+        {
+            "step_id": "step-001",
+            "status": "completed",
+            "completed_at": "2026-01-16T00:00:03Z"
+        },
+        {
+            "step_id": "step-002",
+            "status": "completed",
+            "completed_at": "2026-01-16T00:00:04Z"
+        }
+    ]
+}

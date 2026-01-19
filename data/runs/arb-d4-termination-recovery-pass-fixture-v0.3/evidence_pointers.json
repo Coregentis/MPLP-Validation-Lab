@@ -1,0 +1,10 @@
+{
+  "pointers": [
+    {
+      "requirement_id": "RQ-D4-01",
+      "artifact_path": "pack/trace/events.ndjson",
+      "locator": "event_id:evt-terminate-001",
+      "status": "PRESENT"
+    }
+  ]
+}

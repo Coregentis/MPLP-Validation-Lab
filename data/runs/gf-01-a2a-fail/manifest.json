@@ -1,0 +1,13 @@
+{
+    "pack_id": "gf-01-a2a-fail",
+    "protocol_version": "1.0.0",
+    "created_at": "2026-01-16T09:00:00Z",
+    "generator": {
+        "name": "a2a-evidence-producer",
+        "version": "0.1.0"
+    },
+    "substrate": {
+        "type": "a2a",
+        "version": "0.1.0"
+    }
+}

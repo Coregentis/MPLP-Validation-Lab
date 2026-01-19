@@ -1,13 +1,17 @@
 /**
  * GATE-04: Non-endorsement Language Lint
  * 
- * Scans files for forbidden terms that imply certification/endorsement.
+ * Scans PUBLIC SURFACE files for forbidden terms that imply certification/endorsement.
  * FAIL if any forbidden term found (not in allow phrase context).
+ * 
+ * SCOPE: Only scans app/, components/, public/, README.md
+ * Internal governance docs are EXCLUDED (they may discuss these terms in negative context).
  */
 
 import * as path from 'path';
 import { loadYamlStrict } from '../utils/yaml-loader';
-import { walkFiles, readTextFileSafe, findAllOccurrences, locateIndex, excerptAt } from './_shared/scan';
+import { readTextFileSafe, findAllOccurrences, locateIndex, excerptAt } from './_shared/scan';
+import { listPublicSurfaceFiles, PUBLIC_SURFACE_DIRS } from './_shared/surface';
 import { GateReport, GateFinding, writeGateReport, printSummary, repoRelativePath } from './_shared/report';
 
 interface Lexicon {
@@ -28,13 +32,10 @@ async function main() {
     const lexiconPath = path.join(repoRoot, 'data/policy/forbidden-lexicon.yaml');
     const lexicon = loadYamlStrict<Lexicon>(lexiconPath);
 
-    // Scan scope: app/pages/content/README - where UI text lives
-    // Exclude: policy definitions, governance docs, gate code (self-scan), upstream synced files
-    const excludeDirs = ['node_modules', '.next', 'dist', 'coverage', '.git', 'artifacts', 'policy', 'governance'];
-
-    const files = walkFiles(repoRoot, {
+    // SCOPE: Only public surface (app, components, public, README.md)
+    // Excludes: governance, adjudication, inventory, releases, etc.
+    const files = listPublicSurfaceFiles(repoRoot, {
         includeExtensions: ['.ts', '.tsx', '.js', '.jsx', '.md', '.mdx', '.json', '.yaml', '.yml'],
-        excludeDirs,
         maxFileSizeBytes: 2 * 1024 * 1024,
     });
 
@@ -81,7 +82,7 @@ async function main() {
         summary: {
             files_scanned: files.length,
             matches: findings.length,
-            note: `excludeDirs: ${excludeDirs.join(', ')}`,
+            note: `scope: PUBLIC_SURFACE only (${PUBLIC_SURFACE_DIRS.join(', ')})`,
         },
     };
 

@@ -1,0 +1,44 @@
+{
+  "payload": {
+    "schema_version": "1.0.0",
+    "ruleset_id": "ruleset-1.2",
+    "run_id": "arb-d4-termination-fail-uncontrolled-recovery-v0.4",
+    "topline_verdict": "FAIL",
+    "reason_code": "D2_POST_TERMINAL_EXECUTION_DETECTED",
+    "verdict_hash": "ae95fcdca311fa30849ed85e76354ba98bedc1571b4e7eccbf503c764249395c",
+    "clause_summary": {
+      "total": 12,
+      "pass": 10,
+      "fail": 2,
+      "not_evaluated": 0
+    },
+    "domain_summary": [
+      {
+        "domain_id": "D1",
+        "status": "PASS"
+      },
+      {
+        "domain_id": "D2",
+        "status": "FAIL"
+      },
+      {
+        "domain_id": "D3",
+        "status": "PASS"
+      },
+      {
+        "domain_id": "D4",
+        "status": "FAIL"
+      }
+    ]
+  },
+  "signature": {
+    "algorithm": "Ed25519",
+    "signature": "abe/XgtohwuWAzYC4EO6GlbtcfT80f2w6iI5S/nzcT2wZbSuoOh2fHBuQiCtyC62LguXnDKx454UHruFNWgVAw==",
+    "key_id": "vlab-v0.5-test-001",
+    "signed_at": "2026-01-19T03:35:53.872Z"
+  },
+  "metadata": {
+    "generated_at": "2026-01-19T03:35:53.872Z",
+    "generator_version": "0.5.5"
+  }
+}

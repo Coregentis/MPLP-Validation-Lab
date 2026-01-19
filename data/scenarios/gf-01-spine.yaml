@@ -1,10 +1,13 @@
 scenario_id: gf-01-single-agent-lifecycle
 version: "1.0"
 target_gf: gf-01
+# Registry reference: canonical title from tests/golden/flows/registry.ts
+flow_ref: flow-01
 ruleset_version: ruleset-1.0
 strength: presence-level
 substrates:
   - a2a
   - langchain
   - mcp
-description: "Cross-substrate evidence spine for GF-01 (Single Agent Lifecycle)"
+description: "Cross-substrate evidence spine for FLOW-01 (Single Agent – Happy Path)"
+

@@ -1,0 +1,2 @@
+{"event_id":"evt-init-001","event_type":"agent.init","timestamp":"2026-01-17T09:59:00Z","agent_id":"agent-001"}
+{"event_id":"evt-end-001","event_type":"agent.end","timestamp":"2026-01-17T10:15:00Z","agent_id":"agent-001"}

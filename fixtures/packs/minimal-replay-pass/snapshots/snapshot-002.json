@@ -1,0 +1,32 @@
+{
+    "snapshot_id": "snapshot-002",
+    "captured_at": "2026-01-16T00:00:05Z",
+    "event_ref": "evt-006",
+    "state": {
+        "context": {
+            "context_id": "ctx-001",
+            "status": "active"
+        },
+        "plan": {
+            "plan_id": "plan-001",
+            "steps": [
+                {
+                    "step_id": "step-001",
+                    "status": "completed"
+                },
+                {
+                    "step_id": "step-002",
+                    "status": "completed"
+                }
+            ]
+        },
+        "trace": {
+            "trace_id": "trace-001",
+            "status": "success",
+            "completed_steps": [
+                "step-001",
+                "step-002"
+            ]
+        }
+    }
+}

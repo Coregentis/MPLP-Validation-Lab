@@ -1,0 +1,22 @@
+{
+  "run_id": "arb-d1-budget-fail-deny-missing-gate-v0.4",
+  "scenario_id": "d1-fail-cl-d1-03-scenario",
+  "admission": "ADMISSIBLE",
+  "topline": "FAIL",
+  "gf_verdicts": [],
+  "domain_verdicts": [
+    {
+      "domain": "D1",
+      "clause_id": "CL-D1-03",
+      "status": "FAIL",
+      "reason_code": "D1_BUDGET_DENY_WITHOUT_GATE"
+    }
+  ],
+  "versions": {
+    "protocol": "2025-draft",
+    "schema": "v0.4.0",
+    "ruleset": "ruleset-1.2"
+  },
+  "evaluated_at": "2026-01-18T14:37:17.974Z",
+  "reason_code": "D1_BUDGET_DENY_WITHOUT_GATE"
+}

@@ -1,0 +1,32 @@
+{
+  "payload": {
+    "schema_version": "1.0.0",
+    "ruleset_id": "ruleset-1.1",
+    "run_id": "arb-d1-budget-pass-fixture-v0.3",
+    "topline_verdict": "PASS",
+    "reason_code": null,
+    "verdict_hash": "061e087bfec65c83058b5e5cc4effd4818704663659ab9960a3d336051231fcd",
+    "clause_summary": {
+      "total": 1,
+      "pass": 1,
+      "fail": 0,
+      "not_evaluated": 0
+    },
+    "domain_summary": [
+      {
+        "domain_id": "D1",
+        "status": "PASS"
+      }
+    ]
+  },
+  "signature": {
+    "algorithm": "Ed25519",
+    "signature": "8qYpwsCQUDy6NlrJ1oqq8+7B46hI8NOKZzLKDJunr+jPamkyDUNJMiCGXimMs6Jry8EBEamwOnYipdeXTb4LBQ==",
+    "key_id": "vlab-v0.5-test-001",
+    "signed_at": "2026-01-19T03:35:53.867Z"
+  },
+  "metadata": {
+    "generated_at": "2026-01-19T03:35:53.867Z",
+    "generator_version": "0.5.5"
+  }
+}

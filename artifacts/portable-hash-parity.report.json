@@ -1,0 +1,80 @@
+{
+  "gate_id": "GATE-PORTABLE-HASH-PARITY",
+  "executed_at": "2026-01-19T03:14:13.371Z",
+  "status": "PASS",
+  "hash_scope": "HASH_SCOPE_PORTABLE_V1",
+  "summary": {
+    "scenarios": 8,
+    "scenarios_matched": 8,
+    "scenarios_mismatched": 0
+  },
+  "scenario_hashes": {
+    "d1-budget-allow": {
+      "hashes": {
+        "langgraph": "21881f5b5e1c355f3361c159abc47bd8936a242118c7e8ea9d8ed5895830dff9",
+        "autogen": "21881f5b5e1c355f3361c159abc47bd8936a242118c7e8ea9d8ed5895830dff9",
+        "semantic-kernel": "21881f5b5e1c355f3361c159abc47bd8936a242118c7e8ea9d8ed5895830dff9"
+      },
+      "parity": true
+    },
+    "d1-budget-deny-invalid": {
+      "hashes": {
+        "langgraph": "21881f5b5e1c355f3361c159abc47bd8936a242118c7e8ea9d8ed5895830dff9",
+        "autogen": "21881f5b5e1c355f3361c159abc47bd8936a242118c7e8ea9d8ed5895830dff9",
+        "semantic-kernel": "21881f5b5e1c355f3361c159abc47bd8936a242118c7e8ea9d8ed5895830dff9"
+      },
+      "parity": true
+    },
+    "d2-terminal-success": {
+      "hashes": {
+        "langgraph": "21881f5b5e1c355f3361c159abc47bd8936a242118c7e8ea9d8ed5895830dff9",
+        "autogen": "21881f5b5e1c355f3361c159abc47bd8936a242118c7e8ea9d8ed5895830dff9",
+        "semantic-kernel": "21881f5b5e1c355f3361c159abc47bd8936a242118c7e8ea9d8ed5895830dff9"
+      },
+      "parity": true
+    },
+    "d2-invalid-terminal": {
+      "hashes": {
+        "langgraph": "21881f5b5e1c355f3361c159abc47bd8936a242118c7e8ea9d8ed5895830dff9",
+        "autogen": "21881f5b5e1c355f3361c159abc47bd8936a242118c7e8ea9d8ed5895830dff9",
+        "semantic-kernel": "21881f5b5e1c355f3361c159abc47bd8936a242118c7e8ea9d8ed5895830dff9"
+      },
+      "parity": true
+    },
+    "d3-authz-allow": {
+      "hashes": {
+        "langgraph": "21881f5b5e1c355f3361c159abc47bd8936a242118c7e8ea9d8ed5895830dff9",
+        "autogen": "21881f5b5e1c355f3361c159abc47bd8936a242118c7e8ea9d8ed5895830dff9",
+        "semantic-kernel": "21881f5b5e1c355f3361c159abc47bd8936a242118c7e8ea9d8ed5895830dff9"
+      },
+      "parity": true
+    },
+    "d3-subject-missing": {
+      "hashes": {
+        "langgraph": "21881f5b5e1c355f3361c159abc47bd8936a242118c7e8ea9d8ed5895830dff9",
+        "autogen": "21881f5b5e1c355f3361c159abc47bd8936a242118c7e8ea9d8ed5895830dff9",
+        "semantic-kernel": "21881f5b5e1c355f3361c159abc47bd8936a242118c7e8ea9d8ed5895830dff9"
+      },
+      "parity": true
+    },
+    "d4-reason-success": {
+      "hashes": {
+        "langgraph": "21881f5b5e1c355f3361c159abc47bd8936a242118c7e8ea9d8ed5895830dff9",
+        "autogen": "21881f5b5e1c355f3361c159abc47bd8936a242118c7e8ea9d8ed5895830dff9",
+        "semantic-kernel": "21881f5b5e1c355f3361c159abc47bd8936a242118c7e8ea9d8ed5895830dff9"
+      },
+      "parity": true
+    },
+    "d4-reason-invalid": {
+      "hashes": {
+        "langgraph": "21881f5b5e1c355f3361c159abc47bd8936a242118c7e8ea9d8ed5895830dff9",
+        "autogen": "21881f5b5e1c355f3361c159abc47bd8936a242118c7e8ea9d8ed5895830dff9",
+        "semantic-kernel": "21881f5b5e1c355f3361c159abc47bd8936a242118c7e8ea9d8ed5895830dff9"
+      },
+      "parity": true
+    }
+  },
+  "issues": [],
+  "hash_scope_version": "1.0.0",
+  "duration_ms": 75
+}

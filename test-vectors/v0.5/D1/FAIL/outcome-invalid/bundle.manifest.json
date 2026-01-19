@@ -1,0 +1,10 @@
+{
+  "run_id": "v05-d1-fail-outcome-invalid",
+  "pack_root": "pack",
+  "ruleset_ref": "ruleset-1.2",
+  "protocol_pin": "2025-draft",
+  "schema_bundle_sha256": "v0.5.0-vectors",
+  "hash_scope": [
+    "pack/trace/events.ndjson"
+  ]
+}

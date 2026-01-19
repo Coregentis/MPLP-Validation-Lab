@@ -1,0 +1,34 @@
+# Ruleset 1.1 Manifest
+
+id: ruleset-1.1
+version: "1.1.0"
+name: MPLP Validation Lab Ruleset (Four-Domain Adjudication)
+status: draft
+
+protocol:
+  version: "1.0.0"
+  upstream_commit: "877029514f87dd7da1dfb559c178ce57a935d975"
+  schemas_bundle_sha256: "99804832ddc3daefb92ec74120afaab1c3278e4a79d670e1f796e67f735463aa"
+  invariants_bundle_sha256: "d32ed8bd0139ba2197c618f8cc057dae15ba8cd5012b25946c1e20c07fd8ebe0"
+
+compatibility:
+  evidence_pack_contract: "1.0"
+  min_pack_version: "1.0"
+  max_pack_version: "1.x"
+
+# Golden Flows (from ruleset-1.0)
+golden_flows:
+  - gf-01
+  - gf-02
+  - gf-03
+  - gf-04
+  - gf-05
+
+# v0.3 Four-Domain Clauses
+four_domain_clauses:
+  - CL-D1-01  # Budget Evidence Adjudication
+  - CL-D2-01  # Lifecycle State Evidence Adjudication
+  - CL-D3-01  # Authorization Decision Evidence Adjudication
+  - CL-D4-01  # Termination & Recovery Evidence Adjudication
+
+created_at: "2026-01-17T00:00:00Z"

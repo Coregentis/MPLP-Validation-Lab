@@ -1,0 +1,28 @@
+{
+  "pointers": [
+    {
+      "requirement_id": "RQ-D1-01",
+      "artifact_path": "pack/trace/events.ndjson",
+      "locator": "event_id:evt-v05-d4-pass-controlled-recovery-1",
+      "status": "PRESENT"
+    },
+    {
+      "requirement_id": "RQ-D2-01",
+      "artifact_path": "pack/trace/events.ndjson",
+      "locator": "event_id:evt-v05-d4-pass-controlled-recovery-2",
+      "status": "PRESENT"
+    },
+    {
+      "requirement_id": "RQ-D3-01",
+      "artifact_path": "pack/trace/events.ndjson",
+      "locator": "event_id:evt-v05-d4-pass-controlled-recovery-3",
+      "status": "PRESENT"
+    },
+    {
+      "requirement_id": "RQ-D4-01",
+      "artifact_path": "pack/trace/events.ndjson",
+      "locator": "event_id:evt-v05-d4-pass-controlled-recovery-4",
+      "status": "PRESENT"
+    }
+  ]
+}

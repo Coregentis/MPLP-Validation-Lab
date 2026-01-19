@@ -1,0 +1,13 @@
+{
+  "vector_id": "v05-d3-pass-sra-complete-deny-gated",
+  "domain": "D3",
+  "expected_topline": "PASS",
+  "expected_reason_code": null,
+  "ruleset_ref": "ruleset-1.2",
+  "protocol_pin": "2025-draft",
+  "schema_version": "1.0.0",
+  "description": "Complete S/R/A with deny and gate",
+  "hash_scope": [
+    "pack/trace/events.ndjson"
+  ]
+}

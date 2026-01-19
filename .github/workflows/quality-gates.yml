@@ -1,0 +1,79 @@
+name: Quality Gates
+
+on:
+  push:
+    branches: [main, dev]
+  pull_request:
+    branches: [main, dev]
+
+jobs:
+  quality-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Type Check
+        run: npx tsc --noEmit
+
+      - name: Build
+        run: npm run build
+
+      - name: Terminology Gate
+        run: node scripts/gates/terminology-gate.mjs
+
+      # v0.4 Gates
+      - name: Generate Curated Runs Data
+        run: npm run generate:curated
+
+      - name: Registry Contract Gate
+        run: npm run gate:registry
+
+      - name: Curated Runs Closure Gate
+        run: npm run gate:curated-runs
+
+      - name: Reason Codes Taxonomy Gate
+        run: npm run gate:reason-codes
+
+      - name: Page Truth Map Gate
+        run: npm run gate:ptm
+
+      - name: Shadow Parity Gate (生死线)
+        run: npm run gate:shadow-parity
+
+      # v0.5 Gates
+      - name: Proof Signature Gate
+        run: npm run gate:proof-signature
+
+      - name: Test Vectors Coverage Gate
+        run: npm run gate:test-vectors-coverage
+
+      - name: Cross-Substrate Reproduction Gate
+        run: npm run gate:cross-substrate
+
+      - name: RunSet Consistency Gate
+        run: npm run gate:runset-consistency
+
+      - name: Key Policy Gate
+        run: npm run gate:key-policy
+
+      - name: CanonPtr Coverage Gate
+        run: npm run gate:canonptr-coverage
+
+      - name: Portable Hash Parity Gate
+        run: npm run gate:portable-hash-parity
+
+      - name: Secret Hygiene Gate
+        run: npm run gate:secret-hygiene
+

@@ -1,0 +1,10 @@
+{
+    "pack_path": "fixtures/packs/gf-fail-missing-plan",
+    "scenario_id": "gf-01-single-agent-lifecycle",
+    "description": "GF-01 FAIL sample: missing plan.json artifact",
+    "expected_outcome": {
+        "admission_status": "ADMISSIBLE",
+        "overall_status": "ADJUDICATED",
+        "gf_01_status": "FAIL"
+    }
+}
