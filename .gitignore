@@ -15,7 +15,9 @@ yarn-debug.log*
 yarn-error.log*
 
 # Testing
-coverage/
+/coverage/
+# But allow the app/coverage route (Next.js page)
+!app/coverage/
 
 # Misc
 .DS_Store
