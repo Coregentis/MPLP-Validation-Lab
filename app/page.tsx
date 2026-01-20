@@ -87,7 +87,7 @@ export default function Home() {
                         </div>
                         <div className="text-center">
                             <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-mplp-text-muted mb-2">Version</p>
-                            <p className="text-xs font-bold text-mplp-text">v0.2 Frozen</p>
+                            <p className="text-xs font-bold text-mplp-text">v0.5 Frozen</p>
                             <p className="text-[10px] text-mplp-text-muted/60 mt-1">Curated runs immutable</p>
                         </div>
                     </div>

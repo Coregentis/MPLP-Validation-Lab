@@ -119,7 +119,7 @@ export function CuratedRunsTable({ runs }: { runs: CuratedRunRecord[] }) {
             <div className="mt-6 p-4 bg-amber-900/10 border border-amber-500/20 rounded-lg">
                 <p className="text-xs text-amber-400/80">
                     <strong className="text-amber-400">Note:</strong> Curated Runs = indexed &amp; contract-governed.
-                    Legacy runs (Autogen, Magentic One, etc.) in <code className="text-amber-300/80">releases/</code> are archived and not part of v0.2 freeze.
+                    Legacy runs (Autogen, Magentic One, etc.) in <code className="text-amber-300/80">releases/</code> are archived and not part of v0.5 freeze.
                 </p>
             </div>
         </div>
