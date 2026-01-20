@@ -209,23 +209,28 @@ export default function MethodologyPage() {
                     <p className="text-zinc-400 mb-4">
                         A <strong>Substrate</strong> is an execution environment (framework, protocol, runtime) that produces evidence packs.
                     </p>
+                    <p className="text-zinc-500 text-sm mb-4">
+                        <strong>Current Status</strong>: 6 Tier-0 substrates, 2 ADJUDICATED, 26 REGISTERED
+                    </p>
                     <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mb-6">
                         {[
-                            { name: 'LangChain', status: '✅ ADJUDICATED' },
-                            { name: 'MCP', status: '✅ ADJUDICATED' },
-                            { name: 'A2A', status: '✅ ADJUDICATED' },
-                            { name: 'Autogen', status: '⚪ Archived' },
-                            { name: 'Magnetic One', status: '⚪ Archived' },
-                            { name: 'PydanticAI', status: '⚪ Available' },
+                            { name: 'LangChain', type: 'framework', status: '✅ ADJUDICATED' },
+                            { name: 'MCP', type: 'protocol', status: '✅ ADJUDICATED' },
+                            { name: 'LangGraph', type: 'framework', status: '⚪ REGISTERED' },
+                            { name: 'AutoGen', type: 'framework', status: '⚪ REGISTERED' },
+                            { name: 'Semantic Kernel', type: 'framework', status: '⚪ REGISTERED' },
+                            { name: 'A2A', type: 'protocol', status: '⚪ REGISTERED' },
                         ].map((s, i) => (
                             <div key={i} className="bg-zinc-900 border border-zinc-800 rounded p-3 text-center">
                                 <p className="font-semibold text-zinc-200">{s.name}</p>
-                                <p className="text-xs text-zinc-500">{s.status}</p>
+                                <p className="text-xs text-zinc-600">{s.type}</p>
+                                <p className="text-xs text-zinc-500 mt-1">{s.status}</p>
                             </div>
                         ))}
                     </div>
                     <p className="text-zinc-500 text-sm">
                         See <Link href="/policies/substrate-scope" className="text-blue-400 hover:underline">/policies/substrate-scope</Link> for admission tiers.
+                        Data from <code className="bg-zinc-800 text-xs px-1 rounded">substrate-index.yaml</code>
                     </p>
                 </section>
 
