@@ -79,3 +79,12 @@ jobs:
       - name: Secret Hygiene Gate
         run: npm run gate:secret-hygiene
 
+      # Website & Governance Gates (v0.5)
+      - name: Link Integrity Gate (R4)
+        run: node scripts/ci/link-integrity-gate.mjs
+
+      - name: Top-level Directory Whitelist Gate (G-TOP-01)
+        run: node scripts/ci/toplevel-whitelist-gate.mjs
+
+      - name: Release Index Integrity Gate (G-REL-01)
+        run: node scripts/ci/release-index-gate.mjs
