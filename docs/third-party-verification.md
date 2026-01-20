@@ -1,5 +1,7 @@
 # Third-Party Verification
 
+**Applicable Site Version**: site-v0.5 | **Ruleset**: ruleset-1.0
+
 ## Overview
 
 The MPLP Validation Lab provides a standalone CLI tool (`@mplp/recompute`) that enables third-party verification of evidence pack verdicts without requiring the full monorepo or network access.
@@ -96,7 +98,7 @@ To verify a pack matches the Lab's curated verdict:
 
 ## Sprint
 
-Cross-Vendor Evidence Spine v0.1
+Cross-Vendor Evidence Spine (Historical — pack-v0.1)
 
 ## License
 

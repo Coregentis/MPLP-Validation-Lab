@@ -32,6 +32,25 @@ All schemas, invariants, and rulesets are derived from:
 
 ---
 
+## Version Taxonomy
+
+This repository uses **four distinct version types**. Do not confuse them:
+
+| Type | Prefix | Current | Description |
+|:---|:---|:---|:---|
+| **Site Freeze** | `site-v*` | `site-v0.5` | Website information architecture and public commitment |
+| **Evidence Pack Format** | `pack-v*` | `pack-v0.2~v0.4` | Evidence pack structure and field requirements |
+| **Ruleset** | `ruleset-*` | `ruleset-1.0~1.2` | Adjudication decision rules and requirements |
+| **Release Seal** | `rel-lab-*` | `rel-lab-0.5` | Versioned governance seal for a frozen release |
+
+> [!NOTE]
+> When you see `v0.x` in this repository:
+> - In `/runs` page sections → refers to **pack format** (pack-v0.2, pack-v0.3, pack-v0.4)
+> - In Footer/Home → refers to **site freeze** (site-v0.5)
+> - In `data/rulesets/` → refers to **ruleset version** (ruleset-1.0, 1.1, 1.2)
+
+---
+
 ## What This Lab Provides
 
 - ✅ Evidence-based evaluation tools

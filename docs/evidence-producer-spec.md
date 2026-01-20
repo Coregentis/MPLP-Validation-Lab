@@ -1,8 +1,14 @@
 # Evidence Producer Specification
 
-**Version**: v0.1  
-**Status**: Draft  
-**Sprint**: Cross-Vendor Evidence Spine
+**Version**: v0.1 (Historical)  
+**Status**: Superseded — See current entry points below  
+**Applicable Site Version**: site-v0.5
+
+> [!IMPORTANT]
+> **Current Entry Points**:
+> - For evidence pack structure: See [Export Contract](/policies/contract)
+> - For submission process: See [Intake Policy](/policies/intake)
+> - For substrate admission: See [Substrate Scope Policy](/policies/substrate-scope)
 
 ---
 
