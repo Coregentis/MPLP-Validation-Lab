@@ -1,7 +1,6 @@
 import { readFileSync, existsSync } from 'fs';
 import { join } from 'path';
 import { notFound } from 'next/navigation';
-import ReactMarkdown from 'react-markdown';
 
 export const metadata = {
     robots: { index: false, follow: false }

@@ -11,7 +11,7 @@
 'use client';
 
 import { useState } from 'react';
-import type { RulesetEvalResult, ClauseResult, DomainMeta } from '@/lib/rulesets/registry';
+import type { RulesetEvalResult, ClauseResult } from '@/lib/rulesets/registry';
 
 // =============================================================================
 // Props

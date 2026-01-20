@@ -13,7 +13,6 @@
 
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { LIFECYCLE_GUARANTEES } from '@/lib/registry/lifecycle-guarantees';
 
 const LAB_CANONICAL_HOST = 'https://lab.mplp.io';
 

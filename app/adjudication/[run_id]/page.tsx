@@ -51,10 +51,10 @@ export default async function AdjudicationDetailPage({ params }: PageProps) {
     const sha256sums = loadAdjudicationTextFile(run_id, 'sha256sums.txt') || '';
 
     // Get index entry for cross-reference
-    let indexEntry = null;
+    let _indexEntry = null;
     try {
         const index = loadExportJson<AdjudicationIndex>('adjudication-index.json');
-        indexEntry = index.adjudications.find(e => e.run_id === run_id);
+        _indexEntry = index.adjudications.find(e => e.run_id === run_id);
     } catch {
         // Index may not exist
     }

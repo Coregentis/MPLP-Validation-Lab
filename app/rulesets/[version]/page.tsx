@@ -211,7 +211,7 @@ export default async function RulesetDetailPage({ params }: Props) {
                         )}
                     </>
                 ) : manifest?.golden_flows && manifest.golden_flows.length > 0 ? (
-                    /* v0.2 Golden Flows format with requirements (ruleset-1.0) */
+                    /* v0.2 Lifecycle Guarantees format with requirements (ruleset-1.0) */
                     <>
                         <h2 className="text-xl font-semibold mb-4">Lifecycle Guarantees</h2>
                         <p className="text-zinc-500 text-sm mb-4">

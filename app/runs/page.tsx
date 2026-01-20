@@ -3,7 +3,6 @@ import { CuratedRunsTable } from './_components/CuratedRunsTable';
 import { ScenarioAwareBanner } from './_components/ScenarioAwareBanner';
 import { RunsStatusSummary } from './_components/RunsStatusSummary';
 import { ProvenanceFooter } from '@/components/ProvenanceFooter';
-import Link from 'next/link';
 
 export const metadata = {
     title: 'Curated Runs | MPLP Validation Lab',

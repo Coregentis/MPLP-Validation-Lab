@@ -1,6 +1,6 @@
 {
   "gate_id": "GATE-REASON-CODES-TAXONOMY",
-  "executed_at": "2026-01-19T05:58:58.113Z",
+  "executed_at": "2026-01-20T04:28:30.939Z",
   "status": "PASS",
   "taxonomy_stats": {
     "common": 18,
@@ -11,14 +11,14 @@
     "total_enum": 47,
     "patterns": 6
   },
-  "runs_checked": 26,
+  "runs_checked": 27,
   "issues": [],
   "summary": {
-    "total_reason_codes": 38,
-    "enum_codes": 28,
+    "total_reason_codes": 39,
+    "enum_codes": 29,
     "pattern_codes": 10,
     "unknown_codes": 0,
     "missing_codes": 0
   },
-  "duration_ms": 84
+  "duration_ms": 85
 }

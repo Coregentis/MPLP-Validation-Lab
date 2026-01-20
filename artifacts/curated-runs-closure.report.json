@@ -1,6 +1,6 @@
 {
   "gate_id": "GATE-CURATED-RUNS-CLOSURE",
-  "executed_at": "2026-01-19T10:08:36.483Z",
+  "executed_at": "2026-01-20T04:28:30.517Z",
   "status": "PASS",
   "runs": [
     {
@@ -304,6 +304,18 @@
       "errors": []
     },
     {
+      "run_id": "gf-01-smoke",
+      "bundle_loaded": true,
+      "ruleset_ref": "ruleset-1.0",
+      "adjudicator_available": true,
+      "adjudicated": true,
+      "topline_verdict": "NOT_EVALUATED",
+      "reason_code": "VERDICT_MISSING",
+      "has_reason_code": true,
+      "status": "NOT_EVALUATED",
+      "errors": []
+    },
+    {
       "run_id": "gf-02-fail",
       "bundle_loaded": true,
       "ruleset_ref": "ruleset-1.0",
@@ -317,14 +329,14 @@
     }
   ],
   "summary": {
-    "total": 26,
-    "adjudicated": 26,
+    "total": 27,
+    "adjudicated": 27,
     "passed": 5,
     "failed": 13,
-    "not_evaluated": 8,
+    "not_evaluated": 9,
     "missing_reason_code": 0,
     "load_errors": 0,
     "ruleset_errors": 0
   },
-  "duration_ms": 88
+  "duration_ms": 80
 }

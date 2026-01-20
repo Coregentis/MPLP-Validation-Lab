@@ -36,21 +36,22 @@ try {
     // grep returns exit 1 when no match, which is OK
 }
 
-// Check for GF-0x (uppercase) in TSX files
-// Note: gf-0x (lowercase) is allowed as internal ID
+// Check for GF-0x (uppercase) in JSX display text only
+// Note: GF-0x in code (arrays, object keys) is allowed for data access
+// Only JSX text output like >GF-01< should use >LG-01<
 try {
     const gfResult = execSync(
-        `grep -rn "GF-0[1-9]" app/ --include="*.tsx" 2>/dev/null || true`,
+        `grep -rn ">GF-0[1-9]" app/ --include="*.tsx" 2>/dev/null || true`,
         { encoding: 'utf-8' }
     ).trim();
 
     if (gfResult) {
-        console.log('\n❌ VIOLATION: "GF-0x" found in external display');
-        console.log('   Use "LG-0x" instead');
+        console.log('\n❌ VIOLATION: "GF-0x" found in JSX display text');
+        console.log('   Use "LG-0x" instead for external display');
         console.log(gfResult);
         violations++;
     } else {
-        console.log('✅ No "GF-0x" in external display');
+        console.log('✅ No "GF-0x" in JSX display text (data keys OK)');
     }
 } catch (e) {
     // grep returns exit 1 when no match, which is OK

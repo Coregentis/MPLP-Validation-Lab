@@ -1,12 +1,12 @@
 {
   "gate_id": "GATE-SHADOW-PARITY",
-  "executed_at": "2026-01-19T10:08:36.990Z",
+  "executed_at": "2026-01-20T04:28:45.082Z",
   "status": "PASS",
   "hash_scope_version": "1.0.0",
   "summary": {
-    "total_runs": 26,
-    "verified": 26,
-    "parity_match": 26,
+    "total_runs": 27,
+    "verified": 27,
+    "parity_match": 27,
     "parity_mismatch": 0,
     "errors": 0
   },
@@ -212,6 +212,14 @@
       "error": null
     },
     {
+      "run_id": "gf-01-smoke",
+      "status": "VERIFIED",
+      "ruleset_id": "ruleset-1.0",
+      "verdict_hash": "59df4d4e416f708c5bc9d597fdb0f27e5f038b086d3bf0dc883148b40b15a204",
+      "topline_verdict": "NOT_EVALUATED",
+      "error": null
+    },
+    {
       "run_id": "gf-02-fail",
       "status": "VERIFIED",
       "ruleset_id": "ruleset-1.0",
@@ -222,5 +230,5 @@
   ],
   "mismatches": [],
   "errors": [],
-  "duration_ms": 84
+  "duration_ms": 87
 }
