@@ -91,3 +91,6 @@ jobs:
 
       - name: Substrate SSOT Consistency Gate (G-SSOT-SUBSTRATE-01)
         run: node scripts/ci/substrate-ssot-gate.mjs
+
+      - name: Guarantees SSOT Consistency Gate (G-GUARANTEES-SSOT-01)
+        run: node scripts/ci/guarantees-ssot-gate.mjs

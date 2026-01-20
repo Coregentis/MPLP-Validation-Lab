@@ -1,0 +1,71 @@
+# Lifecycle Guarantees SSOT
+# Authority: governance/LIFECYCLE_GUARANTEES.yaml
+# Freeze: site-v0.5 / rel-lab-0.5
+# Last Updated: 2026-01-20
+#
+# This is the Single Source of Truth for LG-01~05 definitions.
+# Pages loading this data: /guarantees, /methodology (partial)
+# Ruleset mapping: ruleset-1.0 (GoldenFlow packs)
+
+metadata:
+  schema_version: "1.0"
+  freeze_tag: "site-v0.5"
+  ruleset_ref: "ruleset-1.0"
+  strength: "presence-level"
+  notes: "ruleset-1.0 performs presence-level adjudication only"
+
+guarantees:
+  - id: LG-01
+    internal_id: gf-01
+    name: Single Agent Lifecycle
+    description: Evaluates presence of context, plan, and trace artifacts.
+    strength: presence-level
+    evidence_hint:
+      - artifacts/context.json
+      - artifacts/plan.json
+      - artifacts/trace.json
+    not_evaluated: "State transition correctness (requires future ruleset)"
+    ruleset_version: "1.0"
+
+  - id: LG-02
+    internal_id: gf-02
+    name: Multi-Agent Collaboration
+    description: Evaluates presence of timeline events.
+    strength: presence-level
+    evidence_hint:
+      - timeline/events.ndjson
+    not_evaluated: "Handoff correctness, role boundaries (requires future ruleset)"
+    ruleset_version: "1.0"
+
+  - id: LG-03
+    internal_id: gf-03
+    name: Human-in-the-Loop Gating
+    description: Evaluates presence of confirm decision records.
+    strength: presence-level
+    evidence_hint:
+      - "artifacts/context.json (confirm field)"
+    not_evaluated: "Gate implementation correctness (requires future ruleset)"
+    ruleset_version: "1.0"
+
+  - id: LG-04
+    internal_id: gf-04
+    name: Drift Detection & Recovery
+    description: Evaluates presence of manifest file.
+    strength: presence-level
+    evidence_hint:
+      - manifest.json
+    not_evaluated: "Drift detection logic correctness (requires future ruleset)"
+    ruleset_version: "1.0"
+
+  - id: LG-05
+    internal_id: gf-05
+    name: External Tool Integration
+    description: Evaluates presence of integrity checksums.
+    strength: presence-level
+    evidence_hint:
+      - integrity/sha256sums.txt
+    not_evaluated: "Tool call logging correctness (requires future ruleset)"
+    ruleset_version: "1.0"
+
+# Future: when ruleset-1.1 or 1.2 expands LG evaluation,
+# add new entries with updated strength levels

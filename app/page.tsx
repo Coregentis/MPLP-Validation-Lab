@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { loadCurrentRelease } from '@/lib/release/loadRelease';
 
 const LAB_CANONICAL_HOST = 'https://lab.mplp.io';
 
@@ -19,6 +20,10 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
+    const release = loadCurrentRelease();
+    const siteVersion = release.site_version.replace('site-', '');
+    const exportVersion = release.export_version;
+
     return (
         <>
             {/* Hero Section - Clean, no heavy borders */}
@@ -77,7 +82,7 @@ export default function Home() {
                     <div className="grid grid-cols-3 gap-8 pt-8 border-t border-mplp-border/30 max-w-2xl mx-auto">
                         <div className="text-center">
                             <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-mplp-text-muted mb-2">Export</p>
-                            <p className="text-xs font-bold text-mplp-text">v1.2 Stable</p>
+                            <p className="text-xs font-bold text-mplp-text">v{exportVersion} Stable</p>
                             <p className="text-[10px] text-mplp-text-muted/60 mt-1">Public JSON contract for consumers</p>
                         </div>
                         <div className="text-center">
@@ -87,7 +92,7 @@ export default function Home() {
                         </div>
                         <div className="text-center">
                             <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-mplp-text-muted mb-2">Version</p>
-                            <p className="text-xs font-bold text-mplp-text">v0.5 Frozen</p>
+                            <p className="text-xs font-bold text-mplp-text">{siteVersion} Frozen</p>
                             <p className="text-[10px] text-mplp-text-muted/60 mt-1">Curated runs immutable</p>
                         </div>
                     </div>
