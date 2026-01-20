@@ -6,7 +6,16 @@ export const metadata = {
     robots: { index: false, follow: false }
 };
 
-// v0.5 Cross-Substrate Producers
+/**
+ * SUBSTRATES map for evidence producers
+ * 
+ * B-Type Hardcode (Stable Definition)
+ * Source: producers/ directory structure
+ * Freeze: site-v0.5
+ * 
+ * Note: This subset of Tier-0 substrates have working evidence producers.
+ * Not all Tier-0 substrates from substrate-index.yaml have producers yet.
+ */
 const SUBSTRATES = {
     langgraph: { label: 'LangGraph', dir: 'langgraph' },
     autogen: { label: 'AutoGen', dir: 'autogen' },

@@ -6,6 +6,10 @@
  * 
  * NON-NORMATIVE: This is Lab governance, not MPLP protocol spec.
  * GATE-04 COMPLIANCE: No certification/endorsement language.
+ * 
+ * B-Type Hardcode (Stable Governance Definition)
+ * ruleset-1.0 reference is stable within site-v0.5 freeze
+ * Source: data/rulesets/ruleset-1.0/manifest.yaml (active ruleset)
  */
 
 import Link from 'next/link';

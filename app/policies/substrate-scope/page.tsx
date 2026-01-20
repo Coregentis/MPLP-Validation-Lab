@@ -9,6 +9,33 @@
 
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { readFileSync } from 'fs';
+import { join } from 'path';
+import yaml from 'yaml';
+
+interface SubstrateRun {
+    run_id: string;
+    status: string;
+}
+
+interface Substrate {
+    id: string;
+    display_name: string;
+    type: string;
+    tier: number;
+    runs: SubstrateRun[];
+}
+
+interface SubstrateIndex {
+    substrates: Substrate[];
+}
+
+function loadTier0Substrates() {
+    const ssotPath = join(process.cwd(), 'data', 'curated-runs', 'substrate-index.yaml');
+    const content = readFileSync(ssotPath, 'utf-8');
+    const data = yaml.parse(content) as SubstrateIndex;
+    return data.substrates.filter(s => s.tier === 0);
+}
 
 export const metadata: Metadata = {
     title: 'Substrate Scope Policy | MPLP Validation Lab',
@@ -16,6 +43,10 @@ export const metadata: Metadata = {
 };
 
 export default function SubstrateScopePage() {
+    const tier0Substrates = loadTier0Substrates();
+    const frameworks = tier0Substrates.filter(s => s.type === 'framework');
+    const protocols = tier0Substrates.filter(s => s.type === 'protocol');
+
     return (
         <div className="max-w-4xl mx-auto pt-8">
             {/* Header */}
@@ -76,26 +107,28 @@ export default function SubstrateScopePage() {
                         <div className="grid md:grid-cols-2 gap-4">
                             <div>
                                 <p className="text-xs font-medium text-mplp-text-muted uppercase tracking-wider mb-2">
-                                    Execution Frameworks
+                                    Execution Frameworks ({frameworks.length})
                                 </p>
                                 <ul className="text-sm space-y-1 text-mplp-text-muted">
-                                    <li>• LangGraph / LangChain</li>
-                                    <li>• AutoGen (Microsoft)</li>
-                                    <li>• Semantic Kernel (Microsoft)</li>
-                                    <li>• CrewAI</li>
+                                    {frameworks.map(s => (
+                                        <li key={s.id}>• {s.display_name}</li>
+                                    ))}
                                 </ul>
                             </div>
                             <div>
                                 <p className="text-xs font-medium text-mplp-text-muted uppercase tracking-wider mb-2">
-                                    Protocol Rails
+                                    Protocol Rails ({protocols.length})
                                 </p>
                                 <ul className="text-sm space-y-1 text-mplp-text-muted">
-                                    <li>• MCP — Active target</li>
-                                    <li>• A2A — Active target</li>
-                                    <li>• ACP — Scheduled target</li>
+                                    {protocols.map(s => (
+                                        <li key={s.id}>• {s.display_name}</li>
+                                    ))}
                                 </ul>
                             </div>
                         </div>
+                        <p className="text-xs text-mplp-text-muted/60 mt-3">
+                            📊 SSOT: <code className="bg-zinc-800 px-1 rounded">data/curated-runs/substrate-index.yaml</code>
+                        </p>
                     </div>
 
                     {/* Tier-1 & Tier-2 */}
