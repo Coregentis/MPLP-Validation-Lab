@@ -51,6 +51,23 @@ This repository uses **four distinct version types**. Do not confuse them:
 
 ---
 
+## Projection Authority
+
+Website pages are **projections** of Single Sources of Truth (SSOT). Governance documents MUST NOT embed live registry tables.
+
+| SSOT File | Authority |
+|:---|:---|
+| `data/curated-runs/substrate-index.yaml` | Substrate registry |
+| `export/curated-runs.json` | Consumer export contract |
+| `governance/LIFECYCLE_GUARANTEES.yaml` | LG-01~05 definitions |
+| `data/rulesets/*/manifest.yaml` | Ruleset definitions |
+| `governance/releases/release-index.yaml` | Release seals |
+
+> [!IMPORTANT]
+> Pages load from SSOT at build time. If a page's data differs from SSOT, the page is wrong.
+
+---
+
 ## What This Lab Provides
 
 - ✅ Evidence-based evaluation tools

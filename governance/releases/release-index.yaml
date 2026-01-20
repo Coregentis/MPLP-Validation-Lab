@@ -18,11 +18,13 @@ active:
     ruleset: "ruleset-1.0, ruleset-1.1, ruleset-1.2"
     pack_formats: "pack-v0.2, pack-v0.3, pack-v0.4"
     seal_path: "governance/releases/REL-LAB-0.5-WEBSITE-LINK-SEO-IA.md"
+    ssot_anti_drift_seal: "governance/releases/REL-LAB-0.5-SSOT-ANTI-DRIFT.md"
     evidence_refs:
       - "export/adjudication-index.json"
       - "export/curated-runs.json"
       - "data/curated-runs/substrate-index.yaml"
-    notes: "Current production freeze with real substrate adjudication"
+      - "governance/LIFECYCLE_GUARANTEES.yaml"
+    notes: "Current production freeze with real substrate adjudication + SSOT anti-drift gates"
 
 # =============================================================================
 # Archived Releases (Historical — Reproducible)
