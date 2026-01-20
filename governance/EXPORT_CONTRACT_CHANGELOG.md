@@ -72,7 +72,7 @@ The `export_version` field in `export/manifest.json` follows **MAJOR.MINOR** sem
 
 | Field | Type | Description |
 |:---|:---|:---|
-| `adjudication_status` | enum | ADJUDICATED \| NOT_ADMISSIBLE \| PENDING |
+| `adjudication_status` | enum | ADJUDICATED \| NOT_ADMISSIBLE \| NOT_ADJUDICATED |
 | `adjudication_verdict_hash` | string? | 64-char hex, present if adjudicated |
 | `adjudication_ruleset` | string? | Ruleset version used |
 | `adjudication_protocol_pin` | string? | Protocol version pinned |
