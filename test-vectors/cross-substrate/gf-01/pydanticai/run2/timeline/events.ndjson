@@ -1,0 +1,8 @@
+{"agent_id": "planner", "event_id": "evt-001", "role": "coordinator", "ts": "2026-01-14T00:00:00Z", "type": "agent.init"}
+{"agent_id": "planner", "artifact_ref": "artifacts/context.json", "artifact_type": "context", "event_id": "evt-002", "ts": "2026-01-14T00:00:00Z", "type": "artifact.create"}
+{"agent_id": "planner", "artifact_ref": "artifacts/plan.json", "artifact_type": "plan", "event_id": "evt-003", "ts": "2026-01-14T00:00:00Z", "type": "artifact.create"}
+{"agent_id": "planner", "context_ref": "artifacts/plan.json", "event_id": "evt-004", "from_agent": "planner", "payload": {"task": "execute"}, "to_agent": "runner", "ts": "2026-01-14T00:00:00Z", "type": "handoff"}
+{"agent_id": "runner", "event_id": "evt-005", "received_from": "planner", "role": "executor", "ts": "2026-01-14T00:00:00Z", "type": "agent.init"}
+{"agent_id": "runner", "event_id": "evt-006", "task_ref": "execute", "ts": "2026-01-14T00:00:00Z", "type": "task.start"}
+{"agent_id": "runner", "artifact_ref": "artifacts/trace.json", "artifact_type": "trace", "event_id": "evt-007", "ts": "2026-01-14T00:00:00Z", "type": "artifact.create"}
+{"agent_id": "runner", "event_id": "evt-008", "outcome": "success", "ts": "2026-01-14T00:00:00Z", "type": "agent.complete"}

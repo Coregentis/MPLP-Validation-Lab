@@ -1,0 +1,23 @@
+{
+  "approach": "Deterministic single-agent planning",
+  "context_ref": "1fca870e-d065-5930-8cbc-0c86ebc4c13a",
+  "created_at": "2026-01-01T00:00:00Z",
+  "plan_id": "6e267b6a-eccc-5b04-8df5-0823d1b0575c",
+  "steps": [
+    {
+      "description": "Step 1: Initialize task environment",
+      "status": "completed",
+      "step_id": "35071691-a030-5b1a-9cee-2c3fd6bd41c7"
+    },
+    {
+      "description": "Step 2: Process input data",
+      "status": "completed",
+      "step_id": "74c6196d-2269-5bdb-89e6-147f26884cb7"
+    },
+    {
+      "description": "Step 3: Generate output results",
+      "status": "completed",
+      "step_id": "b7881683-4d0b-5348-915c-8abaca4320f2"
+    }
+  ]
+}

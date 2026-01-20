@@ -1,0 +1,39 @@
+{
+  "approach": "Coordinator creates plan, hands off to executor for implementation",
+  "context_ref": "687c2003-7564-59da-8254-702829e57e33",
+  "created_at": "2026-01-14T00:00:00Z",
+  "created_by": "coordinator",
+  "plan_id": "562fb6a8-4cba-5d54-abe5-f0085493deb0",
+  "steps": [
+    {
+      "action": "Analyze requirements",
+      "agent": "coordinator",
+      "step_id": "1"
+    },
+    {
+      "action": "Create plan",
+      "agent": "coordinator",
+      "step_id": "2"
+    },
+    {
+      "action": "Handoff to executor",
+      "agent": "coordinator",
+      "step_id": "3"
+    },
+    {
+      "action": "Receive handoff",
+      "agent": "executor",
+      "step_id": "4"
+    },
+    {
+      "action": "Execute plan",
+      "agent": "executor",
+      "step_id": "5"
+    },
+    {
+      "action": "Report completion",
+      "agent": "executor",
+      "step_id": "6"
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+# MCP MA dependencies (Node.js - lightweight generator uses built-in modules only)
+# No external deps required for deterministic pack generation

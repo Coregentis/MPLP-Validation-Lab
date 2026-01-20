@@ -1,0 +1,39 @@
+{
+  "approach": "Assistant creates plan via conversation, hands off to UserProxy for code execution",
+  "context_ref": "b0c70644-6720-5506-8473-3d92f9cd2d15",
+  "created_at": "2026-01-14T00:00:00Z",
+  "created_by": "assistant",
+  "plan_id": "4fbb3aa3-346c-513e-9441-6790c4f4578d",
+  "steps": [
+    {
+      "action": "initialize_conversation",
+      "agent": "assistant",
+      "step_id": "1"
+    },
+    {
+      "action": "create_task_plan",
+      "agent": "assistant",
+      "step_id": "2"
+    },
+    {
+      "action": "handoff_to_user_proxy",
+      "agent": "assistant",
+      "step_id": "3"
+    },
+    {
+      "action": "receive_task",
+      "agent": "user_proxy",
+      "step_id": "4"
+    },
+    {
+      "action": "execute_code_task",
+      "agent": "user_proxy",
+      "step_id": "5"
+    },
+    {
+      "action": "report_execution_result",
+      "agent": "user_proxy",
+      "step_id": "6"
+    }
+  ]
+}

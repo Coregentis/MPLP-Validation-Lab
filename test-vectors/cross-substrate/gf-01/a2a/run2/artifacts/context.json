@@ -1,0 +1,11 @@
+{
+  "context_id": "e7f33025-0e59-53c9-8401-7579bdcac26f",
+  "created_at": "2026-01-14T00:00:00Z",
+  "created_by": "agent_a",
+  "project_id": "6314609d-1b29-5d01-be20-ea919441e600",
+  "requirements": {
+    "agents_required": 2,
+    "handoff_required": true,
+    "summary": "Multi-agent lifecycle with A2A agent-to-agent message passing pattern"
+  }
+}

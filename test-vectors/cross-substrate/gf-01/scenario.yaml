@@ -1,0 +1,14 @@
+scenario_id: gf-01
+name: "Single Agent Plan - Cross-substrate Equivalence"
+description: "Basic single-agent planning scenario for S4 cross-substrate testing"
+ruleset_version: "1.0"
+
+input:
+  context:
+    task: "Plan a simple multi-step task"
+    constraints: []
+  
+expected_outputs:
+  - plan with minimum 3 steps
+  - each step has valid status
+  - plan_id matches context_id reference

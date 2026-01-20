@@ -1,0 +1,2 @@
+# AutoGen MA dependencies (lightweight - generator uses pure Python)
+# No external deps required for deterministic pack generation

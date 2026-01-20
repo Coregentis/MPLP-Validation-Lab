@@ -1,0 +1,2 @@
+# PydanticAI MA dependencies (lightweight - no external LLM required)
+pydantic>=2.6.0

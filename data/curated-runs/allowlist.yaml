@@ -74,7 +74,7 @@ runs:
   substrate_claim_level: reproduced
   substrate_execution: reproduced
   inference_mode: fake_llm
-  repro_ref: tests/cross-substrate/gf-01/langchain/generate_pack.py
+  repro_ref: Validation_Lab/test-vectors/cross-substrate/gf-01/langchain/generate_pack.py
   equivalence_ref: Validation_Lab/releases/v0.2/artifacts/equivalence/gf-01.json
   supersedes: gf-01-langchain-pass
   status: active
@@ -89,7 +89,7 @@ runs:
   substrate_claim_level: declared
   substrate_execution: static
   inference_mode: none
-  repro_ref: tests/cross-substrate/gf-01/a2a/generate_pack.py
+  repro_ref: Validation_Lab/test-vectors/cross-substrate/gf-01/a2a/generate_pack.py
   equivalence_ref: Validation_Lab/releases/v0.2/artifacts/equivalence/gf-01.json
   supersedes: gf-01-a2a-pass
   status: eligible_for_upgrade
