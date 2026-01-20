@@ -23,6 +23,11 @@ navbar:
       indexable: true
       description: "Four Boundaries, trust signal"
       
+    - href: "/methodology"
+      label: "Methodology"
+      indexable: true
+      description: "Evaluation methodology and process"
+      
     - href: "/adjudication"
       label: "Adjudication"
       indexable: true
@@ -72,6 +77,10 @@ footer:
     links:
       - href: "/about"
         label: "About (Four Boundaries)"
+        indexable: true
+        
+      - href: "/methodology"
+        label: "Methodology"
         indexable: true
         
       - href: "/guarantees"
@@ -227,6 +236,7 @@ indexing_policy:
   indexable:
     - "/"
     - "/about"
+    - "/methodology"
     - "/adjudication"
     - "/coverage"
     - "/coverage/adjudication"

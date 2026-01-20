@@ -44,6 +44,11 @@ export function Footer() {
                                     </Link>
                                 </li>
                                 <li>
+                                    <Link href="/methodology" className="text-mplp-text-muted hover:text-mplp-blue-light text-13 transition-colors font-medium block py-0.5">
+                                        Methodology
+                                    </Link>
+                                </li>
+                                <li>
                                     <Link href="/guarantees" className="text-mplp-text-muted hover:text-mplp-blue-light text-13 transition-colors font-medium block py-0.5">
                                         Lifecycle Guarantees
                                     </Link>
