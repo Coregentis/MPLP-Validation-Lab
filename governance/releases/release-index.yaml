@@ -1,0 +1,68 @@
+# Release Index — MPLP Validation Lab
+# SSOT for all release seals
+# Version: site-v0.5
+
+metadata:
+  schema_version: "1.0"
+  last_updated: "2026-01-20"
+  purpose: "Registry of all release seals (evidence assets)"
+
+# =============================================================================
+# Current Releases (Active)
+# =============================================================================
+active:
+  - id: rel-lab-0.5
+    site_version: "site-v0.5"
+    status: frozen
+    frozen_at: "2026-01-20"
+    ruleset: "ruleset-1.0, ruleset-1.1, ruleset-1.2"
+    pack_formats: "pack-v0.2, pack-v0.3, pack-v0.4"
+    seal_path: "governance/releases/REL-LAB-0.5-WEBSITE-LINK-SEO-IA.md"
+    evidence_refs:
+      - "export/adjudication-index.json"
+      - "export/curated-runs.json"
+      - "data/curated-runs/substrate-index.yaml"
+    notes: "Current production freeze with real substrate adjudication"
+
+# =============================================================================
+# Archived Releases (Historical — Reproducible)
+# =============================================================================
+archived:
+  - id: rel-lab-0.4
+    site_version: "site-v0.4"
+    status: archived
+    archive_path: "releases/archive/v0.4/"
+    notes: "Semantic invariant packs initial implementation"
+
+  - id: rel-lab-0.3
+    site_version: "site-v0.3"
+    status: archived
+    archive_path: "releases/archive/v0.3/"
+    notes: "Four-domain arbitration packs"
+
+  - id: rel-lab-0.2
+    site_version: "site-v0.2"
+    status: archived
+    archive_path: "releases/archive/v0.2/"
+    notes: "GoldenFlow packs initial freeze"
+
+  - id: rel-lab-0.1
+    site_version: "site-v0.1"
+    status: archived
+    archive_path: "releases/archive/v0.1/"
+    notes: "Initial development milestone"
+
+# =============================================================================
+# Development (Not Released)
+# =============================================================================
+development:
+  - id: rel-lab-0.6-dev
+    status: in_progress
+    notes: "Development branch, not sealed"
+    paths:
+      - "releases/v0.6/"
+      - "releases/v0.6.2/"
+      - "releases/v0.7/"
+      - "releases/v0.7.1/"
+      - "releases/v0.7.2/"
+      - "releases/v0.7.3/"
