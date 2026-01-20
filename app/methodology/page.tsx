@@ -29,11 +29,18 @@ export default function MethodologyPage() {
                     </div>
                 </header>
 
-                {/* SSOT Notice */}
-                <div className="bg-blue-900/20 border border-blue-800 rounded-lg p-4 mb-8">
+                {/* Source Declaration */}
+                <div className="bg-blue-900/20 border border-blue-800 rounded-lg p-4 mb-8 space-y-2">
                     <p className="text-blue-400 text-sm">
-                        📋 <strong>SSOT</strong>: This page is a projection of{' '}
+                        📖 <strong>Methodology Narrative</strong>:{' '}
                         <code className="bg-zinc-800 px-1 rounded">governance/METHOD-VLAB-01_EVALUATION_METHOD.md</code>
+                    </p>
+                    <p className="text-green-400 text-sm">
+                        📊 <strong>Substrate Registry (Live SSOT)</strong>:{' '}
+                        <code className="bg-zinc-800 px-1 rounded">data/curated-runs/substrate-index.yaml</code>
+                    </p>
+                    <p className="text-zinc-500 text-xs">
+                        Substrate status data loaded from SSOT at build time. See <Link href="/coverage/adjudication" className="text-blue-400 hover:underline">/coverage</Link> for real-time matrix.
                     </p>
                 </div>
 

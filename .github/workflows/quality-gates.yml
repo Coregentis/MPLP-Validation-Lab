@@ -88,3 +88,6 @@ jobs:
 
       - name: Release Index Integrity Gate (G-REL-01)
         run: node scripts/ci/release-index-gate.mjs
+
+      - name: Substrate SSOT Consistency Gate (G-SSOT-SUBSTRATE-01)
+        run: node scripts/ci/substrate-ssot-gate.mjs

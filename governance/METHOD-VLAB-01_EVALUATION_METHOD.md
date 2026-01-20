@@ -216,16 +216,11 @@ For identical `verdict_hash`, the following must be constant:
 
 A **Substrate** is an execution environment (framework, protocol, or runtime) that produces evidence packs.
 
-### Current Substrates
+### SSOT Declaration
 
-| Substrate | Type | GF-01 Status |
-|:---|:---|:---|
-| LangChain | Framework | ✅ ADJUDICATED |
-| MCP | Protocol | ✅ ADJUDICATED |
-| A2A | Protocol | ✅ ADJUDICATED |
-| Autogen | Framework | ⚪ Archived |
-| Magnetic One | Framework | ⚪ Archived |
-| PydanticAI | Framework | ⚪ Available |
+> [!IMPORTANT]
+> **Live SSOT**: `data/curated-runs/substrate-index.yaml`  
+> This document provides methodology context only. For current substrate registry status, always refer to the SSOT.
 
 ### Claim Levels
 
@@ -239,9 +234,23 @@ A **Substrate** is an execution environment (framework, protocol, or runtime) th
 
 | Tier | Criteria |
 |:---|:---|
-| **Tier 1** | Real substrate, reproduced evidence, cross-verified |
-| **Tier 2** | Real substrate, reproduced evidence |
-| **Tier 3** | Fixture/simulation for testing |
+| **Tier 0** | Primary evaluation targets (frameworks + protocols) |
+| **Tier 99** | Fixture/simulation for testing (internal) |
+
+### Tier-0 Substrate Snapshot
+
+> **Snapshot**: `site-v0.5 / rel-lab-0.5` (2026-01-20)  
+> **Source**: `data/curated-runs/substrate-index.yaml`  
+> If this table differs from SSOT, SSOT takes precedence.
+
+| Substrate | Type | Status |
+|:---|:---|:---|
+| LangChain | framework | ✅ ADJUDICATED |
+| MCP | protocol | ✅ ADJUDICATED |
+| LangGraph | framework | ⚪ REGISTERED |
+| AutoGen | framework | ⚪ REGISTERED |
+| Semantic Kernel | framework | ⚪ REGISTERED |
+| A2A | protocol | ⚪ REGISTERED |
 
 > **Reference**: [Substrate Scope Policy](/policies/substrate-scope) — Admission tiers
 
