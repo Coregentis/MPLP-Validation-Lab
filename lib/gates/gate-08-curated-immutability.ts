@@ -147,7 +147,8 @@ export async function runGate08(labRoot: string = process.cwd()): Promise<Gate08
             if (fs.existsSync(sumsPath)) {
                 const computed = await recomputePackRootHash(sumsPath);
                 if (computed !== entry.pack_root_hash) {
-                    failures.push(`${runId}: pack_root_hash mismatch (expected ${entry.pack_root_hash.slice(0, 16)}..., computed ${computed.slice(0, 16)}...)`);
+                    const expected = (entry.pack_root_hash || '').slice(0, 16);
+                    failures.push(`${runId}: pack_root_hash mismatch (expected ${expected}..., computed ${computed.slice(0, 16)}...)`);
                 }
             }
         }
@@ -156,9 +157,10 @@ export async function runGate08(labRoot: string = process.cwd()): Promise<Gate08
         if (fs.existsSync(runPath)) {
             const evalPath = path.join(runPath, 'evaluation.report.json');
             if (fs.existsSync(evalPath)) {
+                const verdictHash = entry.verdict_hash || '';
                 // Note: verdict_hash recomputation requires canonicalize logic
                 // For now, just check it's non-empty hex
-                if (!/^[0-9a-f]{64}$/.test(entry.verdict_hash)) {
+                if (!/^[0-9a-f]{64}$/.test(verdictHash)) {
                     failures.push(`${runId}: verdict_hash invalid format (must be 64-char hex)`);
                 }
             }

@@ -3,6 +3,7 @@ import { Inter, JetBrains_Mono } from "next/font/google";
 import { NonEndorsementBanner } from "@/components/layout/non-endorsement-banner";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/layout/Footer";
+import { SvgDefs } from "@/components/ui/icons";
 import "./globals.css";
 
 const inter = Inter({
@@ -20,25 +21,28 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
     metadataBase: new URL("https://lab.mplp.io"),
     title: {
-        default: "MPLP Validation Lab",
-        template: "%s — MPLP Validation Lab",
+        default: "Validation Lab — MPLP",
+        template: `%s — MPLP Validation Lab`,
     },
     description:
         "Evidence-based verdict viewing and export for MPLP conformance evaluation. Not a certification program. Does not host execution.",
     alternates: { canonical: "https://lab.mplp.io" },
-    openGraph: {
-        title: "MPLP Validation Lab",
-        description:
-            "Evidence-based verdict viewing and export for MPLP conformance evaluation. Not a certification program. Does not host execution.",
-        url: "https://lab.mplp.io",
-        siteName: "MPLP Validation Lab",
-        type: "website",
-    },
-    twitter: {
-        card: "summary",
-        title: "MPLP Validation Lab",
-        description:
-            "Evidence-based verdict viewing and export for MPLP conformance evaluation. Not a certification program. Does not host execution.",
+    icons: {
+        icon: [
+            { url: "/brand/mplp-favicon-32.png", sizes: "32x32", type: "image/png" },
+            { url: "/brand/mplp-favicon-48.png", sizes: "48x48", type: "image/png" },
+            { url: "/brand/mplp-icon-512.png", sizes: "512x512", type: "image/png" },
+        ],
+        shortcut: "/brand/mplp-favicon-32.png",
+        apple: [
+            { url: "/brand/mplp-apple-touch-180.png", sizes: "180x180", type: "image/png" },
+        ],
+        other: [
+            {
+                rel: "mask-icon",
+                url: "/brand/mplp-icon-only-transparent.png",
+            },
+        ],
     },
 };
 
@@ -50,6 +54,7 @@ export default function RootLayout({
     return (
         <html lang="en" className="scroll-smooth" suppressHydrationWarning>
             <body className={`${inter.variable} ${jetbrainsMono.variable} font-sans antialiased bg-mplp-dark text-mplp-text min-h-screen flex flex-col`} suppressHydrationWarning>
+                <SvgDefs />
                 {/* Background Effects - Reduced opacity for text contrast */}
                 <div className="fixed inset-0 bg-grid pointer-events-none opacity-20 z-0" aria-hidden="true"></div>
                 <div className="fixed inset-0 bg-mesh pointer-events-none opacity-60 z-0" aria-hidden="true"></div>

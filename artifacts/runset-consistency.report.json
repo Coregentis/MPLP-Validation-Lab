@@ -1,6 +1,6 @@
 {
   "gate_id": "GATE-RUNSET-CONSISTENCY",
-  "executed_at": "2026-01-20T04:28:47.845Z",
+  "executed_at": "2026-01-20T06:29:57.047Z",
   "status": "PASS",
   "sets": {
     "curated": {

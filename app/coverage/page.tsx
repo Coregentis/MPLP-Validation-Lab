@@ -32,7 +32,7 @@ interface Allowlist {
   D4: DomainData;
 }
 
-function DomainBadge({ domain }: { domain: string }) {
+function DomainPill({ domain }: { domain: string }) {
   const colors: Record<string, string> = {
     'D1': 'bg-blue-600',
     'D2': 'bg-green-600',
@@ -47,7 +47,7 @@ function DomainBadge({ domain }: { domain: string }) {
   );
 }
 
-function CountBadge({ count, type }: { count: number; type: 'pass' | 'fail' }) {
+function CountCell({ count, type }: { count: number; type: 'pass' | 'fail' }) {
   const color = type === 'pass' ? 'text-green-400' : 'text-red-400';
   const target = 5;
   const met = count >= target;
@@ -178,14 +178,14 @@ export default function CoveragePage() {
                 return (
                   <tr key={row.domain} className="border-b border-gray-800 hover:bg-gray-800/50">
                     <td className="py-3 px-4">
-                      <DomainBadge domain={row.domain} />
+                      <DomainPill domain={row.domain} />
                     </td>
                     <td className="py-3 px-4">{row.label}</td>
                     <td className="py-3 px-4 text-center">
-                      <CountBadge count={row.passCount} type="pass" />
+                      <CountCell count={row.passCount} type="pass" />
                     </td>
                     <td className="py-3 px-4 text-center">
-                      <CountBadge count={row.failCount} type="fail" />
+                      <CountCell count={row.failCount} type="fail" />
                     </td>
                     <td className="py-3 px-4 text-center">
                       <span className={met ? 'text-green-400' : 'text-yellow-400'}>

@@ -19,7 +19,7 @@ import {
     Verdict
 } from '@/lib/export/loadJson';
 import { StatusBadge } from '@/app/_shared/StatusBadge';
-import { VerdictHashBadge } from '@/app/_shared/VerdictHashBadge';
+import { VerdictHashPill } from '@/app/_shared/VerdictHashPill';
 
 interface PageProps {
     params: Promise<{ run_id: string }>;
@@ -109,7 +109,7 @@ export default async function AdjudicationDetailPage({ params }: PageProps) {
                 <div className="mt-6 pt-4 border-t border-zinc-800">
                     <span className="text-zinc-500 text-sm">Verdict Hash (deterministic):</span>
                     <div className="mt-2">
-                        <VerdictHashBadge hash={verdict.verdict_hash} truncate={false} />
+                        <VerdictHashPill hash={verdict.verdict_hash} truncate={false} />
                     </div>
                 </div>
             </section>

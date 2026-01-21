@@ -2,7 +2,7 @@
   "pack_id": "arb-d3-authz-decision-pass-fixture-v0.3",
   "version": "0.3.0",
   "substrate": "fixture",
-  "created_at": "2026-01-17T15:29:18.204Z",
+  "created_at": "2026-01-21T07:34:55.415Z",
   "trace_format": "ndjson",
   "files": [
     "trace/events.ndjson"

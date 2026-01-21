@@ -1,6 +1,6 @@
 {
   "run_id": "arb-d1-budget-fail-fixture-v0.3",
-  "scenario_id": "d1-fail-scenario",
+  "scenario_id": "d1-budget-fail-scenario",
   "admission": "ADMISSIBLE",
   "topline": "FAIL",
   "gf_verdicts": [],
@@ -17,6 +17,6 @@
     "schema": "v0.3.0",
     "ruleset": "ruleset-1.1"
   },
-  "evaluated_at": "2026-01-17T15:29:18.202Z",
+  "evaluated_at": "2026-01-21T07:34:55.413Z",
   "reason_code": "BUNDLE-POINTER-MISSING-RQ-D1-01"
 }

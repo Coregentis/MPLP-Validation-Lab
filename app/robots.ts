@@ -14,6 +14,7 @@ export default function robots(): MetadataRoute.Robots {
                     "/guarantees",
                     "/coverage",
                     "/coverage/adjudication",
+                    "/methodology",
                     "/policies/contract",
                     "/policies/intake",
                     "/policies/substrate-scope",

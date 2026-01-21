@@ -1,7 +1,7 @@
 {
   "config": {
-    "configFile": "/Users/jasonwang/Documents/AI_Dev/V1.0_release/Validation_Lab/playwright.config.ts",
-    "rootDir": "/Users/jasonwang/Documents/AI_Dev/V1.0_release/Validation_Lab/tests/e2e",
+    "configFile": "/ROOT/Validation_Lab/playwright.config.ts",
+    "rootDir": "/ROOT/Validation_Lab/tests/e2e",
     "forbidOnly": false,
     "fullyParallel": true,
     "globalSetup": null,
@@ -36,7 +36,7 @@
     "quiet": false,
     "projects": [
       {
-        "outputDir": "/Users/jasonwang/Documents/AI_Dev/V1.0_release/Validation_Lab/test-results",
+        "outputDir": "/ROOT/Validation_Lab/test-results",
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
@@ -44,7 +44,7 @@
         },
         "id": "chromium",
         "name": "chromium",
-        "testDir": "/Users/jasonwang/Documents/AI_Dev/V1.0_release/Validation_Lab/tests/e2e",
+        "testDir": "/ROOT/Validation_Lab/tests/e2e",
         "testIgnore": [],
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"

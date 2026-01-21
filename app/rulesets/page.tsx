@@ -34,6 +34,20 @@ export default function RulesetsPage() {
                 <p className="max-w-2xl text-mplp-text-muted leading-relaxed">
                     Versioned rulesets for evidence-based verdicts. Each ruleset defines requirements for Lifecycle Guarantees evaluation.
                 </p>
+
+                {/* Status Legend */}
+                <div className="mt-6 flex flex-wrap gap-6 text-[11px] uppercase tracking-widest font-bold">
+                    <div className="flex items-center gap-2">
+                        <span className="w-2 h-2 rounded-full bg-mplp-blue-soft ring-4 ring-mplp-blue-soft/10" />
+                        <span className="text-mplp-text">Active</span>
+                        <span className="text-mplp-text-muted font-normal lowercase tracking-normal">— Authoritative for official verdicts</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                        <span className="w-2 h-2 rounded-full bg-mplp-text-muted/40" />
+                        <span className="text-mplp-text-muted">Draft</span>
+                        <span className="text-mplp-text-muted/60 font-normal lowercase tracking-normal">— Proposed logic, not for adjudication</span>
+                    </div>
+                </div>
             </div>
 
             {rulesets.length === 0 ? (

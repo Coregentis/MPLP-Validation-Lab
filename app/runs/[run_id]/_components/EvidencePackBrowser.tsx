@@ -28,7 +28,7 @@ export function EvidencePackBrowser({ runId }: { runId: string }) {
                 {files.map(file => (
                     <li key={file.path} className="flex items-center justify-between px-6 py-3 hover:bg-mplp-blue-soft/5 transition-colors">
                         <div className="flex items-center gap-3">
-                            {/* Category Badge */}
+                            {/* Category Pill */}
                             <span className={`text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded border ${categoryColors[file.category]}`}>
                                 {file.category}
                             </span>

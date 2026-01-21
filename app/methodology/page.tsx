@@ -51,9 +51,9 @@ export default function MethodologyPage() {
                     </h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         {[
-                            { title: 'Non-certification', desc: 'No badges, rankings, or compliance certificates' },
+                            { title: 'Non-certification', desc: 'No badges, no ranking, and no compliance certificates' },
                             { title: 'Non-endorsement', desc: 'Verdict ≠ recommendation or quality assessment' },
-                            { title: 'No execution hosting', desc: 'Lab does not run your code; you provide evidence packs' },
+                            { title: 'No execution hosting', desc: 'Lab does not host execution; you provide evidence packs' },
                             { title: 'Deterministic ruleset', desc: 'Same evidence + same ruleset = same verdict' },
                         ].map((b, i) => (
                             <div key={i} className="bg-zinc-900 border border-zinc-800 rounded-lg p-4">

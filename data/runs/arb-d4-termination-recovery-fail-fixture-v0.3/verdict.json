@@ -1,6 +1,6 @@
 {
   "run_id": "arb-d4-termination-recovery-fail-fixture-v0.3",
-  "scenario_id": "d4-fail-scenario",
+  "scenario_id": "d4-termination-fail-scenario",
   "admission": "ADMISSIBLE",
   "topline": "FAIL",
   "gf_verdicts": [],
@@ -17,6 +17,6 @@
     "schema": "v0.3.0",
     "ruleset": "ruleset-1.1"
   },
-  "evaluated_at": "2026-01-17T15:29:18.207Z",
+  "evaluated_at": "2026-01-21T07:34:55.417Z",
   "reason_code": "BUNDLE-POINTER-MISSING-RQ-D4-01"
 }

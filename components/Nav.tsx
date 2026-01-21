@@ -6,6 +6,7 @@
  */
 
 import Link from 'next/link';
+import { Logo } from "@/components/ui/logo";
 
 // Internal Lab navigation
 const NAV_ITEMS = [
@@ -34,9 +35,9 @@ export function Nav() {
                     {/* Logo - Premium hover */}
                     <div className="flex items-center gap-4">
                         <Link href="/" className="flex items-center gap-2 group transition hover:scale-[1.02]" aria-label="Validation Lab Home">
-                            <span className="text-lg font-bold text-mplp-blue-soft">MPLP</span>
-                            <span className="text-mplp-text-muted">|</span>
-                            <span className="text-lg font-bold text-white">Validation Lab</span>
+                            <Logo className="h-7 w-auto" />
+                            <span className="text-mplp-text-muted mt-0.5">|</span>
+                            <span className="text-[13px] font-bold text-white uppercase tracking-wider mt-1">Validation Lab</span>
                         </Link>
                     </div>
 

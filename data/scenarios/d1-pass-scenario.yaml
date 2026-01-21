@@ -1,0 +1,6 @@
+scenario_id: d1-pass-scenario
+name: v0.3 D1 PASS Fixture
+domain: D1
+requirements:
+  - id: RQ-D1-01
+    title: Requirement RQ-D1-01

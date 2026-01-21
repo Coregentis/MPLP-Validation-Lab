@@ -10,6 +10,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import * as crypto from 'crypto';
+import * as yaml from 'js-yaml';
 
 const RUNS_ROOT = path.resolve(process.cwd(), 'data/runs');
 
@@ -129,7 +130,15 @@ function sha256(content) {
 function generateVerdict(pack) {
     return {
         run_id: pack.run_id,
-        scenario_id: `${pack.domain.toLowerCase()}-${pack.outcome.toLowerCase()}-scenario`,
+        scenario_id: pack.run_id === 'arb-d1-budget-pass-fixture-v0.3' || pack.run_id === 'arb-d1-budget-fail-fixture-v0.3'
+            ? `${pack.domain.toLowerCase()}-budget-${pack.outcome.toLowerCase()}-scenario`
+            : pack.run_id === 'arb-d2-lifecycle-state-pass-fixture-v0.3' || pack.run_id === 'arb-d2-lifecycle-state-fail-fixture-v0.3'
+                ? `${pack.domain.toLowerCase()}-lifecycle-${pack.outcome.toLowerCase()}-scenario`
+                : pack.run_id === 'arb-d3-authz-decision-pass-fixture-v0.3' || pack.run_id === 'arb-d3-authz-decision-fail-fixture-v0.3'
+                    ? `${pack.domain.toLowerCase()}-authz-${pack.outcome.toLowerCase()}-scenario`
+                    : pack.run_id === 'arb-d4-termination-recovery-pass-fixture-v0.3' || pack.run_id === 'arb-d4-termination-recovery-fail-fixture-v0.3'
+                        ? `${pack.domain.toLowerCase()}-termination-${pack.outcome.toLowerCase()}-scenario`
+                        : `${pack.domain.toLowerCase()}-${pack.outcome.toLowerCase()}-scenario`,
         admission: 'ADMISSIBLE',
         topline: pack.outcome,
         gf_verdicts: [],
@@ -269,17 +278,37 @@ function generatePack(pack) {
     const events = generateEvents(pack);
     const eventsNdjson = events.map(e => JSON.stringify(e)).join('\n') + '\n';
 
+    // Mock reports
+    const verifyReport = { status: 'COMPLETE', evaluated_at: verdict.evaluated_at };
+    const verifyReportJson = JSON.stringify(verifyReport, null, 2);
+    const evaluationReport = { status: pack.outcome, evaluated_at: verdict.evaluated_at };
+    const evaluationReportJson = JSON.stringify(evaluationReport, null, 2);
+
     // Write files
     fs.writeFileSync(path.join(runDir, 'verdict.json'), verdictJson);
     fs.writeFileSync(path.join(runDir, 'bundle.manifest.json'), bundleManifestJson);
     fs.writeFileSync(path.join(runDir, 'evidence_pointers.json'), evidencePointersJson);
     fs.writeFileSync(path.join(runDir, 'pack', 'manifest.json'), packManifestJson);
     fs.writeFileSync(path.join(runDir, 'pack', 'trace', 'events.ndjson'), eventsNdjson);
+    fs.writeFileSync(path.join(runDir, 'verify.report.json'), verifyReportJson);
+    fs.writeFileSync(path.join(runDir, 'evaluation.report.json'), evaluationReportJson);
+
+    // Generate scenario
+    const scenario = {
+        scenario_id: verdict.scenario_id,
+        name: `v0.3 ${pack.domain} ${pack.outcome} Fixture`,
+        domain: pack.domain,
+        requirements: [{ id: pack.requirement_id, title: `Requirement ${pack.requirement_id}` }]
+    };
+    fs.mkdirSync(path.join(process.cwd(), 'data/scenarios'), { recursive: true });
+    fs.writeFileSync(path.join(process.cwd(), 'data/scenarios', `${verdict.scenario_id}.yaml`), yaml.dump(scenario));
 
     // Generate integrity hashes
     const hashScope = {
         'verdict.json': verdictJson,
         'pack/trace/events.ndjson': eventsNdjson,
+        'verify.report.json': verifyReportJson,
+        'evaluation.report.json': evaluationReportJson,
     };
     const integrity = generateIntegrity(hashScope);
     fs.writeFileSync(path.join(runDir, 'integrity', 'sha256sums.txt'), integrity);

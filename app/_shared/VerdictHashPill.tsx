@@ -1,5 +1,5 @@
 /**
- * VerdictHashBadge Component
+ * VerdictHashPill Component
  * 
  * Displays verdict_hash with copy functionality.
  * Factual display only - the hash is the recheckable anchor.
@@ -9,13 +9,13 @@
 
 import React, { useState } from 'react';
 
-interface VerdictHashBadgeProps {
+interface VerdictHashPillProps {
     hash: string;
     truncate?: boolean;
     link?: string;
 }
 
-export function VerdictHashBadge({ hash, truncate = true, link }: VerdictHashBadgeProps) {
+export function VerdictHashPill({ hash, truncate = true, link }: VerdictHashPillProps) {
     const [copied, setCopied] = useState(false);
 
     const displayHash = truncate ? `${hash.slice(0, 16)}...` : hash;

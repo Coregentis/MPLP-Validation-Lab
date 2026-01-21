@@ -75,7 +75,7 @@ export function StateDiffPanel({ diff, isLoading }: StateDiffPanelProps) {
                                 key={index}
                                 className="bg-black/30 border border-mplp-border/20 rounded-lg p-3"
                             >
-                                {/* Operation Badge */}
+                                {/* Operation Pill */}
                                 <div className="flex items-center gap-2 mb-2">
                                     <span className={`text-[10px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded ${opColors[op.op]}`}>
                                         {op.op}

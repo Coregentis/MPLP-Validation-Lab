@@ -1,0 +1,6 @@
+scenario_id: d3-fail-scenario
+name: v0.3 D3 FAIL Fixture
+domain: D3
+requirements:
+  - id: RQ-D3-01
+    title: Requirement RQ-D3-01

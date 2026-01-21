@@ -1,6 +1,6 @@
 {
   "gate_id": "GATE-SHADOW-PARITY",
-  "executed_at": "2026-01-20T04:28:45.082Z",
+  "executed_at": "2026-01-20T06:29:39.403Z",
   "status": "PASS",
   "hash_scope_version": "1.0.0",
   "summary": {
@@ -230,5 +230,5 @@
   ],
   "mismatches": [],
   "errors": [],
-  "duration_ms": 87
+  "duration_ms": 89
 }

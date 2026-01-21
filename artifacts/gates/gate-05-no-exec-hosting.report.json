@@ -2,10 +2,10 @@
   "gate_id": "GATE-05",
   "gate_name": "No Execution Hosting Guard",
   "status": "PASS",
-  "evaluated_at": "2026-01-14T09:19:01.928Z",
+  "evaluated_at": "2026-01-21T07:43:17.431Z",
   "findings": [],
   "summary": {
-    "files_scanned": 32,
+    "files_scanned": 52,
     "matches": 0,
     "note": "scope: PUBLIC_SURFACE only (app, components, public)"
   }

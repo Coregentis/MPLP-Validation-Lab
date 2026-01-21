@@ -60,7 +60,7 @@ export function TimelinePanel({ events, selectedEventId, onEventSelect }: Timeli
                                 </span>
 
                                 <div className="flex-grow min-w-0">
-                                    {/* Event Type Badge */}
+                                    {/* Event Type Pill */}
                                     <span className={`inline-block text-[10px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded border mb-1 ${getEventTypeColor(event.event_type)}`}>
                                         {event.event_type}
                                     </span>

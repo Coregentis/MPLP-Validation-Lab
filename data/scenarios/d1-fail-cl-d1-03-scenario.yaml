@@ -1,0 +1,6 @@
+scenario_id: d1-fail-cl-d1-03-scenario
+name: v0.4 D1 CL-D1-03 FAIL Fixture
+domain: D1
+requirements:
+  - id: RQ-D1-01
+    title: Requirement RQ-D1-01

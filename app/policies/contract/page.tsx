@@ -2,10 +2,11 @@
  * Export Contract Page (v1.2)
  * 
  * Public compatibility contract for the export/ directory.
- * This is the SINGLE SOURCE OF TRUTH for contract surface.
+ * SSOT (scoped): This page is the source of truth for the *public export/ contract surface*
+ * within the MPLP Validation Lab. It does not define MPLP protocol semantics.
  * 
  * NON-NORMATIVE: This is Lab governance, not MPLP protocol spec.
- * GATE-04 COMPLIANCE: No certification/endorsement language.
+ * Compliance: No certification/endorsement language. Passing gates ≠ certification.
  */
 
 import Link from 'next/link';
@@ -33,7 +34,7 @@ export default function ContractPage() {
                 <h1 className="text-3xl sm:text-4xl font-bold text-mplp-text mb-6">Export Contract</h1>
                 <div className="flex items-center gap-4 mb-6">
                     <span className="px-2 py-1 bg-mplp-blue-soft/10 border border-mplp-blue-soft/20 text-mplp-blue-soft rounded text-[10px] font-bold uppercase tracking-wider">v1.2 Stable</span>
-                    <span className="px-2 py-1 bg-mplp-dark-soft border border-mplp-border/40 text-mplp-text-muted rounded text-[10px] font-bold uppercase tracking-wider">SSOT Locked</span>
+                    <span className="px-2 py-1 bg-mplp-dark-soft border border-mplp-border/40 text-mplp-text-muted rounded text-[10px] font-bold uppercase tracking-wider">Contract SSOT (Locked)</span>
                 </div>
                 <p className="max-w-2xl text-mplp-text-muted leading-relaxed">
                     Public compatibility contract for the <code className="font-mono text-sm mx-1">export/</code> directory.
@@ -55,6 +56,12 @@ export default function ContractPage() {
                         <li className="flex gap-2">
                             <span className="text-mplp-blue-soft">•</span>
                             <span>This is NOT an MPLP protocol specification.</span>
+                        </li>
+                        <li className="flex gap-2">
+                            <span className="text-mplp-blue-soft">•</span>
+                            <span>
+                                Passing gates does <strong>not</strong> imply certification, compliance, or endorsement; it only enforces export compatibility constraints.
+                            </span>
                         </li>
                         <li className="flex gap-2">
                             <span className="text-mplp-blue-soft">•</span>
@@ -113,12 +120,12 @@ export default function ContractPage() {
                 <h2 className="text-lg font-bold text-mplp-text mb-6">Contract Enforcement</h2>
                 <div className="grid md:grid-cols-2 gap-4">
                     <div className="p-6 rounded-2xl bg-mplp-dark-soft/20 border border-mplp-border/30">
-                        <span className="text-xs font-bold uppercase tracking-widest text-amber-500 mb-2 block">Gate-14</span>
+                        <span className="text-xs font-bold uppercase tracking-widest text-amber-500 mb-2 block">Gate-14 (Consistency)</span>
                         <h3 className="font-bold text-mplp-text mb-2">Adjudication Consistency</h3>
                         <p className="text-xs text-mplp-text-muted leading-relaxed">bundle ↔ export alignment</p>
                     </div>
                     <div className="p-6 rounded-2xl bg-mplp-dark-soft/20 border border-mplp-border/30">
-                        <span className="text-xs font-bold uppercase tracking-widest text-amber-500 mb-2 block">Gate-15</span>
+                        <span className="text-xs font-bold uppercase tracking-widest text-amber-500 mb-2 block">Gate-15 (Closure)</span>
                         <h3 className="font-bold text-mplp-text mb-2">Curated Closure</h3>
                         <p className="text-xs text-mplp-text-muted leading-relaxed">curated runs → adjudication required</p>
                     </div>

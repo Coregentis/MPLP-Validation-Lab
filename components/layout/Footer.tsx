@@ -6,6 +6,7 @@
  */
 
 import Link from 'next/link';
+import { Logo } from "@/components/ui/logo";
 
 export function Footer() {
     const currentYear = new Date().getFullYear();
@@ -16,11 +17,11 @@ export function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
                     {/* Brand Column */}
                     <div className="md:col-span-4">
-                        <Link href="/" className="mb-4 inline-block" aria-label="Validation Lab Home">
+                        <Link href="/" className="mb-4 inline-block group transition hover:scale-[1.02]" aria-label="Validation Lab Home">
                             <div className="flex items-center gap-2">
-                                <span className="text-lg font-bold text-mplp-blue-soft">MPLP</span>
-                                <span className="text-mplp-text-muted">|</span>
-                                <span className="text-lg font-bold text-white">Validation Lab</span>
+                                <Logo className="h-7 w-auto" />
+                                <span className="text-mplp-text-muted mt-0.5">|</span>
+                                <span className="text-[13px] font-bold text-white uppercase tracking-wider mt-1">Validation Lab</span>
                             </div>
                         </Link>
                         <p className="text-mplp-text-muted text-sm leading-relaxed max-w-xs font-normal mt-4">

@@ -24,12 +24,12 @@ interface RulesetEvaluationPanelProps {
 }
 
 // =============================================================================
-// Status Badge
+// Status Pill
 // =============================================================================
 
 type VerdictStatus = 'PASS' | 'FAIL' | 'NOT_EVALUATED' | 'NOT_ADMISSIBLE';
 
-function StatusBadge({ status }: { status: VerdictStatus }) {
+function StatusPill({ status }: { status: VerdictStatus }) {
     const colors: Record<VerdictStatus, string> = {
         PASS: 'bg-green-500/20 text-green-400 border-green-500/30',
         FAIL: 'bg-red-500/20 text-red-400 border-red-500/30',
@@ -74,7 +74,7 @@ function ClauseRow({ clause, domainName }: ClauseRowProps) {
                     {clause.requirement_id}
                 </td>
                 <td className="px-4 py-3">
-                    <StatusBadge status={clause.status} />
+                    <StatusPill status={clause.status} />
                 </td>
                 <td className="px-4 py-3 text-sm font-mono text-mplp-text-muted">
                     {clause.reason_code || '—'}
@@ -162,7 +162,7 @@ function EvidenceRefCard({ ref, index }: {
         <div className="bg-mplp-dark rounded-lg p-3 border border-mplp-border/30">
             <div className="flex items-center gap-2 mb-2">
                 <span className="text-xs text-mplp-text-muted">#{index + 1}</span>
-                <ResolvedBadge resolved={ref.resolved as 'event' | 'snapshot' | 'none'} />
+                <ResolvedPill resolved={ref.resolved as 'event' | 'snapshot' | 'none'} />
                 {locatorStr ? (
                     <code className="text-xs text-mplp-blue-soft font-mono">
                         {locatorStr}
@@ -188,7 +188,7 @@ function EvidenceRefCard({ ref, index }: {
     );
 }
 
-function ResolvedBadge({ resolved }: { resolved: 'event' | 'snapshot' | 'none' }) {
+function ResolvedPill({ resolved }: { resolved: 'event' | 'snapshot' | 'none' }) {
     const colors = {
         event: 'bg-blue-500/20 text-blue-400',
         snapshot: 'bg-purple-500/20 text-purple-400',
@@ -261,7 +261,7 @@ export function RulesetEvaluationPanel({ evaluation, isLoading, error }: Ruleset
                     </p>
                 </div>
                 <div className="flex items-center gap-3">
-                    <StatusBadge status={evaluation.topline_verdict} />
+                    <StatusPill status={evaluation.topline_verdict} />
                     {evaluation.reason_code && (
                         <code className="text-xs bg-red-500/10 text-red-400 px-2 py-1 rounded border border-red-500/20">
                             {evaluation.reason_code}
@@ -278,7 +278,7 @@ export function RulesetEvaluationPanel({ evaluation, isLoading, error }: Ruleset
                             <div key={dm.domain_id} className="flex items-center gap-2">
                                 <span className="text-xs font-mono text-mplp-text-muted">{dm.domain_id}:</span>
                                 <span className="text-xs font-semibold text-mplp-text">{dm.domain_name}</span>
-                                <StatusBadge status={dm.status} />
+                                <StatusPill status={dm.status} />
                             </div>
                         ))}
                     </div>

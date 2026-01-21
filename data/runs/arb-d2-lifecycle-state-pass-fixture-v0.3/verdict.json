@@ -1,6 +1,6 @@
 {
   "run_id": "arb-d2-lifecycle-state-pass-fixture-v0.3",
-  "scenario_id": "d2-pass-scenario",
+  "scenario_id": "d2-lifecycle-pass-scenario",
   "admission": "ADMISSIBLE",
   "topline": "PASS",
   "gf_verdicts": [],
@@ -16,6 +16,6 @@
     "schema": "v0.3.0",
     "ruleset": "ruleset-1.1"
   },
-  "evaluated_at": "2026-01-17T15:29:18.203Z",
+  "evaluated_at": "2026-01-21T07:34:55.414Z",
   "reason_code": null
 }

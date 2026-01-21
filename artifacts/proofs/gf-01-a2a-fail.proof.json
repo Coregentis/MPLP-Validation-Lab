@@ -17,10 +17,10 @@
     "algorithm": "Ed25519",
     "signature": "gMeI3RHRVhMxzx5uKyBHN9jh61SKqIm/ln08fmpjZSoPpj/61ylKqY2pXl/w0U6rKjmt3GWh+UbyADLzHyj3Dg==",
     "key_id": "vlab-v0.5-test-001",
-    "signed_at": "2026-01-19T06:01:41.334Z"
+    "signed_at": "2026-01-20T06:29:53.632Z"
   },
   "metadata": {
-    "generated_at": "2026-01-19T06:01:41.334Z",
+    "generated_at": "2026-01-20T06:29:53.632Z",
     "generator_version": "0.5.5"
   }
 }

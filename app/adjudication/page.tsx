@@ -2,7 +2,7 @@
  * Adjudication Index Page
  * 
  * Lists all adjudication bundles from export/adjudication-index.json.
- * Factual display only - no endorsement/certification/ranking.
+ * Factual display only - non-endorsement, non-certification, and no ranking.
  * 
  * GOVERNANCE: Reviewability ≠ Reproducibility
  */
@@ -11,7 +11,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { loadExportJson, AdjudicationIndex } from '@/lib/export/loadJson';
 import { StatusBadge } from '@/app/_shared/StatusBadge';
-import { VerdictHashBadge } from '@/app/_shared/VerdictHashBadge';
+import { VerdictHashPill } from '@/app/_shared/VerdictHashPill';
 
 const LAB_CANONICAL_HOST = 'https://lab.mplp.io';
 
@@ -95,7 +95,7 @@ export default function AdjudicationPage() {
                                             <StatusBadge status={entry.overall_status} />
                                         </td>
                                         <td className="p-4">
-                                            <VerdictHashBadge
+                                            <VerdictHashPill
                                                 hash={entry.verdict_hash}
                                                 link={`/adjudication/${entry.run_id}`}
                                             />

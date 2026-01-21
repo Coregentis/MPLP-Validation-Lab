@@ -1,6 +1,6 @@
 {
   "run_id": "arb-d2-lifecycle-state-fail-fixture-v0.3",
-  "scenario_id": "d2-fail-scenario",
+  "scenario_id": "d2-lifecycle-fail-scenario",
   "admission": "ADMISSIBLE",
   "topline": "FAIL",
   "gf_verdicts": [],
@@ -17,6 +17,6 @@
     "schema": "v0.3.0",
     "ruleset": "ruleset-1.1"
   },
-  "evaluated_at": "2026-01-17T15:29:18.204Z",
+  "evaluated_at": "2026-01-21T07:34:55.414Z",
   "reason_code": "BUNDLE-POINTER-MISSING-RQ-D2-01"
 }

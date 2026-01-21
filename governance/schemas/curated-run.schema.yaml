@@ -29,6 +29,8 @@ enums:
     - reproduced
   status:
     - frozen
+    - active
+    - eligible_for_upgrade
     - deprecated
 
 # Field descriptions (for documentation)

@@ -1,6 +1,6 @@
 {
   "gate_id": "GATE-CURATED-RUNS-CLOSURE",
-  "executed_at": "2026-01-20T04:28:30.517Z",
+  "executed_at": "2026-01-21T07:43:25.321Z",
   "status": "PASS",
   "runs": [
     {
@@ -70,7 +70,7 @@
       "adjudicator_available": true,
       "adjudicated": true,
       "topline_verdict": "FAIL",
-      "reason_code": "D2_POST_TERMINAL_EXECUTION_DETECTED",
+      "reason_code": "D1_DECISION_EVENT_MISSING",
       "has_reason_code": true,
       "status": "FAIL",
       "errors": []
@@ -82,7 +82,7 @@
       "adjudicator_available": true,
       "adjudicated": true,
       "topline_verdict": "FAIL",
-      "reason_code": "D2_TERMINAL_STATE_NOT_IN_ALLOWED_SET",
+      "reason_code": "D1_DECISION_EVENT_MISSING",
       "has_reason_code": true,
       "status": "FAIL",
       "errors": []
@@ -142,7 +142,7 @@
       "adjudicator_available": true,
       "adjudicated": true,
       "topline_verdict": "FAIL",
-      "reason_code": "D3_DENY_WITHOUT_CONFIRM_GATE",
+      "reason_code": "D1_DECISION_EVENT_MISSING",
       "has_reason_code": true,
       "status": "FAIL",
       "errors": []
@@ -154,7 +154,7 @@
       "adjudicator_available": true,
       "adjudicated": true,
       "topline_verdict": "FAIL",
-      "reason_code": "D3_RESOURCE_MISSING",
+      "reason_code": "D1_DECISION_EVENT_MISSING",
       "has_reason_code": true,
       "status": "FAIL",
       "errors": []
@@ -166,7 +166,7 @@
       "adjudicator_available": true,
       "adjudicated": true,
       "topline_verdict": "FAIL",
-      "reason_code": "D4_TERMINATION_REASON_NOT_IN_ALLOWED_SET",
+      "reason_code": "D1_DECISION_EVENT_MISSING",
       "has_reason_code": true,
       "status": "FAIL",
       "errors": []
@@ -178,7 +178,7 @@
       "adjudicator_available": true,
       "adjudicated": true,
       "topline_verdict": "FAIL",
-      "reason_code": "D2_POST_TERMINAL_EXECUTION_DETECTED",
+      "reason_code": "D1_DECISION_EVENT_MISSING",
       "has_reason_code": true,
       "status": "FAIL",
       "errors": []
@@ -338,5 +338,5 @@
     "load_errors": 0,
     "ruleset_errors": 0
   },
-  "duration_ms": 80
+  "duration_ms": 87
 }

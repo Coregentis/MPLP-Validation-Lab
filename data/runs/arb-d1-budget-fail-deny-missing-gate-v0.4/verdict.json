@@ -17,6 +17,6 @@
     "schema": "v0.4.0",
     "ruleset": "ruleset-1.2"
   },
-  "evaluated_at": "2026-01-18T14:37:17.974Z",
+  "evaluated_at": "2026-01-21T07:33:04.280Z",
   "reason_code": "D1_BUDGET_DENY_WITHOUT_GATE"
 }

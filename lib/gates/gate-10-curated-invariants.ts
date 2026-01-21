@@ -18,8 +18,8 @@ function runGate10(): Gate10Result {
         const data = getCuratedRuns();
         checks++;
 
-        if (data.runs.length !== 3) {
-            failures.push(`Expected 3 runs, got ${data.runs.length}`);
+        if (data.runs.length !== 27) {
+            failures.push(`Expected 27 runs (v0.5 baseline), got ${data.runs.length}`);
         }
     } catch (e) {
         failures.push(`Failed to load curated runs: ${e instanceof Error ? e.message : String(e)}`);
