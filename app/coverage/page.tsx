@@ -83,112 +83,106 @@ export default function CoveragePage() {
   const allMet = summary.every(s => s.passCount >= 5 && s.failCount >= 5);
 
   return (
-    <div className="min-h-screen bg-gray-900 text-gray-100">
-      <div className="max-w-6xl mx-auto px-4 py-8">
-        {/* Guardrail Banner */}
-        <div className="bg-amber-900/50 border border-amber-600 rounded-lg p-4 mb-8">
-          <div className="flex items-start gap-3">
-            <span className="text-amber-400 text-xl">⚠️</span>
-            <div>
-              <h2 className="font-bold text-amber-200 mb-2">Coverage Matrix Boundaries</h2>
-              <ul className="text-amber-100 text-sm space-y-1">
-                <li>• <strong>NOT</strong> a certification program</li>
-                <li>• Does <strong>NOT</strong> host execution</li>
-                <li>• Evidence viewing &amp; adjudication only</li>
-              </ul>
-            </div>
-          </div>
-        </div>
+    <div className="pt-8">
+      {/* Header */}
+      <div className="mb-12">
+        <p className="text-xs font-bold uppercase tracking-[0.4em] text-mplp-text-muted/80 mb-3">Evidence</p>
+        <h1 className="text-3xl sm:text-4xl font-bold text-mplp-text mb-6">Test Vectors Coverage (v0.5)</h1>
+        <p className="max-w-2xl text-mplp-text-muted leading-relaxed">
+          Coverage matrix from SSOT: <code className="ml-2 text-xs bg-mplp-dark-soft px-2 py-1 rounded font-mono border border-mplp-border/40">test-vectors/v0.5/allowlist-v0.5.yaml</code>
+        </p>
+        <p className="text-mplp-text-muted/60 text-sm mt-2">
+          Ruleset: <code className="text-mplp-blue-soft">{allowlist.ruleset_pin}</code>
+        </p>
+      </div>
 
-        {/* Header */}
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold mb-2">Test Vectors Coverage (v0.5)</h1>
-          <p className="text-gray-400">
-            Coverage matrix from SSOT:
-            <code className="ml-2 text-xs bg-gray-800 px-2 py-1 rounded font-mono">
-              test-vectors/v0.5/allowlist-v0.5.yaml
-            </code>
+      {/* Boundary Statement */}
+      <div className="mb-10 p-4 bg-amber-900/20 border border-amber-500/30 rounded-lg">
+        <p className="text-xs text-amber-400/90 font-medium uppercase tracking-wider mb-2">
+          Coverage Matrix Boundaries
+        </p>
+        <ul className="text-sm text-mplp-text-muted space-y-1">
+          <li>• <strong className="text-amber-400">NOT</strong> a certification program</li>
+          <li>• Does <strong className="text-amber-400">NOT</strong> host execution</li>
+          <li>• Evidence viewing &amp; adjudication only</li>
+        </ul>
+      </div>
+
+      {/* Coverage Navigation Cards */}
+      <div className="mb-10 grid gap-4 md:grid-cols-2">
+        <Link href="/coverage/adjudication" className="block rounded-2xl border border-mplp-border/30 bg-glass p-6 hover:bg-mplp-blue-soft/5 hover:border-mplp-blue-soft/30 transition-all">
+          <div className="flex items-center gap-2 mb-2">
+            <span className="text-lg">📊</span>
+            <span className="text-sm font-semibold text-mplp-text">Adjudication Coverage Matrix</span>
+          </div>
+          <p className="text-sm text-mplp-text-muted">
+            Substrate × GF/Domain matrix with clickable verdicts
           </p>
-          <p className="text-gray-500 text-sm mt-2">
-            Ruleset: <code className="text-blue-400">{allowlist.ruleset_pin}</code>
+        </Link>
+
+        <Link href="/adjudication" className="block rounded-2xl border border-mplp-border/30 bg-glass p-6 hover:bg-mplp-blue-soft/5 hover:border-mplp-blue-soft/30 transition-all">
+          <div className="flex items-center gap-2 mb-2">
+            <span className="text-lg">⚖️</span>
+            <span className="text-sm font-semibold text-mplp-text">All Adjudication Bundles</span>
+          </div>
+          <p className="text-sm text-mplp-text-muted">
+            Browse bundles, verdict hashes &amp; recheck status
           </p>
+        </Link>
+      </div>
+
+      {/* Summary Stats */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+        <div className="bg-glass rounded-2xl p-5 text-center border border-mplp-border/30">
+          <p className="text-2xl font-bold text-green-400">{totalPass}</p>
+          <p className="text-xs text-mplp-text-muted uppercase tracking-wider mt-1">PASS Vectors</p>
         </div>
-
-        {/* Coverage Navigation Cards */}
-        <div className="mb-8 grid gap-4 md:grid-cols-2">
-          <Link href="/coverage/adjudication" className="block rounded-lg border border-zinc-700 bg-zinc-800/50 p-5 hover:bg-zinc-800 hover:border-blue-500/50 transition-all">
-            <div className="flex items-center gap-2 mb-1">
-              <span className="text-lg">📊</span>
-              <span className="text-sm font-semibold text-mplp-text">Adjudication Coverage Matrix</span>
-            </div>
-            <p className="text-sm text-mplp-text-muted">
-              Substrate × GF/Domain matrix with clickable verdicts
-            </p>
-          </Link>
-
-          <Link href="/adjudication" className="block rounded-lg border border-zinc-700 bg-zinc-800/50 p-5 hover:bg-zinc-800 hover:border-blue-500/50 transition-all">
-            <div className="flex items-center gap-2 mb-1">
-              <span className="text-lg">⚖️</span>
-              <span className="text-sm font-semibold text-mplp-text">All Adjudication Bundles</span>
-            </div>
-            <p className="text-sm text-mplp-text-muted">
-              Browse bundles, verdict hashes & recheck status
-            </p>
-          </Link>
+        <div className="bg-glass rounded-2xl p-5 text-center border border-mplp-border/30">
+          <p className="text-2xl font-bold text-red-400">{totalFail}</p>
+          <p className="text-xs text-mplp-text-muted uppercase tracking-wider mt-1">FAIL Vectors</p>
         </div>
-
-        {/* Summary Stats */}
-
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-          <div className="bg-gray-800 rounded-lg p-4 text-center">
-            <p className="text-2xl font-bold text-green-400">{totalPass}</p>
-            <p className="text-xs text-gray-400 uppercase tracking-wider">PASS Vectors</p>
-          </div>
-          <div className="bg-gray-800 rounded-lg p-4 text-center">
-            <p className="text-2xl font-bold text-red-400">{totalFail}</p>
-            <p className="text-xs text-gray-400 uppercase tracking-wider">FAIL Vectors</p>
-          </div>
-          <div className="bg-gray-800 rounded-lg p-4 text-center">
-            <p className="text-2xl font-bold">{totalPass + totalFail}</p>
-            <p className="text-xs text-gray-400 uppercase tracking-wider">Total Vectors</p>
-          </div>
-          <div className="bg-gray-800 rounded-lg p-4 text-center">
-            <p className={`text-2xl font-bold ${allMet ? 'text-green-400' : 'text-yellow-400'}`}>
-              {allMet ? '✓' : '○'}
-            </p>
-            <p className="text-xs text-gray-400 uppercase tracking-wider">≥5/≥5 Target</p>
-          </div>
+        <div className="bg-glass rounded-2xl p-5 text-center border border-mplp-border/30">
+          <p className="text-2xl font-bold text-mplp-text">{totalPass + totalFail}</p>
+          <p className="text-xs text-mplp-text-muted uppercase tracking-wider mt-1">Total Vectors</p>
         </div>
+        <div className="bg-glass rounded-2xl p-5 text-center border border-mplp-border/30">
+          <p className={`text-2xl font-bold ${allMet ? 'text-green-400' : 'text-yellow-400'}`}>
+            {allMet ? '✓' : '○'}
+          </p>
+          <p className="text-xs text-mplp-text-muted uppercase tracking-wider mt-1">≥5/≥5 Target</p>
+        </div>
+      </div>
 
-        {/* Coverage Table */}
+      {/* Coverage Table */}
+      <div className="bg-glass rounded-2xl overflow-hidden border border-mplp-border/30 mb-10">
         <div className="overflow-x-auto">
           <table className="w-full border-collapse">
-            <thead>
-              <tr className="border-b border-gray-700">
-                <th className="text-left py-3 px-4 text-gray-400 font-medium">Domain</th>
-                <th className="text-left py-3 px-4 text-gray-400 font-medium">Description</th>
-                <th className="text-center py-3 px-4 text-gray-400 font-medium">PASS (≥5)</th>
-                <th className="text-center py-3 px-4 text-gray-400 font-medium">FAIL (≥5)</th>
-                <th className="text-center py-3 px-4 text-gray-400 font-medium">Status</th>
+            <thead className="bg-mplp-dark-soft/50">
+              <tr>
+                <th className="text-left p-4 border-b border-mplp-border/30 text-xs font-bold text-mplp-text-muted uppercase tracking-wider">Domain</th>
+                <th className="text-left p-4 border-b border-mplp-border/30 text-xs font-bold text-mplp-text-muted uppercase tracking-wider">Description</th>
+                <th className="text-center p-4 border-b border-mplp-border/30 text-xs font-bold text-mplp-text-muted uppercase tracking-wider">PASS (≥5)</th>
+                <th className="text-center p-4 border-b border-mplp-border/30 text-xs font-bold text-mplp-text-muted uppercase tracking-wider">FAIL (≥5)</th>
+                <th className="text-center p-4 border-b border-mplp-border/30 text-xs font-bold text-mplp-text-muted uppercase tracking-wider">Status</th>
               </tr>
             </thead>
             <tbody>
               {summary.map((row) => {
                 const met = row.passCount >= 5 && row.failCount >= 5;
                 return (
-                  <tr key={row.domain} className="border-b border-gray-800 hover:bg-gray-800/50">
-                    <td className="py-3 px-4">
+                  <tr key={row.domain} className="border-b border-mplp-border/20 hover:bg-mplp-blue-soft/5 transition-colors">
+                    <td className="p-4">
                       <DomainPill domain={row.domain} />
                     </td>
-                    <td className="py-3 px-4">{row.label}</td>
-                    <td className="py-3 px-4 text-center">
+                    <td className="p-4 text-mplp-text">{row.label}</td>
+                    <td className="p-4 text-center">
                       <CountCell count={row.passCount} type="pass" />
                     </td>
-                    <td className="py-3 px-4 text-center">
+                    <td className="p-4 text-center">
                       <CountCell count={row.failCount} type="fail" />
                     </td>
-                    <td className="py-3 px-4 text-center">
-                      <span className={met ? 'text-green-400' : 'text-yellow-400'}>
+                    <td className="p-4 text-center">
+                      <span className={met ? 'text-green-400 font-bold' : 'text-yellow-400'}>
                         {met ? 'MET' : 'PENDING'}
                       </span>
                     </td>
@@ -198,24 +192,29 @@ export default function CoveragePage() {
             </tbody>
           </table>
         </div>
+      </div>
 
-        {/* Legend */}
-        <div className="mt-8 p-4 bg-gray-800/50 rounded-lg">
-          <h3 className="font-bold mb-3 text-gray-300">Coverage Target</h3>
-          <p className="text-sm text-gray-400">
-            Each domain requires <strong>≥5 PASS</strong> and <strong>≥5 FAIL</strong> vectors
-            to meet the v0.5 coverage target. All vectors are adjudicable via shadow-validator
-            and signable via proof-signature gate.
-          </p>
-        </div>
+      {/* Legend */}
+      <div className="p-6 bg-glass rounded-2xl border border-mplp-border/30 mb-10">
+        <h3 className="font-bold mb-3 text-mplp-text">Coverage Target</h3>
+        <p className="text-sm text-mplp-text-muted">
+          Each domain requires <strong className="text-mplp-text">≥5 PASS</strong> and <strong className="text-mplp-text">≥5 FAIL</strong> vectors
+          to meet the v0.5 coverage target. All vectors are adjudicable via shadow-validator
+          and signable via proof-signature gate.
+        </p>
+      </div>
 
-        <div className="mt-8 text-center text-gray-500 text-sm">
-          <Link href="/about" className="text-blue-400 hover:underline">About</Link>
-          {' | '}
-          <Link href="/runs" className="text-blue-400 hover:underline">Runs</Link>
-          {' | '}
-          <Link href="/rulesets" className="text-blue-400 hover:underline">Rulesets</Link>
-        </div>
+      {/* Navigation */}
+      <div className="mt-8 pt-8 border-t border-mplp-border/30 flex flex-wrap gap-6 text-xs font-bold uppercase tracking-wider">
+        <Link href="/about" className="text-mplp-text-muted hover:text-mplp-blue-soft transition-colors">
+          About →
+        </Link>
+        <Link href="/runs" className="text-mplp-text-muted hover:text-mplp-blue-soft transition-colors">
+          Runs →
+        </Link>
+        <Link href="/rulesets" className="text-mplp-text-muted hover:text-mplp-blue-soft transition-colors">
+          Rulesets →
+        </Link>
       </div>
     </div>
   );
