@@ -1,3 +1,12 @@
+---
+entry_surface: validation_lab
+doc_type: governance
+status: draft
+authority: none
+protocol_version: "1.0.0"
+doc_id: "VLAB-GOV-011"
+---
+
 # Export Contract Changelog
 
 > **Authority**: Validation Lab governance document.

@@ -1,3 +1,12 @@
+---
+entry_surface: validation_lab
+doc_type: governance
+status: draft
+authority: none
+protocol_version: "1.0.0"
+doc_id: "VLAB-GOV-042"
+---
+
 # Validation Lab Development Governance Baseline (VLAB-DGB-01)
 
 **Baseline ID**: VLAB-DGB-01  

@@ -5,6 +5,8 @@
 
 import * as path from 'path';
 import * as fs from 'fs/promises';
+import * as os from 'os';
+import * as crypto from 'crypto';
 import { ingest } from '../lib/engine/ingest';
 import { verify } from '../lib/engine/verify';
 import { evaluate } from '../lib/evaluate/evaluate';
@@ -12,7 +14,9 @@ import { canonicalizeForVerdictHash, stableStringify } from '../lib/verdict/cano
 
 async function main() {
     const packPath = process.argv[2];
-    const outputDir = process.argv[3] || '/tmp/lab';
+    // CodeQL fix: Use os.tmpdir() with unique suffix instead of hardcoded /tmp/lab
+    const defaultOutputDir = path.join(os.tmpdir(), `lab-${crypto.randomUUID().slice(0, 8)}`);
+    const outputDir = process.argv[3] || defaultOutputDir;
 
     if (!packPath) {
         console.error('Usage: npx tsx scripts/dump-verdict-debug.ts <pack_path> [output_dir]');

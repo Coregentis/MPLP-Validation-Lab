@@ -322,7 +322,7 @@ Page must state:
   - `verdict_hash`
   - `verify_report_hash`
   - `evaluation_report_hash`
-  - `status: frozen`
+  - `status: draft`
   - `indexable: true`
   - `created_at` (UTC ISO8601)
 

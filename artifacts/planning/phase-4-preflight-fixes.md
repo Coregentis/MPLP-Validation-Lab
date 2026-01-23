@@ -189,7 +189,7 @@ runs:
     verdict_hash: ...
     verify_report_hash: ""          # ← Exists but empty
     evaluation_report_hash: ""      # ← Exists but empty
-    status: frozen                  # ← Exists
+    status: draft                  # ← Exists
     indexable: true                 # ← Exists
     created_at: "2026-01-10T14:00:00Z"  # ← Exists
 ```

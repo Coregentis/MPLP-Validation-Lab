@@ -1,9 +1,12 @@
 ---
-doc_type: reference
-normativity: non-normative
-authority: Validation Lab
-status: active
+entry_surface: validation_lab
+doc_type: informative
+status: draft
+authority: none
+protocol_version: "1.0.0"
+doc_id: "VLAB-OTHER-023"
 ---
+
 
 # Asset Catalog — Validation Lab
 

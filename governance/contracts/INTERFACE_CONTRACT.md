@@ -1,3 +1,12 @@
+---
+entry_surface: validation_lab
+doc_type: governance
+status: draft
+authority: none
+protocol_version: "1.0.0"
+doc_id: "VLAB-GOV-019"
+---
+
 # Interface Contract: RunBundle Loader, V02-G2 Gate, and Ruleset Evaluator
 
 **Document ID**: VLAB-ENG-INTERFACE-01  

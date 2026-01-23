@@ -1,3 +1,12 @@
+---
+entry_surface: validation_lab
+doc_type: informative
+status: draft
+authority: none
+protocol_version: "1.0.0"
+doc_id: "VLAB-OTHER-001"
+---
+
 # Phase 4 Seal — Validation Lab v0.7.1 (Three-Point Plane)
 
 > **Release ID**: Validation Lab v0.7.1  

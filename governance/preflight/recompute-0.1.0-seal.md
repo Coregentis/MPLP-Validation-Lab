@@ -1,3 +1,12 @@
+---
+entry_surface: validation_lab
+doc_type: governance
+status: draft
+authority: none
+protocol_version: "1.0.0"
+doc_id: "VLAB-GOV-045"
+---
+
 # Phase 2 Seal — @mplp/recompute 0.1.0 (Bundled ruleset-1.0)
 
 **Sealed**: 2026-01-10  

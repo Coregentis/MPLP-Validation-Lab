@@ -1,3 +1,12 @@
+---
+entry_surface: validation_lab
+doc_type: governance
+status: draft
+authority: none
+protocol_version: "1.0.0"
+doc_id: "VLAB-GOV-015"
+---
+
 # V03 8-Packs Naming & Layout Plan
 
 **Document ID**: VLAB-PLAN-V03-8PACKS-01  

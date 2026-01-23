@@ -1,3 +1,12 @@
+---
+entry_surface: validation_lab
+doc_type: governance
+status: draft
+authority: none
+protocol_version: "1.0.0"
+doc_id: "VLAB-GOV-005"
+---
+
 # VLAB-GATE-02: Integrity-First Enforcement
 
 **Gate ID**: VLAB-GATE-02  

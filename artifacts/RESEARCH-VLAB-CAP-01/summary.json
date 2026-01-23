@@ -1,0 +1,12 @@
+{
+  "repo_commit": "45f8a47f71d404302fd0ccfed70dfda5513747a8",
+  "scan_timestamp_utc": "2026-01-22T06:45:59Z",
+  "counts": {
+    "verdict_files": 18,
+    "fail_runs_by_name": 27,
+    "cross_substrate_runs": 24,
+    "producers": 3,
+    "rulesets": 3
+  },
+  "artifacts_dir": "/Users/jasonwang/Documents/AI_Dev/V1.0_release/Validation_Lab/artifacts/RESEARCH-VLAB-CAP-01"
+}

@@ -1,3 +1,12 @@
+---
+entry_surface: validation_lab
+doc_type: governance
+status: draft
+authority: none
+protocol_version: "1.0.0"
+doc_id: "VLAB-GOV-012"
+---
+
 # Phase A Evidence Report
 
 **Date**: 2026-01-09  

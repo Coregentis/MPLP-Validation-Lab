@@ -1,10 +1,12 @@
 ---
+entry_surface: validation_lab
 doc_type: reference
-normativity: non-normative
-authority: Validation Lab
-status: active
-strength_id: E-A
+status: draft
+authority: none
+protocol_version: "1.0.0"
+doc_id: "VLAB-REF-001"
 ---
+
 
 # E-A — Static Evidence (No Generator Execution)
 

@@ -1,3 +1,12 @@
+---
+entry_surface: validation_lab
+doc_type: governance
+status: draft
+authority: none
+protocol_version: "1.0.0"
+doc_id: "VLAB-GOV-030"
+---
+
 # METHOD-VLAB-01: Validation Lab Evaluation Methodology
 
 > **Document ID**: METHOD-VLAB-01  

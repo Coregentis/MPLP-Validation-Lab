@@ -1,10 +1,12 @@
 ---
-doc_type: governance
-normativity: non-normative
-authority: Validation Lab
-status: active
-version: "0.1"
+entry_surface: validation_lab
+doc_type: informative
+status: draft
+authority: none
+protocol_version: "1.0.0"
+doc_id: "VLAB-OTHER-023"
 ---
+
 
 # REPO_SHAPE — Validation Lab Directory Constitution
 

@@ -1,3 +1,12 @@
+---
+entry_surface: validation_lab
+doc_type: governance
+status: draft
+authority: none
+protocol_version: "1.0.0"
+doc_id: "VLAB-GOV-037"
+---
+
 # ERC — Lifecycle State Evidence Adjudication (D2)
 
 **ERC ID**: VLAB-ERC-D2-01  

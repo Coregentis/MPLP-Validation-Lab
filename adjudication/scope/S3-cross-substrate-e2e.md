@@ -1,10 +1,12 @@
 ---
+entry_surface: validation_lab
 doc_type: reference
-normativity: non-normative
-authority: Validation Lab
-status: planned
-scope_id: S3
+status: draft
+authority: none
+protocol_version: "1.0.0"
+doc_id: "VLAB-REF-001"
 ---
+
 
 # S3 — Cross-Substrate End-to-End (E2E) Equivalence Adjudication (Planned)
 

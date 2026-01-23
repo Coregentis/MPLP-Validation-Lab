@@ -1,3 +1,12 @@
+---
+entry_surface: validation_lab
+doc_type: informative
+status: draft
+authority: none
+protocol_version: "1.0.0"
+doc_id: "VLAB-OTHER-002"
+---
+
 # Phase 2 Seal — Validation Lab v0.5 (P2 Signed Proof)
 
 > **Release ID**: Validation Lab v0.5  

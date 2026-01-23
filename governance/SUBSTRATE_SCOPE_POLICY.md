@@ -1,3 +1,12 @@
+---
+entry_surface: validation_lab
+doc_type: governance
+status: draft
+authority: none
+protocol_version: "1.0.0"
+doc_id: "VLAB-GOV-027"
+---
+
 # SUBSTRATE_SCOPE_POLICY — Validation Lab Substrate Scope & Inclusion Policy
 
 **Document ID**: VLAB-POL-SSP-01  

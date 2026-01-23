@@ -1,3 +1,12 @@
+---
+entry_surface: validation_lab
+doc_type: governance
+status: draft
+authority: none
+protocol_version: "1.0.0"
+doc_id: "VLAB-GOV-025"
+---
+
 # RULESET_1_1_CLAUSE_SPEC — Four-Domain Clause Logic Specification
 
 **Document ID**: VLAB-RS11-CLAUSE-SPEC-01  

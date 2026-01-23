@@ -1,9 +1,12 @@
 ---
+entry_surface: validation_lab
 doc_type: reference
-normativity: non-normative
-authority: Validation Lab
-status: active
+status: draft
+authority: none
+protocol_version: "1.0.0"
+doc_id: "VLAB-REF-001"
 ---
+
 
 # Coverage Summary — Adjudication (S1/S2/S3) × Strength (E-A/E-B/E-S)
 

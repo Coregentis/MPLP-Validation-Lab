@@ -1,3 +1,12 @@
+---
+entry_surface: validation_lab
+doc_type: governance
+status: draft
+authority: none
+protocol_version: "1.0.0"
+doc_id: "VLAB-GOV-008"
+---
+
 # REL-LAB-0.5 SSOT Anti-Drift Seal
 
 **Seal ID**: `REL-LAB-0.5-SSOT-ANTI-DRIFT`  

@@ -1,3 +1,12 @@
+---
+entry_surface: validation_lab
+doc_type: governance
+status: draft
+authority: none
+protocol_version: "1.0.0"
+doc_id: "VLAB-GOV-044"
+---
+
 # Ruleset-1.0 GF Coverage Report
 
 **Report Version**: 1.0  

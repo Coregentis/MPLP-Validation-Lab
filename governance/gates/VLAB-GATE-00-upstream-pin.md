@@ -1,3 +1,12 @@
+---
+entry_surface: validation_lab
+doc_type: governance
+status: draft
+authority: none
+protocol_version: "1.0.0"
+doc_id: "VLAB-GOV-006"
+---
+
 # VLAB-GATE-00: Upstream Pin Verification
 
 **Gate ID**: VLAB-GATE-00  

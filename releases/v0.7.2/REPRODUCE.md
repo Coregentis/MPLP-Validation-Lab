@@ -1,3 +1,12 @@
+---
+entry_surface: validation_lab
+doc_type: informative
+status: draft
+authority: none
+protocol_version: "1.0.0"
+doc_id: "VLAB-OTHER-007"
+---
+
 # How to Reproduce v0.7.2 Evidence
 
 > **Release**: Validation Lab v0.7.2 (Full 6-Substrate Type-B)  

@@ -1,3 +1,12 @@
+---
+entry_surface: validation_lab
+doc_type: governance
+status: draft
+authority: none
+protocol_version: "1.0.0"
+doc_id: "VLAB-GOV-026"
+---
+
 # REASON_CODE_MIN_V02 — Minimum Reason Code Vocabulary (v0.2)
 
 **Document ID**: VLAB-CON-RCMV-01  

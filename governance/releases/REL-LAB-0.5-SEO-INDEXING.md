@@ -1,3 +1,12 @@
+---
+entry_surface: validation_lab
+doc_type: governance
+status: draft
+authority: none
+protocol_version: "1.0.0"
+doc_id: "VLAB-GOV-007"
+---
+
 # SEO Indexing Policy — v0.5 Seal
 
 > **Document ID**: REL-LAB-0.5-SEO-INDEXING  

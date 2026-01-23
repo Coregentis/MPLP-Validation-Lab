@@ -1,3 +1,12 @@
+---
+entry_surface: validation_lab
+doc_type: governance
+status: draft
+authority: none
+protocol_version: "1.0.0"
+doc_id: "VLAB-GOV-023"
+---
+
 # Admission Criteria Contract v1.0
 
 **Contract ID**: VLAB-CONTRACT-ADMISSION-01  

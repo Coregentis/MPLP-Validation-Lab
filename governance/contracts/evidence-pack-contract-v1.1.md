@@ -1,3 +1,12 @@
+---
+entry_surface: validation_lab
+doc_type: governance
+status: draft
+authority: none
+protocol_version: "1.0.0"
+doc_id: "VLAB-GOV-022"
+---
+
 # Evidence Pack Contract v1.1 Addendum
 
 **Date**: 2026-01-10  

@@ -1,3 +1,12 @@
+---
+entry_surface: validation_lab
+doc_type: governance
+status: draft
+authority: none
+protocol_version: "1.0.0"
+doc_id: "VLAB-GOV-046"
+---
+
 # Ruleset-1.0 Pack Strategy Decision (PF-4)
 
 **Document Version**: 1.0  

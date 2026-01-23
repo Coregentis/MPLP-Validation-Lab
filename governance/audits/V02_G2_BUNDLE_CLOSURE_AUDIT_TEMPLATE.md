@@ -1,3 +1,12 @@
+---
+entry_surface: validation_lab
+doc_type: governance
+status: draft
+authority: none
+protocol_version: "1.0.0"
+doc_id: "VLAB-GOV-017"
+---
+
 # V02-G2 Bundle Closure Audit — Template
 
 **Audit ID**: VLAB-AUD-V02G2-01  

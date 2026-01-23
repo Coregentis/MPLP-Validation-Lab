@@ -1,3 +1,12 @@
+---
+entry_surface: validation_lab
+doc_type: informative
+status: draft
+authority: none
+protocol_version: "1.0.0"
+doc_id: "VLAB-OTHER-018"
+---
+
 任何使用 MPLP 品牌、标志、配色、字体或图形的行为，必须遵循本规范。
 
 ---

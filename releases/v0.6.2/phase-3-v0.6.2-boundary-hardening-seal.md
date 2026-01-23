@@ -1,3 +1,12 @@
+---
+entry_surface: validation_lab
+doc_type: informative
+status: draft
+authority: none
+protocol_version: "1.0.0"
+doc_id: "VLAB-OTHER-003"
+---
+
 # Phase 3 Seal — Validation Lab v0.6.2 (Boundary Hardening Patch)
 
 > **Release ID**: Validation Lab v0.6.2  

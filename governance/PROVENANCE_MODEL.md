@@ -1,10 +1,12 @@
 ---
+entry_surface: validation_lab
 doc_type: governance
-authority: Validation Lab
-normativity: non-normative
-status: active
-version: "1.0"
+status: draft
+authority: none
+protocol_version: "1.0.0"
+doc_id: "VLAB-GOV-049"
 ---
+
 
 # Provenance Model — Validation Lab
 

@@ -1,3 +1,12 @@
+---
+entry_surface: validation_lab
+doc_type: governance
+status: draft
+authority: none
+protocol_version: "1.0.0"
+doc_id: "VLAB-GOV-040"
+---
+
 # ERC — Termination & Recovery Evidence Adjudication (D4)
 
 **ERC ID**: VLAB-ERC-D4-01  

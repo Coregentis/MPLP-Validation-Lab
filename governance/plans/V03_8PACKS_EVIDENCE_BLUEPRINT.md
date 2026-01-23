@@ -1,3 +1,12 @@
+---
+entry_surface: validation_lab
+doc_type: governance
+status: draft
+authority: none
+protocol_version: "1.0.0"
+doc_id: "VLAB-GOV-016"
+---
+
 # V03 8-Packs Minimal Evidence Blueprint
 
 **Document ID**: VLAB-ENG-8PACKS-EVIDENCE-01  

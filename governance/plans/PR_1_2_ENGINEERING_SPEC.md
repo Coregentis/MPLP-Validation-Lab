@@ -1,3 +1,12 @@
+---
+entry_surface: validation_lab
+doc_type: governance
+status: draft
+authority: none
+protocol_version: "1.0.0"
+doc_id: "VLAB-GOV-014"
+---
+
 # PR-1 & PR-2 Engineering Specification — Code-Level Implementation Guide
 
 **Document ID**: VLAB-ENG-PR12-SPEC-01  

@@ -1,9 +1,10 @@
 ---
-doc_type: specification
-authority: Validation Lab
-normativity: non-normative
-status: active
-version: "1.0"
+entry_surface: validation_lab
+doc_type: informative
+status: draft
+authority: none
+protocol_version: "1.0.0"
+doc_id: "VLAB-REF-999"
 ---
 
 # Reverification Bundle Specification

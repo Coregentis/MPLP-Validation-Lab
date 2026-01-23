@@ -1,3 +1,12 @@
+---
+entry_surface: validation_lab
+doc_type: governance
+status: draft
+authority: none
+protocol_version: "1.0.0"
+doc_id: "VLAB-GOV-032"
+---
+
 # Truth Chain Freeze Statement — v0.5
 
 > **Document ID**: VLAB-TRUTH-CHAIN-01  

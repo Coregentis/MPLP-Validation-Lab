@@ -1,3 +1,12 @@
+---
+entry_surface: validation_lab
+doc_type: informative
+status: draft
+authority: none
+protocol_version: "1.0.0"
+doc_id: "VLAB-GATE-001"
+---
+
 # lib/gates — DEPRECATED
 
 > [!CAUTION]

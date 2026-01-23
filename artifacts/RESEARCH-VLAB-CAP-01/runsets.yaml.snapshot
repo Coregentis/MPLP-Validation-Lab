@@ -1,0 +1,146 @@
+# RunSet Registry - v0.5 SSOT
+#
+# Single Source of Truth for all run sets.
+# This file defines the relationship between run categories.
+#
+# Categories:
+#   - curated: Legacy runs from v0.2-v0.4 (require different rulesets)
+#   - cross_substrate: v0.5 cross-platform reproduction runs
+#   - test_vectors: v0.5 public test vectors
+
+version: "0.5"
+schema_version: "1.0.0"
+
+# ============================================================================
+# Run Sets
+# ============================================================================
+
+sets:
+  # v0.2-v0.4 Curated Runs (23 total - excluding missing official runs)
+  curated:
+    description: "Legacy curated runs from v0.2-v0.4"
+    count: 23
+    includes:
+      # GoldenFlow (v0.2) - ruleset-1.0
+      - admission-not-admissible-01
+      - gf-01-a2a-fail
+      # Note: gf-01-*-official-v0.2 runs excluded (packs not available)
+      - gf-01-a2a-pass
+      - gf-01-adjudicated-fail-01
+      - gf-01-langchain-pass
+      - gf-01-mcp-pass
+      - gf-02-fail
+      # v0.3 Arbitration - ruleset-1.1
+      - arb-d1-budget-fail-fixture-v0.3
+      - arb-d1-budget-pass-fixture-v0.3
+      - arb-d2-lifecycle-state-fail-fixture-v0.3
+      - arb-d2-lifecycle-state-pass-fixture-v0.3
+      - arb-d3-authz-decision-fail-fixture-v0.3
+      - arb-d3-authz-decision-pass-fixture-v0.3
+      - arb-d4-termination-recovery-fail-fixture-v0.3
+      - arb-d4-termination-recovery-pass-fixture-v0.3
+      # v0.4 Semantic Invariant - ruleset-1.2
+      - arb-d1-budget-fail-deny-missing-gate-v0.4
+      - arb-d1-budget-fail-outcome-invalid-v0.4
+      - arb-d2-lifecycle-fail-post-terminal-exec-v0.4
+      - arb-d2-lifecycle-fail-terminal-state-invalid-v0.4
+      - arb-d3-authz-fail-deny-no-confirm-v0.4
+      - arb-d3-authz-fail-sra-incomplete-v0.4
+      - arb-d4-termination-fail-reason-invalid-v0.4
+      - arb-d4-termination-fail-uncontrolled-recovery-v0.4
+
+  # v0.5 Cross-Substrate Runs (24 total)
+  cross_substrate:
+    description: "v0.5 cross-platform reproduction runs (3 substrates × 8 scenarios)"
+    count: 24
+    substrates: ["langgraph", "autogen", "sk"]
+    scenarios: 8
+    includes:
+      # LangGraph (8)
+      - v05-d1-langgraph-pass-budget-allow
+      - v05-d1-langgraph-fail-outcome-invalid
+      - v05-d2-langgraph-pass-terminal-success
+      - v05-d2-langgraph-fail-invalid-terminal
+      - v05-d3-langgraph-pass-authz-allow
+      - v05-d3-langgraph-fail-subject-missing
+      - v05-d4-langgraph-pass-reason-success
+      - v05-d4-langgraph-fail-reason-invalid
+      # AutoGen (8)
+      - v05-d1-autogen-pass-budget-allow
+      - v05-d1-autogen-fail-outcome-invalid
+      - v05-d2-autogen-pass-terminal-success
+      - v05-d2-autogen-fail-invalid-terminal
+      - v05-d3-autogen-pass-authz-allow
+      - v05-d3-autogen-fail-subject-missing
+      - v05-d4-autogen-pass-reason-success
+      - v05-d4-autogen-fail-reason-invalid
+      # Semantic Kernel (8)
+      - v05-d1-sk-pass-budget-allow
+      - v05-d1-sk-fail-outcome-invalid
+      - v05-d2-sk-pass-terminal-success
+      - v05-d2-sk-fail-invalid-terminal
+      - v05-d3-sk-pass-authz-allow
+      - v05-d3-sk-fail-subject-missing
+      - v05-d4-sk-pass-reason-success
+      - v05-d4-sk-fail-reason-invalid
+
+  # v0.5 Test Vectors (40 total)
+  test_vectors:
+    description: "v0.5 public test vectors (5 PASS + 5 FAIL per domain)"
+    count: 40
+    source: "test-vectors/v0.5/allowlist-v0.5.yaml"
+
+# ============================================================================
+# Set Relationships
+# ============================================================================
+
+relationships:
+  # curated and cross_substrate are DISJOINT
+  # Explanation: curated = legacy runs, cross_substrate = new v0.5 runs
+  curated_vs_cross_substrate:
+    type: "disjoint"
+    explanation: "curated contains v0.2-v0.4 runs; cross_substrate contains v0.5 producer runs"
+  
+  # test_vectors are in their own directory, not in data/runs
+  test_vectors_vs_curated:
+    type: "disjoint"
+    explanation: "test_vectors are in test-vectors/v0.5/, not data/runs/"
+
+# ============================================================================
+# Totals
+# ============================================================================
+
+totals:
+  curated: 23
+  cross_substrate: 24
+  test_vectors: 40
+  all_unique: 87
+
+# ============================================================================
+# Source Paths (for truth source resolution)
+# ============================================================================
+
+source_paths:
+  curated: "data/runs/"
+  cross_substrate: "producers/*/packs/"
+  test_vectors: "test-vectors/v0.5/vectors/"
+
+# ============================================================================
+# Consumer References (routes that consume this SSOT)
+# ============================================================================
+
+consumers:
+  ui_routes:
+    - "/runs"
+    - "/runs/*"
+    - "/coverage"
+    - "/examples/evidence-producers/*"
+  gates:
+    - "gate:curated-runs"
+    - "gate:runset-consistency"
+    - "gate:shadow-parity"
+    - "gate:cross-substrate"
+    - "gate:test-vectors-coverage"
+  ptm:
+    - "governance/page-truth/ptm-0.5.yaml"
+

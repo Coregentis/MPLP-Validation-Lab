@@ -1,3 +1,12 @@
+---
+entry_surface: validation_lab
+doc_type: governance
+status: draft
+authority: none
+protocol_version: "1.0.0"
+doc_id: "VLAB-GOV-010"
+---
+
 # REL-LAB-0.5-WEBSITE-LINK-SEO-IA — Website Link Integrity & SEO Information Architecture Seal
 
 > **Document ID**: REL-LAB-0.5-WEBSITE-LINK-SEO-IA  

@@ -1,3 +1,12 @@
+---
+entry_surface: validation_lab
+doc_type: governance
+status: draft
+authority: none
+protocol_version: "1.0.0"
+doc_id: "VLAB-GOV-034"
+---
+
 # OPS-RUNBOOK-KEYCUTOVER-01
 # Validation Lab Production Key Cutover
 

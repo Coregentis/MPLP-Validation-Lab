@@ -357,7 +357,7 @@ Optional field: `manifest.substrate`
   verdict_hash: "[computed]"
   verify_report_hash: "[computed]"
   evaluation_report_hash: "[computed]"
-  status: frozen
+  status: draft
   indexable: true
   created_at: "2026-01-10T00:00:00Z"
 ```

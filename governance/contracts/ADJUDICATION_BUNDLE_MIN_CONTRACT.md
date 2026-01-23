@@ -1,3 +1,12 @@
+---
+entry_surface: validation_lab
+doc_type: governance
+status: draft
+authority: none
+protocol_version: "1.0.0"
+doc_id: "VLAB-GOV-021"
+---
+
 # ADJUDICATION_BUNDLE_MIN_CONTRACT — Minimum Bundle Completeness Contract
 
 **Document ID**: VLAB-CON-ABMC-01  

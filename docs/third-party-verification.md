@@ -1,3 +1,12 @@
+---
+entry_surface: validation_lab
+doc_type: informative
+status: draft
+authority: none
+protocol_version: "1.0.0"
+doc_id: "VLAB-OTHER-015"
+---
+
 # Third-Party Verification
 
 **Applicable Site Version**: site-v0.5 | **Ruleset**: ruleset-1.0
