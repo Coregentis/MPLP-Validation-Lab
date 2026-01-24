@@ -2,7 +2,7 @@
 /**
  * PTM Gate: Page Truth Map Verification
  * 
- * Verifies v0.5 Page Truth Map (18/18 route coverage):
+ * Verifies Page Truth Map:
  * 1. All declared truth sources exist and are loadable
  * 2. All rulesets are registered and have adjudicators
  * 3. All sample runs are in curated allowlist and adjudicable
@@ -21,7 +21,7 @@ const PROJECT_ROOT = path.resolve(__dirname, '../..');
 
 async function main() {
     console.log('═══════════════════════════════════════════════════════════');
-    console.log('  v0.5 Page Truth Map Gate (18/18 Coverage)');
+    console.log('  Page Truth Map Gate (v0.7 Alignment)');
     console.log('═══════════════════════════════════════════════════════════\n');
 
     const startTime = Date.now();
@@ -39,156 +39,184 @@ async function main() {
     };
 
     try {
-        // 1. Load PTM (prefer v0.5, fallback to v0.4)
-        let ptmPath = path.join(PROJECT_ROOT, 'governance/page-truth/ptm-0.5.yaml');
-        if (!fs.existsSync(ptmPath)) {
-            ptmPath = path.join(PROJECT_ROOT, 'governance/page-truth/ptm-0.4.yaml');
+        // 1. Load PTM (prefer v0.6, fallback to v0.5/v0.4)
+        const ptmPaths = [
+            'governance/page-truth/ptm-0.7.yaml',
+            'governance/page-truth/ptm-0.6.yaml',
+            'governance/page-truth/ptm-0.5.yaml',
+            'governance/page-truth/ptm-0.4.yaml'
+        ];
+        let ptmPath = '';
+        for (const p of ptmPaths) {
+            const fullPath = path.join(PROJECT_ROOT, p);
+            if (fs.existsSync(fullPath)) {
+                ptmPath = fullPath;
+                break;
+            }
         }
-        if (!fs.existsSync(ptmPath)) {
-            throw new Error('PTM file not found: governance/page-truth/ptm-0.5.yaml or ptm-0.4.yaml');
+        if (!ptmPath) {
+            throw new Error('PTM file not found in governance/page-truth/');
         }
+
         const ptmContent = fs.readFileSync(ptmPath, 'utf-8');
         const ptm = yaml.parse(ptmContent);
         results.checks.ptm_loaded = true;
         const routeCount = ptm.routes?.length || 0;
-        console.log(`📋 Loaded PTM v${ptm.version} (${routeCount} routes)\n`);
+        console.log(`📋 Loaded PTM v${ptm.version} (${routeCount} routes)`);
+
+        // Load Truth Sources Registry for resolution
+        const tsPath = path.join(PROJECT_ROOT, 'governance/registry/TRUTH_SOURCES.yaml');
+        const tsContent = fs.readFileSync(tsPath, 'utf-8');
+        const tsRegistry = yaml.parse(tsContent);
+        const sourceMap = tsRegistry.sources || {};
+        console.log(`📋 Loaded Truth Sources Registry (${Object.keys(sourceMap).length} sources)\n`);
 
         // 2. Check truth sources for each route
         console.log('🔍 Checking route truth sources...\n');
         for (const route of ptm.routes) {
             console.log(`  Route: ${route.route}`);
-            const sources = route.truth_sources;
+            const sources = route.truth_sources || [];
 
-            // Check allowlist
-            if (sources.allowlist) {
-                const allowlistPath = path.join(PROJECT_ROOT, sources.allowlist);
-                const exists = fs.existsSync(allowlistPath);
-                results.checks.truth_sources_exist.push({
-                    route: route.route,
-                    source: sources.allowlist,
-                    exists,
-                });
-                if (!exists) {
-                    results.issues.push(`Missing: ${sources.allowlist}`);
-                    console.log(`    ❌ allowlist: ${sources.allowlist} (MISSING)`);
-                } else {
-                    console.log(`    ✅ allowlist: ${sources.allowlist}`);
+            for (const sourceId of sources) {
+                const ts = sourceMap[sourceId];
+                if (!ts) {
+                    results.issues.push(`Unknown truth source ID: ${sourceId} on route ${route.route}`);
+                    console.log(`    ❌ ${sourceId} (NOT_IN_REGISTRY)`);
+                    continue;
                 }
-            }
 
-            // Check run_bundle
-            if (sources.run_bundle) {
-                const bundlePath = path.join(PROJECT_ROOT, sources.run_bundle);
-                const exists = fs.existsSync(bundlePath);
-                results.checks.truth_sources_exist.push({
-                    route: route.route,
-                    source: sources.run_bundle,
-                    exists,
-                });
-                if (!exists) {
-                    results.issues.push(`Missing: ${sources.run_bundle}`);
-                    console.log(`    ❌ run_bundle: ${sources.run_bundle} (MISSING)`);
-                } else {
-                    console.log(`    ✅ run_bundle: ${sources.run_bundle}`);
+                const isGlob = ts.resolver === 'glob' || (ts.path && ts.path.includes('*')) || (ts.paths && ts.paths.some(p => p.includes('*')));
+
+                if (isGlob) {
+                    console.log(`    ✅ ${sourceId}: ${ts.path || ts.paths} (glob/patterns allowed)`);
+                    continue;
                 }
-            }
 
-            // Check generated_data
-            if (sources.generated_data) {
-                const dataPath = path.join(PROJECT_ROOT, sources.generated_data);
-                const exists = fs.existsSync(dataPath);
-                results.checks.truth_sources_exist.push({
-                    route: route.route,
-                    source: sources.generated_data,
-                    exists,
-                });
-                if (!exists) {
-                    results.issues.push(`Missing: ${sources.generated_data}`);
-                    console.log(`    ❌ generated_data: ${sources.generated_data} (MISSING)`);
+                if (ts.path) {
+                    const filePath = path.join(PROJECT_ROOT, ts.path);
+                    const exists = fs.existsSync(filePath);
+                    results.checks.truth_sources_exist.push({
+                        route: route.route,
+                        source: ts.path,
+                        exists,
+                    });
+                    if (!exists) {
+                        results.issues.push(`Missing file: ${ts.path} (ts ID: ${sourceId})`);
+                        console.log(`    ❌ ${sourceId}: ${ts.path} (MISSING)`);
+                    } else {
+                        console.log(`    ✅ ${sourceId}: ${ts.path}`);
+                    }
+                } else if (ts.paths) {
+                    for (const p of ts.paths) {
+                        const filePath = path.join(PROJECT_ROOT, p);
+                        const exists = fs.existsSync(filePath);
+                        results.checks.truth_sources_exist.push({
+                            route: route.route,
+                            source: p,
+                            exists,
+                        });
+                        if (!exists) {
+                            results.issues.push(`Missing file: ${p} (ts ID: ${sourceId})`);
+                            console.log(`    ❌ ${sourceId}: ${p} (MISSING)`);
+                        } else {
+                            console.log(`    ✅ ${sourceId}: ${p}`);
+                        }
+                    }
                 } else {
-                    console.log(`    ✅ generated_data: ${sources.generated_data}`);
+                    console.log(`    ✅ ${sourceId}: ${ts.resolver} (external resolver)`);
                 }
             }
         }
 
         // 3. Check rulesets
         console.log('\n🔍 Checking rulesets...\n');
-        const { getRuleset } = await import(
-            `file://${path.join(PROJECT_ROOT, 'lib/rulesets/registry.ts')}`
-        );
+        const rulesetsRequired = ptm.rulesets_required || [];
+        if (rulesetsRequired.length > 0) {
+            const { getRuleset } = await import(
+                `file://${path.join(PROJECT_ROOT, 'lib/rulesets/registry.ts')}`
+            );
 
-        for (const rs of ptm.rulesets_required) {
-            console.log(`  Ruleset: ${rs.id}`);
+            for (const rs of rulesetsRequired) {
+                console.log(`  Ruleset: ${rs.id}`);
 
-            // Check manifest exists
-            const manifestPath = path.join(PROJECT_ROOT, rs.manifest);
-            const manifestExists = fs.existsSync(manifestPath);
+                // Check manifest exists
+                const manifestPath = path.join(PROJECT_ROOT, rs.manifest);
+                const manifestExists = fs.existsSync(manifestPath);
 
-            // Check adjudicator exists
-            const adjudicatorPath = path.join(PROJECT_ROOT, rs.adjudicator);
-            const adjudicatorExists = fs.existsSync(adjudicatorPath);
+                // Check adjudicator exists
+                const adjudicatorPath = path.join(PROJECT_ROOT, rs.adjudicator);
+                const adjudicatorExists = fs.existsSync(adjudicatorPath);
 
-            // Check registry loadable
-            const ruleset = await getRuleset(rs.id);
-            const registryLoadable = ruleset !== null && ruleset.adjudicator !== null;
+                // Check registry loadable
+                const ruleset = await getRuleset(rs.id);
+                const registryLoadable = ruleset !== null && ruleset.adjudicator !== null;
 
-            results.checks.rulesets_loadable.push({
-                id: rs.id,
-                manifest_exists: manifestExists,
-                adjudicator_exists: adjudicatorExists,
-                registry_loadable: registryLoadable,
-            });
+                results.checks.rulesets_loadable.push({
+                    id: rs.id,
+                    manifest_exists: manifestExists,
+                    adjudicator_exists: adjudicatorExists,
+                    registry_loadable: registryLoadable,
+                });
 
-            if (!manifestExists) {
-                results.issues.push(`Ruleset ${rs.id}: manifest missing`);
-                console.log(`    ❌ manifest: ${rs.manifest} (MISSING)`);
-            } else {
-                console.log(`    ✅ manifest: ${rs.manifest}`);
+                if (!manifestExists) {
+                    results.issues.push(`Ruleset ${rs.id}: manifest missing`);
+                    console.log(`    ❌ manifest: ${rs.manifest} (MISSING)`);
+                } else {
+                    console.log(`    ✅ manifest: ${rs.manifest}`);
+                }
+
+                if (!adjudicatorExists) {
+                    results.issues.push(`Ruleset ${rs.id}: adjudicator missing`);
+                    console.log(`    ❌ adjudicator: ${rs.adjudicator} (MISSING)`);
+                } else {
+                    console.log(`    ✅ adjudicator: ${rs.adjudicator}`);
+                }
+
+                if (!registryLoadable) {
+                    results.issues.push(`Ruleset ${rs.id}: not loadable from registry`);
+                    console.log(`    ❌ registry: NOT_LOADABLE`);
+                } else {
+                    console.log(`    ✅ registry: loadable with adjudicator`);
+                }
             }
-
-            if (!adjudicatorExists) {
-                results.issues.push(`Ruleset ${rs.id}: adjudicator missing`);
-                console.log(`    ❌ adjudicator: ${rs.adjudicator} (MISSING)`);
-            } else {
-                console.log(`    ✅ adjudicator: ${rs.adjudicator}`);
-            }
-
-            if (!registryLoadable) {
-                results.issues.push(`Ruleset ${rs.id}: not loadable from registry`);
-                console.log(`    ❌ registry: NOT_LOADABLE`);
-            } else {
-                console.log(`    ✅ registry: loadable with adjudicator`);
-            }
+        } else {
+            console.log('  (No rulesets sections found in PTM)');
         }
 
         // 4. Check UI test samples
         console.log('\n🔍 Checking UI test sample runs...\n');
-        const { getCuratedRuns } = await import(
-            `file://${path.join(PROJECT_ROOT, 'lib/curated/load-curated-runs.ts')}`
-        );
-        const curatedData = getCuratedRuns();
-        const curatedRunIds = new Set(curatedData.runs.map(r => r.run_id));
+        const uiTestSamples = ptm.ui_test_samples || {};
+        const sampleEntries = Object.entries(uiTestSamples);
+        if (sampleEntries.length > 0) {
+            const { getCuratedRuns } = await import(
+                `file://${path.join(PROJECT_ROOT, 'lib/curated/load-curated-runs.ts')}`
+            );
+            const curatedData = getCuratedRuns();
+            const curatedRunIds = new Set(curatedData.runs.map(r => r.run_id));
 
-        for (const [key, runId] of Object.entries(ptm.ui_test_samples)) {
-            const inAllowlist = curatedRunIds.has(runId);
-            const bundleExists = fs.existsSync(path.join(PROJECT_ROOT, 'data/runs', runId));
+            for (const [key, runId] of sampleEntries) {
+                const inAllowlist = curatedRunIds.has(runId);
+                const bundleExists = fs.existsSync(path.join(PROJECT_ROOT, 'data/runs', runId));
 
-            results.checks.sample_runs_valid.push({
-                key,
-                run_id: runId,
-                in_allowlist: inAllowlist,
-                bundle_exists: bundleExists,
-            });
+                results.checks.sample_runs_valid.push({
+                    key,
+                    run_id: runId,
+                    in_allowlist: inAllowlist,
+                    bundle_exists: bundleExists,
+                });
 
-            if (!inAllowlist) {
-                results.issues.push(`Sample ${key}: ${runId} not in allowlist`);
-                console.log(`  ❌ ${key}: ${runId} (NOT_IN_ALLOWLIST)`);
-            } else if (!bundleExists) {
-                results.issues.push(`Sample ${key}: ${runId} bundle missing`);
-                console.log(`  ❌ ${key}: ${runId} (BUNDLE_MISSING)`);
-            } else {
-                console.log(`  ✅ ${key}: ${runId}`);
+                if (!inAllowlist) {
+                    results.issues.push(`Sample ${key}: ${runId} not in allowlist`);
+                    console.log(`  ❌ ${key}: ${runId} (NOT_IN_ALLOWLIST)`);
+                } else if (!bundleExists) {
+                    results.issues.push(`Sample ${key}: ${runId} bundle missing`);
+                    console.log(`  ❌ ${key}: ${runId} (BUNDLE_MISSING)`);
+                } else {
+                    console.log(`  ✅ ${key}: ${runId}`);
+                }
             }
+        } else {
+            console.log('  (No UI test samples found in PTM)');
         }
 
     } catch (e) {

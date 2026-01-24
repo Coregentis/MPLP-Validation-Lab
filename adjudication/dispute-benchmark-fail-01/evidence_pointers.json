@@ -1,0 +1,43 @@
+{
+    "pack_id": "dispute-benchmark-fail-01",
+    "generated_at": "2026-01-23T12:00:00.000Z",
+    "purpose": "Enable third-party dispute verification without Lab execution",
+    "event_pointer": {
+        "description": "Points to the authorization decision event that triggered FAIL",
+        "file_path": "timeline/events.ndjson",
+        "event_id": "evt_authz_decision_001",
+        "line_range": [
+            3,
+            3
+        ],
+        "key_fields": {
+            "event_type": "authz_decision",
+            "outcome": "deny",
+            "subject": "user:alice",
+            "resource": "document:secret-plan",
+            "action": "read"
+        }
+    },
+    "diff_pointer": {
+        "description": "State diff showing expected vs actual confirm_gate presence",
+        "file_path": "snapshots/diffs/confirm-gate-missing.json",
+        "diff_type": "json_patch",
+        "summary": "Expected confirm_gate event not found in timeline before authz decision"
+    },
+    "integrity_pointer": {
+        "description": "Pack integrity verification artifacts",
+        "manifest_path": "integrity/manifest.json",
+        "checksums_path": "integrity/sha256sums.txt",
+        "verification_scope": "pack_root"
+    },
+    "clause_chain": {
+        "failing_clause": "CL-D3-02",
+        "requirement": "RQ-D3-02",
+        "domain": "D3 (Authorization)",
+        "upstream_clause": "CL-D3-01",
+        "downstream_clauses": [
+            "CL-D3-03"
+        ]
+    },
+    "non_normative_boundary": "These pointers enable dispute verification. They do NOT define protocol semantics or certify agent correctness."
+}

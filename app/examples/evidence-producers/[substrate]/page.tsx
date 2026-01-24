@@ -60,7 +60,7 @@ export default async function EvidenceProducerPage({
             <div className="bg-amber-900/30 border-b border-amber-700/50 p-4">
                 <div className="max-w-5xl mx-auto">
                     <p className="text-sm text-amber-200">
-                        <strong>Evidence Producer Reference</strong> — Not an official SDK or endorsed implementation.
+                        <strong>Evidence Producer Reference</strong> — Not an official SDK. This project does not endorse any implementation.
                         This is a reference template for generating cross-substrate evidence packs.
                     </p>
                 </div>

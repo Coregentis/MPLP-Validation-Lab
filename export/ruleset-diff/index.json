@@ -1,0 +1,33 @@
+{
+  "index_version": "1.0.0",
+  "generated_at": "2026-01-23T12:08:34.015Z",
+  "diffs": [
+    {
+      "diff_id": "ruleset-1.0_to_ruleset-1.1",
+      "from": "ruleset-1.0",
+      "to": "ruleset-1.1",
+      "from_hash": "594e56eee3fd6db066f92ddbfec9f7af168d8d196cfc8e152917729932d1d288",
+      "to_hash": "30012bc98611087a53cf757fad645683a314a56ff3325f86b9b4e7d37b042914",
+      "path": "export/ruleset-diff/ruleset-1.0_to_ruleset-1.1/diff.json",
+      "generated_at": "2026-01-23T12:08:33.461Z"
+    },
+    {
+      "diff_id": "ruleset-1.0_to_ruleset-1.2",
+      "from": "ruleset-1.0",
+      "to": "ruleset-1.2",
+      "from_hash": "594e56eee3fd6db066f92ddbfec9f7af168d8d196cfc8e152917729932d1d288",
+      "to_hash": "535721a5b2e4b97b04009fe5059f7fe4a182b616398c782669c1ab001a48198c",
+      "path": "export/ruleset-diff/ruleset-1.0_to_ruleset-1.2/diff.json",
+      "generated_at": "2026-01-23T12:08:34.013Z"
+    },
+    {
+      "diff_id": "ruleset-1.1_to_ruleset-1.2",
+      "from": "ruleset-1.1",
+      "to": "ruleset-1.2",
+      "from_hash": "30012bc98611087a53cf757fad645683a314a56ff3325f86b9b4e7d37b042914",
+      "to_hash": "535721a5b2e4b97b04009fe5059f7fe4a182b616398c782669c1ab001a48198c",
+      "path": "export/ruleset-diff/ruleset-1.1_to_ruleset-1.2/diff.json",
+      "generated_at": "2026-01-23T12:08:33.770Z"
+    }
+  ]
+}

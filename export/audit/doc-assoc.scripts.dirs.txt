@@ -1,0 +1,7 @@
+scripts
+scripts/ci
+scripts/gates
+scripts/preflight
+scripts/ruleset
+scripts/tests
+scripts/tools

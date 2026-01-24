@@ -5,6 +5,14 @@
 #
 # Governance: SUBSTRATE_SCOPE_POLICY.md defines admission criteria.
 # This file only describes current state, not endorsement.
+#
+# =============================================================================
+# Non-Normative Boundary (FROZEN):
+# For type: protocol substrates (MCP/A2A/ACP):
+#   - Lab adjudicates MPLP evidence produced via this transport path
+#   - Lab does NOT adjudicate protocol semantics correctness
+#   - Claims must satisfy No Claim Without Artifact (see governance)
+# =============================================================================
 
 schema_version: "1.0.0"
 generated_at: "2026-01-20"
@@ -113,6 +121,16 @@ substrates:
       - run_id: v05-d4-sk-fail-reason-invalid
         gfs: [D4]
         status: REGISTERED
+
+  - id: crewai
+    display_name: CrewAI
+    type: framework
+    tier: 0
+    ecosystem: community
+    target_level: reproduced
+    current_level: not_admitted
+    notes: "Planned for v0.10 Tier-0 coverage. Evidence packs pending."
+    runs: []
 
 # =============================================================================
 # Tier-0 Protocol Rails

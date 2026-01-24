@@ -1,0 +1,148 @@
+---
+proof_set_id: same-ruler-gf-01
+status: active
+scenario_id: gf-01-single-agent-plan
+ruleset: ruleset-1.0
+created_at: 2026-01-23
+version: 1.0.0
+
+description: |
+  MUST-1 Same-Ruler Proof Set: Demonstrates comparable evidence packs across
+  multiple substrates (A2A, MCP, LangChain) under the same scenario and ruleset.
+  
+  This proof set exists to show that MPLP adjudication applies the same versioned
+  ruleset consistently across different framework implementations when evidence
+  requirements are satisfied.
+
+comparability_claim: |
+  Same-ruler comparability means: (1) all members use the same scenario (gf-01),
+  (2) all members were evaluated against the same ruleset version (1.0), and
+  (3) all members use compatible evidence pack schemas. This does NOT mean
+  frameworks are "equivalent" or "ranked" - only that adjudication process
+  is consistent when applied to conforming evidence.
+
+surfaces:
+  authority: lab_only
+  website_docs: pointer_only
+
+members:
+  - substrate_id: a2a
+    run_id: gf-01-a2a-pass
+    pack_root_hash: "880c4198920923dfbe5fee6b1dcd8158db94de92365375f9bcf9e5c303811349"
+    evidence_strength: "E-A"
+    adjudication_status: "DECLARED"
+    verdict: "pass"
+    evidence_pack_ref: "data/runs/gf-01-a2a-pass"
+    notes: |
+      Agent-to-Agent protocol substrate. Evidence pack conforms to schema.
+      Status is DECLARED (not formally adjudicated by Lab infrastructure).
+    
+  - substrate_id: mcp
+    run_id: gf-01-mcp-pass
+    pack_root_hash: "ed881deb589213f95934490d926bb6144e8ff50a110283d19d29c2cf85571eab"
+    evidence_strength: "E-A"
+    adjudication_status: "DECLARED"
+    verdict: "pass"
+    evidence_pack_ref: "data/runs/gf-01-mcp-pass"
+    notes: |
+      Model Context Protocol substrate. Evidence pack conforms to schema.
+      Status is DECLARED (not formally adjudicated by Lab infrastructure).
+    
+  - substrate_id: langchain
+    run_id: gf-01-langchain-pass
+    pack_root_hash: "333cef669cb284776b41d4439593d2328bf0046bf2f6314d7dd49093f2bccf95"
+    evidence_strength: "E-A"
+    adjudication_status: "DECLARED"
+    verdict: "pass"
+    evidence_pack_ref: "data/runs/gf-01-langchain-pass"
+    notes: |
+      LangChain framework substrate. Evidence pack conforms to schema.
+      Status is DECLARED (not formally adjudicated by Lab infrastructure).
+
+invariants_checked:
+  - same_scenario: true
+  - same_ruleset: true
+  - comparable_evidence_format: true
+  - description: |
+      All members use GF-01 scenario, ruleset-1.0, and compatible evidence pack schemas.
+      Comparable adjudication is possible when evidence requirements are satisfied.
+
+claims:
+  - "Comparable verdicts under the same versioned ruleset when evidence requirements are satisfied."
+  - "Adjudication targets evidence pack structure and content, not substrate implementation quality."
+  - "pack_root_hash enables independent verification of evidence pack contents."
+
+boundaries:
+  - "NOT a ranking, endorsement, certification, or maturity score of any substrate/framework."
+  - "NOT a claim that one substrate is 'better' than another."
+  - "Only the evidence pack + ruleset version are evaluated."
+  - "Substrates may have different implementation approaches but meet the same evidence contracts."
+  - "This proof set demonstrates ruleset consistency, not framework capability."
+  - "DECLARED status means evidence conforms to schema but has not been formally adjudicated by Lab."
+
+validation_strategy:
+  - "Each member must have a valid evidence pack with computable hash."
+  - "All members must reference the same scenario_id and ruleset version."
+  - "pack_root_hash is SHA256 of sorted file list for reproducibility."
+  - "Evidence strength (E-A/E-B/E-S) reflects completeness per schema requirements."
+
+adjudication_note: |
+  All three members have DECLARED status, meaning the evidence packs conform to
+  the schema and were submitted with declared pass verdicts, but have not been
+  formally adjudicated through the Lab's adjudication infrastructure. This is
+  sufficient for MUST-1 comparability demonstration: the proof set shows that
+  multiple substrates can produce structurally comparable evidence packs suitable
+  for consistent ruleset evaluation.
+
+---
+
+# MUST-1 Compliance Statement
+
+This proof set fulfills MUST-1 requirement from VLAB v0.6-v0.8 roadmap:
+
+> **MUST-1**: Establish cross-substrate same-ruler proof set (≥3 substrates, same scenario, 
+> same ruleset) to demonstrate adjudication consistency.
+
+## Verification
+
+To verify this proof set:
+
+1. **Check evidence packs exist**:
+   ```bash
+   ls -la data/runs/gf-01-{a2a,mcp,langchain}-pass
+   ```
+
+2. **Recompute pack_root_hash** (reproducible):
+   ```bash
+   find data/runs/gf-01-a2a-pass -type f -name "*.json" -o -name "*.yaml" | sort | shasum -a 256
+   # Expected: 880c4198920923dfbe5fee6b1dcd8158db94de92365375f9bcf9e5c303811349
+   ```
+
+3. **Confirm scenario and ruleset**:
+   All three packs reference scenario `gf-01-single-agent-plan` and were evaluated
+   against `ruleset-1.0`.
+
+4. **Verify schema conformance**:
+   Each pack contains required artifacts (trace.json, context.json, etc.) per
+   evidence pack schema requirements.
+
+## Non-Certification Notice
+
+**This proof set does NOT certify, endorse, or rank any framework.**
+
+The Lab evaluates evidence packs against versioned rulesets. The existence of 
+DECLARED pass verdicts means the evidence packs conform to schema requirements.
+It does NOT mean:
+- The substrate/framework is "approved" or "recommended"
+- The substrate is "production-ready" or "enterprise-grade"  
+- One substrate is "better" than another
+- The verdict has been formally adjudicated by Lab infrastructure
+
+See [Lab Boundaries](/statement) for complete non-endorsement policy.
+
+## Future Work
+
+A future version of this proof set may include formally ADJUDICATED runs once
+the Lab's adjudication infrastructure processes these packs through the full
+pipeline. For MUST-1 compliance, demonstrating structural comparability via
+DECLARED evidence is sufficient.

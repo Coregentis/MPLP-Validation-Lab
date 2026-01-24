@@ -1,0 +1,16 @@
+adjudication
+adjudication/admission-not-admissible-01
+adjudication/dispute-benchmark-fail-01
+adjudication/dispute-benchmark-fail-01/integrity
+adjudication/dispute-benchmark-fail-01/snapshots
+adjudication/dispute-benchmark-fail-01/snapshots/diffs
+adjudication/dispute-benchmark-fail-01/timeline
+adjudication/gf-01-adjudicated-fail-01
+adjudication/gf-01-langchain-pass
+adjudication/gf-01-mcp-pass
+adjudication/gf-01-smoke
+adjudication/gf-02-fail
+adjudication/matrix
+adjudication/proof-sets
+adjudication/scope
+adjudication/strength

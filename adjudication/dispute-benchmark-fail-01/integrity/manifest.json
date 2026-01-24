@@ -1,0 +1,45 @@
+{
+    "pack_id": "dispute-benchmark-fail-01",
+    "pack_version": "1.0",
+    "created_at": "2026-01-23T12:00:00.000Z",
+    "pack_type": "dispute-benchmark",
+    "files": [
+        {
+            "path": "README.md",
+            "type": "documentation"
+        },
+        {
+            "path": "verdict.json",
+            "type": "verdict"
+        },
+        {
+            "path": "evidence_pointers.json",
+            "type": "evidence_index"
+        },
+        {
+            "path": "timeline/events.ndjson",
+            "type": "timeline"
+        },
+        {
+            "path": "snapshots/diffs/confirm-gate-missing.json",
+            "type": "diff"
+        },
+        {
+            "path": "integrity/manifest.json",
+            "type": "manifest"
+        },
+        {
+            "path": "integrity/sha256sums.txt",
+            "type": "checksums"
+        }
+    ],
+    "adjudication": {
+        "ruleset_version": "1.1",
+        "topline_verdict": "FAIL",
+        "failing_clause": "CL-D3-02"
+    },
+    "integrity": {
+        "algorithm": "sha256",
+        "checksums_file": "integrity/sha256sums.txt"
+    }
+}

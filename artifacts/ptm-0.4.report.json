@@ -1,10 +1,166 @@
 {
   "gate_id": "GATE-PTM-0.5",
-  "executed_at": "2026-01-20T06:29:38.924Z",
+  "executed_at": "2026-01-23T07:36:20.115Z",
   "status": "PASS",
   "checks": {
     "ptm_loaded": true,
-    "truth_sources_exist": [],
+    "truth_sources_exist": [
+      {
+        "route": "/",
+        "source": "verifier/VERIFIER_IDENTITY.json",
+        "exists": true
+      },
+      {
+        "route": "/",
+        "source": "governance/VLAB-DGB-01.md",
+        "exists": true
+      },
+      {
+        "route": "/",
+        "source": "export/projection-manifest.json",
+        "exists": true
+      },
+      {
+        "route": "/about",
+        "source": "verifier/VERIFIER_IDENTITY.json",
+        "exists": true
+      },
+      {
+        "route": "/statement",
+        "source": "governance/VLAB-DGB-01.md",
+        "exists": true
+      },
+      {
+        "route": "/runs",
+        "source": "governance/runsets.yaml",
+        "exists": true
+      },
+      {
+        "route": "/runs",
+        "source": "data/curated-runs/allowlist.yaml",
+        "exists": true
+      },
+      {
+        "route": "/runs",
+        "source": "export/curated-runs.json",
+        "exists": true
+      },
+      {
+        "route": "/runs",
+        "source": "public/_data/curated-runs.json",
+        "exists": true
+      },
+      {
+        "route": "/runs",
+        "source": "data/curated-runs/substrate-index.yaml",
+        "exists": true
+      },
+      {
+        "route": "/runs",
+        "source": "lib/rulesets/registry.ts",
+        "exists": true
+      },
+      {
+        "route": "/runs/[run_id]",
+        "source": "lib/rulesets/registry.ts",
+        "exists": true
+      },
+      {
+        "route": "/guarantees",
+        "source": "governance/TERMINOLOGY_MAPPING.md",
+        "exists": true
+      },
+      {
+        "route": "/rulesets",
+        "source": "lib/rulesets/registry.ts",
+        "exists": true
+      },
+      {
+        "route": "/rulesets/[version]",
+        "source": "lib/rulesets/registry.ts",
+        "exists": true
+      },
+      {
+        "route": "/adjudication",
+        "source": "lib/rulesets/registry.ts",
+        "exists": true
+      },
+      {
+        "route": "/adjudication",
+        "source": "governance/runsets.yaml",
+        "exists": true
+      },
+      {
+        "route": "/adjudication/[run_id]",
+        "source": "lib/rulesets/registry.ts",
+        "exists": true
+      },
+      {
+        "route": "/policies/contract",
+        "source": "governance/contracts/evidence-pack-contract-v1.0.md",
+        "exists": true
+      },
+      {
+        "route": "/policies/contract",
+        "source": "governance/contracts/evidence-pack-contract-v1.1.md",
+        "exists": true
+      },
+      {
+        "route": "/policies/contract",
+        "source": "governance/contracts/admission-criteria-v1.0.md",
+        "exists": true
+      },
+      {
+        "route": "/policies/contract",
+        "source": "governance/contracts/ruleset-contract-v1.0.md",
+        "exists": true
+      },
+      {
+        "route": "/policies/contract",
+        "source": "governance/contracts/pointer-contract-v1.0.md",
+        "exists": true
+      },
+      {
+        "route": "/policies/contract",
+        "source": "governance/COVERAGE_GOVERNANCE_ADDENDUM.md",
+        "exists": true
+      },
+      {
+        "route": "/policies/strength",
+        "source": "governance/evidence/EVIDENCE_STRENGTH.md",
+        "exists": true
+      },
+      {
+        "route": "/coverage",
+        "source": "governance/runsets.yaml",
+        "exists": true
+      },
+      {
+        "route": "/coverage",
+        "source": "test-vectors/v0.5/allowlist-v0.5.yaml",
+        "exists": true
+      },
+      {
+        "route": "/coverage",
+        "source": "governance/COVERAGE_GOVERNANCE_ADDENDUM.md",
+        "exists": true
+      },
+      {
+        "route": "/coverage",
+        "source": "export/curated-runs.json",
+        "exists": true
+      },
+      {
+        "route": "/coverage",
+        "source": "data/curated-runs/substrate-index.yaml",
+        "exists": true
+      },
+      {
+        "route": "/examples/evidence-producers/[substrate]",
+        "source": "producers/contract/PRODUCER_CONTRACT.md",
+        "exists": true
+      }
+    ],
     "rulesets_loadable": [
       {
         "id": "ruleset-1.0",
@@ -65,5 +221,5 @@
     ]
   },
   "issues": [],
-  "duration_ms": 57
+  "duration_ms": 47
 }

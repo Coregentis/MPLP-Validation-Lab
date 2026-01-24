@@ -1,0 +1,45 @@
+{
+  "gate": "no-ssot-duplication",
+  "version": "1.0.0",
+  "timestamp": "2026-01-24T03:31:53.358Z",
+  "projection_map_version": "1.0.0",
+  "scanned_repos": {
+    "website": {
+      "root": "/Users/jasonwang/Documents/AI_Dev/V1.0_release/MPLP_website",
+      "exists": true
+    },
+    "docs": {
+      "root": "/Users/jasonwang/Documents/AI_Dev/V1.0_release/docs",
+      "exists": true
+    }
+  },
+  "summary": {
+    "total_findings": 2,
+    "errors": 0,
+    "warnings": 2
+  },
+  "findings": [
+    {
+      "repo": "Website",
+      "file": "lib/content/faq-data.ts",
+      "line": 97,
+      "category": "adjudication_results",
+      "severity": "WARN",
+      "pattern": "verdict.*reproducible",
+      "matched_text": "Verdict Gateway — non-certifying, non-endorsement, and no execution hosting. It evaluates evidence packs under versioned rulesets to produce reproducible",
+      "excerpt": "answer: \"No. Validation Lab is an Evidence Verdict Gateway — non-certifying, non-endorsement, and no execution hosting. ...",
+      "description": "Adjudication result summaries or verdict determinism claims"
+    },
+    {
+      "repo": "Docs",
+      "file": "docs/evaluation/conformance/reviewability.md",
+      "line": 72,
+      "category": "adjudication_details",
+      "severity": "WARN",
+      "pattern": "verdict.*computation",
+      "matched_text": "verdict_hash matches recomputation",
+      "excerpt": "- verdict_hash matches recomputation → Adjudication is deterministic",
+      "description": "Detailed adjudication methodology or verdict computation"
+    }
+  ]
+}

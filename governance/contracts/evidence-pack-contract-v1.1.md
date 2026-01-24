@@ -3,7 +3,7 @@ entry_surface: validation_lab
 doc_type: governance
 status: draft
 authority: none
-protocol_version: "1.0.0"
+mplp_protocol_version: "1.0.0"
 doc_id: "VLAB-GOV-022"
 ---
 
@@ -82,7 +82,7 @@ All v1.0-compliant packs remain valid under v1.1. No migration required.
 // Optional: Add substrate metadata
 const manifest = {
   pack_id: "my-pack-001",
-  protocol_version: "1.0.0",
+  mplp_protocol_version: "1.0.0",
   created_at: new Date().toISOString(),
   // v1.1: Optional substrate
   substrate: {

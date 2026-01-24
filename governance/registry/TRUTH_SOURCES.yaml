@@ -1,11 +1,11 @@
-# Truth Sources Registry - v0.5
+# Truth Sources Registry - v0.7.2
 #
 # SSOT for all truth sources used by Validation Lab.
-# Each truth source has a canonical ID and resolver strategy.
+# v0.7.2: P0 Projection gates integration (projection-map SSOT)
 #
 # Governance: REPO_SHAPE.md / VLAB-DGB-01
 
-version: "0.5"
+version: "0.7.2"
 schema_version: "1.0.0"
 description: |
   Registry of all truth sources referenced by PTM and gates.
@@ -55,6 +55,15 @@ sources:
       - "/statement"
       - "/"
 
+  ts.coverage_addendum:
+    path: "governance/COVERAGE_GOVERNANCE_ADDENDUM.md"
+    resolver: "file"
+    type: "markdown"
+    description: "Coverage Governance Addendum (Claim Gates & SSOT rules)"
+    used_by_routes:
+      - "/coverage"
+      - "/policies/contract"
+
   # ---------------------------------------------------------------------------
   # L1 Governance: Contracts
   # ---------------------------------------------------------------------------
@@ -100,13 +109,33 @@ sources:
     used_by_routes:
       - "/runs"
 
-  ts.curated_json:
+  ts.export_curated_json:
+    path: "export/curated-runs.json"
+    resolver: "file"
+    type: "json"
+    description: "Export contract surface (public SSOT for curated runs)."
+    used_by_routes:
+      - "/runs"
+      - "/runs/*"
+      - "/coverage"
+
+  ts.ui_curated_json:
     path: "public/_data/curated-runs.json"
     resolver: "file"
     type: "json"
-    description: "Generated curated runs data for UI"
+    description: "Generated UI projection data (derived from export)."
     used_by_routes:
       - "/runs"
+
+  ts.substrate_index:
+    path: "data/curated-runs/substrate-index.yaml"
+    resolver: "file"
+    type: "yaml"
+    description: "Canonical substrate index for consistency checks"
+    used_by_routes:
+      - "/runs"
+      - "/runs/*"
+      - "/coverage"
 
   # ---------------------------------------------------------------------------
   # L2 Data: Rulesets
@@ -130,6 +159,7 @@ sources:
     type: "yaml"
     audit_output: "artifacts/truth-source-inventory.json#ts.ruleset_manifests"
     description: "Ruleset manifest files"
+    expectation: "non_empty"
     used_by_routes:
       - "/rulesets"
       - "/rulesets/*"
@@ -139,10 +169,11 @@ sources:
   # ---------------------------------------------------------------------------
   ts.run_bundles:
     path: "data/runs/*"
-    resolver: "glob"
+    resolver: "directory"
     type: "directory"
     audit_output: "artifacts/truth-source-inventory.json#ts.run_bundles"
     description: "Curated run bundle directories"
+    expectation: "non_empty"
     used_by_routes:
       - "/runs/*"
       - "/runs/*/replay"
@@ -165,6 +196,7 @@ sources:
     type: "yaml"
     audit_output: "artifacts/truth-source-inventory.json#ts.producer_manifests"
     description: "Producer manifest files for each substrate"
+    expectation: "may_be_empty"
     used_by_routes:
       - "/examples/evidence-producers/*"
 
@@ -174,6 +206,7 @@ sources:
     type: "directory"
     audit_output: "artifacts/truth-source-inventory.json#ts.producer_packs"
     description: "Cross-substrate evidence packs"
+    expectation: "may_be_empty"
     used_by_routes:
       - "/examples/evidence-producers/*"
 
@@ -194,6 +227,7 @@ sources:
     type: "directory"
     audit_output: "artifacts/truth-source-inventory.json#ts.test_vectors"
     description: "Public test vector packs"
+    expectation: "may_be_empty"
     used_by_routes:
       - "/coverage"
 
@@ -206,17 +240,114 @@ sources:
     type: "yaml"
     audit_output: "artifacts/truth-source-inventory.json#ts.pack_schema"
     description: "Evidence pack JSON schemas"
+    expectation: "may_be_empty"
     used_by_routes:
       - "/builder"
+
+  # ---------------------------------------------------------------------------
+  # L2 Data: Adjudication Evidence (v0.6)
+  # ---------------------------------------------------------------------------
+  ts.coverage_matrix:
+    path: "adjudication/matrix/coverage*.yaml"
+    resolver: "glob"
+    type: "yaml"
+    description: "Multi-substrate coverage matrix definitions"
+    used_by_routes:
+      - "/coverage"
+
+  # ---------------------------------------------------------------------------
+  # P1 Capability Truth Sources (v0.8 MUST-1/MUST-3)
+  # ---------------------------------------------------------------------------
+  ts.proof_sets:
+    path: "adjudication/proof-sets/**"
+    resolver: "glob"
+    type: "yaml"
+    description: "MUST-1 same-ruler proof sets (cross-substrate adjudication consistency)"
+    expectation: "non_empty"
+    used_by_routes:
+      - "/adjudication/proof-sets"
+
+  ts.ruleset_diff_reports:
+    path: "export/ruleset-diff/**/*.json"
+    resolver: "glob"
+    type: "json"
+    description: "MUST-3 ruleset version diff reports"
+    expectation: "may_be_empty"
+    used_by_routes:
+      - "/rulesets/diff"
+
+  ts.ruleset_diff_index:
+    path: "export/ruleset-diff/index.json"
+    resolver: "file"
+    type: "json"
+    description: "Index of available ruleset diff reports"
+    expectation: "may_be_empty"
+    used_by_routes:
+      - "/rulesets/diff"
+
+  ts.projection_manifest:
+    path: "export/projection-manifest.json"
+    resolver: "file"
+    type: "json"
+    description: "Provable baseline manifest (hashes + repo anchors)"
+    expectation: "non_empty"
+    used_by_routes:
+      - "/"
+      - "/about"
+      - "/statement"
+
+  # ---------------------------------------------------------------------------
+  # Registry SSOT Layer (v0.7 Auditability)
+  # ---------------------------------------------------------------------------
+  ts.registry.routes:
+    path: "governance/registry/ROUTES.yaml"
+    resolver: "file"
+    type: "yaml"
+    description: "Registry SSOT: routes"
+    expectation: "non_empty"
+    used_by_routes: ["/*"]
+
+  ts.registry.gates:
+    path: "governance/registry/GATES.yaml"
+    resolver: "file"
+    type: "yaml"
+    description: "Registry SSOT: gates"
+    expectation: "non_empty"
+    used_by_routes: ["/*"]
+
+  ts.registry.truth_sources:
+    path: "governance/registry/TRUTH_SOURCES.yaml"
+    resolver: "file"
+    type: "yaml"
+    description: "Registry SSOT: truth sources"
+    expectation: "non_empty"
+    used_by_routes: ["/*"]
+
+  ts.ptm:
+    path: "governance/page-truth/ptm-0.7.yaml"
+    resolver: "file"
+    type: "yaml"
+    description: "Page Truth Map (v0.7)"
+    expectation: "non_empty"
+    used_by_routes: ["/*"]
+
+  ts.dispute_benchmark:
+    path: "adjudication/dispute-benchmark-fail-01/**"
+    resolver: "glob"
+    type: "directory"
+    description: "Dispute benchmark sample for FAIL closure"
+    used_by_routes:
+      - "/adjudication"
+      - "/runs/*"
 
 # =============================================================================
 # Summary
 # =============================================================================
 
 summary:
-  total_sources: 18
+  total_sources: 22
   by_resolver:
-    file: 9
+    file: 13
     file_list: 1
     glob: 7
     module_export: 1

@@ -2,8 +2,8 @@
   "ssot": {
     "source": "data/curated-runs/allowlist.yaml",
     "adjudication_source": "export/adjudication-index.json",
-    "generated_at": "2026-01-21T07:43:16.789Z",
-    "git_commit": "608d7b5"
+    "generated_at": "2026-01-24T04:06:30.824Z",
+    "git_commit": "072feec"
   },
   "runs": [
     {

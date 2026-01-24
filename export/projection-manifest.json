@@ -1,0 +1,1626 @@
+{
+  "manifest_version": "0.1.1",
+  "generated_at": "2026-01-23T07:36:19.454Z",
+  "sealed_release": "v0.7.1-rc1",
+  "repos": {
+    "lab": {
+      "commit": "072feec5ac3ba9f04fd266cdd0a08a3d32c6f617",
+      "base_url": "https://lab.mplp.io"
+    },
+    "website": {
+      "commit": "6428d8563ef180c8dbe91f017d1a161b7165fbce",
+      "base_url": "https://www.mplp.io"
+    },
+    "docs": {
+      "commit": "d00cb8d6cc5af76e8feaaa66a69f1905f8913be9",
+      "base_url": "https://docs.mplp.io"
+    }
+  },
+  "truth_sources": [
+    {
+      "id": "ts.contracts",
+      "resolver": "file_list",
+      "combined_sha256": "29e260c44aec6efd4e8232caed675a76bd544fba1970c36c59056e1ff1bbbe52",
+      "files": [
+        {
+          "path": "governance/contracts/admission-criteria-v1.0.md",
+          "sha256": "efa8a04ef801b2d30b063da23dde6c1b05adba42c20793d78bc849b23fdc4e21"
+        },
+        {
+          "path": "governance/contracts/evidence-pack-contract-v1.0.md",
+          "sha256": "b3f6b23e2820d58e500f10ffc359beb0f963990361c457edd25bb77d7b3d180f"
+        },
+        {
+          "path": "governance/contracts/evidence-pack-contract-v1.1.md",
+          "sha256": "d1751a6a7491befab0e4b6b5ee9ea52787e918e543d7a8a6e4c1e2ff83032f29"
+        },
+        {
+          "path": "governance/contracts/pointer-contract-v1.0.md",
+          "sha256": "49fc153ec4657aa20a160748806d8979ae5f492ac23d55534217a7e6f8176874"
+        },
+        {
+          "path": "governance/contracts/ruleset-contract-v1.0.md",
+          "sha256": "df13a7abbbf2e9ed18c17ea41a47cbe21a6fbbaacc3845d05ff8cbe19f01f8f4"
+        }
+      ],
+      "expectation": "may_be_empty",
+      "file_count": 5,
+      "empty": false
+    },
+    {
+      "id": "ts.coverage_addendum",
+      "resolver": "file",
+      "combined_sha256": "a5e31dca0bf78ece24e1eb66a4f6179cdebc62e24716ecdea8943207ee977df8",
+      "files": [
+        {
+          "path": "governance/COVERAGE_GOVERNANCE_ADDENDUM.md",
+          "sha256": "cbc1e80eff307e390774c11da7e318be6b9cd7ed3cae88d6ea59d22203086d47"
+        }
+      ],
+      "expectation": "may_be_empty",
+      "file_count": 1,
+      "empty": false
+    },
+    {
+      "id": "ts.coverage_matrix",
+      "resolver": "glob",
+      "combined_sha256": "fe23fa8462a8805723f2c0c85b6909e3f66d8ac9f5c2bcd1eafe16d22f9f0fbc",
+      "files": [
+        {
+          "path": "adjudication/matrix/coverage.gf-01.yaml",
+          "sha256": "ea1731ff439f7a766b8d952bb8247e28a5c8c48ece73fb24c549245f6b156153"
+        }
+      ],
+      "expectation": "may_be_empty",
+      "file_count": 1,
+      "empty": false
+    },
+    {
+      "id": "ts.curated_allowlist",
+      "resolver": "file",
+      "combined_sha256": "56c4311b4cc5ce0a47c290769c09bc736d2ab78be6d8e5ecfd6629626e25f836",
+      "files": [
+        {
+          "path": "data/curated-runs/allowlist.yaml",
+          "sha256": "a36f540d170d874e9479746139d0411befc2d320cbdbc5468ea25a738644cc7e"
+        }
+      ],
+      "expectation": "may_be_empty",
+      "file_count": 1,
+      "empty": false
+    },
+    {
+      "id": "ts.dgb",
+      "resolver": "file",
+      "combined_sha256": "9e9f378a94da8f8daad40b02350f28d875615646237c34346285cacc581e30e8",
+      "files": [
+        {
+          "path": "governance/VLAB-DGB-01.md",
+          "sha256": "b67d0186707cd7c40f0ba86b3476a7c8b41f105295ac3cfd5eaf6efea0c8902f"
+        }
+      ],
+      "expectation": "may_be_empty",
+      "file_count": 1,
+      "empty": false
+    },
+    {
+      "id": "ts.dispute_benchmark",
+      "resolver": "glob",
+      "combined_sha256": "84499549c466db05e4352840b15660731d45fe66d712e1656f0106e34c90db05",
+      "files": [
+        {
+          "path": "adjudication/dispute-benchmark-fail-01/evidence_pointers.json",
+          "sha256": "693df49923c1a873fa97b74e9ea3c32926ae52bc6fb01b82160f77d65f75b608"
+        },
+        {
+          "path": "adjudication/dispute-benchmark-fail-01/integrity/manifest.json",
+          "sha256": "e37a01250932035b235e26ee257df9f097b8551877a63b9bc8244f0e89866103"
+        },
+        {
+          "path": "adjudication/dispute-benchmark-fail-01/integrity/sha256sums.txt",
+          "sha256": "2bd99bae295e789c7151283897ded5b96de55b04e8a5f176259df8c8bf294a90"
+        },
+        {
+          "path": "adjudication/dispute-benchmark-fail-01/README.md",
+          "sha256": "e91e72d233a3201d22b9402e7c9ec74cd3fdfee0a48ba3bdcb1f40249974d903"
+        },
+        {
+          "path": "adjudication/dispute-benchmark-fail-01/snapshots/diffs/confirm-gate-missing.json",
+          "sha256": "33e25490a46362454d18fe367e390127b0a83e80fdef2b251515e91a7d9c9226"
+        },
+        {
+          "path": "adjudication/dispute-benchmark-fail-01/timeline/events.ndjson",
+          "sha256": "076dc685b4631a0ddca3eaffa7af1252a930c9d82016cea17a603ae5332bf0be"
+        },
+        {
+          "path": "adjudication/dispute-benchmark-fail-01/verdict.json",
+          "sha256": "80d9ac55de2aff90a634d7a599a4852e800f081a6221dd679cbde830633bacfe"
+        }
+      ],
+      "expectation": "may_be_empty",
+      "file_count": 7,
+      "empty": false
+    },
+    {
+      "id": "ts.export_curated_json",
+      "resolver": "file",
+      "combined_sha256": "415f8932c9961ce2c77c622df5776c9ab484730eb76436c0f82925fd6daaf3d4",
+      "files": [
+        {
+          "path": "export/curated-runs.json",
+          "sha256": "554b5c81c27b8c358a30cb7aa14d7f8cb95ccf7c785973580d64d5ad4876d9ee"
+        }
+      ],
+      "expectation": "may_be_empty",
+      "file_count": 1,
+      "empty": false
+    },
+    {
+      "id": "ts.identity",
+      "resolver": "file",
+      "combined_sha256": "3f6374785a8ab809b487029477fa03caf13eb82cdbe0012b805dd6351d15f377",
+      "files": [
+        {
+          "path": "verifier/VERIFIER_IDENTITY.json",
+          "sha256": "ea4e6a66667254d8dc14f093c9977be59b3273e7d5ef60f8da3f27e50ae5d68b"
+        }
+      ],
+      "expectation": "may_be_empty",
+      "file_count": 1,
+      "empty": false
+    },
+    {
+      "id": "ts.pack_schema",
+      "resolver": "glob",
+      "combined_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "files": [],
+      "expectation": "may_be_empty",
+      "file_count": 0,
+      "empty": true
+    },
+    {
+      "id": "ts.producer_contract",
+      "resolver": "file",
+      "combined_sha256": "ac6ab173f8d52a7d6574f640830b28f3b3fd7af20b4d43a4245ac82220981be6",
+      "files": [
+        {
+          "path": "producers/contract/PRODUCER_CONTRACT.md",
+          "sha256": "79e1ba628eb455279f837b3ef5e4b09a6c138486cfc8bb83c073293beeceaa14"
+        }
+      ],
+      "expectation": "may_be_empty",
+      "file_count": 1,
+      "empty": false
+    },
+    {
+      "id": "ts.producer_manifests",
+      "resolver": "glob",
+      "combined_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "files": [],
+      "expectation": "may_be_empty",
+      "file_count": 0,
+      "empty": true
+    },
+    {
+      "id": "ts.producer_packs",
+      "resolver": "glob",
+      "combined_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "files": [],
+      "expectation": "may_be_empty",
+      "file_count": 0,
+      "empty": true
+    },
+    {
+      "id": "ts.ptm",
+      "resolver": "file",
+      "combined_sha256": "88d1f08ea85c77ed31a2f2e423e36375f4cf5234650decd23f9c39b7fd616f0c",
+      "files": [
+        {
+          "path": "governance/page-truth/ptm-0.7.yaml",
+          "sha256": "baba42586fb79b36a77e918dfd9001f95580d056cb7c2e40e2e811a9a3ef75ee"
+        }
+      ],
+      "expectation": "non_empty",
+      "file_count": 1,
+      "empty": false
+    },
+    {
+      "id": "ts.registry",
+      "resolver": "module_export",
+      "combined_sha256": "5865892b01ccd4bade3b530beef68a31c1eecdd8c6623ec74c2454e8d096ebbe",
+      "files": [
+        {
+          "path": "lib/rulesets/registry.ts",
+          "sha256": "d779395296d0c41e538da77fa735a0aae568db2a1530f38694e3dab2f195fa63"
+        }
+      ],
+      "expectation": "may_be_empty",
+      "file_count": 1,
+      "empty": false
+    },
+    {
+      "id": "ts.registry.gates",
+      "resolver": "file",
+      "combined_sha256": "12e06d0f7cd76068d14340eb536d0fb5261aafdb7b5478d325e9818d6e50929d",
+      "files": [
+        {
+          "path": "governance/registry/GATES.yaml",
+          "sha256": "713514a22f25786bbeca09af912ce7cda065e3e4bc555bd8b1d03f91e4f74455"
+        }
+      ],
+      "expectation": "non_empty",
+      "file_count": 1,
+      "empty": false
+    },
+    {
+      "id": "ts.registry.routes",
+      "resolver": "file",
+      "combined_sha256": "96259d61354626852f0942bf6649f2be77ddb43b0203bf0ab7221116f1af9276",
+      "files": [
+        {
+          "path": "governance/registry/ROUTES.yaml",
+          "sha256": "c3de469b6a4623c229de12b3b5630dc7aedf5b7cf80c23e7d559fa3ae0c393ac"
+        }
+      ],
+      "expectation": "non_empty",
+      "file_count": 1,
+      "empty": false
+    },
+    {
+      "id": "ts.registry.truth_sources",
+      "resolver": "file",
+      "combined_sha256": "2a910a0e4366e873d60da31a5c6350ddacfb1beb2238c434b10bb412d9721d0b",
+      "files": [
+        {
+          "path": "governance/registry/TRUTH_SOURCES.yaml",
+          "sha256": "2c82a72f109d4c1faaf3c4b6ff4cf4ecb82e15b7429526ffaf9ac5c81bd74490"
+        }
+      ],
+      "expectation": "non_empty",
+      "file_count": 1,
+      "empty": false
+    },
+    {
+      "id": "ts.ruleset_manifests",
+      "resolver": "glob",
+      "combined_sha256": "7e6e936f2bdfcb2056211ec2b653d8d2fc3263d235e164c6320dd4ca9272f34d",
+      "files": [
+        {
+          "path": "data/rulesets/ruleset-1.0/manifest.yaml",
+          "sha256": "2d22af2bcc892d6c7c595923b70db4810b167442a28875af135c430916ec5ff3"
+        },
+        {
+          "path": "data/rulesets/ruleset-1.1/manifest.yaml",
+          "sha256": "192bb043d59eb87a0188f4450a7778453512c0e9f28028603d0977eb873f9ec6"
+        },
+        {
+          "path": "data/rulesets/ruleset-1.2/manifest.yaml",
+          "sha256": "30c40526486ed19de56cde21bba40e9c0a70d01775a8973ac2d4f2e13195cba6"
+        }
+      ],
+      "expectation": "non_empty",
+      "file_count": 3,
+      "empty": false
+    },
+    {
+      "id": "ts.run_bundles",
+      "resolver": "directory",
+      "combined_sha256": "98194cb89106ddb13a402fc6150d41c5390a348011ffa1cfa472746ed202679f",
+      "files": [
+        {
+          "path": "data/runs/admission-not-admissible-01/input.pointer.json",
+          "sha256": "b15ea154a6ba9a28a482ba0d7706b710ed337823173e5f41b6d07d641f2ed8f4"
+        },
+        {
+          "path": "data/runs/arb-d1-budget-fail-deny-missing-gate-v0.4/bundle.manifest.json",
+          "sha256": "06f3a91f3788d852f3746d9f78727f967ddd453b181b520686ada28ea8acf697"
+        },
+        {
+          "path": "data/runs/arb-d1-budget-fail-deny-missing-gate-v0.4/evaluation.report.json",
+          "sha256": "73f895b40d9ed70ae1e4f1349ee92864650e15177e7367f142a3df98f11346af"
+        },
+        {
+          "path": "data/runs/arb-d1-budget-fail-deny-missing-gate-v0.4/evidence_pointers.json",
+          "sha256": "4b71caa55faeb952110c1869fb3acb5ae090da9e1add127d7ffa4f94a0e839b0"
+        },
+        {
+          "path": "data/runs/arb-d1-budget-fail-deny-missing-gate-v0.4/integrity/sha256sums.txt",
+          "sha256": "aeecdf7b1fa7948303d0b51816d323515063f6fe7f886da02496a3f336c4e6cf"
+        },
+        {
+          "path": "data/runs/arb-d1-budget-fail-deny-missing-gate-v0.4/pack/manifest.json",
+          "sha256": "ccc1e08d4b9be3f2f9489255f8bb085d124f43c88f1bdede0792a68f92ea5761"
+        },
+        {
+          "path": "data/runs/arb-d1-budget-fail-deny-missing-gate-v0.4/pack/trace/events.ndjson",
+          "sha256": "896e1f03b9702f16eb19a80d1e895ed922df69787a752c917163fb9a43b1c1ea"
+        },
+        {
+          "path": "data/runs/arb-d1-budget-fail-deny-missing-gate-v0.4/verdict.json",
+          "sha256": "32c0d954a9bc3cb1d134511e722d03bb231cb9b45206a9410a63f1c4ccad9247"
+        },
+        {
+          "path": "data/runs/arb-d1-budget-fail-deny-missing-gate-v0.4/verify.report.json",
+          "sha256": "b5d370be0f376e173d02c6cfbc0ed7ee5cf687a339223ced59b548e9476ca053"
+        },
+        {
+          "path": "data/runs/arb-d1-budget-fail-fixture-v0.3/bundle.manifest.json",
+          "sha256": "7bade604e88b89aaf7f969fb63135f0f7ec6aa639c69e414c46aad864d366539"
+        },
+        {
+          "path": "data/runs/arb-d1-budget-fail-fixture-v0.3/evaluation.report.json",
+          "sha256": "71566eb2e856551656d7d83d3764f8b806faf4fc7a84ad24bdbe9837ac8304d0"
+        },
+        {
+          "path": "data/runs/arb-d1-budget-fail-fixture-v0.3/evidence_pointers.json",
+          "sha256": "72b6e5d5cfd4a29e14aa7886c2c3a6be5270611f8890d3e9ef78316f9c0bf429"
+        },
+        {
+          "path": "data/runs/arb-d1-budget-fail-fixture-v0.3/integrity/sha256sums.txt",
+          "sha256": "05e5400a2db86ea22d21f643218c608692b3074d0f6139965341a7ccb8f78ae1"
+        },
+        {
+          "path": "data/runs/arb-d1-budget-fail-fixture-v0.3/pack/manifest.json",
+          "sha256": "60377838700e1a7f6e3d52221ed9fc576726bf0eecd805d3efc9b990ff592082"
+        },
+        {
+          "path": "data/runs/arb-d1-budget-fail-fixture-v0.3/pack/trace/events.ndjson",
+          "sha256": "f93ca0195afc7aa47953244ffed44254b5100aaf2f9ff1cd3bb11ddcdedbb3ad"
+        },
+        {
+          "path": "data/runs/arb-d1-budget-fail-fixture-v0.3/verdict.json",
+          "sha256": "8e7e5f62a9698225993f3d714a3bf9c271982f5ad218606f52d52c2528f6023e"
+        },
+        {
+          "path": "data/runs/arb-d1-budget-fail-fixture-v0.3/verify.report.json",
+          "sha256": "7a1f343bed94ccf426cc36bf426071f26b415f996b91c2be09b60a0d50718a0a"
+        },
+        {
+          "path": "data/runs/arb-d1-budget-fail-outcome-invalid-v0.4/bundle.manifest.json",
+          "sha256": "e5ba1317464378b1e8e96e0e0cdc10b7286c2dff0e75c23c68f477bae19027fb"
+        },
+        {
+          "path": "data/runs/arb-d1-budget-fail-outcome-invalid-v0.4/evaluation.report.json",
+          "sha256": "80b9639552720989004307bf4658a12852cdae21e411897695b49212449df600"
+        },
+        {
+          "path": "data/runs/arb-d1-budget-fail-outcome-invalid-v0.4/evidence_pointers.json",
+          "sha256": "4b71caa55faeb952110c1869fb3acb5ae090da9e1add127d7ffa4f94a0e839b0"
+        },
+        {
+          "path": "data/runs/arb-d1-budget-fail-outcome-invalid-v0.4/integrity/sha256sums.txt",
+          "sha256": "4ab21a72346f64433604a8d042a3c39c710aa0114b3614b3f739708fcd40df64"
+        },
+        {
+          "path": "data/runs/arb-d1-budget-fail-outcome-invalid-v0.4/pack/manifest.json",
+          "sha256": "9a4f5215c6a823760a60b8acca9206bc8368062eb2470f3cc0e056b6d89c8257"
+        },
+        {
+          "path": "data/runs/arb-d1-budget-fail-outcome-invalid-v0.4/pack/trace/events.ndjson",
+          "sha256": "4b74b53e0a7fe31535d8129e91cc2d17e1ab604106fe4909941b9a82ee63ebc8"
+        },
+        {
+          "path": "data/runs/arb-d1-budget-fail-outcome-invalid-v0.4/verdict.json",
+          "sha256": "de4cfcefa2dab53019a4cfdbbde51717e1b48b4f85a661a265dd6b150c4f73e1"
+        },
+        {
+          "path": "data/runs/arb-d1-budget-fail-outcome-invalid-v0.4/verify.report.json",
+          "sha256": "db4f459c3b0653d029b27f8930675f4c57e6298718bddb28a77ea4b189942407"
+        },
+        {
+          "path": "data/runs/arb-d1-budget-pass-fixture-v0.3/bundle.manifest.json",
+          "sha256": "831efa38fcddde1fc3b26ca1c44efeefab2022ce83b415b5082b8cc61d79d119"
+        },
+        {
+          "path": "data/runs/arb-d1-budget-pass-fixture-v0.3/evaluation.report.json",
+          "sha256": "cc0a5cd177a57b9c9cff5ff2d93a5d30f12a1f24f69792ce4daa61ece5027607"
+        },
+        {
+          "path": "data/runs/arb-d1-budget-pass-fixture-v0.3/evidence_pointers.json",
+          "sha256": "4b71caa55faeb952110c1869fb3acb5ae090da9e1add127d7ffa4f94a0e839b0"
+        },
+        {
+          "path": "data/runs/arb-d1-budget-pass-fixture-v0.3/integrity/sha256sums.txt",
+          "sha256": "df1fe27ddaceaa155e42acfcb45c4a31140e131ee2f04acca3bb5e6bc806f610"
+        },
+        {
+          "path": "data/runs/arb-d1-budget-pass-fixture-v0.3/pack/manifest.json",
+          "sha256": "804591d3e3f0473768122671d2e8f511942020ee7f95c3d9c798fa6197f284bb"
+        },
+        {
+          "path": "data/runs/arb-d1-budget-pass-fixture-v0.3/pack/trace/events.ndjson",
+          "sha256": "eec09861823fcb4e3d35efa7db1a60f77b126ff4cc4a463d695e8d5366fb7543"
+        },
+        {
+          "path": "data/runs/arb-d1-budget-pass-fixture-v0.3/verdict.json",
+          "sha256": "792256da104fbb59d605175da7de9d32fd944aa4e8c104c9698a573618938559"
+        },
+        {
+          "path": "data/runs/arb-d1-budget-pass-fixture-v0.3/verify.report.json",
+          "sha256": "b246ff63b0dd4a2fc0c00797430929ba27a7f2a0be5330e19d9fa13f99e61e74"
+        },
+        {
+          "path": "data/runs/arb-d2-lifecycle-fail-post-terminal-exec-v0.4/bundle.manifest.json",
+          "sha256": "f1e3a5bccd100127b13fb8f310a2be67d515b8a1b1b47329f41e4eb352c96613"
+        },
+        {
+          "path": "data/runs/arb-d2-lifecycle-fail-post-terminal-exec-v0.4/evaluation.report.json",
+          "sha256": "73f895b40d9ed70ae1e4f1349ee92864650e15177e7367f142a3df98f11346af"
+        },
+        {
+          "path": "data/runs/arb-d2-lifecycle-fail-post-terminal-exec-v0.4/evidence_pointers.json",
+          "sha256": "51944216f1afd2ee8217a8db6637328d2f8223c606269f74755845bfb3149c2f"
+        },
+        {
+          "path": "data/runs/arb-d2-lifecycle-fail-post-terminal-exec-v0.4/integrity/sha256sums.txt",
+          "sha256": "cd8f37a4ef58862f57fcd658f92318589954ad5a2355aba5308c1fbb71a80a36"
+        },
+        {
+          "path": "data/runs/arb-d2-lifecycle-fail-post-terminal-exec-v0.4/pack/manifest.json",
+          "sha256": "776e3271c5448655acc3cfebfde46a00a9bf46611b647cf67da27825e67113ff"
+        },
+        {
+          "path": "data/runs/arb-d2-lifecycle-fail-post-terminal-exec-v0.4/pack/trace/events.ndjson",
+          "sha256": "eed83260c0097492cc880af420a2fdfcc08f501db324b7485868003d7b617425"
+        },
+        {
+          "path": "data/runs/arb-d2-lifecycle-fail-post-terminal-exec-v0.4/verdict.json",
+          "sha256": "f6ae7754f881ea6c2421182974f3cb47960a323240e672a4f7ded2ef2e7b8a6c"
+        },
+        {
+          "path": "data/runs/arb-d2-lifecycle-fail-post-terminal-exec-v0.4/verify.report.json",
+          "sha256": "b5d370be0f376e173d02c6cfbc0ed7ee5cf687a339223ced59b548e9476ca053"
+        },
+        {
+          "path": "data/runs/arb-d2-lifecycle-fail-terminal-state-invalid-v0.4/bundle.manifest.json",
+          "sha256": "55c5a24a6fc340978415ecd3b773b69536bea9525d91c57e544f897935355c55"
+        },
+        {
+          "path": "data/runs/arb-d2-lifecycle-fail-terminal-state-invalid-v0.4/evaluation.report.json",
+          "sha256": "73f895b40d9ed70ae1e4f1349ee92864650e15177e7367f142a3df98f11346af"
+        },
+        {
+          "path": "data/runs/arb-d2-lifecycle-fail-terminal-state-invalid-v0.4/evidence_pointers.json",
+          "sha256": "51944216f1afd2ee8217a8db6637328d2f8223c606269f74755845bfb3149c2f"
+        },
+        {
+          "path": "data/runs/arb-d2-lifecycle-fail-terminal-state-invalid-v0.4/integrity/sha256sums.txt",
+          "sha256": "13ed33c838768f000ba971542f3c7518c1c582cc9d5fec16242684c5a776fe6b"
+        },
+        {
+          "path": "data/runs/arb-d2-lifecycle-fail-terminal-state-invalid-v0.4/pack/manifest.json",
+          "sha256": "7c8ad939d25d3aadd4cd16dfde98f283becce116d3df0cde018ffd9a57a22234"
+        },
+        {
+          "path": "data/runs/arb-d2-lifecycle-fail-terminal-state-invalid-v0.4/pack/trace/events.ndjson",
+          "sha256": "cc86e012c958f5c881192a0fe5f97caf4c144bd0c77a7a8f48857c7da7afcea6"
+        },
+        {
+          "path": "data/runs/arb-d2-lifecycle-fail-terminal-state-invalid-v0.4/verdict.json",
+          "sha256": "5d35c02384510395008ead1cc80daab863f86f30aacfd7916dc9c45b6a1152cf"
+        },
+        {
+          "path": "data/runs/arb-d2-lifecycle-fail-terminal-state-invalid-v0.4/verify.report.json",
+          "sha256": "b5d370be0f376e173d02c6cfbc0ed7ee5cf687a339223ced59b548e9476ca053"
+        },
+        {
+          "path": "data/runs/arb-d2-lifecycle-state-fail-fixture-v0.3/bundle.manifest.json",
+          "sha256": "ce4db51ac41311d2f7ced34ad1358d744dcbf5184cddd7fa861bb2a72adc53ed"
+        },
+        {
+          "path": "data/runs/arb-d2-lifecycle-state-fail-fixture-v0.3/evaluation.report.json",
+          "sha256": "c01097f00fd1e7e32233cfd85233dd8a2daa44d5b41089725c77466af19ba7eb"
+        },
+        {
+          "path": "data/runs/arb-d2-lifecycle-state-fail-fixture-v0.3/evidence_pointers.json",
+          "sha256": "72b6e5d5cfd4a29e14aa7886c2c3a6be5270611f8890d3e9ef78316f9c0bf429"
+        },
+        {
+          "path": "data/runs/arb-d2-lifecycle-state-fail-fixture-v0.3/integrity/sha256sums.txt",
+          "sha256": "a49b42cb451497961b28a06a51ad2d6c97693918920c0d26816dd46026abf6ff"
+        },
+        {
+          "path": "data/runs/arb-d2-lifecycle-state-fail-fixture-v0.3/pack/manifest.json",
+          "sha256": "3f42bee8af03fc611a2f35c00fc5ced403fdf8c84f4cd4b2b216e5d6b170f9e4"
+        },
+        {
+          "path": "data/runs/arb-d2-lifecycle-state-fail-fixture-v0.3/pack/trace/events.ndjson",
+          "sha256": "f93ca0195afc7aa47953244ffed44254b5100aaf2f9ff1cd3bb11ddcdedbb3ad"
+        },
+        {
+          "path": "data/runs/arb-d2-lifecycle-state-fail-fixture-v0.3/verdict.json",
+          "sha256": "58d47ba99fce73eefb021371623edc32560fb2b86fcad902140b057e5a020285"
+        },
+        {
+          "path": "data/runs/arb-d2-lifecycle-state-fail-fixture-v0.3/verify.report.json",
+          "sha256": "c3ee8629cbe5dd1b126bbf8be1b17a498a957bb22a5a4b78b5cf519ff47a8931"
+        },
+        {
+          "path": "data/runs/arb-d2-lifecycle-state-pass-fixture-v0.3/bundle.manifest.json",
+          "sha256": "1cb2488f90cb92962cc69c4a3a50ee8859e3f401956c821c1fffd29f72b28b2c"
+        },
+        {
+          "path": "data/runs/arb-d2-lifecycle-state-pass-fixture-v0.3/evaluation.report.json",
+          "sha256": "a94e660b4ad0eddfe2b41e4c98ab9fddf1abe466aa21eb29ea8956c02fcd89f8"
+        },
+        {
+          "path": "data/runs/arb-d2-lifecycle-state-pass-fixture-v0.3/evidence_pointers.json",
+          "sha256": "02bece418bfa2cfcec3b9d5e8c5b2c57e359c485fca14b6d8357929041462da2"
+        },
+        {
+          "path": "data/runs/arb-d2-lifecycle-state-pass-fixture-v0.3/integrity/sha256sums.txt",
+          "sha256": "a619d584dfcc7f0573a3c40d1764e25560f14ae056a62bc97e6c95722868baa0"
+        },
+        {
+          "path": "data/runs/arb-d2-lifecycle-state-pass-fixture-v0.3/pack/manifest.json",
+          "sha256": "2e541b6b62fd82cc5a134e0fc74f3118b8c015fe78c917dec77561144b6470cc"
+        },
+        {
+          "path": "data/runs/arb-d2-lifecycle-state-pass-fixture-v0.3/pack/trace/events.ndjson",
+          "sha256": "2ccc79b92349f826d759ddf7d4e0a99ac2c4c61eb1aa01f46a9f9f4d25a10375"
+        },
+        {
+          "path": "data/runs/arb-d2-lifecycle-state-pass-fixture-v0.3/verdict.json",
+          "sha256": "c01b5c9acf3c36967b442cbb654ca52d1cc54cee93739a9bf598969fccc171a7"
+        },
+        {
+          "path": "data/runs/arb-d2-lifecycle-state-pass-fixture-v0.3/verify.report.json",
+          "sha256": "c3ee8629cbe5dd1b126bbf8be1b17a498a957bb22a5a4b78b5cf519ff47a8931"
+        },
+        {
+          "path": "data/runs/arb-d3-authz-decision-fail-fixture-v0.3/bundle.manifest.json",
+          "sha256": "9cf95952271dd7e7da304badb88077618c1300d035b5e3b7065b5cf276ab1d32"
+        },
+        {
+          "path": "data/runs/arb-d3-authz-decision-fail-fixture-v0.3/evaluation.report.json",
+          "sha256": "bfc995f8329f4074dacb31da3c795a8139a96833395adaea5155a54e208b157f"
+        },
+        {
+          "path": "data/runs/arb-d3-authz-decision-fail-fixture-v0.3/evidence_pointers.json",
+          "sha256": "72b6e5d5cfd4a29e14aa7886c2c3a6be5270611f8890d3e9ef78316f9c0bf429"
+        },
+        {
+          "path": "data/runs/arb-d3-authz-decision-fail-fixture-v0.3/integrity/sha256sums.txt",
+          "sha256": "45b07b2433fc472fbf57a43dd77d49b6e53b2a439acec0b71413dd4ca67b9642"
+        },
+        {
+          "path": "data/runs/arb-d3-authz-decision-fail-fixture-v0.3/pack/manifest.json",
+          "sha256": "8044f8a320cbdce90cf17c0fbb8fe35e7a0a7ce785f11553fca883995a93dbda"
+        },
+        {
+          "path": "data/runs/arb-d3-authz-decision-fail-fixture-v0.3/pack/trace/events.ndjson",
+          "sha256": "f93ca0195afc7aa47953244ffed44254b5100aaf2f9ff1cd3bb11ddcdedbb3ad"
+        },
+        {
+          "path": "data/runs/arb-d3-authz-decision-fail-fixture-v0.3/verdict.json",
+          "sha256": "664e9c64e984ac47b5ebb3542a5baa292c82bc0d7683cd3be6e045ab99938ed4"
+        },
+        {
+          "path": "data/runs/arb-d3-authz-decision-fail-fixture-v0.3/verify.report.json",
+          "sha256": "27e42d293eba9a995132440c48497f3ccf71b41cd1ad09e5d5fe76b826624726"
+        },
+        {
+          "path": "data/runs/arb-d3-authz-decision-pass-fixture-v0.3/bundle.manifest.json",
+          "sha256": "db52e6c7ce8a633bd6776f93724b6cedc5786d939b85b60546f7d2e35c5707ff"
+        },
+        {
+          "path": "data/runs/arb-d3-authz-decision-pass-fixture-v0.3/evaluation.report.json",
+          "sha256": "534568ecc22b3ba0db451acda992840a238637455eb0866c62d6370a462d223b"
+        },
+        {
+          "path": "data/runs/arb-d3-authz-decision-pass-fixture-v0.3/evidence_pointers.json",
+          "sha256": "8d5f9444e2232c3322c5693579542c47f9ba98d03a0c7a119d21446583f1cd52"
+        },
+        {
+          "path": "data/runs/arb-d3-authz-decision-pass-fixture-v0.3/integrity/sha256sums.txt",
+          "sha256": "a293e33c43100e4bec3e9ebe482d850deab41d86ab28b45a87c2198233e4e622"
+        },
+        {
+          "path": "data/runs/arb-d3-authz-decision-pass-fixture-v0.3/pack/manifest.json",
+          "sha256": "d134b326dfa887e7907ea8b01eff2e73259e6ef29896b7bcacb6071004c7b543"
+        },
+        {
+          "path": "data/runs/arb-d3-authz-decision-pass-fixture-v0.3/pack/trace/events.ndjson",
+          "sha256": "1518f17e32800d99cb0620cc5db54365a31d987403c586dbb7b19e6292746bf2"
+        },
+        {
+          "path": "data/runs/arb-d3-authz-decision-pass-fixture-v0.3/verdict.json",
+          "sha256": "62911375fae4d5fde9888c65aa487b23cc6607b7be23de490a0a7e45851b08d8"
+        },
+        {
+          "path": "data/runs/arb-d3-authz-decision-pass-fixture-v0.3/verify.report.json",
+          "sha256": "f2597598c4ad884e859fd9b42b4aae92c6488503ab195d5f3a9cbfba60a0a61b"
+        },
+        {
+          "path": "data/runs/arb-d3-authz-fail-deny-no-confirm-v0.4/bundle.manifest.json",
+          "sha256": "d5e4c79ce70066a0d560970edfc0461dc3b44f597a596d97fa2af0d6afdf0948"
+        },
+        {
+          "path": "data/runs/arb-d3-authz-fail-deny-no-confirm-v0.4/evaluation.report.json",
+          "sha256": "4315fe8b813bf05124dfce0f610685273f2d4f749ba09cba439cba17c858f5a9"
+        },
+        {
+          "path": "data/runs/arb-d3-authz-fail-deny-no-confirm-v0.4/evidence_pointers.json",
+          "sha256": "8d5f9444e2232c3322c5693579542c47f9ba98d03a0c7a119d21446583f1cd52"
+        },
+        {
+          "path": "data/runs/arb-d3-authz-fail-deny-no-confirm-v0.4/integrity/sha256sums.txt",
+          "sha256": "f9bdcde1a6891b3e2abf1659631b0f8273e789d6b3724610cac6ab4b6497106c"
+        },
+        {
+          "path": "data/runs/arb-d3-authz-fail-deny-no-confirm-v0.4/pack/manifest.json",
+          "sha256": "eb3b4abdb2f0157986c4a56b486c1d2961a5e45a384d7a734fa8d610585f33a9"
+        },
+        {
+          "path": "data/runs/arb-d3-authz-fail-deny-no-confirm-v0.4/pack/trace/events.ndjson",
+          "sha256": "ed5023db1bafaeb38c0da3ebaf6186f926557139d20c9ebf31eb260f9e61067b"
+        },
+        {
+          "path": "data/runs/arb-d3-authz-fail-deny-no-confirm-v0.4/verdict.json",
+          "sha256": "c2bd785a904696c8658b0005c053e4e7e5fe2f1989d10be0fb6f5d663efad69c"
+        },
+        {
+          "path": "data/runs/arb-d3-authz-fail-deny-no-confirm-v0.4/verify.report.json",
+          "sha256": "b8b406d979654d507d80457ad99a9fe785e04d444bd28fbe511543522e33c7ea"
+        },
+        {
+          "path": "data/runs/arb-d3-authz-fail-sra-incomplete-v0.4/bundle.manifest.json",
+          "sha256": "2a36f082997ff7dd1972d303f585efa17d90dade21a2f6952fb68be1f58367ad"
+        },
+        {
+          "path": "data/runs/arb-d3-authz-fail-sra-incomplete-v0.4/evaluation.report.json",
+          "sha256": "4315fe8b813bf05124dfce0f610685273f2d4f749ba09cba439cba17c858f5a9"
+        },
+        {
+          "path": "data/runs/arb-d3-authz-fail-sra-incomplete-v0.4/evidence_pointers.json",
+          "sha256": "8d5f9444e2232c3322c5693579542c47f9ba98d03a0c7a119d21446583f1cd52"
+        },
+        {
+          "path": "data/runs/arb-d3-authz-fail-sra-incomplete-v0.4/integrity/sha256sums.txt",
+          "sha256": "84cbfd594d0782b23eb87b2a043fbc9dfaa2e4991f7b4f74aa4e3cbc48a4d602"
+        },
+        {
+          "path": "data/runs/arb-d3-authz-fail-sra-incomplete-v0.4/pack/manifest.json",
+          "sha256": "17b03f0298719a52d3aa2e5874c239f45e16ef80080736f0f02c44269369de5d"
+        },
+        {
+          "path": "data/runs/arb-d3-authz-fail-sra-incomplete-v0.4/pack/trace/events.ndjson",
+          "sha256": "1d3a8951d6d01f96c8edc8f9917d2bddc76ad7d74703f87b73b682f4f80ba521"
+        },
+        {
+          "path": "data/runs/arb-d3-authz-fail-sra-incomplete-v0.4/verdict.json",
+          "sha256": "a5daf338965bd12eebec305bb04e28d98a617f1018470376a7d214aace78152e"
+        },
+        {
+          "path": "data/runs/arb-d3-authz-fail-sra-incomplete-v0.4/verify.report.json",
+          "sha256": "b8b406d979654d507d80457ad99a9fe785e04d444bd28fbe511543522e33c7ea"
+        },
+        {
+          "path": "data/runs/arb-d4-termination-fail-reason-invalid-v0.4/bundle.manifest.json",
+          "sha256": "8d89a64ab527afac208a8369c88220ffb23e71988da97c263e22227c457d79d9"
+        },
+        {
+          "path": "data/runs/arb-d4-termination-fail-reason-invalid-v0.4/evaluation.report.json",
+          "sha256": "288dabbc225d49a5ab645667251a250a4e7a6ec63fd03915def9cc289b6a6acc"
+        },
+        {
+          "path": "data/runs/arb-d4-termination-fail-reason-invalid-v0.4/evidence_pointers.json",
+          "sha256": "07e0d4cc74fd374baacfa7d00b99a3f6eeea37e93b1d4bc86e365cf7da080879"
+        },
+        {
+          "path": "data/runs/arb-d4-termination-fail-reason-invalid-v0.4/integrity/sha256sums.txt",
+          "sha256": "26a3aa40e1b1ab498d32195b744c27dab190c62258732411eff86036858578da"
+        },
+        {
+          "path": "data/runs/arb-d4-termination-fail-reason-invalid-v0.4/pack/manifest.json",
+          "sha256": "1152ab4f5a1dbebe35353c54c7f3c767d821d882c419dbfd275b75b18cfbdb7d"
+        },
+        {
+          "path": "data/runs/arb-d4-termination-fail-reason-invalid-v0.4/pack/trace/events.ndjson",
+          "sha256": "67db50a68fbfb11ab18b0a34647b5ebfe0595e89ea1aa38458b8ac72eaeeeec4"
+        },
+        {
+          "path": "data/runs/arb-d4-termination-fail-reason-invalid-v0.4/verdict.json",
+          "sha256": "959f6683ba9dcb1a3f40cdbb2f92a76b60059a8babb4c50c5ffadabac26a1dc9"
+        },
+        {
+          "path": "data/runs/arb-d4-termination-fail-reason-invalid-v0.4/verify.report.json",
+          "sha256": "80f9a5013849ec15d15d18f539bda5c1fa1a86a0670c220b315f11a880090008"
+        },
+        {
+          "path": "data/runs/arb-d4-termination-fail-uncontrolled-recovery-v0.4/bundle.manifest.json",
+          "sha256": "c9c0f8a572c3d4d6bef57cdba49c4d7c5b282d7bda4527c1203054651f739cd5"
+        },
+        {
+          "path": "data/runs/arb-d4-termination-fail-uncontrolled-recovery-v0.4/evaluation.report.json",
+          "sha256": "288dabbc225d49a5ab645667251a250a4e7a6ec63fd03915def9cc289b6a6acc"
+        },
+        {
+          "path": "data/runs/arb-d4-termination-fail-uncontrolled-recovery-v0.4/evidence_pointers.json",
+          "sha256": "07e0d4cc74fd374baacfa7d00b99a3f6eeea37e93b1d4bc86e365cf7da080879"
+        },
+        {
+          "path": "data/runs/arb-d4-termination-fail-uncontrolled-recovery-v0.4/integrity/sha256sums.txt",
+          "sha256": "b9d6df329d4cac3d13b4d12b0dbeba46bcf690b20656d84453cd67c2304eb0f4"
+        },
+        {
+          "path": "data/runs/arb-d4-termination-fail-uncontrolled-recovery-v0.4/pack/manifest.json",
+          "sha256": "d43b843ce9f0230722144adb316e87f81033aa7afcdaf75379771b10b3c41858"
+        },
+        {
+          "path": "data/runs/arb-d4-termination-fail-uncontrolled-recovery-v0.4/pack/trace/events.ndjson",
+          "sha256": "948df256d8628bed3de8ca09b432a7617df78dc4a4ddafe04649e4589b9fed91"
+        },
+        {
+          "path": "data/runs/arb-d4-termination-fail-uncontrolled-recovery-v0.4/verdict.json",
+          "sha256": "ad7fc6c84f70927cb5eecdad0f75a437dd4d4501928a54c8e6325067338eb756"
+        },
+        {
+          "path": "data/runs/arb-d4-termination-fail-uncontrolled-recovery-v0.4/verify.report.json",
+          "sha256": "80f9a5013849ec15d15d18f539bda5c1fa1a86a0670c220b315f11a880090008"
+        },
+        {
+          "path": "data/runs/arb-d4-termination-recovery-fail-fixture-v0.3/bundle.manifest.json",
+          "sha256": "e771a37f333111070ae9261498bd44dc018844c7f95b98629429ec2b1b0347d0"
+        },
+        {
+          "path": "data/runs/arb-d4-termination-recovery-fail-fixture-v0.3/evaluation.report.json",
+          "sha256": "890849a0a0725672dd4996b45127344c87184632d9616a78437daea47b400c7c"
+        },
+        {
+          "path": "data/runs/arb-d4-termination-recovery-fail-fixture-v0.3/evidence_pointers.json",
+          "sha256": "72b6e5d5cfd4a29e14aa7886c2c3a6be5270611f8890d3e9ef78316f9c0bf429"
+        },
+        {
+          "path": "data/runs/arb-d4-termination-recovery-fail-fixture-v0.3/integrity/sha256sums.txt",
+          "sha256": "58dc0a0e5372b22a556265e4c470b5c4a8ad38b6676ef75384aacb5d9c47861f"
+        },
+        {
+          "path": "data/runs/arb-d4-termination-recovery-fail-fixture-v0.3/pack/manifest.json",
+          "sha256": "df43b22ed75f073756fe7dbc2aa2da2e93f45e2161608cf84b49507888279451"
+        },
+        {
+          "path": "data/runs/arb-d4-termination-recovery-fail-fixture-v0.3/pack/trace/events.ndjson",
+          "sha256": "f93ca0195afc7aa47953244ffed44254b5100aaf2f9ff1cd3bb11ddcdedbb3ad"
+        },
+        {
+          "path": "data/runs/arb-d4-termination-recovery-fail-fixture-v0.3/verdict.json",
+          "sha256": "d9cc0d51523d3178a54ab46d043519aa220407c4807250958b393c0f7b417ebd"
+        },
+        {
+          "path": "data/runs/arb-d4-termination-recovery-fail-fixture-v0.3/verify.report.json",
+          "sha256": "764d1da64233337807d0faa40c2049c3826538653676af13468ceb7f62c0a46b"
+        },
+        {
+          "path": "data/runs/arb-d4-termination-recovery-pass-fixture-v0.3/bundle.manifest.json",
+          "sha256": "f81e8a667f14a7af409750e191b5308e7457c7c7ca4243ff438d79d806ddf130"
+        },
+        {
+          "path": "data/runs/arb-d4-termination-recovery-pass-fixture-v0.3/evaluation.report.json",
+          "sha256": "6aaae52a1b3c2aac7a95b43e6f96bc72d54fab9ecb394f5b6397b02ccd0fe151"
+        },
+        {
+          "path": "data/runs/arb-d4-termination-recovery-pass-fixture-v0.3/evidence_pointers.json",
+          "sha256": "07e0d4cc74fd374baacfa7d00b99a3f6eeea37e93b1d4bc86e365cf7da080879"
+        },
+        {
+          "path": "data/runs/arb-d4-termination-recovery-pass-fixture-v0.3/integrity/sha256sums.txt",
+          "sha256": "a2d6389720423474c3afbcafd0bee21b26eaf184c96bf1938469575142e792bf"
+        },
+        {
+          "path": "data/runs/arb-d4-termination-recovery-pass-fixture-v0.3/pack/manifest.json",
+          "sha256": "7ab91d03ceafea3aaeabbbba5c459b3314230caaf5f6c00145aecb7ccf97e695"
+        },
+        {
+          "path": "data/runs/arb-d4-termination-recovery-pass-fixture-v0.3/pack/trace/events.ndjson",
+          "sha256": "d5676d2062d13084b44f0e715a09734ace08bf3404990e45920106a319437d91"
+        },
+        {
+          "path": "data/runs/arb-d4-termination-recovery-pass-fixture-v0.3/verdict.json",
+          "sha256": "d28cec06ea565d4574fe7acd51122b4fee58c4f5514041295d0812f9827d1c87"
+        },
+        {
+          "path": "data/runs/arb-d4-termination-recovery-pass-fixture-v0.3/verify.report.json",
+          "sha256": "27e42d293eba9a995132440c48497f3ccf71b41cd1ad09e5d5fe76b826624726"
+        },
+        {
+          "path": "data/runs/gf-01-a2a-fail/artifacts/context.json",
+          "sha256": "1701845872f7adf0a4f756b54ccb8adf5f756f8c87b5ad19f0242dd54301c830"
+        },
+        {
+          "path": "data/runs/gf-01-a2a-fail/artifacts/plan.json",
+          "sha256": "4d21a6eca7192c599cb295cb2c0c5bf6ec0f9e536bc4a64f4ae7e2d94059d1f7"
+        },
+        {
+          "path": "data/runs/gf-01-a2a-fail/artifacts/trace.json",
+          "sha256": "f5360eddc5232b6c2821d07590d33860ed65ea3549becd50e5e4a78e2ef1ba73"
+        },
+        {
+          "path": "data/runs/gf-01-a2a-fail/integrity/pack.sha256",
+          "sha256": "db25a110eea4ddefafaaacb6ac4b78d656f72bdb41eeb6a2dcfae7e65372a3fb"
+        },
+        {
+          "path": "data/runs/gf-01-a2a-fail/integrity/sha256sums.txt",
+          "sha256": "277b716619c303c517ab33022cc7c4954fbe3758adadfc3629a6f6624a196312"
+        },
+        {
+          "path": "data/runs/gf-01-a2a-fail/manifest.json",
+          "sha256": "6a9eb8a772920e05feb2a4e602fdec259feebe6ab607a6b04d0e19b7ffba9109"
+        },
+        {
+          "path": "data/runs/gf-01-a2a-fail/snapshots/diffs/diff-001-002.json",
+          "sha256": "7bf2c0604bb820f8a6e0b6d5baacb7f8a1a92db0a8413d56158942943ab3a3b3"
+        },
+        {
+          "path": "data/runs/gf-01-a2a-fail/snapshots/snapshot-001.json",
+          "sha256": "2184d717a87e47e80ac629aaa312f4d7c029472c94bdee4857736856cb648189"
+        },
+        {
+          "path": "data/runs/gf-01-a2a-fail/snapshots/snapshot-002.json",
+          "sha256": "f1c70aefbb08b6cfbf3078c872528674f3bcc275424f818ecc072a00b556b3ba"
+        },
+        {
+          "path": "data/runs/gf-01-a2a-fail/timeline/events.ndjson",
+          "sha256": "9479bb1300bc469848765c146d718ca2d22617ab1aa42dd2e3bbea8484644860"
+        },
+        {
+          "path": "data/runs/gf-01-a2a-fail/verdict.json",
+          "sha256": "94d802b0923db249b6e75888836a3c146446184a44e6ff363ef86e0454a8d516"
+        },
+        {
+          "path": "data/runs/gf-01-a2a-pass/artifacts/context.json",
+          "sha256": "1701845872f7adf0a4f756b54ccb8adf5f756f8c87b5ad19f0242dd54301c830"
+        },
+        {
+          "path": "data/runs/gf-01-a2a-pass/artifacts/plan.json",
+          "sha256": "4d21a6eca7192c599cb295cb2c0c5bf6ec0f9e536bc4a64f4ae7e2d94059d1f7"
+        },
+        {
+          "path": "data/runs/gf-01-a2a-pass/artifacts/trace.json",
+          "sha256": "f5360eddc5232b6c2821d07590d33860ed65ea3549becd50e5e4a78e2ef1ba73"
+        },
+        {
+          "path": "data/runs/gf-01-a2a-pass/integrity/pack.sha256",
+          "sha256": "db25a110eea4ddefafaaacb6ac4b78d656f72bdb41eeb6a2dcfae7e65372a3fb"
+        },
+        {
+          "path": "data/runs/gf-01-a2a-pass/integrity/sha256sums.txt",
+          "sha256": "9b93bc78c732f86af3d0d290aeb9bdaf55abf734c570a39532df88ef63a07f84"
+        },
+        {
+          "path": "data/runs/gf-01-a2a-pass/manifest.json",
+          "sha256": "7ae6b81e1a2f98739eda1adb9d837af9b1f2992e4ec57855733a11b849c4a711"
+        },
+        {
+          "path": "data/runs/gf-01-a2a-pass/snapshots/diffs/diff-001-002.json",
+          "sha256": "8e4ec852ad465292c84d2681bb4960e6675e0059f0f8f1f8cac076ea4da7cde9"
+        },
+        {
+          "path": "data/runs/gf-01-a2a-pass/snapshots/snapshot-001.json",
+          "sha256": "275a0158f1344759e2d8134e9c733373f8192a0a0b925d7fd88bb6276bf1d587"
+        },
+        {
+          "path": "data/runs/gf-01-a2a-pass/snapshots/snapshot-002.json",
+          "sha256": "f297622849f47c1aa719f3bfc82827cc0c370641e80a826a690d7b41789306ad"
+        },
+        {
+          "path": "data/runs/gf-01-a2a-pass/timeline/events.ndjson",
+          "sha256": "58de21c37fc1993e0fd1a6452364c5855a9dcf10f6e1275819948bf3f5a3c440"
+        },
+        {
+          "path": "data/runs/gf-01-a2a-pass/verdict.json",
+          "sha256": "9e3f137c7ff250fe50272671bf0a45d6cb2de5cf54bd4abf1d66ed5f86af94c5"
+        },
+        {
+          "path": "data/runs/gf-01-adjudicated-fail-01/input.pointer.json",
+          "sha256": "f9eb956a3ffcaf4913a32a636d585ca553f2914796112a44813b8328d34f31c5"
+        },
+        {
+          "path": "data/runs/gf-01-langchain-pass/artifacts/context.json",
+          "sha256": "1701845872f7adf0a4f756b54ccb8adf5f756f8c87b5ad19f0242dd54301c830"
+        },
+        {
+          "path": "data/runs/gf-01-langchain-pass/artifacts/plan.json",
+          "sha256": "4d21a6eca7192c599cb295cb2c0c5bf6ec0f9e536bc4a64f4ae7e2d94059d1f7"
+        },
+        {
+          "path": "data/runs/gf-01-langchain-pass/artifacts/trace.json",
+          "sha256": "f5360eddc5232b6c2821d07590d33860ed65ea3549becd50e5e4a78e2ef1ba73"
+        },
+        {
+          "path": "data/runs/gf-01-langchain-pass/input.pointer.json",
+          "sha256": "12656c884cf365a86c2fe3ce424a2c7332aac9f7c3e0608e899f6ce1335922ed"
+        },
+        {
+          "path": "data/runs/gf-01-langchain-pass/integrity/pack.sha256",
+          "sha256": "56dda5b4c6786b83cc41fd87cf1b08c36ea750bcfb4b0a8050ea029cb721ab60"
+        },
+        {
+          "path": "data/runs/gf-01-langchain-pass/integrity/sha256sums.txt",
+          "sha256": "f50b56826fb1a35c0bb80430820301d068984d56de910aa82e8de78f971a660a"
+        },
+        {
+          "path": "data/runs/gf-01-langchain-pass/manifest.json",
+          "sha256": "bdc1dbc222c281561addafa574469a668da42aa13efddad30bf9bc4847336d48"
+        },
+        {
+          "path": "data/runs/gf-01-langchain-pass/timeline/events.ndjson",
+          "sha256": "58de21c37fc1993e0fd1a6452364c5855a9dcf10f6e1275819948bf3f5a3c440"
+        },
+        {
+          "path": "data/runs/gf-01-mcp-pass/artifacts/context.json",
+          "sha256": "1701845872f7adf0a4f756b54ccb8adf5f756f8c87b5ad19f0242dd54301c830"
+        },
+        {
+          "path": "data/runs/gf-01-mcp-pass/artifacts/plan.json",
+          "sha256": "4d21a6eca7192c599cb295cb2c0c5bf6ec0f9e536bc4a64f4ae7e2d94059d1f7"
+        },
+        {
+          "path": "data/runs/gf-01-mcp-pass/artifacts/trace.json",
+          "sha256": "f5360eddc5232b6c2821d07590d33860ed65ea3549becd50e5e4a78e2ef1ba73"
+        },
+        {
+          "path": "data/runs/gf-01-mcp-pass/input.pointer.json",
+          "sha256": "46322388910150bb4ede4102423aafc877074f1ca5eb2bafdddd3ca0e3a17083"
+        },
+        {
+          "path": "data/runs/gf-01-mcp-pass/integrity/pack.sha256",
+          "sha256": "b1f0f9800ccc9d5ffb6bc647b882fc49d184d107e7a8271e6773636a8a7e9838"
+        },
+        {
+          "path": "data/runs/gf-01-mcp-pass/integrity/sha256sums.txt",
+          "sha256": "e4bf6c33d47228eb2b357b4ecdb133f3baf98c5e1d13de359ff860369004b7b0"
+        },
+        {
+          "path": "data/runs/gf-01-mcp-pass/manifest.json",
+          "sha256": "0964b888e842aa19a98bfd16c19749927d0595afbbde8e39f2a311cc03583a6d"
+        },
+        {
+          "path": "data/runs/gf-01-mcp-pass/timeline/events.ndjson",
+          "sha256": "58de21c37fc1993e0fd1a6452364c5855a9dcf10f6e1275819948bf3f5a3c440"
+        },
+        {
+          "path": "data/runs/gf-01-smoke/input.pointer.json",
+          "sha256": "d7bcd30c251d0de17c2d68a3adc96931d325230120904eda46ac7094b1e2bde0"
+        },
+        {
+          "path": "data/runs/gf-02-fail/input.pointer.json",
+          "sha256": "f93bd44a94ddab01b7d905ef84eeb10599758f20988d8b43de9490e288dfd024"
+        },
+        {
+          "path": "data/runs/sample-not-admissible/manifest.json",
+          "sha256": "7bfb5c5595efd5b9228074a01d7c6e5483be891eeea7f9e7f162dda0154d9134"
+        },
+        {
+          "path": "data/runs/sample-not-admissible/sha256sums.txt",
+          "sha256": "3398b5c2a9131cb63d2d21240a5d21e63e3e54c5fce3bf88625778c1ddd347b8"
+        },
+        {
+          "path": "data/runs/sample-not-admissible/verify.report.json",
+          "sha256": "6c2102cac4213da5c645e510800c0b7052659af79d395e63285be3b0f954b3d9"
+        },
+        {
+          "path": "data/runs/sample-pass/evaluation.report.json",
+          "sha256": "451383f42d6f82a3d0cdbc64d6d1ff8114acd1e26a85630451c4597c75615340"
+        },
+        {
+          "path": "data/runs/sample-pass/manifest.json",
+          "sha256": "7bfb5c5595efd5b9228074a01d7c6e5483be891eeea7f9e7f162dda0154d9134"
+        },
+        {
+          "path": "data/runs/sample-pass/sha256sums.txt",
+          "sha256": "3c3fb17602a308e2440677631f1eecc98536e604f3b002b712a4b407c8e270ac"
+        },
+        {
+          "path": "data/runs/sample-pass/verify.report.json",
+          "sha256": "e1cf6f9454123e2141b91ba8e0b0bb4d33cd5fcbfd10a8c41411286fa4a30f8c"
+        },
+        {
+          "path": "data/runs/test-gf01-only/artifacts/context.json",
+          "sha256": "1701845872f7adf0a4f756b54ccb8adf5f756f8c87b5ad19f0242dd54301c830"
+        },
+        {
+          "path": "data/runs/test-gf01-only/artifacts/plan.json",
+          "sha256": "4d21a6eca7192c599cb295cb2c0c5bf6ec0f9e536bc4a64f4ae7e2d94059d1f7"
+        },
+        {
+          "path": "data/runs/test-gf01-only/artifacts/trace.json",
+          "sha256": "f5360eddc5232b6c2821d07590d33860ed65ea3549becd50e5e4a78e2ef1ba73"
+        },
+        {
+          "path": "data/runs/test-gf01-only/integrity/pack.sha256",
+          "sha256": "c2e1cd8416aa2667c12e5c33b995c6938c96a1bc1419b79e111d2b504a462e1c"
+        },
+        {
+          "path": "data/runs/test-gf01-only/integrity/sha256sums.txt",
+          "sha256": "05d7fcd0938a862b21a9d9ae8c26e65355a2865e92b6a509a049b061545b75ac"
+        },
+        {
+          "path": "data/runs/test-gf01-only/manifest.json",
+          "sha256": "84b77b4422daf14d7decf60950852c0f3429077981821a4615d5ad660dbc6908"
+        },
+        {
+          "path": "data/runs/test-gf01-only/timeline/events.ndjson",
+          "sha256": "58de21c37fc1993e0fd1a6452364c5855a9dcf10f6e1275819948bf3f5a3c440"
+        },
+        {
+          "path": "data/runs/v05-d1-autogen-fail-outcome-invalid/bundle.manifest.json",
+          "sha256": "6a03e2a891fad42521e4b00744fd8c0cec95efafb3b77fe8dcb497afa8b228fb"
+        },
+        {
+          "path": "data/runs/v05-d1-autogen-fail-outcome-invalid/evidence_pointers.json",
+          "sha256": "9a6cacdb44a0449d028d7af9b7df166ebb8ab501b8944d12c6b94c8fb792f364"
+        },
+        {
+          "path": "data/runs/v05-d1-autogen-fail-outcome-invalid/pack/manifest.json",
+          "sha256": "b2167b901a749df1f0267b75144489ecdaa889e4b5f9988bdae954bc9aebacb0"
+        },
+        {
+          "path": "data/runs/v05-d1-autogen-fail-outcome-invalid/pack/trace/events.ndjson",
+          "sha256": "52718e16bf742bc05fd47aa85b8525f77e5f0f52cb288da7854c70f0a23997ec"
+        },
+        {
+          "path": "data/runs/v05-d1-autogen-fail-outcome-invalid/producer-run.manifest.json",
+          "sha256": "a540ba99a2a0e5d064b0265cb89cc33ef29da0ecdcc5f68a8ab78ed4e72e8a0a"
+        },
+        {
+          "path": "data/runs/v05-d1-autogen-pass-budget-allow/bundle.manifest.json",
+          "sha256": "8df574575d9cbb567fb0c886ba3e826134cb831eccb64f6b67b4ecd117f3588a"
+        },
+        {
+          "path": "data/runs/v05-d1-autogen-pass-budget-allow/evidence_pointers.json",
+          "sha256": "ee9f7ecf4e3731d1b4fa53bef1559fa314d985954fb3ee39be7524f387421546"
+        },
+        {
+          "path": "data/runs/v05-d1-autogen-pass-budget-allow/pack/manifest.json",
+          "sha256": "b2167b901a749df1f0267b75144489ecdaa889e4b5f9988bdae954bc9aebacb0"
+        },
+        {
+          "path": "data/runs/v05-d1-autogen-pass-budget-allow/pack/trace/events.ndjson",
+          "sha256": "bedd8cd4f51db9e339e63a112863129d6a391ee4f243626f75db1538dc449fdd"
+        },
+        {
+          "path": "data/runs/v05-d1-autogen-pass-budget-allow/producer-run.manifest.json",
+          "sha256": "8d2558145dd8e72e77cc70baca3d092b59547f70631141757726bcc0129cb053"
+        },
+        {
+          "path": "data/runs/v05-d1-langgraph-fail-outcome-invalid/bundle.manifest.json",
+          "sha256": "e05bccfe400299bfa96fae3f92bf41b2bb3ac74d0e9bc084d9608c211364eb7d"
+        },
+        {
+          "path": "data/runs/v05-d1-langgraph-fail-outcome-invalid/evidence_pointers.json",
+          "sha256": "9a6cacdb44a0449d028d7af9b7df166ebb8ab501b8944d12c6b94c8fb792f364"
+        },
+        {
+          "path": "data/runs/v05-d1-langgraph-fail-outcome-invalid/pack/manifest.json",
+          "sha256": "b2167b901a749df1f0267b75144489ecdaa889e4b5f9988bdae954bc9aebacb0"
+        },
+        {
+          "path": "data/runs/v05-d1-langgraph-fail-outcome-invalid/pack/trace/events.ndjson",
+          "sha256": "d96b6dd4eb5f61ea0a6138d74dc0b4b057a9a318ebce8be727a90e90bc043b1c"
+        },
+        {
+          "path": "data/runs/v05-d1-langgraph-fail-outcome-invalid/producer-run.manifest.json",
+          "sha256": "944ccf4b04e98f3d36eaebbaf16f22841ebfc06a54ab7dc167d817144972d122"
+        },
+        {
+          "path": "data/runs/v05-d1-langgraph-pass-budget-allow/bundle.manifest.json",
+          "sha256": "cc57c67f3bfa88995a40d258cf3685a8cc6c6ac120895f76ff62bdf77f312d1d"
+        },
+        {
+          "path": "data/runs/v05-d1-langgraph-pass-budget-allow/evidence_pointers.json",
+          "sha256": "ee9f7ecf4e3731d1b4fa53bef1559fa314d985954fb3ee39be7524f387421546"
+        },
+        {
+          "path": "data/runs/v05-d1-langgraph-pass-budget-allow/pack/manifest.json",
+          "sha256": "b2167b901a749df1f0267b75144489ecdaa889e4b5f9988bdae954bc9aebacb0"
+        },
+        {
+          "path": "data/runs/v05-d1-langgraph-pass-budget-allow/pack/trace/events.ndjson",
+          "sha256": "9af94f62e1aa76c861424f7a2a98013f11b2e017a006e60c4a1360f90957b77d"
+        },
+        {
+          "path": "data/runs/v05-d1-langgraph-pass-budget-allow/producer-run.manifest.json",
+          "sha256": "194c844eb21dc969447b24d16598992e02684d360193bc62d6a45c518c765230"
+        },
+        {
+          "path": "data/runs/v05-d1-sk-fail-outcome-invalid/bundle.manifest.json",
+          "sha256": "d5e461311b529cefbb6e03c2974ecbcb90fd5f49fe53f569cb8923b0e31e3fb6"
+        },
+        {
+          "path": "data/runs/v05-d1-sk-fail-outcome-invalid/evidence_pointers.json",
+          "sha256": "9a6cacdb44a0449d028d7af9b7df166ebb8ab501b8944d12c6b94c8fb792f364"
+        },
+        {
+          "path": "data/runs/v05-d1-sk-fail-outcome-invalid/pack/manifest.json",
+          "sha256": "b2167b901a749df1f0267b75144489ecdaa889e4b5f9988bdae954bc9aebacb0"
+        },
+        {
+          "path": "data/runs/v05-d1-sk-fail-outcome-invalid/pack/trace/events.ndjson",
+          "sha256": "9fc3a5761d5167fa815f7132ec839a22b26580f79db675916413a3385ff353bf"
+        },
+        {
+          "path": "data/runs/v05-d1-sk-fail-outcome-invalid/producer-run.manifest.json",
+          "sha256": "784d393172052ba2b9c65d227e80d1fa4e33380aaaca6068fc3faecc55af162c"
+        },
+        {
+          "path": "data/runs/v05-d1-sk-pass-budget-allow/bundle.manifest.json",
+          "sha256": "580658b4fb2b4b41ad2a8f4286d9d535b772270509fd2b9e25f43e9a1933c657"
+        },
+        {
+          "path": "data/runs/v05-d1-sk-pass-budget-allow/evidence_pointers.json",
+          "sha256": "ee9f7ecf4e3731d1b4fa53bef1559fa314d985954fb3ee39be7524f387421546"
+        },
+        {
+          "path": "data/runs/v05-d1-sk-pass-budget-allow/pack/manifest.json",
+          "sha256": "b2167b901a749df1f0267b75144489ecdaa889e4b5f9988bdae954bc9aebacb0"
+        },
+        {
+          "path": "data/runs/v05-d1-sk-pass-budget-allow/pack/trace/events.ndjson",
+          "sha256": "fe9a4de36704c74531f47b2b749d4b770782c1d67f0dc9c724554eb41f1af20d"
+        },
+        {
+          "path": "data/runs/v05-d1-sk-pass-budget-allow/producer-run.manifest.json",
+          "sha256": "e7941ce13dc30a5f2a99362796a72bf899a292413b23d544cf708c53515e1282"
+        },
+        {
+          "path": "data/runs/v05-d2-autogen-fail-invalid-terminal/bundle.manifest.json",
+          "sha256": "d181cf921768de34641dbf61a3e21644e7c198bd64284ddb010316f9172e09fe"
+        },
+        {
+          "path": "data/runs/v05-d2-autogen-fail-invalid-terminal/evidence_pointers.json",
+          "sha256": "ee9f7ecf4e3731d1b4fa53bef1559fa314d985954fb3ee39be7524f387421546"
+        },
+        {
+          "path": "data/runs/v05-d2-autogen-fail-invalid-terminal/pack/manifest.json",
+          "sha256": "b2167b901a749df1f0267b75144489ecdaa889e4b5f9988bdae954bc9aebacb0"
+        },
+        {
+          "path": "data/runs/v05-d2-autogen-fail-invalid-terminal/pack/trace/events.ndjson",
+          "sha256": "70737a19fcee6302a77e0cb9e9f427f8436d287e16c0bfc39d8da39f209e42d5"
+        },
+        {
+          "path": "data/runs/v05-d2-autogen-fail-invalid-terminal/producer-run.manifest.json",
+          "sha256": "9cb22a19d17a15c20fc7d68e78c6c4b56bc14732fd29c3870b16adc92ee6e858"
+        },
+        {
+          "path": "data/runs/v05-d2-autogen-pass-terminal-success/bundle.manifest.json",
+          "sha256": "9b99f048db5a4a081f050ad7ffc34e379b3292dd7957f5abd4ccd751e4446aab"
+        },
+        {
+          "path": "data/runs/v05-d2-autogen-pass-terminal-success/evidence_pointers.json",
+          "sha256": "ee9f7ecf4e3731d1b4fa53bef1559fa314d985954fb3ee39be7524f387421546"
+        },
+        {
+          "path": "data/runs/v05-d2-autogen-pass-terminal-success/pack/manifest.json",
+          "sha256": "b2167b901a749df1f0267b75144489ecdaa889e4b5f9988bdae954bc9aebacb0"
+        },
+        {
+          "path": "data/runs/v05-d2-autogen-pass-terminal-success/pack/trace/events.ndjson",
+          "sha256": "67a012a600bc624a0aba9d22739cb7bd0841e2fbf10a9844c8ca182df2f89888"
+        },
+        {
+          "path": "data/runs/v05-d2-autogen-pass-terminal-success/producer-run.manifest.json",
+          "sha256": "9ec3e05ec072c2c2d548056bbe3c8ec58a20efd4e1f747c3d98ed975d3c7ac31"
+        },
+        {
+          "path": "data/runs/v05-d2-langgraph-fail-invalid-terminal/bundle.manifest.json",
+          "sha256": "f16906d8f129f5d7e9e3220ec9bbf63eeb056edc1c1750dd73df92018bd4d398"
+        },
+        {
+          "path": "data/runs/v05-d2-langgraph-fail-invalid-terminal/evidence_pointers.json",
+          "sha256": "ee9f7ecf4e3731d1b4fa53bef1559fa314d985954fb3ee39be7524f387421546"
+        },
+        {
+          "path": "data/runs/v05-d2-langgraph-fail-invalid-terminal/pack/manifest.json",
+          "sha256": "b2167b901a749df1f0267b75144489ecdaa889e4b5f9988bdae954bc9aebacb0"
+        },
+        {
+          "path": "data/runs/v05-d2-langgraph-fail-invalid-terminal/pack/trace/events.ndjson",
+          "sha256": "2e03e47ab3aa3902a8cd6284b55fca36d2f909043b7a5b23690ead2ade5285be"
+        },
+        {
+          "path": "data/runs/v05-d2-langgraph-fail-invalid-terminal/producer-run.manifest.json",
+          "sha256": "2974d9d79b293d6c47e4f27e33dcaa90d50186833cd2ac2f799f02d6b4e17cd7"
+        },
+        {
+          "path": "data/runs/v05-d2-langgraph-pass-terminal-success/bundle.manifest.json",
+          "sha256": "c895c70236414db015758f21bc891c11577fc879480770e9e7e8a124aa310594"
+        },
+        {
+          "path": "data/runs/v05-d2-langgraph-pass-terminal-success/evidence_pointers.json",
+          "sha256": "ee9f7ecf4e3731d1b4fa53bef1559fa314d985954fb3ee39be7524f387421546"
+        },
+        {
+          "path": "data/runs/v05-d2-langgraph-pass-terminal-success/pack/manifest.json",
+          "sha256": "b2167b901a749df1f0267b75144489ecdaa889e4b5f9988bdae954bc9aebacb0"
+        },
+        {
+          "path": "data/runs/v05-d2-langgraph-pass-terminal-success/pack/trace/events.ndjson",
+          "sha256": "f8ba57b9745b947beea5c2eb96c5470a2b7be8b25919e55d1eae6a6d84fcc0ab"
+        },
+        {
+          "path": "data/runs/v05-d2-langgraph-pass-terminal-success/producer-run.manifest.json",
+          "sha256": "f392b9a140e14e39ab118ccf332f7ea04fe7b3988d169886a3ad9bfb6869a92b"
+        },
+        {
+          "path": "data/runs/v05-d2-sk-fail-invalid-terminal/bundle.manifest.json",
+          "sha256": "0a14b19ecacd224c1b7bb061307803275379cae42ce2803d8b17d441c5679e05"
+        },
+        {
+          "path": "data/runs/v05-d2-sk-fail-invalid-terminal/evidence_pointers.json",
+          "sha256": "ee9f7ecf4e3731d1b4fa53bef1559fa314d985954fb3ee39be7524f387421546"
+        },
+        {
+          "path": "data/runs/v05-d2-sk-fail-invalid-terminal/pack/manifest.json",
+          "sha256": "b2167b901a749df1f0267b75144489ecdaa889e4b5f9988bdae954bc9aebacb0"
+        },
+        {
+          "path": "data/runs/v05-d2-sk-fail-invalid-terminal/pack/trace/events.ndjson",
+          "sha256": "9caf7d329fb9091d210cd6f3650a16654969be01ccb756880ebdaa2918314b46"
+        },
+        {
+          "path": "data/runs/v05-d2-sk-fail-invalid-terminal/producer-run.manifest.json",
+          "sha256": "33297a6bce382327af3d0ae890a2778ca8618799c03ba08f2439f9bf470f65a1"
+        },
+        {
+          "path": "data/runs/v05-d2-sk-pass-terminal-success/bundle.manifest.json",
+          "sha256": "5dcb1e8a610181ec20928e2a9629809fc69abbf3f78dab22c2ba05357d59a92f"
+        },
+        {
+          "path": "data/runs/v05-d2-sk-pass-terminal-success/evidence_pointers.json",
+          "sha256": "ee9f7ecf4e3731d1b4fa53bef1559fa314d985954fb3ee39be7524f387421546"
+        },
+        {
+          "path": "data/runs/v05-d2-sk-pass-terminal-success/pack/manifest.json",
+          "sha256": "b2167b901a749df1f0267b75144489ecdaa889e4b5f9988bdae954bc9aebacb0"
+        },
+        {
+          "path": "data/runs/v05-d2-sk-pass-terminal-success/pack/trace/events.ndjson",
+          "sha256": "e2cb7daa6e7d842e2251c81ac5ff4333fda9dc40e1f0533e16674617d6987302"
+        },
+        {
+          "path": "data/runs/v05-d2-sk-pass-terminal-success/producer-run.manifest.json",
+          "sha256": "b065c848d86aaf603b32e04b2c51488f25caa39def7a4accf04001bfd96b1301"
+        },
+        {
+          "path": "data/runs/v05-d3-autogen-fail-subject-missing/bundle.manifest.json",
+          "sha256": "62898d0dbf0688738d67b59570aa719d64ce8f948278bffd7657b0294c699283"
+        },
+        {
+          "path": "data/runs/v05-d3-autogen-fail-subject-missing/evidence_pointers.json",
+          "sha256": "1f97eacd8f1129a37a1222e2b9c6b1534b34a8bc15bbf19a987485539470e847"
+        },
+        {
+          "path": "data/runs/v05-d3-autogen-fail-subject-missing/pack/manifest.json",
+          "sha256": "b2167b901a749df1f0267b75144489ecdaa889e4b5f9988bdae954bc9aebacb0"
+        },
+        {
+          "path": "data/runs/v05-d3-autogen-fail-subject-missing/pack/trace/events.ndjson",
+          "sha256": "e725e860ba74c9d1f5e931c1b8bc5427cfc4afd3dd9df55dc44201d0bae37ee8"
+        },
+        {
+          "path": "data/runs/v05-d3-autogen-fail-subject-missing/producer-run.manifest.json",
+          "sha256": "e8a41b62a7981c4b8da081ee31be6bbc87306f98e76e21f52667031a3e9f1ce5"
+        },
+        {
+          "path": "data/runs/v05-d3-autogen-pass-authz-allow/bundle.manifest.json",
+          "sha256": "26e4ce1e46b7bde074fbce02580d384c33266e19abd9bbfb22f1c5de064fb230"
+        },
+        {
+          "path": "data/runs/v05-d3-autogen-pass-authz-allow/evidence_pointers.json",
+          "sha256": "ee9f7ecf4e3731d1b4fa53bef1559fa314d985954fb3ee39be7524f387421546"
+        },
+        {
+          "path": "data/runs/v05-d3-autogen-pass-authz-allow/pack/manifest.json",
+          "sha256": "b2167b901a749df1f0267b75144489ecdaa889e4b5f9988bdae954bc9aebacb0"
+        },
+        {
+          "path": "data/runs/v05-d3-autogen-pass-authz-allow/pack/trace/events.ndjson",
+          "sha256": "6bd7b804dca152457801217f438add238fd2b8ec80b83321fda1266f51313955"
+        },
+        {
+          "path": "data/runs/v05-d3-autogen-pass-authz-allow/producer-run.manifest.json",
+          "sha256": "8dba062b197585744e496c455cf21b00d3fb55da51cffc527fcf14320876a003"
+        },
+        {
+          "path": "data/runs/v05-d3-langgraph-fail-subject-missing/bundle.manifest.json",
+          "sha256": "1aa3806e3329175e083c60e663c42ffc921e39edd62a7d215a7430077fd4451b"
+        },
+        {
+          "path": "data/runs/v05-d3-langgraph-fail-subject-missing/evidence_pointers.json",
+          "sha256": "1f97eacd8f1129a37a1222e2b9c6b1534b34a8bc15bbf19a987485539470e847"
+        },
+        {
+          "path": "data/runs/v05-d3-langgraph-fail-subject-missing/pack/manifest.json",
+          "sha256": "b2167b901a749df1f0267b75144489ecdaa889e4b5f9988bdae954bc9aebacb0"
+        },
+        {
+          "path": "data/runs/v05-d3-langgraph-fail-subject-missing/pack/trace/events.ndjson",
+          "sha256": "abf1209bf9bc13deadd2f556e296e9136c8f4a38d7822902cef027339da2f90b"
+        },
+        {
+          "path": "data/runs/v05-d3-langgraph-fail-subject-missing/producer-run.manifest.json",
+          "sha256": "9c5fc12be0a1747b363796184b54d53a5b5baaeda6723992d39f3f6335bd6f13"
+        },
+        {
+          "path": "data/runs/v05-d3-langgraph-pass-authz-allow/bundle.manifest.json",
+          "sha256": "728071bdf495fe7b1fb6dba7644a51ec6abf476fd5b51a25b2c890f532bbfe60"
+        },
+        {
+          "path": "data/runs/v05-d3-langgraph-pass-authz-allow/evidence_pointers.json",
+          "sha256": "ee9f7ecf4e3731d1b4fa53bef1559fa314d985954fb3ee39be7524f387421546"
+        },
+        {
+          "path": "data/runs/v05-d3-langgraph-pass-authz-allow/pack/manifest.json",
+          "sha256": "b2167b901a749df1f0267b75144489ecdaa889e4b5f9988bdae954bc9aebacb0"
+        },
+        {
+          "path": "data/runs/v05-d3-langgraph-pass-authz-allow/pack/trace/events.ndjson",
+          "sha256": "5c70d9b0c750a956d75cac51b8f9027313e94bb1509a665fa02ee253765279b1"
+        },
+        {
+          "path": "data/runs/v05-d3-langgraph-pass-authz-allow/producer-run.manifest.json",
+          "sha256": "4f7525891526068bab68c88cb2c025d941488b792e9ba2b5dc5c008df2a21146"
+        },
+        {
+          "path": "data/runs/v05-d3-sk-fail-subject-missing/bundle.manifest.json",
+          "sha256": "144d699141fd89c0e23d6861134c3f9fd85224714f106de23a47d16a9c06da0a"
+        },
+        {
+          "path": "data/runs/v05-d3-sk-fail-subject-missing/evidence_pointers.json",
+          "sha256": "1f97eacd8f1129a37a1222e2b9c6b1534b34a8bc15bbf19a987485539470e847"
+        },
+        {
+          "path": "data/runs/v05-d3-sk-fail-subject-missing/pack/manifest.json",
+          "sha256": "b2167b901a749df1f0267b75144489ecdaa889e4b5f9988bdae954bc9aebacb0"
+        },
+        {
+          "path": "data/runs/v05-d3-sk-fail-subject-missing/pack/trace/events.ndjson",
+          "sha256": "ad2b0cc33c433ff4721e7d72e8c2db2a92db23a72bd33c9780cf46504a1ffb55"
+        },
+        {
+          "path": "data/runs/v05-d3-sk-fail-subject-missing/producer-run.manifest.json",
+          "sha256": "cae0e6835e34eb45ea4a8bdfcbb2609e42cd160ce518ee7c29018320f49f9bf6"
+        },
+        {
+          "path": "data/runs/v05-d3-sk-pass-authz-allow/bundle.manifest.json",
+          "sha256": "a1182dbd9b568f4aea1b0fea664b4d327c47d51d8159acb5c08d15930bb7bdc9"
+        },
+        {
+          "path": "data/runs/v05-d3-sk-pass-authz-allow/evidence_pointers.json",
+          "sha256": "ee9f7ecf4e3731d1b4fa53bef1559fa314d985954fb3ee39be7524f387421546"
+        },
+        {
+          "path": "data/runs/v05-d3-sk-pass-authz-allow/pack/manifest.json",
+          "sha256": "b2167b901a749df1f0267b75144489ecdaa889e4b5f9988bdae954bc9aebacb0"
+        },
+        {
+          "path": "data/runs/v05-d3-sk-pass-authz-allow/pack/trace/events.ndjson",
+          "sha256": "16e543f9ce4a257e221c4aeab3351af03a02b5fa3843ffdfb3a97a0633b5195c"
+        },
+        {
+          "path": "data/runs/v05-d3-sk-pass-authz-allow/producer-run.manifest.json",
+          "sha256": "86bb2ca7322098e788fd35fb56e590aab67ea2e3b6b44e69d6933d1157beca25"
+        },
+        {
+          "path": "data/runs/v05-d4-autogen-fail-reason-invalid/bundle.manifest.json",
+          "sha256": "74c9cd6f43694ac4da1ae175dc9e53a3b6b3cb0320b42b23373c77a61cec066d"
+        },
+        {
+          "path": "data/runs/v05-d4-autogen-fail-reason-invalid/evidence_pointers.json",
+          "sha256": "e795571d8d34d9cde36e6e7cd11ec60bb4ed6ec5ccdbad77ffd76907d0ecd37b"
+        },
+        {
+          "path": "data/runs/v05-d4-autogen-fail-reason-invalid/pack/manifest.json",
+          "sha256": "b2167b901a749df1f0267b75144489ecdaa889e4b5f9988bdae954bc9aebacb0"
+        },
+        {
+          "path": "data/runs/v05-d4-autogen-fail-reason-invalid/pack/trace/events.ndjson",
+          "sha256": "a76065db1c82df059fe5c0e1ad032e9a030baabf97d9aa4c0a496308402708a1"
+        },
+        {
+          "path": "data/runs/v05-d4-autogen-fail-reason-invalid/producer-run.manifest.json",
+          "sha256": "1c05d0eb7687a71e469ebaf4242bbbfc774b3c4dce20a46e3311ebc93f1b1f32"
+        },
+        {
+          "path": "data/runs/v05-d4-autogen-pass-reason-success/bundle.manifest.json",
+          "sha256": "86387dcd32f6fa2666d0e962c2ac936beb0fa635550e26c08f29102f8ff000e3"
+        },
+        {
+          "path": "data/runs/v05-d4-autogen-pass-reason-success/evidence_pointers.json",
+          "sha256": "ee9f7ecf4e3731d1b4fa53bef1559fa314d985954fb3ee39be7524f387421546"
+        },
+        {
+          "path": "data/runs/v05-d4-autogen-pass-reason-success/pack/manifest.json",
+          "sha256": "b2167b901a749df1f0267b75144489ecdaa889e4b5f9988bdae954bc9aebacb0"
+        },
+        {
+          "path": "data/runs/v05-d4-autogen-pass-reason-success/pack/trace/events.ndjson",
+          "sha256": "1dccee5558daf1e8e4cdaf201e0a43ac43a5bdcbad1b6d333e1888c07e47472a"
+        },
+        {
+          "path": "data/runs/v05-d4-autogen-pass-reason-success/producer-run.manifest.json",
+          "sha256": "4aa4a62275e55f1452af6e92e120a7a7a2d7dbd641261c9e417cb1c59111d42d"
+        },
+        {
+          "path": "data/runs/v05-d4-langgraph-fail-reason-invalid/bundle.manifest.json",
+          "sha256": "6b3440ed4de1060efaf637757b616bdd4ad77de5a41372928fac3801a2207d60"
+        },
+        {
+          "path": "data/runs/v05-d4-langgraph-fail-reason-invalid/evidence_pointers.json",
+          "sha256": "e795571d8d34d9cde36e6e7cd11ec60bb4ed6ec5ccdbad77ffd76907d0ecd37b"
+        },
+        {
+          "path": "data/runs/v05-d4-langgraph-fail-reason-invalid/pack/manifest.json",
+          "sha256": "b2167b901a749df1f0267b75144489ecdaa889e4b5f9988bdae954bc9aebacb0"
+        },
+        {
+          "path": "data/runs/v05-d4-langgraph-fail-reason-invalid/pack/trace/events.ndjson",
+          "sha256": "2a29aaa7b36af915ce8e08a5b4021621d7083f93077a2021714acad2344eae7c"
+        },
+        {
+          "path": "data/runs/v05-d4-langgraph-fail-reason-invalid/producer-run.manifest.json",
+          "sha256": "f5fe3ca90d6cdbbc6c8fb180f9ed87197150d7815466833c5fad5e172d18310d"
+        },
+        {
+          "path": "data/runs/v05-d4-langgraph-pass-reason-success/bundle.manifest.json",
+          "sha256": "c8c837c9de07af922159e99b413dd7c508588be8f9458b4b375d836007206fdd"
+        },
+        {
+          "path": "data/runs/v05-d4-langgraph-pass-reason-success/evidence_pointers.json",
+          "sha256": "ee9f7ecf4e3731d1b4fa53bef1559fa314d985954fb3ee39be7524f387421546"
+        },
+        {
+          "path": "data/runs/v05-d4-langgraph-pass-reason-success/pack/manifest.json",
+          "sha256": "b2167b901a749df1f0267b75144489ecdaa889e4b5f9988bdae954bc9aebacb0"
+        },
+        {
+          "path": "data/runs/v05-d4-langgraph-pass-reason-success/pack/trace/events.ndjson",
+          "sha256": "14a652c60455e0a20c157bece7f853da0aa6df2ed2d0ded0ac936122f367607a"
+        },
+        {
+          "path": "data/runs/v05-d4-langgraph-pass-reason-success/producer-run.manifest.json",
+          "sha256": "8b9ba62d3adf974092d756e860416c50f0d002ba601aaef1cfd4e7d91ec74f5e"
+        },
+        {
+          "path": "data/runs/v05-d4-sk-fail-reason-invalid/bundle.manifest.json",
+          "sha256": "ed402f558c084098e8efa0af27b11685a1d07c7352cf4c4ace708cebfda3b7c3"
+        },
+        {
+          "path": "data/runs/v05-d4-sk-fail-reason-invalid/evidence_pointers.json",
+          "sha256": "e795571d8d34d9cde36e6e7cd11ec60bb4ed6ec5ccdbad77ffd76907d0ecd37b"
+        },
+        {
+          "path": "data/runs/v05-d4-sk-fail-reason-invalid/pack/manifest.json",
+          "sha256": "b2167b901a749df1f0267b75144489ecdaa889e4b5f9988bdae954bc9aebacb0"
+        },
+        {
+          "path": "data/runs/v05-d4-sk-fail-reason-invalid/pack/trace/events.ndjson",
+          "sha256": "829573d4c0595bc4e03e7d35454ee2f59be3e8cc11ec60f453932f5279279ec7"
+        },
+        {
+          "path": "data/runs/v05-d4-sk-fail-reason-invalid/producer-run.manifest.json",
+          "sha256": "67bc2569349b186ad053f8672c8aa48601b871ae15da855d900284171589737e"
+        },
+        {
+          "path": "data/runs/v05-d4-sk-pass-reason-success/bundle.manifest.json",
+          "sha256": "36fd775c1349c1b204b205bf6e470b70302dbb9f95365544fd56d0ab4fd5fad3"
+        },
+        {
+          "path": "data/runs/v05-d4-sk-pass-reason-success/evidence_pointers.json",
+          "sha256": "ee9f7ecf4e3731d1b4fa53bef1559fa314d985954fb3ee39be7524f387421546"
+        },
+        {
+          "path": "data/runs/v05-d4-sk-pass-reason-success/pack/manifest.json",
+          "sha256": "b2167b901a749df1f0267b75144489ecdaa889e4b5f9988bdae954bc9aebacb0"
+        },
+        {
+          "path": "data/runs/v05-d4-sk-pass-reason-success/pack/trace/events.ndjson",
+          "sha256": "b1a05e01d7b2308a8101bf19675da21c808fc30bf9a32940986066646eed852d"
+        },
+        {
+          "path": "data/runs/v05-d4-sk-pass-reason-success/producer-run.manifest.json",
+          "sha256": "6b31d700ef7c00d67f523971d00f2188e7b5345ac9caf0732b8c7acea25c5a6f"
+        }
+      ],
+      "expectation": "non_empty",
+      "file_count": 304,
+      "empty": false
+    },
+    {
+      "id": "ts.runsets",
+      "resolver": "file",
+      "combined_sha256": "e5eba65ad989a7684e146e61abc7afa27ce8bed25c0c40e2a1cc48a35981b54b",
+      "files": [
+        {
+          "path": "governance/runsets.yaml",
+          "sha256": "b654e69dcafe6ecb5d5edd46e9ccbf446f20556cd9e8ce17d731c5cc2faeaa80"
+        }
+      ],
+      "expectation": "may_be_empty",
+      "file_count": 1,
+      "empty": false
+    },
+    {
+      "id": "ts.strength",
+      "resolver": "file",
+      "combined_sha256": "f7380bfcb3e74a8a262c4b7c579b888103c00ead40593696eb4692b472760cc7",
+      "files": [
+        {
+          "path": "governance/evidence/EVIDENCE_STRENGTH.md",
+          "sha256": "972732a814654832792705db482a53db2fe006adcc79823e3e164abbe1854499"
+        }
+      ],
+      "expectation": "may_be_empty",
+      "file_count": 1,
+      "empty": false
+    },
+    {
+      "id": "ts.substrate_index",
+      "resolver": "file",
+      "combined_sha256": "a6b4b4921fc3a0ac1713f6be99bc3aafd5923346590ab339e7e34074359e7f1e",
+      "files": [
+        {
+          "path": "data/curated-runs/substrate-index.yaml",
+          "sha256": "c6311455f9d35100323c6a8ac30d3db244161bf618173a7cd0b948edcf62a56a"
+        }
+      ],
+      "expectation": "may_be_empty",
+      "file_count": 1,
+      "empty": false
+    },
+    {
+      "id": "ts.terminology",
+      "resolver": "file",
+      "combined_sha256": "fd51dd6810a425914fd1a838fd34ddd0b5d1a08354bcdb875922f66b40476baa",
+      "files": [
+        {
+          "path": "governance/TERMINOLOGY_MAPPING.md",
+          "sha256": "adb7705ba34bed9c2154d9837cca8ffbdba54467759a2d8ee2f5486be8010722"
+        }
+      ],
+      "expectation": "may_be_empty",
+      "file_count": 1,
+      "empty": false
+    },
+    {
+      "id": "ts.test_vectors",
+      "resolver": "glob",
+      "combined_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "files": [],
+      "expectation": "may_be_empty",
+      "file_count": 0,
+      "empty": true
+    },
+    {
+      "id": "ts.test_vectors_allowlist",
+      "resolver": "file",
+      "combined_sha256": "f4a38dffed9168f294579adba2d022eb2e23495c7df060b57a8228a4bc44f324",
+      "files": [
+        {
+          "path": "test-vectors/v0.5/allowlist-v0.5.yaml",
+          "sha256": "2035cc4fe9c051d00b912f4f84aaa60483c3eb78b25537563ffa7a79674f1ccf"
+        }
+      ],
+      "expectation": "may_be_empty",
+      "file_count": 1,
+      "empty": false
+    },
+    {
+      "id": "ts.ui_curated_json",
+      "resolver": "file",
+      "combined_sha256": "c74f4895a063d2a2a32c2517dda16fa59ff8b2e24fb18900a9d69e2bf4d0cd7a",
+      "files": [
+        {
+          "path": "public/_data/curated-runs.json",
+          "sha256": "32b587f4beadcd1efd1df14c1a19929588f5f169377073e7e2ec76120b450f08"
+        }
+      ],
+      "expectation": "may_be_empty",
+      "file_count": 1,
+      "empty": false
+    }
+  ],
+  "combined_sha256": "69e1c533371bb212ffaad87d0a7f85c67c01233351f298b29183b5d176c11da6"
+}

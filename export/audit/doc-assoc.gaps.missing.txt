@@ -1,0 +1,14 @@
+app/rulesets/README.md
+data/rulesets/README.md
+data/runs/README.md
+export/README.md
+export/gate-reports/README.md
+export/ruleset-diff/README.md
+governance/README.md
+governance/projection/README.md
+governance/reports/README.md
+governance/seals/README.md
+governance/sop/README.md
+governance/templates/README.md
+scripts/README.md
+scripts/ruleset/README.md

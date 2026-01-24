@@ -3,7 +3,7 @@ entry_surface: validation_lab
 doc_type: governance
 status: draft
 authority: none
-protocol_version: "1.0.0"
+mplp_protocol_version: "1.0.0"
 doc_id: "VLAB-GOV-019"
 ---
 

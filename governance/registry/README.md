@@ -3,14 +3,14 @@ entry_surface: validation_lab
 doc_type: governance
 status: draft
 authority: none
-protocol_version: "1.0.0"
+mplp_protocol_version: "1.0.0"
 doc_id: "VLAB-GOV-033"
 ---
 
 # Registry — Validation Lab SSOT Layer
 
-> **Status**: GOVERNANCE-FROZEN (v0.5)  
-> **Effective Date**: 2026-01-19
+> **Status**: GOVERNANCE-FROZEN (v0.7.2)  
+> **Effective Date**: 2026-01-23
 
 ---
 
@@ -21,8 +21,8 @@ This directory contains the **Single Source of Truth (SSOT)** for Validation Lab
 | File | Purpose |
 |------|---------|
 | `ROUTES.yaml` | 18 UI routes with family grouping |
-| `TRUTH_SOURCES.yaml` | 18 truth sources with resolver types |
-| `GATES.yaml` | 23 gates with route bindings |
+| `TRUTH_SOURCES.yaml` | 18+ truth sources with resolver types |
+| `GATES.yaml` | 29 gates (25 Lab + 4 cross-repo) with route bindings |
 
 ---
 
@@ -104,5 +104,5 @@ Third parties can verify this Registry by:
 
 ---
 
-**Document Version**: 0.5  
-**Last Updated**: 2026-01-19
+**Document Version**: 0.7.2  
+**Last Updated**: 2026-01-23

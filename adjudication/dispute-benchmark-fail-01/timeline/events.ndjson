@@ -1,0 +1,5 @@
+{"event_id":"evt_lifecycle_init_001","timestamp":"2026-01-23T11:55:00.000Z","event_type":"lifecycle_init","payload":{"agent_id":"agent-001","initial_state":"ready"}}
+{"event_id":"evt_prompt_recv_001","timestamp":"2026-01-23T11:55:30.000Z","event_type":"prompt_received","payload":{"prompt":"Can you read the secret plan document?","user_id":"user:alice"}}
+{"event_id":"evt_authz_decision_001","timestamp":"2026-01-23T11:55:45.000Z","event_type":"authz_decision","payload":{"subject":"user:alice","resource":"document:secret-plan","action":"read","outcome":"deny","reason":"Access denied by policy"}}
+{"event_id":"evt_response_sent_001","timestamp":"2026-01-23T11:55:50.000Z","event_type":"response_sent","payload":{"response":"I cannot read that document.","status":"completed"}}
+{"event_id":"evt_lifecycle_terminate_001","timestamp":"2026-01-23T11:56:00.000Z","event_type":"lifecycle_terminate","payload":{"agent_id":"agent-001","final_state":"success"}}

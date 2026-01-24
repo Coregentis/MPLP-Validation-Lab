@@ -1,0 +1,52 @@
+{
+  "diff_version": "1.0.0",
+  "generated_at": "2026-01-23T12:08:34.013Z",
+  "from": {
+    "ruleset_version": "ruleset-1.0",
+    "path": "data/rulesets/ruleset-1.0",
+    "root_hash_sha256": "594e56eee3fd6db066f92ddbfec9f7af168d8d196cfc8e152917729932d1d288"
+  },
+  "to": {
+    "ruleset_version": "ruleset-1.2",
+    "path": "data/rulesets/ruleset-1.2",
+    "root_hash_sha256": "535721a5b2e4b97b04009fe5059f7fe4a182b616398c782669c1ab001a48198c"
+  },
+  "scope": {
+    "domains": [
+      "D1",
+      "D2",
+      "D3",
+      "D4"
+    ],
+    "notes": "Diff is about requirement text and clause mapping, not about framework quality."
+  },
+  "summary": {
+    "breaking_changes": 0,
+    "non_breaking_changes": 0,
+    "added": 0,
+    "removed": 0,
+    "modified": 0,
+    "note": "Detailed clause-by-clause diff requires full ruleset parser (deferred to future enhancement)"
+  },
+  "clause_delta": {
+    "added": [],
+    "removed": [],
+    "modified": [],
+    "note": "Clause-level diff not yet implemented; requires YAML parsing and clause ID tracking"
+  },
+  "requirement_delta": {
+    "added": [],
+    "removed": [],
+    "modified": [],
+    "note": "Requirement-level diff not yet implemented; requires structured requirement extraction"
+  },
+  "non_endorsement_boundary": [
+    "This diff report explains ruleset evolution only.",
+    "It MUST NOT be interpreted as certification, endorsement, or ranking of any framework/vendor.",
+    "Changes to rulesets reflect governance decisions about evidence requirements, not substrate quality."
+  ],
+  "reproducibility": {
+    "command": "node scripts/ruleset/generate-ruleset-diff.mjs --from ruleset-1.0 --to ruleset-1.2",
+    "hash_computation": "find data/rulesets/<version> -type f \\( -name \"*.yaml\" -o -name \"*.json\" \\) | sort | shasum -a 256"
+  }
+}

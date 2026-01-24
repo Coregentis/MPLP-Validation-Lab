@@ -1,0 +1,42 @@
+{
+  "repro_pack_version": "rp-1",
+  "diff_id": "ruleset-1.1_to_ruleset-1.2",
+  "from": "ruleset-1.1",
+  "to": "ruleset-1.2",
+  "inputs": {
+    "from_manifest_sha256": "192bb043d59eb87a0188f4450a7778453512c0e9f28028603d0977eb873f9ec6",
+    "to_manifest_sha256": "30c40526486ed19de56cde21bba40e9c0a70d01775a8973ac2d4f2e13195cba6"
+  },
+  "artifacts": {
+    "v0_8_frozen": {
+      "index_json_sha256": "e40c28e3d4a38986e5d4c083b00a0ee7eecf26e05a971d7c571291792b116d94",
+      "diff_json_sha256": "273f91b78efe6bc898f4cecf5149323963f15d04ec174fea9aee708d6c817694"
+    },
+    "v0_9_enhanced": {
+      "index_enhanced_json_sha256": "35a2858916b6471ef8e713fd6aadeda6e2150f4b8330de238e558b1a0eca36a5",
+      "diff_enhanced_json_sha256": "5f167c1768427c7bd1ab988705a507c29267934542f408d9e7c88a81d7a59acb"
+    }
+  },
+  "commands": {
+    "verify_inputs": [
+      "shasum -a 256 data/rulesets/ruleset-1.1/manifest.yaml",
+      "shasum -a 256 data/rulesets/ruleset-1.2/manifest.yaml"
+    ],
+    "generate_enhanced_diff": [
+      "node scripts/ruleset/generate-ruleset-diff.mjs --enhanced --explain-profile eh-1 --from ruleset-1.1 --to ruleset-1.2"
+    ],
+    "generate_repro_pack": [
+      "node scripts/ruleset/generate-ruleset-diff.mjs --repro-pack --repro-profile rp-1 --from ruleset-1.1 --to ruleset-1.2"
+    ],
+    "verify_exports": [
+      "shasum -a 256 export/ruleset-diff/index.json",
+      "shasum -a 256 export/ruleset-diff/ruleset-1.1_to_ruleset-1.2/diff.json",
+      "shasum -a 256 export/ruleset-diff/index.enhanced.json",
+      "shasum -a 256 export/ruleset-diff/ruleset-1.1_to_ruleset-1.2/diff.enhanced.json",
+      "shasum -a 256 export/ruleset-diff/ruleset-1.1_to_ruleset-1.2/repro-pack.json"
+    ]
+  },
+  "boundary": {
+    "non_endorsement": "Repro packs provide deterministic reproduction steps and hashes only. They do not certify or rank frameworks, vendors, or substrates."
+  }
+}

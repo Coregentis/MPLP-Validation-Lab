@@ -1,13 +1,13 @@
-# Route Registry - v0.5
+# Route Registry - v0.7.2
 #
 # SSOT for all Validation Lab UI routes.
 # Defines: route path, introduction version, surface type, priority, family grouping.
 #
 # Governance: REPO_SHAPE.md / VLAB-DGB-01
 
-version: "0.5"
+version: "0.7.2"
 schema_version: "1.0.0"
-generated_at: null  # Set by generator if auto-generated
+generated_at: "2026-01-23"
 description: |
   Complete route registry for Validation Lab.
   All UI routes must be registered here with their truth sources and validation strategy.
@@ -25,6 +25,9 @@ routes:
     surface_type: "home"
     priority: "P0"
     ptm_validation: "static"
+    gates:
+      - "gate:projection-manifest"
+      - "gate:projection-sanity"
     description: "Validation Lab home page"
 
   - route: "/about"
@@ -49,6 +52,11 @@ routes:
     surface_type: "runs"
     priority: "P0"
     ptm_validation: "static"
+    gates:
+      - "gate:terminology"
+      - "gate:curated-runs"
+      - "gate:ssot-consistency"
+      - "gate:09"
     description: "Curated runs index"
 
   - route: "/runs/[run_id]"
@@ -66,6 +74,14 @@ routes:
         - "arb-d1-budget-fail-outcome-invalid-v0.4"
         - "v05-d1-langgraph-pass-budget-allow"
     description: "Run detail page"
+    gates:
+      - "gate:coverage-claim"
+      - "gate:terminology"
+      - "gate:10"
+      - "gate:reason-codes"
+      - "gate:proof-signature"
+      - "gate:07"
+      - "gate:06"
 
   - route: "/runs/[run_id]/replay"
     introduced_in: "v0.3"
@@ -115,6 +131,8 @@ routes:
     surface_type: "rulesets"
     priority: "P1"
     ptm_validation: "static"
+    gates:
+      - "gate:registry"
     description: "Rulesets index"
 
   - route: "/rulesets/[version]"
@@ -190,6 +208,9 @@ routes:
     surface_type: "tools"
     priority: "P2"
     ptm_validation: "static"
+    gates:
+      - "gate:test-vectors-coverage"
+      - "gate:coverage-claim"
     description: "Test coverage overview"
 
   # ---------------------------------------------------------------------------
@@ -211,23 +232,81 @@ routes:
         - "sk"
     description: "Cross-substrate evidence producer examples"
 
+  # ---------------------------------------------------------------------------
+  # P1 Capability Routes (v0.7.2-v0.8)
+  # ---------------------------------------------------------------------------
+  - route: "/governance/projection-seal"
+    introduced_in: "v0.7.2"
+    surface_type: "governance"
+    priority: "P2"
+    ptm_validation: "static"
+    description: "Projection stability seal documents"
+
+  - route: "/adjudication/dispute-benchmark-fail-01"
+    introduced_in: "v0.7"
+    surface_type: "adjudication"
+    priority: "P1"
+    ptm_validation: "data"
+    gates:
+      - "gate:projection-manifest"
+    description: "MUST-2 dispute benchmark (FAIL case)"
+
+  - route: "/adjudication/proof-sets"
+    introduced_in: "v0.8"
+    surface_type: "adjudication"
+    priority: "P1"
+    ptm_validation: "data"
+    description: "MUST-1 same-ruler proof sets"
+
+  - route: "/rulesets/diff"
+    introduced_in: "v0.8"
+    surface_type: "policy"
+    priority: "P1"
+    ptm_validation: "data"
+    description: "MUST-3 ruleset diff reports"
+
+  - route: "/governance/development-baseline"
+    introduced_in: "v0.7"
+    surface_type: "governance"
+    priority: "P3"
+    ptm_validation: "static"
+    description: "Development governance baseline"
+
+  - route: "/governance/registry"
+    introduced_in: "v0.7"
+    surface_type: "governance"
+    priority: "P2"
+    ptm_validation: "static"
+    description: "Registry SSOT documentation"
+
+  - route: "/governance/page-truth-map"
+    introduced_in: "v0.6"
+    surface_type: "governance"
+    priority: "P2"
+    ptm_validation: "static"
+    description: "Page truth map governance"
+
 # =============================================================================
 # Summary
 # =============================================================================
 
 summary:
-  total_routes: 18
+  total_routes: 25  # 18 base + 7 P1 planned
   by_version:
     v0.1: 3
     v0.2: 3
     v0.3: 7
     v0.4: 2
     v0.5: 1
+    v0.6: 1
+    v0.7: 2
+    v0.7.2: 1
+    v0.8: 5
   by_validation:
-    static: 10
-    sampled: 8
+    static: 16  # +6
+    sampled: 9  # +1
   by_priority:
     P0: 3
-    P1: 7
-    P2: 6
-    P3: 2
+    P1: 10  # +3
+    P2: 9  # +3
+    P3: 3  # +1

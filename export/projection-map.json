@@ -1,0 +1,606 @@
+{
+    "map_version": "1.0.0",
+    "generated_at": "2026-01-23T16:15:00+08:00",
+    "surfaces": {
+        "lab": {
+            "base_url": "https://lab.mplp.io",
+            "authority": "projection",
+            "description": "SSOT projection surface for evidence adjudication"
+        },
+        "website": {
+            "base_url": "https://www.mplp.io",
+            "authority": "pointer_only",
+            "description": "Discovery and positioning only; pointers to Lab and Docs"
+        },
+        "docs": {
+            "base_url": "https://docs.mplp.io",
+            "authority": "non_normative_pointer",
+            "description": "Non-normative reference documentation; pointers to Lab for authoritative results"
+        }
+    },
+    "artifacts": [
+        {
+            "artifact_id": "rulesets",
+            "truth_source": {
+                "type": "repo_path",
+                "path": "data/rulesets/**"
+            },
+            "projection_targets": [
+                "lab"
+            ],
+            "routes": [
+                "/rulesets",
+                "/rulesets/[version]"
+            ],
+            "normativity": "derived",
+            "boundary_notes": [
+                "MUST NOT project to website/docs (pointer-only)",
+                "Ruleset requirements are Lab-internal adjudication logic"
+            ]
+        },
+        {
+            "artifact_id": "coverage_surface",
+            "truth_source": {
+                "type": "repo_path",
+                "path": "adjudication/matrix/coverage*.yaml"
+            },
+            "projection_targets": [
+                "lab"
+            ],
+            "routes": [
+                "/coverage"
+            ],
+            "normativity": "derived",
+            "boundary_notes": [
+                "Coverage describes evidence adjudicability, not framework maturity",
+                "MUST NOT appear in website/docs as numeric tables"
+            ]
+        },
+        {
+            "artifact_id": "policies_contract_page",
+            "truth_source": {
+                "type": "computed",
+                "inputs": [
+                    "governance/contracts/admission-criteria-v1.0.md",
+                    "governance/contracts/evidence-pack-contract-v*.md",
+                    "governance/contracts/ruleset-contract-v1.0.md",
+                    "governance/contracts/pointer-contract-v1.0.md"
+                ]
+            },
+            "projection_targets": [
+                "lab"
+            ],
+            "routes": [
+                "/policies/contract"
+            ],
+            "normativity": "normative",
+            "boundary_notes": [
+                "Contract page aggregates multiple governance contracts",
+                "Website/Docs may reference but not duplicate contract details"
+            ]
+        },
+        {
+            "artifact_id": "terminology_mapping",
+            "truth_source": {
+                "type": "repo_path",
+                "path": "governance/TERMINOLOGY_MAPPING.md"
+            },
+            "projection_targets": [
+                "lab"
+            ],
+            "routes": [
+                "/guarantees"
+            ],
+            "normativity": "normative",
+            "boundary_notes": [
+                "LG-01~05 terminology is Lab-specific",
+                "Website/Docs must not use LG terminology without Lab pointer"
+            ]
+        },
+        {
+            "artifact_id": "projection_seal",
+            "truth_source": {
+                "type": "repo_path",
+                "path": "governance/projection/PROJECTION-SEAL.*.md"
+            },
+            "projection_targets": [
+                "lab"
+            ],
+            "routes": [
+                "/governance/projection-seal"
+            ],
+            "normativity": "audit",
+            "boundary_notes": [
+                "Projection seals are Lab-internal governance artifacts",
+                "Not for external publication"
+            ]
+        },
+        {
+            "artifact_id": "curated_runs_registry",
+            "truth_source": {
+                "type": "repo_path",
+                "path": "export/curated-runs.json"
+            },
+            "projection_targets": [
+                "lab"
+            ],
+            "routes": [
+                "/runs",
+                "/runs/[run_id]",
+                "/runs/[run_id]/replay",
+                "/runs/[run_id]/evidence"
+            ],
+            "normativity": "derived",
+            "boundary_notes": [
+                "Run registry is publicly accessible but SSOT is in Lab",
+                "Website/Docs may link but not enumerate runs",
+                "Replay and evidence pages provide detailed run inspection"
+            ]
+        },
+        {
+            "artifact_id": "lab_static_pages",
+            "truth_source": {
+                "type": "repo_path",
+                "path": "app/{about,statement}/page.tsx"
+            },
+            "projection_targets": [
+                "lab"
+            ],
+            "routes": [
+                "/about",
+                "/statement"
+            ],
+            "normativity": "reference",
+            "boundary_notes": [
+                "Static informational pages",
+                "Non-endorsement and authority statements"
+            ]
+        },
+        {
+            "artifact_id": "adjudication_surface",
+            "truth_source": {
+                "type": "repo_path",
+                "path": "adjudication/**"
+            },
+            "projection_targets": [
+                "lab"
+            ],
+            "routes": [
+                "/adjudication",
+                "/adjudication/[run_id]"
+            ],
+            "normativity": "derived",
+            "boundary_notes": [
+                "Adjudication index and detail pages",
+                "Shows verdict summaries for adjudicated runs"
+            ]
+        },
+        {
+            "artifact_id": "evidence_strength_policy",
+            "truth_source": {
+                "type": "repo_path",
+                "path": "governance/evidence/EVIDENCE_STRENGTH.md"
+            },
+            "projection_targets": [
+                "lab"
+            ],
+            "routes": [
+                "/policies/strength"
+            ],
+            "normativity": "normative",
+            "boundary_notes": [
+                "Evidence strength classification (E-A/E-B/E-S)",
+                "Lab-specific governance policy"
+            ]
+        },
+        {
+            "artifact_id": "evidence_pack_builder",
+            "truth_source": {
+                "type": "repo_path",
+                "path": "lib/schemas/evidence-pack/*.yaml"
+            },
+            "projection_targets": [
+                "lab"
+            ],
+            "routes": [
+                "/builder"
+            ],
+            "normativity": "reference",
+            "boundary_notes": [
+                "Interactive evidence pack builder/validator",
+                "Schema-driven UI for pack composition"
+            ]
+        },
+        {
+            "artifact_id": "substrate_index",
+            "truth_source": {
+                "type": "repo_path",
+                "path": "data/curated-runs/substrate-index.yaml"
+            },
+            "projection_targets": [
+                "lab"
+            ],
+            "routes": [
+                "/coverage"
+            ],
+            "normativity": "ssot",
+            "boundary_notes": [
+                "Substrate list with claim levels is Lab-internal SSOT",
+                "MUST NOT enumerate in website/docs"
+            ]
+        },
+        {
+            "artifact_id": "dispute_benchmark",
+            "truth_source": {
+                "type": "repo_path",
+                "path": "adjudication/dispute-benchmark-fail-01/**"
+            },
+            "projection_targets": [
+                "lab"
+            ],
+            "routes": [
+                "/adjudication/dispute-benchmark-fail-01"
+            ],
+            "normativity": "reference",
+            "boundary_notes": [
+                "MUST-2 canonical FAIL benchmark pack",
+                "Available for external reference via Lab"
+            ]
+        },
+        {
+            "artifact_id": "proof_sets",
+            "truth_source": {
+                "type": "repo_path",
+                "path": "adjudication/proof-sets/**"
+            },
+            "projection_targets": [
+                "lab"
+            ],
+            "routes": [
+                "/adjudication/proof-sets"
+            ],
+            "normativity": "reference",
+            "boundary_notes": [
+                "MUST-1 cross-substrate same-ruler proof sets",
+                "Demonstrates evidence comparability, not framework ranking"
+            ]
+        },
+        {
+            "artifact_id": "ruleset_diff_reports",
+            "truth_source": {
+                "type": "repo_path",
+                "path": "export/ruleset-diff/**/*.json"
+            },
+            "projection_targets": [
+                "lab"
+            ],
+            "routes": [
+                "/rulesets/diff"
+            ],
+            "normativity": "derived",
+            "boundary_notes": [
+                "MUST-3 ruleset evolution diff reports",
+                "Explains requirement changes, not framework quality"
+            ]
+        },
+        {
+            "artifact_id": "governance_baseline",
+            "truth_source": {
+                "type": "repo_path",
+                "path": "governance/VLAB-DGB-01.md"
+            },
+            "projection_targets": [
+                "lab"
+            ],
+            "routes": [
+                "/governance/development-baseline"
+            ],
+            "normativity": "normative",
+            "boundary_notes": [
+                "Development governance baseline for Lab operations",
+                "Defines authority hierarchy: Repository > Documentation > Website"
+            ]
+        },
+        {
+            "artifact_id": "lifecycle_guarantees",
+            "truth_source": {
+                "type": "repo_path",
+                "path": "governance/LIFECYCLE_GUARANTEES.yaml"
+            },
+            "projection_targets": [
+                "lab"
+            ],
+            "routes": [
+                "/guarantees"
+            ],
+            "normativity": "normative",
+            "boundary_notes": [
+                "LG-01~05 frozen definitions",
+                "SSOT for lifecycle guarantee semantics"
+            ]
+        },
+        {
+            "artifact_id": "runsets_registry",
+            "truth_source": {
+                "type": "repo_path",
+                "path": "governance/runsets.yaml"
+            },
+            "projection_targets": [
+                "lab"
+            ],
+            "routes": [
+                "/runs",
+                "/coverage"
+            ],
+            "normativity": "ssot",
+            "boundary_notes": [
+                "Runset categorization and relationships",
+                "Defines curated/cross_substrate/test_vectors boundaries"
+            ]
+        },
+        {
+            "artifact_id": "producer_manifests",
+            "truth_source": {
+                "type": "repo_path",
+                "path": "producers/*/manifest.yaml"
+            },
+            "projection_targets": [
+                "lab"
+            ],
+            "routes": [
+                "/examples/evidence-producers/[substrate]"
+            ],
+            "normativity": "reference",
+            "boundary_notes": [
+                "Evidence producer metadata for transparency",
+                "Not a certification of producer quality"
+            ]
+        },
+        {
+            "artifact_id": "registry_suite",
+            "truth_source": {
+                "type": "repo_path",
+                "path": "governance/registry/{ROUTES,TRUTH_SOURCES,GATES}.yaml"
+            },
+            "projection_targets": [
+                "lab"
+            ],
+            "routes": [
+                "/governance/registry"
+            ],
+            "normativity": "normative",
+            "boundary_notes": [
+                "Lab-internal registry infrastructure",
+                "Defines route/truth-source/gate mappings"
+            ]
+        },
+        {
+            "artifact_id": "page_truth_map",
+            "truth_source": {
+                "type": "repo_path",
+                "path": "governance/page-truth/ptm-*.yaml"
+            },
+            "projection_targets": [
+                "lab"
+            ],
+            "routes": [
+                "/governance/page-truth-map"
+            ],
+            "normativity": "derived",
+            "boundary_notes": [
+                "Page-level truth source assertions",
+                "Lab-internal projection governance"
+            ]
+        },
+        {
+            "artifact_id": "projection_manifest",
+            "truth_source": {
+                "type": "repo_path",
+                "path": "export/projection-manifest.json"
+            },
+            "projection_targets": [
+                "lab"
+            ],
+            "routes": [
+                "/"
+            ],
+            "normativity": "audit",
+            "boundary_notes": [
+                "Hierarchical hash anchor for all truth sources",
+                "Used by projection integrity gates"
+            ]
+        },
+        {
+            "artifact_id": "sop_proj_sync_01",
+            "truth_source": {
+                "type": "repo_path",
+                "path": "governance/sop/SOP-VLAB-PROJ-SYNC-01.md"
+            },
+            "projection_targets": [
+                "lab"
+            ],
+            "routes": [],
+            "normativity": "normative",
+            "boundary_notes": [
+                "Internal governance SOP - not for Website/Docs projection",
+                "Enforced by CI via gate:post-task-association",
+                "Defines mandatory DoD for all tasks affecting projection"
+            ]
+        }
+    ],
+    "forbidden": {
+        "website": {
+            "categories": [
+                "substrate_enumeration",
+                "coverage_numbers",
+                "verdict_status",
+                "ruleset_requirements",
+                "run_counts",
+                "adjudication_results"
+            ],
+            "patterns": {
+                "substrate_enumeration": {
+                    "description": "Lists of substrate names (LangGraph, AutoGen, SK, MCP, A2A, etc.) except in 'supported by Lab' context",
+                    "regex": [
+                        "\\bLangGraph\\b",
+                        "\\bLangChain\\b",
+                        "\\bAutoGen\\b",
+                        "\\bSemantic Kernel\\b",
+                        "\\bCrewAI\\b",
+                        "\\bLlamaIndex\\b"
+                    ],
+                    "severity": "ERROR"
+                },
+                "coverage_numbers": {
+                    "description": "Percentage coverage values or run count statistics",
+                    "regex": [
+                        "\\d+%\\s*(coverage|complete|evaluated)",
+                        "\\d+\\s*(runs?|packs?|scenarios?)\\s*(adjudicated|evaluated|tested)"
+                    ],
+                    "severity": "ERROR"
+                },
+                "verdict_status": {
+                    "description": "PASS/FAIL/NOT_EVALUATED tokens in substrate or verdict context",
+                    "regex": [
+                        "verdict.*\\b(PASS|FAIL)\\b",
+                        "\\b(PASS|FAIL)\\b.*verdict",
+                        "\\bNOT_EVALUATED\\b",
+                        "\\bNOT_ADMISSIBLE\\b",
+                        "adjudication.*\\b(PASS|FAIL)\\b"
+                    ],
+                    "severity": "ERROR"
+                },
+                "ruleset_requirements": {
+                    "description": "RQ-D* requirement IDs or CL-* clause IDs",
+                    "regex": [
+                        "\\bRQ-D\\d+-\\d+\\b",
+                        "\\bCL-\\w+-\\d+\\b",
+                        "\\bruleset-1\\.[0-2]\\b.*requirement"
+                    ],
+                    "severity": "ERROR"
+                },
+                "run_counts": {
+                    "description": "Specific run or pack counts",
+                    "regex": [
+                        "\\d+\\s*curated runs",
+                        "\\d+\\s*evidence packs"
+                    ],
+                    "severity": "WARN"
+                },
+                "adjudication_results": {
+                    "description": "Adjudication result summaries or verdict determinism claims",
+                    "regex": [
+                        "deterministic.*\\b(match|verdict)\\b",
+                        "verdict.*reproducible"
+                    ],
+                    "severity": "WARN"
+                }
+            },
+            "allow": {
+                "context_phrases": [
+                    "supported by the Validation Lab",
+                    "see the Lab for live results",
+                    "available in the Validation Lab",
+                    "refer to the official Validation Lab"
+                ],
+                "paths": [
+                    "app/validation-lab/**",
+                    "governance/**",
+                    "website-governance/**",
+                    "CHANGELOG.md",
+                    "content/blog/**"
+                ]
+            }
+        },
+        "docs": {
+            "categories": [
+                "ruleset_requirements",
+                "coverage_matrices",
+                "verdict_status",
+                "run_counts",
+                "adjudication_details"
+            ],
+            "patterns": {
+                "ruleset_requirements": {
+                    "description": "RQ-D* requirement definitions or CL-* clause specifications",
+                    "regex": [
+                        "\\bRQ-D\\d+-\\d+\\b.*definition",
+                        "\\bCL-\\w+-\\d+\\b.*specification",
+                        "ruleset.*decision logic"
+                    ],
+                    "severity": "ERROR"
+                },
+                "coverage_matrices": {
+                    "description": "Substrate × scenario matrices with coverage data",
+                    "regex": [
+                        "\\|.*substrate.*\\|.*scenario.*\\|",
+                        "coverage.*matrix"
+                    ],
+                    "severity": "ERROR"
+                },
+                "verdict_status": {
+                    "description": "PASS/FAIL verdict summaries or adjudication status",
+                    "regex": [
+                        "\\b(PASS|FAIL)\\b.*verdict",
+                        "adjudication status.*\\b(PASS|FAIL)\\b",
+                        "\\bNOT_EVALUATED\\b",
+                        "determinism.*\\b(match|unknown)\\b"
+                    ],
+                    "severity": "ERROR"
+                },
+                "run_counts": {
+                    "description": "Specific run counts or evidence completeness metrics",
+                    "regex": [
+                        "\\d+\\s*runs?\\s*adjudicated",
+                        "\\d+%\\s*complete"
+                    ],
+                    "severity": "WARN"
+                },
+                "adjudication_details": {
+                    "description": "Detailed adjudication methodology or verdict computation",
+                    "regex": [
+                        "verdict.*computation",
+                        "adjudication.*algorithm"
+                    ],
+                    "severity": "WARN"
+                }
+            },
+            "allow": {
+                "context_phrases": [
+                    "For authoritative results, please refer to the official Validation Lab",
+                    "non-normative reference",
+                    "informational purposes only"
+                ],
+                "paths": [
+                    "docs/specification/**"
+                ]
+            }
+        }
+    },
+    "_meta": {
+        "version_history": [
+            {
+                "version": "1.0.0",
+                "date": "2026-01-23",
+                "changes": "Initial projection map for v0.7.2",
+                "artifacts_count": 22
+            }
+        ],
+        "governance": {
+            "authority": "VLAB-DGB-01",
+            "gate_enforcement": [
+                "gate:projection-map",
+                "gate:no-ssot-duplication",
+                "gate:website-pointer-only",
+                "gate:docs-nonnormative-pointer-only"
+            ]
+        },
+        "schema_notes": [
+            "artifact_id: unique identifier for cross-reference",
+            "truth_source.type: repo_path | computed | external_ref",
+            "projection_targets: array of surface keys (lab/website/docs)",
+            "normativity: ssot | normative | derived | reference | audit",
+            "boundary_notes: human-readable projection constraints"
+        ]
+    }
+}

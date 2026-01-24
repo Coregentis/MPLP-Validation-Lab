@@ -1,0 +1,21 @@
+{
+  "index_repro_version": "rp-1",
+  "template_version": "rp-1",
+  "diffs": [
+    {
+      "diff_id": "ruleset-1.0_to_ruleset-1.1",
+      "repro_pack_sha256": "50e469193593df1ca599b3847abab8770375abe651801b985d49217fb8b35c14",
+      "path": "export/ruleset-diff/ruleset-1.0_to_ruleset-1.1/repro-pack.json"
+    },
+    {
+      "diff_id": "ruleset-1.0_to_ruleset-1.2",
+      "repro_pack_sha256": "892ea9120431a868cf2c46fac8b60f9a422dd8ec3601b19f19e0cb62b0c68f5a",
+      "path": "export/ruleset-diff/ruleset-1.0_to_ruleset-1.2/repro-pack.json"
+    },
+    {
+      "diff_id": "ruleset-1.1_to_ruleset-1.2",
+      "repro_pack_sha256": "53d5f04b456f1a98c64d1955ce0140118c7e83b714ab001065b2af673b0b4688",
+      "path": "export/ruleset-diff/ruleset-1.1_to_ruleset-1.2/repro-pack.json"
+    }
+  ]
+}

@@ -94,3 +94,14 @@ jobs:
 
       - name: Guarantees SSOT Consistency Gate (G-GUARANTEES-SSOT-01)
         run: node scripts/ci/guarantees-ssot-gate.mjs
+
+      # P0 Projection Gates (v0.7.2)
+      - name: Projection Map Gate (P0-2)
+        run: npm run gate:projection-map
+
+      - name: No-SSOT-Duplication Gate (P0-3)
+        run: npm run gate:no-ssot-duplication
+
+      # SOP Enforcement (enabled after bootstrap)
+      - name: Post-Task Association Gate (SOP)
+        run: npm run gate:post-task-association

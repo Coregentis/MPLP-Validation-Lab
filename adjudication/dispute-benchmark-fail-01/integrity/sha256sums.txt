@@ -1,0 +1,6 @@
+e91e72d233a3201d22b9402e7c9ec74cd3fdfee0a48ba3bdcb1f40249974d903  ./README.md
+693df49923c1a873fa97b74e9ea3c32926ae52bc6fb01b82160f77d65f75b608  ./evidence_pointers.json
+e37a01250932035b235e26ee257df9f097b8551877a63b9bc8244f0e89866103  ./integrity/manifest.json
+33e25490a46362454d18fe367e390127b0a83e80fdef2b251515e91a7d9c9226  ./snapshots/diffs/confirm-gate-missing.json
+076dc685b4631a0ddca3eaffa7af1252a930c9d82016cea17a603ae5332bf0be  ./timeline/events.ndjson
+80d9ac55de2aff90a634d7a599a4852e800f081a6221dd679cbde830633bacfe  ./verdict.json

@@ -84,9 +84,18 @@ sets:
       - v05-d4-sk-pass-reason-success
       - v05-d4-sk-fail-reason-invalid
 
-  # v0.5 Test Vectors (40 total)
+  # Internal Test Runs (Ad-hoc)
+  internal_test:
+    description: "Internal smoke tests and samples (not curated)"
+    includes:
+      - sample-pass
+      - sample-not-admissible
+      - test-gf01-only
+      - gf-01-smoke
+
+  # v0.5 Test Vectors (40 allowlisted variants)
   test_vectors:
-    description: "v0.5 public test vectors (5 PASS + 5 FAIL per domain)"
+    description: "v0.5 public test vectors (5 PASS + 5 FAIL per domain allowlisted from 200+ variants)"
     count: 40
     source: "test-vectors/v0.5/allowlist-v0.5.yaml"
 

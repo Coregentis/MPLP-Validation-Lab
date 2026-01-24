@@ -1,10 +1,10 @@
 ---
 entry_surface: validation_lab
 doc_type: governance
-status: draft
-authority: none
-protocol_version: "1.0.0"
-doc_id: "VLAB-GOV-042"
+status: active
+authority: validation_lab_governance
+mplp_mplp_mplp_protocol_version: "1.0.0"
+doc_id: "VLAB-DGB-01"
 ---
 
 # Validation Lab Development Governance Baseline (VLAB-DGB-01)

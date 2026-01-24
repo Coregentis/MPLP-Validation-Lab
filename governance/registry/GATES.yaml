@@ -1,11 +1,11 @@
-# Gates Registry - v0.5
+# Gates Registry - v0.7.2
 #
 # SSOT for all CI gates and their relationship to routes and truth sources.
-# Gate IDs are canonical (matching npm scripts exactly).
+# v0.7.2 Integration: P0 Projection Gates (projection-map, no-ssot-duplication, cross-repo)
 #
 # Governance: REPO_SHAPE.md / VLAB-DGB-01
 
-version: "0.5"
+version: "0.7.2"
 schema_version: "1.0.0"
 description: |
   Registry of all CI gates with their entrypoints, verification targets,
@@ -110,6 +110,35 @@ gates:
       - "ts.registry"
     failure_impact: "Run evaluation broken"
 
+  - gate_id: "gate:ssot-consistency"
+    entrypoint: "scripts/gates/ssot-consistency.mjs"
+    npm_script: "gate:ssot-consistency"
+    verifies:
+      - "SSOT Consistency across substrate-index, curated-runs, and runsets"
+      - "All substrates in index have corresponding runs (warn by default, fail in strict)"
+    applies_to_routes:
+      - "/runs"
+      - "/runs/*"
+    depends_on:
+      - "ts.runsets"
+      - "ts.export_curated_json"
+      - "ts.substrate_index"
+
+  - gate_id: "gate:coverage-claim"
+    entrypoint: "scripts/gates/coverage-claim.mjs"
+    npm_script: "gate:coverage-claim"
+    verifies:
+      - "No Claim Without Artifact (matrix, index, export)"
+      - "E-S claims must have signed_proof_ref (enforced)"
+    applies_to_routes:
+      - "/coverage"
+      - "/runs/*"
+    depends_on:
+      - "ts.export_curated_json"
+      - "ts.substrate_index"
+      - "ts.coverage_matrix"
+    failure_impact: "Audit boundary violation"
+
   - gate_id: "gate:09"
     entrypoint: "lib/gates/gate-09-ssot-projection.ts"
     npm_script: "gate:09"
@@ -118,8 +147,8 @@ gates:
     applies_to_routes:
       - "/runs"
     depends_on:
-      - "ts.curated_allowlist"
-      - "ts.curated_json"
+      - "ts.export_curated_json"
+      - "ts.ui_curated_json"
     failure_impact: "UI/data drift"
 
   - gate_id: "gate:10"
@@ -287,9 +316,10 @@ gates:
     applies_to_routes:
       - "/*"
     depends_on:
-      - "governance/registry/ROUTES.yaml"
-      - "governance/registry/TRUTH_SOURCES.yaml"
-      - "governance/registry/GATES.yaml"
+      - "ts.registry.routes"
+      - "ts.registry.truth_sources"
+      - "ts.registry.gates"
+      - "ts.ptm"
     failure_impact: "PTM coverage gap"
 
   # ---------------------------------------------------------------------------
@@ -313,6 +343,112 @@ gates:
     depends_on: []
     failure_impact: "Schema drift"
 
+  # ---------------------------------------------------------------------------
+  # v0.7 Elevation Gates
+  # ---------------------------------------------------------------------------
+  - gate_id: "gate:projection-manifest"
+    entrypoint: "scripts/gates/projection-manifest.mjs"
+    npm_script: "gate:projection-manifest"
+    verifies:
+      - "Release manifest hashes match repository state"
+      - "Provable baseline integrity"
+    applies_to_routes:
+      - "/*"
+    depends_on:
+      - "ts.projection_manifest"
+      - "ts.registry.gates"
+      - "ts.registry.routes"
+      - "ts.registry.truth_sources"
+    failure_impact: "Provable baseline corruption"
+
+  - gate_id: "gate:projection-sanity"
+    entrypoint: "scripts/gates/projection-sanity.mjs"
+    npm_script: "gate:projection-sanity"
+    verifies:
+      - "UI counts match SSOT export counts"
+      - "Substrate index consistency"
+    applies_to_routes:
+      - "/runs"
+      - "/coverage"
+      - "/rulesets"
+    depends_on:
+      - "ts.export_curated_json"
+      - "ts.ui_curated_json"
+    failure_impact: "UI/SSOT data mismatch"
+
+  # ---------------------------------------------------------------------------
+  # P0 Projection Governance Gates (v0.7.2)
+  # ---------------------------------------------------------------------------
+  - gate_id: "gate:projection-map"
+    entrypoint: "scripts/gates/projection-map.mjs"
+    npm_script: "gate:projection-map"
+    verifies:
+      - "All registered routes mapped in projection-map.json"
+      - "All artifacts have required fields"
+      - "Forbidden projection categories defined"
+    applies_to_routes:
+      - "/*"  # All routes must be accounted for
+    depends_on:
+      - "ts.projection_map"
+      - "ts.registry.routes"
+    failure_impact: "Projection governance structure invalid"
+
+  - gate_id: "gate:no-ssot-duplication"
+    entrypoint: "scripts/gates/no-ssot-duplication.mjs"
+    npm_script: "gate:no-ssot-duplication"
+    verifies:
+      - "Website: no substrate enumeration, coverage numbers, verdict status"
+      - "Docs: no verdict status, coverage matrices, ruleset requirements"
+      - "Cross-repo: allowlists for governance files"
+    applies_to_routes:
+      - "/*"  # Protects entire projection surface
+    depends_on:
+      - "ts.projection_map"
+      - "external:website"  # ../MPLP_website
+      - "external:docs"     # ../docs
+    failure_impact: "SSOT duplication detected across surfaces"
+
+  - gate_id: "gate:website-pointer-only"
+    entrypoint: "../MPLP_website/scripts/gates/website-pointer-only.mjs"
+    npm_script: "gate:website-pointer-only"
+    repository: "MPLP_website"
+    verifies:
+      - "No forbidden terms (Certified, Ranked, Endorsed, Compliant)"
+      - "No data mirroring (substrate counts, coverage %)"
+      - "Lab link integrity"
+    applies_to_routes:
+      - "external:website/*"
+    depends_on:
+      - "ts.projection_map"
+    failure_impact: "Website pointer-only boundary violation"
+
+  - gate_id: "gate:docs-nonnormative-pointer-only"
+    entrypoint: "../docs/scripts/gates/docs-nonnormative-pointer-only.mjs"
+    npm_script: "gate:docs-nonnormative-pointer-only"
+    repository: "docs"
+    verifies:
+      - "Non-normative disclaimer present in Lab docs"
+      - "No data mirroring (PASSED/FAILED counts, coverage %)"
+      - "Lab link required"
+    applies_to_routes:
+      - "external:docs/validation-lab/*"
+    depends_on:
+      - "ts.projection_map"
+    failure_impact: "Docs non-normative boundary violation"
+
+  - gate_id: "gate:post-task-association"
+    entrypoint: "scripts/gates/post-task-association.mjs"
+    npm_script: "gate:post-task-association"
+    verifies:
+      - "PR includes Task Completion Report in governance/reports/task-completion/"
+      - "SOP-VLAB-PROJ-SYNC-01 compliance"
+    applies_to_routes:
+      - "/*"  # Applies to all PR changes
+    depends_on:
+      - "ts.sop_proj_sync_01"
+      - "ts.task_completion_template"
+    failure_impact: "PR missing mandatory Task Completion Report (SOP violation)"
+
 # =============================================================================
 # Exemptions (routes with no gate, must have explicit reason)
 # =============================================================================
@@ -329,9 +465,13 @@ exemptions:
 # =============================================================================
 
 summary:
-  total_gates: 23
+  total_gates: 30  # +1 post-task-association
   by_location:
-    scripts_gates: 14
+    scripts_gates: 21  # +1
     lib_gates: 9
-  covered_routes: 16
+  by_scope:
+    lab_internal: 25
+    cross_repo: 4
+    sop_enforcement: 1  # post-task-association
+  covered_routes: 18
   exempted_routes: 2

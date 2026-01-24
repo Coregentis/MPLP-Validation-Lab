@@ -1,10 +1,10 @@
 ---
 entry_surface: validation_lab
 doc_type: governance
-status: draft
-authority: none
-protocol_version: "1.0.0"
-doc_id: "VLAB-GOV-041"
+status: frozen
+authority: validation_lab_governance
+mplp_mplp_mplp_protocol_version: "1.0.0"
+doc_id: "VLAB-TERM-01"
 ---
 
 # Validation Lab — Terminology Mapping (Frozen)
@@ -27,15 +27,15 @@ All implementations, documentation, and UI MUST use these terms consistently.
 
 | Term | Definition | Role in Lab |
 |:---|:---|:---|
-| **Scenario** | 测试/场景包（如 `flow-01-single-agent-plan`） | Evidence Pack 的输入模板 |
-| **Flow** | Scenario 的别名（来自 `tests/golden/flows/`） | Scenario fixture |
-| **Profile** | Scenario 的类型标识（Core / MAP / SA） | Scenario 分类 |
-| **Golden Flow (GF)** | 生命周期不变量（Lifecycle Invariants） | **裁决对象** |
-| **Requirement** | GF 的具体检查点（来自 ruleset） | Verdict 的评估单元 |
-| **Evidence Pack** | 证据包（manifest + artifacts + timeline + snapshots） | 裁决输入 |
-| **Verdict** | 裁决结果（PASS/FAIL/NOT_EVALUATED/NOT_ADMISSIBLE） | 裁决输出 |
-| **Ruleset** | 版本化规则集（deterministic） | 裁决依据 |
-| **Conformance** | 证据满足版本化规则集的要求 | 评估结论（非认证） |
+| **Scenario** | Test/Scenario Pack (e.g., `flow-01-single-agent-plan`) | Input template for Evidence Pack |
+| **Flow** | Alias for Scenario (from `tests/golden/flows/`) | Scenario fixture |
+| **Profile** | Type identifier for Scenario (Core / MAP / SA) | Scenario categorization |
+| **Golden Flow (GF)** | Lifecycle Invariant | **Adjudication Objective** |
+| **Requirement** | Specific checkpoint of a GF (from ruleset) | Unit of evaluation for Verdict |
+| **Evidence Pack** | Evidence bundle (manifest + artifacts + timeline + snapshots) | Adjudication input |
+| **Verdict** | Adjudication result (PASS/FAIL/NOT_EVALUATED/NOT_ADMISSIBLE) | Adjudication output |
+| **Ruleset** | Versioned rule set (deterministic) | Adjudication basis |
+| **Conformance** | Evidence meets requirements of a versioned ruleset | Evaluation conclusion (Non-certification) |
 
 ---
 

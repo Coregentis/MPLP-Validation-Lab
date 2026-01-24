@@ -1,0 +1,60 @@
+{
+    "adjudication_version": "1.0",
+    "run_id": "dispute-benchmark-fail-01",
+    "adjudicated_at": "2026-01-23T12:00:00.000Z",
+    "verifier": {
+        "id": "validation-lab-verifier",
+        "version": "1.0.0"
+    },
+    "ruleset_version": "1.1",
+    "protocol_pin": "mplp-1.0.0",
+    "admission_status": "ADMISSIBLE",
+    "overall_status": "ADJUDICATED",
+    "topline_verdict": "FAIL",
+    "reason_code": "CL-D3-02-FAIL",
+    "clause_results": [
+        {
+            "clause_id": "CL-D3-01",
+            "requirement_id": "RQ-D3-01",
+            "domain_id": "D3",
+            "status": "PASS",
+            "evidence_refs": [
+                "timeline/events.ndjson#evt_authz_decision_001"
+            ],
+            "message": "Authorization decision event present with complete S/R/A triple"
+        },
+        {
+            "clause_id": "CL-D3-02",
+            "requirement_id": "RQ-D3-02",
+            "domain_id": "D3",
+            "status": "FAIL",
+            "reason_code": "DENY_WITHOUT_CONFIRM_GATE",
+            "evidence_refs": [
+                "timeline/events.ndjson#evt_authz_decision_001",
+                "snapshots/diffs/confirm-gate-missing.json"
+            ],
+            "message": "Authorization decision with outcome=deny but no prior confirm_gate event found",
+            "dispute_context": {
+                "expected": "confirm_gate event before authz decision with deny outcome",
+                "actual": "no confirm_gate event in timeline prior to authz decision",
+                "relevant_events": [
+                    "evt_authz_decision_001"
+                ],
+                "diff_artifact": "snapshots/diffs/confirm-gate-missing.json"
+            }
+        },
+        {
+            "clause_id": "CL-D3-03",
+            "requirement_id": "RQ-D3-03",
+            "domain_id": "D3",
+            "status": "NOT_EVALUATED",
+            "message": "Skipped due to prior clause failure"
+        }
+    ],
+    "verdict_hash": "a1b2c3d4e5f6789012345678901234567890abcdef1234567890abcdef123456",
+    "_meta": {
+        "generated_by": "vlab-adjudicate",
+        "purpose": "dispute-benchmark",
+        "non_normative_boundary": "This verdict demonstrates evidence adjudicability, not framework quality"
+    }
+}

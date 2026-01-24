@@ -1,0 +1,67 @@
+{
+  "pack_id": "gf-01-smoke",
+  "ruleset_a": "ruleset-1.0",
+  "ruleset_b": "ruleset-1.1",
+  "generated_at": "2026-01-23T05:25:43.613Z",
+  "verdict_a": "NOT_EVALUATED",
+  "verdict_b": "FAIL",
+  "reason_code_a": "VERDICT_MISSING",
+  "reason_code_b": "BUNDLE-POINTER-MISSING-RQ-D1-01",
+  "clause_delta": [
+    {
+      "clause_id": "CL-D1-01",
+      "requirement_id": "RQ-D1-01",
+      "domain_id": "D1",
+      "verdict_a": "MISSING",
+      "verdict_b": "FAIL",
+      "reason_code_b": "BUNDLE-POINTER-MISSING-RQ-D1-01"
+    },
+    {
+      "clause_id": "CL-D2-01",
+      "requirement_id": "RQ-D2-01",
+      "domain_id": "D2",
+      "verdict_a": "MISSING",
+      "verdict_b": "FAIL",
+      "reason_code_b": "BUNDLE-POINTER-MISSING-RQ-D2-01"
+    },
+    {
+      "clause_id": "CL-D3-01",
+      "requirement_id": "RQ-D3-01",
+      "domain_id": "D3",
+      "verdict_a": "MISSING",
+      "verdict_b": "FAIL",
+      "reason_code_b": "BUNDLE-POINTER-MISSING-RQ-D3-01"
+    },
+    {
+      "clause_id": "CL-D4-01",
+      "requirement_id": "RQ-D4-01",
+      "domain_id": "D4",
+      "verdict_a": "MISSING",
+      "verdict_b": "FAIL",
+      "reason_code_b": "BUNDLE-POINTER-MISSING-RQ-D4-01"
+    }
+  ],
+  "evidence_requirements_delta": [
+    {
+      "requirement_id": "RQ-D1-01",
+      "in_a": false,
+      "in_b": true
+    },
+    {
+      "requirement_id": "RQ-D2-01",
+      "in_a": false,
+      "in_b": true
+    },
+    {
+      "requirement_id": "RQ-D3-01",
+      "in_a": false,
+      "in_b": true
+    },
+    {
+      "requirement_id": "RQ-D4-01",
+      "in_a": false,
+      "in_b": true
+    }
+  ],
+  "non_normative_boundary": "This report describes ruleset evolution differences. It does NOT define protocol semantics or claim compatibility."
+}

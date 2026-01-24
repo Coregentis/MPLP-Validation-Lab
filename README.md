@@ -39,6 +39,14 @@ All schemas, invariants, and rulesets are derived from:
 | **No execution hosting** | Lab does not run your code; you provide evidence packs |
 | **Deterministic ruleset** | Same evidence + same ruleset = same verdict |
 
+### Protocol Substrates (MCP/A2A/ACP) — Non-Semantic Adjudication
+
+> [!IMPORTANT]
+> **For substrates with `type: protocol` (e.g., MCP, A2A, ACP):**
+> - The Lab adjudicates **MPLP evidence** produced via this transport/integration path.
+> - The Lab does **NOT** adjudicate the protocol's semantic correctness.
+> - Any mention of "compliance", "certification", "ranking", "accreditation", or "endorsement" is out of scope.
+
 ---
 
 ## Version Taxonomy
@@ -74,6 +82,27 @@ Website pages are **projections** of Single Sources of Truth (SSOT). Governance 
 
 > [!IMPORTANT]
 > Pages load from SSOT at build time. If a page's data differs from SSOT, the page is wrong.
+
+---
+
+## v0.9.0 — Ruleset Diff Enhancement (MUST-3) — SEALED
+
+- Seal (evidence closure): `governance/seals/DIFF-ENHANCEMENT-SEAL.v0.9.0.md`
+- UI: `/rulesets/diff` (prefers `.enhanced.json`, falls back to v0.8 frozen artifacts)
+- Export artifacts:
+  - v0.8 (frozen): `export/ruleset-diff/*/diff.json` and `export/ruleset-diff/index.json`
+  - v0.9 (parallel): `export/ruleset-diff/*/diff.enhanced.json` and `export/ruleset-diff/index.enhanced.json`
+
+Non-endorsement boundary: Diff reports explain ruleset changes only. They are not certification, endorsement, or ranking of any framework/vendor/substrate.
+
+### v0.9.1 — UI Facets + Repro Pack — SEALED
+
+- Seal: `governance/seals/UI-FACETS-REPROPACK-SEAL.v0.9.1.md`
+- UI Facets: Domain and change_type filtering on detail page
+- Repro Pack: `export/ruleset-diff/*/repro-pack.json` (rp-1 profile)
+- Commands and hashes for deterministic reproduction
+
+> **v0.9 Series Summary**: v0.9.0–v0.9.1 upgrades ruleset diff from "generatable" to "explainable + reproducible + referenceable" while preserving the v0.8 frozen evidence chain.
 
 ---
 

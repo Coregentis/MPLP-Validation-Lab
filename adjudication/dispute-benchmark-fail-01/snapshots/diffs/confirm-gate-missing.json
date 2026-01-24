@@ -1,0 +1,34 @@
+{
+    "diff_id": "confirm-gate-missing",
+    "generated_at": "2026-01-23T12:00:00.000Z",
+    "description": "Expected confirm_gate event was not found before authz_decision with deny outcome",
+    "expected_state": {
+        "description": "Timeline should contain confirm_gate event before deny decision",
+        "pattern": {
+            "event_type": "confirm_gate",
+            "must_precede": "evt_authz_decision_001",
+            "required_when": {
+                "subsequent_event.payload.outcome": "deny"
+            }
+        }
+    },
+    "actual_state": {
+        "description": "No confirm_gate event found in timeline",
+        "timeline_events": [
+            "evt_lifecycle_init_001",
+            "evt_prompt_recv_001",
+            "evt_authz_decision_001",
+            "evt_response_sent_001",
+            "evt_lifecycle_terminate_001"
+        ],
+        "confirm_gate_count": 0
+    },
+    "diff_summary": {
+        "type": "missing_event",
+        "expected_event_type": "confirm_gate",
+        "expected_before": "evt_authz_decision_001",
+        "actual": "NOT_PRESENT"
+    },
+    "clause_reference": "CL-D3-02",
+    "requirement_reference": "RQ-D3-02"
+}
