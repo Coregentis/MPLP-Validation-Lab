@@ -6,7 +6,9 @@ import { VerificationPanel } from './_components/VerificationPanel';
 import { RulesetEvaluationSection } from './_components/RulesetEvaluationSection';
 import { EvidencePackBrowser } from './_components/EvidencePackBrowser';
 import { GovernancePanel } from './_components/GovernancePanel';
+import { MappingProjectionPanel } from '../_components/MappingProjectionPanel';
 import { ProvenanceFooter } from '@/components/ProvenanceFooter';
+import runMappingIndex from '@/public/_data/run-mapping-index.json';
 
 // GATE-06: Default to noindex for run detail pages
 export const metadata = {
@@ -34,6 +36,9 @@ export default async function RunDetailPage({ params }: { params: Promise<{ run_
     // Determine if this is a ruleset-1.1 run (v0.3 arbitration pack)
     const isRuleset11 = run.ruleset_version === 'ruleset-1.1' || run_id.toLowerCase().startsWith('arb-');
 
+    // Find mapping index entry for this run
+    const mappingEntry = runMappingIndex.runs.find((r: any) => r.run_id === run_id) || null;
+
     return (
         <div className="container max-w-6xl mx-auto px-4 py-8 space-y-6">
             <div className="flex items-center justify-between">
@@ -53,10 +58,12 @@ export default async function RunDetailPage({ params }: { params: Promise<{ run_
                 <RulesetEvaluationSection runId={run.run_id} />
             )}
 
+            {/* P0: Mapping & Projection Panel */}
+            <MappingProjectionPanel runId={run.run_id} mappingIndex={mappingEntry} />
+
             <EvidencePackBrowser runId={run.run_id} />
             <GovernancePanel />
             <ProvenanceFooter ssot={data.ssot} />
         </div>
     );
 }
-

@@ -1,0 +1,250 @@
+{
+  "version": "1.0.0",
+  "generated_at": "2026-01-24T11:45:06.214Z",
+  "total_runs": 27,
+  "runs": [
+    {
+      "run_id": "gf-01-a2a-pass",
+      "substrate": "a2a",
+      "fingerprint_ref": "governance/substrates/a2a/fingerprint.yaml",
+      "fieldmap_ref": "governance/mappings/fieldmap/langgraph.yaml",
+      "normalization_spec_ref": "governance/mappings/normalization-spec.yaml",
+      "hash_scope_ref": "governance/mappings/hash-scope.yaml",
+      "equivalence_criteria_ref": "governance/mappings/equivalence-criteria.yaml"
+    },
+    {
+      "run_id": "gf-01-a2a-fail",
+      "substrate": "a2a",
+      "fingerprint_ref": "governance/substrates/a2a/fingerprint.yaml",
+      "fieldmap_ref": "governance/mappings/fieldmap/langgraph.yaml",
+      "normalization_spec_ref": "governance/mappings/normalization-spec.yaml",
+      "hash_scope_ref": "governance/mappings/hash-scope.yaml",
+      "equivalence_criteria_ref": "governance/mappings/equivalence-criteria.yaml"
+    },
+    {
+      "run_id": "gf-01-langchain-pass",
+      "substrate": "langchain",
+      "fingerprint_ref": "governance/substrates/langchain/fingerprint.yaml",
+      "fieldmap_ref": "governance/mappings/fieldmap/langgraph.yaml",
+      "normalization_spec_ref": "governance/mappings/normalization-spec.yaml",
+      "hash_scope_ref": "governance/mappings/hash-scope.yaml",
+      "equivalence_criteria_ref": "governance/mappings/equivalence-criteria.yaml"
+    },
+    {
+      "run_id": "gf-01-mcp-pass",
+      "substrate": "mcp",
+      "fingerprint_ref": "governance/substrates/mcp/fingerprint.yaml",
+      "fieldmap_ref": "governance/mappings/fieldmap/mcp.yaml",
+      "normalization_spec_ref": "governance/mappings/normalization-spec.yaml",
+      "hash_scope_ref": "governance/mappings/hash-scope.yaml",
+      "equivalence_criteria_ref": "governance/mappings/equivalence-criteria.yaml"
+    },
+    {
+      "run_id": "gf-01-langchain-official-v0.2",
+      "substrate": "langchain",
+      "fingerprint_ref": "governance/substrates/langchain/fingerprint.yaml",
+      "fieldmap_ref": "governance/mappings/fieldmap/langgraph.yaml",
+      "normalization_spec_ref": "governance/mappings/normalization-spec.yaml",
+      "hash_scope_ref": "governance/mappings/hash-scope.yaml",
+      "equivalence_criteria_ref": "governance/mappings/equivalence-criteria.yaml"
+    },
+    {
+      "run_id": "gf-01-a2a-official-v0.2",
+      "substrate": "a2a",
+      "fingerprint_ref": "governance/substrates/a2a/fingerprint.yaml",
+      "fieldmap_ref": "governance/mappings/fieldmap/langgraph.yaml",
+      "normalization_spec_ref": "governance/mappings/normalization-spec.yaml",
+      "hash_scope_ref": "governance/mappings/hash-scope.yaml",
+      "equivalence_criteria_ref": "governance/mappings/equivalence-criteria.yaml"
+    },
+    {
+      "run_id": "gf-01-mcp-official-v0.2",
+      "substrate": "mcp",
+      "fingerprint_ref": "governance/substrates/mcp/fingerprint.yaml",
+      "fieldmap_ref": "governance/mappings/fieldmap/mcp.yaml",
+      "normalization_spec_ref": "governance/mappings/normalization-spec.yaml",
+      "hash_scope_ref": "governance/mappings/hash-scope.yaml",
+      "equivalence_criteria_ref": "governance/mappings/equivalence-criteria.yaml"
+    },
+    {
+      "run_id": "gf-02-fail",
+      "substrate": "fixture",
+      "fingerprint_ref": "governance/substrates/fixture/fingerprint.yaml",
+      "fieldmap_ref": "governance/mappings/fieldmap/fixture.yaml",
+      "normalization_spec_ref": "governance/mappings/normalization-spec.yaml",
+      "hash_scope_ref": "governance/mappings/hash-scope.yaml",
+      "equivalence_criteria_ref": "governance/mappings/equivalence-criteria.yaml"
+    },
+    {
+      "run_id": "admission-not-admissible-01",
+      "substrate": "fixture",
+      "fingerprint_ref": "governance/substrates/fixture/fingerprint.yaml",
+      "fieldmap_ref": "governance/mappings/fieldmap/fixture.yaml",
+      "normalization_spec_ref": "governance/mappings/normalization-spec.yaml",
+      "hash_scope_ref": "governance/mappings/hash-scope.yaml",
+      "equivalence_criteria_ref": "governance/mappings/equivalence-criteria.yaml"
+    },
+    {
+      "run_id": "gf-01-adjudicated-fail-01",
+      "substrate": "fixture",
+      "fingerprint_ref": "governance/substrates/fixture/fingerprint.yaml",
+      "fieldmap_ref": "governance/mappings/fieldmap/fixture.yaml",
+      "normalization_spec_ref": "governance/mappings/normalization-spec.yaml",
+      "hash_scope_ref": "governance/mappings/hash-scope.yaml",
+      "equivalence_criteria_ref": "governance/mappings/equivalence-criteria.yaml"
+    },
+    {
+      "run_id": "gf-01-smoke",
+      "substrate": "fixture",
+      "fingerprint_ref": "governance/substrates/fixture/fingerprint.yaml",
+      "fieldmap_ref": "governance/mappings/fieldmap/fixture.yaml",
+      "normalization_spec_ref": "governance/mappings/normalization-spec.yaml",
+      "hash_scope_ref": "governance/mappings/hash-scope.yaml",
+      "equivalence_criteria_ref": "governance/mappings/equivalence-criteria.yaml"
+    },
+    {
+      "run_id": "arb-d1-budget-pass-fixture-v0.3",
+      "substrate": "fixture",
+      "fingerprint_ref": "governance/substrates/fixture/fingerprint.yaml",
+      "fieldmap_ref": "governance/mappings/fieldmap/fixture.yaml",
+      "normalization_spec_ref": "governance/mappings/normalization-spec.yaml",
+      "hash_scope_ref": "governance/mappings/hash-scope.yaml",
+      "equivalence_criteria_ref": "governance/mappings/equivalence-criteria.yaml"
+    },
+    {
+      "run_id": "arb-d1-budget-fail-fixture-v0.3",
+      "substrate": "fixture",
+      "fingerprint_ref": "governance/substrates/fixture/fingerprint.yaml",
+      "fieldmap_ref": "governance/mappings/fieldmap/fixture.yaml",
+      "normalization_spec_ref": "governance/mappings/normalization-spec.yaml",
+      "hash_scope_ref": "governance/mappings/hash-scope.yaml",
+      "equivalence_criteria_ref": "governance/mappings/equivalence-criteria.yaml"
+    },
+    {
+      "run_id": "arb-d2-lifecycle-state-pass-fixture-v0.3",
+      "substrate": "fixture",
+      "fingerprint_ref": "governance/substrates/fixture/fingerprint.yaml",
+      "fieldmap_ref": "governance/mappings/fieldmap/fixture.yaml",
+      "normalization_spec_ref": "governance/mappings/normalization-spec.yaml",
+      "hash_scope_ref": "governance/mappings/hash-scope.yaml",
+      "equivalence_criteria_ref": "governance/mappings/equivalence-criteria.yaml"
+    },
+    {
+      "run_id": "arb-d2-lifecycle-state-fail-fixture-v0.3",
+      "substrate": "fixture",
+      "fingerprint_ref": "governance/substrates/fixture/fingerprint.yaml",
+      "fieldmap_ref": "governance/mappings/fieldmap/fixture.yaml",
+      "normalization_spec_ref": "governance/mappings/normalization-spec.yaml",
+      "hash_scope_ref": "governance/mappings/hash-scope.yaml",
+      "equivalence_criteria_ref": "governance/mappings/equivalence-criteria.yaml"
+    },
+    {
+      "run_id": "arb-d3-authz-decision-pass-fixture-v0.3",
+      "substrate": "fixture",
+      "fingerprint_ref": "governance/substrates/fixture/fingerprint.yaml",
+      "fieldmap_ref": "governance/mappings/fieldmap/fixture.yaml",
+      "normalization_spec_ref": "governance/mappings/normalization-spec.yaml",
+      "hash_scope_ref": "governance/mappings/hash-scope.yaml",
+      "equivalence_criteria_ref": "governance/mappings/equivalence-criteria.yaml"
+    },
+    {
+      "run_id": "arb-d3-authz-decision-fail-fixture-v0.3",
+      "substrate": "fixture",
+      "fingerprint_ref": "governance/substrates/fixture/fingerprint.yaml",
+      "fieldmap_ref": "governance/mappings/fieldmap/fixture.yaml",
+      "normalization_spec_ref": "governance/mappings/normalization-spec.yaml",
+      "hash_scope_ref": "governance/mappings/hash-scope.yaml",
+      "equivalence_criteria_ref": "governance/mappings/equivalence-criteria.yaml"
+    },
+    {
+      "run_id": "arb-d4-termination-recovery-pass-fixture-v0.3",
+      "substrate": "fixture",
+      "fingerprint_ref": "governance/substrates/fixture/fingerprint.yaml",
+      "fieldmap_ref": "governance/mappings/fieldmap/fixture.yaml",
+      "normalization_spec_ref": "governance/mappings/normalization-spec.yaml",
+      "hash_scope_ref": "governance/mappings/hash-scope.yaml",
+      "equivalence_criteria_ref": "governance/mappings/equivalence-criteria.yaml"
+    },
+    {
+      "run_id": "arb-d4-termination-recovery-fail-fixture-v0.3",
+      "substrate": "fixture",
+      "fingerprint_ref": "governance/substrates/fixture/fingerprint.yaml",
+      "fieldmap_ref": "governance/mappings/fieldmap/fixture.yaml",
+      "normalization_spec_ref": "governance/mappings/normalization-spec.yaml",
+      "hash_scope_ref": "governance/mappings/hash-scope.yaml",
+      "equivalence_criteria_ref": "governance/mappings/equivalence-criteria.yaml"
+    },
+    {
+      "run_id": "arb-d1-budget-fail-outcome-invalid-v0.4",
+      "substrate": "fixture",
+      "fingerprint_ref": "governance/substrates/fixture/fingerprint.yaml",
+      "fieldmap_ref": "governance/mappings/fieldmap/fixture.yaml",
+      "normalization_spec_ref": "governance/mappings/normalization-spec.yaml",
+      "hash_scope_ref": "governance/mappings/hash-scope.yaml",
+      "equivalence_criteria_ref": "governance/mappings/equivalence-criteria.yaml"
+    },
+    {
+      "run_id": "arb-d1-budget-fail-deny-missing-gate-v0.4",
+      "substrate": "fixture",
+      "fingerprint_ref": "governance/substrates/fixture/fingerprint.yaml",
+      "fieldmap_ref": "governance/mappings/fieldmap/fixture.yaml",
+      "normalization_spec_ref": "governance/mappings/normalization-spec.yaml",
+      "hash_scope_ref": "governance/mappings/hash-scope.yaml",
+      "equivalence_criteria_ref": "governance/mappings/equivalence-criteria.yaml"
+    },
+    {
+      "run_id": "arb-d2-lifecycle-fail-terminal-state-invalid-v0.4",
+      "substrate": "fixture",
+      "fingerprint_ref": "governance/substrates/fixture/fingerprint.yaml",
+      "fieldmap_ref": "governance/mappings/fieldmap/fixture.yaml",
+      "normalization_spec_ref": "governance/mappings/normalization-spec.yaml",
+      "hash_scope_ref": "governance/mappings/hash-scope.yaml",
+      "equivalence_criteria_ref": "governance/mappings/equivalence-criteria.yaml"
+    },
+    {
+      "run_id": "arb-d2-lifecycle-fail-post-terminal-exec-v0.4",
+      "substrate": "fixture",
+      "fingerprint_ref": "governance/substrates/fixture/fingerprint.yaml",
+      "fieldmap_ref": "governance/mappings/fieldmap/fixture.yaml",
+      "normalization_spec_ref": "governance/mappings/normalization-spec.yaml",
+      "hash_scope_ref": "governance/mappings/hash-scope.yaml",
+      "equivalence_criteria_ref": "governance/mappings/equivalence-criteria.yaml"
+    },
+    {
+      "run_id": "arb-d3-authz-fail-sra-incomplete-v0.4",
+      "substrate": "fixture",
+      "fingerprint_ref": "governance/substrates/fixture/fingerprint.yaml",
+      "fieldmap_ref": "governance/mappings/fieldmap/fixture.yaml",
+      "normalization_spec_ref": "governance/mappings/normalization-spec.yaml",
+      "hash_scope_ref": "governance/mappings/hash-scope.yaml",
+      "equivalence_criteria_ref": "governance/mappings/equivalence-criteria.yaml"
+    },
+    {
+      "run_id": "arb-d3-authz-fail-deny-no-confirm-v0.4",
+      "substrate": "fixture",
+      "fingerprint_ref": "governance/substrates/fixture/fingerprint.yaml",
+      "fieldmap_ref": "governance/mappings/fieldmap/fixture.yaml",
+      "normalization_spec_ref": "governance/mappings/normalization-spec.yaml",
+      "hash_scope_ref": "governance/mappings/hash-scope.yaml",
+      "equivalence_criteria_ref": "governance/mappings/equivalence-criteria.yaml"
+    },
+    {
+      "run_id": "arb-d4-termination-fail-reason-invalid-v0.4",
+      "substrate": "fixture",
+      "fingerprint_ref": "governance/substrates/fixture/fingerprint.yaml",
+      "fieldmap_ref": "governance/mappings/fieldmap/fixture.yaml",
+      "normalization_spec_ref": "governance/mappings/normalization-spec.yaml",
+      "hash_scope_ref": "governance/mappings/hash-scope.yaml",
+      "equivalence_criteria_ref": "governance/mappings/equivalence-criteria.yaml"
+    },
+    {
+      "run_id": "arb-d4-termination-fail-uncontrolled-recovery-v0.4",
+      "substrate": "fixture",
+      "fingerprint_ref": "governance/substrates/fixture/fingerprint.yaml",
+      "fieldmap_ref": "governance/mappings/fieldmap/fixture.yaml",
+      "normalization_spec_ref": "governance/mappings/normalization-spec.yaml",
+      "hash_scope_ref": "governance/mappings/hash-scope.yaml",
+      "equivalence_criteria_ref": "governance/mappings/equivalence-criteria.yaml"
+    }
+  ]
+}

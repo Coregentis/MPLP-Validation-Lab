@@ -1,14 +1,32 @@
 "use client";
 
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import fmmData from '@/public/_data/fmm.json';
 
-export default function FMMPage() {
-    const [activeSubstrate, setActiveSubstrate] = useState('langgraph');
+// Type definitions for FMM data
+interface Mapping {
+    source: string;
+    target: string;
+    rule: string;
+}
 
-    const substrates = Object.keys(fmmData.substrates);
+interface SubstrateData {
+    mappings: Mapping[];
+}
+
+interface CoreElement {
+    pointer: string;
+    description: string;
+}
+
+type SubstrateKey = keyof typeof fmmData.substrates;
+
+export default function FMMPage() {
+    const [activeSubstrate, setActiveSubstrate] = useState<SubstrateKey>('langgraph');
+
+    const substrates = Object.keys(fmmData.substrates) as SubstrateKey[];
     const currentMappings = fmmData.substrates[activeSubstrate]?.mappings || [];
-    const coreElements = fmmData.core_elements;
+    const coreElements = fmmData.core_elements as CoreElement[];
 
     return (
         <div className="max-w-6xl mx-auto p-8">
@@ -28,8 +46,8 @@ export default function FMMPage() {
                                 key={id}
                                 onClick={() => setActiveSubstrate(id)}
                                 className={`p-3 text-left rounded-lg transition-all ${activeSubstrate === id
-                                        ? 'bg-blue-50 text-blue-700 border-l-4 border-blue-600'
-                                        : 'hover:bg-zinc-100 text-zinc-600'
+                                    ? 'bg-blue-50 text-blue-700 border-l-4 border-blue-600'
+                                    : 'hover:bg-zinc-100 text-zinc-600'
                                     }`}
                             >
                                 {id.toUpperCase()}
@@ -58,7 +76,7 @@ export default function FMMPage() {
                         </thead>
                         <tbody className="divide-y divide-zinc-100">
                             {coreElements.map((el, i) => {
-                                const mapping = currentMappings.find(m => m.target === el.pointer);
+                                const mapping = currentMappings.find((m: Mapping) => m.target === el.pointer);
                                 return (
                                     <tr key={i} className="hover:bg-zinc-50 transition-colors">
                                         <td className="p-4">
