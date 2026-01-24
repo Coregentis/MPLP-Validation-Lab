@@ -11,7 +11,6 @@ export const metadata = {
  * 
  * B-Type Hardcode (Stable Definition)
  * Source: producers/ directory structure
- * Freeze: site-v0.5
  * 
  * Note: This subset of Tier-0 substrates have working evidence producers.
  * Not all Tier-0 substrates from substrate-index.yaml have producers yet.

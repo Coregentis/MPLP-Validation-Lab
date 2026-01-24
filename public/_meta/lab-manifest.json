@@ -1,0 +1,37 @@
+{
+    "version": "1.0.0",
+    "entry": "lab",
+    "generated_at": "2026-01-24T20:06:53+08:00",
+    "protocol_version": "1.0.0",
+    "schema_bundle_version": "2.0.0",
+    "lab_series": "v0.10.2",
+    "tripod": {
+        "website_anchor": "https://www.mplp.io/definition",
+        "docs_anchor": "https://docs.mplp.io/docs/reference/entrypoints",
+        "repo_anchor": "https://github.com/Coregentis/MPLP-Protocol",
+        "lab_anchor": "https://lab.mplp.io"
+    },
+    "anchors": {
+        "policies_root": "/policies",
+        "fmm": "/policies/fmm",
+        "cross_verified": "/policies/cross-verified",
+        "runs": "/runs",
+        "rulesets": "/rulesets"
+    },
+    "boundaries": [
+        "BOUNDARY-NON-CERTIFICATION",
+        "BOUNDARY-NON-ENDORSEMENT",
+        "BOUNDARY-VENDOR-NEUTRAL"
+    ],
+    "gates": {
+        "active": [
+            "VLAB-GATE-08",
+            "VLAB-GATE-09",
+            "VLAB-GATE-10",
+            "VLAB-GATE-11",
+            "VLAB-GATE-12",
+            "VLAB-GATE-13",
+            "VLAB-GATE-14"
+        ]
+    }
+}

@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import labManifest from '@/public/_meta/lab-manifest.json';
 
 export const metadata: Metadata = {
     title: 'Methodology | MPLP Validation Lab',
@@ -8,6 +9,8 @@ export const metadata: Metadata = {
 };
 
 export default function MethodologyPage() {
+    const labVersion = labManifest.lab_series;
+
     return (
         <main className="min-h-screen bg-zinc-950 text-zinc-100 py-12 px-4">
             <div className="max-w-4xl mx-auto">
@@ -25,7 +28,7 @@ export default function MethodologyPage() {
                     <div className="mt-4 flex items-center gap-4 text-xs text-zinc-500">
                         <span className="bg-zinc-800 px-2 py-1 rounded">METHOD-VLAB-01</span>
                         <span>Version 1.0</span>
-                        <span>site-v0.5</span>
+                        <span className="bg-blue-900/30 text-blue-400 px-2 py-1 rounded">{labVersion} Sealed</span>
                     </div>
                 </header>
 
@@ -216,28 +219,28 @@ export default function MethodologyPage() {
                     <p className="text-zinc-400 mb-4">
                         A <strong>Substrate</strong> is an execution environment (framework, protocol, runtime) that produces evidence packs.
                     </p>
-                    <p className="text-zinc-500 text-sm mb-4">
-                        <strong>Current Status</strong>: 6 Tier-0 substrates, 2 ADJUDICATED, 26 REGISTERED
-                    </p>
-                    <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mb-6">
-                        {[
-                            { name: 'LangChain', type: 'framework', status: '✅ ADJUDICATED' },
-                            { name: 'MCP', type: 'protocol', status: '✅ ADJUDICATED' },
-                            { name: 'LangGraph', type: 'framework', status: '⚪ REGISTERED' },
-                            { name: 'AutoGen', type: 'framework', status: '⚪ REGISTERED' },
-                            { name: 'Semantic Kernel', type: 'framework', status: '⚪ REGISTERED' },
-                            { name: 'A2A', type: 'protocol', status: '⚪ REGISTERED' },
-                        ].map((s, i) => (
-                            <div key={i} className="bg-zinc-900 border border-zinc-800 rounded p-3 text-center">
-                                <p className="font-semibold text-zinc-200">{s.name}</p>
-                                <p className="text-xs text-zinc-600">{s.type}</p>
-                                <p className="text-xs text-zinc-500 mt-1">{s.status}</p>
-                            </div>
-                        ))}
+                    <div className="bg-zinc-900 border border-zinc-800 rounded-lg p-6 mb-4">
+                        <p className="text-zinc-300 text-sm mb-4">
+                            Substrate adjudication status is maintained in the <strong>Coverage Matrix</strong>, which is the
+                            authoritative source for current run counts and verdict distribution.
+                        </p>
+                        <div className="flex flex-wrap gap-3">
+                            <Link
+                                href="/coverage/adjudication"
+                                className="px-4 py-2 bg-blue-900/30 text-blue-400 rounded-lg border border-blue-800 hover:bg-blue-900/50 transition text-sm font-medium"
+                            >
+                                View Coverage Matrix →
+                            </Link>
+                            <Link
+                                href="/policies/fmm"
+                                className="px-4 py-2 bg-zinc-800 text-zinc-300 rounded-lg border border-zinc-700 hover:bg-zinc-700 transition text-sm font-medium"
+                            >
+                                Field Mapping Matrix →
+                            </Link>
+                        </div>
                     </div>
                     <p className="text-zinc-500 text-sm">
                         See <Link href="/policies/substrate-scope" className="text-blue-400 hover:underline">/policies/substrate-scope</Link> for admission tiers.
-                        Data from <code className="bg-zinc-800 text-xs px-1 rounded">substrate-index.yaml</code>
                     </p>
                 </section>
 
@@ -258,15 +261,15 @@ export default function MethodologyPage() {
                             </thead>
                             <tbody className="text-zinc-300">
                                 <tr className="border-b border-zinc-800/50">
-                                    <td className="py-2">Site Freeze</td>
-                                    <td className="py-2 font-mono text-blue-400">site-v*</td>
-                                    <td className="py-2">site-v0.5</td>
-                                    <td className="py-2 text-zinc-500">Website IA</td>
+                                    <td className="py-2">Lab Series</td>
+                                    <td className="py-2 font-mono text-blue-400">v0.*</td>
+                                    <td className="py-2">{labVersion}</td>
+                                    <td className="py-2 text-zinc-500">Lab release version</td>
                                 </tr>
                                 <tr className="border-b border-zinc-800/50">
                                     <td className="py-2">Pack Format</td>
                                     <td className="py-2 font-mono text-green-400">pack-v*</td>
-                                    <td className="py-2">pack-v0.2~0.4</td>
+                                    <td className="py-2">pack-v0.2~0.5</td>
                                     <td className="py-2 text-zinc-500">Evidence structure</td>
                                 </tr>
                                 <tr className="border-b border-zinc-800/50">
@@ -276,10 +279,10 @@ export default function MethodologyPage() {
                                     <td className="py-2 text-zinc-500">Decision rules</td>
                                 </tr>
                                 <tr>
-                                    <td className="py-2">Release Seal</td>
-                                    <td className="py-2 font-mono text-amber-400">rel-lab-*</td>
-                                    <td className="py-2">rel-lab-0.5</td>
-                                    <td className="py-2 text-zinc-500">Governance seal</td>
+                                    <td className="py-2">Governance Seal</td>
+                                    <td className="py-2 font-mono text-amber-400">SEAL-*</td>
+                                    <td className="py-2">{labVersion}</td>
+                                    <td className="py-2 text-zinc-500">Immutable baseline</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -317,7 +320,7 @@ export default function MethodologyPage() {
                         SSOT: <code className="bg-zinc-800 px-1 rounded">governance/METHOD-VLAB-01_EVALUATION_METHOD.md</code>
                     </p>
                     <p className="mt-2">
-                        Validation Lab • site-v0.5 Frozen
+                        Validation Lab • {labVersion} Sealed
                     </p>
                 </footer>
             </div>

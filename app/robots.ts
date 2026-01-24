@@ -18,6 +18,8 @@ export default function robots(): MetadataRoute.Robots {
                     "/policies/contract",
                     "/policies/intake",
                     "/policies/substrate-scope",
+                    "/policies/fmm",
+                    "/policies/cross-verified",
                 ],
                 disallow: [
                     "/api",
