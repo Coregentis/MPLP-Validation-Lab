@@ -96,16 +96,28 @@ footer:
         label: "Rulesets"
         indexable: true
         
+      - href: "/rulesets/diff"
+        label: "Ruleset Diff"
+        indexable: true
+
       - href: "/policies/contract"
         label: "Export Contract"
         indexable: true
-        
+
+      - href: "/policies/cross-verified"
+        label: "Cross-Verified Policy"
+        indexable: true
+
       - href: "/policies/substrate-scope"
         label: "Substrate Scope"
         indexable: true
         
       - href: "/policies/intake"
         label: "Intake Policy"
+        indexable: true
+
+      - href: "/policies/strength"
+        label: "Ruleset Strength"
         indexable: true
 
   evidence:
@@ -127,6 +139,18 @@ footer:
         label: "Curated Runs"
         indexable: false
         note: "Not indexed (list page)"
+
+      - href: "/policies/fmm"
+        label: "Field Mapping Matrix"
+        indexable: true
+
+      - href: "/examples/evidence-producers"
+        label: "Evidence Producers"
+        indexable: true
+
+      - href: "/builder"
+        label: "Builder Guide"
+        indexable: true
 
   community:
     title: "Community"
@@ -228,7 +252,6 @@ cross_links:
 # =============================================================================
 disallowed_routes:
   - "/api"
-  - "/builder"
   - "/statement"
   - "/examples"
   - "/_next"
@@ -252,6 +275,7 @@ indexing_policy:
     - "/policies/substrate-scope"
     
   noindex:
+    - "/builder"
     - "/runs"
     - "/runs/[run_id]"
     - "/runs/[run_id]/replay"
@@ -261,6 +285,5 @@ indexing_policy:
     
   disallow:
     - "/api"
-    - "/builder"
     - "/statement"
     - "/examples"

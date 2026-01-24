@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-24T13:36:50.886Z",
+  "generated_at": "2026-01-24T13:49:07.222Z",
   "navbar": {
     "ssot": [
       "/",
@@ -32,13 +32,19 @@
       "/methodology",
       "/guarantees",
       "/rulesets",
+      "/rulesets/diff",
       "/policies/contract",
+      "/policies/cross-verified",
       "/policies/substrate-scope",
       "/policies/intake",
+      "/policies/strength",
       "/adjudication",
       "/coverage/adjudication",
       "/coverage",
-      "/runs"
+      "/runs",
+      "/policies/fmm",
+      "/examples/evidence-producers",
+      "/builder"
     ],
     "actual": [
       "/",
@@ -51,20 +57,18 @@
       "/policies/cross-verified",
       "/policies/substrate-scope",
       "/policies/intake",
+      "/policies/strength",
       "/adjudication",
       "/coverage/adjudication",
       "/coverage",
       "/runs",
+      "/policies/fmm",
       "/examples/evidence-producers",
       "/builder"
     ],
     "missing_in_ui": [],
     "extra_in_ui": [
-      "/",
-      "/rulesets/diff",
-      "/policies/cross-verified",
-      "/examples/evidence-producers",
-      "/builder"
+      "/"
     ]
   }
 }

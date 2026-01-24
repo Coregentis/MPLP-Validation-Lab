@@ -87,6 +87,11 @@ export function Footer() {
                                         Intake Policy
                                     </Link>
                                 </li>
+                                <li>
+                                    <Link href="/policies/strength" className="text-mplp-text-muted hover:text-mplp-blue-light text-13 transition-colors font-medium block py-0.5">
+                                        Ruleset Strength Policy
+                                    </Link>
+                                </li>
                             </ul>
                         </div>
 
@@ -112,6 +117,11 @@ export function Footer() {
                                 <li>
                                     <Link href="/runs" className="text-mplp-text-muted hover:text-mplp-blue-light text-13 transition-colors font-medium block py-0.5">
                                         Curated Runs
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="/policies/fmm" className="text-mplp-text-muted hover:text-mplp-blue-light text-13 transition-colors font-medium block py-0.5">
+                                        Field Mapping Matrix (FMM)
                                     </Link>
                                 </li>
                                 <li>

@@ -1,62 +1,13 @@
 {
-  "generated_at": "2026-01-24T13:36:50.886Z",
+  "generated_at": "2026-01-24T13:49:44.717Z",
   "summary": {
     "total": 25,
-    "L1": 16,
-    "L2": 2,
+    "L1": 18,
+    "L2": 0,
     "L3": 0,
     "orphan": 7
   },
   "pages": [
-    {
-      "path": "/adjudication/[run_id]",
-      "min_depth": null,
-      "class": "orphan",
-      "path_example": [],
-      "entry_type": "none"
-    },
-    {
-      "path": "/examples/evidence-producers/[substrate]",
-      "min_depth": null,
-      "class": "orphan",
-      "path_example": [],
-      "entry_type": "none"
-    },
-    {
-      "path": "/rulesets/[version]",
-      "min_depth": null,
-      "class": "orphan",
-      "path_example": [],
-      "entry_type": "none"
-    },
-    {
-      "path": "/rulesets/diff/[diff_id]",
-      "min_depth": null,
-      "class": "orphan",
-      "path_example": [],
-      "entry_type": "none"
-    },
-    {
-      "path": "/runs/[run_id]/evidence",
-      "min_depth": null,
-      "class": "orphan",
-      "path_example": [],
-      "entry_type": "none"
-    },
-    {
-      "path": "/runs/[run_id]",
-      "min_depth": null,
-      "class": "orphan",
-      "path_example": [],
-      "entry_type": "none"
-    },
-    {
-      "path": "/runs/[run_id]/replay",
-      "min_depth": null,
-      "class": "orphan",
-      "path_example": [],
-      "entry_type": "none"
-    },
     {
       "path": "/about",
       "min_depth": 1,
@@ -157,11 +108,29 @@
       "entry_type": "footer"
     },
     {
+      "path": "/policies/fmm",
+      "min_depth": 1,
+      "class": "L1",
+      "path_example": [
+        "/policies/fmm"
+      ],
+      "entry_type": "footer"
+    },
+    {
       "path": "/policies/intake",
       "min_depth": 1,
       "class": "L1",
       "path_example": [
         "/policies/intake"
+      ],
+      "entry_type": "footer"
+    },
+    {
+      "path": "/policies/strength",
+      "min_depth": 1,
+      "class": "L1",
+      "path_example": [
+        "/policies/strength"
       ],
       "entry_type": "footer"
     },
@@ -202,24 +171,53 @@
       "entry_type": "navbar"
     },
     {
-      "path": "/policies/fmm",
-      "min_depth": 2,
-      "class": "L2",
-      "path_example": [
-        "/methodology",
-        "/policies/fmm"
-      ],
-      "entry_type": "in-page"
+      "path": "/adjudication/[run_id]",
+      "min_depth": null,
+      "class": "orphan",
+      "path_example": [],
+      "entry_type": "none"
     },
     {
-      "path": "/policies/strength",
-      "min_depth": 2,
-      "class": "L2",
-      "path_example": [
-        "/policies/contract",
-        "/policies/strength"
-      ],
-      "entry_type": "in-page"
+      "path": "/examples/evidence-producers/[substrate]",
+      "min_depth": null,
+      "class": "orphan",
+      "path_example": [],
+      "entry_type": "none"
+    },
+    {
+      "path": "/rulesets/[version]",
+      "min_depth": null,
+      "class": "orphan",
+      "path_example": [],
+      "entry_type": "none"
+    },
+    {
+      "path": "/rulesets/diff/[diff_id]",
+      "min_depth": null,
+      "class": "orphan",
+      "path_example": [],
+      "entry_type": "none"
+    },
+    {
+      "path": "/runs/[run_id]/evidence",
+      "min_depth": null,
+      "class": "orphan",
+      "path_example": [],
+      "entry_type": "none"
+    },
+    {
+      "path": "/runs/[run_id]",
+      "min_depth": null,
+      "class": "orphan",
+      "path_example": [],
+      "entry_type": "none"
+    },
+    {
+      "path": "/runs/[run_id]/replay",
+      "min_depth": null,
+      "class": "orphan",
+      "path_example": [],
+      "entry_type": "none"
     }
   ]
 }
