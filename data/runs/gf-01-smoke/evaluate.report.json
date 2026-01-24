@@ -1,0 +1,58 @@
+{
+  "evaluate_version": "1.0",
+  "run_id": "gf-01-smoke",
+  "evaluated_at": "2026-01-14T10:12:29.809Z",
+  "ruleset_version": "1.0",
+  "golden_flows": [
+    {
+      "gf_id": "GF-01",
+      "status": "PASS",
+      "evidence_refs": [
+        "artifacts/context.json",
+        "artifacts/plan.json",
+        "artifacts/trace.json"
+      ],
+      "message": "Evidence artifacts present"
+    },
+    {
+      "gf_id": "GF-02",
+      "status": "PASS",
+      "evidence_refs": [
+        "timeline/events.ndjson"
+      ],
+      "message": "Prompt evidence present"
+    },
+    {
+      "gf_id": "GF-03",
+      "status": "PASS",
+      "evidence_refs": [
+        "integrity/pack.sha256",
+        "integrity/sha256sums.txt"
+      ],
+      "message": "Output integrity evidence present"
+    },
+    {
+      "gf_id": "GF-04",
+      "status": "PASS",
+      "evidence_refs": [
+        "timeline/events.ndjson"
+      ],
+      "message": "Timeline evidence present"
+    },
+    {
+      "gf_id": "GF-05",
+      "status": "PASS",
+      "evidence_refs": [
+        "integrity/pack.sha256",
+        "integrity/sha256sums.txt"
+      ],
+      "message": "Cryptographic binding present"
+    }
+  ],
+  "summary": {
+    "total": 5,
+    "passed": 5,
+    "failed": 0,
+    "not_evaluated": 0
+  }
+}

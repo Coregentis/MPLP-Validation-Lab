@@ -49,6 +49,15 @@ sets:
       - arb-d4-termination-fail-reason-invalid-v0.4
       - arb-d4-termination-fail-uncontrolled-recovery-v0.4
 
+  # v0.2 Official Archived Runs (Canonical Evidence)
+  curated_archived:
+    description: "Historical official runs used for reproduction evidence"
+    count: 3
+    includes:
+      - gf-01-langchain-official-v0.2
+      - gf-01-a2a-official-v0.2
+      - gf-01-mcp-official-v0.2
+
   # v0.5 Cross-Substrate Runs (24 total)
   cross_substrate:
     description: "v0.5 cross-platform reproduction runs (3 substrates × 8 scenarios)"
@@ -86,12 +95,17 @@ sets:
 
   # Internal Test Runs (Ad-hoc)
   internal_test:
-    description: "Internal smoke tests and samples (not curated)"
+    description: "Internal smoke tests and technical samples"
     includes:
       - sample-pass
-      - sample-not-admissible
       - test-gf01-only
       - gf-01-smoke
+
+  # Non-Admissible / Broken Assets (For Gate Testing)
+  non_admissible:
+    description: "Technical samples that are expected to fail admission gates (not for public display)"
+    includes:
+      - sample-not-admissible
 
   # v0.5 Test Vectors (40 allowlisted variants)
   test_vectors:

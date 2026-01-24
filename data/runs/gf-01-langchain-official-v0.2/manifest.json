@@ -1,0 +1,46 @@
+{
+    "run_id": "gf-01-langchain-official-v0.2",
+    "scenario_id": "gf-01-single-agent-lifecycle",
+    "snapshot_version": "1",
+    "source": {
+        "evidence_ref": "Validation_Lab/releases/v0.2/artifacts/equivalence/gf-01.json",
+        "pack_root_hash": "1a499c7e9be2b9fb40202130640c33551971c1650f1497fd0f3cf7bebe6a47a4",
+        "verdict_hash": "25102cd201fd8b54f53416b21ef9d3b609fbca34718a0b4eb5ec58db16971c56"
+    },
+    "snapshots": [
+        {
+            "id": "000",
+            "path": "states/000.json",
+            "logical_time": 0,
+            "event_ref": "timeline/events.ndjson#L1",
+            "notes": "Initial state: agent created, context loaded"
+        },
+        {
+            "id": "001",
+            "path": "states/001.json",
+            "logical_time": 1,
+            "event_ref": "timeline/events.ndjson#L2-L5",
+            "notes": "Final state: execution complete, all artifacts generated"
+        }
+    ],
+    "diffs": [
+        {
+            "from": "000",
+            "to": "001",
+            "path": "diffs/000_001.json",
+            "diff_schema_ref": "../snapshot-diff.schema.json"
+        }
+    ],
+    "canonicalization": {
+        "mode": "json-c14n-lite",
+        "ignored_fields": [
+            "timestamp",
+            "captured_at"
+        ]
+    },
+    "integrity": {
+        "index_sha256": "__TO_BE_COMPUTED__",
+        "states_sha256sums": "states/sha256sums.txt",
+        "diffs_sha256sums": "diffs/sha256sums.txt"
+    }
+}

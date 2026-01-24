@@ -35,7 +35,18 @@ let adjudicationMap = new Map();
 if (fs.existsSync(ADJUDICATION_INDEX_PATH)) {
     try {
         const adjIndex = JSON.parse(fs.readFileSync(ADJUDICATION_INDEX_PATH, 'utf-8'));
-        for (const adj of adjIndex.adjudications || []) {
+        // Load runsets for filtering
+        const runsetsPath = path.join(PROJECT_ROOT, 'governance/runsets.yaml');
+        const runsets = yaml.load(fs.readFileSync(runsetsPath, 'utf-8'));
+        const internalIds = new Set([
+            ...(runsets.sets.internal_test?.includes || []),
+            ...(runsets.sets.non_admissible?.includes || [])
+        ]);
+
+        // Filter adjudications based on runsets
+        const eligibleAdjudications = (adjIndex.adjudications || []).filter(adj => !internalIds.has(adj.run_id));
+
+        for (const adj of eligibleAdjudications) {
             adjudicationMap.set(adj.run_id, {
                 status: adj.overall_status,
                 verdict_hash: adj.verdict_hash,
@@ -48,24 +59,37 @@ if (fs.existsSync(ADJUDICATION_INDEX_PATH)) {
     }
 }
 
+// Define project root
+const PROJECT_ROOT = process.cwd();
+
+// Load runsets for filtering
+const runsetsPath = path.join(PROJECT_ROOT, 'governance/runsets.yaml');
+const runsets = yaml.load(fs.readFileSync(runsetsPath, 'utf-8'));
+const internalIds = new Set([
+    ...(runsets.sets.internal_test?.includes || []),
+    ...(runsets.sets.non_admissible?.includes || [])
+]);
+
 // Enrich runs with adjudication status
-const enrichedRuns = runs.map(run => {
-    const adj = adjudicationMap.get(run.run_id);
-    if (adj) {
+const enrichedRuns = runs
+    .filter(run => !internalIds.has(run.run_id))
+    .map(run => {
+        const adj = adjudicationMap.get(run.run_id);
+        if (adj) {
+            return {
+                ...run,
+                adjudication_status: adj.status,
+                adjudication_verdict_hash: adj.verdict_hash,
+                adjudication_admission_status: adj.admission_status
+            };
+        }
         return {
             ...run,
-            adjudication_status: adj.status,
-            adjudication_verdict_hash: adj.verdict_hash,
-            adjudication_admission_status: adj.admission_status
+            adjudication_status: 'NOT_ADJUDICATED',
+            adjudication_verdict_hash: null,
+            adjudication_admission_status: null
         };
-    }
-    return {
-        ...run,
-        adjudication_status: 'NOT_ADJUDICATED',
-        adjudication_verdict_hash: null,
-        adjudication_admission_status: null
-    };
-});
+    });
 
 // Get git commit (fallback to 'unknown' if not in git context)
 let gitCommit = 'unknown';

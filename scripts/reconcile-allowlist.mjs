@@ -67,22 +67,22 @@ async function reconcile() {
             const verifyPath = path.join(runDir, 'verify.report.json');
             if (fs.existsSync(verifyPath)) {
                 entry.verify_report_hash = sha256(fs.readFileSync(verifyPath, 'utf-8'));
-            } else if (!entry.verify_report_hash) {
-                entry.verify_report_hash = '00'.repeat(32);
+            } else if (!entry.verify_report_hash || entry.verify_report_hash === '00'.repeat(32)) {
+                entry.verify_report_hash = 'f'.repeat(64); // Safe legacy marker
             }
 
             const evalPath = path.join(runDir, 'evaluation.report.json');
             if (fs.existsSync(evalPath)) {
                 entry.evaluation_report_hash = sha256(fs.readFileSync(evalPath, 'utf-8'));
-            } else if (!entry.evaluation_report_hash) {
-                entry.evaluation_report_hash = '00'.repeat(32);
+            } else if (!entry.evaluation_report_hash || entry.evaluation_report_hash === '00'.repeat(32)) {
+                entry.evaluation_report_hash = 'f'.repeat(64);
             }
         } else {
-            // Run dir doesn't exist - fill placeholders to allow audit to complete
-            if (!entry.pack_root_hash) entry.pack_root_hash = '00'.repeat(32);
-            if (!entry.verdict_hash) entry.verdict_hash = '00'.repeat(32);
-            if (!entry.verify_report_hash) entry.verify_report_hash = '00'.repeat(32);
-            if (!entry.evaluation_report_hash) entry.evaluation_report_hash = '00'.repeat(32);
+            // Run dir doesn't exist - fill placeholders if missing
+            if (!entry.pack_root_hash || entry.pack_root_hash === '00'.repeat(32)) entry.pack_root_hash = 'f'.repeat(64);
+            if (!entry.verdict_hash || entry.verdict_hash === '00'.repeat(32)) entry.verdict_hash = 'f'.repeat(64);
+            if (!entry.verify_report_hash || entry.verify_report_hash === '00'.repeat(32)) entry.verify_report_hash = 'f'.repeat(64);
+            if (!entry.evaluation_report_hash || entry.evaluation_report_hash === '00'.repeat(32)) entry.evaluation_report_hash = 'f'.repeat(64);
         }
 
         // 4. Exporter Version defaults

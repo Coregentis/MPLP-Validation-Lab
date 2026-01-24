@@ -1,0 +1,141 @@
+{
+  "generated_at": "2026-01-24T04:26:12.467Z",
+  "git": {
+    "head": "",
+    "branch": "main"
+  },
+  "packs": [
+    {
+      "run_id": "gf-01-a2a-fail",
+      "pack_path": "data/runs/gf-01-a2a-fail",
+      "pack_root_hash": "cf3e9fed2f4ce578d7b36378b102a22b3e4453465c432df8c9cc4eeead23fd12",
+      "pack_id": "gf-01-a2a-fail",
+      "protocol_version": "1.0.0",
+      "substrate": {
+        "type": "a2a",
+        "version": "0.1.0"
+      }
+    },
+    {
+      "run_id": "gf-01-a2a-pass",
+      "pack_path": "data/runs/gf-01-a2a-pass",
+      "pack_root_hash": "b0e30c8e3b25e47e3f122d2356efc83dbe372cccfb4160150e13c649f27dcea3",
+      "pack_id": "gf-01-a2a-pass",
+      "protocol_version": "1.0.0",
+      "substrate": {
+        "type": "a2a",
+        "version": "0.1.0"
+      }
+    },
+    {
+      "run_id": "gf-01-langchain-pass",
+      "pack_path": "data/runs/gf-01-langchain-pass",
+      "pack_root_hash": "f50b56826fb1a35c0bb80430820301d068984d56de910aa82e8de78f971a660a",
+      "pack_id": "gf-01-langchain-pass",
+      "protocol_version": "1.0.0",
+      "substrate": {
+        "type": "langchain",
+        "version": "0.1.0",
+        "python_version": "3.9+"
+      }
+    },
+    {
+      "run_id": "gf-01-mcp-pass",
+      "pack_path": "data/runs/gf-01-mcp-pass",
+      "pack_root_hash": "e4bf6c33d47228eb2b357b4ecdb133f3baf98c5e1d13de359ff860369004b7b0",
+      "pack_id": "gf-01-mcp-pass",
+      "protocol_version": "1.0.0",
+      "substrate": {
+        "type": "mcp",
+        "version": "0.1.0",
+        "sdk_version": "@modelcontextprotocol/sdk@0.5.0"
+      }
+    },
+    {
+      "run_id": "sample-not-admissible",
+      "pack_path": "data/runs/sample-not-admissible",
+      "pack_root_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "pack_id": "test-minimal-pass-001",
+      "protocol_version": "1.0.0",
+      "ruleset_version": "1.0"
+    },
+    {
+      "run_id": "sample-pass",
+      "pack_path": "data/runs/sample-pass",
+      "pack_root_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "pack_id": "test-minimal-pass-001",
+      "protocol_version": "1.0.0",
+      "ruleset_version": "1.0"
+    },
+    {
+      "run_id": "test-gf01-only",
+      "pack_path": "data/runs/test-gf01-only",
+      "pack_root_hash": "05d7fcd0938a862b21a9d9ae8c26e65355a2865e92b6a509a049b061545b75ac",
+      "pack_id": "test-without-scenario",
+      "protocol_version": "1.0.0",
+      "ruleset_version": "1.0"
+    },
+    {
+      "run_id": "broken-admission",
+      "pack_path": "fixtures/packs/broken-admission",
+      "pack_root_hash": "d97590764e87f05db64d75d500cbededc905e7d1442f06e109474dc2b2d3e504",
+      "pack_id": "test-minimal-pass-001",
+      "protocol_version": "1.0.0",
+      "ruleset_version": "1.0"
+    },
+    {
+      "run_id": "gf-01-admissible-fail",
+      "pack_path": "fixtures/packs/gf-01-admissible-fail",
+      "pack_root_hash": "cc52255c5511425db3b7c0c16376a6e5415408a383c88093ab9396332d4f089b",
+      "pack_id": "test-minimal-pass-001",
+      "protocol_version": "1.0.0",
+      "ruleset_version": "1.0"
+    },
+    {
+      "run_id": "gf-fail-missing-plan",
+      "pack_path": "fixtures/packs/gf-fail-missing-plan",
+      "pack_root_hash": "d97590764e87f05db64d75d500cbededc905e7d1442f06e109474dc2b2d3e504",
+      "pack_id": "gf-02-fail-missing-plan",
+      "protocol_version": "1.0.0",
+      "ruleset_version": "1.0"
+    },
+    {
+      "run_id": "minimal-pass",
+      "pack_path": "fixtures/packs/minimal-pass",
+      "pack_root_hash": "d97590764e87f05db64d75d500cbededc905e7d1442f06e109474dc2b2d3e504",
+      "pack_id": "test-minimal-pass-001",
+      "protocol_version": "1.0.0",
+      "ruleset_version": "1.0"
+    },
+    {
+      "run_id": "minimal-replay-pass",
+      "pack_path": "fixtures/packs/minimal-replay-pass",
+      "pack_root_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "pack_id": "minimal-replay-pass-001",
+      "protocol_version": "1.0.0",
+      "ruleset_version": "1.0"
+    },
+    {
+      "run_id": "v0.2",
+      "pack_path": "releases/archive/v0.2",
+      "pack_root_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "protocol_version": "1.0.0",
+      "ruleset_version": "ruleset-1.0"
+    },
+    {
+      "run_id": "v0.3",
+      "pack_path": "releases/archive/v0.3",
+      "pack_root_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "protocol_version": "1.0.0"
+    },
+    {
+      "run_id": "v0.4",
+      "pack_path": "releases/archive/v0.4",
+      "pack_root_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "protocol_version": "1.0.0"
+    }
+  ],
+  "vectors": [],
+  "producers": [],
+  "other_assets": []
+}

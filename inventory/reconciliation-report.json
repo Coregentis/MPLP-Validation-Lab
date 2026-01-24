@@ -1,0 +1,128 @@
+{
+  "reconciled_at": "2026-01-24T04:26:12.809Z",
+  "missing_assets_from_ssot": [
+    {
+      "run_id": "gf-01-langchain-official-v0.2",
+      "expected_path": "data/runs/gf-01-langchain-official-v0.2"
+    },
+    {
+      "run_id": "gf-01-a2a-official-v0.2",
+      "expected_path": "data/runs/gf-01-a2a-official-v0.2"
+    },
+    {
+      "run_id": "gf-01-mcp-official-v0.2",
+      "expected_path": "data/runs/gf-01-mcp-official-v0.2"
+    },
+    {
+      "run_id": "gf-02-fail",
+      "expected_path": "data/runs/gf-02-fail"
+    },
+    {
+      "run_id": "admission-not-admissible-01",
+      "expected_path": "data/runs/admission-not-admissible-01"
+    },
+    {
+      "run_id": "gf-01-adjudicated-fail-01",
+      "expected_path": "data/runs/gf-01-adjudicated-fail-01"
+    },
+    {
+      "run_id": "gf-01-smoke",
+      "expected_path": "data/runs/gf-01-smoke"
+    },
+    {
+      "run_id": "arb-d1-budget-pass-fixture-v0.3",
+      "expected_path": "data/runs/arb-d1-budget-pass-fixture-v0.3"
+    },
+    {
+      "run_id": "arb-d1-budget-fail-fixture-v0.3",
+      "expected_path": "data/runs/arb-d1-budget-fail-fixture-v0.3"
+    },
+    {
+      "run_id": "arb-d2-lifecycle-state-pass-fixture-v0.3",
+      "expected_path": "data/runs/arb-d2-lifecycle-state-pass-fixture-v0.3"
+    },
+    {
+      "run_id": "arb-d2-lifecycle-state-fail-fixture-v0.3",
+      "expected_path": "data/runs/arb-d2-lifecycle-state-fail-fixture-v0.3"
+    },
+    {
+      "run_id": "arb-d3-authz-decision-pass-fixture-v0.3",
+      "expected_path": "data/runs/arb-d3-authz-decision-pass-fixture-v0.3"
+    },
+    {
+      "run_id": "arb-d3-authz-decision-fail-fixture-v0.3",
+      "expected_path": "data/runs/arb-d3-authz-decision-fail-fixture-v0.3"
+    },
+    {
+      "run_id": "arb-d4-termination-recovery-pass-fixture-v0.3",
+      "expected_path": "data/runs/arb-d4-termination-recovery-pass-fixture-v0.3"
+    },
+    {
+      "run_id": "arb-d4-termination-recovery-fail-fixture-v0.3",
+      "expected_path": "data/runs/arb-d4-termination-recovery-fail-fixture-v0.3"
+    },
+    {
+      "run_id": "arb-d1-budget-fail-outcome-invalid-v0.4",
+      "expected_path": "data/runs/arb-d1-budget-fail-outcome-invalid-v0.4"
+    },
+    {
+      "run_id": "arb-d1-budget-fail-deny-missing-gate-v0.4",
+      "expected_path": "data/runs/arb-d1-budget-fail-deny-missing-gate-v0.4"
+    },
+    {
+      "run_id": "arb-d2-lifecycle-fail-terminal-state-invalid-v0.4",
+      "expected_path": "data/runs/arb-d2-lifecycle-fail-terminal-state-invalid-v0.4"
+    },
+    {
+      "run_id": "arb-d2-lifecycle-fail-post-terminal-exec-v0.4",
+      "expected_path": "data/runs/arb-d2-lifecycle-fail-post-terminal-exec-v0.4"
+    },
+    {
+      "run_id": "arb-d3-authz-fail-sra-incomplete-v0.4",
+      "expected_path": "data/runs/arb-d3-authz-fail-sra-incomplete-v0.4"
+    },
+    {
+      "run_id": "arb-d3-authz-fail-deny-no-confirm-v0.4",
+      "expected_path": "data/runs/arb-d3-authz-fail-deny-no-confirm-v0.4"
+    },
+    {
+      "run_id": "arb-d4-termination-fail-reason-invalid-v0.4",
+      "expected_path": "data/runs/arb-d4-termination-fail-reason-invalid-v0.4"
+    },
+    {
+      "run_id": "arb-d4-termination-fail-uncontrolled-recovery-v0.4",
+      "expected_path": "data/runs/arb-d4-termination-fail-uncontrolled-recovery-v0.4"
+    }
+  ],
+  "unregistered_assets_in_repo": [
+    {
+      "run_id": "sample-not-admissible",
+      "path": "data/runs/sample-not-admissible"
+    },
+    {
+      "run_id": "sample-pass",
+      "path": "data/runs/sample-pass"
+    },
+    {
+      "run_id": "test-gf01-only",
+      "path": "data/runs/test-gf01-only"
+    }
+  ],
+  "hash_mismatches": [],
+  "orphaned_runs": [
+    {
+      "run_id": "gf-01-langchain-official-v0.2",
+      "reason": "Not referenced in runsets.yaml"
+    },
+    {
+      "run_id": "gf-01-a2a-official-v0.2",
+      "reason": "Not referenced in runsets.yaml"
+    },
+    {
+      "run_id": "gf-01-mcp-official-v0.2",
+      "reason": "Not referenced in runsets.yaml"
+    }
+  ],
+  "unknown_substrates": [],
+  "deprecated_paths": []
+}
