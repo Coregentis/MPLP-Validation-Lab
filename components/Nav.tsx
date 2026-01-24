@@ -8,10 +8,11 @@
 import Link from 'next/link';
 import { Logo } from "@/components/ui/logo";
 
-// Internal Lab navigation
+// Internal Lab navigation (aligned with NAVIGATION_MAP.yaml SSOT)
 const NAV_ITEMS = [
     { href: '/', label: 'Home' },
     { href: '/about', label: 'About' },
+    { href: '/methodology', label: 'Methodology' },
     { href: '/runs', label: 'Runs' },
     { href: '/adjudication', label: 'Adjudication' },
     { href: '/rulesets', label: 'Rulesets' },

@@ -46,6 +46,8 @@
         "gate:manifest-anchors": "npx tsx scripts/gates/gate-manifest-anchors.ts",
         "gate:no-hardcoded-version": "npx tsx scripts/gates/gate-no-hardcoded-version.ts",
         "gate:no-frozen-terminology": "npx tsx scripts/gates/gate-no-frozen-terminology.ts",
+        "audit:nav-depth": "npx tsx scripts/audit/nav-depth-audit.ts",
+        "gate:no-static-orphans": "npx tsx scripts/gates/gate-no-static-orphans.ts",
         "gate:all": "npm run gate:vlab:00 && npm run gate:vlab:01",
         "gate:registry": "tsx scripts/gates/registry-contract.mjs",
         "gate:curated-runs": "tsx scripts/gates/curated-runs-closure.mjs",

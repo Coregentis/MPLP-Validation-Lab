@@ -1,0 +1,70 @@
+{
+  "generated_at": "2026-01-24T13:24:29.306Z",
+  "navbar": {
+    "ssot": [
+      "/",
+      "/about",
+      "/methodology",
+      "/runs",
+      "/adjudication",
+      "/coverage",
+      "/rulesets",
+      "/guarantees",
+      "/policies/contract"
+    ],
+    "actual": [
+      "/",
+      "/about",
+      "/methodology",
+      "/runs",
+      "/adjudication",
+      "/rulesets",
+      "/guarantees",
+      "/coverage",
+      "/policies/contract"
+    ],
+    "missing_in_ui": [],
+    "extra_in_ui": []
+  },
+  "footer": {
+    "ssot": [
+      "/about",
+      "/methodology",
+      "/guarantees",
+      "/rulesets",
+      "/policies/contract",
+      "/policies/substrate-scope",
+      "/policies/intake",
+      "/adjudication",
+      "/coverage/adjudication",
+      "/coverage",
+      "/runs"
+    ],
+    "actual": [
+      "/",
+      "/about",
+      "/methodology",
+      "/guarantees",
+      "/rulesets",
+      "/rulesets/diff",
+      "/policies/contract",
+      "/policies/cross-verified",
+      "/policies/substrate-scope",
+      "/policies/intake",
+      "/adjudication",
+      "/coverage/adjudication",
+      "/coverage",
+      "/runs",
+      "/examples/evidence-producers",
+      "/builder"
+    ],
+    "missing_in_ui": [],
+    "extra_in_ui": [
+      "/",
+      "/rulesets/diff",
+      "/policies/cross-verified",
+      "/examples/evidence-producers",
+      "/builder"
+    ]
+  }
+}

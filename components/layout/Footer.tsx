@@ -63,8 +63,18 @@ export function Footer() {
                                     </Link>
                                 </li>
                                 <li>
+                                    <Link href="/rulesets/diff" className="text-mplp-text-muted hover:text-mplp-blue-light text-13 transition-colors font-medium block py-0.5">
+                                        Ruleset Diff
+                                    </Link>
+                                </li>
+                                <li>
                                     <Link href="/policies/contract" className="text-mplp-text-muted hover:text-mplp-blue-light text-13 transition-colors font-medium block py-0.5">
                                         Export Contract
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="/policies/cross-verified" className="text-mplp-text-muted hover:text-mplp-blue-light text-13 transition-colors font-medium block py-0.5">
+                                        Cross-Verified Policy
                                     </Link>
                                 </li>
                                 <li>
@@ -102,6 +112,16 @@ export function Footer() {
                                 <li>
                                     <Link href="/runs" className="text-mplp-text-muted hover:text-mplp-blue-light text-13 transition-colors font-medium block py-0.5">
                                         Curated Runs
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="/examples/evidence-producers" className="text-mplp-text-muted hover:text-mplp-blue-light text-13 transition-colors font-medium block py-0.5">
+                                        Evidence Producers
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="/builder" className="text-mplp-text-muted hover:text-mplp-blue-light text-13 transition-colors font-medium block py-0.5">
+                                        Builder Guide
                                     </Link>
                                 </li>
                             </ul>

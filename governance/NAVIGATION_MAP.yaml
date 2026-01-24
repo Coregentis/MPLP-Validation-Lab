@@ -27,6 +27,11 @@ navbar:
       label: "Methodology"
       indexable: true
       description: "Evaluation methodology and process"
+
+    - href: "/runs"
+      label: "Runs"
+      indexable: true
+      description: "Curated evidence runs"
       
     - href: "/adjudication"
       label: "Adjudication"

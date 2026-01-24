@@ -1,0 +1,372 @@
+{
+  "generated_at": "2026-01-24T13:24:29.299Z",
+  "nodes": [
+    {
+      "path": "/about",
+      "file": "app/about/page.tsx",
+      "isDynamic": false
+    },
+    {
+      "path": "/adjudication/[run_id]",
+      "file": "app/adjudication/[run_id]/page.tsx",
+      "isDynamic": true
+    },
+    {
+      "path": "/adjudication",
+      "file": "app/adjudication/page.tsx",
+      "isDynamic": false
+    },
+    {
+      "path": "/builder",
+      "file": "app/builder/page.tsx",
+      "isDynamic": false
+    },
+    {
+      "path": "/coverage/adjudication",
+      "file": "app/coverage/adjudication/page.tsx",
+      "isDynamic": false
+    },
+    {
+      "path": "/coverage",
+      "file": "app/coverage/page.tsx",
+      "isDynamic": false
+    },
+    {
+      "path": "/examples/evidence-producers/[substrate]",
+      "file": "app/examples/evidence-producers/[substrate]/page.tsx",
+      "isDynamic": true
+    },
+    {
+      "path": "/examples/evidence-producers",
+      "file": "app/examples/evidence-producers/page.tsx",
+      "isDynamic": false
+    },
+    {
+      "path": "/guarantees",
+      "file": "app/guarantees/page.tsx",
+      "isDynamic": false
+    },
+    {
+      "path": "/methodology",
+      "file": "app/methodology/page.tsx",
+      "isDynamic": false
+    },
+    {
+      "path": "/",
+      "file": "app/page.tsx",
+      "isDynamic": false
+    },
+    {
+      "path": "/policies/contract",
+      "file": "app/policies/contract/page.tsx",
+      "isDynamic": false
+    },
+    {
+      "path": "/policies/cross-verified",
+      "file": "app/policies/cross-verified/page.tsx",
+      "isDynamic": false
+    },
+    {
+      "path": "/policies/fmm",
+      "file": "app/policies/fmm/page.tsx",
+      "isDynamic": false
+    },
+    {
+      "path": "/policies/intake",
+      "file": "app/policies/intake/page.tsx",
+      "isDynamic": false
+    },
+    {
+      "path": "/policies/strength",
+      "file": "app/policies/strength/page.tsx",
+      "isDynamic": false
+    },
+    {
+      "path": "/policies/substrate-scope",
+      "file": "app/policies/substrate-scope/page.tsx",
+      "isDynamic": false
+    },
+    {
+      "path": "/rulesets/[version]",
+      "file": "app/rulesets/[version]/page.tsx",
+      "isDynamic": true
+    },
+    {
+      "path": "/rulesets/diff/[diff_id]",
+      "file": "app/rulesets/diff/[diff_id]/page.tsx",
+      "isDynamic": true
+    },
+    {
+      "path": "/rulesets/diff",
+      "file": "app/rulesets/diff/page.tsx",
+      "isDynamic": false
+    },
+    {
+      "path": "/rulesets",
+      "file": "app/rulesets/page.tsx",
+      "isDynamic": false
+    },
+    {
+      "path": "/runs/[run_id]/evidence",
+      "file": "app/runs/[run_id]/evidence/page.tsx",
+      "isDynamic": true
+    },
+    {
+      "path": "/runs/[run_id]",
+      "file": "app/runs/[run_id]/page.tsx",
+      "isDynamic": true
+    },
+    {
+      "path": "/runs/[run_id]/replay",
+      "file": "app/runs/[run_id]/replay/page.tsx",
+      "isDynamic": true
+    },
+    {
+      "path": "/runs",
+      "file": "app/runs/page.tsx",
+      "isDynamic": false
+    }
+  ],
+  "edges": [
+    {
+      "from": "/about",
+      "to": "/guarantees"
+    },
+    {
+      "from": "/about",
+      "to": "/rulesets"
+    },
+    {
+      "from": "/about",
+      "to": "/runs"
+    },
+    {
+      "from": "/adjudication/[run_id]",
+      "to": "/adjudication"
+    },
+    {
+      "from": "/adjudication",
+      "to": "/about"
+    },
+    {
+      "from": "/builder",
+      "to": "/about"
+    },
+    {
+      "from": "/builder",
+      "to": "/runs"
+    },
+    {
+      "from": "/builder",
+      "to": "/rulesets"
+    },
+    {
+      "from": "/coverage/adjudication",
+      "to": "/policies/substrate-scope"
+    },
+    {
+      "from": "/coverage/adjudication",
+      "to": "/about"
+    },
+    {
+      "from": "/coverage/adjudication",
+      "to": "/coverage"
+    },
+    {
+      "from": "/coverage/adjudication",
+      "to": "/adjudication"
+    },
+    {
+      "from": "/coverage/adjudication",
+      "to": "/policies/intake"
+    },
+    {
+      "from": "/coverage",
+      "to": "/coverage/adjudication"
+    },
+    {
+      "from": "/coverage",
+      "to": "/adjudication"
+    },
+    {
+      "from": "/coverage",
+      "to": "/about"
+    },
+    {
+      "from": "/coverage",
+      "to": "/runs"
+    },
+    {
+      "from": "/coverage",
+      "to": "/rulesets"
+    },
+    {
+      "from": "/examples/evidence-producers",
+      "to": "/"
+    },
+    {
+      "from": "/examples/evidence-producers",
+      "to": "/policies/contract"
+    },
+    {
+      "from": "/examples/evidence-producers",
+      "to": "/coverage/adjudication"
+    },
+    {
+      "from": "/examples/evidence-producers",
+      "to": "/policies/fmm"
+    },
+    {
+      "from": "/guarantees",
+      "to": "/policies/contract"
+    },
+    {
+      "from": "/guarantees",
+      "to": "/rulesets"
+    },
+    {
+      "from": "/methodology",
+      "to": "/"
+    },
+    {
+      "from": "/methodology",
+      "to": "/coverage/adjudication"
+    },
+    {
+      "from": "/methodology",
+      "to": "/about"
+    },
+    {
+      "from": "/methodology",
+      "to": "/policies/contract"
+    },
+    {
+      "from": "/methodology",
+      "to": "/rulesets"
+    },
+    {
+      "from": "/methodology",
+      "to": "/policies/fmm"
+    },
+    {
+      "from": "/methodology",
+      "to": "/policies/substrate-scope"
+    },
+    {
+      "from": "/",
+      "to": "/runs"
+    },
+    {
+      "from": "/",
+      "to": "/policies/contract"
+    },
+    {
+      "from": "/",
+      "to": "/rulesets"
+    },
+    {
+      "from": "/",
+      "to": "/guarantees"
+    },
+    {
+      "from": "/",
+      "to": "/adjudication/gf-01-smoke"
+    },
+    {
+      "from": "/",
+      "to": "/adjudication"
+    },
+    {
+      "from": "/policies/contract",
+      "to": "/policies/strength"
+    },
+    {
+      "from": "/policies/contract",
+      "to": "/guarantees"
+    },
+    {
+      "from": "/policies/contract",
+      "to": "/adjudication"
+    },
+    {
+      "from": "/policies/cross-verified",
+      "to": "/policies/fmm"
+    },
+    {
+      "from": "/policies/cross-verified",
+      "to": "/runs"
+    },
+    {
+      "from": "/policies/cross-verified",
+      "to": "/policies/contract"
+    },
+    {
+      "from": "/policies/cross-verified",
+      "to": "/rulesets"
+    },
+    {
+      "from": "/policies/intake",
+      "to": "/about"
+    },
+    {
+      "from": "/policies/intake",
+      "to": "/policies/contract"
+    },
+    {
+      "from": "/policies/intake",
+      "to": "/examples/evidence-producers/langgraph"
+    },
+    {
+      "from": "/policies/intake",
+      "to": "/runs"
+    },
+    {
+      "from": "/policies/intake",
+      "to": "/adjudication"
+    },
+    {
+      "from": "/policies/strength",
+      "to": "/policies/contract"
+    },
+    {
+      "from": "/policies/strength",
+      "to": "/guarantees"
+    },
+    {
+      "from": "/policies/strength",
+      "to": "/rulesets"
+    },
+    {
+      "from": "/policies/substrate-scope",
+      "to": "/about"
+    },
+    {
+      "from": "/policies/substrate-scope",
+      "to": "/policies/intake"
+    },
+    {
+      "from": "/policies/substrate-scope",
+      "to": "/coverage/adjudication"
+    },
+    {
+      "from": "/rulesets/[version]",
+      "to": "/policies/contract"
+    },
+    {
+      "from": "/rulesets/[version]",
+      "to": "/guarantees"
+    },
+    {
+      "from": "/rulesets/[version]",
+      "to": "/rulesets"
+    },
+    {
+      "from": "/rulesets/diff/[diff_id]",
+      "to": "/rulesets/diff"
+    },
+    {
+      "from": "/runs/[run_id]/replay",
+      "to": "/runs"
+    }
+  ]
+}
