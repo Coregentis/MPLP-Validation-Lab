@@ -1,0 +1,58 @@
+# Evidence Closure Definition (SSOT)
+# Machine-read by VLAB-GATE-13 and referenced in SEAL-v0.10-series.md
+# Per RR-04: Defines strict requirements for FAIL benchmark evidence closure
+
+version: "1.0.0"
+description: "Defines the minimum evidence structure required for dispute-level FAIL benchmarks"
+
+# Evidence closure requirements
+closure_requirements:
+  # Minimal closure (v0.5 packs)
+  minimal:
+    required_sections:
+      - manifest.run_id
+      - manifest.scenario_family
+      - timeline.events  # Array, may be empty
+      - normalized_hash  # Must exist as file
+    description: "Minimal closure for lightweight sample sets"
+
+  # Full closure (production evidence packs)
+  full:
+    required_files:
+      - manifest.json
+      - timeline.json
+      - verdict.json
+      - artifacts/plan.json
+      - artifacts/trace.json
+    required_fields:
+      - manifest.run_id
+      - manifest.scenario_id
+      - manifest.ruleset_version
+      - manifest.substrate
+      - verdict.status
+      - verdict.reason_code
+    hash_requirements:
+      - pack_root_hash: "Must be non-placeholder (not all f's)"
+      - verdict_hash: "Must be non-placeholder"
+    description: "Full closure for production-grade evidence"
+
+# Placeholder handling
+placeholder_policy:
+  allowed_hash_pattern: "^f{64}$"
+  allowed_contexts:
+    - "verify_report_hash when no verify_report exists"
+    - "evaluation_report_hash when no evaluation_report exists"
+  prohibited_contexts:
+    - "pack_root_hash for active/frozen status"
+    - "verdict_hash for any adjudicated pack"
+
+# Diff codes for closure violations
+closure_diff_codes:
+  - code: MISSING_MANIFEST
+    description: "manifest.json absent or unreadable"
+  - code: MISSING_SCENARIO_FAMILY
+    description: "scenario_family not derivable"
+  - code: MISSING_NORMALIZED_HASH
+    description: "normalized_hash.txt not generated"
+  - code: PLACEHOLDER_HASH_VIOLATION
+    description: "Non-allowed placeholder hash in required field"

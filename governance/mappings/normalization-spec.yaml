@@ -1,0 +1,83 @@
+# Normalization Specification (SSOT)
+# Machine-read by scripts/normalize-pack.ts and VLAB-GATE-11
+# HP-10.2-01: All fields expressed as JSON Pointers (no field-name ambiguity)
+# HP-10.2-03: Sequence derive rule explicitly defined
+# HP-10.2-04: String normalization limited to safe operations
+# HP-10.2-05: Projection scope constrained to core elements
+
+version: "1.0.0"
+description: "Defines the canonical projection from Evidence Pack to normalized_evidence.json"
+core_elements_ref: governance/mappings/core-evidence-elements.yaml
+hash_scope_ref: governance/mappings/hash-scope.yaml
+
+# Constraint: projection must not exceed core elements + identity fields
+core_elements_must_be_present: true
+
+# Projection scope using JSON Pointers (HP-10.2-01)
+projection_scope:
+  manifest:
+    - target_pointer: "/manifest/run_id"
+      strategy: include
+    - target_pointer: "/manifest/scenario_id"
+      strategy: include
+    - target_pointer: "/manifest/scenario_family"
+      strategy: include
+    - target_pointer: "/manifest/ruleset_version"
+      strategy: include
+    - target_pointer: "/manifest/substrate"
+      strategy: include
+    - target_pointer: "/manifest/timestamp"
+      strategy: redact  # Volatile, excluded from hash
+    - target_pointer: "/manifest/producer_version"
+      strategy: include
+
+  timeline:
+    - target_pointer: "/timeline/events[*]/event_id"
+      strategy: include
+    - target_pointer: "/timeline/events[*]/event_type"
+      strategy: include
+    - target_pointer: "/timeline/events[*]/actor"
+      strategy: include
+    - target_pointer: "/timeline/events[*]/timestamp"
+      strategy: redact  # Excluded from equivalence hash
+    - target_pointer: "/timeline/events[*]/payload"
+      strategy: canonicalize  # JSON-stable sort keys
+    - target_pointer: "/timeline/events[*]/sequence"
+      strategy: derive
+      derive_rule:
+        # HP-10.2-03: Explicit sequence derivation
+        primary: use_existing_sequence_or_idx_if_present
+        fallback: stable_sort_by_event_id
+        prohibited: timestamp_based_ordering_forbidden
+
+  artifacts:
+    - target_pointer: "/artifacts/plan.json"
+      strategy: include
+    - target_pointer: "/artifacts/trace.json"
+      strategy: include
+    - target_pointer: "/artifacts/verdict.json"
+      strategy: include
+
+  verdict:
+    - target_pointer: "/verdict/status"
+      strategy: include
+    - target_pointer: "/verdict/reason_code"
+      strategy: include
+    - target_pointer: "/verdict/admission/status"
+      strategy: include  # Required for equivalence check
+    - target_pointer: "/verdict/confidence"
+      strategy: ignore  # Optional field, not in core elements
+
+# Canonicalization rules
+canonicalization:
+  json_key_order: alphabetical
+  array_order: stable_by_sequence_then_event_id  # HP-10.2-03
+  null_handling: omit_null_fields
+  # HP-10.2-04: Safe string normalization (no global trim)
+  string_normalization:
+    line_endings: normalize_to_lf
+    trailing_whitespace: strip_per_line_only
+    leading_whitespace: preserve  # Do not trim
+    payload_content: preserve_verbatim  # Code snippets, prompts, diffs
+  # HP-10.2-02: Numeric precision deferred to hash-scope (single source)
+  number_precision: deferred_to_hash_scope

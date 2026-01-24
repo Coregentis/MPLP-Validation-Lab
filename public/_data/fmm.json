@@ -1,0 +1,710 @@
+{
+  "version": "1.0.0",
+  "generated_at": "2026-01-24T08:52:55.730Z",
+  "core_elements": [
+    {
+      "pointer": "/manifest.run_id",
+      "description": "Unique run identifier"
+    },
+    {
+      "pointer": "/manifest.scenario_id",
+      "description": "Scenario identifier"
+    },
+    {
+      "pointer": "/manifest.ruleset_version",
+      "description": "Ruleset version used for adjudication"
+    },
+    {
+      "pointer": "/manifest.substrate",
+      "description": "Substrate identifier (e.g. mcp, a2a)"
+    },
+    {
+      "pointer": "/timeline.events[*]",
+      "description": "Chronological event log"
+    },
+    {
+      "pointer": "/timeline.events[*].event_type",
+      "description": "Standardized event type"
+    },
+    {
+      "pointer": "/timeline.events[*].actor",
+      "description": "Originating component/agent"
+    },
+    {
+      "pointer": "/artifacts/plan.json",
+      "description": "Execution plan or intent"
+    },
+    {
+      "pointer": "/artifacts/trace.json",
+      "description": "Full execution trace"
+    },
+    {
+      "pointer": "/verdict.json",
+      "description": "Adjudication output"
+    },
+    {
+      "pointer": "/verdict.json.status",
+      "description": "Overall pass/fail status"
+    }
+  ],
+  "substrates": {
+    "a2a": {
+      "mappings": [
+        {
+          "source": "`on_chain_start`",
+          "target": "`/timeline.events[*]` (PLAN)",
+          "rule": "direct"
+        },
+        {
+          "source": "`on_chain_end`",
+          "target": "`/timeline.events[*].event_type` (VERDICT)",
+          "rule": "direct"
+        },
+        {
+          "source": "`on_tool_start`",
+          "target": "`/timeline.events[*]` (ACTION)",
+          "rule": "direct"
+        },
+        {
+          "source": "`on_tool_end`",
+          "target": "`/timeline.events[*]` (OBSERVATION)",
+          "rule": "direct"
+        },
+        {
+          "source": "`message.sender`",
+          "target": "`/timeline.events[*].actor`",
+          "rule": "direct"
+        },
+        {
+          "source": "Source Path",
+          "target": "Target Pointer",
+          "rule": "Rule"
+        },
+        {
+          "source": "`graph.get_graph().json()`",
+          "target": "`/artifacts/plan.json`",
+          "rule": "derived"
+        },
+        {
+          "source": "`config.metadata`",
+          "target": "`/manifest.substrate`",
+          "rule": "direct"
+        },
+        {
+          "source": "`verdict_logic`",
+          "target": "`/verdict.json`",
+          "rule": "derived"
+        },
+        {
+          "source": "`run_metadata.run_id`",
+          "target": "`/manifest.run_id`",
+          "rule": "direct"
+        },
+        {
+          "source": "`run_metadata.sid`",
+          "target": "`/manifest.scenario_id`",
+          "rule": "direct"
+        },
+        {
+          "source": "`ruleset.version`",
+          "target": "`/manifest.ruleset_version`",
+          "rule": "direct"
+        },
+        {
+          "source": "`trace.log`",
+          "target": "`/artifacts/trace.json`",
+          "rule": "direct"
+        },
+        {
+          "source": "`verdict.status`",
+          "target": "`/verdict.json.status`",
+          "rule": "direct"
+        },
+        {
+          "source": "Group",
+          "target": "Element",
+          "rule": "Status"
+        },
+        {
+          "source": "Timeline",
+          "target": "Events",
+          "rule": "🟢 MAPPED"
+        },
+        {
+          "source": "Artifacts",
+          "target": "Plan",
+          "rule": "🟢 MAPPED"
+        },
+        {
+          "source": "Artifacts",
+          "target": "Confirm",
+          "rule": "🟡 PARTIAL"
+        }
+      ]
+    },
+    "autogen": {
+      "mappings": [
+        {
+          "source": "`on_chain_start`",
+          "target": "`/timeline.events[*]` (PLAN)",
+          "rule": "direct"
+        },
+        {
+          "source": "`on_chain_end`",
+          "target": "`/timeline.events[*].event_type` (VERDICT)",
+          "rule": "direct"
+        },
+        {
+          "source": "`on_tool_start`",
+          "target": "`/timeline.events[*]` (ACTION)",
+          "rule": "direct"
+        },
+        {
+          "source": "`on_tool_end`",
+          "target": "`/timeline.events[*]` (OBSERVATION)",
+          "rule": "direct"
+        },
+        {
+          "source": "`message.sender`",
+          "target": "`/timeline.events[*].actor`",
+          "rule": "direct"
+        },
+        {
+          "source": "Source Path",
+          "target": "Target Pointer",
+          "rule": "Rule"
+        },
+        {
+          "source": "`graph.get_graph().json()`",
+          "target": "`/artifacts/plan.json`",
+          "rule": "derived"
+        },
+        {
+          "source": "`config.metadata`",
+          "target": "`/manifest.substrate`",
+          "rule": "direct"
+        },
+        {
+          "source": "`verdict_logic`",
+          "target": "`/verdict.json`",
+          "rule": "derived"
+        },
+        {
+          "source": "`run_metadata.run_id`",
+          "target": "`/manifest.run_id`",
+          "rule": "direct"
+        },
+        {
+          "source": "`run_metadata.sid`",
+          "target": "`/manifest.scenario_id`",
+          "rule": "direct"
+        },
+        {
+          "source": "`ruleset.version`",
+          "target": "`/manifest.ruleset_version`",
+          "rule": "direct"
+        },
+        {
+          "source": "`trace.log`",
+          "target": "`/artifacts/trace.json`",
+          "rule": "direct"
+        },
+        {
+          "source": "`verdict.status`",
+          "target": "`/verdict.json.status`",
+          "rule": "direct"
+        },
+        {
+          "source": "Group",
+          "target": "Element",
+          "rule": "Status"
+        },
+        {
+          "source": "Timeline",
+          "target": "Events",
+          "rule": "🟢 MAPPED"
+        },
+        {
+          "source": "Artifacts",
+          "target": "Plan",
+          "rule": "🟢 MAPPED"
+        },
+        {
+          "source": "Artifacts",
+          "target": "Confirm",
+          "rule": "🟡 PARTIAL"
+        }
+      ]
+    },
+    "fixture": {
+      "mappings": [
+        {
+          "source": "`on_chain_start`",
+          "target": "`/timeline.events[*]` (PLAN)",
+          "rule": "direct"
+        },
+        {
+          "source": "`on_chain_end`",
+          "target": "`/timeline.events[*].event_type` (VERDICT)",
+          "rule": "direct"
+        },
+        {
+          "source": "`on_tool_start`",
+          "target": "`/timeline.events[*]` (ACTION)",
+          "rule": "direct"
+        },
+        {
+          "source": "`on_tool_end`",
+          "target": "`/timeline.events[*]` (OBSERVATION)",
+          "rule": "direct"
+        },
+        {
+          "source": "`message.sender`",
+          "target": "`/timeline.events[*].actor`",
+          "rule": "direct"
+        },
+        {
+          "source": "Source Path",
+          "target": "Target Pointer",
+          "rule": "Rule"
+        },
+        {
+          "source": "`graph.get_graph().json()`",
+          "target": "`/artifacts/plan.json`",
+          "rule": "derived"
+        },
+        {
+          "source": "`config.metadata`",
+          "target": "`/manifest.substrate`",
+          "rule": "direct"
+        },
+        {
+          "source": "`verdict_logic`",
+          "target": "`/verdict.json`",
+          "rule": "derived"
+        },
+        {
+          "source": "`run_metadata.run_id`",
+          "target": "`/manifest.run_id`",
+          "rule": "direct"
+        },
+        {
+          "source": "`run_metadata.sid`",
+          "target": "`/manifest.scenario_id`",
+          "rule": "direct"
+        },
+        {
+          "source": "`ruleset.version`",
+          "target": "`/manifest.ruleset_version`",
+          "rule": "direct"
+        },
+        {
+          "source": "`trace.log`",
+          "target": "`/artifacts/trace.json`",
+          "rule": "direct"
+        },
+        {
+          "source": "`verdict.status`",
+          "target": "`/verdict.json.status`",
+          "rule": "direct"
+        },
+        {
+          "source": "Group",
+          "target": "Element",
+          "rule": "Status"
+        },
+        {
+          "source": "Timeline",
+          "target": "Events",
+          "rule": "🟢 MAPPED"
+        },
+        {
+          "source": "Artifacts",
+          "target": "Plan",
+          "rule": "🟢 MAPPED"
+        },
+        {
+          "source": "Artifacts",
+          "target": "Confirm",
+          "rule": "🟡 PARTIAL"
+        }
+      ]
+    },
+    "langchain": {
+      "mappings": [
+        {
+          "source": "`on_chain_start`",
+          "target": "`/timeline.events[*]` (PLAN)",
+          "rule": "direct"
+        },
+        {
+          "source": "`on_chain_end`",
+          "target": "`/timeline.events[*].event_type` (VERDICT)",
+          "rule": "direct"
+        },
+        {
+          "source": "`on_tool_start`",
+          "target": "`/timeline.events[*]` (ACTION)",
+          "rule": "direct"
+        },
+        {
+          "source": "`on_tool_end`",
+          "target": "`/timeline.events[*]` (OBSERVATION)",
+          "rule": "direct"
+        },
+        {
+          "source": "`message.sender`",
+          "target": "`/timeline.events[*].actor`",
+          "rule": "direct"
+        },
+        {
+          "source": "Source Path",
+          "target": "Target Pointer",
+          "rule": "Rule"
+        },
+        {
+          "source": "`graph.get_graph().json()`",
+          "target": "`/artifacts/plan.json`",
+          "rule": "derived"
+        },
+        {
+          "source": "`config.metadata`",
+          "target": "`/manifest.substrate`",
+          "rule": "direct"
+        },
+        {
+          "source": "`verdict_logic`",
+          "target": "`/verdict.json`",
+          "rule": "derived"
+        },
+        {
+          "source": "`run_metadata.run_id`",
+          "target": "`/manifest.run_id`",
+          "rule": "direct"
+        },
+        {
+          "source": "`run_metadata.sid`",
+          "target": "`/manifest.scenario_id`",
+          "rule": "direct"
+        },
+        {
+          "source": "`ruleset.version`",
+          "target": "`/manifest.ruleset_version`",
+          "rule": "direct"
+        },
+        {
+          "source": "`trace.log`",
+          "target": "`/artifacts/trace.json`",
+          "rule": "direct"
+        },
+        {
+          "source": "`verdict.status`",
+          "target": "`/verdict.json.status`",
+          "rule": "direct"
+        },
+        {
+          "source": "Group",
+          "target": "Element",
+          "rule": "Status"
+        },
+        {
+          "source": "Timeline",
+          "target": "Events",
+          "rule": "🟢 MAPPED"
+        },
+        {
+          "source": "Artifacts",
+          "target": "Plan",
+          "rule": "🟢 MAPPED"
+        },
+        {
+          "source": "Artifacts",
+          "target": "Confirm",
+          "rule": "🟡 PARTIAL"
+        }
+      ]
+    },
+    "langgraph": {
+      "mappings": [
+        {
+          "source": "`on_chain_start`",
+          "target": "`/timeline.events[*]` (PLAN)",
+          "rule": "direct"
+        },
+        {
+          "source": "`on_chain_end`",
+          "target": "`/timeline.events[*].event_type` (VERDICT)",
+          "rule": "direct"
+        },
+        {
+          "source": "`on_tool_start`",
+          "target": "`/timeline.events[*]` (ACTION)",
+          "rule": "direct"
+        },
+        {
+          "source": "`on_tool_end`",
+          "target": "`/timeline.events[*]` (OBSERVATION)",
+          "rule": "direct"
+        },
+        {
+          "source": "`message.sender`",
+          "target": "`/timeline.events[*].actor`",
+          "rule": "direct"
+        },
+        {
+          "source": "Source Path",
+          "target": "Target Pointer",
+          "rule": "Rule"
+        },
+        {
+          "source": "`graph.get_graph().json()`",
+          "target": "`/artifacts/plan.json`",
+          "rule": "derived"
+        },
+        {
+          "source": "`config.metadata`",
+          "target": "`/manifest.substrate`",
+          "rule": "direct"
+        },
+        {
+          "source": "`verdict_logic`",
+          "target": "`/verdict.json`",
+          "rule": "derived"
+        },
+        {
+          "source": "`run_metadata.run_id`",
+          "target": "`/manifest.run_id`",
+          "rule": "direct"
+        },
+        {
+          "source": "`run_metadata.sid`",
+          "target": "`/manifest.scenario_id`",
+          "rule": "direct"
+        },
+        {
+          "source": "`ruleset.version`",
+          "target": "`/manifest.ruleset_version`",
+          "rule": "direct"
+        },
+        {
+          "source": "`trace.log`",
+          "target": "`/artifacts/trace.json`",
+          "rule": "direct"
+        },
+        {
+          "source": "`verdict.status`",
+          "target": "`/verdict.json.status`",
+          "rule": "direct"
+        },
+        {
+          "source": "Group",
+          "target": "Element",
+          "rule": "Status"
+        },
+        {
+          "source": "Timeline",
+          "target": "Events",
+          "rule": "🟢 MAPPED"
+        },
+        {
+          "source": "Artifacts",
+          "target": "Plan",
+          "rule": "🟢 MAPPED"
+        },
+        {
+          "source": "Artifacts",
+          "target": "Confirm",
+          "rule": "🟡 PARTIAL"
+        }
+      ]
+    },
+    "mcp": {
+      "mappings": [
+        {
+          "source": "`on_chain_start`",
+          "target": "`/timeline.events[*]` (PLAN)",
+          "rule": "direct"
+        },
+        {
+          "source": "`on_chain_end`",
+          "target": "`/timeline.events[*].event_type` (VERDICT)",
+          "rule": "direct"
+        },
+        {
+          "source": "`on_tool_start`",
+          "target": "`/timeline.events[*]` (ACTION)",
+          "rule": "direct"
+        },
+        {
+          "source": "`on_tool_end`",
+          "target": "`/timeline.events[*]` (OBSERVATION)",
+          "rule": "direct"
+        },
+        {
+          "source": "`message.sender`",
+          "target": "`/timeline.events[*].actor`",
+          "rule": "direct"
+        },
+        {
+          "source": "Source Path",
+          "target": "Target Pointer",
+          "rule": "Rule"
+        },
+        {
+          "source": "`graph.get_graph().json()`",
+          "target": "`/artifacts/plan.json`",
+          "rule": "derived"
+        },
+        {
+          "source": "`config.metadata`",
+          "target": "`/manifest.substrate`",
+          "rule": "direct"
+        },
+        {
+          "source": "`verdict_logic`",
+          "target": "`/verdict.json`",
+          "rule": "derived"
+        },
+        {
+          "source": "`run_metadata.run_id`",
+          "target": "`/manifest.run_id`",
+          "rule": "direct"
+        },
+        {
+          "source": "`run_metadata.sid`",
+          "target": "`/manifest.scenario_id`",
+          "rule": "direct"
+        },
+        {
+          "source": "`ruleset.version`",
+          "target": "`/manifest.ruleset_version`",
+          "rule": "direct"
+        },
+        {
+          "source": "`trace.log`",
+          "target": "`/artifacts/trace.json`",
+          "rule": "direct"
+        },
+        {
+          "source": "`verdict.status`",
+          "target": "`/verdict.json.status`",
+          "rule": "direct"
+        },
+        {
+          "source": "Group",
+          "target": "Element",
+          "rule": "Status"
+        },
+        {
+          "source": "Timeline",
+          "target": "Events",
+          "rule": "🟢 MAPPED"
+        },
+        {
+          "source": "Artifacts",
+          "target": "Plan",
+          "rule": "🟢 MAPPED"
+        },
+        {
+          "source": "Artifacts",
+          "target": "Confirm",
+          "rule": "🟡 PARTIAL"
+        }
+      ]
+    },
+    "sk": {
+      "mappings": [
+        {
+          "source": "`on_chain_start`",
+          "target": "`/timeline.events[*]` (PLAN)",
+          "rule": "direct"
+        },
+        {
+          "source": "`on_chain_end`",
+          "target": "`/timeline.events[*].event_type` (VERDICT)",
+          "rule": "direct"
+        },
+        {
+          "source": "`on_tool_start`",
+          "target": "`/timeline.events[*]` (ACTION)",
+          "rule": "direct"
+        },
+        {
+          "source": "`on_tool_end`",
+          "target": "`/timeline.events[*]` (OBSERVATION)",
+          "rule": "direct"
+        },
+        {
+          "source": "`message.sender`",
+          "target": "`/timeline.events[*].actor`",
+          "rule": "direct"
+        },
+        {
+          "source": "Source Path",
+          "target": "Target Pointer",
+          "rule": "Rule"
+        },
+        {
+          "source": "`graph.get_graph().json()`",
+          "target": "`/artifacts/plan.json`",
+          "rule": "derived"
+        },
+        {
+          "source": "`config.metadata`",
+          "target": "`/manifest.substrate`",
+          "rule": "direct"
+        },
+        {
+          "source": "`verdict_logic`",
+          "target": "`/verdict.json`",
+          "rule": "derived"
+        },
+        {
+          "source": "`run_metadata.run_id`",
+          "target": "`/manifest.run_id`",
+          "rule": "direct"
+        },
+        {
+          "source": "`run_metadata.sid`",
+          "target": "`/manifest.scenario_id`",
+          "rule": "direct"
+        },
+        {
+          "source": "`ruleset.version`",
+          "target": "`/manifest.ruleset_version`",
+          "rule": "direct"
+        },
+        {
+          "source": "`trace.log`",
+          "target": "`/artifacts/trace.json`",
+          "rule": "direct"
+        },
+        {
+          "source": "`verdict.status`",
+          "target": "`/verdict.json.status`",
+          "rule": "direct"
+        },
+        {
+          "source": "Group",
+          "target": "Element",
+          "rule": "Status"
+        },
+        {
+          "source": "Timeline",
+          "target": "Events",
+          "rule": "🟢 MAPPED"
+        },
+        {
+          "source": "Artifacts",
+          "target": "Plan",
+          "rule": "🟢 MAPPED"
+        },
+        {
+          "source": "Artifacts",
+          "target": "Confirm",
+          "rule": "🟡 PARTIAL"
+        }
+      ]
+    }
+  }
+}

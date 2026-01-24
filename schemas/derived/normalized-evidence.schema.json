@@ -1,0 +1,162 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "normalized-evidence.schema.json",
+    "title": "Normalized Evidence",
+    "description": "Schema for normalized_evidence.json produced by normalize-pack.ts per v0.10.2 spec",
+    "type": "object",
+    "required": [
+        "_meta",
+        "manifest",
+        "timeline",
+        "artifacts",
+        "verdict"
+    ],
+    "properties": {
+        "_meta": {
+            "type": "object",
+            "required": [
+                "normalization_spec_version",
+                "hash_scope_version",
+                "source_run_id",
+                "generated_at"
+            ],
+            "properties": {
+                "normalization_spec_version": {
+                    "type": "string",
+                    "pattern": "^\\d+\\.\\d+\\.\\d+$"
+                },
+                "hash_scope_version": {
+                    "type": "string",
+                    "pattern": "^\\d+\\.\\d+\\.\\d+$"
+                },
+                "source_run_id": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "generated_at": {
+                    "type": "string",
+                    "format": "date-time"
+                }
+            }
+        },
+        "manifest": {
+            "type": "object",
+            "required": [
+                "run_id",
+                "scenario_family"
+            ],
+            "properties": {
+                "run_id": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "scenario_id": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "scenario_family": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "ruleset_version": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "substrate": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "producer_version": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "timeline": {
+            "type": "object",
+            "required": [
+                "events"
+            ],
+            "properties": {
+                "events": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "required": [
+                            "event_id",
+                            "sequence"
+                        ],
+                        "properties": {
+                            "event_id": {
+                                "type": "string"
+                            },
+                            "event_type": {
+                                "type": [
+                                    "string",
+                                    "null"
+                                ]
+                            },
+                            "actor": {
+                                "type": [
+                                    "string",
+                                    "null"
+                                ]
+                            },
+                            "sequence": {
+                                "type": "integer"
+                            },
+                            "payload": {
+                                "type": [
+                                    "object",
+                                    "null"
+                                ]
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "artifacts": {
+            "type": "object",
+            "additionalProperties": {
+                "type": [
+                    "object",
+                    "null"
+                ]
+            }
+        },
+        "verdict": {
+            "type": "object",
+            "properties": {
+                "status": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "reason_code": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "admission": {
+                    "type": "object",
+                    "properties": {
+                        "status": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,30 @@
+{
+  "scenario_family": "d2-terminal",
+  "pair": [
+    "v05-d2-langgraph-pass-terminal-success",
+    "v05-d2-sk-pass-terminal-success"
+  ],
+  "differences": [
+    {
+      "note_code": "MISSING_ADMISSIBILITY_EVIDENCE",
+      "params": {
+        "run_id": "v05-d2-langgraph-pass-terminal-success"
+      }
+    },
+    {
+      "note_code": "MISSING_ADMISSIBILITY_EVIDENCE",
+      "params": {
+        "run_id": "v05-d2-sk-pass-terminal-success"
+      }
+    },
+    {
+      "note_code": "VALUE_HASH_MISMATCH",
+      "params": {
+        "pointer": "/normalized_hash",
+        "left_hash": "35a91e36b32db106",
+        "right_hash": "68bc6fc958253e06"
+      }
+    }
+  ],
+  "disclaimer": "Equivalence refers to evidence projection similarity under the specified \nruleset and hash scope. It does not constitute framework certification, \ncapability endorsement, or compliance verification.\n"
+}

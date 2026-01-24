@@ -1,0 +1,30 @@
+{
+  "scenario_family": "d2-invalid",
+  "pair": [
+    "v05-d2-autogen-fail-invalid-terminal",
+    "v05-d2-langgraph-fail-invalid-terminal"
+  ],
+  "differences": [
+    {
+      "note_code": "MISSING_ADMISSIBILITY_EVIDENCE",
+      "params": {
+        "run_id": "v05-d2-autogen-fail-invalid-terminal"
+      }
+    },
+    {
+      "note_code": "MISSING_ADMISSIBILITY_EVIDENCE",
+      "params": {
+        "run_id": "v05-d2-langgraph-fail-invalid-terminal"
+      }
+    },
+    {
+      "note_code": "VALUE_HASH_MISMATCH",
+      "params": {
+        "pointer": "/normalized_hash",
+        "left_hash": "146c149fcdf1011c",
+        "right_hash": "b2eba62729fde7d7"
+      }
+    }
+  ],
+  "disclaimer": "Equivalence refers to evidence projection similarity under the specified \nruleset and hash scope. It does not constitute framework certification, \ncapability endorsement, or compliance verification.\n"
+}

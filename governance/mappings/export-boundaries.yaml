@@ -1,0 +1,60 @@
+# Public Data Export Boundaries (SSOT)
+# Machine-read by export gates and referenced in SEAL-v0.10-series.md
+# Per RR-05: Defines strict boundaries for public data export
+
+version: "1.0.0"
+description: "Defines what data may be exported to public/_data and what must remain internal"
+
+# Allowed export paths
+allowed_exports:
+  - path: "public/_data/curated-runs.json"
+    source: "data/curated-runs/allowlist.yaml"
+    filter: "indexable: true, status not in [internal_test]"
+  
+  - path: "public/_data/fmm.json"
+    source: "governance/mappings/fieldmap/*.yaml"
+    filter: "All substrates with fieldmap"
+  
+  - path: "public/_data/cross-verified/v0.10.2-report.json"
+    source: "data/derived/normalized/*"
+    filter: "Sample set runs only (v05-*)"
+  
+  - path: "public/_data/cross-verified/diffs/**/*.json"
+    source: "Computed from normalized packs"
+    filter: "Non-equivalent pairs from sample set"
+
+# Prohibited exports
+prohibited_categories:
+  - category: "internal_test"
+    description: "Runs marked for internal testing only"
+    enforcement: "GATE-07 (PII Leak) + export filter"
+  
+  - category: "non_admissible"
+    description: "Runs that failed admission gates"
+    enforcement: "Export script filter"
+  
+  - category: "draft"
+    description: "Unpublished or unstable runs"
+    enforcement: "Status filter in allowlist"
+
+# Run status allowlist for public export
+exportable_statuses:
+  - active
+  - frozen
+  - eligible_for_upgrade
+
+# Prohibited run_id patterns in export
+prohibited_run_id_patterns:
+  - "^test-.*"
+  - "^internal-.*"
+  - "^sample-not-admissible$"
+  - "^admission-not-admissible-.*"
+
+# Gate enforcement
+gate_enforcement:
+  gate_id: "VLAB-GATE-EXPORT-BOUNDARY"
+  check: |
+    For each file in public/_data/cross-verified/:
+      - Extract all run_ids referenced
+      - Verify none match prohibited_run_id_patterns
+      - Verify all have exportable_statuses in allowlist

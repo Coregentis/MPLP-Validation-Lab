@@ -1,0 +1,30 @@
+{
+  "scenario_family": "d4-reason",
+  "pair": [
+    "v05-d4-autogen-fail-reason-invalid",
+    "v05-d4-langgraph-pass-reason-success"
+  ],
+  "differences": [
+    {
+      "note_code": "MISSING_ADMISSIBILITY_EVIDENCE",
+      "params": {
+        "run_id": "v05-d4-autogen-fail-reason-invalid"
+      }
+    },
+    {
+      "note_code": "MISSING_ADMISSIBILITY_EVIDENCE",
+      "params": {
+        "run_id": "v05-d4-langgraph-pass-reason-success"
+      }
+    },
+    {
+      "note_code": "VALUE_HASH_MISMATCH",
+      "params": {
+        "pointer": "/normalized_hash",
+        "left_hash": "c43d3d031736a123",
+        "right_hash": "6497a406b58dbd3b"
+      }
+    }
+  ],
+  "disclaimer": "Equivalence refers to evidence projection similarity under the specified \nruleset and hash scope. It does not constitute framework certification, \ncapability endorsement, or compliance verification.\n"
+}

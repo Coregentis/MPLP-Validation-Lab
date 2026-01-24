@@ -1,0 +1,412 @@
+{
+  "report_version": "1.0.0",
+  "ruleset_version": "ruleset-1.1",
+  "normalization_spec_version": "1.0.0",
+  "hash_scope_version": "1.0.0",
+  "core_elements_version": "1.1.0",
+  "generated_at": "2026-01-24T09:17:25.603Z",
+  "scenario_families": [
+    "d1-outcome",
+    "d1-budget",
+    "d2-invalid",
+    "d2-terminal",
+    "d3-subject",
+    "d3-authz",
+    "d4-reason"
+  ],
+  "entries": [
+    {
+      "run_id": "v05-d1-autogen-fail-outcome-invalid",
+      "substrate": "autogen",
+      "scenario_family": "d1-outcome",
+      "normalized_hash": "7de13c3d0a4b3e646b8f896145691514ce0989747829a1eba2ca956c028984e5",
+      "verdict_status": "unknown",
+      "admission_status": "unknown"
+    },
+    {
+      "run_id": "v05-d1-autogen-pass-budget-allow",
+      "substrate": "autogen",
+      "scenario_family": "d1-budget",
+      "normalized_hash": "6c91380300094c8d3ab40901d544a735aee8ec4c5cc63bc6f8ca3b7507ed602d",
+      "verdict_status": "unknown",
+      "admission_status": "unknown"
+    },
+    {
+      "run_id": "v05-d1-langgraph-fail-outcome-invalid",
+      "substrate": "langgraph",
+      "scenario_family": "d1-outcome",
+      "normalized_hash": "dcb508a258cf38afb9d1fded10a855e1ef8ba731b807f0a63892012a9700bfa6",
+      "verdict_status": "unknown",
+      "admission_status": "unknown"
+    },
+    {
+      "run_id": "v05-d1-langgraph-pass-budget-allow",
+      "substrate": "langgraph",
+      "scenario_family": "d1-budget",
+      "normalized_hash": "b96cdb021310858d4ceb5cbec913e4684d923a1f072c4bd5982663b878b7a647",
+      "verdict_status": "unknown",
+      "admission_status": "unknown"
+    },
+    {
+      "run_id": "v05-d1-sk-fail-outcome-invalid",
+      "substrate": "sk",
+      "scenario_family": "d1-outcome",
+      "normalized_hash": "bb4d615fae542eb8c3d6dc814ec28a0214d93e99e67c594bb6134cd2338d2e5b",
+      "verdict_status": "unknown",
+      "admission_status": "unknown"
+    },
+    {
+      "run_id": "v05-d1-sk-pass-budget-allow",
+      "substrate": "sk",
+      "scenario_family": "d1-budget",
+      "normalized_hash": "fb7e5e3642d4f41be0e69bbdfa648e40aa5ac571afc20dd5b527f9ab52e8f754",
+      "verdict_status": "unknown",
+      "admission_status": "unknown"
+    },
+    {
+      "run_id": "v05-d2-autogen-fail-invalid-terminal",
+      "substrate": "autogen",
+      "scenario_family": "d2-invalid",
+      "normalized_hash": "146c149fcdf1011ccd3653ae362d291fa1c02e77c146bc49b7994515caa6d070",
+      "verdict_status": "unknown",
+      "admission_status": "unknown"
+    },
+    {
+      "run_id": "v05-d2-autogen-pass-terminal-success",
+      "substrate": "autogen",
+      "scenario_family": "d2-terminal",
+      "normalized_hash": "a99cd6ecddc5e10eb4eb142ce5b4ce9478b954e3bbc28a15a1a44b43588082a1",
+      "verdict_status": "unknown",
+      "admission_status": "unknown"
+    },
+    {
+      "run_id": "v05-d2-langgraph-fail-invalid-terminal",
+      "substrate": "langgraph",
+      "scenario_family": "d2-invalid",
+      "normalized_hash": "b2eba62729fde7d79a3153574bee3d2ca5ba623fe51a60c24cf70c3fc15710df",
+      "verdict_status": "unknown",
+      "admission_status": "unknown"
+    },
+    {
+      "run_id": "v05-d2-langgraph-pass-terminal-success",
+      "substrate": "langgraph",
+      "scenario_family": "d2-terminal",
+      "normalized_hash": "35a91e36b32db106fb6577d9c1824e98819c6cbf051325832a067aa38339a5c7",
+      "verdict_status": "unknown",
+      "admission_status": "unknown"
+    },
+    {
+      "run_id": "v05-d2-sk-fail-invalid-terminal",
+      "substrate": "sk",
+      "scenario_family": "d2-invalid",
+      "normalized_hash": "739477ceea502e2b22efaddbe2e5d920e08ec2840ba1ac2c388ce513a3e74eac",
+      "verdict_status": "unknown",
+      "admission_status": "unknown"
+    },
+    {
+      "run_id": "v05-d2-sk-pass-terminal-success",
+      "substrate": "sk",
+      "scenario_family": "d2-terminal",
+      "normalized_hash": "68bc6fc958253e0625c9ccb76218e328392b64b7bfbaabb68f08f3d890301f1c",
+      "verdict_status": "unknown",
+      "admission_status": "unknown"
+    },
+    {
+      "run_id": "v05-d3-autogen-fail-subject-missing",
+      "substrate": "autogen",
+      "scenario_family": "d3-subject",
+      "normalized_hash": "469f4b2526e9b2f8ca8544edef734d97aa5cbd033d5eb0e3a3921a9849de34c7",
+      "verdict_status": "unknown",
+      "admission_status": "unknown"
+    },
+    {
+      "run_id": "v05-d3-autogen-pass-authz-allow",
+      "substrate": "autogen",
+      "scenario_family": "d3-authz",
+      "normalized_hash": "b7620d7a10b6efe7e82b37e887b4ea00786b51804f6a531ab0d874505c7e72d3",
+      "verdict_status": "unknown",
+      "admission_status": "unknown"
+    },
+    {
+      "run_id": "v05-d3-langgraph-fail-subject-missing",
+      "substrate": "langgraph",
+      "scenario_family": "d3-subject",
+      "normalized_hash": "938735fed3c3809e9962b1bc04eee97ca4834fb19d572f2ecb50f78cf78fc444",
+      "verdict_status": "unknown",
+      "admission_status": "unknown"
+    },
+    {
+      "run_id": "v05-d3-langgraph-pass-authz-allow",
+      "substrate": "langgraph",
+      "scenario_family": "d3-authz",
+      "normalized_hash": "9cfa9dfd4b2d5b19a0f2930cfb336e5b3115f8a740579c34a24bed807d2afecb",
+      "verdict_status": "unknown",
+      "admission_status": "unknown"
+    },
+    {
+      "run_id": "v05-d3-sk-fail-subject-missing",
+      "substrate": "sk",
+      "scenario_family": "d3-subject",
+      "normalized_hash": "1ab9c3c0ff5146bfc3f1f3b92d9c06c1482d8fc7b9adb6c540803caa2e404904",
+      "verdict_status": "unknown",
+      "admission_status": "unknown"
+    },
+    {
+      "run_id": "v05-d3-sk-pass-authz-allow",
+      "substrate": "sk",
+      "scenario_family": "d3-authz",
+      "normalized_hash": "9248d1445ac1789fa8a3a82ee478ae0029095bae14437b00b06a8bcc47aa81ea",
+      "verdict_status": "unknown",
+      "admission_status": "unknown"
+    },
+    {
+      "run_id": "v05-d4-autogen-fail-reason-invalid",
+      "substrate": "autogen",
+      "scenario_family": "d4-reason",
+      "normalized_hash": "c43d3d031736a1238541838ff82e9af4b7b396cf37a69ab5fb51bbe556393896",
+      "verdict_status": "unknown",
+      "admission_status": "unknown"
+    },
+    {
+      "run_id": "v05-d4-autogen-pass-reason-success",
+      "substrate": "autogen",
+      "scenario_family": "d4-reason",
+      "normalized_hash": "d00faea10bdfa74cd32038b986d3a20ccc183877a4e1a745adfbe516cc26819d",
+      "verdict_status": "unknown",
+      "admission_status": "unknown"
+    },
+    {
+      "run_id": "v05-d4-langgraph-fail-reason-invalid",
+      "substrate": "langgraph",
+      "scenario_family": "d4-reason",
+      "normalized_hash": "b573d94fd2692463cf7f09b8fd28be17ae40ee30b569e1cef16918d0aacf93f7",
+      "verdict_status": "unknown",
+      "admission_status": "unknown"
+    },
+    {
+      "run_id": "v05-d4-langgraph-pass-reason-success",
+      "substrate": "langgraph",
+      "scenario_family": "d4-reason",
+      "normalized_hash": "6497a406b58dbd3b0d491367f7d4d9c34a6b461f9f827e0f6cbdc1bcdecac30c",
+      "verdict_status": "unknown",
+      "admission_status": "unknown"
+    },
+    {
+      "run_id": "v05-d4-sk-fail-reason-invalid",
+      "substrate": "sk",
+      "scenario_family": "d4-reason",
+      "normalized_hash": "967a69495f2f35ee127b7515671d9a8ef1ea46239e25d5a09ad724530c6d9f26",
+      "verdict_status": "unknown",
+      "admission_status": "unknown"
+    },
+    {
+      "run_id": "v05-d4-sk-pass-reason-success",
+      "substrate": "sk",
+      "scenario_family": "d4-reason",
+      "normalized_hash": "b1ac85eb0feed8f55189af7e81208f1932bf6ba551fa7f88e1fb8dbbbfa5caee",
+      "verdict_status": "unknown",
+      "admission_status": "unknown"
+    }
+  ],
+  "equivalence_matrix": [
+    {
+      "left_run_id": "v05-d1-autogen-fail-outcome-invalid",
+      "right_run_id": "v05-d1-langgraph-fail-outcome-invalid",
+      "equivalent": false,
+      "diff_ref": "diffs/d1-outcome/v05-d1-autogen-fail-outcome-invalid__v05-d1-langgraph-fail-outcome-invalid.json"
+    },
+    {
+      "left_run_id": "v05-d1-autogen-fail-outcome-invalid",
+      "right_run_id": "v05-d1-sk-fail-outcome-invalid",
+      "equivalent": false,
+      "diff_ref": "diffs/d1-outcome/v05-d1-autogen-fail-outcome-invalid__v05-d1-sk-fail-outcome-invalid.json"
+    },
+    {
+      "left_run_id": "v05-d1-langgraph-fail-outcome-invalid",
+      "right_run_id": "v05-d1-sk-fail-outcome-invalid",
+      "equivalent": false,
+      "diff_ref": "diffs/d1-outcome/v05-d1-langgraph-fail-outcome-invalid__v05-d1-sk-fail-outcome-invalid.json"
+    },
+    {
+      "left_run_id": "v05-d1-autogen-pass-budget-allow",
+      "right_run_id": "v05-d1-langgraph-pass-budget-allow",
+      "equivalent": false,
+      "diff_ref": "diffs/d1-budget/v05-d1-autogen-pass-budget-allow__v05-d1-langgraph-pass-budget-allow.json"
+    },
+    {
+      "left_run_id": "v05-d1-autogen-pass-budget-allow",
+      "right_run_id": "v05-d1-sk-pass-budget-allow",
+      "equivalent": false,
+      "diff_ref": "diffs/d1-budget/v05-d1-autogen-pass-budget-allow__v05-d1-sk-pass-budget-allow.json"
+    },
+    {
+      "left_run_id": "v05-d1-langgraph-pass-budget-allow",
+      "right_run_id": "v05-d1-sk-pass-budget-allow",
+      "equivalent": false,
+      "diff_ref": "diffs/d1-budget/v05-d1-langgraph-pass-budget-allow__v05-d1-sk-pass-budget-allow.json"
+    },
+    {
+      "left_run_id": "v05-d2-autogen-fail-invalid-terminal",
+      "right_run_id": "v05-d2-langgraph-fail-invalid-terminal",
+      "equivalent": false,
+      "diff_ref": "diffs/d2-invalid/v05-d2-autogen-fail-invalid-terminal__v05-d2-langgraph-fail-invalid-terminal.json"
+    },
+    {
+      "left_run_id": "v05-d2-autogen-fail-invalid-terminal",
+      "right_run_id": "v05-d2-sk-fail-invalid-terminal",
+      "equivalent": false,
+      "diff_ref": "diffs/d2-invalid/v05-d2-autogen-fail-invalid-terminal__v05-d2-sk-fail-invalid-terminal.json"
+    },
+    {
+      "left_run_id": "v05-d2-langgraph-fail-invalid-terminal",
+      "right_run_id": "v05-d2-sk-fail-invalid-terminal",
+      "equivalent": false,
+      "diff_ref": "diffs/d2-invalid/v05-d2-langgraph-fail-invalid-terminal__v05-d2-sk-fail-invalid-terminal.json"
+    },
+    {
+      "left_run_id": "v05-d2-autogen-pass-terminal-success",
+      "right_run_id": "v05-d2-langgraph-pass-terminal-success",
+      "equivalent": false,
+      "diff_ref": "diffs/d2-terminal/v05-d2-autogen-pass-terminal-success__v05-d2-langgraph-pass-terminal-success.json"
+    },
+    {
+      "left_run_id": "v05-d2-autogen-pass-terminal-success",
+      "right_run_id": "v05-d2-sk-pass-terminal-success",
+      "equivalent": false,
+      "diff_ref": "diffs/d2-terminal/v05-d2-autogen-pass-terminal-success__v05-d2-sk-pass-terminal-success.json"
+    },
+    {
+      "left_run_id": "v05-d2-langgraph-pass-terminal-success",
+      "right_run_id": "v05-d2-sk-pass-terminal-success",
+      "equivalent": false,
+      "diff_ref": "diffs/d2-terminal/v05-d2-langgraph-pass-terminal-success__v05-d2-sk-pass-terminal-success.json"
+    },
+    {
+      "left_run_id": "v05-d3-autogen-fail-subject-missing",
+      "right_run_id": "v05-d3-langgraph-fail-subject-missing",
+      "equivalent": false,
+      "diff_ref": "diffs/d3-subject/v05-d3-autogen-fail-subject-missing__v05-d3-langgraph-fail-subject-missing.json"
+    },
+    {
+      "left_run_id": "v05-d3-autogen-fail-subject-missing",
+      "right_run_id": "v05-d3-sk-fail-subject-missing",
+      "equivalent": false,
+      "diff_ref": "diffs/d3-subject/v05-d3-autogen-fail-subject-missing__v05-d3-sk-fail-subject-missing.json"
+    },
+    {
+      "left_run_id": "v05-d3-langgraph-fail-subject-missing",
+      "right_run_id": "v05-d3-sk-fail-subject-missing",
+      "equivalent": false,
+      "diff_ref": "diffs/d3-subject/v05-d3-langgraph-fail-subject-missing__v05-d3-sk-fail-subject-missing.json"
+    },
+    {
+      "left_run_id": "v05-d3-autogen-pass-authz-allow",
+      "right_run_id": "v05-d3-langgraph-pass-authz-allow",
+      "equivalent": false,
+      "diff_ref": "diffs/d3-authz/v05-d3-autogen-pass-authz-allow__v05-d3-langgraph-pass-authz-allow.json"
+    },
+    {
+      "left_run_id": "v05-d3-autogen-pass-authz-allow",
+      "right_run_id": "v05-d3-sk-pass-authz-allow",
+      "equivalent": false,
+      "diff_ref": "diffs/d3-authz/v05-d3-autogen-pass-authz-allow__v05-d3-sk-pass-authz-allow.json"
+    },
+    {
+      "left_run_id": "v05-d3-langgraph-pass-authz-allow",
+      "right_run_id": "v05-d3-sk-pass-authz-allow",
+      "equivalent": false,
+      "diff_ref": "diffs/d3-authz/v05-d3-langgraph-pass-authz-allow__v05-d3-sk-pass-authz-allow.json"
+    },
+    {
+      "left_run_id": "v05-d4-autogen-fail-reason-invalid",
+      "right_run_id": "v05-d4-autogen-pass-reason-success",
+      "equivalent": false,
+      "diff_ref": "diffs/d4-reason/v05-d4-autogen-fail-reason-invalid__v05-d4-autogen-pass-reason-success.json"
+    },
+    {
+      "left_run_id": "v05-d4-autogen-fail-reason-invalid",
+      "right_run_id": "v05-d4-langgraph-fail-reason-invalid",
+      "equivalent": false,
+      "diff_ref": "diffs/d4-reason/v05-d4-autogen-fail-reason-invalid__v05-d4-langgraph-fail-reason-invalid.json"
+    },
+    {
+      "left_run_id": "v05-d4-autogen-fail-reason-invalid",
+      "right_run_id": "v05-d4-langgraph-pass-reason-success",
+      "equivalent": false,
+      "diff_ref": "diffs/d4-reason/v05-d4-autogen-fail-reason-invalid__v05-d4-langgraph-pass-reason-success.json"
+    },
+    {
+      "left_run_id": "v05-d4-autogen-fail-reason-invalid",
+      "right_run_id": "v05-d4-sk-fail-reason-invalid",
+      "equivalent": false,
+      "diff_ref": "diffs/d4-reason/v05-d4-autogen-fail-reason-invalid__v05-d4-sk-fail-reason-invalid.json"
+    },
+    {
+      "left_run_id": "v05-d4-autogen-fail-reason-invalid",
+      "right_run_id": "v05-d4-sk-pass-reason-success",
+      "equivalent": false,
+      "diff_ref": "diffs/d4-reason/v05-d4-autogen-fail-reason-invalid__v05-d4-sk-pass-reason-success.json"
+    },
+    {
+      "left_run_id": "v05-d4-autogen-pass-reason-success",
+      "right_run_id": "v05-d4-langgraph-fail-reason-invalid",
+      "equivalent": false,
+      "diff_ref": "diffs/d4-reason/v05-d4-autogen-pass-reason-success__v05-d4-langgraph-fail-reason-invalid.json"
+    },
+    {
+      "left_run_id": "v05-d4-autogen-pass-reason-success",
+      "right_run_id": "v05-d4-langgraph-pass-reason-success",
+      "equivalent": false,
+      "diff_ref": "diffs/d4-reason/v05-d4-autogen-pass-reason-success__v05-d4-langgraph-pass-reason-success.json"
+    },
+    {
+      "left_run_id": "v05-d4-autogen-pass-reason-success",
+      "right_run_id": "v05-d4-sk-fail-reason-invalid",
+      "equivalent": false,
+      "diff_ref": "diffs/d4-reason/v05-d4-autogen-pass-reason-success__v05-d4-sk-fail-reason-invalid.json"
+    },
+    {
+      "left_run_id": "v05-d4-autogen-pass-reason-success",
+      "right_run_id": "v05-d4-sk-pass-reason-success",
+      "equivalent": false,
+      "diff_ref": "diffs/d4-reason/v05-d4-autogen-pass-reason-success__v05-d4-sk-pass-reason-success.json"
+    },
+    {
+      "left_run_id": "v05-d4-langgraph-fail-reason-invalid",
+      "right_run_id": "v05-d4-langgraph-pass-reason-success",
+      "equivalent": false,
+      "diff_ref": "diffs/d4-reason/v05-d4-langgraph-fail-reason-invalid__v05-d4-langgraph-pass-reason-success.json"
+    },
+    {
+      "left_run_id": "v05-d4-langgraph-fail-reason-invalid",
+      "right_run_id": "v05-d4-sk-fail-reason-invalid",
+      "equivalent": false,
+      "diff_ref": "diffs/d4-reason/v05-d4-langgraph-fail-reason-invalid__v05-d4-sk-fail-reason-invalid.json"
+    },
+    {
+      "left_run_id": "v05-d4-langgraph-fail-reason-invalid",
+      "right_run_id": "v05-d4-sk-pass-reason-success",
+      "equivalent": false,
+      "diff_ref": "diffs/d4-reason/v05-d4-langgraph-fail-reason-invalid__v05-d4-sk-pass-reason-success.json"
+    },
+    {
+      "left_run_id": "v05-d4-langgraph-pass-reason-success",
+      "right_run_id": "v05-d4-sk-fail-reason-invalid",
+      "equivalent": false,
+      "diff_ref": "diffs/d4-reason/v05-d4-langgraph-pass-reason-success__v05-d4-sk-fail-reason-invalid.json"
+    },
+    {
+      "left_run_id": "v05-d4-langgraph-pass-reason-success",
+      "right_run_id": "v05-d4-sk-pass-reason-success",
+      "equivalent": false,
+      "diff_ref": "diffs/d4-reason/v05-d4-langgraph-pass-reason-success__v05-d4-sk-pass-reason-success.json"
+    },
+    {
+      "left_run_id": "v05-d4-sk-fail-reason-invalid",
+      "right_run_id": "v05-d4-sk-pass-reason-success",
+      "equivalent": false,
+      "diff_ref": "diffs/d4-reason/v05-d4-sk-fail-reason-invalid__v05-d4-sk-pass-reason-success.json"
+    }
+  ],
+  "disclaimer": "Equivalence refers to evidence projection similarity under the specified \nruleset and hash scope. It does not constitute framework certification, \ncapability endorsement, or compliance verification.\n"
+}

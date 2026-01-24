@@ -36,6 +36,7 @@
         "vlab:recheck-hash": "tsx scripts/recheck-hash.ts",
         "vlab:recompute-pack-hashes": "tsx scripts/recompute-pack-hashes.ts",
         "generate:curated": "node scripts/generate-curated-runs.mjs",
+        "derive:cross-verified": "rm -rf data/derived/normalized public/_data/cross-verified && npx tsx scripts/normalize-pack.ts --sample-set && npx tsx scripts/compute-equivalence.ts && npx tsx scripts/gates/gate-normalized-determinism.ts && npx tsx scripts/gates/gate-diff-coverage.ts && npx tsx scripts/gates/gate-fail-benchmark.ts",
         "gate:all": "npm run gate:vlab:00 && npm run gate:vlab:01",
         "gate:registry": "tsx scripts/gates/registry-contract.mjs",
         "gate:curated-runs": "tsx scripts/gates/curated-runs-closure.mjs",

@@ -1,0 +1,38 @@
+---
+substrate_id: langgraph
+fingerprint_version: "1.0.0"
+status: active
+---
+
+# Substrate Version Fingerprint: LangGraph
+
+## 1. Upstream (Framework)
+| Field | Value |
+|:---|:---|
+| Name | langgraph |
+| Org | langchain-ai |
+| Repo | https://github.com/langchain-ai/langgraph |
+| Release Tag | v0.2.x |
+| Commit SHA | unknown_baseline |
+
+## 2. Producer (Bridging Tool)
+| Field | Value |
+|:---|:---|
+| Name | langchain-official-producer |
+| Version | 0.1.0 |
+| Repo | examples/evidence-producers/langchain |
+
+## 3. Runtime Context
+| Field | Value |
+|:---|:---|
+| Language | python |
+| Min Version | 3.9 |
+
+## 4. API Surface Hash
+| Component | Symbols Monitored | Surface Hash |
+|:---|:---|:---|
+| StateGraph | `__init__`, `add_node`, `compile` | ffffffff... |
+| Trace | `get_state`, `update_state` | ffffffff... |
+
+---
+**Governed By**: VLAB-GATE-08

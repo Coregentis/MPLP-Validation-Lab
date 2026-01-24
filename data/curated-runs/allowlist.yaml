@@ -4,6 +4,8 @@ runs:
     scenario_id: gf-01-single-agent-lifecycle
     ruleset_version: ruleset-1.0
     substrate: a2a
+    substrate_fingerprint_ref: governance/substrates/a2a/fingerprint.yaml
+    fieldmap_ref: governance/mappings/fieldmap/langgraph.yaml
     substrate_claim_level: declared
     substrate_execution: static
     inference_mode: none
@@ -20,6 +22,8 @@ runs:
     scenario_id: gf-01-single-agent-lifecycle
     ruleset_version: ruleset-1.0
     substrate: a2a
+    substrate_fingerprint_ref: governance/substrates/a2a/fingerprint.yaml
+    fieldmap_ref: governance/mappings/fieldmap/langgraph.yaml
     substrate_claim_level: declared
     substrate_execution: static
     inference_mode: none
@@ -37,6 +41,8 @@ runs:
     scenario_id: gf-01-single-agent-lifecycle
     ruleset_version: ruleset-1.0
     substrate: langchain
+    substrate_fingerprint_ref: governance/substrates/langchain/fingerprint.yaml
+    fieldmap_ref: governance/mappings/fieldmap/langgraph.yaml
     substrate_claim_level: declared
     substrate_execution: static
     inference_mode: fake_llm
@@ -53,6 +59,8 @@ runs:
     scenario_id: gf-01-single-agent-lifecycle
     ruleset_version: ruleset-1.0
     substrate: mcp
+    substrate_fingerprint_ref: governance/substrates/mcp/fingerprint.yaml
+    fieldmap_ref: governance/mappings/fieldmap/mcp.yaml
     substrate_claim_level: declared
     substrate_execution: static
     inference_mode: none
@@ -69,6 +77,8 @@ runs:
     scenario_id: gf-01-single-agent-lifecycle
     ruleset_version: ruleset-1.0
     substrate: langchain
+    substrate_fingerprint_ref: governance/substrates/langchain/fingerprint.yaml
+    fieldmap_ref: governance/mappings/fieldmap/langgraph.yaml
     substrate_claim_level: reproduced
     substrate_execution: reproduced
     inference_mode: fake_llm
@@ -88,6 +98,8 @@ runs:
     scenario_id: gf-01-single-agent-lifecycle
     ruleset_version: ruleset-1.0
     substrate: a2a
+    substrate_fingerprint_ref: governance/substrates/a2a/fingerprint.yaml
+    fieldmap_ref: governance/mappings/fieldmap/langgraph.yaml
     substrate_claim_level: declared
     substrate_execution: static
     inference_mode: none
@@ -107,6 +119,8 @@ runs:
     scenario_id: gf-01-single-agent-lifecycle
     ruleset_version: ruleset-1.0
     substrate: mcp
+    substrate_fingerprint_ref: governance/substrates/mcp/fingerprint.yaml
+    fieldmap_ref: governance/mappings/fieldmap/mcp.yaml
     substrate_claim_level: reproduced
     substrate_execution: reproduced
     inference_mode: none
@@ -126,6 +140,8 @@ runs:
     scenario_id: gf-01-single-agent-lifecycle
     ruleset_version: ruleset-1.0
     substrate: fixture
+    substrate_fingerprint_ref: governance/substrates/fixture/fingerprint.yaml
+    fieldmap_ref: governance/mappings/fieldmap/fixture.yaml
     substrate_claim_level: declared
     substrate_execution: static
     inference_mode: none
@@ -143,6 +159,8 @@ runs:
     scenario_id: gf-01-single-agent-lifecycle
     ruleset_version: ruleset-1.0
     substrate: fixture
+    substrate_fingerprint_ref: governance/substrates/fixture/fingerprint.yaml
+    fieldmap_ref: governance/mappings/fieldmap/fixture.yaml
     substrate_claim_level: declared
     substrate_execution: static
     inference_mode: none
@@ -160,6 +178,8 @@ runs:
     scenario_id: gf-01-single-agent-lifecycle
     ruleset_version: ruleset-1.0
     substrate: fixture
+    substrate_fingerprint_ref: governance/substrates/fixture/fingerprint.yaml
+    fieldmap_ref: governance/mappings/fieldmap/fixture.yaml
     substrate_claim_level: declared
     substrate_execution: static
     inference_mode: none
@@ -177,6 +197,8 @@ runs:
     scenario_id: gf-01-single-agent-lifecycle
     ruleset_version: ruleset-1.0
     substrate: fixture
+    substrate_fingerprint_ref: governance/substrates/fixture/fingerprint.yaml
+    fieldmap_ref: governance/mappings/fieldmap/fixture.yaml
     substrate_claim_level: declared
     substrate_execution: static
     inference_mode: none
@@ -194,6 +216,8 @@ runs:
     scenario_id: d1-budget-pass-scenario
     ruleset_version: ruleset-1.1
     substrate: fixture
+    substrate_fingerprint_ref: governance/substrates/fixture/fingerprint.yaml
+    fieldmap_ref: governance/mappings/fieldmap/fixture.yaml
     substrate_claim_level: declared
     substrate_execution: static
     inference_mode: none
@@ -211,6 +235,8 @@ runs:
     scenario_id: d1-budget-fail-scenario
     ruleset_version: ruleset-1.1
     substrate: fixture
+    substrate_fingerprint_ref: governance/substrates/fixture/fingerprint.yaml
+    fieldmap_ref: governance/mappings/fieldmap/fixture.yaml
     substrate_claim_level: declared
     substrate_execution: static
     inference_mode: none
@@ -228,6 +254,8 @@ runs:
     scenario_id: d2-lifecycle-pass-scenario
     ruleset_version: ruleset-1.1
     substrate: fixture
+    substrate_fingerprint_ref: governance/substrates/fixture/fingerprint.yaml
+    fieldmap_ref: governance/mappings/fieldmap/fixture.yaml
     substrate_claim_level: declared
     substrate_execution: static
     inference_mode: none
@@ -245,6 +273,8 @@ runs:
     scenario_id: d2-lifecycle-fail-scenario
     ruleset_version: ruleset-1.1
     substrate: fixture
+    substrate_fingerprint_ref: governance/substrates/fixture/fingerprint.yaml
+    fieldmap_ref: governance/mappings/fieldmap/fixture.yaml
     substrate_claim_level: declared
     substrate_execution: static
     inference_mode: none
@@ -262,6 +292,8 @@ runs:
     scenario_id: d3-authz-pass-scenario
     ruleset_version: ruleset-1.1
     substrate: fixture
+    substrate_fingerprint_ref: governance/substrates/fixture/fingerprint.yaml
+    fieldmap_ref: governance/mappings/fieldmap/fixture.yaml
     substrate_claim_level: declared
     substrate_execution: static
     inference_mode: none
@@ -279,6 +311,8 @@ runs:
     scenario_id: d3-authz-fail-scenario
     ruleset_version: ruleset-1.1
     substrate: fixture
+    substrate_fingerprint_ref: governance/substrates/fixture/fingerprint.yaml
+    fieldmap_ref: governance/mappings/fieldmap/fixture.yaml
     substrate_claim_level: declared
     substrate_execution: static
     inference_mode: none
@@ -296,6 +330,8 @@ runs:
     scenario_id: d4-termination-pass-scenario
     ruleset_version: ruleset-1.1
     substrate: fixture
+    substrate_fingerprint_ref: governance/substrates/fixture/fingerprint.yaml
+    fieldmap_ref: governance/mappings/fieldmap/fixture.yaml
     substrate_claim_level: declared
     substrate_execution: static
     inference_mode: none
@@ -313,6 +349,8 @@ runs:
     scenario_id: d4-termination-fail-scenario
     ruleset_version: ruleset-1.1
     substrate: fixture
+    substrate_fingerprint_ref: governance/substrates/fixture/fingerprint.yaml
+    fieldmap_ref: governance/mappings/fieldmap/fixture.yaml
     substrate_claim_level: declared
     substrate_execution: static
     inference_mode: none
@@ -330,6 +368,8 @@ runs:
     scenario_id: d1-fail-cl-d1-02-scenario
     ruleset_version: ruleset-1.2
     substrate: fixture
+    substrate_fingerprint_ref: governance/substrates/fixture/fingerprint.yaml
+    fieldmap_ref: governance/mappings/fieldmap/fixture.yaml
     substrate_claim_level: declared
     substrate_execution: static
     inference_mode: none
@@ -347,6 +387,8 @@ runs:
     scenario_id: d1-fail-cl-d1-03-scenario
     ruleset_version: ruleset-1.2
     substrate: fixture
+    substrate_fingerprint_ref: governance/substrates/fixture/fingerprint.yaml
+    fieldmap_ref: governance/mappings/fieldmap/fixture.yaml
     substrate_claim_level: declared
     substrate_execution: static
     inference_mode: none
@@ -364,6 +406,8 @@ runs:
     scenario_id: d2-fail-cl-d2-02-scenario
     ruleset_version: ruleset-1.2
     substrate: fixture
+    substrate_fingerprint_ref: governance/substrates/fixture/fingerprint.yaml
+    fieldmap_ref: governance/mappings/fieldmap/fixture.yaml
     substrate_claim_level: declared
     substrate_execution: static
     inference_mode: none
@@ -381,6 +425,8 @@ runs:
     scenario_id: d2-fail-cl-d2-03-scenario
     ruleset_version: ruleset-1.2
     substrate: fixture
+    substrate_fingerprint_ref: governance/substrates/fixture/fingerprint.yaml
+    fieldmap_ref: governance/mappings/fieldmap/fixture.yaml
     substrate_claim_level: declared
     substrate_execution: static
     inference_mode: none
@@ -398,6 +444,8 @@ runs:
     scenario_id: d3-fail-cl-d3-02-scenario
     ruleset_version: ruleset-1.2
     substrate: fixture
+    substrate_fingerprint_ref: governance/substrates/fixture/fingerprint.yaml
+    fieldmap_ref: governance/mappings/fieldmap/fixture.yaml
     substrate_claim_level: declared
     substrate_execution: static
     inference_mode: none
@@ -415,6 +463,8 @@ runs:
     scenario_id: d3-fail-cl-d3-03-scenario
     ruleset_version: ruleset-1.2
     substrate: fixture
+    substrate_fingerprint_ref: governance/substrates/fixture/fingerprint.yaml
+    fieldmap_ref: governance/mappings/fieldmap/fixture.yaml
     substrate_claim_level: declared
     substrate_execution: static
     inference_mode: none
@@ -432,6 +482,8 @@ runs:
     scenario_id: d4-fail-cl-d4-02-scenario
     ruleset_version: ruleset-1.2
     substrate: fixture
+    substrate_fingerprint_ref: governance/substrates/fixture/fingerprint.yaml
+    fieldmap_ref: governance/mappings/fieldmap/fixture.yaml
     substrate_claim_level: declared
     substrate_execution: static
     inference_mode: none
@@ -449,6 +501,8 @@ runs:
     scenario_id: d4-fail-cl-d4-03-scenario
     ruleset_version: ruleset-1.2
     substrate: fixture
+    substrate_fingerprint_ref: governance/substrates/fixture/fingerprint.yaml
+    fieldmap_ref: governance/mappings/fieldmap/fixture.yaml
     substrate_claim_level: declared
     substrate_execution: static
     inference_mode: none

@@ -1,0 +1,38 @@
+---
+substrate_id: fixture
+fingerprint_version: "1.0.0"
+status: active
+---
+
+# Substrate Version Fingerprint: Fixture (Static Evidence)
+
+## 1. Upstream (Framework)
+| Field | Value |
+|:---|:---|
+| Name | internal-fixture-system |
+| Org | validation-lab |
+| Repo | fixtures/ |
+| Release Tag | v1.0 |
+| Commit SHA | unknown_baseline |
+
+## 2. Producer (Bridging Tool)
+| Field | Value |
+|:---|:---|
+| Name | langchain-official-producer |
+| Version | 0.1.0 |
+| Repo | examples/evidence-producers/langchain |
+
+## 3. Runtime Context
+| Field | Value |
+|:---|:---|
+| Language | python |
+| Min Version | 3.9 |
+
+## 4. API Surface Hash
+| Component | Symbols Monitored | Surface Hash |
+|:---|:---|:---|
+| StateGraph | `__init__`, `add_node`, `compile` | ffffffff... |
+| Trace | `get_state`, `update_state` | ffffffff... |
+
+---
+**Governed By**: VLAB-GATE-08

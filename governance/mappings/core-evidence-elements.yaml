@@ -1,0 +1,33 @@
+# Core Evidence Elements (Adjudication Minimum Set)
+# This file is machine-read by VLAB-GATE-09
+version: "1.1.0"
+mandatory_elements:
+  # 1. Manifest (Identity & Governance)
+  - pointer: "/manifest.run_id"
+    description: "Unique run identifier"
+  - pointer: "/manifest.scenario_id"
+    description: "Scenario identifier"
+  - pointer: "/manifest.ruleset_version"
+    description: "Ruleset version used for adjudication"
+  - pointer: "/manifest.substrate"
+    description: "Substrate identifier (e.g. mcp, a2a)"
+  
+  # 2. Timeline (Evidence Chain)
+  - pointer: "/timeline.events[*]"
+    description: "Chronological event log"
+  - pointer: "/timeline.events[*].event_type"
+    description: "Standardized event type"
+  - pointer: "/timeline.events[*].actor"
+    description: "Originating component/agent"
+  
+  # 3. Artifacts (Decision Ground Truth)
+  - pointer: "/artifacts/plan.json"
+    description: "Execution plan or intent"
+  - pointer: "/artifacts/trace.json"
+    description: "Full execution trace"
+  
+  # 4. Verdict (Adjudication Outcome)
+  - pointer: "/verdict.json"
+    description: "Adjudication output"
+  - pointer: "/verdict.json.status"
+    description: "Overall pass/fail status"

@@ -1,9 +1,6 @@
 {
   "ssot": {
-    "source": "data/curated-runs/allowlist.yaml",
-    "adjudication_source": "export/adjudication-index.json",
-    "generated_at": "2026-01-24T04:51:05.582Z",
-    "git_commit": "0c22007"
+    "generated_at": "2026-01-24T04:59:59.559Z"
   },
   "runs": [
     {
@@ -11,6 +8,8 @@
       "scenario_id": "gf-01-single-agent-lifecycle",
       "ruleset_version": "ruleset-1.0",
       "substrate": "fixture",
+      "substrate_fingerprint_ref": "governance/substrates/fixture/fingerprint.yaml",
+      "fieldmap_ref": "governance/mappings/fieldmap/fixture.yaml",
       "substrate_claim_level": "declared",
       "substrate_execution": "static",
       "inference_mode": "none",
@@ -24,15 +23,15 @@
       "verdict_hash": "7175e48c6d8f70850208804fee3fcfb09ce1cb8cb6199d3d4e764d43c553dc6c",
       "verify_report_hash": "9996da3dfed4b20ca41bfac8ca241f35e1ad7a7016cb3476363649dd3519d9f6",
       "evaluation_report_hash": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-      "adjudication_status": "NOT_ADJUDICATED",
-      "adjudication_verdict_hash": null,
-      "adjudication_admission_status": null
+      "adjudication_status": "NOT_ADMISSIBLE"
     },
     {
       "run_id": "arb-d1-budget-fail-deny-missing-gate-v0.4",
       "scenario_id": "d1-fail-cl-d1-03-scenario",
       "ruleset_version": "ruleset-1.2",
       "substrate": "fixture",
+      "substrate_fingerprint_ref": "governance/substrates/fixture/fingerprint.yaml",
+      "fieldmap_ref": "governance/mappings/fieldmap/fixture.yaml",
       "substrate_claim_level": "declared",
       "substrate_execution": "static",
       "inference_mode": "none",
@@ -46,15 +45,15 @@
       "pack_root_hash": "6058fce206e15e2715b57ade159f6dc5a28965ddc637019ac41e019e6e32853b",
       "verify_report_hash": "b5d370be0f376e173d02c6cfbc0ed7ee5cf687a339223ced59b548e9476ca053",
       "evaluation_report_hash": "73f895b40d9ed70ae1e4f1349ee92864650e15177e7367f142a3df98f11346af",
-      "adjudication_status": "NOT_ADJUDICATED",
-      "adjudication_verdict_hash": null,
-      "adjudication_admission_status": null
+      "adjudication_status": "NOT_ADJUDICATED"
     },
     {
       "run_id": "arb-d1-budget-fail-fixture-v0.3",
       "scenario_id": "d1-budget-fail-scenario",
       "ruleset_version": "ruleset-1.1",
       "substrate": "fixture",
+      "substrate_fingerprint_ref": "governance/substrates/fixture/fingerprint.yaml",
+      "fieldmap_ref": "governance/mappings/fieldmap/fixture.yaml",
       "substrate_claim_level": "declared",
       "substrate_execution": "static",
       "inference_mode": "none",
@@ -68,15 +67,15 @@
       "exporter_version": "0.1.0",
       "verify_report_hash": "7a1f343bed94ccf426cc36bf426071f26b415f996b91c2be09b60a0d50718a0a",
       "evaluation_report_hash": "71566eb2e856551656d7d83d3764f8b806faf4fc7a84ad24bdbe9837ac8304d0",
-      "adjudication_status": "NOT_ADJUDICATED",
-      "adjudication_verdict_hash": null,
-      "adjudication_admission_status": null
+      "adjudication_status": "NOT_ADJUDICATED"
     },
     {
       "run_id": "arb-d1-budget-fail-outcome-invalid-v0.4",
       "scenario_id": "d1-fail-cl-d1-02-scenario",
       "ruleset_version": "ruleset-1.2",
       "substrate": "fixture",
+      "substrate_fingerprint_ref": "governance/substrates/fixture/fingerprint.yaml",
+      "fieldmap_ref": "governance/mappings/fieldmap/fixture.yaml",
       "substrate_claim_level": "declared",
       "substrate_execution": "static",
       "inference_mode": "none",
@@ -90,15 +89,15 @@
       "pack_root_hash": "4f622e5e05a3572004495aeb645dcabc36df55d8196650c49f4b218eb1d0cb9e",
       "verify_report_hash": "db4f459c3b0653d029b27f8930675f4c57e6298718bddb28a77ea4b189942407",
       "evaluation_report_hash": "80b9639552720989004307bf4658a12852cdae21e411897695b49212449df600",
-      "adjudication_status": "NOT_ADJUDICATED",
-      "adjudication_verdict_hash": null,
-      "adjudication_admission_status": null
+      "adjudication_status": "NOT_ADJUDICATED"
     },
     {
       "run_id": "arb-d1-budget-pass-fixture-v0.3",
       "scenario_id": "d1-budget-pass-scenario",
       "ruleset_version": "ruleset-1.1",
       "substrate": "fixture",
+      "substrate_fingerprint_ref": "governance/substrates/fixture/fingerprint.yaml",
+      "fieldmap_ref": "governance/mappings/fieldmap/fixture.yaml",
       "substrate_claim_level": "declared",
       "substrate_execution": "static",
       "inference_mode": "none",
@@ -112,15 +111,15 @@
       "exporter_version": "0.1.0",
       "verify_report_hash": "b246ff63b0dd4a2fc0c00797430929ba27a7f2a0be5330e19d9fa13f99e61e74",
       "evaluation_report_hash": "cc0a5cd177a57b9c9cff5ff2d93a5d30f12a1f24f69792ce4daa61ece5027607",
-      "adjudication_status": "NOT_ADJUDICATED",
-      "adjudication_verdict_hash": null,
-      "adjudication_admission_status": null
+      "adjudication_status": "NOT_ADJUDICATED"
     },
     {
       "run_id": "arb-d2-lifecycle-fail-post-terminal-exec-v0.4",
       "scenario_id": "d2-fail-cl-d2-03-scenario",
       "ruleset_version": "ruleset-1.2",
       "substrate": "fixture",
+      "substrate_fingerprint_ref": "governance/substrates/fixture/fingerprint.yaml",
+      "fieldmap_ref": "governance/mappings/fieldmap/fixture.yaml",
       "substrate_claim_level": "declared",
       "substrate_execution": "static",
       "inference_mode": "none",
@@ -134,15 +133,15 @@
       "pack_root_hash": "5afd1c6dd81a3a2787d5d47b170dbb92ca4e1060d7a2f7e612f698d17d33200f",
       "verify_report_hash": "b5d370be0f376e173d02c6cfbc0ed7ee5cf687a339223ced59b548e9476ca053",
       "evaluation_report_hash": "73f895b40d9ed70ae1e4f1349ee92864650e15177e7367f142a3df98f11346af",
-      "adjudication_status": "NOT_ADJUDICATED",
-      "adjudication_verdict_hash": null,
-      "adjudication_admission_status": null
+      "adjudication_status": "NOT_ADJUDICATED"
     },
     {
       "run_id": "arb-d2-lifecycle-fail-terminal-state-invalid-v0.4",
       "scenario_id": "d2-fail-cl-d2-02-scenario",
       "ruleset_version": "ruleset-1.2",
       "substrate": "fixture",
+      "substrate_fingerprint_ref": "governance/substrates/fixture/fingerprint.yaml",
+      "fieldmap_ref": "governance/mappings/fieldmap/fixture.yaml",
       "substrate_claim_level": "declared",
       "substrate_execution": "static",
       "inference_mode": "none",
@@ -156,15 +155,15 @@
       "pack_root_hash": "31ab1b02cbebdc1b8e95fc40a9065765153d6cb6f115548a96b2afbe757ff425",
       "verify_report_hash": "b5d370be0f376e173d02c6cfbc0ed7ee5cf687a339223ced59b548e9476ca053",
       "evaluation_report_hash": "73f895b40d9ed70ae1e4f1349ee92864650e15177e7367f142a3df98f11346af",
-      "adjudication_status": "NOT_ADJUDICATED",
-      "adjudication_verdict_hash": null,
-      "adjudication_admission_status": null
+      "adjudication_status": "NOT_ADJUDICATED"
     },
     {
       "run_id": "arb-d2-lifecycle-state-fail-fixture-v0.3",
       "scenario_id": "d2-lifecycle-fail-scenario",
       "ruleset_version": "ruleset-1.1",
       "substrate": "fixture",
+      "substrate_fingerprint_ref": "governance/substrates/fixture/fingerprint.yaml",
+      "fieldmap_ref": "governance/mappings/fieldmap/fixture.yaml",
       "substrate_claim_level": "declared",
       "substrate_execution": "static",
       "inference_mode": "none",
@@ -178,15 +177,15 @@
       "exporter_version": "0.1.0",
       "verify_report_hash": "c3ee8629cbe5dd1b126bbf8be1b17a498a957bb22a5a4b78b5cf519ff47a8931",
       "evaluation_report_hash": "c01097f00fd1e7e32233cfd85233dd8a2daa44d5b41089725c77466af19ba7eb",
-      "adjudication_status": "NOT_ADJUDICATED",
-      "adjudication_verdict_hash": null,
-      "adjudication_admission_status": null
+      "adjudication_status": "NOT_ADJUDICATED"
     },
     {
       "run_id": "arb-d2-lifecycle-state-pass-fixture-v0.3",
       "scenario_id": "d2-lifecycle-pass-scenario",
       "ruleset_version": "ruleset-1.1",
       "substrate": "fixture",
+      "substrate_fingerprint_ref": "governance/substrates/fixture/fingerprint.yaml",
+      "fieldmap_ref": "governance/mappings/fieldmap/fixture.yaml",
       "substrate_claim_level": "declared",
       "substrate_execution": "static",
       "inference_mode": "none",
@@ -200,15 +199,15 @@
       "exporter_version": "0.1.0",
       "verify_report_hash": "c3ee8629cbe5dd1b126bbf8be1b17a498a957bb22a5a4b78b5cf519ff47a8931",
       "evaluation_report_hash": "a94e660b4ad0eddfe2b41e4c98ab9fddf1abe466aa21eb29ea8956c02fcd89f8",
-      "adjudication_status": "NOT_ADJUDICATED",
-      "adjudication_verdict_hash": null,
-      "adjudication_admission_status": null
+      "adjudication_status": "NOT_ADJUDICATED"
     },
     {
       "run_id": "arb-d3-authz-decision-fail-fixture-v0.3",
       "scenario_id": "d3-authz-fail-scenario",
       "ruleset_version": "ruleset-1.1",
       "substrate": "fixture",
+      "substrate_fingerprint_ref": "governance/substrates/fixture/fingerprint.yaml",
+      "fieldmap_ref": "governance/mappings/fieldmap/fixture.yaml",
       "substrate_claim_level": "declared",
       "substrate_execution": "static",
       "inference_mode": "none",
@@ -222,15 +221,15 @@
       "exporter_version": "0.1.0",
       "verify_report_hash": "27e42d293eba9a995132440c48497f3ccf71b41cd1ad09e5d5fe76b826624726",
       "evaluation_report_hash": "bfc995f8329f4074dacb31da3c795a8139a96833395adaea5155a54e208b157f",
-      "adjudication_status": "NOT_ADJUDICATED",
-      "adjudication_verdict_hash": null,
-      "adjudication_admission_status": null
+      "adjudication_status": "NOT_ADJUDICATED"
     },
     {
       "run_id": "arb-d3-authz-decision-pass-fixture-v0.3",
       "scenario_id": "d3-authz-pass-scenario",
       "ruleset_version": "ruleset-1.1",
       "substrate": "fixture",
+      "substrate_fingerprint_ref": "governance/substrates/fixture/fingerprint.yaml",
+      "fieldmap_ref": "governance/mappings/fieldmap/fixture.yaml",
       "substrate_claim_level": "declared",
       "substrate_execution": "static",
       "inference_mode": "none",
@@ -244,15 +243,15 @@
       "exporter_version": "0.1.0",
       "verify_report_hash": "f2597598c4ad884e859fd9b42b4aae92c6488503ab195d5f3a9cbfba60a0a61b",
       "evaluation_report_hash": "534568ecc22b3ba0db451acda992840a238637455eb0866c62d6370a462d223b",
-      "adjudication_status": "NOT_ADJUDICATED",
-      "adjudication_verdict_hash": null,
-      "adjudication_admission_status": null
+      "adjudication_status": "NOT_ADJUDICATED"
     },
     {
       "run_id": "arb-d3-authz-fail-deny-no-confirm-v0.4",
       "scenario_id": "d3-fail-cl-d3-03-scenario",
       "ruleset_version": "ruleset-1.2",
       "substrate": "fixture",
+      "substrate_fingerprint_ref": "governance/substrates/fixture/fingerprint.yaml",
+      "fieldmap_ref": "governance/mappings/fieldmap/fixture.yaml",
       "substrate_claim_level": "declared",
       "substrate_execution": "static",
       "inference_mode": "none",
@@ -266,15 +265,15 @@
       "pack_root_hash": "df8a75f81cc1cfdb05a0c4248cf8e0ceb2b86539c01c1738ca3d9a7540ade424",
       "verify_report_hash": "b8b406d979654d507d80457ad99a9fe785e04d444bd28fbe511543522e33c7ea",
       "evaluation_report_hash": "4315fe8b813bf05124dfce0f610685273f2d4f749ba09cba439cba17c858f5a9",
-      "adjudication_status": "NOT_ADJUDICATED",
-      "adjudication_verdict_hash": null,
-      "adjudication_admission_status": null
+      "adjudication_status": "NOT_ADJUDICATED"
     },
     {
       "run_id": "arb-d3-authz-fail-sra-incomplete-v0.4",
       "scenario_id": "d3-fail-cl-d3-02-scenario",
       "ruleset_version": "ruleset-1.2",
       "substrate": "fixture",
+      "substrate_fingerprint_ref": "governance/substrates/fixture/fingerprint.yaml",
+      "fieldmap_ref": "governance/mappings/fieldmap/fixture.yaml",
       "substrate_claim_level": "declared",
       "substrate_execution": "static",
       "inference_mode": "none",
@@ -288,15 +287,15 @@
       "pack_root_hash": "619949263ecc615a6de5ff56be27f62e3ac81459d0effdec0e69b2255364b813",
       "verify_report_hash": "b8b406d979654d507d80457ad99a9fe785e04d444bd28fbe511543522e33c7ea",
       "evaluation_report_hash": "4315fe8b813bf05124dfce0f610685273f2d4f749ba09cba439cba17c858f5a9",
-      "adjudication_status": "NOT_ADJUDICATED",
-      "adjudication_verdict_hash": null,
-      "adjudication_admission_status": null
+      "adjudication_status": "NOT_ADJUDICATED"
     },
     {
       "run_id": "arb-d4-termination-fail-reason-invalid-v0.4",
       "scenario_id": "d4-fail-cl-d4-02-scenario",
       "ruleset_version": "ruleset-1.2",
       "substrate": "fixture",
+      "substrate_fingerprint_ref": "governance/substrates/fixture/fingerprint.yaml",
+      "fieldmap_ref": "governance/mappings/fieldmap/fixture.yaml",
       "substrate_claim_level": "declared",
       "substrate_execution": "static",
       "inference_mode": "none",
@@ -310,15 +309,15 @@
       "pack_root_hash": "146fd426ab54122f04917de29aaef77fe4f8a71486aef94f110df6dfecdd6e13",
       "verify_report_hash": "80f9a5013849ec15d15d18f539bda5c1fa1a86a0670c220b315f11a880090008",
       "evaluation_report_hash": "288dabbc225d49a5ab645667251a250a4e7a6ec63fd03915def9cc289b6a6acc",
-      "adjudication_status": "NOT_ADJUDICATED",
-      "adjudication_verdict_hash": null,
-      "adjudication_admission_status": null
+      "adjudication_status": "NOT_ADJUDICATED"
     },
     {
       "run_id": "arb-d4-termination-fail-uncontrolled-recovery-v0.4",
       "scenario_id": "d4-fail-cl-d4-03-scenario",
       "ruleset_version": "ruleset-1.2",
       "substrate": "fixture",
+      "substrate_fingerprint_ref": "governance/substrates/fixture/fingerprint.yaml",
+      "fieldmap_ref": "governance/mappings/fieldmap/fixture.yaml",
       "substrate_claim_level": "declared",
       "substrate_execution": "static",
       "inference_mode": "none",
@@ -332,15 +331,15 @@
       "pack_root_hash": "fcb981f4fd24f9744ea0ba3f5781057251f5ed2fcd4ddea083ab8a8936705b79",
       "verify_report_hash": "80f9a5013849ec15d15d18f539bda5c1fa1a86a0670c220b315f11a880090008",
       "evaluation_report_hash": "288dabbc225d49a5ab645667251a250a4e7a6ec63fd03915def9cc289b6a6acc",
-      "adjudication_status": "NOT_ADJUDICATED",
-      "adjudication_verdict_hash": null,
-      "adjudication_admission_status": null
+      "adjudication_status": "NOT_ADJUDICATED"
     },
     {
       "run_id": "arb-d4-termination-recovery-fail-fixture-v0.3",
       "scenario_id": "d4-termination-fail-scenario",
       "ruleset_version": "ruleset-1.1",
       "substrate": "fixture",
+      "substrate_fingerprint_ref": "governance/substrates/fixture/fingerprint.yaml",
+      "fieldmap_ref": "governance/mappings/fieldmap/fixture.yaml",
       "substrate_claim_level": "declared",
       "substrate_execution": "static",
       "inference_mode": "none",
@@ -354,15 +353,15 @@
       "exporter_version": "0.1.0",
       "verify_report_hash": "764d1da64233337807d0faa40c2049c3826538653676af13468ceb7f62c0a46b",
       "evaluation_report_hash": "890849a0a0725672dd4996b45127344c87184632d9616a78437daea47b400c7c",
-      "adjudication_status": "NOT_ADJUDICATED",
-      "adjudication_verdict_hash": null,
-      "adjudication_admission_status": null
+      "adjudication_status": "NOT_ADJUDICATED"
     },
     {
       "run_id": "arb-d4-termination-recovery-pass-fixture-v0.3",
       "scenario_id": "d4-termination-pass-scenario",
       "ruleset_version": "ruleset-1.1",
       "substrate": "fixture",
+      "substrate_fingerprint_ref": "governance/substrates/fixture/fingerprint.yaml",
+      "fieldmap_ref": "governance/mappings/fieldmap/fixture.yaml",
       "substrate_claim_level": "declared",
       "substrate_execution": "static",
       "inference_mode": "none",
@@ -376,15 +375,15 @@
       "exporter_version": "0.1.0",
       "verify_report_hash": "27e42d293eba9a995132440c48497f3ccf71b41cd1ad09e5d5fe76b826624726",
       "evaluation_report_hash": "6aaae52a1b3c2aac7a95b43e6f96bc72d54fab9ecb394f5b6397b02ccd0fe151",
-      "adjudication_status": "NOT_ADJUDICATED",
-      "adjudication_verdict_hash": null,
-      "adjudication_admission_status": null
+      "adjudication_status": "NOT_ADJUDICATED"
     },
     {
       "run_id": "gf-01-a2a-fail",
       "scenario_id": "gf-01-single-agent-lifecycle",
       "ruleset_version": "ruleset-1.0",
       "substrate": "a2a",
+      "substrate_fingerprint_ref": "governance/substrates/a2a/fingerprint.yaml",
+      "fieldmap_ref": "governance/mappings/fieldmap/langgraph.yaml",
       "substrate_claim_level": "declared",
       "substrate_execution": "static",
       "inference_mode": "none",
@@ -398,15 +397,15 @@
       "indexable": true,
       "notes": "P1.1 ADMISSIBLE+FAIL sample: loop_detected triggers execution failure",
       "created_at": "2026-01-16T09:00:00Z",
-      "adjudication_status": "NOT_ADJUDICATED",
-      "adjudication_verdict_hash": null,
-      "adjudication_admission_status": null
+      "adjudication_status": "NOT_ADJUDICATED"
     },
     {
       "run_id": "gf-01-a2a-official-v0.2",
       "scenario_id": "gf-01-single-agent-lifecycle",
       "ruleset_version": "ruleset-1.0",
       "substrate": "a2a",
+      "substrate_fingerprint_ref": "governance/substrates/a2a/fingerprint.yaml",
+      "fieldmap_ref": "governance/mappings/fieldmap/langgraph.yaml",
       "substrate_claim_level": "declared",
       "substrate_execution": "static",
       "inference_mode": "none",
@@ -422,15 +421,15 @@
       "verify_report_hash": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
       "evaluation_report_hash": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
       "exporter_version": "0.1.0",
-      "adjudication_status": "NOT_ADJUDICATED",
-      "adjudication_verdict_hash": null,
-      "adjudication_admission_status": null
+      "adjudication_status": "NOT_ADJUDICATED"
     },
     {
       "run_id": "gf-01-a2a-pass",
       "scenario_id": "gf-01-single-agent-lifecycle",
       "ruleset_version": "ruleset-1.0",
       "substrate": "a2a",
+      "substrate_fingerprint_ref": "governance/substrates/a2a/fingerprint.yaml",
+      "fieldmap_ref": "governance/mappings/fieldmap/langgraph.yaml",
       "substrate_claim_level": "declared",
       "substrate_execution": "static",
       "inference_mode": "none",
@@ -443,15 +442,15 @@
       "status": "frozen",
       "indexable": true,
       "created_at": "2026-01-10T14:00:00Z",
-      "adjudication_status": "NOT_ADJUDICATED",
-      "adjudication_verdict_hash": null,
-      "adjudication_admission_status": null
+      "adjudication_status": "NOT_ADJUDICATED"
     },
     {
       "run_id": "gf-01-adjudicated-fail-01",
       "scenario_id": "gf-01-single-agent-lifecycle",
       "ruleset_version": "ruleset-1.0",
       "substrate": "fixture",
+      "substrate_fingerprint_ref": "governance/substrates/fixture/fingerprint.yaml",
+      "fieldmap_ref": "governance/mappings/fieldmap/fixture.yaml",
       "substrate_claim_level": "declared",
       "substrate_execution": "static",
       "inference_mode": "none",
@@ -465,15 +464,15 @@
       "verdict_hash": "c28750a478e4a19b8ea51221c877cdae7b7e6b9a82cd0ef8d4805729ae31f12e",
       "verify_report_hash": "e95c151f48a15450b61c9938535ab801441cece1966d4ca7ceb1c542201ffba6",
       "evaluation_report_hash": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-      "adjudication_status": "NOT_ADJUDICATED",
-      "adjudication_verdict_hash": null,
-      "adjudication_admission_status": null
+      "adjudication_status": "ADJUDICATED"
     },
     {
       "run_id": "gf-01-langchain-official-v0.2",
       "scenario_id": "gf-01-single-agent-lifecycle",
       "ruleset_version": "ruleset-1.0",
       "substrate": "langchain",
+      "substrate_fingerprint_ref": "governance/substrates/langchain/fingerprint.yaml",
+      "fieldmap_ref": "governance/mappings/fieldmap/langgraph.yaml",
       "substrate_claim_level": "reproduced",
       "substrate_execution": "reproduced",
       "inference_mode": "fake_llm",
@@ -489,15 +488,15 @@
       "verify_report_hash": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
       "evaluation_report_hash": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
       "exporter_version": "0.1.0",
-      "adjudication_status": "NOT_ADJUDICATED",
-      "adjudication_verdict_hash": null,
-      "adjudication_admission_status": null
+      "adjudication_status": "NOT_ADJUDICATED"
     },
     {
       "run_id": "gf-01-langchain-pass",
       "scenario_id": "gf-01-single-agent-lifecycle",
       "ruleset_version": "ruleset-1.0",
       "substrate": "langchain",
+      "substrate_fingerprint_ref": "governance/substrates/langchain/fingerprint.yaml",
+      "fieldmap_ref": "governance/mappings/fieldmap/langgraph.yaml",
       "substrate_claim_level": "declared",
       "substrate_execution": "static",
       "inference_mode": "fake_llm",
@@ -510,15 +509,15 @@
       "status": "frozen",
       "indexable": true,
       "created_at": "2026-01-10T14:00:00Z",
-      "adjudication_status": "NOT_ADJUDICATED",
-      "adjudication_verdict_hash": null,
-      "adjudication_admission_status": null
+      "adjudication_status": "ADJUDICATED"
     },
     {
       "run_id": "gf-01-mcp-official-v0.2",
       "scenario_id": "gf-01-single-agent-lifecycle",
       "ruleset_version": "ruleset-1.0",
       "substrate": "mcp",
+      "substrate_fingerprint_ref": "governance/substrates/mcp/fingerprint.yaml",
+      "fieldmap_ref": "governance/mappings/fieldmap/mcp.yaml",
       "substrate_claim_level": "reproduced",
       "substrate_execution": "reproduced",
       "inference_mode": "none",
@@ -534,15 +533,15 @@
       "verify_report_hash": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
       "evaluation_report_hash": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
       "exporter_version": "0.1.0",
-      "adjudication_status": "NOT_ADJUDICATED",
-      "adjudication_verdict_hash": null,
-      "adjudication_admission_status": null
+      "adjudication_status": "NOT_ADJUDICATED"
     },
     {
       "run_id": "gf-01-mcp-pass",
       "scenario_id": "gf-01-single-agent-lifecycle",
       "ruleset_version": "ruleset-1.0",
       "substrate": "mcp",
+      "substrate_fingerprint_ref": "governance/substrates/mcp/fingerprint.yaml",
+      "fieldmap_ref": "governance/mappings/fieldmap/mcp.yaml",
       "substrate_claim_level": "declared",
       "substrate_execution": "static",
       "inference_mode": "none",
@@ -555,15 +554,15 @@
       "status": "frozen",
       "indexable": true,
       "created_at": "2026-01-10T14:00:00Z",
-      "adjudication_status": "NOT_ADJUDICATED",
-      "adjudication_verdict_hash": null,
-      "adjudication_admission_status": null
+      "adjudication_status": "ADJUDICATED"
     },
     {
       "run_id": "gf-02-fail",
       "scenario_id": "gf-01-single-agent-lifecycle",
       "ruleset_version": "ruleset-1.0",
       "substrate": "fixture",
+      "substrate_fingerprint_ref": "governance/substrates/fixture/fingerprint.yaml",
+      "fieldmap_ref": "governance/mappings/fieldmap/fixture.yaml",
       "substrate_claim_level": "declared",
       "substrate_execution": "static",
       "inference_mode": "none",
@@ -577,9 +576,7 @@
       "verdict_hash": "60580e3e7c34180adf4461810f8c0eb19f6767cc94c32e808ea0380b117a1af4",
       "verify_report_hash": "108fed5353f061628f446ea3f2ca4effc25645d28dece2a7eb178cd2d805004a",
       "evaluation_report_hash": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-      "adjudication_status": "NOT_ADJUDICATED",
-      "adjudication_verdict_hash": null,
-      "adjudication_admission_status": null
+      "adjudication_status": "NOT_ADMISSIBLE"
     }
   ]
 }

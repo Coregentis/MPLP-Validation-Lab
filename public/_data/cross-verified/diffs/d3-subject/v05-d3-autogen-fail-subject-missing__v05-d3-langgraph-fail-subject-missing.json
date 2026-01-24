@@ -1,0 +1,30 @@
+{
+  "scenario_family": "d3-subject",
+  "pair": [
+    "v05-d3-autogen-fail-subject-missing",
+    "v05-d3-langgraph-fail-subject-missing"
+  ],
+  "differences": [
+    {
+      "note_code": "MISSING_ADMISSIBILITY_EVIDENCE",
+      "params": {
+        "run_id": "v05-d3-autogen-fail-subject-missing"
+      }
+    },
+    {
+      "note_code": "MISSING_ADMISSIBILITY_EVIDENCE",
+      "params": {
+        "run_id": "v05-d3-langgraph-fail-subject-missing"
+      }
+    },
+    {
+      "note_code": "VALUE_HASH_MISMATCH",
+      "params": {
+        "pointer": "/normalized_hash",
+        "left_hash": "469f4b2526e9b2f8",
+        "right_hash": "938735fed3c3809e"
+      }
+    }
+  ],
+  "disclaimer": "Equivalence refers to evidence projection similarity under the specified \nruleset and hash scope. It does not constitute framework certification, \ncapability endorsement, or compliance verification.\n"
+}

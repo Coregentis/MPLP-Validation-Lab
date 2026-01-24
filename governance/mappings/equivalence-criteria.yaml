@@ -1,0 +1,103 @@
+# Equivalence Criteria Specification (SSOT)
+# Machine-read by scripts/compute-equivalence.ts and VLAB-GATE-12
+# HP-10.2-06: Admissibility pointer and values explicitly defined
+# HP-10.2-07: Diff notes enumerated (no free text)
+# HP-10.2-08: Disclaimer distribution gate requirement
+
+version: "1.0.0"
+description: "Defines the judgment logic for cross-substrate evidence equivalence"
+
+# References
+normalization_spec_ref: governance/mappings/normalization-spec.yaml
+hash_scope_ref: governance/mappings/hash-scope.yaml
+core_elements_ref: governance/mappings/core-evidence-elements.yaml
+
+# HP-10.2-06: Admissibility definition with explicit pointer
+admissibility:
+  pointer: "/verdict/admission/status"
+  admissible_values:
+    - "admissible"
+    - "ADMISSIBLE"
+  missing_field_behavior: not_equivalent
+  missing_field_note_code: MISSING_ADMISSIBILITY_EVIDENCE
+
+# Equivalence definition
+equivalence_rule:
+  # Two runs are equivalent if all three conditions are met:
+  conditions:
+    - name: scenario_family_match
+      description: "Both runs belong to the same scenario_family"
+    - name: normalized_hash_match
+      description: "Their normalized_hash values are identical"
+    - name: both_admissible
+      description: "Both have ADMISSIBLE status per admissibility.pointer"
+  
+  result_if_all_true: equivalent
+  result_if_any_false: not_equivalent
+
+# HP-10.2-07: Diff notes must use enumerated codes (no free text)
+diff_requirements:
+  # Every non-equivalent pair MUST have an explainable diff
+  mandatory_for_non_equivalent: true
+  
+  # Enumerated note codes (HP-10.2-07)
+  allowed_note_codes:
+    - code: MISSING_POINTER
+      params: ["pointer"]
+      description: "Required pointer absent in one pack"
+    - code: VALUE_HASH_MISMATCH
+      params: ["pointer", "left_hash", "right_hash"]
+      description: "Values at pointer differ (hashes shown, not raw values)"
+    - code: CARDINALITY_MISMATCH
+      params: ["pointer", "left_count", "right_count"]
+      description: "Array lengths differ"
+    - code: TYPE_MISMATCH
+      params: ["pointer", "left_type", "right_type"]
+      description: "Value types differ"
+    - code: MISSING_ADMISSIBILITY_EVIDENCE
+      params: ["run_id"]
+      description: "Admissibility pointer missing or invalid"
+    - code: SCENARIO_FAMILY_MISMATCH
+      params: ["left_family", "right_family"]
+      description: "Runs belong to different scenario families"
+  
+  # Prohibited content in diffs
+  prohibited_content:
+    - framework_capability_claims
+    - compliance_statements
+    - recommendation_language
+    - comparative_judgments  # "better/worse"
+    - free_text_notes  # Must use note_code + params
+
+# Report structure
+report_fields:
+  required:
+    - report_version
+    - ruleset_version
+    - core_elements_version
+    - hash_scope_version
+    - generated_at
+    - scenario_families
+    - entries  # Per-run details
+    - equivalence_matrix  # Pairwise comparisons
+    - disclaimer  # HP-10.2-08: Must be present
+  
+  entry_fields:
+    - substrate
+    - run_id
+    - fingerprint_ref
+    - normalized_hash
+    - verdict_status
+    - admission_status
+
+# HP-10.2-08: Disclaimer distribution gate requirement
+disclaimer:
+  text: |
+    Equivalence refers to evidence projection similarity under the specified 
+    ruleset and hash scope. It does not constitute framework certification, 
+    capability endorsement, or compliance verification.
+  distribution_gate: VLAB-GATE-12
+  required_in:
+    - cross_verified_report
+    - diff_files
+    - ui_page_header

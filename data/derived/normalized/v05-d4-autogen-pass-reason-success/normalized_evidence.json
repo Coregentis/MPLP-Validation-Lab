@@ -1,0 +1,25 @@
+{
+  "_meta": {
+    "normalization_spec_version": "1.0.0",
+    "hash_scope_version": "1.0.0",
+    "source_run_id": "v05-d4-autogen-pass-reason-success",
+    "generated_at": "2026-01-24T09:17:26.265Z"
+  },
+  "manifest": {
+    "run_id": "v05-d4-autogen-pass-reason-success",
+    "scenario_family": "d4-reason"
+  },
+  "timeline": {
+    "events": []
+  },
+  "artifacts": {
+    "plan.json": null,
+    "trace.json": null,
+    "verdict.json": {}
+  },
+  "verdict": {
+    "admission": {
+      "status": "unknown"
+    }
+  }
+}

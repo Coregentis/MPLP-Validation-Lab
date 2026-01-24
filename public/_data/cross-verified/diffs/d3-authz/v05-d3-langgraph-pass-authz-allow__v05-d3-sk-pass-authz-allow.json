@@ -1,0 +1,30 @@
+{
+  "scenario_family": "d3-authz",
+  "pair": [
+    "v05-d3-langgraph-pass-authz-allow",
+    "v05-d3-sk-pass-authz-allow"
+  ],
+  "differences": [
+    {
+      "note_code": "MISSING_ADMISSIBILITY_EVIDENCE",
+      "params": {
+        "run_id": "v05-d3-langgraph-pass-authz-allow"
+      }
+    },
+    {
+      "note_code": "MISSING_ADMISSIBILITY_EVIDENCE",
+      "params": {
+        "run_id": "v05-d3-sk-pass-authz-allow"
+      }
+    },
+    {
+      "note_code": "VALUE_HASH_MISMATCH",
+      "params": {
+        "pointer": "/normalized_hash",
+        "left_hash": "9cfa9dfd4b2d5b19",
+        "right_hash": "9248d1445ac1789f"
+      }
+    }
+  ],
+  "disclaimer": "Equivalence refers to evidence projection similarity under the specified \nruleset and hash scope. It does not constitute framework certification, \ncapability endorsement, or compliance verification.\n"
+}

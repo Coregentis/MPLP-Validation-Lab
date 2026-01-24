@@ -1,0 +1,30 @@
+{
+  "scenario_family": "d1-outcome",
+  "pair": [
+    "v05-d1-autogen-fail-outcome-invalid",
+    "v05-d1-sk-fail-outcome-invalid"
+  ],
+  "differences": [
+    {
+      "note_code": "MISSING_ADMISSIBILITY_EVIDENCE",
+      "params": {
+        "run_id": "v05-d1-autogen-fail-outcome-invalid"
+      }
+    },
+    {
+      "note_code": "MISSING_ADMISSIBILITY_EVIDENCE",
+      "params": {
+        "run_id": "v05-d1-sk-fail-outcome-invalid"
+      }
+    },
+    {
+      "note_code": "VALUE_HASH_MISMATCH",
+      "params": {
+        "pointer": "/normalized_hash",
+        "left_hash": "7de13c3d0a4b3e64",
+        "right_hash": "bb4d615fae542eb8"
+      }
+    }
+  ],
+  "disclaimer": "Equivalence refers to evidence projection similarity under the specified \nruleset and hash scope. It does not constitute framework certification, \ncapability endorsement, or compliance verification.\n"
+}

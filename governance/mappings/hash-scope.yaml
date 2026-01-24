@@ -1,0 +1,52 @@
+# Hash Scope Specification (SSOT)
+# Machine-read by scripts/normalize-pack.ts and VLAB-GATE-11
+# HP-10.2-02: This is the SINGLE SOURCE for numeric precision (no dual sources)
+# HP-10.2-03: Ordering rules explicitly defined
+
+version: "1.0.0"
+description: "Defines which fields enter the equivalence hash computation"
+
+# Hash algorithm
+algorithm: sha256
+
+# Encoding rules for deterministic hashing
+encoding:
+  charset: utf-8
+  line_ending: lf
+  trailing_whitespace: strip_per_line
+  leading_whitespace: preserve
+  bom: none
+
+# Field inclusion/exclusion for hash
+field_scope:
+  # Volatile fields (excluded from hash)
+  timestamps_in_hash_scope: false
+  producer_metadata_in_hash_scope: false
+  
+  # Stable fields (always included)
+  manifest_identity_in_hash_scope: true
+  timeline_structure_in_hash_scope: true
+  verdict_outcome_in_hash_scope: true
+  artifact_content_in_hash_scope: true
+
+# Array ordering rules (HP-10.2-03)
+ordering:
+  timeline_events: stable_sort_by_sequence_then_event_id
+  artifact_list: alphabetical_by_path
+  payload_keys: alphabetical
+  # Prohibition: timestamp-based ordering is forbidden for hash stability
+  timestamp_ordering: prohibited
+
+# Numeric handling (HP-10.2-02: SINGLE SOURCE for precision)
+float_normalization:
+  precision: 6
+  format: decimal  # Not scientific notation
+  strip_trailing_zeros: true
+  # This is the authoritative source; normalization-spec defers here
+
+# JSON serialization
+json_serialization:
+  indent: none  # Compact for hashing
+  key_order: alphabetical
+  escape_unicode: false
+  null_values: omit
