@@ -15,6 +15,7 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import labManifest from '@/public/_meta/lab-manifest.json';
+import { DisclaimerBox } from '@/components/common/DisclaimerBox';
 
 const LAB_CANONICAL_HOST = 'https://lab.mplp.io';
 
@@ -34,7 +35,7 @@ export default function CrossVerifiedPage() {
     const labVersion = labManifest.lab_series;
 
     return (
-        <div className="pt-8 max-w-4xl">
+        <div className="pt-8 max-w-4xl px-4 mx-auto">
             <div className="mb-12">
                 <p className="text-xs font-bold uppercase tracking-[0.4em] text-mplp-text-muted/80 mb-3">Policy & Governance</p>
                 <h1 className="text-3xl sm:text-4xl font-bold text-mplp-text mb-6">Cross-Verified Prototypes</h1>
@@ -50,21 +51,7 @@ export default function CrossVerifiedPage() {
             </div>
 
             {/* Critical Disclaimer */}
-            <section className="mb-12 px-4 py-3 rounded-xl border border-amber-500/20 bg-amber-900/5">
-                <div className="flex items-start gap-3">
-                    <span className="text-amber-400 text-sm mt-0.5">⚠</span>
-                    <div className="text-sm text-mplp-text-muted">
-                        <p className="mb-2">
-                            <strong className="text-mplp-text">Equivalence ≠ Endorsement.</strong>
-                        </p>
-                        <ul className="text-xs space-y-1 text-mplp-text-muted/80">
-                            <li>• Equivalence means <em>evidence projection similarity</em>, not framework capability comparison.</li>
-                            <li>• This is <strong>not</strong> certification, compliance, or quality rating.</li>
-                            <li>• Verdicts are evidence-based outputs under versioned rulesets only.</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
+            <DisclaimerBox kind="equivalence" className="mb-12" />
 
             {/* Evidence Pointers */}
             <section className="mb-12">

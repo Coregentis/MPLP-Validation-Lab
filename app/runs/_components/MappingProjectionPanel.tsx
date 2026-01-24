@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import Link from 'next/link';
+import { DisclaimerBox } from '@/components/common/DisclaimerBox';
 
 interface MappingProjectionPanelProps {
     runId: string;
@@ -21,10 +21,9 @@ interface RunMappingEntry {
 /**
  * MappingProjectionPanel
  * 
- * P0 deliverable: Display SSOT refs for evidence projection mappings.
- * Shows fingerprint, fieldmap, and normalization/hash/equivalence refs.
+ * P2.1 Migration: Now uses DisclaimerBox for mandatory wording.
  * 
- * MANDATORY DISCLAIMER (DO NOT MODIFY):
+ * MANDATORY DISCLAIMER (Managed via DisclaimerBox):
  * "Mappings describe evidence projection only; they do not describe framework capability."
  */
 export function MappingProjectionPanel({ runId, mappingIndex }: MappingProjectionPanelProps) {
@@ -55,7 +54,7 @@ export function MappingProjectionPanel({ runId, mappingIndex }: MappingProjectio
                 <span>📐</span> Mapping & Projection
             </h3>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6">
                 {refs.map((ref, i) => (
                     <div key={i} className="bg-white border border-zinc-100 rounded-lg p-3">
                         <div className="text-xs text-zinc-400 uppercase tracking-wider mb-1">
@@ -68,10 +67,7 @@ export function MappingProjectionPanel({ runId, mappingIndex }: MappingProjectio
                 ))}
             </div>
 
-            <div className="text-xs text-zinc-500 border-t border-zinc-200 pt-3 italic">
-                {/* MANDATORY DISCLAIMER - DO NOT MODIFY */}
-                Mappings describe evidence projection only; they do not describe framework capability.
-            </div>
+            <DisclaimerBox kind="projection_only" variant="zinc" />
         </section>
     );
 }

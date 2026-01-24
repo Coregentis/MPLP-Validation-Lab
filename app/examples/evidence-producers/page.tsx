@@ -9,6 +9,7 @@
 
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { DisclaimerBox } from '@/components/common/DisclaimerBox';
 
 const LAB_CANONICAL_HOST = 'https://lab.mplp.io';
 
@@ -53,13 +54,11 @@ export default function EvidenceProducersIndexPage() {
         <main className="min-h-screen bg-zinc-950 text-zinc-100 py-12 px-4">
             <div className="max-w-4xl mx-auto">
                 {/* Warning Banner */}
-                <div className="bg-amber-900/30 border border-amber-700/50 rounded-lg p-4 mb-8">
-                    <p className="text-sm text-amber-200">
-                        <strong>Reference Templates Only</strong> — These are not official SDKs.
-                        This project does not endorse any implementation. Producers are community-contributed
-                        reference templates for generating cross-substrate evidence packs.
+                <DisclaimerBox kind="non_endorsement" className="mb-8">
+                    <p className="text-[10px] text-amber-200/60 uppercase tracking-widest mt-1">
+                        Community-contributed reference templates
                     </p>
-                </div>
+                </DisclaimerBox>
 
                 {/* Header */}
                 <header className="mb-12">

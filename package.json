@@ -48,6 +48,7 @@
         "gate:no-frozen-terminology": "npx tsx scripts/gates/gate-no-frozen-terminology.ts",
         "audit:nav-depth": "npx tsx scripts/audit/nav-depth-audit.ts",
         "gate:no-static-orphans": "npx tsx scripts/gates/gate-no-static-orphans.ts",
+        "gate:disclaimer-required": "npx tsx scripts/gates/gate-disclaimerbox-required.ts",
         "gate:all": "npm run gate:vlab:00 && npm run gate:vlab:01",
         "gate:registry": "tsx scripts/gates/registry-contract.mjs",
         "gate:curated-runs": "tsx scripts/gates/curated-runs-closure.mjs",
