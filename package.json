@@ -45,6 +45,7 @@
         "gate:glob": "npm run gate:glob:01 && npm run gate:glob:02 && npm run gate:glob:03",
         "gate:manifest-anchors": "npx tsx scripts/gates/gate-manifest-anchors.ts",
         "gate:no-hardcoded-version": "npx tsx scripts/gates/gate-no-hardcoded-version.ts",
+        "gate:no-frozen-terminology": "npx tsx scripts/gates/gate-no-frozen-terminology.ts",
         "gate:all": "npm run gate:vlab:00 && npm run gate:vlab:01",
         "gate:registry": "tsx scripts/gates/registry-contract.mjs",
         "gate:curated-runs": "tsx scripts/gates/curated-runs-closure.mjs",

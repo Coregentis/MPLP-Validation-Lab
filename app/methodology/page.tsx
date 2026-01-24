@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import labManifest from '@/public/_meta/lab-manifest.json';
+import { VersionBadge, VersionText } from '@/components/common/VersionBadge';
+import { getLabSeries } from '@/lib/ssot/load-lab-manifest';
 
 export const metadata: Metadata = {
     title: 'Methodology | MPLP Validation Lab',
@@ -9,7 +10,7 @@ export const metadata: Metadata = {
 };
 
 export default function MethodologyPage() {
-    const labVersion = labManifest.lab_series;
+    const labVersion = getLabSeries();
 
     return (
         <main className="min-h-screen bg-zinc-950 text-zinc-100 py-12 px-4">
@@ -28,7 +29,7 @@ export default function MethodologyPage() {
                     <div className="mt-4 flex items-center gap-4 text-xs text-zinc-500">
                         <span className="bg-zinc-800 px-2 py-1 rounded">METHOD-VLAB-01</span>
                         <span>Version 1.0</span>
-                        <span className="bg-blue-900/30 text-blue-400 px-2 py-1 rounded">{labVersion} Sealed</span>
+                        <VersionBadge variant="lab" className="ml-0" />
                     </div>
                 </header>
 
@@ -320,7 +321,7 @@ export default function MethodologyPage() {
                         SSOT: <code className="bg-zinc-800 px-1 rounded">governance/METHOD-VLAB-01_EVALUATION_METHOD.md</code>
                     </p>
                     <p className="mt-2">
-                        Validation Lab • {labVersion} Sealed
+                        Validation Lab • <VersionText variant="lab" />
                     </p>
                 </footer>
             </div>

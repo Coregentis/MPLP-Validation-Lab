@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { loadCurrentRelease } from '@/lib/release/loadRelease';
+import { VersionText } from '@/components/common/VersionBadge';
 
 const LAB_CANONICAL_HOST = 'https://lab.mplp.io';
 
@@ -21,7 +22,6 @@ export const metadata: Metadata = {
 
 export default function Home() {
     const release = loadCurrentRelease();
-    const siteVersion = release.site_version.replace('site-', '');
     const exportVersion = release.export_version;
 
     return (
@@ -92,7 +92,7 @@ export default function Home() {
                         </div>
                         <div className="text-center">
                             <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-mplp-text-muted mb-2">Version</p>
-                            <p className="text-xs font-bold text-mplp-text">{siteVersion} Sealed</p>
+                            <p className="text-xs font-bold text-mplp-text"><VersionText variant="lab" /></p>
                             <p className="text-[10px] text-mplp-text-muted/60 mt-1">Curated runs immutable</p>
                         </div>
                     </div>

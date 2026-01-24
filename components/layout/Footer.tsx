@@ -4,16 +4,15 @@
  * Aligned with MPLP Website Footer Design
  * Uses: 12-column grid, uppercase headers, social icons
  * 
- * FIX-02: Version now reads from lab-manifest.json SSOT
+ * P2-1: Version now uses VersionBadge component from SSOT
  */
 
 import Link from 'next/link';
 import { Logo } from "@/components/ui/logo";
-import labManifest from '@/public/_meta/lab-manifest.json';
+import { VersionBadge } from "@/components/common/VersionBadge";
 
 export function Footer() {
     const currentYear = new Date().getFullYear();
-    const labVersion = labManifest.lab_series;
 
     return (
         <footer className="bg-mplp-dark text-mplp-text border-t border-mplp-border/50 relative z-10" aria-label="Site Footer">
@@ -32,8 +31,8 @@ export function Footer() {
                             <strong>Evidence-Based Verdicts</strong><br />
                             Non-certifying, vendor-neutral conformance evaluation for MPLP lifecycle invariants.
                         </p>
-                        <div className="mt-4 inline-block px-2 py-1 bg-mplp-dark-soft border border-mplp-border rounded text-xs text-mplp-text-muted">
-                            {labVersion} Sealed
+                        <div className="mt-4">
+                            <VersionBadge variant="lab" />
                         </div>
                     </div>
 
