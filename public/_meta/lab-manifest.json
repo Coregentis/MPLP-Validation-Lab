@@ -4,7 +4,7 @@
     "generated_at": "2026-01-24T20:06:53+08:00",
     "protocol_version": "1.0.0",
     "schema_bundle_version": "2.0.0",
-    "lab_series": "v0.13.1",
+    "lab_series": "v0.14.0",
     "baseline_commit_sha": "2b01caa26fd4c189050b5ba6820b071dd0314190",
     "tripod": {
         "website_anchor": "https://www.mplp.io/definition",
@@ -38,6 +38,12 @@
         "seal_v12_1_sha256": "0cbf652d9f052b6f2af76f43e19e3fbb60dfe50cab4751bfe216d0f3a9762fc0",
         "seal_v13_0_sha256": "189e150722994af1725b540698ba0cd3eb6a8ef82b4e7f0320d511d35c08957d",
         "seal_v13_1_sha256": "26323c46e531d34e676867a79a3ea7342e7c0fba81098415a929953a4555ccc9",
+        "seal_v14_0_sha256": "c7b56962c1a0545d845dd217cf9256b410682824b936fc56dbbe2e15c9e0cd9b",
+        "fail_benchmark_v14": {
+            "run_id": "pydantic-ai-d1-budget-fail-01",
+            "benchmark_doc_sha256": "a92c20b68fed6d62f36369c5185c7d7178643f38cbe78afd53d615cc32e68568",
+            "pointers_sha256": "f422ec02545c0440e2b80f6f3f0e064adffb1290d6faf5db3a641f58c1added9"
+        },
         "sop_v12_integrity": "scripts/gates/gate-v12-sop-integrity.ts"
     },
     "boundaries": [

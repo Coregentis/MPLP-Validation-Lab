@@ -5,7 +5,13 @@
     {
       "requirement_id": "RQ-D1-01",
       "artifact_path": "pack/timeline/events.ndjson",
-      "locator": "canonptr:v1:D1:budget:000:pydantic",
+      "locator": "evt-pydantic-ai-d1-budget-fail-01-001",
+      "status": "PRESENT"
+    },
+    {
+      "requirement_id": "RQ-D1-01",
+      "artifact_path": "pack/snapshots/forensic-state.json",
+      "locator": "snap-pydantic-ai-d1-budget-fail-01-001",
       "status": "PRESENT"
     }
   ]

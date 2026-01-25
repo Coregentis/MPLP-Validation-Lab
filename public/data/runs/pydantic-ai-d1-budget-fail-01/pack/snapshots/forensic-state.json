@@ -1,0 +1,13 @@
+{
+    "snapshot_id": "snap-pydantic-ai-d1-budget-fail-01-001",
+    "timestamp": "2026-01-25T12:00:01.000Z",
+    "context": {
+        "budget_remaining": 0,
+        "requested_amount": 1000,
+        "violation_detected": true
+    },
+    "state_diff": {
+        "budget_status": "EXHAUSTED",
+        "next_action": "THROTTLE_BYPASS"
+    }
+}
