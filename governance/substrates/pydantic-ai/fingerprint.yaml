@@ -1,0 +1,37 @@
+---
+substrate_id: pydantic-ai
+fingerprint_version: "1.0.0"
+status: active
+---
+
+# Substrate Version Fingerprint: Pydantic-AI
+
+## 1. Upstream (Framework)
+| Field | Value |
+|:---|:---|
+| Name | pydantic-ai |
+| Org | pydantic |
+| Repo | https://github.com/pydantic/pydantic-ai |
+| Release Tag | v0.0.1 (Extension Baseline) |
+| Commit SHA | unknown_extension |
+
+## 2. Producer (Bridging Tool)
+| Field | Value |
+|:---|:---|
+| Name | internal-pydantic-ai-producer |
+| Version | 0.1.0 |
+| Repo | internal/producers/pydantic-ai |
+
+## 3. Runtime Context
+| Field | Value |
+|:---|:---|
+| Language | python |
+| Min Version | 3.10 |
+
+## 4. API Surface Hash
+| Component | Symbols Monitored | Surface Hash |
+|:---|:---|:---|
+| Agent | `run`, `run_sync` | ffffffff... |
+
+---
+**Governed By**: VLAB-GATE-08

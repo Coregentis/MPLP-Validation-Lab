@@ -1,0 +1,4 @@
+{"event_type": "agent.init", "event_id": "evt-pydantic-ai-d1-budget-fail-02-000", "timestamp": "2026-01-25T12:00:00.000Z"}
+{"event_type": "budget.decision", "decision_kind": "budget", "outcome": "invalid_outcome", "resource": "llm-tokens", "amount": 1000, "event_id": "evt-pydantic-ai-d1-budget-fail-02-001", "timestamp": "2026-01-25T12:00:01.000Z"}
+{"event_type": "lifecycle.transition", "to_state": "success", "event_id": "evt-pydantic-ai-d1-budget-fail-02-002", "timestamp": "2026-01-25T12:00:02.000Z"}
+{"event_type": "agent.end", "event_id": "evt-pydantic-ai-d1-budget-fail-02-003", "timestamp": "2026-01-25T12:00:03.000Z"}

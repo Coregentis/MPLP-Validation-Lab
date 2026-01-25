@@ -122,6 +122,27 @@ substrates:
         gfs: [D4]
         status: REGISTERED
 
+  - id: pydantic-ai
+    display_name: Pydantic-AI
+    type: framework
+    tier: 1
+    ecosystem: pydantic
+    target_level: declared
+    current_level: declared
+    runs:
+      - run_id: pydantic-ai-d1-budget-pass-01
+        gfs: [D1]
+        status: REGISTERED
+      - run_id: pydantic-ai-d1-budget-pass-02
+        gfs: [D1]
+        status: REGISTERED
+      - run_id: pydantic-ai-d1-budget-fail-01
+        gfs: [D1]
+        status: REGISTERED
+      - run_id: pydantic-ai-d1-budget-fail-02
+        gfs: [D1]
+        status: REGISTERED
+
   - id: crewai
     display_name: CrewAI
     type: framework

@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.1",
+  "canonptr_version": "v1",
+  "pointers": [
+    {
+      "requirement_id": "RQ-D1-01",
+      "artifact_path": "pack/timeline/events.ndjson",
+      "locator": "canonptr:v1:D1:budget:000:pydantic",
+      "status": "PRESENT"
+    }
+  ]
+}

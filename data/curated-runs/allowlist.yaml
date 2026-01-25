@@ -516,3 +516,59 @@ runs:
     pack_root_hash: fcb981f4fd24f9744ea0ba3f5781057251f5ed2fcd4ddea083ab8a8936705b79
     verify_report_hash: 80f9a5013849ec15d15d18f539bda5c1fa1a86a0670c220b315f11a880090008
     evaluation_report_hash: 288dabbc225d49a5ab645667251a250a4e7a6ec63fd03915def9cc289b6a6acc
+  - run_id: pydantic-ai-d1-budget-pass-01
+    scenario_id: d1-budget-pass-scenario
+    ruleset_version: ruleset-1.2
+    substrate: pydantic-ai
+    substrate_fingerprint_ref: governance/substrates/pydantic-ai/fingerprint.yaml
+    fieldmap_ref: governance/mappings/fieldmap/langgraph.yaml
+    substrate_claim_level: declared
+    substrate_execution: static
+    inference_mode: none
+    repro_ref: data/runs/pydantic-ai-d1-budget-pass-01/
+    status: active
+    notes: 'v0.13 D1 PASS: Pydantic-AI expansion sample'
+    indexable: true
+    created_at: '2026-01-25T12:00:00Z'
+  - run_id: pydantic-ai-d1-budget-pass-02
+    scenario_id: d1-budget-pass-scenario
+    ruleset_version: ruleset-1.2
+    substrate: pydantic-ai
+    substrate_fingerprint_ref: governance/substrates/pydantic-ai/fingerprint.yaml
+    fieldmap_ref: governance/mappings/fieldmap/langgraph.yaml
+    substrate_claim_level: declared
+    substrate_execution: static
+    inference_mode: none
+    repro_ref: data/runs/pydantic-ai-d1-budget-pass-02/
+    status: active
+    notes: 'v0.13 D1 PASS: Pydantic-AI expansion sample'
+    indexable: true
+    created_at: '2026-01-25T12:00:00Z'
+  - run_id: pydantic-ai-d1-budget-fail-01
+    scenario_id: d1-budget-fail-scenario
+    ruleset_version: ruleset-1.2
+    substrate: pydantic-ai
+    substrate_fingerprint_ref: governance/substrates/pydantic-ai/fingerprint.yaml
+    fieldmap_ref: governance/mappings/fieldmap/langgraph.yaml
+    substrate_claim_level: declared
+    substrate_execution: static
+    inference_mode: none
+    repro_ref: data/runs/pydantic-ai-d1-budget-fail-01/
+    status: active
+    notes: 'v0.13 D1 FAIL: Pydantic-AI expansion sample'
+    indexable: true
+    created_at: '2026-01-25T12:00:00Z'
+  - run_id: pydantic-ai-d1-budget-fail-02
+    scenario_id: d1-budget-fail-scenario
+    ruleset_version: ruleset-1.2
+    substrate: pydantic-ai
+    substrate_fingerprint_ref: governance/substrates/pydantic-ai/fingerprint.yaml
+    fieldmap_ref: governance/mappings/fieldmap/langgraph.yaml
+    substrate_claim_level: declared
+    substrate_execution: static
+    inference_mode: none
+    repro_ref: data/runs/pydantic-ai-d1-budget-fail-02/
+    status: active
+    notes: 'v0.13 D1 FAIL: Pydantic-AI expansion sample'
+    indexable: true
+    created_at: '2026-01-25T12:00:00Z'
