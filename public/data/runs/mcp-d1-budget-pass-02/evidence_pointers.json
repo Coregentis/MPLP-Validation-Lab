@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.1",
+  "canonptr_version": "v1",
+  "pointers": [
+    {
+      "requirement_id": "RQ-D1-01",
+      "artifact_path": "pack/timeline/events.ndjson",
+      "locator": "canonptr:v1:D1:budget:000:dfdce19c",
+      "status": "PRESENT"
+    },
+    {
+      "requirement_id": "RQ-D1-01",
+      "artifact_path": "pack/timeline/events.ndjson",
+      "locator": "canonptr:v1:D1:terminate:001:f1a6253e",
+      "status": "PRESENT"
+    }
+  ]
+}

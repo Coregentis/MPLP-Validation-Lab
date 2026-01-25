@@ -5,6 +5,7 @@
     "protocol_version": "1.0.0",
     "schema_bundle_version": "2.0.0",
     "lab_series": "v0.10.2",
+    "baseline_commit_sha": "4708f2597b83ec5510b65a443a992634f19b2520",
     "tripod": {
         "website_anchor": "https://www.mplp.io/definition",
         "docs_anchor": "https://docs.mplp.io/docs/reference/entrypoints",
@@ -12,11 +13,25 @@
         "lab_anchor": "https://lab.mplp.io"
     },
     "anchors": {
+        "validation_hub": "/validation",
+        "evidence_gallery": "/validation/samples",
         "policies_root": "/policies",
         "fmm": "/policies/fmm",
         "cross_verified": "/policies/cross-verified",
+        "cross_verified_report": "_data/cross-verified/v0.10.2-report.json",
+        "cross_verified_report_sha256": "b65996d81c3b774a32c9c4b4797914ceb248046a45bba24176fc61da188346b5",
+        "sample_set_manifest_sha256": "5e2ee08a46f23b3b221214e79b7ae17e8b67464a66ddabe7e21a9f09345b7b1f",
         "runs": "/runs",
-        "rulesets": "/rulesets"
+        "rulesets": "/rulesets",
+        "ruleset_evolution_hub": "/rulesets/evolution",
+        "ruleset_diff_index": "_meta/ruleset-diff-index.json",
+        "ruleset_diff_index_sha256": "ff98becf54e2f6ed0bac9d299d0dea86d692c7557a3d098ee88160b799a71792",
+        "ruleset_diffs_root": "_data/ruleset-diffs/",
+        "shadow_input": "_data/ruleset-diffs/shadow-input.json",
+        "shadow_input_sha256": "2df221240973ba5bc0f042f190cf4910918299bcd9c55af7e0c0ae7918a880c8",
+        "seal_v11_sha256": "43015569f4ae09503460459c3a3c94d27196024419574da9e4726bf643973715",
+        "seal_v12_sha256": "78493664107dd0943eefa2be2f53faeec07386ab00c965b314ca8fb2c7632106",
+        "sop_v12_integrity": "scripts/gates/gate-v12-sop-integrity.ts"
     },
     "boundaries": [
         "BOUNDARY-NON-CERTIFICATION",
@@ -24,14 +39,26 @@
         "BOUNDARY-VENDOR-NEUTRAL"
     ],
     "gates": {
-        "active": [
+        "public_minimum": [
+            "VLAB-GATE-08",
+            "VLAB-GATE-09",
+            "VLAB-GATE-12",
+            "VLAB-GATE-14"
+        ],
+        "internal_operational": [
             "VLAB-GATE-08",
             "VLAB-GATE-09",
             "VLAB-GATE-10",
             "VLAB-GATE-11",
             "VLAB-GATE-12",
             "VLAB-GATE-13",
-            "VLAB-GATE-14"
+            "VLAB-GATE-14",
+            "VLAB-GATE-21",
+            "VLAB-GATE-24",
+            "VLAB-GATE-25",
+            "VLAB-GATE-30",
+            "VLAB-GATE-31",
+            "VLAB-GATE-32"
         ]
     }
 }

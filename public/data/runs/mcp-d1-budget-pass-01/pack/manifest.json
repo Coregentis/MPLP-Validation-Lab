@@ -1,0 +1,7 @@
+{
+  "schema_version": "2.0.0",
+  "substrate": "mcp",
+  "run_id": "mcp-d1-budget-pass-01",
+  "timeline": "timeline/events.ndjson",
+  "snapshots": "snapshots/"
+}
