@@ -1,0 +1,28 @@
+{
+    "diff_id": "ruleset-1.1__ruleset-1.2",
+    "from_ruleset": "ruleset-1.1",
+    "to_ruleset": "ruleset-1.2",
+    "generated_at": "2026-01-25T01:05:00Z",
+    "rationale": "v0.12 Sustainability Tweak: Minor created_at update to exercise evolution pipeline.",
+    "metrics": {
+        "total_runs": 30,
+        "verdict_flips": 0,
+        "equivalence_shift": {
+            "from_rate": 0.3333,
+            "to_rate": 0.3333,
+            "delta": 0
+        }
+    },
+    "changes": [
+        {
+            "clause_id": "manifest",
+            "change_type": "metadata",
+            "description": "Updated created_at date",
+            "verdict_impact": "NONE"
+        }
+    ],
+    "integrity": {
+        "shadow_summary_sha256": "1b791132820214f17ed12fea45234b287b0eeb8782e457b0e0666524fba73313",
+        "shadow_deltas_sha256": "95a0fbb1bce5c6831db930d54678875e007fd003cd51fe9ca062e47f9e069120"
+    }
+}

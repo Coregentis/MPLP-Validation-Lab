@@ -1,0 +1,44 @@
+{
+  "index_version": "0.11.0",
+  "generated_at": "2026-01-24T16:37:45.236Z",
+  "diffs": [
+    {
+      "diff_id": "ruleset-1.0__ruleset-1.1",
+      "from_ruleset": "ruleset-1.0",
+      "to_ruleset": "ruleset-1.1",
+      "generated_at": "2026-01-25T00:18:00Z",
+      "metrics": {
+        "total_runs": 26,
+        "verdict_flips": 0,
+        "equivalence_shift": {
+          "from_rate": 0.6,
+          "to_rate": 0.6,
+          "delta": 0
+        }
+      },
+      "baseline_commit_sha": "4708f2597b83ec5510b65a443a992634f19b2520",
+      "shadow_input_sha256": "1b7ebf570ff773e824e2bd17e2b750541933abf4791c71b98cacc29d22f351ef",
+      "diffpack_hash": "1db2703438bbc4ffe79a6a9ca8a699d7b98570dc23f213ee62d88a774a8ee114",
+      "path": "_data/ruleset-diffs/ruleset-1.0__ruleset-1.1/diffpack.json"
+    },
+    {
+      "diff_id": "ruleset-1.1__ruleset-1.2",
+      "from_ruleset": "ruleset-1.1",
+      "to_ruleset": "ruleset-1.2",
+      "generated_at": "2026-01-25T01:05:00Z",
+      "metrics": {
+        "total_runs": 30,
+        "verdict_flips": 0,
+        "equivalence_shift": {
+          "from_rate": 0.3333,
+          "to_rate": 0.3333,
+          "delta": 0
+        }
+      },
+      "baseline_commit_sha": "4708f2597b83ec5510b65a443a992634f19b2520",
+      "shadow_input_sha256": "2df221240973ba5bc0f042f190cf4910918299bcd9c55af7e0c0ae7918a880c8",
+      "diffpack_hash": "9713d938ce202b1e81e5d655af202cf90485a7fd738cf9a18a310e5624c2e210",
+      "path": "_data/ruleset-diffs/ruleset-1.1__ruleset-1.2/diffpack.json"
+    }
+  ]
+}
