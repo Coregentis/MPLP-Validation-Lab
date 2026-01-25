@@ -1,6 +1,6 @@
 {
   "report_version": "1.0",
-  "verified_at": "2026-01-14T11:30:02.520Z",
+  "verified_at": "2026-01-24T17:01:42.881Z",
   "pack_id": "gf-02-fail-missing-plan",
   "admission_status": "NOT_ADMISSIBLE",
   "checks": [
@@ -81,7 +81,7 @@
           "requirement_id": "EPC-§7"
         }
       ],
-      "duration_ms": 0
+      "duration_ms": 1
     },
     {
       "check_id": "INT-002",
@@ -89,7 +89,7 @@
       "category": "INTEGRITY",
       "status": "PASS",
       "message": "Pack root hash verified: d97590764e87f05d...",
-      "duration_ms": 5
+      "duration_ms": 0
     },
     {
       "check_id": "INT-003",
@@ -98,7 +98,7 @@
       "status": "FAIL",
       "message": "Orphan entries in sha256sums: artifacts/plan.json",
       "taxonomy": "INTEGRITY_HASH_MISMATCH",
-      "duration_ms": 1
+      "duration_ms": 0
     },
     {
       "check_id": "MAN-001",
@@ -197,9 +197,9 @@
     "manifest_hash": "b80af2c750467534183f99aac6a7c2ba1793b4853ed7f235c520c057d42676f5",
     "schemas_bundle_hash": "99804832ddc3daefb92ec74120afaab1c3278e4a79d670e1f796e67f735463aa",
     "invariants_bundle_hash": "d32ed8bd0139ba2197c618f8cc057dae15ba8cd5012b25946c1e20c07fd8ebe0",
-    "report_hash": "ad2eb4d3aacfe488b0eb71da67f320e09658fc701f8d573961a3a14d532676c8"
+    "report_hash": "885c6d88f028e1c640e229e74c30413e2770482e8512feb3e292a05088b0e1ba"
   },
-  "ruleset_version": "ruleset-1.0",
+  "ruleset_version": "ruleset-1.2",
   "protocol_version": "1.0.0",
-  "total_duration_ms": 6
+  "total_duration_ms": 1
 }

@@ -1,0 +1,155 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://lab.mplp.io/schemas/diffpack.schema.json",
+    "title": "Ruleset Diff Pack Schema (v0.11 Seal-Grade)",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "diffpack_version",
+        "ruleset_diff_id",
+        "from_ruleset",
+        "to_ruleset",
+        "generated_at",
+        "baseline_commit_sha",
+        "inputs",
+        "metrics",
+        "clauses_changed"
+    ],
+    "properties": {
+        "diffpack_version": {
+            "type": "string",
+            "enum": [
+                "0.11.0"
+            ]
+        },
+        "ruleset_diff_id": {
+            "type": "string",
+            "pattern": "^ruleset-[0-9.]+__ruleset-[0-9.]+$"
+        },
+        "from_ruleset": {
+            "type": "string"
+        },
+        "to_ruleset": {
+            "type": "string"
+        },
+        "generated_at": {
+            "type": "string",
+            "format": "date-time"
+        },
+        "baseline_commit_sha": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{40}$"
+        },
+        "inputs": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "shadow_input_sha256",
+                "sample_set_sha256"
+            ],
+            "properties": {
+                "shadow_input_sha256": {
+                    "type": "string"
+                },
+                "sample_set_sha256": {
+                    "type": "string"
+                }
+            }
+        },
+        "metrics": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "total_runs",
+                "verdict_flips",
+                "equivalence_shift"
+            ],
+            "properties": {
+                "total_runs": {
+                    "type": "integer"
+                },
+                "verdict_flips": {
+                    "type": "integer"
+                },
+                "equivalence_shift": {
+                    "type": "object",
+                    "required": [
+                        "from_rate",
+                        "to_rate",
+                        "delta"
+                    ],
+                    "properties": {
+                        "from_rate": {
+                            "type": "number"
+                        },
+                        "to_rate": {
+                            "type": "number"
+                        },
+                        "delta": {
+                            "type": "number"
+                        }
+                    }
+                }
+            }
+        },
+        "clauses_changed": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                    "clause_id",
+                    "change_type",
+                    "rationale",
+                    "affected_evidence_pointers",
+                    "evidence_refs",
+                    "expected_impact"
+                ],
+                "properties": {
+                    "clause_id": {
+                        "type": "string"
+                    },
+                    "change_type": {
+                        "type": "string",
+                        "enum": [
+                            "added",
+                            "removed",
+                            "modified"
+                        ]
+                    },
+                    "rationale": {
+                        "type": "string"
+                    },
+                    "affected_evidence_pointers": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "evidence_refs": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "description": "run_id or diff_path"
+                        }
+                    },
+                    "expected_impact": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "integrity": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "shadow_summary_sha256": {
+                    "type": "string"
+                },
+                "shadow_deltas_sha256": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

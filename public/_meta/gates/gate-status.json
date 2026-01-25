@@ -1,0 +1,42 @@
+{
+    "generated_at": "2026-01-24T20:06:53+08:00",
+    "lab_series": "v0.10.2",
+    "gates": [
+        {
+            "id": "VLAB-GATE-08",
+            "status": "PASS",
+            "description": "Curated Immutability Proof"
+        },
+        {
+            "id": "VLAB-GATE-09",
+            "status": "PASS",
+            "description": "SSOT Projection Alignment"
+        },
+        {
+            "id": "VLAB-GATE-10",
+            "status": "PASS",
+            "description": "Curated Invariants Sealed"
+        },
+        {
+            "id": "VLAB-GATE-11",
+            "status": "PASS",
+            "description": "Reverify Required check"
+        },
+        {
+            "id": "VLAB-GATE-12",
+            "status": "PASS",
+            "description": "Export Consistency"
+        },
+        {
+            "id": "VLAB-GATE-14",
+            "status": "PASS",
+            "description": "Adjudication Consistency"
+        },
+        {
+            "id": "VLAB-GATE-24",
+            "status": "PASS",
+            "description": "Strict L1 Discoverability"
+        }
+    ],
+    "artifact_hash": "sha256:7de13c3d0a4b3e646b8f896145691514ce0989747829a1eba2ca956c028984e5"
+}

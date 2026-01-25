@@ -1,6 +1,6 @@
 {
   "report_version": "1.0",
-  "verified_at": "2026-01-14T11:52:50.861Z",
+  "verified_at": "2026-01-24T17:01:42.871Z",
   "pack_id": "test-minimal-pass-001",
   "admission_status": "ADMISSIBLE",
   "checks": [
@@ -74,7 +74,7 @@
       "category": "INTEGRITY",
       "status": "PASS",
       "message": "Pack root hash verified: cc52255c5511425d...",
-      "duration_ms": 5
+      "duration_ms": 0
     },
     {
       "check_id": "INT-003",
@@ -106,7 +106,7 @@
       "category": "VERSION_BINDING",
       "status": "PASS",
       "message": "Upstream commit: not_bound (optional in v1.0)",
-      "duration_ms": 0
+      "duration_ms": 1
     },
     {
       "check_id": "VER-002",
@@ -114,7 +114,7 @@
       "category": "VERSION_BINDING",
       "status": "PASS",
       "message": "Pack protocol version: 1.0.0",
-      "duration_ms": 0
+      "duration_ms": 1
     },
     {
       "check_id": "VER-003",
@@ -122,7 +122,7 @@
       "category": "VERSION_BINDING",
       "status": "PASS",
       "message": "Schemas hash: 99804832ddc3daef...",
-      "duration_ms": 0
+      "duration_ms": 1
     },
     {
       "check_id": "VER-004",
@@ -130,7 +130,7 @@
       "category": "VERSION_BINDING",
       "status": "PASS",
       "message": "Invariants hash: d32ed8bd0139ba21...",
-      "duration_ms": 0
+      "duration_ms": 1
     },
     {
       "check_id": "VER-005",
@@ -138,7 +138,7 @@
       "category": "VERSION_BINDING",
       "status": "PASS",
       "message": "Protocol versions match: 1.0.0",
-      "duration_ms": 0
+      "duration_ms": 1
     },
     {
       "check_id": "TL-002",
@@ -155,9 +155,9 @@
     "manifest_hash": "7bfb5c5595efd5b9228074a01d7c6e5483be891eeea7f9e7f162dda0154d9134",
     "schemas_bundle_hash": "99804832ddc3daefb92ec74120afaab1c3278e4a79d670e1f796e67f735463aa",
     "invariants_bundle_hash": "d32ed8bd0139ba2197c618f8cc057dae15ba8cd5012b25946c1e20c07fd8ebe0",
-    "report_hash": "258248c86792550f42eacaa6938a525619b2a09ff95beb93cbc4adec31d8d802"
+    "report_hash": "6318cb7d7197453ca7871c734649967ee1fadb4c05488b1e95fd9ed9ca86b989"
   },
-  "ruleset_version": "ruleset-1.0",
+  "ruleset_version": "ruleset-1.2",
   "protocol_version": "1.0.0",
-  "total_duration_ms": 6
+  "total_duration_ms": 1
 }

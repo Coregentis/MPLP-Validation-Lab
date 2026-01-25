@@ -220,9 +220,13 @@ function evaluateGoldenFlows(
  * Adjudicate a run.
  * 
  * @param runId The run identifier (e.g., 'gf-01-smoke')
+ * @param options Adjudication options (e.g., ruleset_version override)
  * @returns Adjudication result with bundle path and verdict
  */
-export async function adjudicate(runId: string): Promise<AdjudicationResult> {
+export async function adjudicate(
+    runId: string,
+    options: { ruleset_version?: string } = {}
+): Promise<AdjudicationResult> {
     console.log(`\n⚖️  Adjudicating: ${runId}\n`);
 
     // Paths
@@ -249,12 +253,12 @@ export async function adjudicate(runId: string): Promise<AdjudicationResult> {
 
     // Step 3: Verify (admission + integrity)
     console.log('[3/7] Running verification...');
-    const verifyReport = await verify(pack);
+    const verifyReport = await verify(pack, { ruleset_version: options.ruleset_version });
     console.log(`   ✅ Admission: ${verifyReport.admission_status}`);
 
     // Step 4: Evaluate (GF verdicts)
     console.log('[4/7] Evaluating golden flows...');
-    const rulesetVersion = '1.0'; // From VERIFIER_IDENTITY
+    const rulesetVersion = options.ruleset_version || '1.0'; // Default to 1.0
     const evaluateReport = evaluateGoldenFlows(packPath, pack.file_inventory, rulesetVersion);
     evaluateReport.run_id = runId;
     console.log(`   ✅ GF: ${evaluateReport.summary.passed}/${evaluateReport.summary.total} passed`);

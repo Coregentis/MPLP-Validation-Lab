@@ -104,7 +104,7 @@ Non-endorsement boundary: Diff reports explain ruleset changes only. They are no
 
 > **v0.9 Series Summary**: v0.9.0–v0.9.1 upgrades ruleset diff from "generatable" to "explainable + reproducible + referenceable" while preserving the v0.8 frozen evidence chain.
 >
-> **v0.12 Sustainability Release**: Establishes the representational baseline (MCP) and solidified SOP gates. The project is now in **Maintenance Mode**. No new substrates or scenario families are permitted under the v0.12 series.
+> **v0.12 Sustainability Release**: Establishes the representational baseline (MCP) and solidified SOP gates. The project is now in **Maintenance Mode**. [SEAL-v0.12.1](file:///Users/jasonwang/Documents/AI_Dev/V1.0_release/Validation_Lab/governance/seals/SEAL-v0.12.1.md)
 
 ---
 

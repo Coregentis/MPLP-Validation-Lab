@@ -1,12 +1,12 @@
 {
   "adjudication_version": "1.0",
   "run_id": "gf-01-langchain-pass",
-  "adjudicated_at": "2026-01-19T17:36:57.976Z",
+  "adjudicated_at": "2026-01-24T17:01:42.875Z",
   "verifier": {
     "id": "validation-lab-verifier",
     "version": "1.0.0"
   },
-  "ruleset_version": "1.0",
+  "ruleset_version": "ruleset-1.2",
   "protocol_pin": "unknown",
   "admission_status": "ADMISSIBLE",
   "golden_flow_results": [
@@ -57,7 +57,7 @@
     }
   ],
   "overall_status": "ADJUDICATED",
-  "verdict_hash": "4372ae42ce357fdbd540c20de850849cb814e8dd16f976ed48245ecb69eb25ac",
+  "verdict_hash": "79a142b741b90c5686fafeb160a4745d7925f81eec31864dd20ac4e3dadaff27",
   "_meta": {
     "generated_by": "vlab-adjudicate"
   }

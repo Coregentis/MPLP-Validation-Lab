@@ -1,0 +1,41 @@
+{
+    "diffpack_version": "0.11.0",
+    "ruleset_diff_id": "ruleset-1.0__ruleset-1.1",
+    "from_ruleset": "ruleset-1.0",
+    "to_ruleset": "ruleset-1.1",
+    "generated_at": "2026-01-25T00:18:00Z",
+    "baseline_commit_sha": "4708f2597b83ec5510b65a443a992634f19b2520",
+    "inputs": {
+        "shadow_input_sha256": "1b7ebf570ff773e824e2bd17e2b750541933abf4791c71b98cacc29d22f351ef",
+        "sample_set_sha256": "98c1fb4ae6bdc96b0e6146740172cce516c692f342a4ffca597d933100b87b54"
+    },
+    "metrics": {
+        "total_runs": 26,
+        "verdict_flips": 0,
+        "equivalence_shift": {
+            "from_rate": 0.6,
+            "to_rate": 0.6,
+            "delta": 0
+        }
+    },
+    "clauses_changed": [
+        {
+            "clause_id": "LG-01-B1",
+            "change_type": "modified",
+            "rationale": "Transition to dynamic budget invariants to account for substrate-specific event capture variance.",
+            "affected_evidence_pointers": [
+                "/verdict/budget/remaining",
+                "/manifest/substrate"
+            ],
+            "evidence_refs": [
+                "v05-d1-langgraph-pass-budget-allow",
+                "v05-d1-sk-pass-budget-allow"
+            ],
+            "expected_impact": "Stabilizes projection variance for budget-tracking across LangGraph and Semantic Kernel."
+        }
+    ],
+    "integrity": {
+        "shadow_summary_sha256": "45758a1a8a57043d5b29b3677e41c9a74e4466341290473a0d4400c4b5cd709e",
+        "shadow_deltas_sha256": "35aa2fc4617571f4430ec2104367077f301cb91a17347c5e418cfab0507c6214"
+    }
+}

@@ -1,0 +1,17 @@
+{
+  "diff_id": "ruleset-1.0__ruleset-1.1",
+  "generated_at": "2026-01-24T16:21:51.960Z",
+  "input_integrity": {
+    "shadow_input_sha256": "1b7ebf570ff773e824e2bd17e2b750541933abf4791c71b98cacc29d22f351ef",
+    "sample_set_sha256": "98c1fb4ae6bdc96b0e6146740172cce516c692f342a4ffca597d933100b87b54"
+  },
+  "metrics": {
+    "total_runs": 26,
+    "verdict_flips": 0,
+    "equivalence_shift": {
+      "from_rate": 0.6,
+      "to_rate": 0.6,
+      "delta": 0
+    }
+  }
+}

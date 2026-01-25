@@ -1,0 +1,48 @@
+{
+  "evaluate_version": "1.0",
+  "run_id": "mcp-d1-budget-fail-01",
+  "evaluated_at": "2026-01-24T17:01:42.889Z",
+  "ruleset_version": "ruleset-1.2",
+  "golden_flows": [
+    {
+      "gf_id": "GF-01",
+      "status": "NOT_EVALUATED",
+      "evidence_refs": [],
+      "message": "No model routing evidence found"
+    },
+    {
+      "gf_id": "GF-02",
+      "status": "PASS",
+      "evidence_refs": [
+        "pack/timeline/events.ndjson"
+      ],
+      "message": "Prompt evidence present"
+    },
+    {
+      "gf_id": "GF-03",
+      "status": "NOT_EVALUATED",
+      "evidence_refs": [],
+      "message": "No output evidence found"
+    },
+    {
+      "gf_id": "GF-04",
+      "status": "PASS",
+      "evidence_refs": [
+        "pack/timeline/events.ndjson"
+      ],
+      "message": "Timeline evidence present"
+    },
+    {
+      "gf_id": "GF-05",
+      "status": "NOT_EVALUATED",
+      "evidence_refs": [],
+      "message": "No crypto evidence found"
+    }
+  ],
+  "summary": {
+    "total": 5,
+    "passed": 2,
+    "failed": 0,
+    "not_evaluated": 3
+  }
+}

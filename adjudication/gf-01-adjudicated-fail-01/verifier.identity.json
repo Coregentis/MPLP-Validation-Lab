@@ -36,6 +36,92 @@
         "This verifier does NOT endorse, certify, or rank any agent framework.",
         "Adjudication is based on evidence and deterministic rules only."
     ],
+    "signing_keys": {
+        "vlab-prod-2026-01b": {
+            "algorithm": "Ed25519",
+            "key_id": "vlab-prod-2026-01b",
+            "public_key_ed25519": "MCowBQYDK2VwAyEAxdxYSDAS0pwaKkpX30xS/LRv74K2l+xEaGJA3f7XUeA=",
+            "created_at": "2026-01-19T03:30:28Z",
+            "not_before": "2026-01-19T03:30:00Z",
+            "not_after": "2027-01-19T00:00:00Z",
+            "status": "active",
+            "purpose": "production",
+            "tier": "online",
+            "note": "Production signing key - Emergency rotation 2026-01-19 (hotfix)"
+        },
+        "vlab-prod-2026-01": {
+            "algorithm": "Ed25519",
+            "key_id": "vlab-prod-2026-01",
+            "public_key_ed25519": "MCowBQYDK2VwAyEA0pvOUK2ZWyK1LdK9IDuLbHnSwhTPfgdmQBXyvN3vfiI=",
+            "created_at": "2026-01-19T03:18:26Z",
+            "not_before": "2026-01-19T00:00:00Z",
+            "not_after": "2026-01-19T03:30:00Z",
+            "status": "revoked",
+            "purpose": "production",
+            "tier": "online",
+            "note": "REVOKED - Private key exposed in chat system"
+        },
+        "vlab-v0.5-test-001": {
+            "algorithm": "Ed25519",
+            "key_id": "vlab-v0.5-test-001",
+            "public_key_ed25519": "MCowBQYDK2VwAyEADlgibwdmuZ+oGs4guO46YPjFQW2h8nf0IxXEQCvBuHQ=",
+            "created_at": "2026-01-18T00:00:00Z",
+            "not_before": "2026-01-01T00:00:00Z",
+            "not_after": "2026-02-18T00:00:00Z",
+            "status": "grace",
+            "purpose": "test",
+            "tier": "online",
+            "note": "Legacy test key - in grace period until 2026-02-18"
+        }
+    },
+    "key_policy": {
+        "version": "1.2.0",
+        "accepted_statuses": [
+            "active",
+            "grace"
+        ],
+        "rejected_statuses": [
+            "revoked"
+        ],
+        "grace_period_days": 30,
+        "require_key_id_in_proof": true,
+        "rotation_policy": "annual_or_on_compromise",
+        "revocation_check": "local_manifest",
+        "default_signing_key_id": "vlab-prod-2026-01b",
+        "repo_scope": "Coregentis/MPLP-Validation-Lab",
+        "tier_hierarchy": {
+            "root": "Offline root key for signing online keys (HSM/air-gapped)",
+            "online": "CI signing key for daily proof generation"
+        }
+    },
+    "revocations": [
+        {
+            "key_id": "vlab-prod-2026-01",
+            "revoked_at": "2026-01-19T03:30:00Z",
+            "reason": "Private key material exposed in chat system",
+            "severity": "HIGH",
+            "action": "Immediate rotation to vlab-prod-2026-01b"
+        }
+    ],
+    "active_signing_key": "vlab-prod-2026-01b",
+    "key_ceremony_log": [
+        {
+            "event": "KEY_ROTATION",
+            "date": "2026-01-19",
+            "new_key_id": "vlab-prod-2026-01",
+            "retired_key_id": "vlab-v0.5-test-001",
+            "reason": "v0.5.x hardening complete, switching to production signing",
+            "grace_period_ends": "2026-02-18"
+        },
+        {
+            "event": "EMERGENCY_ROTATION",
+            "date": "2026-01-19T03:30:00Z",
+            "new_key_id": "vlab-prod-2026-01b",
+            "revoked_key_id": "vlab-prod-2026-01",
+            "reason": "Private key exposed in chat - immediate revocation and rotation",
+            "severity": "HIGH"
+        }
+    ],
     "created_at": "2026-01-14",
-    "schema_version": "1.0"
+    "schema_version": "1.4"
 }

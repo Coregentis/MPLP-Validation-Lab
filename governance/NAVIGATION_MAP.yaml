@@ -18,45 +18,33 @@ navbar:
       label: "Home"
       indexable: true
       
-    - href: "/about"
-      label: "About"
+    - href: "/validation"
+      label: "Validation"
       indexable: true
-      description: "Four Boundaries, trust signal"
-      
-    - href: "/methodology"
-      label: "Methodology"
-      indexable: true
-      description: "Evaluation methodology and process"
 
     - href: "/runs"
       label: "Runs"
       indexable: true
-      description: "Curated evidence runs"
       
     - href: "/adjudication"
       label: "Adjudication"
       indexable: true
-      description: "Bundles, verdict hashes, recheck"
-      
-    - href: "/coverage"
-      label: "Coverage"
-      indexable: true
-      description: "Test vectors + adjudication matrix entry"
       
     - href: "/rulesets"
       label: "Rulesets"
       indexable: true
-      description: "Versioned evaluation logic"
-      
-    - href: "/guarantees"
-      label: "Guarantees"
+
+    - href: "/rulesets/evolution"
+      label: "Evolution"
       indexable: true
-      description: "LG-01~05 scope & limits"
       
     - href: "/policies/contract"
       label: "Contract"
       indexable: true
-      description: "Export contract, pack structure"
+
+    - href: "/methodology"
+      label: "Methodology"
+      indexable: true
       
   external:
     - href: "https://www.mplp.io"
@@ -83,6 +71,10 @@ footer:
       - href: "/about"
         label: "About (Four Boundaries)"
         indexable: true
+
+      - href: "/validation"
+        label: "Validation Dashboard"
+        indexable: true
         
       - href: "/methodology"
         label: "Methodology"
@@ -96,8 +88,8 @@ footer:
         label: "Rulesets"
         indexable: true
         
-      - href: "/rulesets/diff"
-        label: "Ruleset Diff"
+      - href: "/rulesets/evolution"
+        label: "Ruleset Evolution"
         indexable: true
 
       - href: "/policies/contract"
@@ -125,6 +117,10 @@ footer:
     links:
       - href: "/adjudication"
         label: "Adjudication Bundles"
+        indexable: true
+
+      - href: "/validation/samples"
+        label: "Evidence Samples (MUST-1)"
         indexable: true
         
       - href: "/coverage/adjudication"
@@ -272,6 +268,7 @@ indexing_policy:
     - "/guarantees"
     - "/policies/contract"
     - "/policies/intake"
+    - "/rulesets/evolution"
     - "/policies/substrate-scope"
     
   noindex:
@@ -280,7 +277,7 @@ indexing_policy:
     - "/runs/[run_id]"
     - "/runs/[run_id]/replay"
     - "/runs/[run_id]/evidence"
-    - "/rulesets/[version]"
+    - "/rulesets/diff/[id]"
     - "/adjudication/[run_id]"
     
   disallow:

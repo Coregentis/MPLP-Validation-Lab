@@ -131,7 +131,10 @@ export default function AboutPage() {
             </section>
             {/* Sustainability Stopline */}
             <section className="bg-zinc-900 border border-zinc-800 rounded-lg p-6 mb-8">
-                <h2 className="text-xl font-semibold mb-4">Sustainability Stopline (Maintenance Mode)</h2>
+                <div className="flex justify-between items-start mb-4">
+                    <h2 className="text-xl font-semibold">Sustainability Stopline (Maintenance Mode)</h2>
+                    <a href="file:///Users/jasonwang/Documents/AI_Dev/V1.0_release/Validation_Lab/governance/seals/SEAL-v0.12.1.md" className="text-[10px] text-zinc-500 hover:text-blue-400 border border-zinc-700 px-2 py-1 rounded">VIEW SEAL-v0.12.1 →</a>
+                </div>
                 <p className="text-zinc-400 text-sm mb-4">
                     The Validation Lab has reached its functional sustainability baseline as of v0.12.0.
                     The project is now in <strong>Maintenance Mode</strong>.

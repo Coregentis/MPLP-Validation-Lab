@@ -1,6 +1,6 @@
 {
   "report_version": "1.0",
-  "verified_at": "2026-01-19T17:36:57.238Z",
+  "verified_at": "2026-01-24T17:01:42.877Z",
   "pack_id": "gf-01-mcp-pass",
   "admission_status": "ADMISSIBLE",
   "checks": [
@@ -74,7 +74,7 @@
       "category": "INTEGRITY",
       "status": "PASS",
       "message": "Pack root hash verified: e4bf6c33d47228eb...",
-      "duration_ms": 5
+      "duration_ms": 0
     },
     {
       "check_id": "INT-003",
@@ -82,7 +82,7 @@
       "category": "INTEGRITY",
       "status": "PASS",
       "message": "Coverage complete: 6 files covered",
-      "duration_ms": 1
+      "duration_ms": 0
     },
     {
       "check_id": "MAN-001",
@@ -147,9 +147,9 @@
     "manifest_hash": "0964b888e842aa19a98bfd16c19749927d0595afbbde8e39f2a311cc03583a6d",
     "schemas_bundle_hash": "99804832ddc3daefb92ec74120afaab1c3278e4a79d670e1f796e67f735463aa",
     "invariants_bundle_hash": "d32ed8bd0139ba2197c618f8cc057dae15ba8cd5012b25946c1e20c07fd8ebe0",
-    "report_hash": "e8fe8b3918a8f4978ab31326c3fff615549d1c42188404020f887fdca24614fa"
+    "report_hash": "bfe6f8ba2d61b30e93c2724f2c00ac79e024d89c802d1e93bbed6af9d72be416"
   },
-  "ruleset_version": "ruleset-1.0",
+  "ruleset_version": "ruleset-1.2",
   "protocol_version": "1.0.0",
-  "total_duration_ms": 6
+  "total_duration_ms": 0
 }

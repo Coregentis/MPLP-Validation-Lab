@@ -112,7 +112,7 @@ function main() {
         normalization_spec_version: normSpec.version,
         hash_scope_version: hashScope.version,
         core_elements_version: '1.1.0',  // From core-evidence-elements.yaml
-        generated_at: new Date().toISOString(),
+        generated_at: process.env.BASELINE_TIMESTAMP || new Date().toISOString(),
         scenario_families: scenarioFamilies,
         entries,
         equivalence_matrix: equivalenceMatrix,

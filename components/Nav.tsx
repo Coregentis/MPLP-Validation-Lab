@@ -11,14 +11,13 @@ import { Logo } from "@/components/ui/logo";
 // Internal Lab navigation (aligned with NAVIGATION_MAP.yaml SSOT)
 const NAV_ITEMS = [
     { href: '/', label: 'Home' },
-    { href: '/about', label: 'About' },
-    { href: '/methodology', label: 'Methodology' },
+    { href: '/validation', label: 'Validation' },
     { href: '/runs', label: 'Runs' },
-    { href: '/adjudication', label: 'Adjudication' },
+    { href: '/adjudication', label: 'Adjudications' },
     { href: '/rulesets', label: 'Rulesets' },
-    { href: '/guarantees', label: 'Guarantees' },
-    { href: '/coverage', label: 'Coverage' },
+    { href: '/rulesets/evolution', label: 'Evolution' },
     { href: '/policies/contract', label: 'Contract' },
+    { href: '/methodology', label: 'Methodology' },
 ];
 
 

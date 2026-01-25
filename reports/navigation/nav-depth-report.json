@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-01-24T13:49:44.717Z",
+  "generated_at": "2026-01-25T03:47:53.237Z",
   "summary": {
-    "total": 25,
-    "L1": 18,
+    "total": 27,
+    "L1": 20,
     "L2": 0,
     "L3": 0,
     "orphan": 7
@@ -15,7 +15,7 @@
       "path_example": [
         "/about"
       ],
-      "entry_type": "navbar"
+      "entry_type": "footer"
     },
     {
       "path": "/adjudication",
@@ -51,7 +51,7 @@
       "path_example": [
         "/coverage"
       ],
-      "entry_type": "navbar"
+      "entry_type": "footer"
     },
     {
       "path": "/examples/evidence-producers",
@@ -69,7 +69,7 @@
       "path_example": [
         "/guarantees"
       ],
-      "entry_type": "navbar"
+      "entry_type": "footer"
     },
     {
       "path": "/methodology",
@@ -144,13 +144,13 @@
       "entry_type": "footer"
     },
     {
-      "path": "/rulesets/diff",
+      "path": "/rulesets/evolution",
       "min_depth": 1,
       "class": "L1",
       "path_example": [
-        "/rulesets/diff"
+        "/rulesets/evolution"
       ],
-      "entry_type": "footer"
+      "entry_type": "navbar"
     },
     {
       "path": "/rulesets",
@@ -169,6 +169,24 @@
         "/runs"
       ],
       "entry_type": "navbar"
+    },
+    {
+      "path": "/validation",
+      "min_depth": 1,
+      "class": "L1",
+      "path_example": [
+        "/validation"
+      ],
+      "entry_type": "navbar"
+    },
+    {
+      "path": "/validation/samples",
+      "min_depth": 1,
+      "class": "L1",
+      "path_example": [
+        "/validation/samples"
+      ],
+      "entry_type": "footer"
     },
     {
       "path": "/adjudication/[run_id]",
@@ -192,7 +210,7 @@
       "entry_type": "none"
     },
     {
-      "path": "/rulesets/diff/[diff_id]",
+      "path": "/rulesets/diff/[id]",
       "min_depth": null,
       "class": "orphan",
       "path_example": [],

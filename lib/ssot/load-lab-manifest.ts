@@ -17,6 +17,7 @@ export interface LabManifest {
     protocol_version: string;
     schema_bundle_version: string;
     lab_series: string;
+    baseline_commit_sha: string;
     tripod: {
         website_anchor: string;
         docs_anchor: string;
@@ -24,15 +25,21 @@ export interface LabManifest {
         lab_anchor: string;
     };
     anchors: {
+        validation_hub: string;
+        evidence_gallery: string;
         policies_root: string;
         fmm: string;
         cross_verified: string;
+        cross_verified_report: string;
+        cross_verified_report_sha256: string;
+        sample_set_manifest_sha256: string;
         runs: string;
         rulesets: string;
     };
     boundaries: string[];
     gates: {
-        active: string[];
+        public_minimum: string[];
+        internal_operational: string[];
     };
 }
 
@@ -96,7 +103,7 @@ export function getBoundaryIds(): string[] {
  * Get the list of active gates
  */
 export function getActiveGates(): string[] {
-    return labManifest.gates.active;
+    return labManifest.gates.internal_operational;
 }
 
 /**

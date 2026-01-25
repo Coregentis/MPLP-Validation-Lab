@@ -1,0 +1,92 @@
+[
+  {
+    "run_id": "admission-not-admissible-01",
+    "scenario_family": "unknown",
+    "substrate": "fixture",
+    "verdict_from": "NOT_ADMISSIBLE",
+    "verdict_to": "NOT_ADMISSIBLE",
+    "hash_from": "b2d6b7aee43d9ae25c765f384162c7796910fa24d0f89b0a206bec1989914a27",
+    "hash_to": "63b0c1371bdefb0c221920447810c16eaaca91966c892dcb9b9e89cfcf2053f8",
+    "changed": true
+  },
+  {
+    "run_id": "gf-01-adjudicated-fail-01",
+    "scenario_family": "unknown",
+    "substrate": "fixture",
+    "verdict_from": "ADJUDICATED",
+    "verdict_to": "ADJUDICATED",
+    "hash_from": "28ad0dd8a092671777a1a2d19b96c6bef83e21609b8a0a67cdb2373fb76c3086",
+    "hash_to": "8e7f828559b2e57d4fbd719870687de29f36e0bda84ce6c0ece6e6c9a65ba492",
+    "changed": true
+  },
+  {
+    "run_id": "gf-01-langchain-pass",
+    "scenario_family": "unknown",
+    "substrate": "langchain",
+    "verdict_from": "ADJUDICATED",
+    "verdict_to": "ADJUDICATED",
+    "hash_from": "264589a7be865a373345419638517c2e84ffc0a6205c2dc66ed08e1f2b23228b",
+    "hash_to": "79a142b741b90c5686fafeb160a4745d7925f81eec31864dd20ac4e3dadaff27",
+    "changed": true
+  },
+  {
+    "run_id": "gf-01-mcp-pass",
+    "scenario_family": "unknown",
+    "substrate": "mcp",
+    "verdict_from": "ADJUDICATED",
+    "verdict_to": "ADJUDICATED",
+    "hash_from": "74062bf22f4a09341cf83f8beeb279109c898771fcc7aa9f8396e8857d36ebee",
+    "hash_to": "dbf0681a9964df99e25183f76bec1355bc2f819b4cba432b7960f70888c7c26a",
+    "changed": true
+  },
+  {
+    "run_id": "gf-02-fail",
+    "scenario_family": "unknown",
+    "substrate": "fixture",
+    "verdict_from": "NOT_ADMISSIBLE",
+    "verdict_to": "NOT_ADMISSIBLE",
+    "hash_from": "f4c15922a3624c01b1efa71e976322497eaf0c53110cf4435d682d7c890f7a99",
+    "hash_to": "05e116349e501fa8cb9eef3afa30ed5feb05c7a2141228984e9cedae48a0e9b4",
+    "changed": true
+  },
+  {
+    "run_id": "mcp-d1-budget-pass-01",
+    "scenario_family": "unknown",
+    "substrate": "mcp",
+    "verdict_from": "NOT_ADMISSIBLE",
+    "verdict_to": "NOT_ADMISSIBLE",
+    "hash_from": "ee9e2855f5af74d77b5858f0fdfc267a5f9630e19a796fe7bda1493d9a031c48",
+    "hash_to": "beef6811ad103948f0026e4e3d89cf5ba47833f7c2db36715893d413cb4153ce",
+    "changed": true
+  },
+  {
+    "run_id": "mcp-d1-budget-pass-02",
+    "scenario_family": "unknown",
+    "substrate": "mcp",
+    "verdict_from": "NOT_ADMISSIBLE",
+    "verdict_to": "NOT_ADMISSIBLE",
+    "hash_from": "50f9d3a40b8dc3ef04adb91cef39ec1982e188674943ed81138b37fd8f95985d",
+    "hash_to": "afda0cfe4b927bfc28ae84abf5ca81551f8d540b0693c0b6f62c21388129c3a9",
+    "changed": true
+  },
+  {
+    "run_id": "mcp-d1-budget-fail-01",
+    "scenario_family": "unknown",
+    "substrate": "mcp",
+    "verdict_from": "NOT_ADMISSIBLE",
+    "verdict_to": "NOT_ADMISSIBLE",
+    "hash_from": "08a74622e52f6baa7bc0d03071b5b5c1faae47f55edb621bc21fb45f2e434daa",
+    "hash_to": "da99c8e4329f7128459deaf4f450ac1936eabadf0bfd865e4df0535f053fdbb6",
+    "changed": true
+  },
+  {
+    "run_id": "mcp-d1-budget-fail-02",
+    "scenario_family": "unknown",
+    "substrate": "mcp",
+    "verdict_from": "NOT_ADMISSIBLE",
+    "verdict_to": "NOT_ADMISSIBLE",
+    "hash_from": "0da53431d31b995820bfd1ef507790a8f46b680e5126016ed08b13b847080df1",
+    "hash_to": "d7db83417dddfa94e5a3f81d1608921a588cd7ef1b0d0283c7d894b91f26d790",
+    "changed": true
+  }
+]

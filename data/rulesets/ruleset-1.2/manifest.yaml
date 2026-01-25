@@ -40,4 +40,4 @@ clauses:
   - CL-D4-02  # Termination reason is valid category
   - CL-D4-03  # Post-termination is controlled recovery only
 
-created_at: "2026-01-18T00:00:00Z"
+created_at: "2026-01-25T00:00:00Z"

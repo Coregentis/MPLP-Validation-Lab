@@ -1,0 +1,211 @@
+{
+  "report_version": "1.0",
+  "verified_at": "2026-01-24T17:01:42.892Z",
+  "pack_id": "unknown",
+  "admission_status": "NOT_ADMISSIBLE",
+  "checks": [
+    {
+      "check_id": "ADM-SEC-001",
+      "name": "File Count Limit",
+      "category": "ADMISSION_SECURITY",
+      "status": "PASS",
+      "message": "4 files (limit: 1000)",
+      "duration_ms": 0
+    },
+    {
+      "check_id": "ADM-SEC-002",
+      "name": "Pack Size Limit",
+      "category": "ADMISSION_SECURITY",
+      "status": "PASS",
+      "message": "0.00 MB (limit: 50 MB)",
+      "duration_ms": 0
+    },
+    {
+      "check_id": "ADM-SEC-003",
+      "name": "Allowed Extensions",
+      "category": "ADMISSION_SECURITY",
+      "status": "PASS",
+      "message": "All file extensions are allowed",
+      "duration_ms": 0
+    },
+    {
+      "check_id": "ADM-SEC-004",
+      "name": "Path Traversal",
+      "category": "ADMISSION_SECURITY",
+      "status": "PASS",
+      "message": "No path traversal patterns detected",
+      "duration_ms": 0
+    },
+    {
+      "check_id": "ADM-STR-001",
+      "name": "Required Files",
+      "category": "ADMISSION_STRUCTURE",
+      "status": "FAIL",
+      "message": "Missing required files: manifest.json, integrity/sha256sums.txt, integrity/pack.sha256",
+      "taxonomy": "REQUIRED_ARTIFACT_MISSING",
+      "duration_ms": 0
+    },
+    {
+      "check_id": "ADM-STR-002",
+      "name": "Required Directories",
+      "category": "ADMISSION_STRUCTURE",
+      "status": "FAIL",
+      "message": "Missing required directories: artifacts, timeline, integrity",
+      "taxonomy": "REQUIRED_ARTIFACT_MISSING",
+      "duration_ms": 0
+    },
+    {
+      "check_id": "ADM-STR-003",
+      "name": "Layout Version",
+      "category": "ADMISSION_STRUCTURE",
+      "status": "FAIL",
+      "message": "Could not detect EPC layout version",
+      "taxonomy": "MANIFEST_PARSE_FAILED",
+      "duration_ms": 0
+    },
+    {
+      "check_id": "INT-001",
+      "name": "SHA256 Sums File",
+      "category": "INTEGRITY",
+      "status": "FAIL",
+      "message": "integrity/sha256sums.txt not found",
+      "taxonomy": "INTEGRITY_HASH_MISMATCH",
+      "duration_ms": 0
+    },
+    {
+      "check_id": "INT-002",
+      "name": "Pack Root Hash",
+      "category": "INTEGRITY",
+      "status": "FAIL",
+      "message": "integrity/pack.sha256 not found",
+      "taxonomy": "INTEGRITY_HASH_MISMATCH",
+      "duration_ms": 0
+    },
+    {
+      "check_id": "INT-003",
+      "name": "SHA256 Coverage",
+      "category": "INTEGRITY",
+      "status": "SKIP",
+      "message": "sha256sums.txt not found",
+      "duration_ms": 0
+    },
+    {
+      "check_id": "MAN-001",
+      "name": "Manifest Parse",
+      "category": "MANIFEST",
+      "status": "FAIL",
+      "message": "Could not parse manifest.json",
+      "taxonomy": "MANIFEST_PARSE_FAILED",
+      "duration_ms": 0
+    },
+    {
+      "check_id": "VER-001",
+      "name": "Sync Report Loaded",
+      "category": "VERSION_BINDING",
+      "status": "PASS",
+      "message": "Upstream commit: not_bound (optional in v1.0)",
+      "duration_ms": 0
+    },
+    {
+      "check_id": "VER-002",
+      "name": "Protocol Version Present",
+      "category": "VERSION_BINDING",
+      "status": "FAIL",
+      "message": "Pack manifest missing protocol_version",
+      "taxonomy": "VERSION_BINDING_FAILED",
+      "duration_ms": 0
+    },
+    {
+      "check_id": "VER-003",
+      "name": "Schemas Bundle Hash",
+      "category": "VERSION_BINDING",
+      "status": "PASS",
+      "message": "Schemas hash: 99804832ddc3daef...",
+      "duration_ms": 0
+    },
+    {
+      "check_id": "VER-004",
+      "name": "Invariants Bundle Hash",
+      "category": "VERSION_BINDING",
+      "status": "PASS",
+      "message": "Invariants hash: d32ed8bd0139ba21...",
+      "duration_ms": 0
+    },
+    {
+      "check_id": "VER-005",
+      "name": "Protocol Version Binding",
+      "category": "VERSION_BINDING",
+      "status": "FAIL",
+      "message": "Pack missing protocol_version for binding check",
+      "taxonomy": "VERSION_BINDING_FAILED",
+      "duration_ms": 0
+    },
+    {
+      "check_id": "TL-001",
+      "name": "Timeline File",
+      "category": "TIMELINE",
+      "status": "SKIP",
+      "message": "timeline/events.ndjson not found",
+      "duration_ms": 1
+    }
+  ],
+  "blocking_failures": [
+    {
+      "check_id": "ADM-STR-001",
+      "taxonomy": "REQUIRED_ARTIFACT_MISSING",
+      "message": "Missing required files: manifest.json, integrity/sha256sums.txt, integrity/pack.sha256",
+      "pointers": []
+    },
+    {
+      "check_id": "ADM-STR-002",
+      "taxonomy": "REQUIRED_ARTIFACT_MISSING",
+      "message": "Missing required directories: artifacts, timeline, integrity",
+      "pointers": []
+    },
+    {
+      "check_id": "ADM-STR-003",
+      "taxonomy": "MANIFEST_PARSE_FAILED",
+      "message": "Could not detect EPC layout version",
+      "pointers": []
+    },
+    {
+      "check_id": "INT-001",
+      "taxonomy": "INTEGRITY_HASH_MISMATCH",
+      "message": "integrity/sha256sums.txt not found",
+      "pointers": []
+    },
+    {
+      "check_id": "INT-002",
+      "taxonomy": "INTEGRITY_HASH_MISMATCH",
+      "message": "integrity/pack.sha256 not found",
+      "pointers": []
+    },
+    {
+      "check_id": "MAN-001",
+      "taxonomy": "MANIFEST_PARSE_FAILED",
+      "message": "Could not parse manifest.json",
+      "pointers": []
+    },
+    {
+      "check_id": "VER-002",
+      "taxonomy": "VERSION_BINDING_FAILED",
+      "message": "Pack manifest missing protocol_version",
+      "pointers": []
+    },
+    {
+      "check_id": "VER-005",
+      "taxonomy": "VERSION_BINDING_FAILED",
+      "message": "Pack missing protocol_version for binding check",
+      "pointers": []
+    }
+  ],
+  "hashes": {
+    "pack_root_hash": "",
+    "manifest_hash": "",
+    "schemas_bundle_hash": "99804832ddc3daefb92ec74120afaab1c3278e4a79d670e1f796e67f735463aa",
+    "invariants_bundle_hash": "d32ed8bd0139ba2197c618f8cc057dae15ba8cd5012b25946c1e20c07fd8ebe0",
+    "report_hash": "df1f857c175d2f1f21c6f847df19f80fd46954aec56af960a87d7270418573e4"
+  },
+  "ruleset_version": "ruleset-1.2",
+  "total_duration_ms": 1
+}

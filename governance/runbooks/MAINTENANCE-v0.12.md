@@ -60,5 +60,19 @@ Functional expansion is strictly versioned in **v0.13.0**. Triggers include:
 - **Narrative Expansion**: New interpretation hubs, metrics, or weighting systems.
 - **Protocol Schema Evolution**: Any upstream sync that changes the interpretive boundary.
 
+## 6. Minimum Heartbeat (Routine Audit)
+
+To ensure the project remains auditable even during low-activity periods, the following **Monthly Heartbeat** is recommended:
+
+- **Command Chain**: Execute the preflight audit:
+  ```bash
+  npm run gate:all && npm run gate:release:01 && npm run gate:v12-sop
+  ```
+- **Verification Points**:
+    - [ ] **Release Triad**: Confirm zero drift in `gate:release:01`.
+    - [ ] **SOP Integrity**: Confirm manifest/physical/SEAL parity in `gate:v12-sop`.
+    - [ ] **Evolution Hub**: Confirm zero verdict flips in the 1.1 → 1.2 exercise.
+- **Reporting**: If any gate fails due to environment drift (e.g., CI changes, node versions), a **v0.13.0** upgrade must be evaluated.
+
 ---
-**Custodian Note**: v0.12.x is the Maintenance Line: audit-grade, reproducible, and stopline-bounded. Functional evolution is reserved for v0.13+.
+**Sustainability Anchor**: [SEAL-v0.12.1](file:///Users/jasonwang/Documents/AI_Dev/V1.0_release/Validation_Lab/governance/seals/SEAL-v0.12.1.md) is the primary reference for the sustainability line.

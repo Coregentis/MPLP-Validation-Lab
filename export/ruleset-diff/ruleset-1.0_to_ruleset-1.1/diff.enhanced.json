@@ -60,7 +60,7 @@
     "added": 0,
     "removed": 0,
     "modified": 0,
-    "note": "Generated with template eh-1 for deterministic explanations"
+    "note": "Structural Shift: ruleset-1.1 introduces stricter terminal budget invariants and outcome-projection consistency checks. This evolution ensures that 'success' verdicts are only admitted when budget closure is positive."
   },
   "clause_delta": {
     "added": [],

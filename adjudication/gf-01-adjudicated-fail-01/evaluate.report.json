@@ -1,8 +1,8 @@
 {
   "evaluate_version": "1.0",
   "run_id": "gf-01-adjudicated-fail-01",
-  "evaluated_at": "2026-01-14T11:52:50.862Z",
-  "ruleset_version": "1.0",
+  "evaluated_at": "2026-01-24T17:01:42.871Z",
+  "ruleset_version": "ruleset-1.2",
   "golden_flows": [
     {
       "gf_id": "GF-01",

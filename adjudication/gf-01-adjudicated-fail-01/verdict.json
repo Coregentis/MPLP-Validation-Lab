@@ -1,12 +1,12 @@
 {
   "adjudication_version": "1.0",
   "run_id": "gf-01-adjudicated-fail-01",
-  "adjudicated_at": "2026-01-14T11:52:50.862Z",
+  "adjudicated_at": "2026-01-24T17:01:42.871Z",
   "verifier": {
     "id": "validation-lab-verifier",
     "version": "1.0.0"
   },
-  "ruleset_version": "1.0",
+  "ruleset_version": "ruleset-1.2",
   "protocol_pin": "unknown",
   "admission_status": "ADMISSIBLE",
   "golden_flow_results": [
@@ -54,7 +54,7 @@
     }
   ],
   "overall_status": "ADJUDICATED",
-  "verdict_hash": "79e5b0713db3f2b78c84975f4e4e8c5f78b0fea07f16e5ad8d7bafda0395da3c",
+  "verdict_hash": "8e7f828559b2e57d4fbd719870687de29f36e0bda84ce6c0ece6e6c9a65ba492",
   "_meta": {
     "generated_by": "vlab-adjudicate"
   }

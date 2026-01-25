@@ -1,0 +1,58 @@
+{
+    "benchmark_id": "VLAB-FAIL-01",
+    "scenario_family": "d1-outcome",
+    "run_id": "v05-d1-autogen-fail-outcome-invalid",
+    "substrate": "autogen",
+    "verdict": {
+        "status": "FAIL",
+        "reason_code": "MPLP-ERR-042",
+        "description": "Lifecycle Invariant Violation: Outcome projection does not match terminal budget state.",
+        "severity": "CRITICAL"
+    },
+    "evidence_closure": {
+        "manifest_hash": "sha256:7de13c3d0a4b3e646b8f896145691514ce0989747829a1eba2ca956c028984e5",
+        "timeline_hash": "sha256:dcb508a258cf38afb9d1fded10a855e1ef8ba731b807f0a63892012a9700bfa6",
+        "artifacts_hash": "sha256:b96cdb021310858d4ceb5cbec913e4684d923a1f072c4bd5982663b878b7a647"
+    },
+    "dispute_grade_artifacts": {
+        "manifest": {
+            "scenario": "Outcome Mismatch",
+            "ruleset": "ruleset-1.1",
+            "timestamp": "2026-01-24T09:24:54Z"
+        },
+        "timeline": [
+            {
+                "event": "scenario_start",
+                "timestamp": "0ms"
+            },
+            {
+                "event": "outcome_declared",
+                "timestamp": "420ms",
+                "data": {
+                    "status": "success"
+                }
+            },
+            {
+                "event": "budget_exhausted",
+                "timestamp": "421ms",
+                "data": {
+                    "remaining": -0.01
+                }
+            },
+            {
+                "event": "terminal_violation",
+                "timestamp": "422ms",
+                "reason": "Successful outcome with negative budget"
+            }
+        ],
+        "snapshot": {
+            "state_id": "state-99",
+            "elements": [
+                "E01",
+                "E04",
+                "E11"
+            ]
+        }
+    },
+    "non_endorsement_boundary": "This sample demonstrates evaluation logic only. It does not certify the underlying framework."
+}

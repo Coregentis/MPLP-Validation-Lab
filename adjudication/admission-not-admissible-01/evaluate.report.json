@@ -1,8 +1,8 @@
 {
   "evaluate_version": "1.0",
   "run_id": "admission-not-admissible-01",
-  "evaluated_at": "2026-01-14T11:30:15.507Z",
-  "ruleset_version": "1.0",
+  "evaluated_at": "2026-01-24T17:01:42.866Z",
+  "ruleset_version": "ruleset-1.2",
   "golden_flows": [
     {
       "gf_id": "GF-01",

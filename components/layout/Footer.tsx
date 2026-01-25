@@ -48,23 +48,18 @@ export function Footer() {
                                     </Link>
                                 </li>
                                 <li>
+                                    <Link href="/validation" className="text-mplp-text hover:text-mplp-blue-light text-13 transition-colors font-bold block py-0.5">
+                                        Validation Dashboard
+                                    </Link>
+                                </li>
+                                <li>
                                     <Link href="/methodology" className="text-mplp-text-muted hover:text-mplp-blue-light text-13 transition-colors font-medium block py-0.5">
                                         Methodology
                                     </Link>
                                 </li>
                                 <li>
                                     <Link href="/guarantees" className="text-mplp-text-muted hover:text-mplp-blue-light text-13 transition-colors font-medium block py-0.5">
-                                        Lifecycle Guarantees
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link href="/rulesets" className="text-mplp-text-muted hover:text-mplp-blue-light text-13 transition-colors font-medium block py-0.5">
-                                        Rulesets
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link href="/rulesets/diff" className="text-mplp-text-muted hover:text-mplp-blue-light text-13 transition-colors font-medium block py-0.5">
-                                        Ruleset Diff
+                                        Lifecycle Guarantees (LG)
                                     </Link>
                                 </li>
                                 <li>
@@ -105,13 +100,28 @@ export function Footer() {
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link href="/coverage/adjudication" className="text-mplp-text-muted hover:text-mplp-blue-light text-13 transition-colors font-medium block py-0.5">
-                                        Adjudication Coverage
+                                    <Link href="/validation/samples" className="text-mplp-text hover:text-mplp-blue-light text-13 transition-colors font-bold block py-0.5">
+                                        Evidence Samples (MUST-1)
                                     </Link>
                                 </li>
                                 <li>
                                     <Link href="/coverage" className="text-mplp-text-muted hover:text-mplp-blue-light text-13 transition-colors font-medium block py-0.5">
                                         Test Vector Coverage
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="/coverage/adjudication" className="text-mplp-text-muted hover:text-mplp-blue-light text-13 transition-colors font-medium block py-0.5">
+                                        Adjudication Coverage
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="/rulesets" className="text-mplp-text-muted hover:text-mplp-blue-light text-13 transition-colors font-medium block py-0.5">
+                                        Rulesets
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="/rulesets/evolution" className="text-mplp-text-muted hover:text-mplp-blue-light text-13 transition-colors font-medium block py-0.5">
+                                        Ruleset Evolution
                                     </Link>
                                 </li>
                                 <li>
