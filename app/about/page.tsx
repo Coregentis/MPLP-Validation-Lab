@@ -129,11 +129,29 @@ export default function AboutPage() {
                     </li>
                 </ul>
             </section>
+            {/* Sustainability Stopline */}
+            <section className="bg-zinc-900 border border-zinc-800 rounded-lg p-6 mb-8">
+                <h2 className="text-xl font-semibold mb-4">Sustainability Stopline (Maintenance Mode)</h2>
+                <p className="text-zinc-400 text-sm mb-4">
+                    The Validation Lab has reached its functional sustainability baseline as of v0.12.0.
+                    The project is now in <strong>Maintenance Mode</strong>.
+                </p>
+                <ul className="space-y-3 text-zinc-400 text-xs">
+                    <li><strong className="text-zinc-200">v0.12.x Series:</strong> The **Maintenance Line**. Audit-grade, reproducible, and stopline-bounded.</li>
+                    <li><strong className="text-zinc-200">v0.13.0+ Series:</strong> The **Extension Line**. Reserved for functional expansion (new substrates, logic, or IA).</li>
+                </ul>
+                <div className="mt-4 pt-4 border-t border-zinc-800 text-[10px] text-zinc-500 italic">
+                    v0.12.x is the Maintenance Line: any functional expansion is versioned in v0.13+.
+                </div>
+            </section>
 
             {/* Navigation */}
-            <section className="flex gap-4 text-sm">
-                <Link href="/guarantees" className="text-blue-400 hover:underline">
-                    View Lifecycle Guarantees →
+            <section className="flex flex-wrap gap-6 text-sm border-t border-zinc-800 pt-8 mt-4">
+                <Link href="/validation" className="text-blue-400 hover:underline font-bold">
+                    Validation Dashboard →
+                </Link>
+                <Link href="/validation/samples" className="text-blue-400 hover:underline">
+                    Evidence Gallery →
                 </Link>
                 <Link href="/rulesets" className="text-blue-400 hover:underline">
                     Browse Rulesets →

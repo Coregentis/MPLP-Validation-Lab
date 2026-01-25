@@ -103,6 +103,21 @@ Non-endorsement boundary: Diff reports explain ruleset changes only. They are no
 - Commands and hashes for deterministic reproduction
 
 > **v0.9 Series Summary**: v0.9.0–v0.9.1 upgrades ruleset diff from "generatable" to "explainable + reproducible + referenceable" while preserving the v0.8 frozen evidence chain.
+>
+> **v0.12 Sustainability Release**: Establishes the representational baseline (MCP) and solidified SOP gates. The project is now in **Maintenance Mode**. No new substrates or scenario families are permitted under the v0.12 series.
+
+---
+
+## Maintenance Phase (v0.12.x)
+
+The Validation Lab has reached its **Sustainability Stopline**.
+- **v0.12.x**: The **Maintenance Line**. Audit-grade, reproducible, and stopline-bounded.
+- **v0.13.0+**: The **Extension Line**. Reserved for new substrates, logic, or IA expansion.
+
+> [!IMPORTANT]
+> **v0.12.x is the Maintenance Line**: any functional expansion is versioned in v0.13+.
+
+Refer to [Maintenance Runbook](file:///Users/jasonwang/Documents/AI_Dev/V1.0_release/Validation_Lab/governance/runbooks/MAINTENANCE-v0.12.md) for procedures.
 
 ---
 
