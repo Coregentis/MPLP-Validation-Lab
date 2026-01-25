@@ -60,19 +60,35 @@ Functional expansion is strictly versioned in **v0.13.0**. Triggers include:
 - **Narrative Expansion**: New interpretation hubs, metrics, or weighting systems.
 - **Protocol Schema Evolution**: Any upstream sync that changes the interpretive boundary.
 
-## 6. Minimum Heartbeat (Routine Audit)
+## 6. Lock File Policy (Institutional)
+
+The following directories are **LOCKED**. Ad-hoc manual edits are prohibited as they break the SSOT triad:
+- `public/_meta/`: Registry and gate status artifacts.
+- `public/_data/`: Frozen evidence and diffpacks.
+- `governance/seals/`: Cryptographic anchors and dormancy notices.
+
+Changes to these files must be generated via the [SOP Command Chains](file:///Users/jasonwang/Documents/AI_Dev/V1.0_release/Validation_Lab/governance/runbooks/MAINTENANCE-v0.12.md#L30) or automated scripts.
+
+## 7. Dependency Drift Rule
+
+During v0.12.x maintenance, dependency upgrades must be evaluated for **Semantic Drift**:
+- **Allowed**: Upgrades that preserve all gate passes and produce 0 verdict flips.
+- **Drift Trigger**: If an upgrade causes a `verdict_hash` change in the locked sample set, it is classified as **Drift**.
+- **Resolution**: Drift forces a major version bump to **v0.13.0**. The v0.12 series must be pinned to the last compatible version to preserve the baseline.
+
+## 8. Minimum Heartbeat (Routine Audit)
 
 To ensure the project remains auditable even during low-activity periods, the following **Monthly Heartbeat** is recommended:
 
-- **Command Chain**: Execute the preflight audit:
+- **Command Chain**: 
   ```bash
-  npm run gate:all && npm run gate:release:01 && npm run gate:v12-sop
+  npx tsx scripts/ops/heartbeat.ts
   ```
 - **Verification Points**:
     - [ ] **Release Triad**: Confirm zero drift in `gate:release:01`.
     - [ ] **SOP Integrity**: Confirm manifest/physical/SEAL parity in `gate:v12-sop`.
     - [ ] **Evolution Hub**: Confirm zero verdict flips in the 1.1 → 1.2 exercise.
-- **Reporting**: If any gate fails due to environment drift (e.g., CI changes, node versions), a **v0.13.0** upgrade must be evaluated.
+- **Reporting**: Results are appended to `governance/heartbeat/history.json`.
 
 ---
-**Sustainability Anchor**: [SEAL-v0.12.1](file:///Users/jasonwang/Documents/AI_Dev/V1.0_release/Validation_Lab/governance/seals/SEAL-v0.12.1.md) is the primary reference for the sustainability line.
+**Sustainability Anchor**: [SEAL-v0.12.1](file:///Users/jasonwang/Documents/AI_Dev/V1.0_release/Validation_Lab/governance/seals/SEAL-v0.12.1.md)
