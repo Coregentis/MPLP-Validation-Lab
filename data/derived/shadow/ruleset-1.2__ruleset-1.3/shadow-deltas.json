@@ -1,0 +1,92 @@
+[
+  {
+    "run_id": "admission-not-admissible-01",
+    "scenario_family": "unknown",
+    "substrate": "fixture",
+    "verdict_from": "NOT_ADMISSIBLE",
+    "verdict_to": "NOT_ADMISSIBLE",
+    "hash_from": "63b0c1371bdefb0c221920447810c16eaaca91966c892dcb9b9e89cfcf2053f8",
+    "hash_to": "cc4185da2aa9d7f6f3f8b5b878dd865a88cb6c4a60a852c06e5d4c37d59283fe",
+    "changed": true
+  },
+  {
+    "run_id": "gf-01-adjudicated-fail-01",
+    "scenario_family": "unknown",
+    "substrate": "fixture",
+    "verdict_from": "ADJUDICATED",
+    "verdict_to": "ADJUDICATED",
+    "hash_from": "8e7f828559b2e57d4fbd719870687de29f36e0bda84ce6c0ece6e6c9a65ba492",
+    "hash_to": "85e2371ce3723e913467c982bb25bd50c987e60b3fba5fe48a10038870128aea",
+    "changed": true
+  },
+  {
+    "run_id": "gf-01-langchain-pass",
+    "scenario_family": "unknown",
+    "substrate": "langchain",
+    "verdict_from": "ADJUDICATED",
+    "verdict_to": "ADJUDICATED",
+    "hash_from": "79a142b741b90c5686fafeb160a4745d7925f81eec31864dd20ac4e3dadaff27",
+    "hash_to": "8c90bd7430ab4756bfff85cfecd32f64dc2512dce9623f08c86653e958e416c3",
+    "changed": true
+  },
+  {
+    "run_id": "gf-01-mcp-pass",
+    "scenario_family": "unknown",
+    "substrate": "mcp",
+    "verdict_from": "ADJUDICATED",
+    "verdict_to": "ADJUDICATED",
+    "hash_from": "dbf0681a9964df99e25183f76bec1355bc2f819b4cba432b7960f70888c7c26a",
+    "hash_to": "ec1c125632aa648949e34219d489fa4e35b8cb7ff6c1da65138ddeb7b976c4c6",
+    "changed": true
+  },
+  {
+    "run_id": "gf-02-fail",
+    "scenario_family": "unknown",
+    "substrate": "fixture",
+    "verdict_from": "NOT_ADMISSIBLE",
+    "verdict_to": "NOT_ADMISSIBLE",
+    "hash_from": "05e116349e501fa8cb9eef3afa30ed5feb05c7a2141228984e9cedae48a0e9b4",
+    "hash_to": "d19b2350ecdaa4ef61870e97c27c0f5d5e8c80a4e2d0f15a3a04f6a83d0208e4",
+    "changed": true
+  },
+  {
+    "run_id": "pydantic-ai-d1-budget-fail-01",
+    "scenario_family": "unknown",
+    "substrate": "pydantic-ai",
+    "verdict_from": "NOT_ADMISSIBLE",
+    "verdict_to": "NOT_ADMISSIBLE",
+    "hash_from": "411d432c1dbb42a3c49a36f0297c13b56c62bdbb1dde08bd82d14bbec6cb7b23",
+    "hash_to": "bbb1fe927aec1db1869f8130c33e50a60acf5e3b26e9ef45e77f87a2a0f36ef5",
+    "changed": true
+  },
+  {
+    "run_id": "pydantic-ai-d1-budget-fail-02",
+    "scenario_family": "unknown",
+    "substrate": "pydantic-ai",
+    "verdict_from": "NOT_ADMISSIBLE",
+    "verdict_to": "NOT_ADMISSIBLE",
+    "hash_from": "9887a503e80a62f122d3bf0ee80e8f41a35a6e3729c2eed2d134d70519e21363",
+    "hash_to": "aace4f77bcb82e2b8d9f0df1b5ca2dca39985b6671c4acc934d6c3a182f0c03a",
+    "changed": true
+  },
+  {
+    "run_id": "pydantic-ai-d1-budget-pass-01",
+    "scenario_family": "unknown",
+    "substrate": "pydantic-ai",
+    "verdict_from": "NOT_ADMISSIBLE",
+    "verdict_to": "NOT_ADMISSIBLE",
+    "hash_from": "c71d09cf3ea61db71674feb82e7f7502618f2b8cdbf30a53549f1740c7c8d51c",
+    "hash_to": "358f95c42a3754fe826c01d1b6649405018d4e57c6b6d388eaa4d9c8f59a7df0",
+    "changed": true
+  },
+  {
+    "run_id": "pydantic-ai-d1-budget-pass-02",
+    "scenario_family": "unknown",
+    "substrate": "pydantic-ai",
+    "verdict_from": "NOT_ADMISSIBLE",
+    "verdict_to": "NOT_ADMISSIBLE",
+    "hash_from": "a8fa4efe6f03338b9bdd1a4e60178de8d07c506f30a0027947316436fa032c9f",
+    "hash_to": "a357b506ab9960010009e25f949e78487ba2a7c0f444c0a0ce3dee172f7c3a8a",
+    "changed": true
+  }
+]

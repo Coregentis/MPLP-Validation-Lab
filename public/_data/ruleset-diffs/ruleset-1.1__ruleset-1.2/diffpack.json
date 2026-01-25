@@ -1,24 +1,33 @@
 {
-    "diff_id": "ruleset-1.1__ruleset-1.2",
+    "diffpack_version": "0.11.0",
+    "ruleset_diff_id": "ruleset-1.1__ruleset-1.2",
     "from_ruleset": "ruleset-1.1",
     "to_ruleset": "ruleset-1.2",
     "generated_at": "2026-01-25T01:05:00Z",
-    "rationale": "v0.12 Sustainability Tweak: Minor created_at update to exercise evolution pipeline.",
+    "baseline_commit_sha": "4708f2597b83ec5510b65a443a992634f19b2520",
+    "inputs": {
+        "shadow_input_sha256": "2df221240973ba5bc0f042f190cf4910918299bcd9c55af7e0c0ae7918a880c8",
+        "sample_set_sha256": "5e2ee08a46f23b3b221214e79b7ae17e8b67464a66ddabe7e21a9f09345b7b1f"
+    },
     "metrics": {
         "total_runs": 30,
         "verdict_flips": 0,
         "equivalence_shift": {
             "from_rate": 0.3333,
             "to_rate": 0.3333,
-            "delta": 0
+            "delta": 0.0
         }
     },
-    "changes": [
+    "clauses_changed": [
         {
             "clause_id": "manifest",
-            "change_type": "metadata",
-            "description": "Updated created_at date",
-            "verdict_impact": "NONE"
+            "change_type": "modified",
+            "rationale": "v0.12 Sustainability Tweak: Minor metadata update to exercise evolution pipeline while maintaining stability.",
+            "affected_evidence_pointers": [
+                "/manifest/created_at"
+            ],
+            "evidence_refs": [],
+            "expected_impact": "Zero verdict impact; purely operational metadata anchor."
         }
     ],
     "integrity": {

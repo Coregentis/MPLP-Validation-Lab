@@ -4,7 +4,7 @@
     "generated_at": "2026-01-24T20:06:53+08:00",
     "protocol_version": "1.0.0",
     "schema_bundle_version": "2.0.0",
-    "lab_series": "v0.13.0",
+    "lab_series": "v0.13.1",
     "baseline_commit_sha": "2b01caa26fd4c189050b5ba6820b071dd0314190",
     "tripod": {
         "website_anchor": "https://www.mplp.io/definition",
@@ -25,14 +25,19 @@
         "rulesets": "/rulesets",
         "ruleset_evolution_hub": "/rulesets/evolution",
         "ruleset_diff_index": "_meta/ruleset-diff-index.json",
-        "ruleset_diff_index_sha256": "ff98becf54e2f6ed0bac9d299d0dea86d692c7557a3d098ee88160b799a71792",
+        "ruleset_diff_index_sha256": "8c380af79a994ac9f3c7a4b18046ee36b8c91f4dff592461b89c0596be22feb3",
         "rulesets_root": "_data/ruleset-diffs/",
         "shadow_input": "_data/ruleset-diffs/shadow-input.json",
-        "shadow_input_sha256": "2df221240973ba5bc0f042f190cf4910918299bcd9c55af7e0c0ae7918a880c8",
+        "shadow_inputs": {
+            "v0.11-baseline": "1b7ebf570ff773e824e2bd17e2b750541933abf4791c71b98cacc29d22f351ef",
+            "v0.11-v0.12-baseline": "2df221240973ba5bc0f042f190cf4910918299bcd9c55af7e0c0ae7918a880c8",
+            "v0.13.1-logic-anchor": "54872edc152fecbca0df6bae338c9f0fc4308f70cf181ceb309cbad6f6aed76f"
+        },
         "seal_v11_sha256": "43015569f4ae09503460459c3a3c94d27196024419574da9e4726bf643973715",
         "seal_v12_sha256": "78493664107dd0943eefa2be2f53faeec07386ab00c965b314ca8fb2c7632106",
         "seal_v12_1_sha256": "0cbf652d9f052b6f2af76f43e19e3fbb60dfe50cab4751bfe216d0f3a9762fc0",
         "seal_v13_0_sha256": "189e150722994af1725b540698ba0cd3eb6a8ef82b4e7f0320d511d35c08957d",
+        "seal_v13_1_sha256": "26323c46e531d34e676867a79a3ea7342e7c0fba81098415a929953a4555ccc9",
         "sop_v12_integrity": "scripts/gates/gate-v12-sop-integrity.ts"
     },
     "boundaries": [

@@ -91,7 +91,7 @@ export type AdjudicatorFn = (bundle: RunBundle) => Promise<RulesetEvalResult>;
 // Registry Implementation
 // =============================================================================
 
-const SUPPORTED_RULESETS = ['ruleset-1.0', 'ruleset-1.1', 'ruleset-1.2'] as const;
+const SUPPORTED_RULESETS = ['ruleset-1.0', 'ruleset-1.1', 'ruleset-1.2', 'ruleset-1.3'] as const;
 type SupportedRulesetId = typeof SUPPORTED_RULESETS[number];
 
 // Manifest cache to avoid repeated file I/O
@@ -177,6 +177,11 @@ async function getAdjudicator(id: SupportedRulesetId): Promise<AdjudicatorFn | n
         case 'ruleset-1.2': {
             // v0.4 Semantic invariant adjudicator - 12 clauses
             const { adjudicatorFn } = await import('./ruleset-1.2/adjudicate');
+            return adjudicatorFn;
+        }
+        case 'ruleset-1.3': {
+            // v0.13.1 Phased Evolution - refined CL-D1-03
+            const { adjudicatorFn } = await import('./ruleset-1.3/adjudicate');
             return adjudicatorFn;
         }
         default:

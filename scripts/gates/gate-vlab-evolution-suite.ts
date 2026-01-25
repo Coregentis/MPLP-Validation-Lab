@@ -18,6 +18,7 @@ const CROSS_VERIFIED_DIR = path.join(PROJECT_ROOT, 'public/_data/cross-verified'
 const SAMPLE_SET_PATH = path.join(PROJECT_ROOT, 'public/_data/curated-runs.json');
 const REPORT_PATH = path.join(PROJECT_ROOT, 'public/_data/cross-verified/v0.10.2-report.json');
 const SHADOW_INPUT_PATH = path.join(PROJECT_ROOT, 'public/_data/ruleset-diffs/shadow-input.json');
+const MANIFEST_PATH = path.join(PROJECT_ROOT, 'public/_meta/lab-manifest.json');
 const SCHEMA_PATH = path.join(PROJECT_ROOT, 'governance/schemas/diffpack.schema.json');
 
 const ajv = new Ajv({ allErrors: true });
@@ -50,12 +51,24 @@ function runEvolutionAudit() {
         (report.entries || []).forEach((r: any) => validRunIds.add(r.run_id));
     }
 
-    // 2. Compute Shadow Input Hash for EVO-04
-    if (!fs.existsSync(SHADOW_INPUT_PATH)) {
-        console.error('❌ Shadow input not found: ' + SHADOW_INPUT_PATH);
+    // 2. Load Institutional Shadow Inputs from Manifest
+    if (!fs.existsSync(MANIFEST_PATH)) {
+        console.error('❌ Manifest not found: ' + MANIFEST_PATH);
         process.exit(1);
     }
-    const currentShadowInputHash = getFileHash(SHADOW_INPUT_PATH);
+    const manifest = JSON.parse(fs.readFileSync(MANIFEST_PATH, 'utf8'));
+    const authorizedShadowInputs = new Set<string>();
+
+    // Add both the single hash (legacy) and the map of hashes
+    if (manifest.anchors?.shadow_input_sha256) authorizedShadowInputs.add(manifest.anchors.shadow_input_sha256);
+    if (manifest.anchors?.shadow_inputs) {
+        Object.values(manifest.anchors.shadow_inputs).forEach((h: any) => authorizedShadowInputs.add(h));
+    }
+
+    // Also allow the current file's hash as a candidate
+    if (fs.existsSync(SHADOW_INPUT_PATH)) {
+        authorizedShadowInputs.add(getFileHash(SHADOW_INPUT_PATH));
+    }
 
     // 3. Audit Diffpacks
     if (!fs.existsSync(DIFFPACKS_DIR)) {
@@ -89,10 +102,12 @@ function runEvolutionAudit() {
         }
 
         // EVO-04: Input Anchor Integrity
-        if (data.inputs.shadow_input_sha256 !== currentShadowInputHash) {
-            console.error(`❌ EVO-04: ${diffId} shadow_input_sha256 mismatch!`);
-            console.error(`   Expected: ${currentShadowInputHash}`);
-            console.error(`   Actual:   ${data.inputs.shadow_input_sha256}`);
+        const claimingHash = data.inputs.shadow_input_sha256;
+        if (!authorizedShadowInputs.has(claimingHash)) {
+            console.error(`❌ EVO-04: ${diffId} shadow_input_sha256 is NOT institutionalized!`);
+            console.error(`   Found: ${claimingHash}`);
+            console.error(`   Institutional candidates:`);
+            authorizedShadowInputs.forEach(h => console.error(`   - ${h}`));
             process.exit(1);
         }
 

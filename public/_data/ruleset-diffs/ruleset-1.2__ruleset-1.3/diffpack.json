@@ -1,0 +1,40 @@
+{
+    "diffpack_version": "0.11.0",
+    "ruleset_diff_id": "ruleset-1.2__ruleset-1.3",
+    "from_ruleset": "ruleset-1.2",
+    "to_ruleset": "ruleset-1.3",
+    "generated_at": "2026-01-25T12:00:00Z",
+    "baseline_commit_sha": "2b01caa26fd4c189050b5ba6820b071dd0314190",
+    "inputs": {
+        "shadow_input_sha256": "54872edc152fecbca0df6bae338c9f0fc4308f70cf181ceb309cbad6f6aed76f",
+        "sample_set_sha256": "7c4d7e9038122e41bad77ccaa1ddad1105e7a91017fef644747a0397c808b5ee"
+    },
+    "metrics": {
+        "total_runs": 30,
+        "verdict_flips": 0,
+        "equivalence_shift": {
+            "from_rate": 0.3333,
+            "to_rate": 0.3333,
+            "delta": 0.0
+        }
+    },
+    "clauses_changed": [
+        {
+            "clause_id": "CL-D1-03",
+            "change_type": "modified",
+            "rationale": "Refined semantic check for 'budget.enforcement' and 'throttle' tokens in events. Ensures higher engineering fidelity for budget denial tracking.",
+            "affected_evidence_pointers": [
+                "/trace/events/event_type"
+            ],
+            "evidence_refs": [
+                "pydantic-ai-d1-budget-fail-01",
+                "pydantic-ai-d1-budget-pass-01"
+            ],
+            "expected_impact": "Stable logic evolution with zero flips; strictly harder enforcement pattern detection."
+        }
+    ],
+    "integrity": {
+        "shadow_summary_sha256": "a00da0eb5f499cbb27e76621d722422e4aa3dcc40d16d4d747a6f9f82a941ca1",
+        "shadow_deltas_sha256": "c53144d7d946d1ea24e9b6127f3b35301f21b1a9602488d7056f371e03ad30bb"
+    }
+}

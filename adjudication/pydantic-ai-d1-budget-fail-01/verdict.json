@@ -1,0 +1,53 @@
+{
+  "adjudication_version": "1.0",
+  "run_id": "pydantic-ai-d1-budget-fail-01",
+  "adjudicated_at": "2026-01-25T04:18:12.909Z",
+  "verifier": {
+    "id": "validation-lab-verifier",
+    "version": "1.0.0"
+  },
+  "ruleset_version": "ruleset-1.3",
+  "protocol_pin": "unknown",
+  "admission_status": "NOT_ADMISSIBLE",
+  "golden_flow_results": [
+    {
+      "gf_id": "GF-01",
+      "status": "NOT_EVALUATED",
+      "evidence_refs": [],
+      "message": "No model routing evidence found"
+    },
+    {
+      "gf_id": "GF-02",
+      "status": "PASS",
+      "evidence_refs": [
+        "pack/timeline/events.ndjson"
+      ],
+      "message": "Prompt evidence present"
+    },
+    {
+      "gf_id": "GF-03",
+      "status": "NOT_EVALUATED",
+      "evidence_refs": [],
+      "message": "No output evidence found"
+    },
+    {
+      "gf_id": "GF-04",
+      "status": "PASS",
+      "evidence_refs": [
+        "pack/timeline/events.ndjson"
+      ],
+      "message": "Timeline evidence present"
+    },
+    {
+      "gf_id": "GF-05",
+      "status": "NOT_EVALUATED",
+      "evidence_refs": [],
+      "message": "No crypto evidence found"
+    }
+  ],
+  "overall_status": "NOT_ADMISSIBLE",
+  "verdict_hash": "bbb1fe927aec1db1869f8130c33e50a60acf5e3b26e9ef45e77f87a2a0f36ef5",
+  "_meta": {
+    "generated_by": "vlab-adjudicate"
+  }
+}
