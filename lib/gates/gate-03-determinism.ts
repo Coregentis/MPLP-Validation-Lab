@@ -5,7 +5,7 @@
  * Same pack + same ruleset → same verdict_hash.
  */
 
-import { PackHandle, VerificationReport, VerifyOptions } from '../engine/types';
+import { PackHandle, VerificationReport } from '../engine/types';
 import { evaluate } from '../evaluate/evaluate';
 import { EvaluateOptions, EvaluationReport } from '../evaluate/types';
 import { runGate02, Gate02Options } from './gate-02-admission';

@@ -22,8 +22,7 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-    const release = loadCurrentRelease();
-    const exportVersion = release.export_version;
+    loadCurrentRelease();
 
     return (
         <>

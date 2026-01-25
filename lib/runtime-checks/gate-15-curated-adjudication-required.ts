@@ -97,11 +97,11 @@ async function runGate15(): Promise<GateResult> {
     try {
         allowlist = loadYaml(ALLOWLIST_PATH) as { runs: CuratedEntry[] };
         checksPass++;
-    } catch (err) {
+    } catch {
         return {
             gate_id: 'gate-15-curated-adjudication-required',
             status: 'FAIL',
-            message: `Failed to parse allowlist.yaml: ${(err as Error).message}`,
+            message: `Failed to parse allowlist.yaml`,
         };
     }
 
@@ -196,7 +196,7 @@ async function runGate15(): Promise<GateResult> {
                 checksFail++;
             }
 
-        } catch (err) {
+        } catch {
             failures.push(`${entry.run_id}: failed to parse verdict.json`);
             checksFail++;
         }

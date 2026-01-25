@@ -15,30 +15,18 @@
 import type { RunBundle, Event } from '@/lib/bundles/types';
 import { getPointersByRequirement, resolvePointer } from '@/lib/evidence/resolve';
 import {
-    extractSemanticFields,
     isValidBudgetOutcome,
-    isValidAuthzOutcome,
-    hasCompleteSRA,
     isValidTerminationReason,
     isValidTerminalState,
     type SemanticFields,
 } from '@/lib/evidence/extract';
-import { inSynonymGroup, isTerminalState, normalizeToken } from '@/lib/evidence/synonyms';
+import { inSynonymGroup, normalizeToken } from '@/lib/evidence/synonyms';
 import type { ClauseResult, ClauseEvidence, ClauseDefinition } from './types';
 import { CLAUSE_DEFINITIONS, getClauseById } from './types';
 
 // =============================================================================
 // Common Helpers
 // =============================================================================
-
-function createEmptyEvidence(): ClauseEvidence {
-    return {
-        pointers: [],
-        resolved: [],
-        resolved_count: 0,
-        unresolved_count: 0,
-    };
-}
 
 function createClauseResult(
     def: ClauseDefinition,

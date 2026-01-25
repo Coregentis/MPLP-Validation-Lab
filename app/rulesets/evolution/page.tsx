@@ -29,7 +29,7 @@ export default function EvolutionHubPage() {
 
             <DisclaimerBox kind="non_certification" variant="amber" fullWidth>
                 <p className="text-[11px] mt-2 opacity-70">
-                    Evolution metrics describe the shift in deterministic outcomes between two logic sets; they do not represent framework "performance" or vendor-relative ordering.
+                    Evolution metrics describe the shift in deterministic outcomes between two logic sets; they do not represent framework &quot;performance&quot; or vendor-relative ordering.
                 </p>
             </DisclaimerBox>
 

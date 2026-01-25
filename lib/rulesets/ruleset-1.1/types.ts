@@ -5,7 +5,7 @@
  * Uses SSOT types from lib/bundles/types.ts where applicable.
  */
 
-import type { EvidencePointer, Event } from '@/lib/bundles/types';
+import type { EvidencePointer } from '@/lib/bundles/types';
 import type { EvidenceRef } from '@/lib/evidence/resolve';
 
 // =============================================================================

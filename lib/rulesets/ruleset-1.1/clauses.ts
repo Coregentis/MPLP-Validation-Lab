@@ -30,15 +30,6 @@ interface ClauseContext {
 // Common Clause Evaluation Helpers
 // =============================================================================
 
-function createEmptyEvidence(): ClauseEvidence {
-    return {
-        pointers: [],
-        resolved: [],
-        resolved_count: 0,
-        unresolved_count: 0,
-    };
-}
-
 function createClauseResult(
     definition: ClauseDefinition,
     status: ClauseResult['status'],

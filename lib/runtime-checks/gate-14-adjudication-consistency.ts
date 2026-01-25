@@ -9,7 +9,7 @@
  * GOVERNANCE: This gate enforces the adjudication contract.
  */
 
-import { readFileSync, existsSync, readdirSync } from 'fs';
+import { readFileSync, existsSync } from 'fs';
 import { join } from 'path';
 import * as crypto from 'crypto';
 import { computeDeterministicHash } from '../adjudication/deterministicHash';
@@ -42,7 +42,6 @@ interface GateResult {
 // =============================================================================
 
 const VLAB_ROOT = join(__dirname, '../..');
-const ADJUDICATION_DIR = join(VLAB_ROOT, 'adjudication');
 const EXPORT_DIR = join(VLAB_ROOT, 'export');
 
 const REQUIRED_BUNDLE_FILES = [
@@ -91,11 +90,11 @@ async function runGate14(): Promise<GateResult> {
     try {
         adjudicationIndex = loadJson(indexPath) as { adjudications: AdjudicationEntry[] };
         checksPass++;
-    } catch (err) {
+    } catch {
         return {
             gate_id: 'gate-14-adjudication-consistency',
             status: 'FAIL',
-            message: `Failed to parse adjudication-index.json: ${(err as Error).message}`,
+            message: `Failed to parse adjudication-index.json`,
         };
     }
 
@@ -198,7 +197,7 @@ async function runGate14(): Promise<GateResult> {
                     checksPass++;
                 }
 
-            } catch (err) {
+            } catch {
                 failures.push(`${entry.run_id}: failed to parse verdict.json`);
                 checksFail++;
             }

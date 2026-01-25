@@ -68,7 +68,7 @@ export async function runGate08(labRoot: string = process.cwd()): Promise<Gate08
     // Load curated schema
     const schemaPath = path.join(labRoot, 'governance/schemas/curated-run.schema.yaml');
     const schemaContent = fs.readFileSync(schemaPath, 'utf-8');
-    const schema = yaml.load(schemaContent) as any;
+    const schema = yaml.load(schemaContent) as Record<string, any>; // eslint-disable-line @typescript-eslint/no-explicit-any
 
     const requiredFields = schema.required || [];
     const enumConstraints = schema.enums || {};

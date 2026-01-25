@@ -163,7 +163,7 @@ export default function ValidationDashboard() {
                             </div>
                             <p className="text-[10px] text-mplp-text-muted italic leading-relaxed">
                                 These gates validate **Lab Publication Integrity** (SSOT consistency, link health, and version drift).
-                                A "PASS" status confirms the structural soundness of the evidence presentation; it is <span className="text-mplp-text font-bold">not a conformance certification</span> of any agentic system or framework performance.
+                                A &quot;PASS&quot; status confirms the structural soundness of the evidence presentation; it is <span className="text-mplp-text font-bold">not a conformance certification</span> of any agentic system or framework performance.
                             </p>
                         </div>
                     </section>
@@ -199,7 +199,7 @@ export default function ValidationDashboard() {
                                     </div>
                                     <h4 className="font-bold text-mplp-text text-sm mb-1">Evidence Samples (MUST-1)</h4>
                                     <p className="text-[11px] text-mplp-text-muted leading-relaxed">
-                                        Browse "Same-Scale" equivalence pairs across frameworks.
+                                        Browse &quot;Same-Scale&quot; equivalence pairs across frameworks.
                                     </p>
                                 </Link>
 

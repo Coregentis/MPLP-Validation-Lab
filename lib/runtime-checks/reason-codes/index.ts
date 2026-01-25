@@ -24,7 +24,7 @@ import { D1_REASON_CODES, isD1ReasonCode } from './d1';
 import { D2_REASON_CODES, isD2ReasonCode } from './d2';
 import { D3_REASON_CODES, isD3ReasonCode } from './d3';
 import { D4_REASON_CODES, isD4ReasonCode } from './d4';
-import { matchesReasonCodePattern, isPatternReasonCode, type PatternRule } from './patterns';
+import { matchesReasonCodePattern, isPatternReasonCode } from './patterns';
 
 // =============================================================================
 // Unified Validation

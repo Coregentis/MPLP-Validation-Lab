@@ -8,7 +8,7 @@
  */
 
 import * as fs from 'fs';
-import { parse, parseDocument, YAMLParseError } from 'yaml';
+import { parseDocument, YAMLParseError } from 'yaml';
 
 // =============================================================================
 // Types
