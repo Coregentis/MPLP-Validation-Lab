@@ -4,7 +4,7 @@
     "generated_at": "2026-01-24T20:06:53+08:00",
     "protocol_version": "1.0.0",
     "schema_bundle_version": "2.0.0",
-    "lab_series": "v0.10.2",
+    "lab_series": "v0.12.1",
     "baseline_commit_sha": "4708f2597b83ec5510b65a443a992634f19b2520",
     "tripod": {
         "website_anchor": "https://www.mplp.io/definition",
@@ -31,6 +31,7 @@
         "shadow_input_sha256": "2df221240973ba5bc0f042f190cf4910918299bcd9c55af7e0c0ae7918a880c8",
         "seal_v11_sha256": "43015569f4ae09503460459c3a3c94d27196024419574da9e4726bf643973715",
         "seal_v12_sha256": "78493664107dd0943eefa2be2f53faeec07386ab00c965b314ca8fb2c7632106",
+        "seal_v12_1_sha256": "0cbf652d9f052b6f2af76f43e19e3fbb60dfe50cab4751bfe216d0f3a9762fc0",
         "sop_v12_integrity": "scripts/gates/gate-v12-sop-integrity.ts"
     },
     "boundaries": [
