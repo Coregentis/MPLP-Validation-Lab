@@ -108,16 +108,16 @@ Non-endorsement boundary: Diff reports explain ruleset changes only. They are no
 
 ---
 
-## Maintenance Phase (v0.12.x)
+---
 
-The Validation Lab has reached its **Sustainability Stopline**.
-- **v0.12.x**: The **Maintenance Line**. Audit-grade, reproducible, and stopline-bounded.
-- **v0.13.0+**: The **Extension Line**. Reserved for new substrates, logic, or IA expansion.
+## 🛡️ Institutional Reference & Audit (v0.12.1)
 
-> [!IMPORTANT]
-> **v0.12.x is the Maintenance Line**: any functional expansion is versioned in v0.13+.
+- **Canonical Anchor**: [SEAL-v0.12.1](file:///Users/jasonwang/Documents/AI_Dev/V1.0_release/Validation_Lab/governance/seals/SEAL-v0.12.1.md)
+- **Immutable Tag**: `vlab-v0.12.1-institution`
+- **Audit Routine**: `npm run heartbeat` (Verifies gates + records logic consistency)
+- **Status**: **LOCKED/STATIONARY**. Behavioral expansion is strictly versioned in `v0.13.0+`.
 
-Refer to [Maintenance Runbook](file:///Users/jasonwang/Documents/AI_Dev/V1.0_release/Validation_Lab/governance/runbooks/MAINTENANCE-v0.12.md) for procedures.
+Refer to the [Dormancy Notice](file:///Users/jasonwang/Documents/AI_Dev/V1.0_release/Validation_Lab/governance/seals/DORMANCY-v0.12.1.md) and [Maintenance Runbook](file:///Users/jasonwang/Documents/AI_Dev/V1.0_release/Validation_Lab/governance/runbooks/MAINTENANCE-v0.12.md) for procedures.
 
 ---
 

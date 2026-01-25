@@ -7,16 +7,29 @@
 ## 1. Institutional Purpose
 The Validation Lab v0.12.1 represents the **Sustainability Stopline**. It is preserved as a stable, auditable, and reproducible reference for Multi-Agent Lifecycle Protocol (MPLP) evidence.
 
-## 2. Dormancy Rules
-During the dormancy phase, the following rules apply:
-- **No Behavioral Drift**: No changes to interpretive logic, projection schemas, or verdict weighting.
-- **Maintenance Only**: Permitted changes are limited to security patches, dependency logic fixes (without semantic shift), and gate parity repairs.
-- **Reference Stability**: The [v0.12.1 SEAL](file:///Users/jasonwang/Documents/AI_Dev/V1.0_release/Validation_Lab/governance/seals/SEAL-v0.12.1.md) is the immutable anchor for this series.
+## 2. Institutional Reference & Audit
+- **Canonical Anchor**: [SEAL-v0.12.1](file:///Users/jasonwang/Documents/AI_Dev/V1.0_release/Validation_Lab/governance/seals/SEAL-v0.12.1.md)
+- **Immutable Tag**: `vlab-v0.12.1-institution`
+- **Audit Routine**: `npm run heartbeat` (Verifies gates + records logic consistency)
+- **Status**: **LOCKED/STATIONARY**. Behavioral expansion is strictly versioned in `v0.13.0+`.
 
-## 3. Operations
-- **Monthly Heartbeat**: Verification of gate pass and structural integrity.
-- **Audit Access**: The lab remains fully functional for evidence review and local replication.
+## 3. Dormancy Rules
 
 ---
 **Custodian**: v0.12 Institutional Guard
+**Audit Log**: [history.json](file:///Users/jasonwang/Documents/AI_Dev/V1.0_release/Validation_Lab/governance/heartbeat/history.json)
 **Upgrade Path**: Functional expansion triggers the v0.13 Extension Line.
+
+### Heartbeat Audit Schema
+Audit records in `history.json` must follow the institutional schema:
+```json
+{
+  "timestamp": "ISO-8601",
+  "baseline_tag": "vlab-v0.12.1-institution",
+  "commit_sha": "git-sha",
+  "seal_sha256": "sha256(SEAL-v0.12.1.md)",
+  "gate_results": { "gate-id": "PASS|FAIL" },
+  "drift": 0 | 1,
+  "node_version": "vX.Y.Z"
+}
+```

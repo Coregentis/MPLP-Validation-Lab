@@ -139,12 +139,34 @@ export default function AboutPage() {
                     The Validation Lab has reached its functional sustainability baseline as of v0.12.0.
                     The project is now in <strong>Maintenance Mode</strong>.
                 </p>
-                <ul className="space-y-3 text-zinc-400 text-xs">
+                <ul className="space-y-3 text-zinc-400 text-xs mb-6">
                     <li><strong className="text-zinc-200">v0.12.x Series:</strong> The **Maintenance Line**. Audit-grade, reproducible, and stopline-bounded.</li>
                     <li><strong className="text-zinc-200">v0.13.0+ Series:</strong> The **Extension Line**. Reserved for functional expansion (new substrates, logic, or IA).</li>
                 </ul>
-                <div className="mt-4 pt-4 border-t border-zinc-800 text-[10px] text-zinc-500 italic">
-                    v0.12.x is the Maintenance Line: any functional expansion is versioned in v0.13+.
+
+                <div className="bg-glass border border-blue-500/20 rounded-2xl p-6">
+                    <h3 className="text-sm font-bold text-blue-400 uppercase tracking-widest mb-4 flex items-center gap-2">
+                        <span className="h-1.5 w-1.5 rounded-full bg-blue-400" />
+                        Institutional Reference &amp; Audit
+                    </h3>
+                    <ul className="space-y-3 text-[11px] text-zinc-400 font-mono">
+                        <li className="flex gap-2">
+                            <span className="text-zinc-500 w-24 shrink-0">Anchor:</span>
+                            <a href="file:///Users/jasonwang/Documents/AI_Dev/V1.0_release/Validation_Lab/governance/seals/SEAL-v0.12.1.md" className="text-blue-400 hover:underline">SEAL-v0.12.1</a>
+                        </li>
+                        <li className="flex gap-2">
+                            <span className="text-zinc-500 w-24 shrink-0">Baseline Tag:</span>
+                            <span className="text-zinc-300">vlab-v0.12.1-institution</span>
+                        </li>
+                        <li className="flex gap-2">
+                            <span className="text-zinc-500 w-24 shrink-0">Audit Cmd:</span>
+                            <span className="text-zinc-300">npm run heartbeat</span>
+                        </li>
+                        <li className="flex gap-2 underline decoration-zinc-800">
+                            <span className="text-zinc-500 w-24 shrink-0">Status:</span>
+                            <span className="text-blue-400 font-bold uppercase">Locked / Stationary</span>
+                        </li>
+                    </ul>
                 </div>
             </section>
 
@@ -163,6 +185,6 @@ export default function AboutPage() {
                     Explore Runs →
                 </Link>
             </section>
-        </div>
+        </div >
     );
 }

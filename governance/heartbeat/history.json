@@ -4,5 +4,18 @@
     "commit_sha": "7c07cbee1e73fb2bee86a7b62580c94fa3101c03",
     "result": "PASS",
     "node_version": "v25.2.1"
+  },
+  {
+    "timestamp": "2026-01-25T04:00:25.154Z",
+    "baseline_tag": "vlab-v0.12.1-institution",
+    "commit_sha": "70bb9a7ee67b244aac08c4ca04b403882b0e8cf4",
+    "seal_sha256": "0cbf652d9f052b6f2af76f43e19e3fbb60dfe50cab4751bfe216d0f3a9762fc0",
+    "gate_results": {
+      "gate-all": "PASS",
+      "rel-01": "PASS",
+      "sop-01": "PASS"
+    },
+    "drift": 0,
+    "node_version": "v25.2.1"
   }
 ]

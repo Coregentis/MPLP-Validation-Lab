@@ -1,55 +1,88 @@
 import { execSync } from 'child_process';
 import { readFileSync, writeFileSync, existsSync } from 'fs';
+import { createHash } from 'crypto';
 import { join } from 'path';
 
 /**
- * v0.12.1 Heartbeat History Contract
+ * v0.12.1 Institutional Heartbeat Contract
  * 
  * Runs all gates and appends the result to governance/heartbeat/history.json.
- * This ensures the dormancy phase remains auditable and environmental drift is tracked.
+ * Uses the institutional schema for auditability.
  */
 
 const VLAB_ROOT = join(process.cwd());
 const HISTORY_PATH = join(VLAB_ROOT, 'governance/heartbeat/history.json');
+const SEAL_PATH = join(VLAB_ROOT, 'governance/seals/SEAL-v0.12.1.md');
 
 interface HeartbeatRecord {
     timestamp: string;
+    baseline_tag: string;
     commit_sha: string;
-    result: 'PASS' | 'FAIL';
+    seal_sha256: string;
+    gate_results: Record<string, 'PASS' | 'FAIL'>;
+    drift: 0 | 1;
     node_version: string;
-    artifact_hash?: string;
+}
+
+function getFileHash(path: string): string {
+    if (!existsSync(path)) return 'NOT_FOUND';
+    const content = readFileSync(path);
+    return createHash('sha256').update(content).digest('hex');
 }
 
 async function runHeartbeat() {
     console.log('💓 Starting v0.12.1 Institutional Heartbeat...');
 
-    let result: 'PASS' | 'FAIL' = 'PASS';
+    let drift: 0 | 1 = 0;
     let commitSha = '';
+    const gate_results: Record<string, 'PASS' | 'FAIL'> = {};
+
+    // Commands to verify
+    const commands = [
+        { id: 'gate-all', cmd: 'npm run gate:all' },
+        { id: 'rel-01', cmd: 'npm run gate:release:01' },
+        { id: 'sop-01', cmd: 'npm run gate:v12-sop' }
+    ];
 
     try {
         // 1. Run Gates
-        console.log('--- Running All Gates ---');
-        execSync('npm run gate:all && npm run gate:release:01 && npm run gate:v12-sop', { stdio: 'inherit' });
+        console.log('--- Executing Institutional Audit Suite ---');
+        for (const { id, cmd } of commands) {
+            try {
+                execSync(cmd, { stdio: 'pipe' });
+                gate_results[id] = 'PASS';
+            } catch {
+                gate_results[id] = 'FAIL';
+                drift = 1;
+            }
+        }
 
         // 2. Get Commit SHA
         commitSha = execSync('git rev-parse HEAD').toString().trim();
     } catch (error) {
-        result = 'FAIL';
-        console.error('❌ Heartbeat failed during gate execution.');
+        drift = 1;
+        console.error('❌ Heartbeat failed during execution.');
     }
 
     // 3. Prepare Record
     const record: HeartbeatRecord = {
         timestamp: new Date().toISOString(),
+        baseline_tag: 'vlab-v0.12.1-institution',
         commit_sha: commitSha,
-        result,
+        seal_sha256: getFileHash(SEAL_PATH),
+        gate_results,
+        drift,
         node_version: process.version,
     };
 
     // 4. Update History
     let history: HeartbeatRecord[] = [];
     if (existsSync(HISTORY_PATH)) {
-        history = JSON.parse(readFileSync(HISTORY_PATH, 'utf-8'));
+        try {
+            history = JSON.parse(readFileSync(HISTORY_PATH, 'utf-8'));
+        } catch {
+            history = [];
+        }
     }
 
     history.push(record);
@@ -65,9 +98,10 @@ async function runHeartbeat() {
 
     writeFileSync(HISTORY_PATH, JSON.stringify(history, null, 2));
 
-    console.log(`\n✅ Heartbeat recorded: ${result} at ${record.timestamp}`);
+    const resultText = drift === 0 ? '✅ PASS' : '⚠️ DRIFT DETECTED';
+    console.log(`\n${resultText} recorded: at ${record.timestamp}`);
 
-    if (result === 'FAIL') {
+    if (drift === 1) {
         process.exit(1);
     }
 }
