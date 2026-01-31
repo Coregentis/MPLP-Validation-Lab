@@ -1,12 +1,12 @@
 {
-  "total_files": 638,
-  "files_with_issues": 319,
+  "total_files": 640,
+  "files_with_issues": 321,
   "total_errors": 483,
-  "total_warnings": 6444,
+  "total_warnings": 6454,
   "top_rules": {
     "@typescript-eslint/no-unused-expressions": 4986,
-    "@typescript-eslint/no-explicit-any": 818,
-    "@typescript-eslint/no-unused-vars": 635,
+    "@typescript-eslint/no-explicit-any": 825,
+    "@typescript-eslint/no-unused-vars": 638,
     "@typescript-eslint/no-unsafe-function-type": 279,
     "@typescript-eslint/no-empty-object-type": 100,
     "@typescript-eslint/ban-ts-comment": 38,
@@ -15,5 +15,5 @@
     "prefer-const": 7,
     "@typescript-eslint/triple-slash-reference": 1
   },
-  "timestamp": "2026-01-31T15:43:50.002Z"
+  "timestamp": "2026-01-31T16:08:27.443Z"
 }

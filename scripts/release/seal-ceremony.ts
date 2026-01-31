@@ -134,17 +134,64 @@ async function main() {
 
     // 5. Generate Artifacts & Seal
 
+    // 5.0 Capture Git SHA
+    let gitSha = 'UNKNOWN';
+    try {
+        gitSha = execSync('git rev-parse HEAD', { encoding: 'utf-8' }).trim();
+    } catch (e) {
+        console.warn('⚠️ Failed to capture Git SHA');
+    }
+
     // Write Logs
     fs.writeFileSync(path.join(RELEASE_DIR, 'gate-report.log'), gateOutput || 'No gate output');
     fs.writeFileSync(path.join(RELEASE_DIR, 'audit-report.log'), auditOutput || 'No audit output');
 
     const overallStatus = (gateExitCode === 0 && auditExit === 0) ? 'PASS' : 'FAIL';
 
+    // 5.1 lint stats
+    let lintErrors = 0;
+    if (lintAuditOutput) {
+        try {
+            lintErrors = JSON.parse(lintAuditOutput).total_errors || 0;
+        } catch { }
+    }
+
+    // 5.2 Manifest.json (Machine Readable)
+    const manifest = {
+        build_id: BUILD_ID,
+        git_sha: gitSha,
+        date: new Date().toISOString(),
+        status: overallStatus,
+        policy: {
+            build: lintPolicy,
+            deadline: '2026-06-30'
+        },
+        metrics: {
+            lint_errors: lintErrors,
+            audit_routes: 11 // Hardcoded for V2 model A
+        },
+        artifacts: {
+            seal: 'seal.md',
+            manifest: 'manifest.json',
+            gate_report: 'gate-report.log',
+            audit_report: 'audit-report.log',
+            lint_audit: 'lint-audit.json'
+        },
+        gate_suite: [
+            'gate:v1:all',
+            'gate:v2:all',
+            'gate:unified:*'
+        ]
+    };
+    fs.writeFileSync(path.join(RELEASE_DIR, 'manifest.json'), JSON.stringify(manifest, null, 2));
+
+    // 5.3 Seal.md (Human Readable)
     const sealContent = `
 # Validation Lab Seal: ${BUILD_ID}
 
 **Status**: ${overallStatus}
-**Date**: ${new Date().toISOString()}
+**Date**: ${manifest.date}
+**Git SHA**: \`${gitSha}\`
 **Build Policy**: ${lintPolicy}
 
 ## Components
@@ -158,8 +205,10 @@ async function main() {
 - **Lint Policy**: ${lintPolicy.toUpperCase()} ${lintPolicy === 'tolerant' ? '(See governance/build-policy.md)' : ''}
 - **Artifacts**: verification-lab-v2
 - **Projection**: Mixed V1 (Simulated) + V2 (Real)
+- **Metrics**: ${lintErrors} Lint Errors (Target: 0)
 
 ## Evidence Pointers
+- [Manifest](./manifest.json) (Machine Readable)
 - [Gate Log](./gate-report.log)
 - [Audit Log](./audit-report.log)
 - [Lint Audit](./lint-audit.json)
@@ -173,6 +222,9 @@ ${gateOutput.slice(0, 1000)}...
 
     fs.writeFileSync(path.join(RELEASE_DIR, 'seal.md'), sealContent.trim());
 
+    // 6. Update Release Index (SSOT)
+    updateReleaseIndex(manifest);
+
     console.log(`\n📦 Artifacts generated in ${RELEASE_DIR}`);
     if (overallStatus === 'PASS') {
         console.log(`✅ SEAL VALID. Ready for tagging.`);
@@ -180,6 +232,38 @@ ${gateOutput.slice(0, 1000)}...
         console.log(`❌ SEAL INVALID. Check logs.`);
         process.exit(1);
     }
+}
+
+function updateReleaseIndex(newRelease: any) {
+    const indexPath = path.join(process.cwd(), 'releases', 'unified', 'index.json');
+    let index: any = { releases: [] };
+
+    if (fs.existsSync(indexPath)) {
+        try {
+            index = JSON.parse(fs.readFileSync(indexPath, 'utf8'));
+        } catch { }
+    }
+
+    // Add new release to Top
+    index.releases.unshift({
+        id: newRelease.build_id,
+        date: newRelease.date,
+        status: newRelease.status,
+        git_sha: newRelease.git_sha,
+        policy: newRelease.policy.build,
+        metrics: newRelease.metrics,
+        artifacts: newRelease.artifacts
+    });
+
+    // Keep unique by ID
+    const unique = new Map();
+    index.releases.forEach((r: any) => {
+        if (!unique.has(r.id)) unique.set(r.id, r);
+    });
+    index.releases = Array.from(unique.values());
+
+    fs.writeFileSync(indexPath, JSON.stringify(index, null, 2));
+    console.log(`📚 Updated Release Index: ${indexPath}`);
 }
 
 main().catch(e => {

@@ -1,0 +1,26 @@
+{
+  "build_id": "rc-20260131160755",
+  "git_sha": "170904ce764c56ab9727a9cb6b63718c0d7ac7c3",
+  "date": "2026-01-31T16:08:33.152Z",
+  "status": "PASS",
+  "policy": {
+    "build": "tolerant",
+    "deadline": "2026-06-30"
+  },
+  "metrics": {
+    "lint_errors": 483,
+    "audit_routes": 11
+  },
+  "artifacts": {
+    "seal": "seal.md",
+    "manifest": "manifest.json",
+    "gate_report": "gate-report.log",
+    "audit_report": "audit-report.log",
+    "lint_audit": "lint-audit.json"
+  },
+  "gate_suite": [
+    "gate:v1:all",
+    "gate:v2:all",
+    "gate:unified:*"
+  ]
+}
