@@ -1,0 +1,16 @@
+{
+    "release_type": "release_candidate",
+    "build_id": "v2-rc-20260127-1722-rc4",
+    "generated_at": "2026-01-27T17:22:00Z",
+    "anchors": {
+        "git_commit_sha": "0984b0888ecf2ad57edd6e291c46cc892b5b2abb",
+        "scope_ssot_ref": "governance/scope-freeze-v2.md",
+        "dispute_ssot_ref": "governance/dispute-freeze-v2.md",
+        "reg_mapping_ssot_ref": "governance/reg-mapping/reg-mapping-v1.md"
+    },
+    "inventory_summary": {
+        "total_runs": 8,
+        "qualified_runs": 8,
+        "ruleset_version": "2.0.1"
+    }
+}

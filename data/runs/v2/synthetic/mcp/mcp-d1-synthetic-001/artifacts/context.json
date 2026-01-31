@@ -1,0 +1,7 @@
+{
+  "scenario_id": "d1_basic_pass",
+  "protocol": "MPLP",
+  "substrate": "MCP",
+  "objective": "Demonstrate basic MCP tool registration and invocation",
+  "established_at": "2026-01-26T10:36:14.655Z"
+}

@@ -1,0 +1,47 @@
+{
+  "projection_type": "rulesets_index",
+  "generated_at": "2026-01-31T11:49:54.913Z",
+  "data": {
+    "rulesets": [
+      {
+        "ruleset_id": "ruleset-v2.0.0",
+        "name": "MPLP Lab V2 Baseline Adjudication",
+        "version": "2.0.1",
+        "clause_count": 8
+      },
+      {
+        "ruleset_id": "ruleset-v2.0.0",
+        "name": "MPLP Lab V2 Baseline Adjudication",
+        "version": "2.0.0",
+        "clause_count": 7
+      }
+    ],
+    "evolution": [
+      {
+        "diff_id": "diff-v2.0.0-to-v2.0.1",
+        "from": "v2.0.0",
+        "to": "v2.0.1",
+        "summary": {
+          "added_clauses": [],
+          "modified_clauses": [
+            "TRUST-V2-01"
+          ],
+          "removed_clauses": []
+        },
+        "changes": [
+          {
+            "clause_id": "TRUST-V2-01",
+            "change_type": "modified",
+            "rationale": "Clarification of runner seal verification logic to explicitly include hash pinning.",
+            "impact": {
+              "may_change_verdicts": false,
+              "affected_evidence_examples": [
+                "mplp://runs/mcp-d1-fail-benchmark-001/reports/evaluation#/results/5"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,348 @@
+{
+  "projection_type": "run_detail",
+  "generated_at": "2026-01-31T11:49:54.902Z",
+  "source_version": {
+    "lab_commit_sha": "dev",
+    "curated_index_version": "2.0.0"
+  },
+  "projection_schema_version": "2.1.0",
+  "scope_ssot_version": "v2-mvp-scope-01",
+  "scope_freeze_ref": "a332c016cba27129410af27529ebd02aba3558db01fd2f158997228a446d23e0",
+  "data": {
+    "pack_id": "mcp-d1-real-runner-001",
+    "indexability_status": "INDEXABLE_REAL",
+    "substrate_id": "mcp",
+    "scenario_id": "d1_basic_pass",
+    "provenance": {
+      "protocol_ref": {
+        "protocol_name": "MPLP",
+        "repo": "https://github.com/mplp-protocol/mplp",
+        "schemas_version": "v2",
+        "commit_sha": "unknown"
+      },
+      "substrate_ref": {
+        "substrate_id": "mcp",
+        "substrate_name": "Model Context Protocol",
+        "upstream_repo": "https://github.com/modelcontextprotocol/typescript-sdk",
+        "upstream_tag": "v0.5.0",
+        "upstream_commit_sha": "n/a (npm-pinned)"
+      },
+      "lock_ref": {
+        "lock_kind": "npm",
+        "lock_path": "producers/mcp/package-lock.json",
+        "lock_sha256": "655d04b750b76c14c278f8d61e78eaa6e46159d6709e9e0f0d37cf5f6ffd8619"
+      },
+      "env_ref": {
+        "runner_type": "container",
+        "runner_id": "node-20",
+        "image_digest": "sha256:979040afb716e03f808aa5875df2232f0ecd2a780f8ece683941342375f3b927",
+        "environment_fingerprint": {
+          "os": "linux",
+          "arch": "aarch64",
+          "runtime_type": "node",
+          "runtime_version": "20.20.0"
+        },
+        "executed_at": "2026-01-27T05:05:42Z",
+        "note": "Sealed by runner"
+      },
+      "lab_ref": {
+        "lab_repo": "https://github.com/mplp-protocol/validation-lab",
+        "lab_commit_sha": "unknown",
+        "lab_version": "v2.0.0"
+      },
+      "producer_ref": {
+        "producer_id": "mcp",
+        "producer_path": "producers/mcp",
+        "producer_commit_sha": "unknown",
+        "producer_version": "2.0.0"
+      },
+      "canonicalization_ref": {
+        "rules_version": "v2.0.0",
+        "rules_path": "canonicalization/rules.v2.md",
+        "hash_scope": [
+          "artifacts",
+          "timeline",
+          "reports/verify.report.json"
+        ]
+      }
+    },
+    "hashes": {
+      "pack_root_hash": "1329b9592a9b6914ab1e2aa8e48c61ea8bc48025bbf2a55dfcba056a9401316e",
+      "verify_report_hash": "5b60f9351dd13de9ddd0a3b19c200fa849034224eae0b2a2c5800f0fc1dc4748",
+      "verdict_hash": null,
+      "canonical_pack_root_hash": "17036587cb26c89f79378fe6dfa7e94c0765ceab2a8fbc8e151fc98c4725dd8f"
+    },
+    "verify": {
+      "verification_version": "2.0.0",
+      "verified_at": "2026-01-27T05:05:42.336Z",
+      "pack_id": "mcp-d1-real-runner-001",
+      "overall_status": "VERIFIED",
+      "execution_type": "REAL",
+      "execution_method": "mcp_sdk_in_process",
+      "checks": [
+        {
+          "check_id": "pack_structure",
+          "status": "PASS",
+          "details": "All required files present"
+        },
+        {
+          "check_id": "hash_integrity",
+          "status": "PASS",
+          "details": "All file hashes computed and verified"
+        },
+        {
+          "check_id": "real_execution",
+          "status": "PASS",
+          "details": "Evidence captured from real MCP SDK client-server interaction"
+        }
+      ],
+      "hash_verification": {
+        "expected_pack_root_hash": "1329b9592a9b6914ab1e2aa8e48c61ea8bc48025bbf2a55dfcba056a9401316e",
+        "computed_pack_root_hash": "1329b9592a9b6914ab1e2aa8e48c61ea8bc48025bbf2a55dfcba056a9401316e",
+        "match": true
+      },
+      "checked_files": [
+        {
+          "path": "artifacts/context.json",
+          "sha256": "f6a9f1f88d19049c7786e6afbdbe2397eadb5ce613cff46a62b97e4c65221d97"
+        },
+        {
+          "path": "artifacts/plan.json",
+          "sha256": "dd14d1b0ac17325ea9837b40c76aa431c53c5fe41e303b2bfc3edaa209f4a20a"
+        },
+        {
+          "path": "artifacts/confirm.json",
+          "sha256": "452c4605ada40d382e2cbf09b95beaa535d3efe49c111b90ab8d967e58f14e14"
+        },
+        {
+          "path": "artifacts/trace.json",
+          "sha256": "458d5eb6530ebda4714980fff98ce2cdfcbb71843e056709a7c0e9af92fed974"
+        }
+      ]
+    },
+    "evaluation": {
+      "run_id": "mcp-d1-real-runner-001",
+      "ruleset_id": "ruleset-v2.0.0",
+      "adjudicated_at": "2026-01-27T05:06:07.584Z",
+      "verdict": "PASS",
+      "results": [
+        {
+          "clause_id": "PROV-V2-01",
+          "verdict": "PASS",
+          "observed_value": {
+            "substrate_id": "mcp",
+            "substrate_name": "Model Context Protocol",
+            "upstream_repo": "https://github.com/modelcontextprotocol/typescript-sdk",
+            "upstream_tag": "v0.5.0",
+            "upstream_commit_sha": "n/a (npm-pinned)"
+          },
+          "evidence_pointer": "mplp://manifest/substrate_ref"
+        },
+        {
+          "clause_id": "PROV-V2-02",
+          "verdict": "PASS",
+          "observed_value": "655d04b750b76c14c278f8d61e78eaa6e46159d6709e9e0f0d37cf5f6ffd8619",
+          "evidence_pointer": "mplp://manifest/lock_ref/lock_sha256"
+        },
+        {
+          "clause_id": "LIFECYCLE-V2-01",
+          "verdict": "PASS",
+          "observed_value": "PASS",
+          "evidence_pointer": "mplp://artifact/trace.json#/verdict"
+        },
+        {
+          "clause_id": "LIFECYCLE-V2-02",
+          "verdict": "PASS",
+          "observed_value": [
+            {
+              "timestamp": "2026-01-27T05:05:42.323Z",
+              "event": "PROTOCOL_REF_RECORDED",
+              "data": {
+                "protocol": "MPLP",
+                "version": "v2"
+              }
+            },
+            {
+              "timestamp": "2026-01-27T05:05:42.323Z",
+              "event": "SUBSTRATE_REF_RECORDED",
+              "data": {
+                "substrate": "MCP",
+                "version": "v0.5.0"
+              }
+            },
+            {
+              "timestamp": "2026-01-27T05:05:42.323Z",
+              "event": "RUN_STARTED",
+              "data": {
+                "scenario_id": "d1_basic_pass",
+                "run_id": "mcp-d1-real-runner-001"
+              }
+            },
+            {
+              "timestamp": "2026-01-27T05:05:42.323Z",
+              "event": "ARTIFACT_WRITTEN",
+              "data": {
+                "artifact": "context.json"
+              }
+            },
+            {
+              "timestamp": "2026-01-27T05:05:42.323Z",
+              "event": "ARTIFACT_WRITTEN",
+              "data": {
+                "artifact": "plan.json"
+              }
+            },
+            {
+              "timestamp": "2026-01-27T05:05:42.323Z",
+              "event": "ARTIFACT_WRITTEN",
+              "data": {
+                "artifact": "confirm.json"
+              }
+            },
+            {
+              "timestamp": "2026-01-27T05:05:42.323Z",
+              "event": "MCP_SERVER_CREATED",
+              "data": {
+                "server_name": "mplp-weather-server"
+              }
+            },
+            {
+              "timestamp": "2026-01-27T05:05:42.323Z",
+              "event": "MCP_CLIENT_CREATED",
+              "data": {
+                "client_name": "mplp-test-client",
+                "transport": "in-memory"
+              }
+            },
+            {
+              "timestamp": "2026-01-27T05:05:42.324Z",
+              "event": "MCP_CONNECTION_ESTABLISHED",
+              "data": {
+                "status": "connected",
+                "transport_type": "in-memory"
+              }
+            },
+            {
+              "timestamp": "2026-01-27T05:05:42.325Z",
+              "event": "TOOLS_LISTED",
+              "data": {
+                "tool_count": 1,
+                "tools": [
+                  {
+                    "name": "get_weather",
+                    "description": "Get current weather for a location (deterministic test data)"
+                  }
+                ]
+              }
+            },
+            {
+              "timestamp": "2026-01-27T05:05:42.325Z",
+              "event": "TOOL_INVOKED",
+              "data": {
+                "tool_name": "get_weather",
+                "input": {
+                  "location": "San Francisco"
+                },
+                "output": {
+                  "location": "San Francisco",
+                  "temperature": 72,
+                  "conditions": "sunny",
+                  "humidity": 65,
+                  "source": "deterministic_test_data"
+                },
+                "result_type": "text"
+              }
+            },
+            {
+              "timestamp": "2026-01-27T05:05:42.325Z",
+              "event": "ARTIFACT_WRITTEN",
+              "data": {
+                "artifact": "trace.json"
+              }
+            },
+            {
+              "timestamp": "2026-01-27T05:05:42.325Z",
+              "event": "TOOL_COMPLETED",
+              "data": {
+                "tool_name": "get_weather",
+                "status": "success"
+              }
+            },
+            {
+              "timestamp": "2026-01-27T05:05:42.325Z",
+              "event": "MCP_SESSION_CLOSED",
+              "data": {
+                "status": "clean_shutdown"
+              }
+            },
+            {
+              "timestamp": "2026-01-27T05:05:42.325Z",
+              "event": "RUN_COMPLETED",
+              "data": {
+                "verdict": "PASS"
+              }
+            },
+            {
+              "timestamp": "2026-01-27T05:05:42.326Z",
+              "event": "VERIFY_COMPLETED",
+              "data": {
+                "status": "VERIFIED"
+              }
+            }
+          ],
+          "evidence_pointer": "mplp://timeline/events.ndjson"
+        },
+        {
+          "clause_id": "TRUST-V2-01",
+          "verdict": "PASS",
+          "observed_value": "sha256:979040afb716e03f808aa5875df2232f0ecd2a780f8ece683941342375f3b927",
+          "evidence_pointer": "mplp://manifest/env_ref/image_digest"
+        },
+        {
+          "clause_id": "DET-V2-01",
+          "verdict": "PASS",
+          "observed_value": "17036587cb26c89f79378fe6dfa7e94c0765ceab2a8fbc8e151fc98c4725dd8f",
+          "evidence_pointer": "mplp://manifest/hashes/canonical_pack_root_hash"
+        },
+        {
+          "clause_id": "METADATA-V2-01",
+          "verdict": "PASS",
+          "observed_value": "2026-01-27T05:05:42Z",
+          "evidence_pointer": "mplp://manifest/env_ref/executed_at"
+        }
+      ]
+    },
+    "repro": {
+      "command": "npm run produce:mcp:d1-real -- --run-id=mcp-d1-real-runner-001",
+      "working_dir": ".",
+      "expected_outputs": [
+        "data/runs/v2/real/mcp/mcp-d1-real-runner-001/manifest.json",
+        "data/runs/v2/real/mcp/mcp-d1-real-runner-001/reports/verify.report.json"
+      ]
+    },
+    "pointers": {
+      "manifest": "manifest.json",
+      "artifacts_dir": "artifacts/",
+      "timeline": "timeline/events.ndjson",
+      "verify_report": "reports/verify.report.json",
+      "integrity": "integrity/sha256sums.txt"
+    },
+    "evidence_maturity_tier": "REPRODUCED",
+    "adjudicable_surfaces": {
+      "intent": false,
+      "plan": true,
+      "confirm": true,
+      "trace": true,
+      "snapshots": true
+    },
+    "interop_stack": [
+      "MCP"
+    ],
+    "profile_suite_id": "ps-v2-mvp-01",
+    "scope_claims": "Coverage reflects evidence maturity only; not endorsement or certification.",
+    "dispute_freeze_ref": {
+      "path": "governance/dispute-freeze-v2.md",
+      "sha256": "7fd00e40be310d52da80de54c939e78347c6593ee187ae1479035435841bf606"
+    }
+  }
+}

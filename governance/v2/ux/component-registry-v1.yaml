@@ -1,0 +1,175 @@
+blocks:
+  - block_id: "BLOCK_INTEROP_VISUALIZER"
+    component: "InteropGraph"
+    data_binding: "projection.interop_stack"
+    hardcoded_text_policy: "forbid"
+    required_tokens: ["LIT_STACK_FLOW", "LIT_NOT_APPLICABLE"]
+  
+  - block_id: "BLOCK_VERDICT_BADGE"
+    component: "VerdictBadge"
+    data_binding: "projection.evaluation.verdict"
+    hardcoded_text_policy: "allowlist"
+    allowed_literals: ["PASS", "FAIL", "REJECTED"]
+  
+  - block_id: "BLOCK_DISPUTE_PANEL"
+    component: "DisputePanel"
+    data_binding: "projection.dispute_closure"
+    hardcoded_text_policy: "forbid"
+    required_tokens: ["LIT_ROOT_CAUSE", "LIT_REPLAY_INSTRUCTIONS", "LIT_NOT_APPLICABLE", "LIT_DISPUTE_CLOSURE"]
+
+  - block_id: "BLOCK_PROVENANCE"
+    component: "ProvenanceCard"
+    data_binding: "projection.provenance"
+    hardcoded_text_policy: "forbid"
+    required_tokens: ["LIT_NO_ENDORSEMENT"]
+
+  - block_id: "BLOCK_EVIDENCE_DOCKET"
+    component: "EvidenceList"
+    data_binding: "projection.evidence.slices"
+    hardcoded_text_policy: "forbid"
+    required_tokens: ["LIT_EVIDENCE_DOCKET"]
+
+  - block_id: "BLOCK_ROLE_GATEWAY"
+    component: "RoleSelector"
+    data_binding: "ssot.roles"
+    hardcoded_text_policy: "forbid"
+    required_tokens: ["LIT_CHOOSE_ROLE", "LIT_START_JOURNEY", "LIT_NOT_APPLICABLE", "DISCL_NOT_CERTIFICATION"]
+
+  - block_id: "BLOCK_HERO"
+    component: "HeroBlock"
+    hardcoded_text_policy: "forbid"
+    required_tokens: ["LIT_LAWS_TITLE", "LIT_LAWS_DESC", "LIT_RULESET_VERSION_LABEL", "LIT_NOT_APPLICABLE"]
+
+  - block_id: "BLOCK_START_HERO"
+    component: "StartHero"
+    hardcoded_text_policy: "forbid"
+    required_tokens: ["LIT_START_JOURNEY", "LIT_CTA_START_BY_ROLE_DESC"]
+
+  - block_id: "BLOCK_CLAUSE_BROWSER"
+    component: "ClauseList"
+    data_binding: "ruleset.clauses"
+    hardcoded_text_policy: "forbid"
+    required_tokens: ["DISCL_READING_AID_ONLY", "LIT_CLAUSE_ID", "LIT_CLAUSE_NAME", "LIT_INTENT", "LIT_SURFACES", "LIT_PRECEDENTS", "LIT_NO_CLAUSES"]
+
+  - block_id: "BLOCK_REG_MAPPING_MATRIX"
+    component: "RegMappingGrid"
+    data_binding: "ruleset.mappings"
+    hardcoded_text_policy: "forbid"
+    required_tokens: ["DISCL_READING_AID_ONLY", "DISCL_NOT_COMPLIANCE", "LIT_ARTICLE", "LIT_REQUIREMENT", "LIT_MPLP_CLAUSE", "LIT_NO_MAPPINGS"]
+
+  - block_id: "BLOCK_MANIFEST_VIEWER"
+    component: "ManifestViewer"
+    data_binding: "projection.manifest"
+    hardcoded_text_policy: "forbid"
+    required_tokens: ["DISCL_NOT_SDK", "LIT_RUN_ID", "LIT_RULESET_VERSION", "LIT_SCHEMA_BUNDLE", "LIT_PACK_ROOT_HASH", "LIT_ENV_REF", "LIT_PRODUCED_AT"]
+
+  - block_id: "BLOCK_DISCLAIMER_BANNER"
+    component: "DisclaimerBanner"
+    data_binding: "ssot.tokens"
+    hardcoded_text_policy: "strict_ssot"
+
+  - block_id: "BLOCK_HOME_HERO"
+    component: "HomeHero"
+    hardcoded_text_policy: "forbid"
+    required_tokens: ["LIT_HOME_TITLE", "LIT_HOME_SUBTITLE", "LIT_HOME_TAGLINE_NONCERT", "LIT_NAV_START", "LIT_NAV_CASES"]
+
+  - block_id: "BLOCK_HOME_PRIMARY_CTAS"
+    component: "HomePrimaryCtas"
+    hardcoded_text_policy: "forbid"
+    required_tokens: ["LIT_CTA_CURATED_RUNS_TITLE", "LIT_CTA_CURATED_RUNS_DESC", "LIT_CTA_START_BY_ROLE_TITLE", "LIT_CTA_START_BY_ROLE_DESC", "LIT_CTA_LOCAL_REPRO_TITLE", "LIT_CTA_LOCAL_REPRO_DESC"]
+
+  - block_id: "BLOCK_HOME_STATS_ROW"
+    component: "HomeStatsRow"
+    data_binding: "ssot.stats"
+    hardcoded_text_policy: "forbid"
+    required_tokens: ["LIT_STATS_RUNS", "LIT_STATS_RULESET", "LIT_STATS_DETERMINISM", "LIT_STATS_EVIDENCE_PACKS", "LIT_NOT_AVAILABLE"]
+
+  - block_id: "BLOCK_HOME_AUDIT_BANNER"
+    component: "HomeAuditBanner"
+    hardcoded_text_policy: "forbid"
+    required_tokens: ["LIT_AUDIT_BANNER_LINE1", "LIT_AUDIT_BANNER_LINE2", "LIT_AUDIT_BANNER_LINE3"]
+
+  - block_id: "BLOCK_HOME_QUICK_START"
+    component: "HomeQuickStart"
+    hardcoded_text_policy: "forbid"
+    required_tokens: ["LIT_QUICKSTART_TITLE", "LIT_QUICKSTART_STEP1", "LIT_QUICKSTART_STEP2", "LIT_QUICKSTART_STEP3"]
+
+  - block_id: "BLOCK_HOME_RESOURCES_MATRIX"
+    component: "HomeResourcesMatrix"
+    hardcoded_text_policy: "forbid"
+    required_tokens: ["LIT_RESOURCES_TITLE", "LIT_NAV_CASES", "LIT_NAV_LAWS", "LIT_NAV_COMPLIANCE"]
+
+tokens:
+  DISCL_READING_AID_ONLY: "This content is a Reading Aid Only and does not constitute legal advice."
+  DISCL_NOT_COMPLIANCE: "Use of this tool does not guarantee compliance with any regulation."
+  DISCL_NOT_CERTIFICATION: "This is a technical verification report, not a certification."
+  DISCL_NO_ENDORSEMENT: "Validation results do not imply endorsement of the substrate."
+  DISCL_NOT_SDK: "These artifacts are evidence contracts, not an SDK."
+  LIT_NO_ENDORSEMENT: "No Endorsement"
+  LIT_STACK_FLOW: "Interop Stack Flow"
+  LIT_ROOT_CAUSE: "Root Cause Pointer"
+  LIT_REPLAY_INSTRUCTIONS: "Replay Instructions"
+  LIT_EVIDENCE_DOCKET: "Evidence Docket"
+  LIT_NOT_AVAILABLE: "Not Available"
+  LIT_NOT_APPLICABLE: "N/A"
+  DISCL_NOT_LEGAL_ADVICE: "Disclaimer: This evidence source is provided as-is data and does not constitute legal advice."
+  LIT_DISPUTE_CLOSURE: "Dispute Closure"
+  LIT_CLAUSE_ID: "ID"
+  LIT_CLAUSE_NAME: "Clause Name"
+  LIT_INTENT: "Intent"
+  LIT_SURFACES: "Required Surfaces"
+  LIT_PRECEDENTS: "Precedents"
+  LIT_NO_CLAUSES: "No Clauses Found"
+  LIT_ARTICLE: "EU AI Act Article"
+  LIT_REQUIREMENT: "Requirement"
+  LIT_MPLP_CLAUSE: "MPLP Clause"
+  LIT_NO_MAPPINGS: "No Mappings Available"
+  LIT_RUN_ID: "Run ID"
+  LIT_RULESET_VERSION: "Ruleset Version"
+  LIT_SCHEMA_BUNDLE: "Schema Bundle"
+  LIT_PACK_ROOT_HASH: "Pack Root Hash"
+  LIT_ENV_REF: "Environment Ref"
+  LIT_PRODUCED_AT: "Produced At"
+  LIT_CHOOSE_ROLE: "Choose Your Role"
+  LIT_START_JOURNEY: "Start Journey"
+  LIT_LAWS_TITLE: "The Constitution"
+  LIT_LAWS_DESC: "GoldenFlow Ruleset & Compliance Standards"
+  LIT_RULESET_VERSION_LABEL: "Version"
+  LIT_FOOTER_RELEASE_LABEL: "RC-6 Sealed Release"
+  LIT_PROVENANCE_HEADER: "Execution Provenance"
+  LIT_PROTOCOL_REF: "Protocol Ref"
+  LIT_SUBSTRATE_REF: "Substrate Ref"
+  LIT_LAB_REF: "Lab Agent"
+  LIT_NAV_DOCKET: "The Docket"
+  LIT_NAV_START: "Start (Roles)"
+  LIT_NAV_CASES: "Cases"
+  LIT_NAV_LAWS: "The Constitution"
+  LIT_NAV_COMPLIANCE: "Compliance"
+  LIT_NAV_RULESETS: "Ruleset Diffpacks"
+  LIT_NAV_RELEASES: "Gate Reports"
+  LIT_HOME_TITLE: "Validation Lab"
+  LIT_HOME_SUBTITLE: "Evidence & Conformance Laboratory"
+  LIT_HOME_TAGLINE_NONCERT: "We verify evidence integrity and determinism — not runtime performance, not certification."
+  LIT_CTA_CURATED_RUNS_TITLE: "Browse Curated Runs"
+  LIT_CTA_CURATED_RUNS_DESC: "Explore verified evidence packs from major frameworks."
+  LIT_CTA_START_BY_ROLE_TITLE: "Start by Role"
+  LIT_CTA_START_BY_ROLE_DESC: "Tailored journeys for Architects, Auditors, and Compliance Officers."
+  LIT_CTA_LOCAL_REPRO_TITLE: "How to Recheck Locally"
+  LIT_CTA_LOCAL_REPRO_DESC: "Download evidence packs and verify determinism on your machine."
+  LIT_STATS_RUNS: "Curated Runs"
+  LIT_STATS_RULESET: "Active Ruleset"
+  LIT_STATS_DETERMINISM: "Determinism"
+  LIT_STATS_EVIDENCE_PACKS: "Evidence Packs"
+  LIT_AUDIT_BANNER_LINE1: "Non-Certification"
+  LIT_AUDIT_BANNER_LINE2: "Deterministic Adjudication"
+  LIT_AUDIT_BANNER_LINE3: "Pointer Closure"
+  LIT_QUICKSTART_TITLE: "Quick Start"
+  LIT_QUICKSTART_STEP1: "Install Dependencies"
+  LIT_QUICKSTART_STEP2: "Build Projections"
+  LIT_QUICKSTART_STEP3: "Run Gates"
+  LIT_RESOURCES_TITLE: "Protocol Resources"
+  LIT_REASON_PROJECTION_MISSING: "Projection Data Missing"
+  LIT_REASON_EVIDENCE_MISSING: "Evidence Slices Missing"
+  LIT_REASON_MAPPING_MISSING: "Mapping Not Provided"
+  LIT_ACTION_VIEW_EVIDENCE: "View Evidence Room"
+  LIT_ACTION_HOW_TO_REPRO: "How to Reproduce"

@@ -1,0 +1,153 @@
+{
+  "projection_type": "run_detail",
+  "generated_at": "2026-01-31T11:49:54.890Z",
+  "source_version": {
+    "lab_commit_sha": "dev",
+    "curated_index_version": "2.0.0"
+  },
+  "projection_schema_version": "2.1.0",
+  "scope_ssot_version": "v2-mvp-scope-01",
+  "scope_freeze_ref": "a332c016cba27129410af27529ebd02aba3558db01fd2f158997228a446d23e0",
+  "data": {
+    "pack_id": "crewai-d1-real-runner-det-002",
+    "indexability_status": "INDEXABLE_REAL",
+    "substrate_id": "crewai",
+    "scenario_id": "d1_basic_pass",
+    "provenance": {
+      "substrate_ref": {
+        "substrate_id": "crewai",
+        "substrate_name": "CrewAI",
+        "upstream_repo": "https://github.com/crewAIInc/crewAI",
+        "upstream_tag": "v0.28.8",
+        "upstream_commit_sha": "f1a8c9e0d1b2c3a4b5c6d7e8f9a0b1c2d3e4f5a6"
+      },
+      "lock_ref": {
+        "lock_kind": "uv.lock",
+        "lock_path": "producers/crewai/uv.lock",
+        "lock_sha256": "7d17b92c044dffd56b422172e034b4f02e3716d20d68574f62c23d2b01367ee4"
+      },
+      "env_ref": {
+        "runner_type": "container",
+        "runner_id": "python",
+        "image_digest": "sha256:347b90cc16724873e8262a62128e64b13e32efeaeefa98dcd61d03cc088b6912",
+        "environment_fingerprint": {
+          "os": "linux",
+          "arch": "aarch64",
+          "runtime_type": "unknown",
+          "runtime_version": "unknown"
+        },
+        "executed_at": "2026-01-27T04:13:20Z",
+        "note": "Sealed by runner"
+      }
+    },
+    "hashes": {
+      "pack_root_hash": "pending",
+      "canonical_pack_root_hash": "0fc7cf63c6f9fd792b27f18d80ad3ad9ac041cab530d039406c553c1c4dd71b3"
+    },
+    "verify": null,
+    "evaluation": {
+      "run_id": "crewai-d1-real-runner-det-002",
+      "ruleset_id": "ruleset-v2.0.0",
+      "adjudicated_at": "2026-01-27T05:06:07.584Z",
+      "verdict": "PASS",
+      "results": [
+        {
+          "clause_id": "PROV-V2-01",
+          "verdict": "PASS",
+          "observed_value": {
+            "substrate_id": "crewai",
+            "substrate_name": "CrewAI",
+            "upstream_repo": "https://github.com/crewAIInc/crewAI",
+            "upstream_tag": "v0.28.8",
+            "upstream_commit_sha": "f1a8c9e0d1b2c3a4b5c6d7e8f9a0b1c2d3e4f5a6"
+          },
+          "evidence_pointer": "mplp://manifest/substrate_ref"
+        },
+        {
+          "clause_id": "PROV-V2-02",
+          "verdict": "PASS",
+          "observed_value": "7d17b92c044dffd56b422172e034b4f02e3716d20d68574f62c23d2b01367ee4",
+          "evidence_pointer": "mplp://manifest/lock_ref/lock_sha256"
+        },
+        {
+          "clause_id": "LIFECYCLE-V2-01",
+          "verdict": "PASS",
+          "observed_value": "PASS",
+          "evidence_pointer": "mplp://artifact/trace.json#/verdict"
+        },
+        {
+          "clause_id": "LIFECYCLE-V2-02",
+          "verdict": "PASS",
+          "observed_value": [
+            {
+              "timestamp": "2026-01-27T04:13:16.888605Z",
+              "event": "RUN_STARTED",
+              "data": {
+                "scenario_id": "d1_basic_pass",
+                "run_id": "crewai-d1-real-runner-det-002"
+              }
+            },
+            {
+              "timestamp": "2026-01-27T04:13:16.890060Z",
+              "event": "AGENT_CREATED",
+              "data": {
+                "role": "Researcher"
+              }
+            },
+            {
+              "timestamp": "2026-01-27T04:13:16.890062Z",
+              "event": "AGENT_CREATED",
+              "data": {
+                "role": "Writer"
+              }
+            },
+            {
+              "timestamp": "2026-01-27T04:13:17.212047Z",
+              "event": "CREW_COMPLETED",
+              "data": {
+                "result": "Agent stopped due to iteration limit or time limit."
+              }
+            }
+          ],
+          "evidence_pointer": "mplp://timeline/events.ndjson"
+        },
+        {
+          "clause_id": "TRUST-V2-01",
+          "verdict": "PASS",
+          "observed_value": "sha256:347b90cc16724873e8262a62128e64b13e32efeaeefa98dcd61d03cc088b6912",
+          "evidence_pointer": "mplp://manifest/env_ref/image_digest"
+        },
+        {
+          "clause_id": "DET-V2-01",
+          "verdict": "PASS",
+          "observed_value": "0fc7cf63c6f9fd792b27f18d80ad3ad9ac041cab530d039406c553c1c4dd71b3",
+          "evidence_pointer": "mplp://manifest/hashes/canonical_pack_root_hash"
+        },
+        {
+          "clause_id": "METADATA-V2-01",
+          "verdict": "PASS",
+          "observed_value": "2026-01-27T04:13:20Z",
+          "evidence_pointer": "mplp://manifest/env_ref/executed_at"
+        }
+      ]
+    },
+    "pointers": {},
+    "evidence_maturity_tier": "DECLARED",
+    "adjudicable_surfaces": {
+      "intent": false,
+      "plan": true,
+      "confirm": true,
+      "trace": true,
+      "snapshots": true
+    },
+    "interop_stack": [
+      "CrewAI"
+    ],
+    "profile_suite_id": "ps-v2-mvp-01",
+    "scope_claims": "Coverage reflects evidence maturity only; not endorsement or certification.",
+    "dispute_freeze_ref": {
+      "path": "governance/dispute-freeze-v2.md",
+      "sha256": "7fd00e40be310d52da80de54c939e78347c6593ee187ae1479035435841bf606"
+    }
+  }
+}

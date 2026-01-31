@@ -1,0 +1,13 @@
+{
+  "runner_id": "python",
+  "image_digest": "sha256:7020006261a76c664450977933a4dcebd81b1444798c6c0f2655cd257c1e51e5",
+  "image_tag": "mplp-runner:python",
+  "environment_fingerprint": {
+  "os": "linux",
+  "arch": "aarch64",
+  "runtime_type": "unknown",
+  "runtime_version": "unknown"
+},
+  "workdir": "/workspace",
+  "executed_at": "2026-01-27T04:16:19Z"
+}

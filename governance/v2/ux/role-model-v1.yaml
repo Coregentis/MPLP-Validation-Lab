@@ -1,0 +1,77 @@
+roles:
+  - id: "architect"
+    title: "Enterprise Architect"
+    intent: "Verify Interoperability & Standards"
+    primary_questions:
+      - "Can I chain LangGraph with MCP?"
+      - "Is the execution deterministic?"
+      - "What is the evidence structure?"
+    must_see_cases:
+      pass_precedent: "interop-mcp-a2a-langgraph-d1-real-runner-det-001"
+      fail_precedent: "mcp-d1-fail-benchmark-001"
+      shim_notice_case: "metagpt-d1-real-runner-det-001"
+    must_see_proof_targets:
+      - "mplp://timeline/event/3" # mcp_tool_call
+    must_show_blocks:
+      - "BLOCK_INTEROP_VISUALIZER"
+      - "BLOCK_VERDICT_BADGE"
+    required_disclaimer_tokens:
+      - "DISCL_NOT_CERTIFICATION"
+      - "DISCL_READING_AID_ONLY"
+
+  - id: "compliance"
+    title: "Compliance Officer"
+    intent: "Assess Regulatory Mapping"
+    primary_questions:
+      - "How does this map to EU AI Act?"
+      - "Where is the provenance seal?"
+      - "Is this a certification?"
+    must_see_cases:
+      pass_precedent: "interop-mcp-a2a-langgraph-d1-real-runner-det-001"
+      fail_precedent: "mcp-d1-fail-benchmark-001"
+      shim_notice_case: "metagpt-d1-real-runner-det-001"
+    must_see_proof_targets:
+      - "mplp://artifacts/verdict.json"
+    must_show_blocks:
+      - "BLOCK_REG_MAPPING_MATRIX"
+      - "BLOCK_DISCLAIMER_BANNER"
+    required_disclaimer_tokens:
+      - "DISCL_NOT_COMPLIANCE"
+      - "DISCL_READING_AID_ONLY"
+
+  - id: "auditor"
+    title: "Third-Party Auditor"
+    intent: "Verify Dispute & Root Cause"
+    primary_questions:
+      - "Where is the failure root cause?"
+      - "Is the seal broken?"
+      - "Can I replay this run?"
+    must_see_cases:
+      pass_precedent: "interop-mcp-a2a-langgraph-d1-real-runner-det-001"
+      fail_precedent: "mcp-d1-fail-benchmark-001"
+      shim_notice_case: "metagpt-d1-real-runner-det-001"
+    must_see_proof_targets:
+      - "mplp://artifacts/verdict.json"
+    must_show_blocks:
+      - "BLOCK_DISPUTE_PANEL"
+      - "BLOCK_EVIDENCE_DOCKET"
+    required_disclaimer_tokens:
+      - "DISCL_NO_ENDORSEMENT"
+
+  - id: "builder"
+    title: "Framework Developer"
+    intent: "Implement Evidence Protocol"
+    primary_questions:
+      - "What is the manifest schema?"
+      - "How do I emit A2A envelopes?"
+      - "Where is the LangGraph example?"
+    must_see_cases:
+      pass_precedent: "interop-mcp-a2a-langgraph-d1-real-runner-det-001"
+      fail_precedent: "mcp-d1-fail-benchmark-001"
+      shim_notice_case: "metagpt-d1-real-runner-det-001"
+    must_see_proof_targets:
+      - "mplp://artifacts/manifest.json"
+    must_show_blocks:
+      - "BLOCK_MANIFEST_VIEWER"
+    required_disclaimer_tokens:
+      - "DISCL_NOT_SDK"

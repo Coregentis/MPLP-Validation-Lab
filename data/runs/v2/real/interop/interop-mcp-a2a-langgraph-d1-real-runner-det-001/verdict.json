@@ -1,0 +1,10 @@
+{
+    "pack_id": "interop-mcp-a2a-langgraph-d1-real-runner-det-001",
+    "verdict": "PASS",
+    "adjudication_model": "deterministic_v1",
+    "evidence_pointers": {
+        "trace": "timeline/events.ndjson"
+    },
+    "justification": "Interop benchmark confirmed PASS by deterministic adjudication.",
+    "timestamp": "2026-01-27T03:54:49Z"
+}

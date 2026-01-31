@@ -1,0 +1,48 @@
+{
+  "verification_version": "2.0.0",
+  "verified_at": "2026-01-27T05:05:42.336Z",
+  "pack_id": "mcp-d1-real-runner-001",
+  "overall_status": "VERIFIED",
+  "execution_type": "REAL",
+  "execution_method": "mcp_sdk_in_process",
+  "checks": [
+    {
+      "check_id": "pack_structure",
+      "status": "PASS",
+      "details": "All required files present"
+    },
+    {
+      "check_id": "hash_integrity",
+      "status": "PASS",
+      "details": "All file hashes computed and verified"
+    },
+    {
+      "check_id": "real_execution",
+      "status": "PASS",
+      "details": "Evidence captured from real MCP SDK client-server interaction"
+    }
+  ],
+  "hash_verification": {
+    "expected_pack_root_hash": "1329b9592a9b6914ab1e2aa8e48c61ea8bc48025bbf2a55dfcba056a9401316e",
+    "computed_pack_root_hash": "1329b9592a9b6914ab1e2aa8e48c61ea8bc48025bbf2a55dfcba056a9401316e",
+    "match": true
+  },
+  "checked_files": [
+    {
+      "path": "artifacts/context.json",
+      "sha256": "f6a9f1f88d19049c7786e6afbdbe2397eadb5ce613cff46a62b97e4c65221d97"
+    },
+    {
+      "path": "artifacts/plan.json",
+      "sha256": "dd14d1b0ac17325ea9837b40c76aa431c53c5fe41e303b2bfc3edaa209f4a20a"
+    },
+    {
+      "path": "artifacts/confirm.json",
+      "sha256": "452c4605ada40d382e2cbf09b95beaa535d3efe49c111b90ab8d967e58f14e14"
+    },
+    {
+      "path": "artifacts/trace.json",
+      "sha256": "458d5eb6530ebda4714980fff98ce2cdfcbb71843e056709a7c0e9af92fed974"
+    }
+  ]
+}

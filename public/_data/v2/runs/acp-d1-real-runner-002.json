@@ -1,0 +1,285 @@
+{
+  "projection_type": "run_detail",
+  "generated_at": "2026-01-31T11:49:54.886Z",
+  "source_version": {
+    "lab_commit_sha": "dev",
+    "curated_index_version": "2.0.0"
+  },
+  "projection_schema_version": "2.1.0",
+  "scope_ssot_version": "v2-mvp-scope-01",
+  "scope_freeze_ref": "a332c016cba27129410af27529ebd02aba3558db01fd2f158997228a446d23e0",
+  "data": {
+    "pack_id": "acp-d1-real-runner-002",
+    "indexability_status": "INDEXABLE_SYNTHETIC",
+    "substrate_id": "acp",
+    "scenario_id": "d1_basic_pass",
+    "provenance": {
+      "protocol_ref": {
+        "protocol_name": "MPLP",
+        "repo": "https://github.com/mplp-protocol/mplp",
+        "schemas_version": "v2",
+        "commit_sha": "pending"
+      },
+      "substrate_ref": {
+        "substrate_id": "acp",
+        "substrate_name": "Agent Communication Protocol",
+        "upstream_repo": "https://github.com/mplp-protocol/acp-spec",
+        "upstream_tag": "v2.0.0"
+      },
+      "lock_ref": {
+        "lock_kind": "npm",
+        "lock_path": "producers/acp/package.json",
+        "lock_sha256": "e9fcce669555c6200637f29579a90a7f32864d53a211ede782679d275ed31349"
+      },
+      "env_ref": {
+        "runner_type": "container",
+        "runner_id": "node-20",
+        "image_digest": "sha256:3fcc03f6855704d78bbaee302ad655660362fa330360ba8c3dd09f15e5be0549",
+        "environment_fingerprint": {
+          "os": "linux",
+          "arch": "aarch64",
+          "runtime_type": "node",
+          "runtime_version": "20.20.0"
+        },
+        "executed_at": "2026-01-27T03:55:20Z",
+        "note": "Sealed by runner"
+      },
+      "lab_ref": {
+        "lab_repo": "https://github.com/mplp-protocol/validation-lab",
+        "lab_commit_sha": "unknown",
+        "lab_version": "v2.0.0"
+      },
+      "producer_ref": {
+        "producer_id": "acp",
+        "producer_path": "producers/acp",
+        "producer_commit_sha": "unknown",
+        "producer_version": "2.0.0"
+      },
+      "canonicalization_ref": {
+        "rules_version": "v2.0.0",
+        "rules_path": "canonicalization/rules.v2.md",
+        "hash_scope": [
+          "artifacts",
+          "timeline",
+          "reports/verify.report.json"
+        ]
+      }
+    },
+    "hashes": {
+      "pack_root_hash": "00b3dc4864c7ab713a1bee6bc7f97d7d9b22904de32141ef3b3480d35224f110",
+      "verify_report_hash": "ea9fb4f715573e81d8e507d156633b2b7f5693e15da63d68b328f6ce155bf151",
+      "verdict_hash": null,
+      "canonical_pack_root_hash": "b05d3f34b88a714034e75449f1b1e800e75e8914c4ef074a82504be6ba38bb78"
+    },
+    "verify": {
+      "verification_version": "2.0.0",
+      "verified_at": "2026-01-27T03:55:20.753Z",
+      "pack_id": "acp-d1-real-runner-002",
+      "overall_status": "VERIFIED",
+      "execution_type": "REAL",
+      "checks": [
+        {
+          "check_id": "pack_structure",
+          "status": "PASS"
+        },
+        {
+          "check_id": "hash_integrity",
+          "status": "PASS"
+        },
+        {
+          "check_id": "real_execution",
+          "status": "PASS"
+        }
+      ],
+      "hash_verification": {
+        "expected_pack_root_hash": "00b3dc4864c7ab713a1bee6bc7f97d7d9b22904de32141ef3b3480d35224f110",
+        "computed_pack_root_hash": "00b3dc4864c7ab713a1bee6bc7f97d7d9b22904de32141ef3b3480d35224f110",
+        "match": true
+      }
+    },
+    "evaluation": {
+      "run_id": "acp-d1-real-runner-002",
+      "ruleset_id": "ruleset-v2.0.0",
+      "adjudicated_at": "2026-01-27T05:06:07.585Z",
+      "verdict": "PASS",
+      "results": [
+        {
+          "clause_id": "PROV-V2-01",
+          "verdict": "PASS",
+          "observed_value": {
+            "substrate_id": "acp",
+            "substrate_name": "Agent Communication Protocol",
+            "upstream_repo": "https://github.com/mplp-protocol/acp-spec",
+            "upstream_tag": "v2.0.0"
+          },
+          "evidence_pointer": "mplp://manifest/substrate_ref"
+        },
+        {
+          "clause_id": "PROV-V2-02",
+          "verdict": "PASS",
+          "observed_value": "e9fcce669555c6200637f29579a90a7f32864d53a211ede782679d275ed31349",
+          "evidence_pointer": "mplp://manifest/lock_ref/lock_sha256"
+        },
+        {
+          "clause_id": "LIFECYCLE-V2-01",
+          "verdict": "PASS",
+          "observed_value": "PASS",
+          "evidence_pointer": "mplp://artifact/trace.json#/verdict"
+        },
+        {
+          "clause_id": "LIFECYCLE-V2-02",
+          "verdict": "PASS",
+          "observed_value": [
+            {
+              "timestamp": "2026-01-27T03:55:20.747Z",
+              "event": "RUN_STARTED",
+              "data": {
+                "scenario_id": "d1_basic_pass",
+                "run_id": "acp-d1-real-runner-002"
+              }
+            },
+            {
+              "timestamp": "2026-01-27T03:55:20.747Z",
+              "event": "ARTIFACT_WRITTEN",
+              "data": {
+                "artifact": "context.json"
+              }
+            },
+            {
+              "timestamp": "2026-01-27T03:55:20.747Z",
+              "event": "ARTIFACT_WRITTEN",
+              "data": {
+                "artifact": "plan.json"
+              }
+            },
+            {
+              "timestamp": "2026-01-27T03:55:20.747Z",
+              "event": "ARTIFACT_WRITTEN",
+              "data": {
+                "artifact": "confirm.json"
+              }
+            },
+            {
+              "timestamp": "2026-01-27T03:55:20.747Z",
+              "event": "acp_init",
+              "data": {
+                "version": "1.0",
+                "client_id": "mplp-test-client"
+              }
+            },
+            {
+              "timestamp": "2026-01-27T03:55:20.747Z",
+              "event": "acp_auth",
+              "data": {
+                "status": "authorized",
+                "token_type": "bearer"
+              }
+            },
+            {
+              "timestamp": "2026-01-27T03:55:20.747Z",
+              "event": "acp_negotiate",
+              "data": {
+                "agreed_version": "1.0",
+                "capabilities": [
+                  "get_agent_info",
+                  "post_message",
+                  "stream_events"
+                ]
+              }
+            },
+            {
+              "timestamp": "2026-01-27T03:55:20.747Z",
+              "event": "acp_invoke",
+              "data": {
+                "capability": "get_agent_info",
+                "params": {}
+              }
+            },
+            {
+              "timestamp": "2026-01-27T03:55:20.747Z",
+              "event": "acp_response",
+              "data": {
+                "status": "success",
+                "data": {
+                  "agent_id": "templar-01",
+                  "type": "orchestrator",
+                  "capabilities": [
+                    "get_agent_info",
+                    "post_message",
+                    "stream_events"
+                  ],
+                  "status": "online",
+                  "latency_ms": 42
+                }
+              }
+            },
+            {
+              "timestamp": "2026-01-27T03:55:20.747Z",
+              "event": "ARTIFACT_WRITTEN",
+              "data": {
+                "artifact": "trace.json"
+              }
+            },
+            {
+              "timestamp": "2026-01-27T03:55:20.747Z",
+              "event": "RUN_COMPLETED",
+              "data": {
+                "verdict": "PASS"
+              }
+            }
+          ],
+          "evidence_pointer": "mplp://timeline/events.ndjson"
+        },
+        {
+          "clause_id": "TRUST-V2-01",
+          "verdict": "PASS",
+          "observed_value": "sha256:3fcc03f6855704d78bbaee302ad655660362fa330360ba8c3dd09f15e5be0549",
+          "evidence_pointer": "mplp://manifest/env_ref/image_digest"
+        },
+        {
+          "clause_id": "DET-V2-01",
+          "verdict": "PASS",
+          "observed_value": "b05d3f34b88a714034e75449f1b1e800e75e8914c4ef074a82504be6ba38bb78",
+          "evidence_pointer": "mplp://manifest/hashes/canonical_pack_root_hash"
+        },
+        {
+          "clause_id": "METADATA-V2-01",
+          "verdict": "PASS",
+          "observed_value": "2026-01-27T03:55:20Z",
+          "evidence_pointer": "mplp://manifest/env_ref/executed_at"
+        }
+      ]
+    },
+    "repro": {
+      "command": "npm run produce:acp:d1-real -- --run-id=acp-d1-real-runner-002",
+      "working_dir": ".",
+      "expected_outputs": [
+        "data/runs/v2/real/acp/acp-d1-real-runner-002/manifest.json"
+      ]
+    },
+    "pointers": {
+      "manifest": "manifest.json",
+      "artifacts_dir": "artifacts/",
+      "timeline": "timeline/events.ndjson",
+      "verify_report": "reports/verify.report.json",
+      "integrity": "integrity/sha256sums.txt"
+    },
+    "evidence_maturity_tier": "REPRODUCED",
+    "adjudicable_surfaces": {
+      "intent": false,
+      "plan": true,
+      "confirm": true,
+      "trace": true,
+      "snapshots": true
+    },
+    "interop_stack": [
+      "ACP"
+    ],
+    "profile_suite_id": "ps-v2-mvp-01",
+    "scope_claims": "Coverage reflects evidence maturity only; not endorsement or certification.",
+    "dispute_freeze_ref": {
+      "path": "governance/dispute-freeze-v2.md",
+      "sha256": "7fd00e40be310d52da80de54c939e78347c6593ee187ae1479035435841bf606"
+    }
+  }
+}

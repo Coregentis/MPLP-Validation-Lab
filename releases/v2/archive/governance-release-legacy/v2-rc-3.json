@@ -1,0 +1,22 @@
+{
+    "release_id": "v2-rc-3",
+    "build_id": "v2-rc-20260127-1648-rc3",
+    "release_status": "DISPUTE_READY",
+    "release_date": "2026-01-27",
+    "anchors": {
+        "git_commit_sha": "0984b0888ecf2ad57edd6e291c46cc892b5b2abb"
+    },
+    "inventory_summary": {
+        "total_runs": 11,
+        "real_runs": 8,
+        "synthetic_runs": 3
+    },
+    "artifacts": {
+        "seal_record": "governance/v2-seal-rc3.md",
+        "index_projection": "public/_data/v2/runs/index.json"
+    },
+    "signatures": {
+        "engineer": "Jason Wang",
+        "role": "Validation Engineer"
+    }
+}

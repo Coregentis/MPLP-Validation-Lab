@@ -1,0 +1,190 @@
+# Substrate Registry V2
+#
+# SSOT for all supported substrates
+# 
+# This registry is the authoritative source for:
+# - Substrate metadata
+# - Upstream version pinning
+# - Producer and runner configuration
+# - Coverage matrix generation
+#
+# Enforced by: GATE-V2-SUBSTRATE-REGISTRY-01
+
+version: "2.0.0"
+
+substrates:
+  # Protocol-oriented substrates
+  - substrate_id: "mcp"
+    type: "protocol"
+    display_name: "Model Context Protocol"
+    description: "Protocol for tool use and context management"
+    upstream_repo: "https://github.com/modelcontextprotocol/mcp"
+    upstream_tag: "v0.1.0"  # Update when producing evidence
+    upstream_commit_sha: ""  # Must be populated when producing
+    lock_kind: "npm"  # npm package-lock.json
+    runner_id: "node-18"
+    producer_entry: "producers/mcp/produce.sh"
+    status: "planned"  # planned | implementing | active
+    priority: "p0"  # p0 = Phase 1 target
+  
+  - substrate_id: "acp"
+    type: "protocol"
+    display_name: "Agent Communication Protocol"
+    description: "Protocol for agent-to-agent communication"
+    upstream_repo: "https://github.com/acp-protocol/acp"
+    upstream_tag: "v1.0.0"  # Update when producing evidence
+    upstream_commit_sha: ""  # Must be populated when producing
+    lock_kind: "npm"
+    runner_id: "node-18"
+    producer_entry: "producers/acp/produce.sh"
+    status: "planned"
+    priority: "p0"  # p0 = Phase 1 target
+  
+  # Framework substrates
+  - substrate_id: "langchain"
+    type: "framework"
+    display_name: "LangChain"
+    description: "Framework for building LLM applications"
+    upstream_repo: "https://github.com/langchain-ai/langchain"
+    upstream_tag: "v0.1.0"  # Update when producing evidence
+    upstream_commit_sha: ""  # Must be populated when producing
+    lock_kind: "poetry"  # poetry.lock
+    runner_id: "python-3.11"
+    producer_entry: "producers/langchain/produce.sh"
+    status: "planned"
+    priority: "p1"  # p1 = Phase 2 target
+  
+  - substrate_id: "langgraph"
+    type: "framework"
+    display_name: "LangGraph"
+    description: "Framework for building stateful multi-actor applications"
+    upstream_repo: "https://github.com/langchain-ai/langgraph"
+    upstream_tag: "v0.1.0"  # Update when producing evidence
+    upstream_commit_sha: ""  # Must be populated when producing
+    lock_kind: "poetry"
+    runner_id: "python-3.11"
+    producer_entry: "producers/langgraph/produce.sh"
+    status: "planned"
+    priority: "p1"
+  
+  - substrate_id: "autogen"
+    type: "framework"
+    display_name: "AutoGen"
+    description: "Framework for multi-agent conversations"
+    upstream_repo: "https://github.com/microsoft/autogen"
+    upstream_tag: "v0.2.0"  # Update when producing evidence
+    upstream_commit_sha: ""  # Must be populated when producing
+    lock_kind: "pip"  # requirements.txt.lock
+    runner_id: "python-3.10"
+    producer_entry: "producers/autogen/produce.sh"
+    status: "planned"
+    priority: "p1"
+  
+  - substrate_id: "semantic-kernel"
+    type: "framework"
+    display_name: "Semantic Kernel"
+    description: "SDK for integrating LLMs into applications"
+    upstream_repo: "https://github.com/microsoft/semantic-kernel"
+    upstream_tag: "v1.0.0"  # Update when producing evidence
+    upstream_commit_sha: ""  # Must be populated when producing
+    lock_kind: "nuget"  # packages.lock.json
+    runner_id: "dotnet-8"
+    producer_entry: "producers/semantic-kernel/produce.sh"
+    status: "planned"
+    priority: "p1"
+  
+  - substrate_id: "metagpt"
+    type: "framework"
+    display_name: "MetaGPT"
+    description: "Multi-agent framework for software development"
+    upstream_repo: "https://github.com/geekan/MetaGPT"
+    upstream_tag: "v0.8.0"  # Update when producing evidence
+    upstream_commit_sha: ""  # Must be populated when producing
+    lock_kind: "poetry"
+    runner_id: "python-3.9"
+    producer_entry: "producers/metagpt/produce.sh"
+    status: "planned"
+    priority: "p1"
+  
+  - substrate_id: "a2a"
+    type: "protocol"
+    display_name: "Agent-to-Agent (A2A)"
+    description: "Protocol for agent-to-agent interactions"
+    upstream_repo: "https://github.com/a2a-protocol/a2a"
+    upstream_tag: "v0.1.0"  # Update when producing evidence
+    upstream_commit_sha: ""  # Must be populated when producing
+    lock_kind: "npm"
+    runner_id: "node-20"
+    producer_entry: "producers/a2a/produce.sh"
+    status: "planned"
+    priority: "p1"
+
+# Runner definitions
+runners:
+  - runner_id: "node-18"
+    base_image: "node:18-slim"
+    dockerfile: "runners/node/Dockerfile"
+  
+  - runner_id: "node-20"
+    base_image: "node:20-slim"
+    dockerfile: "runners/node/Dockerfile"
+  
+  - runner_id: "python-3.9"
+    base_image: "python:3.9-slim"
+    dockerfile: "runners/python/Dockerfile"
+  
+  - runner_id: "python-3.10"
+    base_image: "python:3.10-slim"
+    dockerfile: "runners/python/Dockerfile"
+  
+  - runner_id: "python-3.11"
+    base_image: "python:3.11-slim"
+    dockerfile: "runners/python/Dockerfile"
+  
+  - runner_id: "dotnet-8"
+    base_image: "mcr.microsoft.com/dotnet/sdk:8.0"
+    dockerfile: "runners/dotnet/Dockerfile"
+
+# Coverage matrix scenarios
+scenarios:
+  - scenario_id: "d1"
+    display_name: "D1: Basic Success"
+    description: "Basic success case with minimal complexity"
+    verdict_expected: "PASS"
+  
+  - scenario_id: "d2"
+    display_name: "D2: Failure Case"
+    description: "Intentional failure case with error evidence"
+    verdict_expected: "FAIL"
+  
+  - scenario_id: "d3"
+    display_name: "D3: Complex Multi-Step"
+    description: "Complex multi-step scenario with rich evidence"
+    verdict_expected: "PASS"
+  
+  - scenario_id: "d4"
+    display_name: "D4: Edge Case"
+    description: "Edge case or limitation demonstration"
+    verdict_expected: "PASS"
+
+# Validation rules
+validation:
+  required_fields:
+    - substrate_id
+    - type
+    - display_name
+    - upstream_repo
+    - upstream_tag
+    - lock_kind
+    - runner_id
+    - producer_entry
+  
+  allowed_types:
+    - protocol
+    - framework
+    - runtime
+  
+  allowed_priorities:
+    - p0  # Phase 1
+    - p1  # Phase 2
+    - p2  # Future

@@ -1,0 +1,103 @@
+{
+  "projection_type": "ia_entrypoints",
+  "generated_at": "2026-01-31T11:49:54.916Z",
+  "version": "v1",
+  "data": {
+    "ssot_type": "ia_entrypoints",
+    "version": "v1",
+    "roles": [
+      {
+        "id": "architect",
+        "label": "System Architect",
+        "description": "Evaluating MPLP for adoption",
+        "icon": "🏗️",
+        "primary_path": [
+          {
+            "label": "See Verified Evidence",
+            "url": "/runs/mcp-d1-real-runner-001",
+            "description": "Inspect a fully reproduced, bit-identical run."
+          },
+          {
+            "label": "Review Substrate Scope",
+            "url": "/coverage",
+            "description": "See which substrates are verified."
+          },
+          {
+            "label": "Check Determinism Proof",
+            "url": "/runs/mcp-d1-real-runner-001/evidence",
+            "description": "Verify deep hashes."
+          }
+        ]
+      },
+      {
+        "id": "compliance",
+        "label": "Compliance Officer",
+        "description": "Mapping to external standards",
+        "icon": "⚖️",
+        "primary_path": [
+          {
+            "label": "Regulatory Mapping",
+            "url": "/policies/reg-mapping",
+            "description": "Non-normative mapping to EU AI Act / ISO."
+          },
+          {
+            "label": "Understand Trust Boundary",
+            "url": "/coverage",
+            "description": "What is included vs excluded."
+          },
+          {
+            "label": "Review Dispute Policy",
+            "url": "/policies/dispute",
+            "description": "How adjudication works."
+          }
+        ]
+      },
+      {
+        "id": "auditor",
+        "label": "3rd Party Auditor",
+        "description": "Verifying failure handling",
+        "icon": "🔍",
+        "primary_path": [
+          {
+            "label": "Inspect Dispute Benchmark",
+            "url": "/runs/mcp-d1-fail-benchmark-001",
+            "description": "See a canonical FAIL with root cause."
+          },
+          {
+            "label": "Replay Instructions",
+            "url": "/runs/mcp-d1-fail-benchmark-001/repro",
+            "description": "Get the command to reproduce the failure."
+          },
+          {
+            "label": "Verify Integrity",
+            "url": "/runs/mcp-d1-fail-benchmark-001/integrity",
+            "description": "Check SHA256 sums."
+          }
+        ]
+      },
+      {
+        "id": "builder",
+        "label": "Protocol Builder",
+        "description": "Implementing runners",
+        "icon": "💻",
+        "primary_path": [
+          {
+            "label": "View Rulesets",
+            "url": "/rulesets",
+            "description": "Browse the law code."
+          },
+          {
+            "label": "See Evolution",
+            "url": "/rulesets",
+            "description": "Track diffpacks between versions."
+          },
+          {
+            "label": "Get Producer Tools",
+            "url": "https://github.com/mplp-protocol/mplp",
+            "description": "Link to SDK (External)."
+          }
+        ]
+      }
+    ]
+  }
+}

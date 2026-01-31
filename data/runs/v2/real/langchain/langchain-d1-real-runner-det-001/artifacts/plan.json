@@ -1,0 +1,39 @@
+{
+  "scenario_id": "d1_basic_pass",
+  "steps": [
+    {
+      "step_id": 1,
+      "action": "create_mcp_server",
+      "details": "Initialize real MCP server instance"
+    },
+    {
+      "step_id": 2,
+      "action": "create_mcp_client",
+      "details": "Initialize real MCP client instance"
+    },
+    {
+      "step_id": 3,
+      "action": "connect_transport",
+      "details": "Connect via InMemoryTransport"
+    },
+    {
+      "step_id": 4,
+      "action": "list_tools",
+      "details": "Request available tools via tools/list"
+    },
+    {
+      "step_id": 5,
+      "action": "call_tool",
+      "tool_name": "get_weather",
+      "input": {
+        "location": "San Francisco"
+      }
+    },
+    {
+      "step_id": 6,
+      "action": "capture_evidence",
+      "details": "Record actual SDK responses"
+    }
+  ],
+  "planned_at": "2026-01-27T03:54:48.894Z"
+}

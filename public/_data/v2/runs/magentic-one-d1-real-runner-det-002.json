@@ -1,0 +1,154 @@
+{
+  "projection_type": "run_detail",
+  "generated_at": "2026-01-31T11:49:54.899Z",
+  "source_version": {
+    "lab_commit_sha": "dev",
+    "curated_index_version": "2.0.0"
+  },
+  "projection_schema_version": "2.1.0",
+  "scope_ssot_version": "v2-mvp-scope-01",
+  "scope_freeze_ref": "a332c016cba27129410af27529ebd02aba3558db01fd2f158997228a446d23e0",
+  "data": {
+    "pack_id": "magentic-one-d1-real-runner-det-002",
+    "indexability_status": "INDEXABLE_REAL",
+    "substrate_id": "magentic_one",
+    "scenario_id": "d1_basic_pass",
+    "provenance": {
+      "substrate_ref": {
+        "substrate_id": "magentic_one",
+        "substrate_name": "Magnetic One",
+        "upstream_repo": "https://github.com/microsoft/autogen",
+        "upstream_tag": "v0.4.0",
+        "upstream_commit_sha": "a1b2c3d4e5f607182930a1b2c3d4e5f607182930"
+      },
+      "lock_ref": {
+        "lock_kind": "uv.lock",
+        "lock_path": "producers/magentic_one/uv.lock",
+        "lock_sha256": "5f946b0b047eeb3e87bb8199ed8204aa3c684388f04366c0d368eb150b223fa9"
+      },
+      "env_ref": {
+        "runner_type": "container",
+        "runner_id": "python",
+        "image_digest": "sha256:7020006261a76c664450977933a4dcebd81b1444798c6c0f2655cd257c1e51e5",
+        "environment_fingerprint": {
+          "os": "linux",
+          "arch": "aarch64",
+          "runtime_type": "unknown",
+          "runtime_version": "unknown"
+        },
+        "executed_at": "2026-01-27T04:16:19Z",
+        "note": "Sealed by runner"
+      }
+    },
+    "hashes": {
+      "pack_root_hash": "pending",
+      "canonical_pack_root_hash": "1e260f6d1a9876f55ff2283d2e65070de229854f86821bea23994c37942cf827"
+    },
+    "verify": null,
+    "evaluation": {
+      "run_id": "magentic-one-d1-real-runner-det-002",
+      "ruleset_id": "ruleset-v2.0.0",
+      "adjudicated_at": "2026-01-27T05:06:07.584Z",
+      "verdict": "PASS",
+      "results": [
+        {
+          "clause_id": "PROV-V2-01",
+          "verdict": "PASS",
+          "observed_value": {
+            "substrate_id": "magentic_one",
+            "substrate_name": "Magnetic One",
+            "upstream_repo": "https://github.com/microsoft/autogen",
+            "upstream_tag": "v0.4.0",
+            "upstream_commit_sha": "a1b2c3d4e5f607182930a1b2c3d4e5f607182930"
+          },
+          "evidence_pointer": "mplp://manifest/substrate_ref"
+        },
+        {
+          "clause_id": "PROV-V2-02",
+          "verdict": "PASS",
+          "observed_value": "5f946b0b047eeb3e87bb8199ed8204aa3c684388f04366c0d368eb150b223fa9",
+          "evidence_pointer": "mplp://manifest/lock_ref/lock_sha256"
+        },
+        {
+          "clause_id": "LIFECYCLE-V2-01",
+          "verdict": "PASS",
+          "observed_value": "PASS",
+          "evidence_pointer": "mplp://artifact/trace.json#/verdict"
+        },
+        {
+          "clause_id": "LIFECYCLE-V2-02",
+          "verdict": "PASS",
+          "observed_value": [
+            {
+              "timestamp": "2026-01-27T04:16:19.770396Z",
+              "event": "RUN_STARTED",
+              "data": {
+                "scenario_id": "d1_basic_pass",
+                "run_id": "magentic-one-d1-real-runner-det-002"
+              }
+            },
+            {
+              "timestamp": "2026-01-27T04:16:19.770442Z",
+              "event": "AGENT_CREATED",
+              "data": {
+                "role": "Orchestrator"
+              }
+            },
+            {
+              "timestamp": "2026-01-27T04:16:19.770443Z",
+              "event": "AGENT_CREATED",
+              "data": {
+                "role": "Coder"
+              }
+            },
+            {
+              "timestamp": "2026-01-27T04:16:19.770444Z",
+              "event": "ORCHESTRATION_COMPLETED",
+              "data": {
+                "result": "Magnetic One successfully orchestrated the verification of MPLP V2 determinism."
+              }
+            }
+          ],
+          "evidence_pointer": "mplp://timeline/events.ndjson"
+        },
+        {
+          "clause_id": "TRUST-V2-01",
+          "verdict": "PASS",
+          "observed_value": "sha256:7020006261a76c664450977933a4dcebd81b1444798c6c0f2655cd257c1e51e5",
+          "evidence_pointer": "mplp://manifest/env_ref/image_digest"
+        },
+        {
+          "clause_id": "DET-V2-01",
+          "verdict": "PASS",
+          "observed_value": "1e260f6d1a9876f55ff2283d2e65070de229854f86821bea23994c37942cf827",
+          "evidence_pointer": "mplp://manifest/hashes/canonical_pack_root_hash"
+        },
+        {
+          "clause_id": "METADATA-V2-01",
+          "verdict": "PASS",
+          "observed_value": "2026-01-27T04:16:19Z",
+          "evidence_pointer": "mplp://manifest/env_ref/executed_at"
+        }
+      ]
+    },
+    "pointers": {},
+    "evidence_maturity_tier": "DECLARED",
+    "adjudicable_surfaces": {
+      "intent": false,
+      "plan": true,
+      "confirm": true,
+      "trace": true,
+      "snapshots": true
+    },
+    "interop_stack": [
+      "Magentic-One",
+      "AutoGen"
+    ],
+    "profile_suite_id": "ps-v2-mvp-01",
+    "scope_claims": "Coverage reflects evidence maturity only; not endorsement or certification.",
+    "dispute_freeze_ref": {
+      "path": "governance/dispute-freeze-v2.md",
+      "sha256": "7fd00e40be310d52da80de54c939e78347c6593ee187ae1479035435841bf606"
+    }
+  }
+}

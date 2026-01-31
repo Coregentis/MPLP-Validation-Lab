@@ -1,0 +1,48 @@
+{
+  "projection_type": "evidence_index",
+  "run_id": "langgraph-d1-real-runner-det-001",
+  "generated_at": "2026-01-31T11:49:54.896Z",
+  "data": {
+    "mplp://manifest/substrate_ref": {
+      "substrate_id": "langgraph",
+      "substrate_name": "LangGraph",
+      "upstream_repo": "https://github.com/langchain-ai/langgraphjs",
+      "upstream_tag": "0.1.0",
+      "upstream_commit_sha": "n/a (npm-pinned)"
+    },
+    "mplp://manifest/lock_ref/lock_sha256": "placeholder",
+    "mplp://artifact/trace.json#/verdict": "PASS",
+    "mplp://timeline/events.ndjson": {
+      "count": 16,
+      "sample": [
+        {
+          "timestamp": "2026-01-27T03:54:48.893Z",
+          "event": "PROTOCOL_REF_RECORDED",
+          "data": {
+            "protocol": "MPLP",
+            "version": "v2"
+          }
+        },
+        {
+          "timestamp": "2026-01-27T03:54:48.893Z",
+          "event": "SUBSTRATE_REF_RECORDED",
+          "data": {
+            "substrate": "MCP",
+            "version": "v0.5.0"
+          }
+        },
+        {
+          "timestamp": "2026-01-27T03:54:48.894Z",
+          "event": "RUN_STARTED",
+          "data": {
+            "scenario_id": "d1_basic_pass",
+            "run_id": "mcp-d1-real-runner-det-001"
+          }
+        }
+      ]
+    },
+    "mplp://manifest/env_ref/image_digest": "sha256:1acf862e436ac0dafc6b5f7d24938c66688c233a24676ae7c9e7a17c9bb729a0",
+    "mplp://manifest/hashes/canonical_pack_root_hash": "65239b08b60f90d01a5be09d42c21b9ebd7100b2969d12d063af41d886be7f94",
+    "mplp://manifest/env_ref/executed_at": "2026-01-27T03:54:49Z"
+  }
+}

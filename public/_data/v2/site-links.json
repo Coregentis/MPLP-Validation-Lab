@@ -1,0 +1,107 @@
+{
+  "projection_type": "site_links",
+  "generated_at": "2026-01-31T11:49:54.914Z",
+  "source_version": {
+    "lab_commit_sha": "dev",
+    "curated_index_version": "2.0.0"
+  },
+  "data": {
+    "version": "2.0.0",
+    "cross_site_links": [
+      {
+        "source_page": "/runs",
+        "target_site": "docs",
+        "target_path": "/evaluation/overview",
+        "rationale": "Link to evaluation methodology documentation",
+        "rel_type": "related",
+        "link_text": "Learn about MPLP Evaluation"
+      },
+      {
+        "source_page": "/runs/[run_id]",
+        "target_site": "docs",
+        "target_path": "/evaluation/evidence-packs",
+        "rationale": "Link to evidence pack structure documentation",
+        "rel_type": "related",
+        "link_text": "Evidence Pack Documentation"
+      },
+      {
+        "source_page": "/rulesets",
+        "target_site": "docs",
+        "target_path": "/evaluation/rulesets",
+        "rationale": "Link to ruleset documentation",
+        "rel_type": "canonical",
+        "link_text": "Ruleset Documentation"
+      },
+      {
+        "source_page": "/policies/fmm",
+        "target_site": "docs",
+        "target_path": "/protocol/field-mapping",
+        "rationale": "Link to field mapping methodology",
+        "rel_type": "related",
+        "link_text": "Field Mapping Methodology"
+      },
+      {
+        "source_page": "/policies/contract",
+        "target_site": "docs",
+        "target_path": "/evaluation/indexability-contract",
+        "rationale": "Link to indexability contract definition",
+        "rel_type": "canonical",
+        "link_text": "Indexability Contract Definition"
+      },
+      {
+        "source_page": "/",
+        "target_site": "website",
+        "target_path": "/",
+        "rationale": "Link to main MPLP site",
+        "rel_type": "home",
+        "link_text": "MPLP Home"
+      },
+      {
+        "source_page": "/coverage",
+        "target_site": "website",
+        "target_path": "/governance/protocol",
+        "rationale": "Link to protocol governance context",
+        "rel_type": "related",
+        "link_text": "Protocol Governance"
+      }
+    ],
+    "expected_backlinks": {
+      "from_website": [
+        {
+          "source_path": "/tools",
+          "expected_target": "/runs",
+          "rationale": "Website should link to Lab runs from tools page"
+        }
+      ],
+      "from_docs": [
+        {
+          "source_path": "/evaluation/overview",
+          "expected_target": "/runs",
+          "rationale": "Docs should link to Lab runs from evaluation overview"
+        },
+        {
+          "source_path": "/evaluation/evidence-packs",
+          "expected_target": "/runs",
+          "rationale": "Docs should link to Lab runs as examples"
+        }
+      ]
+    },
+    "rules": [
+      {
+        "name": "No hardcoded cross-site URLs",
+        "description": "All cross-site links must use hosts.ts + this linkmap",
+        "enforcement_gate": "GATE-V2-CROSSLINK-SSOT-01"
+      },
+      {
+        "name": "No localhost references",
+        "description": "No localhost or preview domain links allowed",
+        "enforcement_gate": "GATE-V2-HOST-ALLOW-01"
+      },
+      {
+        "name": "Canonical host enforcement",
+        "description": "All canonical URLs must use CANONICAL_HOST from hosts.ts",
+        "enforcement_gate": "GATE-V2-CANONICAL-01"
+      }
+    ]
+  }
+}

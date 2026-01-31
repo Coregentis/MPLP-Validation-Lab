@@ -1,0 +1,26 @@
+{
+  "verification_version": "2.0.0",
+  "verified_at": "2026-01-27T03:55:17.713Z",
+  "pack_id": "acp-d1-real-runner-001",
+  "overall_status": "VERIFIED",
+  "execution_type": "REAL",
+  "checks": [
+    {
+      "check_id": "pack_structure",
+      "status": "PASS"
+    },
+    {
+      "check_id": "hash_integrity",
+      "status": "PASS"
+    },
+    {
+      "check_id": "real_execution",
+      "status": "PASS"
+    }
+  ],
+  "hash_verification": {
+    "expected_pack_root_hash": "7165b239c85e781f1a932f31f674305cdd54aba9e9c567d4401c162aed65b6c8",
+    "computed_pack_root_hash": "7165b239c85e781f1a932f31f674305cdd54aba9e9c567d4401c162aed65b6c8",
+    "match": true
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "projection_type": "evidence_index",
+  "run_id": "acp-d1-real-runner-001",
+  "generated_at": "2026-01-31T11:49:54.885Z",
+  "data": {
+    "mplp://manifest/substrate_ref": {
+      "substrate_id": "acp",
+      "substrate_name": "Agent Communication Protocol",
+      "upstream_repo": "https://github.com/mplp-protocol/acp-spec",
+      "upstream_tag": "v2.0.0"
+    },
+    "mplp://manifest/lock_ref/lock_sha256": "e9fcce669555c6200637f29579a90a7f32864d53a211ede782679d275ed31349",
+    "mplp://artifact/trace.json#/verdict": "PASS",
+    "mplp://timeline/events.ndjson": {
+      "count": 11,
+      "sample": [
+        {
+          "timestamp": "2026-01-27T03:55:17.708Z",
+          "event": "RUN_STARTED",
+          "data": {
+            "scenario_id": "d1_basic_pass",
+            "run_id": "acp-d1-real-runner-001"
+          }
+        },
+        {
+          "timestamp": "2026-01-27T03:55:17.708Z",
+          "event": "ARTIFACT_WRITTEN",
+          "data": {
+            "artifact": "context.json"
+          }
+        },
+        {
+          "timestamp": "2026-01-27T03:55:17.708Z",
+          "event": "ARTIFACT_WRITTEN",
+          "data": {
+            "artifact": "plan.json"
+          }
+        }
+      ]
+    },
+    "mplp://manifest/env_ref/image_digest": "sha256:391900334eea6adfe14348803d1c2231dcd1d4f60e94929ca7cbb7966f25ce29",
+    "mplp://manifest/hashes/canonical_pack_root_hash": "b05d3f34b88a714034e75449f1b1e800e75e8914c4ef074a82504be6ba38bb78",
+    "mplp://manifest/env_ref/executed_at": "2026-01-27T03:55:17Z"
+  }
+}

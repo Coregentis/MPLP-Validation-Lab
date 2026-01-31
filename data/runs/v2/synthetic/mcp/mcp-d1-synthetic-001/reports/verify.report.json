@@ -1,0 +1,41 @@
+{
+  "verification_version": "2.0.0",
+  "verified_at": "2026-01-26T10:36:14.667Z",
+  "pack_id": "mcp-d1-basic-pass-001",
+  "overall_status": "VERIFIED",
+  "checks": [
+    {
+      "check_id": "pack_structure",
+      "status": "PASS",
+      "details": "All required files present"
+    },
+    {
+      "check_id": "hash_integrity",
+      "status": "PASS",
+      "details": "All file hashes computed and verified"
+    }
+  ],
+  "hash_verification": {
+    "expected_pack_root_hash": "e056417ca16291b4553df13d12bc39c97fcaa0daafa2aae8c40eb63fbe7ec55b",
+    "computed_pack_root_hash": "e056417ca16291b4553df13d12bc39c97fcaa0daafa2aae8c40eb63fbe7ec55b",
+    "match": true
+  },
+  "checked_files": [
+    {
+      "path": "artifacts/context.json",
+      "sha256": "362d56c55c1d50578d7ac656b99b039c0461663e35455d127a14955a2454e862"
+    },
+    {
+      "path": "artifacts/plan.json",
+      "sha256": "f5accd63c94e3bf4e6d95551d87d205850752be006e90a20b2a20051d6d662b9"
+    },
+    {
+      "path": "artifacts/confirm.json",
+      "sha256": "ee2b6e8b84e7555ce1b37abcf74849447fa1e2f06eb005f8013451d095cae504"
+    },
+    {
+      "path": "artifacts/trace.json",
+      "sha256": "376715563824f33917a7118cfb61c2214283418db7b8fab42c0d5c90fd51b525"
+    }
+  ]
+}

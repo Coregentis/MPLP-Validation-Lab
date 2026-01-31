@@ -1,0 +1,11 @@
+{"timestamp":"2026-01-27T03:55:20.747Z","event":"RUN_STARTED","data":{"scenario_id":"d1_basic_pass","run_id":"acp-d1-real-runner-002"}}
+{"timestamp":"2026-01-27T03:55:20.747Z","event":"ARTIFACT_WRITTEN","data":{"artifact":"context.json"}}
+{"timestamp":"2026-01-27T03:55:20.747Z","event":"ARTIFACT_WRITTEN","data":{"artifact":"plan.json"}}
+{"timestamp":"2026-01-27T03:55:20.747Z","event":"ARTIFACT_WRITTEN","data":{"artifact":"confirm.json"}}
+{"timestamp":"2026-01-27T03:55:20.747Z","event":"acp_init","data":{"version":"1.0","client_id":"mplp-test-client"}}
+{"timestamp":"2026-01-27T03:55:20.747Z","event":"acp_auth","data":{"status":"authorized","token_type":"bearer"}}
+{"timestamp":"2026-01-27T03:55:20.747Z","event":"acp_negotiate","data":{"agreed_version":"1.0","capabilities":["get_agent_info","post_message","stream_events"]}}
+{"timestamp":"2026-01-27T03:55:20.747Z","event":"acp_invoke","data":{"capability":"get_agent_info","params":{}}}
+{"timestamp":"2026-01-27T03:55:20.747Z","event":"acp_response","data":{"status":"success","data":{"agent_id":"templar-01","type":"orchestrator","capabilities":["get_agent_info","post_message","stream_events"],"status":"online","latency_ms":42}}}
+{"timestamp":"2026-01-27T03:55:20.747Z","event":"ARTIFACT_WRITTEN","data":{"artifact":"trace.json"}}
+{"timestamp":"2026-01-27T03:55:20.747Z","event":"RUN_COMPLETED","data":{"verdict":"PASS"}}

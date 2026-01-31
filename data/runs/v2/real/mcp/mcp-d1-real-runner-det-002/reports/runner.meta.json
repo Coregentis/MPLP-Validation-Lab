@@ -1,0 +1,13 @@
+{
+  "runner_id": "node-20",
+  "image_digest": "sha256:f3809b2c1df82788500f72ea60f894284755f85fdd554604abb63bbe0bfc7b71",
+  "image_tag": "mplp-runner:node-20",
+  "environment_fingerprint": {
+  "os": "linux",
+  "arch": "aarch64",
+  "runtime_type": "node",
+  "runtime_version": "20.20.0"
+},
+  "workdir": "/workspace",
+  "executed_at": "2026-01-27T03:54:51Z"
+}

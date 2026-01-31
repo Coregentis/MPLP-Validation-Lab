@@ -1,0 +1,35 @@
+{
+  "scenario_id": "d1_basic_pass",
+  "steps": [
+    {
+      "step_id": 1,
+      "action": "register_tool",
+      "tool_name": "get_weather",
+      "tool_schema": {
+        "name": "get_weather",
+        "description": "Get current weather for a location",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "location": {
+              "type": "string",
+              "description": "City name"
+            }
+          },
+          "required": [
+            "location"
+          ]
+        }
+      }
+    },
+    {
+      "step_id": 2,
+      "action": "invoke_tool",
+      "tool_name": "get_weather",
+      "input": {
+        "location": "San Francisco"
+      }
+    }
+  ],
+  "planned_at": "2026-01-26T10:36:14.655Z"
+}

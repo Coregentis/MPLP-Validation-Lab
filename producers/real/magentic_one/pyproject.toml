@@ -1,0 +1,13 @@
+[project]
+name = "magentic-one-producer"
+version = "2.0.0"
+description = "Magnetic One substrate evidence producer"
+requires-python = ">=3.11"
+dependencies = [
+    "autogen-agentchat==0.2.40",
+    "autogen-magentic-one==0.0.1",
+    "langchain-community",
+]
+
+[tool.uv]
+managed = true

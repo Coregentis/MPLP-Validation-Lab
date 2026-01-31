@@ -1,0 +1,30 @@
+{
+  "scenario_id": "d1_basic_pass",
+  "execution_start": "2026-01-27T03:54:48.894Z",
+  "execution_end": "2026-01-27T03:54:48.896Z",
+  "execution_method": "real_mcp_sdk_in_process",
+  "tool_invocations": [
+    {
+      "tool_name": "get_weather",
+      "input": {
+        "location": "San Francisco"
+      },
+      "output": {
+        "location": "San Francisco",
+        "temperature": 72,
+        "conditions": "sunny",
+        "humidity": 65,
+        "source": "deterministic_test_data"
+      },
+      "status": "success",
+      "captured_from": "real_mcp_sdk_request",
+      "proof": "timeline_event_correlation"
+    }
+  ],
+  "tools_registered": 1,
+  "tools_available": [
+    "get_weather"
+  ],
+  "verdict": "PASS",
+  "execution_type": "REAL"
+}

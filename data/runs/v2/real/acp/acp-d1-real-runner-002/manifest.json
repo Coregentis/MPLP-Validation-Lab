@@ -1,0 +1,77 @@
+{
+  "pack_id": "acp-d1-real-runner-002",
+  "pack_layout_version": "2",
+  "indexability_status": "INDEXABLE_SYNTHETIC",
+  "scenario_id": "d1_basic_pass",
+  "execution_type": "REAL",
+  "protocol_ref": {
+    "protocol_name": "MPLP",
+    "repo": "https://github.com/mplp-protocol/mplp",
+    "schemas_version": "v2",
+    "commit_sha": "pending"
+  },
+  "substrate_ref": {
+    "substrate_id": "acp",
+    "substrate_name": "Agent Communication Protocol",
+    "upstream_repo": "https://github.com/mplp-protocol/acp-spec",
+    "upstream_tag": "v2.0.0"
+  },
+  "lock_ref": {
+    "lock_kind": "npm",
+    "lock_path": "producers/acp/package.json",
+    "lock_sha256": "e9fcce669555c6200637f29579a90a7f32864d53a211ede782679d275ed31349"
+  },
+  "env_ref": {
+    "runner_type": "container",
+    "runner_id": "node-20",
+    "image_digest": "sha256:3fcc03f6855704d78bbaee302ad655660362fa330360ba8c3dd09f15e5be0549",
+    "environment_fingerprint": {
+      "os": "linux",
+      "arch": "aarch64",
+      "runtime_type": "node",
+      "runtime_version": "20.20.0"
+    },
+    "executed_at": "2026-01-27T03:55:20Z",
+    "note": "Sealed by runner"
+  },
+  "lab_ref": {
+    "lab_repo": "https://github.com/mplp-protocol/validation-lab",
+    "lab_commit_sha": "unknown",
+    "lab_version": "v2.0.0"
+  },
+  "producer_ref": {
+    "producer_id": "acp",
+    "producer_path": "producers/acp",
+    "producer_commit_sha": "unknown",
+    "producer_version": "2.0.0"
+  },
+  "canonicalization_ref": {
+    "rules_version": "v2.0.0",
+    "rules_path": "canonicalization/rules.v2.md",
+    "hash_scope": [
+      "artifacts",
+      "timeline",
+      "reports/verify.report.json"
+    ]
+  },
+  "hashes": {
+    "pack_root_hash": "00b3dc4864c7ab713a1bee6bc7f97d7d9b22904de32141ef3b3480d35224f110",
+    "verify_report_hash": "ea9fb4f715573e81d8e507d156633b2b7f5693e15da63d68b328f6ce155bf151",
+    "verdict_hash": null,
+    "canonical_pack_root_hash": "b05d3f34b88a714034e75449f1b1e800e75e8914c4ef074a82504be6ba38bb78"
+  },
+  "repro": {
+    "command": "npm run produce:acp:d1-real -- --run-id=acp-d1-real-runner-002",
+    "working_dir": ".",
+    "expected_outputs": [
+      "data/runs/v2/real/acp/acp-d1-real-runner-002/manifest.json"
+    ]
+  },
+  "paths": {
+    "manifest": "manifest.json",
+    "artifacts_dir": "artifacts/",
+    "timeline": "timeline/events.ndjson",
+    "verify_report": "reports/verify.report.json",
+    "integrity": "integrity/sha256sums.txt"
+  }
+}

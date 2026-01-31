@@ -1,0 +1,13 @@
+{
+    "build_id": "v2-rc-20260127-1300",
+    "git_commit": "7e0b502fae4d6530ccae076305cf1baf98d285d1",
+    "ruleset_version": "2.0.0",
+    "projection_version": "2.0.0",
+    "indexable_run_count": {
+        "total": 10,
+        "real": 7,
+        "synthetic": 3
+    },
+    "canonicalization_rules_version": "2.0.0",
+    "timestamp_sgt": "2026-01-27T13:00:27+08:00"
+}

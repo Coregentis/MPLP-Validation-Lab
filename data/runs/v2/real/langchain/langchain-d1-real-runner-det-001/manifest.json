@@ -1,0 +1,89 @@
+{
+  "pack_id": "langchain-d1-real-runner-det-001",
+  "pack_layout_version": "2",
+  "indexability_status": "INDEXABLE_REAL",
+  "scenario_id": "d1_basic_pass",
+  "execution_type": "REAL",
+  "evidence_maturity_tier": "REPRODUCED",
+  "interop_stack": [
+    "LangChain"
+  ],
+  "adjudicable_surfaces": {
+    "intent": true,
+    "plan": true,
+    "confirm": true,
+    "trace": true,
+    "snapshots": true
+  },
+  "protocol_ref": {
+    "protocol_name": "MPLP",
+    "repo": "https://github.com/mplp-protocol/mplp",
+    "schemas_version": "v2",
+    "commit_sha": "unknown"
+  },
+  "substrate_ref": {
+    "substrate_id": "langchain",
+    "substrate_name": "LangChain",
+    "upstream_repo": "https://github.com/langchain-ai/langchainjs",
+    "upstream_tag": "0.1.0",
+    "upstream_commit_sha": "n/a (npm-pinned)"
+  },
+  "lock_ref": {
+    "lock_kind": "npm",
+    "lock_path": "producers/langchain/package-lock.json",
+    "lock_sha256": "placeholder"
+  },
+  "env_ref": {
+    "runner_type": "container",
+    "runner_id": "node-20",
+    "image_digest": "sha256:1acf862e436ac0dafc6b5f7d24938c66688c233a24676ae7c9e7a17c9bb729a0",
+    "environment_fingerprint": {
+      "os": "linux",
+      "arch": "aarch64",
+      "runtime_type": "node",
+      "runtime_version": "20.20.0"
+    },
+    "executed_at": "2026-01-27T03:54:49Z",
+    "note": "Sealed by runner"
+  },
+  "lab_ref": {
+    "lab_repo": "https://github.com/mplp-protocol/validation-lab",
+    "lab_commit_sha": "unknown",
+    "lab_version": "v2.0.0"
+  },
+  "producer_ref": {
+    "producer_id": "langchain",
+    "producer_path": "producers/langchain",
+    "producer_commit_sha": "unknown",
+    "producer_version": "2.0.0"
+  },
+  "canonicalization_ref": {
+    "rules_version": "v2.0.0",
+    "rules_path": "canonicalization/rules.v2.md",
+    "hash_scope": [
+      "artifacts",
+      "timeline",
+      "reports/verify.report.json"
+    ]
+  },
+  "hashes": {
+    "pack_root_hash": "65239b08b60f90d01a5be09d42c21b9ebd7100b2969d12d063af41d886be7f94",
+    "verify_report_hash": "pending",
+    "verdict_hash": null,
+    "canonical_pack_root_hash": "65239b08b60f90d01a5be09d42c21b9ebd7100b2969d12d063af41d886be7f94"
+  },
+  "repro": {
+    "command": "npm run produce:langchain:d1-real",
+    "working_dir": ".",
+    "expected_outputs": [
+      "data/runs/v2/real/langchain/langchain-d1-real-runner-det-001/manifest.json"
+    ]
+  },
+  "paths": {
+    "manifest": "manifest.json",
+    "artifacts_dir": "artifacts/",
+    "timeline": "timeline/events.ndjson",
+    "verify_report": "reports/verify.report.json",
+    "integrity": "integrity/sha256sums.txt"
+  }
+}

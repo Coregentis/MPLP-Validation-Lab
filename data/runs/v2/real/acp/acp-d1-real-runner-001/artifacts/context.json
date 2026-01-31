@@ -1,0 +1,9 @@
+{
+  "scenario_id": "d1_basic_pass",
+  "protocol": "MPLP",
+  "substrate": "ACP",
+  "objective": "Execute real ACP handshake and invocation baseline",
+  "established_at": "2026-01-27T03:55:17.708Z",
+  "execution_type": "REAL",
+  "transport_type": "simulated-protocol"
+}

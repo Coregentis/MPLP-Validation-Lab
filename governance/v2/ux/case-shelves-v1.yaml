@@ -1,0 +1,25 @@
+shelves:
+  - id: "precedents"
+    title: "Latest Precedents"
+    criteria: "Recent REAL runs with PASS verdict demonstrating key capabilities."
+    pinned_cases:
+      - id: "interop-mcp-a2a-langgraph-d1-real-runner-det-001"
+        why_this_matters: "First Verified Interop: LangGraph + MCP + A2A."
+      - id: "langchain-d1-real-runner-det-001"
+        why_this_matters: "Standard LangChain Reference Implementation."
+
+  - id: "failures"
+    title: "Dispute Benchmarks"
+    criteria: "Runs specifically designed to fail boundaries for auditor testing."
+    pinned_cases:
+      - id: "mcp-d1-fail-benchmark-001"
+        why_this_matters: "Benchmark for Root Cause Pointer resolution."
+
+  - id: "shims"
+    title: "Shimmed Environments"
+    criteria: "Real runs executed in Node Shims pending native container support."
+    pinned_cases:
+      - id: "metagpt-d1-real-runner-det-001"
+        why_this_matters: "MetaGPT executing in Node20 Shim (Transparency Disclosure)."
+      - id: "semantickernel-d1-real-runner-det-001"
+        why_this_matters: "Semantic Kernel executing in Node20 Shim (Transparency Disclosure)."

@@ -1,0 +1,4 @@
+{"timestamp": "2026-01-27T04:13:16.888605Z", "event": "RUN_STARTED", "data": {"scenario_id": "d1_basic_pass", "run_id": "crewai-d1-real-runner-det-002"}}
+{"timestamp": "2026-01-27T04:13:16.890060Z", "event": "AGENT_CREATED", "data": {"role": "Researcher"}}
+{"timestamp": "2026-01-27T04:13:16.890062Z", "event": "AGENT_CREATED", "data": {"role": "Writer"}}
+{"timestamp": "2026-01-27T04:13:17.212047Z", "event": "CREW_COMPLETED", "data": {"result": "Agent stopped due to iteration limit or time limit."}}

@@ -1,0 +1,291 @@
+{
+  "projection_type": "run_detail",
+  "generated_at": "2026-01-31T11:49:54.911Z",
+  "source_version": {
+    "lab_commit_sha": "dev",
+    "curated_index_version": "2.0.0"
+  },
+  "projection_schema_version": "2.1.0",
+  "scope_ssot_version": "v2-mvp-scope-01",
+  "scope_freeze_ref": "a332c016cba27129410af27529ebd02aba3558db01fd2f158997228a446d23e0",
+  "data": {
+    "pack_id": "mcp-d1-synthetic-001",
+    "indexability_status": "INDEXABLE_SYNTHETIC",
+    "substrate_id": "mcp",
+    "scenario_id": "d1_basic_pass",
+    "provenance": {
+      "protocol_ref": {
+        "protocol_name": "MPLP",
+        "repo": "https://github.com/mplp-protocol/mplp",
+        "schemas_version": "v2",
+        "commit_sha": "pending",
+        "schema_bundle_sha256": "pending"
+      },
+      "substrate_ref": {
+        "substrate_id": "mcp",
+        "substrate_name": "Model Context Protocol",
+        "upstream_repo": "https://github.com/modelcontextprotocol/mcp",
+        "upstream_tag": "v0.5.0",
+        "upstream_commit_sha": "pending"
+      },
+      "lock_ref": {
+        "lock_kind": "npm",
+        "lock_path": "producers/mcp/package-lock.json",
+        "lock_sha256": "655d04b750b76c14c278f8d61e78eaa6e46159d6709e9e0f0d37cf5f6ffd8619"
+      },
+      "env_ref": {
+        "runner_type": "container",
+        "runner_id": "node-20",
+        "image_digest": "synthetic-bypass",
+        "environment_fingerprint": "synthetic-bypass",
+        "executed_at": "2026-01-26T10:36:14.655Z"
+      },
+      "lab_ref": {
+        "lab_repo": "https://github.com/mplp-protocol/validation-lab",
+        "lab_commit_sha": "7e0b502fae4d6530ccae076305cf1baf98d285d1",
+        "lab_version": "v2.0.0"
+      },
+      "producer_ref": {
+        "producer_id": "mcp",
+        "producer_path": "producers/mcp",
+        "producer_commit_sha": "7e0b502fae4d6530ccae076305cf1baf98d285d1",
+        "producer_version": "2.0.0"
+      },
+      "canonicalization_ref": {
+        "rules_version": "v2.0.0",
+        "rules_path": "canonicalization/rules.v2.md",
+        "hash_scope": [
+          "artifacts",
+          "timeline",
+          "reports/verify.report.json"
+        ]
+      }
+    },
+    "hashes": {
+      "pack_root_hash": "e056417ca16291b4553df13d12bc39c97fcaa0daafa2aae8c40eb63fbe7ec55b",
+      "canonical_pack_root_hash": "e056417ca16291b4553df13d12bc39c97fcaa0daafa2aae8c40eb63fbe7ec55b",
+      "verify_report_hash": "aab5426fc4c5746a6dbc95a6cd1ab2735e19c27ab9c9572535e9cc44652f02c5",
+      "verdict_hash": null
+    },
+    "verify": {
+      "verification_version": "2.0.0",
+      "verified_at": "2026-01-26T10:36:14.667Z",
+      "pack_id": "mcp-d1-basic-pass-001",
+      "overall_status": "VERIFIED",
+      "checks": [
+        {
+          "check_id": "pack_structure",
+          "status": "PASS",
+          "details": "All required files present"
+        },
+        {
+          "check_id": "hash_integrity",
+          "status": "PASS",
+          "details": "All file hashes computed and verified"
+        }
+      ],
+      "hash_verification": {
+        "expected_pack_root_hash": "e056417ca16291b4553df13d12bc39c97fcaa0daafa2aae8c40eb63fbe7ec55b",
+        "computed_pack_root_hash": "e056417ca16291b4553df13d12bc39c97fcaa0daafa2aae8c40eb63fbe7ec55b",
+        "match": true
+      },
+      "checked_files": [
+        {
+          "path": "artifacts/context.json",
+          "sha256": "362d56c55c1d50578d7ac656b99b039c0461663e35455d127a14955a2454e862"
+        },
+        {
+          "path": "artifacts/plan.json",
+          "sha256": "f5accd63c94e3bf4e6d95551d87d205850752be006e90a20b2a20051d6d662b9"
+        },
+        {
+          "path": "artifacts/confirm.json",
+          "sha256": "ee2b6e8b84e7555ce1b37abcf74849447fa1e2f06eb005f8013451d095cae504"
+        },
+        {
+          "path": "artifacts/trace.json",
+          "sha256": "376715563824f33917a7118cfb61c2214283418db7b8fab42c0d5c90fd51b525"
+        }
+      ]
+    },
+    "evaluation": {
+      "run_id": "mcp-d1-synthetic-001",
+      "ruleset_id": "ruleset-v2.0.0",
+      "adjudicated_at": "2026-01-27T05:06:07.582Z",
+      "verdict": "PASS",
+      "results": [
+        {
+          "clause_id": "PROV-V2-01",
+          "verdict": "PASS",
+          "observed_value": {
+            "substrate_id": "mcp",
+            "substrate_name": "Model Context Protocol",
+            "upstream_repo": "https://github.com/modelcontextprotocol/mcp",
+            "upstream_tag": "v0.5.0",
+            "upstream_commit_sha": "pending"
+          },
+          "evidence_pointer": "mplp://manifest/substrate_ref"
+        },
+        {
+          "clause_id": "PROV-V2-02",
+          "verdict": "PASS",
+          "observed_value": "655d04b750b76c14c278f8d61e78eaa6e46159d6709e9e0f0d37cf5f6ffd8619",
+          "evidence_pointer": "mplp://manifest/lock_ref/lock_sha256"
+        },
+        {
+          "clause_id": "LIFECYCLE-V2-01",
+          "verdict": "PASS",
+          "observed_value": "PASS",
+          "evidence_pointer": "mplp://artifact/trace.json#/verdict"
+        },
+        {
+          "clause_id": "LIFECYCLE-V2-02",
+          "verdict": "PASS",
+          "observed_value": [
+            {
+              "timestamp": "2026-01-26T10:36:14.655Z",
+              "event": "RUN_STARTED",
+              "data": {
+                "scenario_id": "d1_basic_pass"
+              }
+            },
+            {
+              "timestamp": "2026-01-26T10:36:14.655Z",
+              "event": "PROTOCOL_REF_RECORDED",
+              "data": {
+                "protocol": "MPLP",
+                "version": "v2"
+              }
+            },
+            {
+              "timestamp": "2026-01-26T10:36:14.655Z",
+              "event": "SUBSTRATE_REF_RECORDED",
+              "data": {
+                "substrate": "MCP",
+                "version": "v0.5.0"
+              }
+            },
+            {
+              "timestamp": "2026-01-26T10:36:14.655Z",
+              "event": "ARTIFACT_WRITTEN",
+              "data": {
+                "artifact": "context.json"
+              }
+            },
+            {
+              "timestamp": "2026-01-26T10:36:14.655Z",
+              "event": "ARTIFACT_WRITTEN",
+              "data": {
+                "artifact": "plan.json"
+              }
+            },
+            {
+              "timestamp": "2026-01-26T10:36:14.655Z",
+              "event": "ARTIFACT_WRITTEN",
+              "data": {
+                "artifact": "confirm.json"
+              }
+            },
+            {
+              "timestamp": "2026-01-26T10:36:14.655Z",
+              "event": "TOOL_REGISTERED",
+              "data": {
+                "tool_name": "get_weather"
+              }
+            },
+            {
+              "timestamp": "2026-01-26T10:36:14.655Z",
+              "event": "TOOL_INVOKED",
+              "data": {
+                "tool_name": "get_weather",
+                "input": {
+                  "location": "San Francisco"
+                }
+              }
+            },
+            {
+              "timestamp": "2026-01-26T10:36:14.655Z",
+              "event": "TOOL_COMPLETED",
+              "data": {
+                "tool_name": "get_weather",
+                "status": "success"
+              }
+            },
+            {
+              "timestamp": "2026-01-26T10:36:14.655Z",
+              "event": "ARTIFACT_WRITTEN",
+              "data": {
+                "artifact": "trace.json"
+              }
+            },
+            {
+              "timestamp": "2026-01-26T10:36:15.656Z",
+              "event": "VERIFY_COMPLETED",
+              "data": {
+                "status": "VERIFIED"
+              }
+            },
+            {
+              "timestamp": "2026-01-26T10:36:15.656Z",
+              "event": "RUN_COMPLETED",
+              "data": {
+                "verdict": "PASS"
+              }
+            }
+          ],
+          "evidence_pointer": "mplp://timeline/events.ndjson"
+        },
+        {
+          "clause_id": "TRUST-V2-01",
+          "verdict": "PASS",
+          "observed_value": "synthetic-bypass",
+          "evidence_pointer": "mplp://manifest/env_ref/image_digest"
+        },
+        {
+          "clause_id": "DET-V2-01",
+          "verdict": "PASS",
+          "observed_value": "synthetic-bypass",
+          "evidence_pointer": "mplp://manifest/hashes/canonical_pack_root_hash"
+        },
+        {
+          "clause_id": "METADATA-V2-01",
+          "verdict": "FAIL",
+          "observed_value": "2026-01-26T10:36:14.655Z",
+          "evidence_pointer": "mplp://manifest/env_ref/executed_at"
+        }
+      ]
+    },
+    "repro": {
+      "command": "npm run produce:mcp:d1 -- --run-id=mcp-d1-basic-pass-001",
+      "working_dir": ".",
+      "expected_outputs": [
+        "data/runs/v2/real/mcp/mcp-d1-basic-pass-001/manifest.json",
+        "data/runs/v2/real/mcp/mcp-d1-basic-pass-001/reports/verify.report.json"
+      ]
+    },
+    "pointers": {
+      "manifest": "manifest.json",
+      "artifacts_dir": "artifacts/",
+      "timeline": "timeline/events.ndjson",
+      "verify_report": "reports/verify.report.json",
+      "integrity": "integrity/sha256sums.txt"
+    },
+    "evidence_maturity_tier": "REPRODUCED",
+    "adjudicable_surfaces": {
+      "intent": false,
+      "plan": true,
+      "confirm": true,
+      "trace": true,
+      "snapshots": true
+    },
+    "interop_stack": [
+      "MCP"
+    ],
+    "profile_suite_id": "ps-v2-mvp-01",
+    "scope_claims": "Coverage reflects evidence maturity only; not endorsement or certification.",
+    "dispute_freeze_ref": {
+      "path": "governance/dispute-freeze-v2.md",
+      "sha256": "7fd00e40be310d52da80de54c939e78347c6593ee187ae1479035435841bf606"
+    }
+  }
+}

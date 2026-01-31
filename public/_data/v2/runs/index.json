@@ -1,0 +1,398 @@
+{
+  "projection_type": "runs_index",
+  "generated_at": "2026-01-31T11:49:54.876Z",
+  "source_version": {
+    "lab_commit_sha": "dev",
+    "curated_index_version": "2.0.0"
+  },
+  "projection_schema_version": "2.1.0",
+  "scope_ssot_version": "v2-mvp-scope-01",
+  "scope_freeze_ref": "a332c016cba27129410af27529ebd02aba3558db01fd2f158997228a446d23e0",
+  "data": {
+    "runs": [
+      {
+        "pack_id": "acp-d1-real-runner-001",
+        "indexability_status": "INDEXABLE_SYNTHETIC",
+        "substrate_id": "acp",
+        "substrate_name": "acp",
+        "scenario": "d1_basic_pass",
+        "verdict": "PASS",
+        "tier": "REPRODUCED",
+        "interop_stack": [
+          "ACP"
+        ],
+        "surfaces": {
+          "intent": false,
+          "plan": true,
+          "confirm": true,
+          "trace": true,
+          "snapshots": true
+        },
+        "tags": []
+      },
+      {
+        "pack_id": "acp-d1-real-runner-002",
+        "indexability_status": "INDEXABLE_SYNTHETIC",
+        "substrate_id": "acp",
+        "substrate_name": "acp",
+        "scenario": "d1_basic_pass",
+        "verdict": "PASS",
+        "tier": "REPRODUCED",
+        "interop_stack": [
+          "ACP"
+        ],
+        "surfaces": {
+          "intent": false,
+          "plan": true,
+          "confirm": true,
+          "trace": true,
+          "snapshots": true
+        },
+        "tags": []
+      },
+      {
+        "pack_id": "crewai-d1-real-runner-det-001",
+        "indexability_status": "INDEXABLE_REAL",
+        "substrate_id": "crewai",
+        "substrate_name": "crewai",
+        "scenario": "d1_basic_pass",
+        "verdict": "PASS",
+        "tier": "DECLARED",
+        "interop_stack": [
+          "CrewAI"
+        ],
+        "surfaces": {
+          "intent": false,
+          "plan": true,
+          "confirm": true,
+          "trace": true,
+          "snapshots": true
+        },
+        "tags": []
+      },
+      {
+        "pack_id": "crewai-d1-real-runner-det-002",
+        "indexability_status": "INDEXABLE_REAL",
+        "substrate_id": "crewai",
+        "substrate_name": "crewai",
+        "scenario": "d1_basic_pass",
+        "verdict": "PASS",
+        "tier": "DECLARED",
+        "interop_stack": [
+          "CrewAI"
+        ],
+        "surfaces": {
+          "intent": false,
+          "plan": true,
+          "confirm": true,
+          "trace": true,
+          "snapshots": true
+        },
+        "tags": []
+      },
+      {
+        "pack_id": "interop-mcp-a2a-langgraph-d1-real-runner-det-001",
+        "indexability_status": "INDEXABLE_REAL",
+        "substrate_id": "langgraph",
+        "substrate_name": "langgraph",
+        "scenario": "d1_basic_pass",
+        "verdict": "PASS",
+        "tier": "REPRODUCED",
+        "interop_stack": [
+          "LangGraph",
+          "MCP",
+          "A2A"
+        ],
+        "surfaces": {
+          "intent": true,
+          "plan": true,
+          "confirm": true,
+          "trace": true,
+          "snapshots": true,
+          "mcp": true,
+          "a2a": true
+        },
+        "tags": []
+      },
+      {
+        "pack_id": "langchain-d1-real-runner-det-001",
+        "indexability_status": "INDEXABLE_REAL",
+        "substrate_id": "langchain",
+        "substrate_name": "langchain",
+        "scenario": "d1_basic_pass",
+        "verdict": "PASS",
+        "tier": "REPRODUCED",
+        "interop_stack": [
+          "LangChain"
+        ],
+        "surfaces": {
+          "intent": true,
+          "plan": true,
+          "confirm": true,
+          "trace": true,
+          "snapshots": true
+        },
+        "tags": []
+      },
+      {
+        "pack_id": "langgraph-d1-real-runner-det-001",
+        "indexability_status": "INDEXABLE_REAL",
+        "substrate_id": "langgraph",
+        "substrate_name": "langgraph",
+        "scenario": "d1_basic_pass",
+        "verdict": "PASS",
+        "tier": "REPRODUCED",
+        "interop_stack": [
+          "LangGraph"
+        ],
+        "surfaces": {
+          "intent": true,
+          "plan": true,
+          "confirm": true,
+          "trace": true,
+          "snapshots": true
+        },
+        "tags": []
+      },
+      {
+        "pack_id": "magentic-one-d1-real-runner-det-001",
+        "indexability_status": "INDEXABLE_REAL",
+        "substrate_id": "magentic_one",
+        "substrate_name": "magentic_one",
+        "scenario": "d1_basic_pass",
+        "verdict": "PASS",
+        "tier": "DECLARED",
+        "interop_stack": [
+          "Magentic-One",
+          "AutoGen"
+        ],
+        "surfaces": {
+          "intent": false,
+          "plan": true,
+          "confirm": true,
+          "trace": true,
+          "snapshots": true
+        },
+        "tags": []
+      },
+      {
+        "pack_id": "magentic-one-d1-real-runner-det-002",
+        "indexability_status": "INDEXABLE_REAL",
+        "substrate_id": "magentic_one",
+        "substrate_name": "magentic_one",
+        "scenario": "d1_basic_pass",
+        "verdict": "PASS",
+        "tier": "DECLARED",
+        "interop_stack": [
+          "Magentic-One",
+          "AutoGen"
+        ],
+        "surfaces": {
+          "intent": false,
+          "plan": true,
+          "confirm": true,
+          "trace": true,
+          "snapshots": true
+        },
+        "tags": []
+      },
+      {
+        "pack_id": "mcp-d1-fail-benchmark-001",
+        "indexability_status": "INDEXABLE_REAL",
+        "substrate_id": "mcp",
+        "substrate_name": "mcp",
+        "scenario": "d1_basic_fail",
+        "verdict": "FAIL",
+        "tier": "DISPUTE_READY",
+        "interop_stack": [
+          "MCP"
+        ],
+        "surfaces": {
+          "intent": false,
+          "plan": true,
+          "confirm": true,
+          "trace": true,
+          "snapshots": true
+        },
+        "tags": []
+      },
+      {
+        "pack_id": "mcp-d1-real-runner-001",
+        "indexability_status": "INDEXABLE_REAL",
+        "substrate_id": "mcp",
+        "substrate_name": "mcp",
+        "scenario": "d1_basic_pass",
+        "verdict": "PASS",
+        "tier": "REPRODUCED",
+        "interop_stack": [
+          "MCP"
+        ],
+        "surfaces": {
+          "intent": false,
+          "plan": true,
+          "confirm": true,
+          "trace": true,
+          "snapshots": true
+        },
+        "tags": []
+      },
+      {
+        "pack_id": "mcp-d1-real-runner-det-001",
+        "indexability_status": "INDEXABLE_REAL",
+        "substrate_id": "mcp",
+        "substrate_name": "mcp",
+        "scenario": "d1_basic_pass",
+        "verdict": "PASS",
+        "tier": "REPRODUCED",
+        "interop_stack": [
+          "MCP"
+        ],
+        "surfaces": {
+          "intent": false,
+          "plan": true,
+          "confirm": true,
+          "trace": true,
+          "snapshots": true
+        },
+        "tags": []
+      },
+      {
+        "pack_id": "mcp-d1-real-runner-det-002",
+        "indexability_status": "INDEXABLE_REAL",
+        "substrate_id": "mcp",
+        "substrate_name": "mcp",
+        "scenario": "d1_basic_pass",
+        "verdict": "PASS",
+        "tier": "REPRODUCED",
+        "interop_stack": [
+          "MCP"
+        ],
+        "surfaces": {
+          "intent": false,
+          "plan": true,
+          "confirm": true,
+          "trace": true,
+          "snapshots": true
+        },
+        "tags": []
+      },
+      {
+        "pack_id": "metagpt-d1-real-runner-det-001",
+        "indexability_status": "INDEXABLE_REAL",
+        "substrate_id": "metagpt",
+        "substrate_name": "metagpt",
+        "scenario": "d1_basic_pass",
+        "verdict": "PASS",
+        "tier": "REPRODUCED",
+        "interop_stack": [
+          "MetaGPT"
+        ],
+        "surfaces": {
+          "intent": true,
+          "plan": true,
+          "confirm": true,
+          "trace": true,
+          "snapshots": true
+        },
+        "tags": []
+      },
+      {
+        "pack_id": "semantickernel-d1-real-runner-det-001",
+        "indexability_status": "INDEXABLE_REAL",
+        "substrate_id": "semantickernel",
+        "substrate_name": "semantickernel",
+        "scenario": "d1_basic_pass",
+        "verdict": "PASS",
+        "tier": "REPRODUCED",
+        "interop_stack": [
+          "Semantic Kernel"
+        ],
+        "surfaces": {
+          "intent": true,
+          "plan": true,
+          "confirm": true,
+          "trace": true,
+          "snapshots": true
+        },
+        "tags": []
+      },
+      {
+        "pack_id": "mcp-d1-synthetic-001",
+        "indexability_status": "INDEXABLE_SYNTHETIC",
+        "substrate_id": "mcp",
+        "substrate_name": "mcp",
+        "scenario": "d1_basic_pass",
+        "verdict": "PASS",
+        "tier": "REPRODUCED",
+        "interop_stack": [
+          "MCP"
+        ],
+        "surfaces": {
+          "intent": false,
+          "plan": true,
+          "confirm": true,
+          "trace": true,
+          "snapshots": true
+        },
+        "tags": []
+      }
+    ],
+    "facets": {
+      "substrate": [
+        "acp",
+        "crewai",
+        "langgraph",
+        "langchain",
+        "magentic_one",
+        "mcp",
+        "metagpt",
+        "semantickernel"
+      ],
+      "verdict": [
+        "PASS",
+        "FAIL"
+      ],
+      "indexability_status": [
+        "INDEXABLE_SYNTHETIC",
+        "INDEXABLE_REAL"
+      ],
+      "tier": [
+        "REPRODUCED",
+        "DECLARED",
+        "DISPUTE_READY"
+      ],
+      "interop_stack": [
+        [
+          "ACP"
+        ],
+        [
+          "CrewAI"
+        ],
+        [
+          "LangGraph",
+          "MCP",
+          "A2A"
+        ],
+        [
+          "LangChain"
+        ],
+        [
+          "LangGraph"
+        ],
+        [
+          "Magentic-One",
+          "AutoGen"
+        ],
+        [
+          "MCP"
+        ],
+        [
+          "MetaGPT"
+        ],
+        [
+          "Semantic Kernel"
+        ]
+      ]
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "projection_type": "evidence_index",
+  "run_id": "interop-mcp-a2a-langgraph-d1-real-runner-det-001",
+  "generated_at": "2026-01-31T11:49:54.892Z",
+  "data": {
+    "mplp://manifest/substrate_ref": {
+      "substrate_id": "langgraph",
+      "substrate_name": "LangGraph (Interop Host)",
+      "upstream_repo": "https://github.com/langchain-ai/langgraphjs",
+      "upstream_tag": "0.1.0",
+      "upstream_commit_sha": "n/a (npm-pinned)"
+    },
+    "mplp://manifest/lock_ref/lock_sha256": "placeholder",
+    "mplp://artifact/trace.json#/verdict": "PASS",
+    "mplp://timeline/events.ndjson": {
+      "count": 8,
+      "sample": [
+        {
+          "type": "context",
+          "content": "Calculate 5 + 3 using MCP tool (Math Server) and send result via A2A (OpenAgent Protocol)."
+        },
+        {
+          "type": "plan",
+          "content": "1. Connect to MCP server.\n2. Call `add` tool.\n3. Wrap result in A2A envelope.\n4. Send envelope."
+        },
+        {
+          "type": "trace",
+          "content": "Connecting to MCP server at stdio..."
+        }
+      ]
+    },
+    "mplp://manifest/env_ref/image_digest": "sha256:1acf862e436ac0dafc6b5f7d24938c66688c233a24676ae7c9e7a17c9bb729a0",
+    "mplp://manifest/hashes/canonical_pack_root_hash": "14d535d2ecf3f811807e85791f671fef75c460698c21c1b18f92557e19f8fd8c",
+    "mplp://manifest/env_ref/executed_at": "2026-01-27T03:54:49Z"
+  }
+}

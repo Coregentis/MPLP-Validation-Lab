@@ -1,0 +1,4 @@
+{"timestamp": "2026-01-27T04:16:19.770396Z", "event": "RUN_STARTED", "data": {"scenario_id": "d1_basic_pass", "run_id": "magentic-one-d1-real-runner-det-002"}}
+{"timestamp": "2026-01-27T04:16:19.770442Z", "event": "AGENT_CREATED", "data": {"role": "Orchestrator"}}
+{"timestamp": "2026-01-27T04:16:19.770443Z", "event": "AGENT_CREATED", "data": {"role": "Coder"}}
+{"timestamp": "2026-01-27T04:16:19.770444Z", "event": "ORCHESTRATION_COMPLETED", "data": {"result": "Magnetic One successfully orchestrated the verification of MPLP V2 determinism."}}

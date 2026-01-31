@@ -1,0 +1,12 @@
+{
+    "name": "@mplp/acp-producer",
+    "version": "2.0.0",
+    "private": true,
+    "scripts": {
+        "produce-real": "tsx src/produce-real.ts"
+    },
+    "dependencies": {
+        "tsx": "^4.7.1",
+        "typescript": "^5.3.3"
+    }
+}

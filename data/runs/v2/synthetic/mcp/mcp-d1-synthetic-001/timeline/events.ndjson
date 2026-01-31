@@ -1,0 +1,12 @@
+{"timestamp":"2026-01-26T10:36:14.655Z","event":"RUN_STARTED","data":{"scenario_id":"d1_basic_pass"}}
+{"timestamp":"2026-01-26T10:36:14.655Z","event":"PROTOCOL_REF_RECORDED","data":{"protocol":"MPLP","version":"v2"}}
+{"timestamp":"2026-01-26T10:36:14.655Z","event":"SUBSTRATE_REF_RECORDED","data":{"substrate":"MCP","version":"v0.5.0"}}
+{"timestamp":"2026-01-26T10:36:14.655Z","event":"ARTIFACT_WRITTEN","data":{"artifact":"context.json"}}
+{"timestamp":"2026-01-26T10:36:14.655Z","event":"ARTIFACT_WRITTEN","data":{"artifact":"plan.json"}}
+{"timestamp":"2026-01-26T10:36:14.655Z","event":"ARTIFACT_WRITTEN","data":{"artifact":"confirm.json"}}
+{"timestamp":"2026-01-26T10:36:14.655Z","event":"TOOL_REGISTERED","data":{"tool_name":"get_weather"}}
+{"timestamp":"2026-01-26T10:36:14.655Z","event":"TOOL_INVOKED","data":{"tool_name":"get_weather","input":{"location":"San Francisco"}}}
+{"timestamp":"2026-01-26T10:36:14.655Z","event":"TOOL_COMPLETED","data":{"tool_name":"get_weather","status":"success"}}
+{"timestamp":"2026-01-26T10:36:14.655Z","event":"ARTIFACT_WRITTEN","data":{"artifact":"trace.json"}}
+{"timestamp":"2026-01-26T10:36:15.656Z","event":"VERIFY_COMPLETED","data":{"status":"VERIFIED"}}
+{"timestamp":"2026-01-26T10:36:15.656Z","event":"RUN_COMPLETED","data":{"verdict":"PASS"}}

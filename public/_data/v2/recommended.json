@@ -1,0 +1,26 @@
+{
+  "projection_type": "ia_recommended_runs",
+  "generated_at": "2026-01-31T11:49:54.917Z",
+  "version": "v1",
+  "data": {
+    "ssot_type": "ia_recommended_runs",
+    "version": "v1",
+    "recommended": [
+      {
+        "run_id": "interop-mcp-a2a-langgraph-d1-real-runner-det-001",
+        "note": "Interop Killer Feature (MCP+A2A)",
+        "category": "interop_benchmark"
+      },
+      {
+        "run_id": "mcp-d1-real-runner-001",
+        "note": "Primary Reference (PASS)",
+        "category": "reference_pass"
+      },
+      {
+        "run_id": "mcp-d1-fail-benchmark-001",
+        "note": "Primary Dispute Benchmark (FAIL)",
+        "category": "reference_fail"
+      }
+    ]
+  }
+}

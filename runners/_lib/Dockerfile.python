@@ -1,0 +1,28 @@
+# MPLP Python Runner - V2
+# 
+# A sealed environment for executing Python-based substrates (CrewAI, Magnetic One).
+
+FROM python:3.11-slim
+
+# Install baseline dependencies for provenance & sealing
+RUN apt-get update && apt-get install -y \
+    git \
+    curl \
+    jq \
+    ca-certificates \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install 'uv' for fast, deterministic dependency management
+COPY --from=ghcr.io/astral-sh/uv:latest /uv /bin/uv
+
+WORKDIR /workspace
+
+# Add node for canonicalization script execution (required by runner sealing flow)
+RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && \
+    apt-get install -y nodejs && \
+    rm -rf /var/lib/apt/lists/*
+
+# Verify runtimes
+RUN python --version && pip --version && uv --version && node --version
+
+CMD ["bash"]

@@ -1,0 +1,46 @@
+{
+  "projection_type": "evidence_index",
+  "run_id": "crewai-d1-real-runner-det-002",
+  "generated_at": "2026-01-31T11:49:54.891Z",
+  "data": {
+    "mplp://manifest/substrate_ref": {
+      "substrate_id": "crewai",
+      "substrate_name": "CrewAI",
+      "upstream_repo": "https://github.com/crewAIInc/crewAI",
+      "upstream_tag": "v0.28.8",
+      "upstream_commit_sha": "f1a8c9e0d1b2c3a4b5c6d7e8f9a0b1c2d3e4f5a6"
+    },
+    "mplp://manifest/lock_ref/lock_sha256": "7d17b92c044dffd56b422172e034b4f02e3716d20d68574f62c23d2b01367ee4",
+    "mplp://artifact/trace.json#/verdict": "PASS",
+    "mplp://timeline/events.ndjson": {
+      "count": 4,
+      "sample": [
+        {
+          "timestamp": "2026-01-27T04:13:16.888605Z",
+          "event": "RUN_STARTED",
+          "data": {
+            "scenario_id": "d1_basic_pass",
+            "run_id": "crewai-d1-real-runner-det-002"
+          }
+        },
+        {
+          "timestamp": "2026-01-27T04:13:16.890060Z",
+          "event": "AGENT_CREATED",
+          "data": {
+            "role": "Researcher"
+          }
+        },
+        {
+          "timestamp": "2026-01-27T04:13:16.890062Z",
+          "event": "AGENT_CREATED",
+          "data": {
+            "role": "Writer"
+          }
+        }
+      ]
+    },
+    "mplp://manifest/env_ref/image_digest": "sha256:347b90cc16724873e8262a62128e64b13e32efeaeefa98dcd61d03cc088b6912",
+    "mplp://manifest/hashes/canonical_pack_root_hash": "0fc7cf63c6f9fd792b27f18d80ad3ad9ac041cab530d039406c553c1c4dd71b3",
+    "mplp://manifest/env_ref/executed_at": "2026-01-27T04:13:20Z"
+  }
+}

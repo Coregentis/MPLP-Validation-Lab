@@ -1,0 +1,86 @@
+{
+  "run_id": "crewai-d1-real-runner-det-002",
+  "ruleset_id": "ruleset-v2.0.0",
+  "adjudicated_at": "2026-01-27T05:06:07.584Z",
+  "verdict": "PASS",
+  "results": [
+    {
+      "clause_id": "PROV-V2-01",
+      "verdict": "PASS",
+      "observed_value": {
+        "substrate_id": "crewai",
+        "substrate_name": "CrewAI",
+        "upstream_repo": "https://github.com/crewAIInc/crewAI",
+        "upstream_tag": "v0.28.8",
+        "upstream_commit_sha": "f1a8c9e0d1b2c3a4b5c6d7e8f9a0b1c2d3e4f5a6"
+      },
+      "evidence_pointer": "mplp://manifest/substrate_ref"
+    },
+    {
+      "clause_id": "PROV-V2-02",
+      "verdict": "PASS",
+      "observed_value": "7d17b92c044dffd56b422172e034b4f02e3716d20d68574f62c23d2b01367ee4",
+      "evidence_pointer": "mplp://manifest/lock_ref/lock_sha256"
+    },
+    {
+      "clause_id": "LIFECYCLE-V2-01",
+      "verdict": "PASS",
+      "observed_value": "PASS",
+      "evidence_pointer": "mplp://artifact/trace.json#/verdict"
+    },
+    {
+      "clause_id": "LIFECYCLE-V2-02",
+      "verdict": "PASS",
+      "observed_value": [
+        {
+          "timestamp": "2026-01-27T04:13:16.888605Z",
+          "event": "RUN_STARTED",
+          "data": {
+            "scenario_id": "d1_basic_pass",
+            "run_id": "crewai-d1-real-runner-det-002"
+          }
+        },
+        {
+          "timestamp": "2026-01-27T04:13:16.890060Z",
+          "event": "AGENT_CREATED",
+          "data": {
+            "role": "Researcher"
+          }
+        },
+        {
+          "timestamp": "2026-01-27T04:13:16.890062Z",
+          "event": "AGENT_CREATED",
+          "data": {
+            "role": "Writer"
+          }
+        },
+        {
+          "timestamp": "2026-01-27T04:13:17.212047Z",
+          "event": "CREW_COMPLETED",
+          "data": {
+            "result": "Agent stopped due to iteration limit or time limit."
+          }
+        }
+      ],
+      "evidence_pointer": "mplp://timeline/events.ndjson"
+    },
+    {
+      "clause_id": "TRUST-V2-01",
+      "verdict": "PASS",
+      "observed_value": "sha256:347b90cc16724873e8262a62128e64b13e32efeaeefa98dcd61d03cc088b6912",
+      "evidence_pointer": "mplp://manifest/env_ref/image_digest"
+    },
+    {
+      "clause_id": "DET-V2-01",
+      "verdict": "PASS",
+      "observed_value": "0fc7cf63c6f9fd792b27f18d80ad3ad9ac041cab530d039406c553c1c4dd71b3",
+      "evidence_pointer": "mplp://manifest/hashes/canonical_pack_root_hash"
+    },
+    {
+      "clause_id": "METADATA-V2-01",
+      "verdict": "PASS",
+      "observed_value": "2026-01-27T04:13:20Z",
+      "evidence_pointer": "mplp://manifest/env_ref/executed_at"
+    }
+  ]
+}

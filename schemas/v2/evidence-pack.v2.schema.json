@@ -1,0 +1,338 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://lab.mplp.io/schemas/v2/evidence-pack.schema.json",
+    "title": "MPLP Validation Lab V2 Evidence Pack",
+    "description": "Schema for evidence packs in Validation Lab V2 with mandatory provenance chain",
+    "type": "object",
+    "required": [
+        "pack_id",
+        "indexability_status",
+        "protocol_ref",
+        "substrate_ref",
+        "lock_ref",
+        "env_ref",
+        "lab_ref",
+        "producer_ref",
+        "canonicalization_ref",
+        "hashes",
+        "repro"
+    ],
+    "properties": {
+        "pack_id": {
+            "type": "string",
+            "pattern": "^[a-z0-9-]+$",
+            "description": "Unique identifier for this evidence pack"
+        },
+        "indexability_status": {
+            "type": "string",
+            "enum": [
+                "INDEXABLE_REAL",
+                "INDEXABLE_SYNTHETIC",
+                "NON_INDEXABLE"
+            ],
+            "description": "Whether this pack is indexable and its evidence type"
+        },
+        "protocol_ref": {
+            "type": "object",
+            "required": [
+                "repo",
+                "schema_bundle_version",
+                "commit_sha",
+                "bundle_sha256"
+            ],
+            "properties": {
+                "repo": {
+                    "type": "string",
+                    "description": "MPLP Protocol repository URL"
+                },
+                "schema_bundle_version": {
+                    "type": "string",
+                    "description": "Schema bundle version (e.g., v2.0.0)"
+                },
+                "commit_sha": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{40}$",
+                    "description": "Git commit SHA of the protocol schemas"
+                },
+                "bundle_sha256": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$",
+                    "description": "SHA256 hash of the schema bundle"
+                }
+            }
+        },
+        "substrate_ref": {
+            "type": "object",
+            "required": [
+                "substrate_id",
+                "upstream_repo",
+                "upstream_tag",
+                "upstream_commit_sha"
+            ],
+            "properties": {
+                "substrate_id": {
+                    "type": "string",
+                    "description": "Substrate identifier (e.g., mcp, acp, langchain)"
+                },
+                "upstream_repo": {
+                    "type": "string",
+                    "description": "Upstream framework repository URL"
+                },
+                "upstream_tag": {
+                    "type": "string",
+                    "description": "Upstream framework version tag"
+                },
+                "upstream_commit_sha": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{40}$",
+                    "description": "Upstream framework commit SHA"
+                }
+            }
+        },
+        "lock_ref": {
+            "type": "object",
+            "required": [
+                "lockfile_path",
+                "lock_sha256"
+            ],
+            "properties": {
+                "lockfile_path": {
+                    "type": "string",
+                    "description": "Path to dependency lockfile"
+                },
+                "lock_sha256": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$",
+                    "description": "SHA256 hash of the lockfile"
+                }
+            }
+        },
+        "env_ref": {
+            "type": "object",
+            "required": [
+                "runner_type"
+            ],
+            "properties": {
+                "runner_type": {
+                    "type": "string",
+                    "enum": [
+                        "docker",
+                        "devcontainer",
+                        "native"
+                    ],
+                    "description": "Type of execution environment"
+                },
+                "container_digest": {
+                    "type": "string",
+                    "description": "Container digest for docker/devcontainer runners"
+                },
+                "os": {
+                    "type": "string",
+                    "description": "Operating system for native runners"
+                },
+                "arch": {
+                    "type": "string",
+                    "description": "Architecture for native runners"
+                },
+                "runtime": {
+                    "type": "string",
+                    "description": "Runtime environment details"
+                }
+            },
+            "oneOf": [
+                {
+                    "properties": {
+                        "runner_type": {
+                            "enum": [
+                                "docker",
+                                "devcontainer"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "container_digest"
+                    ]
+                },
+                {
+                    "properties": {
+                        "runner_type": {
+                            "enum": [
+                                "native"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "os",
+                        "arch",
+                        "runtime"
+                    ]
+                }
+            ]
+        },
+        "lab_ref": {
+            "type": "object",
+            "required": [
+                "repo",
+                "commit_sha",
+                "build_id"
+            ],
+            "properties": {
+                "repo": {
+                    "type": "string",
+                    "description": "Validation Lab V2 repository URL"
+                },
+                "commit_sha": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{40}$",
+                    "description": "Lab commit SHA used to produce this evidence"
+                },
+                "build_id": {
+                    "type": "string",
+                    "description": "Build identifier"
+                }
+            }
+        },
+        "producer_ref": {
+            "type": "object",
+            "required": [
+                "producer_id",
+                "path",
+                "commit_sha"
+            ],
+            "properties": {
+                "producer_id": {
+                    "type": "string",
+                    "description": "Producer identifier"
+                },
+                "path": {
+                    "type": "string",
+                    "description": "Path to producer code"
+                },
+                "commit_sha": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{40}$",
+                    "description": "Commit SHA of producer code"
+                }
+            }
+        },
+        "canonicalization_ref": {
+            "type": "object",
+            "required": [
+                "rules_version",
+                "hash_scope"
+            ],
+            "properties": {
+                "rules_version": {
+                    "type": "string",
+                    "description": "Canonicalization rules version"
+                },
+                "hash_scope": {
+                    "type": "string",
+                    "description": "Hash scope definition"
+                }
+            }
+        },
+        "hashes": {
+            "type": "object",
+            "required": [
+                "pack_root_hash",
+                "verdict_hash"
+            ],
+            "properties": {
+                "pack_root_hash": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$",
+                    "description": "Root hash of the entire evidence pack"
+                },
+                "verdict_hash": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$",
+                    "description": "Hash of the verdict file"
+                },
+                "verify_report_hash": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$",
+                    "description": "Hash of the verification report"
+                },
+                "evaluation_report_hash": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$",
+                    "description": "Hash of the evaluation report"
+                }
+            }
+        },
+        "repro": {
+            "type": "object",
+            "required": [
+                "command",
+                "working_dir",
+                "expected_outputs"
+            ],
+            "properties": {
+                "command": {
+                    "type": "string",
+                    "description": "Reproduction command"
+                },
+                "working_dir": {
+                    "type": "string",
+                    "description": "Working directory for reproduction"
+                },
+                "expected_outputs": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Expected output files"
+                }
+            }
+        },
+        "determinism_proof": {
+            "type": "object",
+            "required": [
+                "runs",
+                "pack_root_hashes",
+                "match"
+            ],
+            "properties": {
+                "runs": {
+                    "type": "integer",
+                    "minimum": 2,
+                    "description": "Number of runs performed"
+                },
+                "pack_root_hashes": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "pattern": "^[a-f0-9]{64}$"
+                    },
+                    "description": "Pack root hashes from all runs"
+                },
+                "match": {
+                    "type": "boolean",
+                    "description": "Whether all hashes match"
+                }
+            }
+        },
+        "environment_fingerprint": {
+            "type": "object",
+            "description": "Detailed runtime environment fingerprint"
+        }
+    },
+    "allOf": [
+        {
+            "if": {
+                "properties": {
+                    "indexability_status": {
+                        "const": "INDEXABLE_REAL"
+                    }
+                }
+            },
+            "then": {
+                "required": [
+                    "determinism_proof",
+                    "environment_fingerprint"
+                ]
+            }
+        }
+    ]
+}

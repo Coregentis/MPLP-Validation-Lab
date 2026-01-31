@@ -1,0 +1,12 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "MPLP Evidence Pointer (V2 Spec)",
+    "description": "A formal contract for referencing bit-identical evidence within an MPLP Run Pack.",
+    "type": "string",
+    "pattern": "^mplp://(manifest|artifact|timeline)/.*$",
+    "examples": [
+        "mplp://manifest/substrate_ref",
+        "mplp://artifact/trace.json#/verdict",
+        "mplp://timeline/events.ndjson?event=CREW_COMPLETED"
+    ]
+}

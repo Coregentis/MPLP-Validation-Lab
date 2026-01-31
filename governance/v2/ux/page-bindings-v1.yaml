@@ -1,0 +1,51 @@
+# SSOT Page Bindings
+# Maps route patterns to required blocks and context.
+# Enforced by: GATE-V2-CASE-FIRSTFOLD-01, GATE-V2-ROLE-JOURNEYS-01
+
+pages:
+  - id: "home"
+    route: "/"
+    context_type: "ssot" # Needs ssot.stats
+    blocks:
+      - "BLOCK_HOME_HERO"
+      - "BLOCK_HOME_PRIMARY_CTAS"
+      - "BLOCK_HOME_STATS_ROW"
+      - "BLOCK_HOME_AUDIT_BANNER"
+      - "BLOCK_HOME_QUICK_START"
+      - "BLOCK_HOME_RESOURCES_MATRIX"
+
+  - id: "start"
+    route: "/start"
+    blocks:
+      - "BLOCK_START_HERO"
+      - "BLOCK_ROLE_GATEWAY"
+
+  - id: "case_detail"
+    route: "/cases/[id]"
+    context_type: "projection"
+    blocks:
+      - "BLOCK_VERDICT_BADGE"
+      - "BLOCK_PROVENANCE"
+      - "BLOCK_INTEROP_VISUALIZER" # Role dependent, but structure here
+      - "BLOCK_DISPUTE_PANEL"      # Conditional, handled by renderer but binding present
+    
+  - id: "evidence_room"
+    route: "/cases/[id]/evidence"
+    context_type: "projection"
+    blocks:
+      - "BLOCK_EVIDENCE_DOCKET"
+      - "BLOCK_MANIFEST_VIEWER"
+
+  - id: "reg_mapping"
+    route: "/policies/reg-mapping"
+    context_type: "ruleset"
+    blocks:
+      - "BLOCK_REG_MAPPING_MATRIX"
+      - "BLOCK_DISCLAIMER_BANNER"
+
+  - id: "laws"
+    route: "/laws"
+    context_type: "ruleset"
+    blocks:
+      - "BLOCK_HERO"
+      - "BLOCK_CLAUSE_BROWSER"

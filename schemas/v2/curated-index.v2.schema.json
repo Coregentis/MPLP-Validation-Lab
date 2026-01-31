@@ -1,0 +1,86 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://lab.mplp.io/schemas/v2/curated-index.schema.json",
+    "title": "MPLP Validation Lab V2 Curated Index",
+    "description": "Schema for the curated index controlling UI projection eligibility",
+    "type": "object",
+    "required": [
+        "index_version",
+        "entries"
+    ],
+    "properties": {
+        "index_version": {
+            "type": "string",
+            "description": "Version of this index format"
+        },
+        "entries": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "required": [
+                    "pack_id",
+                    "indexability_status",
+                    "rationale"
+                ],
+                "properties": {
+                    "pack_id": {
+                        "type": "string",
+                        "description": "Evidence pack identifier"
+                    },
+                    "indexability_status": {
+                        "type": "string",
+                        "enum": [
+                            "INDEXABLE_REAL",
+                            "INDEXABLE_SYNTHETIC"
+                        ],
+                        "description": "Only indexable statuses allowed in curated index"
+                    },
+                    "rationale": {
+                        "type": "string",
+                        "description": "Why this pack is indexable"
+                    },
+                    "tags": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "Tags for categorization"
+                    },
+                    "substrate_id": {
+                        "type": "string",
+                        "description": "Substrate identifier for filtering"
+                    },
+                    "scenario": {
+                        "type": "string",
+                        "description": "Scenario identifier (d1, d2, d3, d4, etc.)"
+                    },
+                    "verdict": {
+                        "type": "string",
+                        "enum": [
+                            "PASS",
+                            "FAIL"
+                        ],
+                        "description": "Expected verdict"
+                    }
+                }
+            }
+        },
+        "statistics": {
+            "type": "object",
+            "properties": {
+                "total_indexable_real": {
+                    "type": "integer"
+                },
+                "total_indexable_synthetic": {
+                    "type": "integer"
+                },
+                "substrates_covered": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+}

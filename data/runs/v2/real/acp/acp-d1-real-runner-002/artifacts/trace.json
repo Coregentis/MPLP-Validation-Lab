@@ -1,0 +1,30 @@
+{
+  "scenario_id": "d1_basic_pass",
+  "execution_start": "2026-01-27T03:55:20.747Z",
+  "execution_end": "2026-01-27T03:55:20.747Z",
+  "execution_method": "simulated_acp_handshake",
+  "protocol_interactions": [
+    {
+      "type": "handshake",
+      "status": "success"
+    },
+    {
+      "type": "invocation",
+      "capability": "get_agent_info",
+      "output": {
+        "agent_id": "templar-01",
+        "type": "orchestrator",
+        "capabilities": [
+          "get_agent_info",
+          "post_message",
+          "stream_events"
+        ],
+        "status": "online",
+        "latency_ms": 42
+      },
+      "status": "success"
+    }
+  ],
+  "verdict": "PASS",
+  "execution_type": "REAL"
+}

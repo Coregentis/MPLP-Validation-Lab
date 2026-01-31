@@ -1,0 +1,213 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://lab.mplp.io/schemas/v2/projection.schema.json",
+    "title": "MPLP Validation Lab V2 Projection",
+    "description": "Schema for UI projection data - the only data source for the UI layer",
+    "type": "object",
+    "required": [
+        "projection_type",
+        "generated_at",
+        "source_version"
+    ],
+    "properties": {
+        "projection_type": {
+            "type": "string",
+            "enum": [
+                "runs_index",
+                "run_detail",
+                "rulesets_index",
+                "ruleset_detail",
+                "fmm",
+                "coverage",
+                "site_links"
+            ],
+            "description": "Type of projection"
+        },
+        "generated_at": {
+            "type": "string",
+            "format": "date-time",
+            "description": "When this projection was generated"
+        },
+        "source_version": {
+            "type": "object",
+            "required": [
+                "lab_commit_sha",
+                "curated_index_version"
+            ],
+            "properties": {
+                "lab_commit_sha": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{40}$"
+                },
+                "curated_index_version": {
+                    "type": "string"
+                }
+            }
+        },
+        "data": {
+            "description": "Projection-specific data payload"
+        }
+    },
+    "allOf": [
+        {
+            "if": {
+                "properties": {
+                    "projection_type": {
+                        "const": "runs_index"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "data": {
+                        "type": "object",
+                        "required": [
+                            "runs"
+                        ],
+                        "properties": {
+                            "runs": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "required": [
+                                        "pack_id",
+                                        "indexability_status",
+                                        "substrate_id",
+                                        "verdict"
+                                    ],
+                                    "properties": {
+                                        "pack_id": {
+                                            "type": "string"
+                                        },
+                                        "indexability_status": {
+                                            "type": "string",
+                                            "enum": [
+                                                "INDEXABLE_REAL",
+                                                "INDEXABLE_SYNTHETIC"
+                                            ]
+                                        },
+                                        "substrate_id": {
+                                            "type": "string"
+                                        },
+                                        "substrate_name": {
+                                            "type": "string"
+                                        },
+                                        "scenario": {
+                                            "type": "string"
+                                        },
+                                        "verdict": {
+                                            "type": "string",
+                                            "enum": [
+                                                "PASS",
+                                                "FAIL"
+                                            ]
+                                        },
+                                        "tags": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "facets": {
+                                "type": "object",
+                                "properties": {
+                                    "substrate": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "verdict": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "indexability_status": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "projection_type": {
+                        "const": "run_detail"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "data": {
+                        "type": "object",
+                        "required": [
+                            "pack_id",
+                            "indexability_status",
+                            "provenance"
+                        ],
+                        "properties": {
+                            "pack_id": {
+                                "type": "string"
+                            },
+                            "indexability_status": {
+                                "type": "string"
+                            },
+                            "provenance": {
+                                "type": "object",
+                                "required": [
+                                    "protocol_ref",
+                                    "substrate_ref",
+                                    "lock_ref",
+                                    "env_ref"
+                                ],
+                                "properties": {
+                                    "protocol_ref": {
+                                        "type": "object"
+                                    },
+                                    "substrate_ref": {
+                                        "type": "object"
+                                    },
+                                    "lock_ref": {
+                                        "type": "object"
+                                    },
+                                    "env_ref": {
+                                        "type": "object"
+                                    },
+                                    "lab_ref": {
+                                        "type": "object"
+                                    },
+                                    "producer_ref": {
+                                        "type": "object"
+                                    }
+                                }
+                            },
+                            "hashes": {
+                                "type": "object"
+                            },
+                            "repro": {
+                                "type": "object"
+                            },
+                            "determinism_proof": {
+                                "type": "object"
+                            },
+                            "verdict": {
+                                "type": "object"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ]
+}

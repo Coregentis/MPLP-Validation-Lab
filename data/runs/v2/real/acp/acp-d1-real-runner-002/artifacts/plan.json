@@ -1,0 +1,31 @@
+{
+  "scenario_id": "d1_basic_pass",
+  "steps": [
+    {
+      "step_id": 1,
+      "action": "acp_init",
+      "details": "Initiate Agent Communication Protocol handshake"
+    },
+    {
+      "step_id": 2,
+      "action": "acp_auth",
+      "details": "Exchange authentication tokens"
+    },
+    {
+      "step_id": 3,
+      "action": "acp_negotiate",
+      "details": "Negotiate protocol version and capabilities"
+    },
+    {
+      "step_id": 4,
+      "action": "acp_invoke",
+      "details": "Invoke agent capability: get_agent_info"
+    },
+    {
+      "step_id": 5,
+      "action": "capture_evidence",
+      "details": "Record protocol trace for audit"
+    }
+  ],
+  "planned_at": "2026-01-27T03:55:20.747Z"
+}

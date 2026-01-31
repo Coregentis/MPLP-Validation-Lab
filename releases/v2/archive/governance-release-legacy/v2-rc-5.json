@@ -1,0 +1,11 @@
+{
+    "build_id": "v2-rc-20260127-1400-rc5",
+    "anchors": {
+        "git_commit_sha": "0984b0888ecf2ad57edd6e291c46cc892b5b2abb"
+    },
+    "inventory_summary": {
+        "real_runs": 13,
+        "synthetic_runs": 3,
+        "total_runs": 16
+    }
+}

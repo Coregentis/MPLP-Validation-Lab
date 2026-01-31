@@ -1,0 +1,8 @@
+{
+  "verdict": "PASS",
+  "result": "Agent stopped due to iteration limit or time limit.",
+  "agents": [
+    "Researcher",
+    "Writer"
+  ]
+}

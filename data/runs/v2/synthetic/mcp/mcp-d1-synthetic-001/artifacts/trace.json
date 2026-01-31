@@ -1,0 +1,21 @@
+{
+  "scenario_id": "d1_basic_pass",
+  "execution_start": "2026-01-26T10:36:14.655Z",
+  "execution_end": "2026-01-26T10:36:15.656Z",
+  "tool_invocations": [
+    {
+      "tool_name": "get_weather",
+      "input": {
+        "location": "San Francisco"
+      },
+      "output": {
+        "location": "San Francisco",
+        "temperature": 72,
+        "conditions": "sunny",
+        "timestamp": "2026-01-26T10:36:14.655Z"
+      },
+      "status": "success"
+    }
+  ],
+  "verdict": "PASS"
+}

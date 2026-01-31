@@ -1,0 +1,9 @@
+{
+  "scenario_id": "d1_basic_pass",
+  "protocol": "MPLP",
+  "substrate": "MCP",
+  "objective": "Execute real MCP client-server interaction with SDK (in-process)",
+  "established_at": "2026-01-27T03:54:51.758Z",
+  "execution_type": "REAL",
+  "transport_type": "in-memory"
+}

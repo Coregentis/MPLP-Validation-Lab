@@ -1,0 +1,8 @@
+{"type": "context", "content": "Calculate 5 + 3 using MCP tool (Math Server) and send result via A2A (OpenAgent Protocol)."}
+{"type": "plan", "content": "1. Connect to MCP server.\n2. Call `add` tool.\n3. Wrap result in A2A envelope.\n4. Send envelope."}
+{"type": "trace", "content": "Connecting to MCP server at stdio..."}
+{"type": "mcp_tool_call", "data": {"server": "math-server", "tool": "add", "args": {"a": 5, "b": 3}}}
+{"type": "mcp_tool_result", "data": {"result": 8}}
+{"type": "trace", "content": "Received result: 8. Preparing A2A envelope."}
+{"type": "a2a_envelope", "data": {"protocol": "open_agent", "payload": {"task_id": "123", "result": 8}}}
+{"type": "confirm", "status": "success"}

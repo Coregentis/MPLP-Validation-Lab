@@ -1,0 +1,237 @@
+{
+  "projection_type": "run_detail",
+  "generated_at": "2026-01-31T11:49:54.901Z",
+  "source_version": {
+    "lab_commit_sha": "dev",
+    "curated_index_version": "2.0.0"
+  },
+  "projection_schema_version": "2.1.0",
+  "scope_ssot_version": "v2-mvp-scope-01",
+  "scope_freeze_ref": "a332c016cba27129410af27529ebd02aba3558db01fd2f158997228a446d23e0",
+  "data": {
+    "pack_id": "mcp-d1-fail-benchmark-001",
+    "indexability_status": "INDEXABLE_REAL",
+    "substrate_id": "mcp",
+    "scenario_id": "d1_basic_fail",
+    "provenance": {
+      "protocol_ref": {
+        "protocol_name": "MPLP",
+        "repo": "https://github.com/mplp-protocol/mplp",
+        "schemas_version": "v2",
+        "commit_sha": "unknown"
+      },
+      "substrate_ref": {
+        "substrate_id": "mcp",
+        "substrate_name": "Model Context Protocol",
+        "upstream_repo": "https://github.com/modelcontextprotocol/typescript-sdk",
+        "upstream_tag": "v0.5.0",
+        "upstream_commit_sha": "n/a (npm-pinned)"
+      },
+      "lock_ref": {
+        "lock_kind": "npm",
+        "lock_path": "producers/mcp/package-lock.json",
+        "lock_sha256": "655d04b750b76c14c278f8d61e78eaa6e46159d6709e9e0f0d37cf5f6ffd8619"
+      },
+      "env_ref": {
+        "runner_type": "container",
+        "runner_id": "node-20",
+        "image_digest": "unknown",
+        "environment_fingerprint": {
+          "os": "linux",
+          "arch": "aarch64",
+          "runtime_type": "node",
+          "runtime_version": "20.20.0"
+        },
+        "executed_at": "2026-01-27T05:05:42Z",
+        "note": "Forced Failure for Dispute Benchmark"
+      },
+      "lab_ref": {
+        "lab_repo": "https://github.com/mplp-protocol/validation-lab",
+        "lab_commit_sha": "unknown",
+        "lab_version": "v2.0.0"
+      },
+      "producer_ref": {
+        "producer_id": "mcp",
+        "producer_path": "producers/mcp",
+        "producer_commit_sha": "unknown",
+        "producer_version": "2.0.0"
+      },
+      "canonicalization_ref": {
+        "rules_version": "v2.0.0",
+        "rules_path": "canonicalization/rules.v2.md",
+        "hash_scope": [
+          "artifacts",
+          "timeline",
+          "reports/verify.report.json"
+        ]
+      }
+    },
+    "hashes": {
+      "pack_root_hash": "a1b2c3d4e5f67890a1b2c3d4e5f67890a1b2c3d4e5f67890a1b2c3d4e5f67890",
+      "verify_report_hash": "placeholder_verify_hash",
+      "verdict_hash": null,
+      "canonical_pack_root_hash": "a1b2c3d4e5f67890a1b2c3d4e5f67890a1b2c3d4e5f67890a1b2c3d4e5f67890"
+    },
+    "verify": {
+      "verification_version": "2.0.0",
+      "verified_at": "2026-01-27T05:05:42.336Z",
+      "pack_id": "mcp-d1-fail-benchmark-001",
+      "overall_status": "VERIFIED",
+      "execution_type": "REAL",
+      "execution_method": "mcp_sdk_in_process",
+      "checks": [
+        {
+          "check_id": "pack_structure",
+          "status": "PASS",
+          "details": "All required files present"
+        },
+        {
+          "check_id": "hash_integrity",
+          "status": "PASS",
+          "details": "All file hashes computed and verified"
+        },
+        {
+          "check_id": "real_execution",
+          "status": "PASS",
+          "details": "Evidence captured from real MCP SDK client-server interaction"
+        }
+      ],
+      "hash_verification": {
+        "expected_pack_root_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "computed_pack_root_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "match": true
+      },
+      "checked_files": [
+        {
+          "path": "artifacts/context.json",
+          "sha256": "f6a9f1f88d19049c7786e6afbdbe2397eadb5ce613cff46a62b97e4c65221d97"
+        },
+        {
+          "path": "artifacts/plan.json",
+          "sha256": "dd14d1b0ac17325ea9837b40c76aa431c53c5fe41e303b2bfc3edaa209f4a20a"
+        },
+        {
+          "path": "artifacts/confirm.json",
+          "sha256": "452c4605ada40d382e2cbf09b95beaa535d3efe49c111b90ab8d967e58f14e14"
+        },
+        {
+          "path": "artifacts/trace.json",
+          "sha256": "62eabef40e56e4ac99312c37d33378e9c38dc7122b70d884996aea1ba4b63aa9"
+        }
+      ]
+    },
+    "evaluation": {
+      "run_id": "mcp-d1-fail-benchmark-001",
+      "ruleset_id": "ruleset-v2.0.0",
+      "adjudicated_at": "2026-01-27T06:00:00.000Z",
+      "verdict": "FAIL",
+      "results": [
+        {
+          "clause_id": "PROV-V2-01",
+          "verdict": "PASS",
+          "observed_value": {
+            "substrate_id": "mcp",
+            "substrate_name": "Model Context Protocol",
+            "upstream_repo": "https://github.com/modelcontextprotocol/typescript-sdk",
+            "upstream_tag": "v0.5.0",
+            "upstream_commit_sha": "n/a (npm-pinned)"
+          },
+          "evidence_pointer": "mplp://manifest/substrate_ref"
+        },
+        {
+          "clause_id": "PROV-V2-02",
+          "verdict": "PASS",
+          "observed_value": "655d04b750b76c14c278f8d61e78eaa6e46159d6709e9e0f0d37cf5f6ffd8619",
+          "evidence_pointer": "mplp://manifest/lock_ref/lock_sha256"
+        },
+        {
+          "clause_id": "LIFECYCLE-V2-01",
+          "verdict": "PASS",
+          "observed_value": "FAIL",
+          "evidence_pointer": "mplp://artifact/trace.json#/verdict"
+        },
+        {
+          "clause_id": "LIFECYCLE-V2-02",
+          "verdict": "PASS",
+          "observed_value": [
+            {
+              "timestamp": "2026-01-27T05:05:42.323Z",
+              "event": "PROTOCOL_REF_RECORDED",
+              "data": {
+                "protocol": "MPLP",
+                "version": "v2"
+              }
+            }
+          ],
+          "evidence_pointer": "mplp://timeline/events.ndjson"
+        },
+        {
+          "clause_id": "TRUST-V2-01",
+          "verdict": "FAIL",
+          "observed_value": "unknown",
+          "evidence_pointer": "mplp://manifest/env_ref/image_digest"
+        },
+        {
+          "clause_id": "DET-V2-01",
+          "verdict": "PASS",
+          "observed_value": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "evidence_pointer": "mplp://manifest/hashes/canonical_pack_root_hash"
+        },
+        {
+          "clause_id": "METADATA-V2-01",
+          "verdict": "PASS",
+          "observed_value": "2026-01-27T05:05:42Z",
+          "evidence_pointer": "mplp://manifest/env_ref/executed_at"
+        }
+      ]
+    },
+    "repro": {
+      "command": "npm run produce:mcp:d1-fail -- --run-id=mcp-d1-fail-benchmark-001",
+      "working_dir": ".",
+      "expected_outputs": [
+        "data/runs/v2/real/mcp/mcp-d1-fail-benchmark-001/manifest.json",
+        "data/runs/v2/real/mcp/mcp-d1-fail-benchmark-001/reports/verify.report.json"
+      ]
+    },
+    "pointers": {
+      "manifest": "manifest.json",
+      "artifacts_dir": "artifacts/",
+      "timeline": "timeline/events.ndjson",
+      "verify_report": "reports/verify.report.json",
+      "integrity": "integrity/sha256sums.txt"
+    },
+    "evidence_maturity_tier": "DISPUTE_READY",
+    "adjudicable_surfaces": {
+      "intent": false,
+      "plan": true,
+      "confirm": true,
+      "trace": true,
+      "snapshots": true
+    },
+    "interop_stack": [
+      "MCP"
+    ],
+    "profile_suite_id": "ps-v2-mvp-01",
+    "scope_claims": "Coverage reflects evidence maturity only; not endorsement or certification.",
+    "dispute_closure": {
+      "fail_signature": {
+        "type": "provenance",
+        "code": "RUNNER_SEAL_MISSING"
+      },
+      "clause_hits": [
+        "TRUST-V2-01"
+      ],
+      "primary_evidence_pointers": [
+        "mplp://manifest/env_ref/image_digest"
+      ],
+      "fail_root_cause_pointer": "mplp://manifest/env_ref/image_digest",
+      "replay_instructions_ref": "mplp://manifest/repro/command",
+      "snapshot_diff_set": [],
+      "replay_hints": "Verify image_digest in manifest.json is 'unknown'"
+    },
+    "dispute_freeze_ref": {
+      "path": "governance/dispute-freeze-v2.md",
+      "sha256": "7fd00e40be310d52da80de54c939e78347c6593ee187ae1479035435841bf606"
+    }
+  }
+}
