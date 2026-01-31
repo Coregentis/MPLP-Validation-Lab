@@ -1,6 +1,6 @@
 {
   "report_version": "1.0",
-  "verified_at": "2026-01-25T04:18:12.905Z",
+  "verified_at": "2026-01-25T05:15:53.131Z",
   "pack_id": "gf-02-fail-missing-plan",
   "admission_status": "NOT_ADMISSIBLE",
   "checks": [
@@ -197,9 +197,9 @@
     "manifest_hash": "b80af2c750467534183f99aac6a7c2ba1793b4853ed7f235c520c057d42676f5",
     "schemas_bundle_hash": "99804832ddc3daefb92ec74120afaab1c3278e4a79d670e1f796e67f735463aa",
     "invariants_bundle_hash": "d32ed8bd0139ba2197c618f8cc057dae15ba8cd5012b25946c1e20c07fd8ebe0",
-    "report_hash": "b7eca60aca10cd0b1edf77b04f141542cc1a37233575c38dd90f6f1567f584e6"
+    "report_hash": "d2e79aec7237b89823ef2b48e21f9eb924d0aeb2056aed61ee76583406272716"
   },
   "ruleset_version": "ruleset-1.3",
   "protocol_version": "1.0.0",
-  "total_duration_ms": 0
+  "total_duration_ms": 1
 }

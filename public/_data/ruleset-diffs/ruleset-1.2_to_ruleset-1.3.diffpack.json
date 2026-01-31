@@ -1,0 +1,85 @@
+{
+  "diffpack_version": "0.16.0",
+  "ruleset_diff_id": "ruleset-1.2_to_ruleset-1.3",
+  "from_ruleset": "ruleset-1.2",
+  "to_ruleset": "ruleset-1.3",
+  "generated_at": "2026-01-25T05:15:53.146Z",
+  "metrics": {
+    "total_runs": 30,
+    "verdict_flips_total": 0,
+    "evidence_pattern_changes_total": 9
+  },
+  "logic_diff": [
+    {
+      "clause_id": "CL-D1-03",
+      "change_type": "THRESHOLD_REFINEMENT",
+      "rationale": "Refined semantic check for 'budget.enforcement' and 'throttle' tokens in events. Ensures higher engineering fidelity for budget denial tracking.",
+      "code_delta": "Refined search tokens from ['gate', 'block', 'stop'] to ['gate', 'block', 'stop', 'enforcement', 'throttle']"
+    }
+  ],
+  "run_deltas": [
+    {
+      "run_id": "admission-not-admissible-01",
+      "verdict_from": "NOT_ADMISSIBLE",
+      "verdict_to": "NOT_ADMISSIBLE",
+      "verdict_stable": true,
+      "evidence_hash_stable": false
+    },
+    {
+      "run_id": "gf-01-adjudicated-fail-01",
+      "verdict_from": "ADJUDICATED",
+      "verdict_to": "ADJUDICATED",
+      "verdict_stable": true,
+      "evidence_hash_stable": false
+    },
+    {
+      "run_id": "gf-01-langchain-pass",
+      "verdict_from": "ADJUDICATED",
+      "verdict_to": "ADJUDICATED",
+      "verdict_stable": true,
+      "evidence_hash_stable": false
+    },
+    {
+      "run_id": "gf-01-mcp-pass",
+      "verdict_from": "ADJUDICATED",
+      "verdict_to": "ADJUDICATED",
+      "verdict_stable": true,
+      "evidence_hash_stable": false
+    },
+    {
+      "run_id": "gf-02-fail",
+      "verdict_from": "NOT_ADMISSIBLE",
+      "verdict_to": "NOT_ADMISSIBLE",
+      "verdict_stable": true,
+      "evidence_hash_stable": false
+    },
+    {
+      "run_id": "pydantic-ai-d1-budget-fail-01",
+      "verdict_from": "NOT_ADMISSIBLE",
+      "verdict_to": "NOT_ADMISSIBLE",
+      "verdict_stable": true,
+      "evidence_hash_stable": false
+    },
+    {
+      "run_id": "pydantic-ai-d1-budget-fail-02",
+      "verdict_from": "NOT_ADMISSIBLE",
+      "verdict_to": "NOT_ADMISSIBLE",
+      "verdict_stable": true,
+      "evidence_hash_stable": false
+    },
+    {
+      "run_id": "pydantic-ai-d1-budget-pass-01",
+      "verdict_from": "NOT_ADMISSIBLE",
+      "verdict_to": "NOT_ADMISSIBLE",
+      "verdict_stable": true,
+      "evidence_hash_stable": false
+    },
+    {
+      "run_id": "pydantic-ai-d1-budget-pass-02",
+      "verdict_from": "NOT_ADMISSIBLE",
+      "verdict_to": "NOT_ADMISSIBLE",
+      "verdict_stable": true,
+      "evidence_hash_stable": false
+    }
+  ]
+}

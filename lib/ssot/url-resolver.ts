@@ -18,7 +18,7 @@ export function resolveEvidenceRef(ref: string): string {
 
     // 2. Resolve diff_ref (diffs/...)
     if (ref.startsWith('diffs/')) {
-        return `/${manifest.anchors.ruleset_diffs_root}${ref}`;
+        return `/${manifest.anchors.rulesets_root}${ref}`;
     }
 
     // 3. Fallback: return as is or hash

@@ -7,6 +7,7 @@
 
 import type { EvidencePointer, Event, RunBundle } from '@/lib/bundles/types';
 import { extractSemanticFields, type SemanticFields } from './extract';
+import { extractCanonPtrsFromTrace } from './canonptr';
 
 // =============================================================================
 // EvidenceRef (Resolution Result)
@@ -27,7 +28,7 @@ export interface EvidenceRef {
 // =============================================================================
 
 interface ParsedLocator {
-    kind: 'event_id' | 'line' | 'snapshot' | 'jsonptr' | 'unknown';
+    kind: 'event_id' | 'line' | 'snapshot' | 'jsonptr' | 'canonptr_v1' | 'unknown';
     value: string;
 }
 
@@ -58,6 +59,13 @@ function parseLocator(locator: string): ParsedLocator {
         return { kind: 'jsonptr', value: jsonptrMatch[1].trim() };
     }
 
+    // canonptr:v1:<...>
+    if (trimmed.startsWith('canonptr:v1:')) {
+        return { kind: 'canonptr_v1', value: trimmed };
+    }
+
+    // Assume bare event ID if it looks like one (prefix 'evt-' or specific pattern)
+    // or just default to unknown for now, but resolvePointer will handle it.
     return { kind: 'unknown', value: trimmed };
 }
 
@@ -148,8 +156,29 @@ export function resolvePointer(bundle: RunBundle, p: EvidencePointer): EvidenceR
             return { pointer: p, resolved: 'none', notes: ['JSONPTR_NOT_IMPLEMENTED'] };
         }
 
-        default:
+        case 'canonptr_v1': {
+            const canonPtrs = extractCanonPtrsFromTrace(events as Record<string, unknown>[]) as Array<{ ptr: string; event_id?: string }>;
+            const match = canonPtrs.find(cp => cp.ptr === loc.value);
+
+            if (match && match.event_id) {
+                const hit = resolveEventById(events, match.event_id);
+                if (hit) {
+                    const content = extractSemanticFields(hit);
+                    return { pointer: p, resolved: 'event', event: hit, content };
+                }
+            }
+            return { pointer: p, resolved: 'none', notes: ['CANONPTR_NOT_RESOLVED'] };
+        }
+
+        default: {
+            // Tentative: try resolving as bare event_id
+            const hit = resolveEventById(events, loc.value);
+            if (hit) {
+                const content = extractSemanticFields(hit);
+                return { pointer: p, resolved: 'event', event: hit, content };
+            }
             return { pointer: p, resolved: 'none', notes: ['UNSUPPORTED_LOCATOR'] };
+        }
     }
 }
 

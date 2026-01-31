@@ -26,6 +26,10 @@ export default function RunsPage() {
     const totalRuns = data.runs.length;
     const pendingCount = totalRuns - adjudicatedCount;
 
+    // Count indexable vs archived runs
+    const indexableCount = data.runs.filter(r => (r as any).indexable !== false).length;
+    const archivedCount = totalRuns - indexableCount;
+
     return (
         <div className="pt-8">
             <div className="mb-12">
@@ -43,6 +47,8 @@ export default function RunsPage() {
                 totalRuns={totalRuns}
                 adjudicatedCount={adjudicatedCount}
                 pendingCount={pendingCount}
+                indexableCount={indexableCount}
+                archivedCount={archivedCount}
             />
 
             <ScenarioAwareBanner />

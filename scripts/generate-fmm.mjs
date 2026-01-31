@@ -18,6 +18,12 @@ function generateFmm() {
     const fieldmapDir = path.join(GOVERNANCE_DIR, 'mappings/fieldmap');
     const fieldmaps = fs.readdirSync(fieldmapDir).filter(f => f.endsWith('.yaml'));
 
+    // Header values that should be filtered out (not included as data)
+    const HEADER_VALUES = new Set([
+        'Source Path', 'Target Pointer', 'Rule',
+        'Group', 'Element', 'Status'
+    ]);
+
     const matrix = {
         version: "1.0.0",
         generated_at: new Date().toISOString(),
@@ -40,16 +46,24 @@ function generateFmm() {
             if (inTable && line.trim().startsWith('|')) {
                 const parts = line.split('|').map(p => p.trim()).filter(p => p !== '');
                 if (parts.length >= 2) {
-                    mappings.push({
-                        source: parts[0],
-                        target: parts[1],
-                        rule: parts[2] || 'direct'
-                    });
+                    const source = parts[0];
+                    const target = parts[1];
+                    const rule = parts[2] || 'direct';
+
+                    // Filter out header rows
+                    if (HEADER_VALUES.has(source) ||
+                        HEADER_VALUES.has(target) ||
+                        HEADER_VALUES.has(rule)) {
+                        continue; // Skip this row
+                    }
+
+                    mappings.push({ source, target, rule });
                 }
             } else if (line.trim() === '' && inTable) {
                 // Keep looking, tables might have breaks or we reached end
             }
         }
+
 
         const substrateId = file.replace('.yaml', '');
         matrix.substrates[substrateId] = {

@@ -4,35 +4,35 @@ fieldmap_version: "1.0.0"
 core_elements_ref: governance/mappings/core-evidence-elements.yaml
 ---
 
-# Field Mapping Crosswalk: LangGraph -> MPLP
+# Field Mapping Crosswalk: MCP (Model Context Protocol) -> MPLP
 
 ## 1. Event Type Mapping
-| LangGraph Native Event | MPLP Target (JSON Pointer) | Rule |
+| MCP Native Event | MPLP Target (JSON Pointer) | Rule |
 |:---|:---|:---|
-| `on_chain_start` | `/timeline.events[*]` (PLAN) | direct |
-| `on_chain_end` | `/timeline.events[*].event_type` (VERDICT) | direct |
-| `on_tool_start` | `/timeline.events[*]` (ACTION) | direct |
-| `on_tool_end` | `/timeline.events[*]` (OBSERVATION) | direct |
-| `message.sender` | `/timeline.events[*].actor` | direct |
+| `list_tools` | `/timeline.events[*]` (PLAN) | direct |
+| `call_tool` | `/timeline.events[*].event_type` (ACTION) | direct |
+| `tool_result` | `/timeline.events[*]` (OBSERVATION) | direct |
+| `list_prompts` | `/timeline.events[*]` (PLAN) | direct |
+| `server.name` | `/timeline.events[*].actor` | direct |
 
 ## 2. Artifact Mapping
 | Source Path | Target Pointer | Rule |
 |:---|:---|:---|
-| `graph.get_graph().json()` | `/artifacts/plan.json` | derived |
-| `config.metadata` | `/manifest.substrate` | direct |
-| `verdict_logic` | `/verdict.json` | derived |
-| `run_metadata.run_id` | `/manifest.run_id` | direct |
-| `run_metadata.sid` | `/manifest.scenario_id` | direct |
-| `ruleset.version` | `/manifest.ruleset_version` | direct |
-| `trace.log` | `/artifacts/trace.json` | direct |
-| `verdict.status` | `/verdict.json.status` | direct |
+| `server.capabilities` | `/artifacts/plan.json` | derived |
+| `server.name` | `/manifest.substrate` | direct |
+| `result.content` | `/verdict.json` | derived |
+| `request.id` | `/manifest.run_id` | direct |
+| `prompt.name` | `/manifest.scenario_id` | direct |
+| `protocol_version` | `/manifest.ruleset_version` | direct |
+| `tool_execution.log` | `/artifacts/trace.json` | direct |
+| `is_error` | `/verdict.json.status` | direct |
 
 ## 3. Coverage Analysis
 | Group | Element | Status | Note |
 |:---|:---|:---|:---|
-| Timeline | Events | 🟢 MAPPED | Full compatibility |
-| Artifacts | Plan | 🟢 MAPPED | Derived from CompiledGraph |
-| Artifacts | Confirm | 🟡 PARTIAL | Requires explicit Interrupts |
+| Timeline | Events | 🟢 MAPPED | Via MCP JSON-RPC messages |
+| Artifacts | Plan | 🟢 MAPPED | From server capabilities |
+| Artifacts | Confirm | 🟡 PARTIAL | Requires sampling approval |
 
 ---
 **Verified By**: VLAB-GATE-09

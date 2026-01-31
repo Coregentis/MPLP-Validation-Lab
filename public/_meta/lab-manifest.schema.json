@@ -1,0 +1,100 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "MPLP Validation Lab Manifest",
+    "type": "object",
+    "required": [
+        "version",
+        "entry",
+        "protocol_version",
+        "lab_series",
+        "tripod",
+        "anchors",
+        "boundaries",
+        "governance_terms"
+    ],
+    "properties": {
+        "version": {
+            "type": "string"
+        },
+        "entry": {
+            "const": "lab"
+        },
+        "protocol_version": {
+            "type": "string"
+        },
+        "lab_series": {
+            "type": "string"
+        },
+        "tripod": {
+            "type": "object",
+            "required": [
+                "website_anchor",
+                "docs_anchor",
+                "repo_anchor",
+                "lab_anchor"
+            ],
+            "properties": {
+                "website_anchor": {
+                    "type": "string",
+                    "format": "uri"
+                },
+                "docs_anchor": {
+                    "type": "string",
+                    "format": "uri"
+                },
+                "repo_anchor": {
+                    "type": "string",
+                    "format": "uri"
+                },
+                "lab_anchor": {
+                    "type": "string",
+                    "format": "uri"
+                }
+            }
+        },
+        "anchors": {
+            "type": "object",
+            "additionalProperties": {
+                "oneOf": [
+                    {
+                        "type": "string"
+                    },
+                    {
+                        "type": "object",
+                        "additionalProperties": {
+                            "type": "string"
+                        }
+                    }
+                ]
+            }
+        },
+        "boundaries": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "governance_terms": {
+            "type": "object",
+            "required": [
+                "BOUNDARY-NON-CERTIFICATION",
+                "BOUNDARY-VENDOR-NEUTRAL"
+            ],
+            "additionalProperties": {
+                "type": "object",
+                "required": [
+                    "v",
+                    "text"
+                ],
+                "properties": {
+                    "v": {
+                        "type": "string"
+                    },
+                    "text": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+}

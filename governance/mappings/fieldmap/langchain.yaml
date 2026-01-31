@@ -4,35 +4,35 @@ fieldmap_version: "1.0.0"
 core_elements_ref: governance/mappings/core-evidence-elements.yaml
 ---
 
-# Field Mapping Crosswalk: LangGraph -> MPLP
+# Field Mapping Crosswalk: LangChain -> MPLP
 
 ## 1. Event Type Mapping
-| LangGraph Native Event | MPLP Target (JSON Pointer) | Rule |
+| LangChain Native Event | MPLP Target (JSON Pointer) | Rule |
 |:---|:---|:---|
 | `on_chain_start` | `/timeline.events[*]` (PLAN) | direct |
 | `on_chain_end` | `/timeline.events[*].event_type` (VERDICT) | direct |
-| `on_tool_start` | `/timeline.events[*]` (ACTION) | direct |
-| `on_tool_end` | `/timeline.events[*]` (OBSERVATION) | direct |
-| `message.sender` | `/timeline.events[*].actor` | direct |
+| `on_agent_action` | `/timeline.events[*]` (ACTION) | direct |
+| `on_agent_finish` | `/timeline.events[*]` (OBSERVATION) | direct |
+| `run.name` | `/timeline.events[*].actor` | direct |
 
 ## 2. Artifact Mapping
 | Source Path | Target Pointer | Rule |
 |:---|:---|:---|
-| `graph.get_graph().json()` | `/artifacts/plan.json` | derived |
-| `config.metadata` | `/manifest.substrate` | direct |
-| `verdict_logic` | `/verdict.json` | derived |
-| `run_metadata.run_id` | `/manifest.run_id` | direct |
-| `run_metadata.sid` | `/manifest.scenario_id` | direct |
-| `ruleset.version` | `/manifest.ruleset_version` | direct |
-| `trace.log` | `/artifacts/trace.json` | direct |
-| `verdict.status` | `/verdict.json.status` | direct |
+| `chain.get_prompts()` | `/artifacts/plan.json` | derived |
+| `llm.model_name` | `/manifest.substrate` | direct |
+| `agent.final_answer` | `/verdict.json` | derived |
+| `run_id` | `/manifest.run_id` | direct |
+| `session_id` | `/manifest.scenario_id` | direct |
+| `callbacks.langchain_version` | `/manifest.ruleset_version` | direct |
+| `run_tree.to_dict()` | `/artifacts/trace.json` | direct |
+| `agent.return_values.output` | `/verdict.json.status` | direct |
 
 ## 3. Coverage Analysis
 | Group | Element | Status | Note |
 |:---|:---|:---|:---|
-| Timeline | Events | 🟢 MAPPED | Full compatibility |
-| Artifacts | Plan | 🟢 MAPPED | Derived from CompiledGraph |
-| Artifacts | Confirm | 🟡 PARTIAL | Requires explicit Interrupts |
+| Timeline | Events | 🟢 MAPPED | Via BaseCallbackHandler |
+| Artifacts | Plan | 🟢 MAPPED | From chain prompt templates |
+| Artifacts | Confirm | 🟡 PARTIAL | Requires HumanInputChain |
 
 ---
 **Verified By**: VLAB-GATE-09

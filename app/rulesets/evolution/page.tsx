@@ -1,8 +1,8 @@
-import Link from 'next/link';
 import { Metadata } from 'next';
 import { getRulesetDiffIndex } from '@/lib/rulesets/loadDiff';
 import { DisclaimerBox } from '@/components/common/DisclaimerBox';
-import { getRulesetDiffPath } from '@/lib/ssot/url-resolver';
+import { SmartLink } from '@/components/common/SmartLink';
+import { SemanticStatusBadge } from '@/components/common/SemanticStatusBadge';
 
 const LAB_CANONICAL_HOST = 'https://lab.mplp.io';
 
@@ -23,7 +23,8 @@ export default function EvolutionHubPage() {
                 <p className="text-xs font-bold uppercase tracking-[0.4em] text-mplp-text-muted/80 mb-3">Governance Track</p>
                 <h1 className="text-3xl sm:text-4xl font-bold text-mplp-text mb-6">Ruleset Evolution</h1>
                 <p className="max-w-2xl text-mplp-text-muted leading-relaxed">
-                    Track the structural evolution of evaluation logic. Metrics describe deltas in adjudication results across ruleset versions on locked input sets.
+                    Institutional Explainability: Ruleset evolution is machine-verified and forensic in nature.
+                    These metrics describe the structural shift in evaluation logic between bit-identical ruleset versions.
                 </p>
             </div>
 
@@ -38,14 +39,16 @@ export default function EvolutionHubPage() {
 
                 {diffs.length === 0 ? (
                     <div className="p-12 text-center bg-glass border border-mplp-border/30 rounded-2xl">
-                        <p className="text-mplp-text-muted">No ruleset evolution data available.</p>
+                        <SemanticStatusBadge status="UNAVAILABLE" className="mb-4" />
+                        <p className="text-mplp-text-muted">No ruleset evolution data available for the v1.0 frozen series.</p>
                     </div>
                 ) : (
                     <div className="grid gap-6 md:grid-cols-2">
                         {diffs.map((diff) => (
-                            <Link
+                            <SmartLink
                                 key={diff.diff_id}
-                                href={getRulesetDiffPath(diff.diff_id)}
+                                anchor="ruleset_diff_base"
+                                id={diff.diff_id}
                                 className="group block p-8 bg-glass border border-mplp-border/40 rounded-2xl hover:border-mplp-blue-soft/40 transition-all relative overflow-hidden"
                             >
                                 {/* Background Accent */}
@@ -60,9 +63,6 @@ export default function EvolutionHubPage() {
                                             <span className="text-mplp-text-muted opacity-40">→</span>
                                             <span className="text-mplp-blue-soft">{diff.to_ruleset}</span>
                                         </div>
-                                        <span className="text-[10px] text-mplp-text-muted font-mono bg-mplp-dark-soft px-2 py-0.5 rounded border border-mplp-border/30">
-                                            v0.11
-                                        </span>
                                     </div>
 
                                     {/* Metrics Highlights */}
@@ -75,8 +75,8 @@ export default function EvolutionHubPage() {
                                         </div>
                                         <div className="space-y-1">
                                             <p className="text-[10px] uppercase tracking-widest text-mplp-text-muted font-bold">Equiv. Shift</p>
-                                            <p className={`text-2xl font-mono ${diff.metrics.equivalence_shift.delta !== 0 ? 'text-blue-400' : 'text-mplp-text opacity-40'}`}>
-                                                {diff.metrics.equivalence_shift.delta > 0 ? '+' : ''}{diff.metrics.equivalence_shift.delta}
+                                            <p className={`text-2xl font-mono ${diff.metrics.equivalence_shift?.delta !== 0 ? 'text-blue-400' : 'text-mplp-text opacity-40'}`}>
+                                                {diff.metrics.equivalence_shift?.delta > 0 ? '+' : ''}{diff.metrics.equivalence_shift?.delta || 0}
                                             </p>
                                         </div>
                                     </div>
@@ -91,7 +91,7 @@ export default function EvolutionHubPage() {
                                         </span>
                                     </div>
                                 </div>
-                            </Link>
+                            </SmartLink>
                         ))}
                     </div>
                 )}

@@ -1,0 +1,28 @@
+{
+  "version": "v0.15.0",
+  "generated_at": "2026-01-25T05:07:42.403Z",
+  "scope_change_note": "v0.15.1 reconciles yardstick verdict to D1-only scope to avoid cross-domain noise; crosscut signals are preserved but excluded from yardstick verdict.",
+  "comparisons": [
+    {
+      "pair": [
+        "mcp-d1-budget-fail-01",
+        "pydantic-ai-d1-budget-fail-01"
+      ],
+      "diff_types": [
+        "EVIDENCE_SHAPE_DIFF",
+        "EVENT_TOKEN_DIFF"
+      ],
+      "notes": "Comparison of refusal patterns between MCP and Pydantic-AI substrates."
+    },
+    {
+      "pair": [
+        "mcp-d1-budget-pass-01",
+        "pydantic-ai-d1-budget-pass-01"
+      ],
+      "diff_types": [
+        "POINTER_GRANULARITY_DIFF"
+      ],
+      "notes": "Comparison of success evidence resolution between substrates."
+    }
+  ]
+}

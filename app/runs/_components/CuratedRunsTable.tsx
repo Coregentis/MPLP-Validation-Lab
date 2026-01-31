@@ -2,6 +2,9 @@ import type { CuratedRunRecord } from '@/lib/curated/types';
 import { HashCell } from './HashCell';
 import Link from 'next/link';
 import { StatusBadge } from '@/app/_shared/StatusBadge';
+import { getRunDisplayContract, isIndexable } from '@/lib/ui-contracts';
+import { RunStatusBadge } from '@/components/ui/run-status-badge';
+import { HashDisplay } from '@/components/ui/hash-display';
 
 export function CuratedRunsTable({ runs }: { runs: CuratedRunRecord[] }) {
     return (
@@ -11,6 +14,7 @@ export function CuratedRunsTable({ runs }: { runs: CuratedRunRecord[] }) {
                     <tr>
                         <th className="text-left p-4 border-b border-mplp-border/30 text-xs font-bold text-mplp-text uppercase tracking-wider">Run ID</th>
                         <th className="text-left p-4 border-b border-mplp-border/30 text-xs font-bold text-mplp-text-muted uppercase tracking-wider">Substrate</th>
+                        <th className="text-left p-4 border-b border-mplp-border/30 text-xs font-bold text-mplp-text-muted uppercase tracking-wider">Indexable</th>
                         <th className="text-left p-4 border-b border-mplp-border/30 text-xs font-bold text-mplp-text-muted uppercase tracking-wider">Status</th>
                         <th className="text-left p-4 border-b border-mplp-border/30 text-xs font-bold text-mplp-text-muted uppercase tracking-wider">Verdict Hash</th>
                         <th className="text-left p-4 border-b border-mplp-border/30 text-xs font-bold text-mplp-text uppercase tracking-wider">Actions</th>
@@ -21,6 +25,7 @@ export function CuratedRunsTable({ runs }: { runs: CuratedRunRecord[] }) {
                         const adjStatus = (run as unknown as Record<string, unknown>).adjudication_status as string | undefined;
                         const adjHash = (run as unknown as Record<string, unknown>).adjudication_verdict_hash as string | undefined;
                         const isAdjudicated = adjStatus === 'ADJUDICATED';
+                        const contract = getRunDisplayContract(run);
 
                         return (
                             <tr key={run.run_id} className="border-b border-mplp-border/20 hover:bg-mplp-blue-soft/5 transition-colors group">
@@ -30,6 +35,9 @@ export function CuratedRunsTable({ runs }: { runs: CuratedRunRecord[] }) {
                                     </Link>
                                 </td>
                                 <td className="p-4 text-sm text-mplp-text-muted">{run.substrate}</td>
+                                <td className="p-4">
+                                    <RunStatusBadge contract={contract} />
+                                </td>
                                 <td className="p-4">
                                     {isAdjudicated ? (
                                         <Link href={`/adjudication/${run.run_id}`} className="hover:opacity-80 transition-opacity">

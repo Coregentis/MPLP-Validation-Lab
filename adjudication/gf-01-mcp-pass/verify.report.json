@@ -1,6 +1,6 @@
 {
   "report_version": "1.0",
-  "verified_at": "2026-01-25T04:18:12.902Z",
+  "verified_at": "2026-01-25T05:15:53.127Z",
   "pack_id": "gf-01-mcp-pass",
   "admission_status": "ADMISSIBLE",
   "checks": [
@@ -147,7 +147,7 @@
     "manifest_hash": "0964b888e842aa19a98bfd16c19749927d0595afbbde8e39f2a311cc03583a6d",
     "schemas_bundle_hash": "99804832ddc3daefb92ec74120afaab1c3278e4a79d670e1f796e67f735463aa",
     "invariants_bundle_hash": "d32ed8bd0139ba2197c618f8cc057dae15ba8cd5012b25946c1e20c07fd8ebe0",
-    "report_hash": "7877543af5d4e54ff60de5f3f34a445c734e30814a755855552faef759351375"
+    "report_hash": "2ad49cba5d8ca3cadc5cce3b1a39f7ff20202d84e31f0eaa73d5f2f8142f10a2"
   },
   "ruleset_version": "ruleset-1.3",
   "protocol_version": "1.0.0",

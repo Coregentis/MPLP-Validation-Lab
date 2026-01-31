@@ -15,7 +15,7 @@
         "equivalence_shift": {
             "from_rate": 0.3333,
             "to_rate": 0.3333,
-            "delta": 0.0
+            "delta": 0
         }
     },
     "clauses_changed": [
@@ -34,7 +34,7 @@
         }
     ],
     "integrity": {
-        "shadow_summary_sha256": "a00da0eb5f499cbb27e76621d722422e4aa3dcc40d16d4d747a6f9f82a941ca1",
+        "shadow_summary_sha256": "5a04b94b3920d8decf063b09182cf3f9fe57edf0e6759bc2be18e90da6ab5e78",
         "shadow_deltas_sha256": "c53144d7d946d1ea24e9b6127f3b35301f21b1a9602488d7056f371e03ad30bb"
     }
 }

@@ -1,6 +1,6 @@
 {
   "report_version": "1.0",
-  "verified_at": "2026-01-24T17:01:42.889Z",
+  "verified_at": "2026-01-25T05:07:42.387Z",
   "pack_id": "unknown",
   "admission_status": "NOT_ADMISSIBLE",
   "checks": [
@@ -40,9 +40,8 @@
       "check_id": "ADM-STR-001",
       "name": "Required Files",
       "category": "ADMISSION_STRUCTURE",
-      "status": "FAIL",
-      "message": "Missing required files: manifest.json, integrity/sha256sums.txt, integrity/pack.sha256",
-      "taxonomy": "REQUIRED_ARTIFACT_MISSING",
+      "status": "PASS",
+      "message": "All required files present",
       "duration_ms": 0
     },
     {
@@ -50,7 +49,7 @@
       "name": "Required Directories",
       "category": "ADMISSION_STRUCTURE",
       "status": "FAIL",
-      "message": "Missing required directories: artifacts, timeline, integrity",
+      "message": "Missing required directories: artifacts",
       "taxonomy": "REQUIRED_ARTIFACT_MISSING",
       "duration_ms": 0
     },
@@ -65,36 +64,34 @@
     },
     {
       "check_id": "INT-001",
-      "name": "SHA256 Sums File",
+      "name": "SHA256 Sums Verification",
       "category": "INTEGRITY",
-      "status": "FAIL",
-      "message": "integrity/sha256sums.txt not found",
-      "taxonomy": "INTEGRITY_HASH_MISMATCH",
+      "status": "PASS",
+      "message": "2 files verified",
       "duration_ms": 0
     },
     {
       "check_id": "INT-002",
       "name": "Pack Root Hash",
       "category": "INTEGRITY",
-      "status": "FAIL",
-      "message": "integrity/pack.sha256 not found",
-      "taxonomy": "INTEGRITY_HASH_MISMATCH",
+      "status": "PASS",
+      "message": "Pack root hash verified: bbf2bd392e4eb45f...",
       "duration_ms": 0
     },
     {
       "check_id": "INT-003",
       "name": "SHA256 Coverage",
       "category": "INTEGRITY",
-      "status": "SKIP",
-      "message": "sha256sums.txt not found",
+      "status": "PASS",
+      "message": "Coverage complete: 2 files covered",
       "duration_ms": 0
     },
     {
       "check_id": "MAN-001",
-      "name": "Manifest Parse",
+      "name": "Required Manifest Fields",
       "category": "MANIFEST",
       "status": "FAIL",
-      "message": "Could not parse manifest.json",
+      "message": "Missing required fields: pack_version, pack_id, created_at, protocol_version",
       "taxonomy": "MANIFEST_PARSE_FAILED",
       "duration_ms": 0
     },
@@ -141,25 +138,19 @@
       "duration_ms": 0
     },
     {
-      "check_id": "TL-001",
-      "name": "Timeline File",
+      "check_id": "TL-002",
+      "name": "Timeline Total Order",
       "category": "TIMELINE",
-      "status": "SKIP",
-      "message": "timeline/events.ndjson not found",
+      "status": "PASS",
+      "message": "5 events in total order",
       "duration_ms": 0
     }
   ],
   "blocking_failures": [
     {
-      "check_id": "ADM-STR-001",
-      "taxonomy": "REQUIRED_ARTIFACT_MISSING",
-      "message": "Missing required files: manifest.json, integrity/sha256sums.txt, integrity/pack.sha256",
-      "pointers": []
-    },
-    {
       "check_id": "ADM-STR-002",
       "taxonomy": "REQUIRED_ARTIFACT_MISSING",
-      "message": "Missing required directories: artifacts, timeline, integrity",
+      "message": "Missing required directories: artifacts",
       "pointers": []
     },
     {
@@ -169,21 +160,9 @@
       "pointers": []
     },
     {
-      "check_id": "INT-001",
-      "taxonomy": "INTEGRITY_HASH_MISMATCH",
-      "message": "integrity/sha256sums.txt not found",
-      "pointers": []
-    },
-    {
-      "check_id": "INT-002",
-      "taxonomy": "INTEGRITY_HASH_MISMATCH",
-      "message": "integrity/pack.sha256 not found",
-      "pointers": []
-    },
-    {
       "check_id": "MAN-001",
       "taxonomy": "MANIFEST_PARSE_FAILED",
-      "message": "Could not parse manifest.json",
+      "message": "Missing required fields: pack_version, pack_id, created_at, protocol_version",
       "pointers": []
     },
     {
@@ -200,12 +179,12 @@
     }
   ],
   "hashes": {
-    "pack_root_hash": "",
-    "manifest_hash": "",
+    "pack_root_hash": "bbf2bd392e4eb45febca06cb63d8c3baacbcc1f501c8ca7c56f1c3c47e5f128c",
+    "manifest_hash": "dfea1b37c80c532efc283dfcb17b300c0f6d75cce590717150b0e787c0181733",
     "schemas_bundle_hash": "99804832ddc3daefb92ec74120afaab1c3278e4a79d670e1f796e67f735463aa",
     "invariants_bundle_hash": "d32ed8bd0139ba2197c618f8cc057dae15ba8cd5012b25946c1e20c07fd8ebe0",
-    "report_hash": "fc5fa28807ed96037de52945c183ee79735f6032810b4d4de7fd08a5ab7f0b70"
+    "report_hash": "837c0efac733f76b73cb6e65c530c4f0208e83695678375caaa04dd71f232f5f"
   },
-  "ruleset_version": "ruleset-1.2",
+  "ruleset_version": "ruleset-1.3",
   "total_duration_ms": 0
 }

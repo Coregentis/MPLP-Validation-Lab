@@ -56,7 +56,7 @@
       },
       "baseline_commit_sha": "2b01caa26fd4c189050b5ba6820b071dd0314190",
       "shadow_input_sha256": "54872edc152fecbca0df6bae338c9f0fc4308f70cf181ceb309cbad6f6aed76f",
-      "diffpack_hash": "e1481bcd6fbbeefe364f52b1d5d849cf7d1b07b346767ecc373bd5cdca5e34ab",
+      "diffpack_hash": "2043af34f39b8f28c70db0f492fd7ad8eecb976f70897d293d3bed44a671eba2",
       "path": "_data/ruleset-diffs/ruleset-1.2__ruleset-1.3/diffpack.json"
     }
   ]

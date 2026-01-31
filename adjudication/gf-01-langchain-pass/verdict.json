@@ -1,7 +1,7 @@
 {
   "adjudication_version": "1.0",
   "run_id": "gf-01-langchain-pass",
-  "adjudicated_at": "2026-01-25T04:18:12.899Z",
+  "adjudicated_at": "2026-01-25T05:15:53.124Z",
   "verifier": {
     "id": "validation-lab-verifier",
     "version": "1.0.0"

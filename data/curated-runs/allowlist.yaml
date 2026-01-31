@@ -16,7 +16,8 @@ runs:
     verify_report_hash: ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
     evaluation_report_hash: ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
     status: frozen
-    indexable: true
+    indexable: false
+    unavailable_reason: MISSING_VERIFY_REPORT
     created_at: '2026-01-10T14:00:00Z'
   - run_id: gf-01-a2a-fail
     scenario_id: gf-01-single-agent-lifecycle
@@ -34,7 +35,8 @@ runs:
     verify_report_hash: ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
     evaluation_report_hash: ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
     status: frozen
-    indexable: true
+    indexable: false
+    unavailable_reason: MISSING_VERIFY_REPORT
     notes: 'P1.1 ADMISSIBLE+FAIL sample: loop_detected triggers execution failure'
     created_at: '2026-01-16T09:00:00Z'
   - run_id: gf-01-langchain-pass
@@ -53,7 +55,8 @@ runs:
     verify_report_hash: ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
     evaluation_report_hash: ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
     status: frozen
-    indexable: true
+    indexable: false
+    unavailable_reason: MISSING_VERIFY_REPORT
     created_at: '2026-01-10T14:00:00Z'
   - run_id: gf-01-mcp-pass
     scenario_id: gf-01-single-agent-lifecycle
@@ -71,7 +74,8 @@ runs:
     verify_report_hash: ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
     evaluation_report_hash: ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
     status: frozen
-    indexable: true
+    indexable: false
+    unavailable_reason: MISSING_VERIFY_REPORT
     created_at: '2026-01-10T14:00:00Z'
   - run_id: gf-01-langchain-official-v0.2
     scenario_id: gf-01-single-agent-lifecycle
@@ -87,7 +91,8 @@ runs:
     supersedes: gf-01-langchain-pass
     status: active
     notes: Official LangChain SDK (FakeListLLM) with equivalence record verified
-    indexable: true
+    indexable: false
+    unavailable_reason: MISSING_VERIFY_REPORT
     created_at: '2026-01-13T00:00:00Z'
     pack_root_hash: 1a499c7e9be2b9fb40202130640c33551971c1650f1497fd0f3cf7bebe6a47a4
     verdict_hash: 25102cd201fd8b54f53416b21ef9d3b609fbca34718a0b4eb5ec58db16971c56
@@ -108,7 +113,8 @@ runs:
     supersedes: gf-01-a2a-pass
     status: eligible_for_upgrade
     notes: 'Declared (Static Evidence): mocked producer; eligible for upgrade when live SDK producer available'
-    indexable: true
+    indexable: false
+    unavailable_reason: MISSING_VERIFY_REPORT
     created_at: '2026-01-13T00:00:00Z'
     pack_root_hash: 80025729808627f4a475fc5cfa536afdc05a3f4cb6601651b957b7910fcc2214
     verdict_hash: 25102cd201fd8b54f53416b21ef9d3b609fbca34718a0b4eb5ec58db16971c56
@@ -129,7 +135,8 @@ runs:
     supersedes: gf-01-mcp-pass
     status: active
     notes: Official @modelcontextprotocol/server SDK; reproduced as static event capture (not live client/server execution)
-    indexable: true
+    indexable: false
+    unavailable_reason: MISSING_VERIFY_REPORT
     created_at: '2026-01-13T00:00:00Z'
     verdict_hash: e7f5b31e40d6a645782d219428c731ebed338739b5eadf831ec206fc7d002011
     pack_root_hash: 403b0c41336ae4c674031c53d52447e441fd86fca5c0bf38982e5b29486cf2ca
@@ -527,8 +534,9 @@ runs:
     inference_mode: none
     repro_ref: data/runs/pydantic-ai-d1-budget-pass-01/
     status: active
-    notes: 'v0.13 D1 PASS: Pydantic-AI expansion sample'
-    indexable: true
+    notes: 'v0.13 D1 PASS: Pydantic-AI expansion sample (ARCHIVED: missing verdict/verify-report)'
+    indexable: false
+    unavailable_reason: MISSING_VERDICT_AND_VERIFY_REPORT
     created_at: '2026-01-25T12:00:00Z'
   - run_id: pydantic-ai-d1-budget-pass-02
     scenario_id: d1-budget-pass-scenario
@@ -541,8 +549,9 @@ runs:
     inference_mode: none
     repro_ref: data/runs/pydantic-ai-d1-budget-pass-02/
     status: active
-    notes: 'v0.13 D1 PASS: Pydantic-AI expansion sample'
-    indexable: true
+    notes: 'v0.13 D1 PASS: Pydantic-AI expansion sample (ARCHIVED: missing verdict/verify-report)'
+    indexable: false
+    unavailable_reason: MISSING_VERDICT_AND_VERIFY_REPORT
     created_at: '2026-01-25T12:00:00Z'
   - run_id: pydantic-ai-d1-budget-fail-01
     scenario_id: d1-budget-fail-scenario
@@ -555,8 +564,9 @@ runs:
     inference_mode: none
     repro_ref: data/runs/pydantic-ai-d1-budget-fail-01/
     status: active
-    notes: 'v0.13 D1 FAIL: Pydantic-AI expansion sample'
-    indexable: true
+    notes: 'v0.13 D1 FAIL: Pydantic-AI expansion sample (ARCHIVED: missing verdict/verify-report)'
+    indexable: false
+    unavailable_reason: MISSING_VERDICT_AND_VERIFY_REPORT
     created_at: '2026-01-25T12:00:00Z'
   - run_id: pydantic-ai-d1-budget-fail-02
     scenario_id: d1-budget-fail-scenario
@@ -569,6 +579,37 @@ runs:
     inference_mode: none
     repro_ref: data/runs/pydantic-ai-d1-budget-fail-02/
     status: active
-    notes: 'v0.13 D1 FAIL: Pydantic-AI expansion sample'
-    indexable: true
+    notes: 'v0.13 D1 FAIL: Pydantic-AI expansion sample (ARCHIVED: missing verdict/verify-report)'
+    indexable: false
+    unavailable_reason: MISSING_VERDICT_AND_VERIFY_REPORT
     created_at: '2026-01-25T12:00:00Z'
+  - run_id: v05-d1-langgraph-pass-budget-allow
+    scenario_id: d1-budget-pass-scenario
+    ruleset_version: ruleset-1.0
+    substrate: langgraph
+    substrate_fingerprint_ref: governance/substrates/langgraph/fingerprint.yaml
+    fieldmap_ref: governance/mappings/fieldmap/langgraph.yaml
+    substrate_claim_level: declared
+    substrate_execution: static
+    inference_mode: none
+    repro_ref: data/runs/v05-d1-langgraph-pass-budget-allow/
+    status: active
+    notes: 'v0.5 D1 PASS: LangGraph evidence for budget decision (allow) (ARCHIVED: legacy, missing verdict/verify-report)'
+    indexable: false
+    unavailable_reason: LEGACY_MISSING_EVIDENCE
+    created_at: '2026-01-15T00:00:00Z'
+  - run_id: v05-d1-sk-pass-budget-allow
+    scenario_id: d1-budget-pass-scenario
+    ruleset_version: ruleset-1.0
+    substrate: sk
+    substrate_fingerprint_ref: governance/substrates/sk/fingerprint.yaml
+    fieldmap_ref: governance/mappings/fieldmap/langgraph.yaml
+    substrate_claim_level: declared
+    substrate_execution: static
+    inference_mode: none
+    repro_ref: data/runs/v05-d1-sk-pass-budget-allow/
+    status: active
+    notes: 'v0.5 D1 PASS: Semantic Kernel evidence for budget decision (allow) (ARCHIVED: legacy, missing verdict/verify-report)'
+    indexable: false
+    unavailable_reason: LEGACY_MISSING_EVIDENCE
+    created_at: '2026-01-15T00:00:00Z'

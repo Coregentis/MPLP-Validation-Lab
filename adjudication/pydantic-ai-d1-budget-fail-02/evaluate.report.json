@@ -1,7 +1,7 @@
 {
   "evaluate_version": "1.0",
   "run_id": "pydantic-ai-d1-budget-fail-02",
-  "evaluated_at": "2026-01-25T04:18:12.912Z",
+  "evaluated_at": "2026-01-25T05:15:53.139Z",
   "ruleset_version": "ruleset-1.3",
   "golden_flows": [
     {
@@ -14,35 +14,41 @@
       "gf_id": "GF-02",
       "status": "PASS",
       "evidence_refs": [
-        "pack/timeline/events.ndjson"
+        "timeline/events.ndjson"
       ],
       "message": "Prompt evidence present"
     },
     {
       "gf_id": "GF-03",
-      "status": "NOT_EVALUATED",
-      "evidence_refs": [],
-      "message": "No output evidence found"
+      "status": "PASS",
+      "evidence_refs": [
+        "integrity/pack.sha256",
+        "integrity/sha256sums.txt"
+      ],
+      "message": "Output integrity evidence present"
     },
     {
       "gf_id": "GF-04",
       "status": "PASS",
       "evidence_refs": [
-        "pack/timeline/events.ndjson"
+        "timeline/events.ndjson"
       ],
       "message": "Timeline evidence present"
     },
     {
       "gf_id": "GF-05",
-      "status": "NOT_EVALUATED",
-      "evidence_refs": [],
-      "message": "No crypto evidence found"
+      "status": "PASS",
+      "evidence_refs": [
+        "integrity/pack.sha256",
+        "integrity/sha256sums.txt"
+      ],
+      "message": "Cryptographic binding present"
     }
   ],
   "summary": {
     "total": 5,
-    "passed": 2,
+    "passed": 4,
     "failed": 0,
-    "not_evaluated": 3
+    "not_evaluated": 1
   }
 }

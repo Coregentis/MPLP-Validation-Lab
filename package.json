@@ -89,7 +89,10 @@
         "producer:autogen": "node producers/autogen/run.mjs --all",
         "producer:sk": "node producers/semantic-kernel/run.mjs --all",
         "producers:all": "npm run producer:langgraph && npm run producer:autogen && npm run producer:sk",
-        "gates": "npm run generate:curated && npm run gate:04 && npm run gate:05 && npm run gate:06 && npm run gate:07 && npm run gate:08 && npm run gate:09 && npm run gate:10"
+        "gates": "npm run generate:curated && npm run gate:04 && npm run gate:05 && npm run gate:06 && npm run gate:07 && npm run gate:08 && npm run gate:09 && npm run gate:10",
+        "audit:p0": "tsx scripts/audit/run-all.ts p0",
+        "audit:p1": "tsx scripts/audit/run-all.ts p1",
+        "audit:all": "tsx scripts/audit/run-all.ts all"
     },
     "dependencies": {
         "clsx": "^2.1.1",

@@ -4,7 +4,7 @@
     "generated_at": "2026-01-24T20:06:53+08:00",
     "protocol_version": "1.0.0",
     "schema_bundle_version": "2.0.0",
-    "lab_series": "v0.14.0",
+    "lab_series": "v0.17.0",
     "baseline_commit_sha": "2b01caa26fd4c189050b5ba6820b071dd0314190",
     "tripod": {
         "website_anchor": "https://www.mplp.io/definition",
@@ -20,12 +20,13 @@
         "cross_verified": "/policies/cross-verified",
         "cross_verified_report": "_data/cross-verified/v0.10.2-report.json",
         "cross_verified_report_sha256": "b65996d81c3b774a32c9c4b4797914ceb248046a45bba24176fc61da188346b5",
-        "sample_set_manifest_sha256": "7c4d7e9038122e41bad77ccaa1ddad1105e7a91017fef644747a0397c808b5ee",
+        "sample_set_manifest_sha256": "ed0f19067caa901c1c33a24f0dead5816042135f606d42e156c7858c34fcfda1",
         "runs": "/runs",
         "rulesets": "/rulesets",
         "ruleset_evolution_hub": "/rulesets/evolution",
+        "ruleset_diff_base": "/rulesets/evolution/diff",
         "ruleset_diff_index": "_meta/ruleset-diff-index.json",
-        "ruleset_diff_index_sha256": "8c380af79a994ac9f3c7a4b18046ee36b8c91f4dff592461b89c0596be22feb3",
+        "ruleset_diff_index_sha256": "22fafff500db1655e57de5b28b0cead98a519d2a33b7c56cf0fa15fe5ca23102",
         "rulesets_root": "_data/ruleset-diffs/",
         "shadow_input": "_data/ruleset-diffs/shadow-input.json",
         "shadow_inputs": {
@@ -33,18 +34,52 @@
             "v0.11-v0.12-baseline": "2df221240973ba5bc0f042f190cf4910918299bcd9c55af7e0c0ae7918a880c8",
             "v0.13.1-logic-anchor": "54872edc152fecbca0df6bae338c9f0fc4308f70cf181ceb309cbad6f6aed76f"
         },
-        "seal_v11_sha256": "43015569f4ae09503460459c3a3c94d27196024419574da9e4726bf643973715",
+        "seal_v11_sha256": "aa61d6a9702736b50ed0e9c06886f1ab4a704231a3defcd83c0e30aabf143fc6",
         "seal_v12_sha256": "78493664107dd0943eefa2be2f53faeec07386ab00c965b314ca8fb2c7632106",
         "seal_v12_1_sha256": "0cbf652d9f052b6f2af76f43e19e3fbb60dfe50cab4751bfe216d0f3a9762fc0",
         "seal_v13_0_sha256": "189e150722994af1725b540698ba0cd3eb6a8ef82b4e7f0320d511d35c08957d",
         "seal_v13_1_sha256": "26323c46e531d34e676867a79a3ea7342e7c0fba81098415a929953a4555ccc9",
         "seal_v14_0_sha256": "c7b56962c1a0545d845dd217cf9256b410682824b936fc56dbbe2e15c9e0cd9b",
+        "seal_v15_0_sha256": "972295cb971b2aaecbf93871b927471b024d165f0478206e704b303e03d52249",
+        "seal_v15_1_sha256": "05d935c5363adf2cbd9653d47bc46b25402a4783af8fee61afb8e5c8153c0a2a",
+        "seal_v16_0_sha256": "608d9bfd652f25f7eabb38ef7f7a3cd5931b4d5ec4de68b1c9ca3e068fb80043",
+        "seal_v17_0_sha256": "e4b80fa0781c57734a6263df1002fb84051cb413d8c7a45d42eb873e735778c3",
         "fail_benchmark_v14": {
             "run_id": "pydantic-ai-d1-budget-fail-01",
             "benchmark_doc_sha256": "a92c20b68fed6d62f36369c5185c7d7178643f38cbe78afd53d615cc32e68568",
             "pointers_sha256": "f422ec02545c0440e2b80f6f3f0e064adffb1290d6faf5db3a641f58c1added9"
         },
+        "shipyard_v15": {
+            "matrix_sha256": "7ed6f3e7723a1036702a9f13c1bf52e621455fde77ee0d757a9041f10dc58bea",
+            "delta_sha256": "590e8f751773c20405ab5aed17876f134536bcab0c23ca775984c7fd04abe748",
+            "governance_sha256": "5b4d226cc4e8cf1b57d8d7bed3a65cc41eaa05f66ca7eb67f0ea56059f8ce25b"
+        },
+        "explainability_v16": {
+            "diffpack_sha256": "470c309730a6f622a75c8653e4edf2ef9d64c4524c8f56d8b6a8777838743a4e",
+            "evolution_doc_sha256": "c8733d65065979562174674f4384ed681d805ee6dc869a298b9d72f291f4f00"
+        },
+        "integrity": {
+            "audit_freeze_manifest_sha256": "9315a347bbe97ab89db0046087ea1d63f461fca9ae63e2888aaea5c89d357183"
+        },
         "sop_v12_integrity": "scripts/gates/gate-v12-sop-integrity.ts"
+    },
+    "governance_terms": {
+        "BOUNDARY-NON-CERTIFICATION": {
+            "v": "v1.0.0",
+            "text": "The Validation Lab is an evidence evaluation environment, not a certification program. Verdicts are deterministic outputs of specific rulesets, not official compliance marks."
+        },
+        "BOUNDARY-VENDOR-NEUTRAL": {
+            "v": "v1.0.0",
+            "text": "MPLP is a vendor-neutral, framework-agnostic lifecycle protocol for AI agents."
+        },
+        "BOUNDARY-NON-ENDORSEMENT": {
+            "v": "v1.0.0",
+            "text": "Publication of evidence does not imply endorsement of specific frameworks or organizations."
+        },
+        "BOUNDARY-NO-EXECUTION-HOSTING": {
+            "v": "v1.0.0",
+            "text": "The Lab does not run user code or host sandboxes. Evaluation is strictly based on submitted evidence packs."
+        }
     },
     "boundaries": [
         "BOUNDARY-NON-CERTIFICATION",

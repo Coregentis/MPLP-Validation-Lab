@@ -1,7 +1,7 @@
 {
   "adjudication_version": "1.0",
   "run_id": "pydantic-ai-d1-budget-fail-02",
-  "adjudicated_at": "2026-01-25T04:18:12.912Z",
+  "adjudicated_at": "2026-01-25T05:15:53.139Z",
   "verifier": {
     "id": "validation-lab-verifier",
     "version": "1.0.0"
@@ -20,33 +20,39 @@
       "gf_id": "GF-02",
       "status": "PASS",
       "evidence_refs": [
-        "pack/timeline/events.ndjson"
+        "timeline/events.ndjson"
       ],
       "message": "Prompt evidence present"
     },
     {
       "gf_id": "GF-03",
-      "status": "NOT_EVALUATED",
-      "evidence_refs": [],
-      "message": "No output evidence found"
+      "status": "PASS",
+      "evidence_refs": [
+        "integrity/pack.sha256",
+        "integrity/sha256sums.txt"
+      ],
+      "message": "Output integrity evidence present"
     },
     {
       "gf_id": "GF-04",
       "status": "PASS",
       "evidence_refs": [
-        "pack/timeline/events.ndjson"
+        "timeline/events.ndjson"
       ],
       "message": "Timeline evidence present"
     },
     {
       "gf_id": "GF-05",
-      "status": "NOT_EVALUATED",
-      "evidence_refs": [],
-      "message": "No crypto evidence found"
+      "status": "PASS",
+      "evidence_refs": [
+        "integrity/pack.sha256",
+        "integrity/sha256sums.txt"
+      ],
+      "message": "Cryptographic binding present"
     }
   ],
   "overall_status": "NOT_ADMISSIBLE",
-  "verdict_hash": "aace4f77bcb82e2b8d9f0df1b5ca2dca39985b6671c4acc934d6c3a182f0c03a",
+  "verdict_hash": "72574a6343635b5d281ac93cab3f282a666e6c7638e8ba33ef43210e458692b1",
   "_meta": {
     "generated_by": "vlab-adjudicate"
   }

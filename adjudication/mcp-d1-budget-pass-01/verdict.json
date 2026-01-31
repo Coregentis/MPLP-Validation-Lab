@@ -1,12 +1,12 @@
 {
   "adjudication_version": "1.0",
   "run_id": "mcp-d1-budget-pass-01",
-  "adjudicated_at": "2026-01-24T17:01:42.885Z",
+  "adjudicated_at": "2026-01-25T05:07:42.376Z",
   "verifier": {
     "id": "validation-lab-verifier",
     "version": "1.0.0"
   },
-  "ruleset_version": "ruleset-1.2",
+  "ruleset_version": "ruleset-1.3",
   "protocol_pin": "unknown",
   "admission_status": "NOT_ADMISSIBLE",
   "golden_flow_results": [
@@ -20,33 +20,39 @@
       "gf_id": "GF-02",
       "status": "PASS",
       "evidence_refs": [
-        "pack/timeline/events.ndjson"
+        "timeline/events.ndjson"
       ],
       "message": "Prompt evidence present"
     },
     {
       "gf_id": "GF-03",
-      "status": "NOT_EVALUATED",
-      "evidence_refs": [],
-      "message": "No output evidence found"
+      "status": "PASS",
+      "evidence_refs": [
+        "integrity/pack.sha256",
+        "integrity/sha256sums.txt"
+      ],
+      "message": "Output integrity evidence present"
     },
     {
       "gf_id": "GF-04",
       "status": "PASS",
       "evidence_refs": [
-        "pack/timeline/events.ndjson"
+        "timeline/events.ndjson"
       ],
       "message": "Timeline evidence present"
     },
     {
       "gf_id": "GF-05",
-      "status": "NOT_EVALUATED",
-      "evidence_refs": [],
-      "message": "No crypto evidence found"
+      "status": "PASS",
+      "evidence_refs": [
+        "integrity/pack.sha256",
+        "integrity/sha256sums.txt"
+      ],
+      "message": "Cryptographic binding present"
     }
   ],
   "overall_status": "NOT_ADMISSIBLE",
-  "verdict_hash": "beef6811ad103948f0026e4e3d89cf5ba47833f7c2db36715893d413cb4153ce",
+  "verdict_hash": "7576bf0742d7ed7d36d7a1db4071f06f634a937a38ee06137206cb15dad66d9d",
   "_meta": {
     "generated_by": "vlab-adjudicate"
   }

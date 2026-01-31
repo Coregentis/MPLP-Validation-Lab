@@ -4,8 +4,8 @@
   "pointers": [
     {
       "requirement_id": "RQ-D1-01",
-      "artifact_path": "pack/timeline/events.ndjson",
-      "locator": "canonptr:v1:D1:budget:000:pydantic",
+      "artifact_path": "timeline/events.ndjson",
+      "locator": "canonptr:v1:D1:budget:000:2376cff1",
       "status": "PRESENT"
     }
   ]

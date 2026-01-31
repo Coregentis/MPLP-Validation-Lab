@@ -13,9 +13,11 @@ interface RunsStatusSummaryProps {
     totalRuns: number;
     adjudicatedCount: number;
     pendingCount: number;
+    indexableCount: number;
+    archivedCount: number;
 }
 
-export function RunsStatusSummary({ totalRuns, adjudicatedCount, pendingCount }: RunsStatusSummaryProps) {
+export function RunsStatusSummary({ totalRuns, adjudicatedCount, pendingCount, indexableCount, archivedCount }: RunsStatusSummaryProps) {
     return (
         <div className="mb-8 p-4 bg-mplp-dark-soft/30 border border-mplp-border/30 rounded-xl">
             <div className="flex flex-wrap items-center gap-6 text-sm">
@@ -37,6 +39,23 @@ export function RunsStatusSummary({ totalRuns, adjudicatedCount, pendingCount }:
                     <span className="w-2 h-2 rounded-full bg-zinc-500" />
                     <span className="text-mplp-text-muted">Registered Only:</span>
                     <span className="font-bold text-zinc-400">{pendingCount}</span>
+                </div>
+
+                {/* Divider */}
+                <div className="h-4 w-px bg-mplp-border/50" />
+
+                {/* Indexable */}
+                <div className="flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-green-500" />
+                    <span className="text-mplp-text-muted">Indexable:</span>
+                    <span className="font-bold text-green-400">{indexableCount}</span>
+                </div>
+
+                {/* Archived */}
+                <div className="flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-zinc-600" />
+                    <span className="text-mplp-text-muted">Archived:</span>
+                    <span className="font-bold text-zinc-500">{archivedCount}</span>
                 </div>
             </div>
 

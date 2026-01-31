@@ -1,0 +1,410 @@
+{
+  "report_version": "1.0.0",
+  "generated_at": "2026-01-26T06:14:13.414Z",
+  "lab_series": "v0.17.0",
+  "summary": {
+    "total_audits": 6,
+    "passed": 6,
+    "failed": 0,
+    "total_findings": 26,
+    "blockers": 0,
+    "critical": 0,
+    "important": 26,
+    "cosmetic": 0
+  },
+  "audits": [
+    {
+      "audit_id": "audit-03",
+      "audit_name": "Curated Runs Index Integrity",
+      "phase": "P0",
+      "passed": true,
+      "findings": [
+        {
+          "code": "AUDIT-03-RUN-NOT-INDEXED",
+          "layer": "LAYER_2_INDEX",
+          "file": "/Users/jasonwang/Documents/AI_Dev/V1.0_release/Validation_Lab/public/_data/curated-runs.json",
+          "message": "Run directory exists but not in index: gf-01-smoke",
+          "suggested_fix": "Add to allowlist.yaml and regenerate index, or mark as archived",
+          "context": {
+            "run_id": "gf-01-smoke",
+            "has_manifest": false,
+            "has_verdict": true
+          },
+          "severity": "P2_IMPORTANT"
+        },
+        {
+          "code": "AUDIT-03-RUN-NOT-INDEXED",
+          "layer": "LAYER_2_INDEX",
+          "file": "/Users/jasonwang/Documents/AI_Dev/V1.0_release/Validation_Lab/public/_data/curated-runs.json",
+          "message": "Run directory exists but not in index: sample-not-admissible",
+          "suggested_fix": "Add to allowlist.yaml and regenerate index, or mark as archived",
+          "context": {
+            "run_id": "sample-not-admissible",
+            "has_manifest": true,
+            "has_verdict": false
+          },
+          "severity": "P2_IMPORTANT"
+        },
+        {
+          "code": "AUDIT-03-RUN-NOT-INDEXED",
+          "layer": "LAYER_2_INDEX",
+          "file": "/Users/jasonwang/Documents/AI_Dev/V1.0_release/Validation_Lab/public/_data/curated-runs.json",
+          "message": "Run directory exists but not in index: sample-pass",
+          "suggested_fix": "Add to allowlist.yaml and regenerate index, or mark as archived",
+          "context": {
+            "run_id": "sample-pass",
+            "has_manifest": true,
+            "has_verdict": false
+          },
+          "severity": "P2_IMPORTANT"
+        },
+        {
+          "code": "AUDIT-03-RUN-NOT-INDEXED",
+          "layer": "LAYER_2_INDEX",
+          "file": "/Users/jasonwang/Documents/AI_Dev/V1.0_release/Validation_Lab/public/_data/curated-runs.json",
+          "message": "Run directory exists but not in index: test-gf01-only",
+          "suggested_fix": "Add to allowlist.yaml and regenerate index, or mark as archived",
+          "context": {
+            "run_id": "test-gf01-only",
+            "has_manifest": true,
+            "has_verdict": false
+          },
+          "severity": "P2_IMPORTANT"
+        },
+        {
+          "code": "AUDIT-03-RUN-NOT-INDEXED",
+          "layer": "LAYER_2_INDEX",
+          "file": "/Users/jasonwang/Documents/AI_Dev/V1.0_release/Validation_Lab/public/_data/curated-runs.json",
+          "message": "Run directory exists but not in index: v05-d1-autogen-fail-outcome-invalid",
+          "suggested_fix": "Add to allowlist.yaml and regenerate index, or mark as archived",
+          "context": {
+            "run_id": "v05-d1-autogen-fail-outcome-invalid",
+            "has_manifest": true,
+            "has_verdict": false
+          },
+          "severity": "P2_IMPORTANT"
+        },
+        {
+          "code": "AUDIT-03-RUN-NOT-INDEXED",
+          "layer": "LAYER_2_INDEX",
+          "file": "/Users/jasonwang/Documents/AI_Dev/V1.0_release/Validation_Lab/public/_data/curated-runs.json",
+          "message": "Run directory exists but not in index: v05-d1-autogen-pass-budget-allow",
+          "suggested_fix": "Add to allowlist.yaml and regenerate index, or mark as archived",
+          "context": {
+            "run_id": "v05-d1-autogen-pass-budget-allow",
+            "has_manifest": true,
+            "has_verdict": false
+          },
+          "severity": "P2_IMPORTANT"
+        },
+        {
+          "code": "AUDIT-03-RUN-NOT-INDEXED",
+          "layer": "LAYER_2_INDEX",
+          "file": "/Users/jasonwang/Documents/AI_Dev/V1.0_release/Validation_Lab/public/_data/curated-runs.json",
+          "message": "Run directory exists but not in index: v05-d1-langgraph-fail-outcome-invalid",
+          "suggested_fix": "Add to allowlist.yaml and regenerate index, or mark as archived",
+          "context": {
+            "run_id": "v05-d1-langgraph-fail-outcome-invalid",
+            "has_manifest": true,
+            "has_verdict": false
+          },
+          "severity": "P2_IMPORTANT"
+        },
+        {
+          "code": "AUDIT-03-RUN-NOT-INDEXED",
+          "layer": "LAYER_2_INDEX",
+          "file": "/Users/jasonwang/Documents/AI_Dev/V1.0_release/Validation_Lab/public/_data/curated-runs.json",
+          "message": "Run directory exists but not in index: v05-d1-sk-fail-outcome-invalid",
+          "suggested_fix": "Add to allowlist.yaml and regenerate index, or mark as archived",
+          "context": {
+            "run_id": "v05-d1-sk-fail-outcome-invalid",
+            "has_manifest": true,
+            "has_verdict": false
+          },
+          "severity": "P2_IMPORTANT"
+        },
+        {
+          "code": "AUDIT-03-RUN-NOT-INDEXED",
+          "layer": "LAYER_2_INDEX",
+          "file": "/Users/jasonwang/Documents/AI_Dev/V1.0_release/Validation_Lab/public/_data/curated-runs.json",
+          "message": "Run directory exists but not in index: v05-d2-autogen-fail-invalid-terminal",
+          "suggested_fix": "Add to allowlist.yaml and regenerate index, or mark as archived",
+          "context": {
+            "run_id": "v05-d2-autogen-fail-invalid-terminal",
+            "has_manifest": true,
+            "has_verdict": false
+          },
+          "severity": "P2_IMPORTANT"
+        },
+        {
+          "code": "AUDIT-03-RUN-NOT-INDEXED",
+          "layer": "LAYER_2_INDEX",
+          "file": "/Users/jasonwang/Documents/AI_Dev/V1.0_release/Validation_Lab/public/_data/curated-runs.json",
+          "message": "Run directory exists but not in index: v05-d2-autogen-pass-terminal-success",
+          "suggested_fix": "Add to allowlist.yaml and regenerate index, or mark as archived",
+          "context": {
+            "run_id": "v05-d2-autogen-pass-terminal-success",
+            "has_manifest": true,
+            "has_verdict": false
+          },
+          "severity": "P2_IMPORTANT"
+        },
+        {
+          "code": "AUDIT-03-RUN-NOT-INDEXED",
+          "layer": "LAYER_2_INDEX",
+          "file": "/Users/jasonwang/Documents/AI_Dev/V1.0_release/Validation_Lab/public/_data/curated-runs.json",
+          "message": "Run directory exists but not in index: v05-d2-langgraph-fail-invalid-terminal",
+          "suggested_fix": "Add to allowlist.yaml and regenerate index, or mark as archived",
+          "context": {
+            "run_id": "v05-d2-langgraph-fail-invalid-terminal",
+            "has_manifest": true,
+            "has_verdict": false
+          },
+          "severity": "P2_IMPORTANT"
+        },
+        {
+          "code": "AUDIT-03-RUN-NOT-INDEXED",
+          "layer": "LAYER_2_INDEX",
+          "file": "/Users/jasonwang/Documents/AI_Dev/V1.0_release/Validation_Lab/public/_data/curated-runs.json",
+          "message": "Run directory exists but not in index: v05-d2-langgraph-pass-terminal-success",
+          "suggested_fix": "Add to allowlist.yaml and regenerate index, or mark as archived",
+          "context": {
+            "run_id": "v05-d2-langgraph-pass-terminal-success",
+            "has_manifest": true,
+            "has_verdict": false
+          },
+          "severity": "P2_IMPORTANT"
+        },
+        {
+          "code": "AUDIT-03-RUN-NOT-INDEXED",
+          "layer": "LAYER_2_INDEX",
+          "file": "/Users/jasonwang/Documents/AI_Dev/V1.0_release/Validation_Lab/public/_data/curated-runs.json",
+          "message": "Run directory exists but not in index: v05-d2-sk-fail-invalid-terminal",
+          "suggested_fix": "Add to allowlist.yaml and regenerate index, or mark as archived",
+          "context": {
+            "run_id": "v05-d2-sk-fail-invalid-terminal",
+            "has_manifest": true,
+            "has_verdict": false
+          },
+          "severity": "P2_IMPORTANT"
+        },
+        {
+          "code": "AUDIT-03-RUN-NOT-INDEXED",
+          "layer": "LAYER_2_INDEX",
+          "file": "/Users/jasonwang/Documents/AI_Dev/V1.0_release/Validation_Lab/public/_data/curated-runs.json",
+          "message": "Run directory exists but not in index: v05-d2-sk-pass-terminal-success",
+          "suggested_fix": "Add to allowlist.yaml and regenerate index, or mark as archived",
+          "context": {
+            "run_id": "v05-d2-sk-pass-terminal-success",
+            "has_manifest": true,
+            "has_verdict": false
+          },
+          "severity": "P2_IMPORTANT"
+        },
+        {
+          "code": "AUDIT-03-RUN-NOT-INDEXED",
+          "layer": "LAYER_2_INDEX",
+          "file": "/Users/jasonwang/Documents/AI_Dev/V1.0_release/Validation_Lab/public/_data/curated-runs.json",
+          "message": "Run directory exists but not in index: v05-d3-autogen-fail-subject-missing",
+          "suggested_fix": "Add to allowlist.yaml and regenerate index, or mark as archived",
+          "context": {
+            "run_id": "v05-d3-autogen-fail-subject-missing",
+            "has_manifest": true,
+            "has_verdict": false
+          },
+          "severity": "P2_IMPORTANT"
+        },
+        {
+          "code": "AUDIT-03-RUN-NOT-INDEXED",
+          "layer": "LAYER_2_INDEX",
+          "file": "/Users/jasonwang/Documents/AI_Dev/V1.0_release/Validation_Lab/public/_data/curated-runs.json",
+          "message": "Run directory exists but not in index: v05-d3-autogen-pass-authz-allow",
+          "suggested_fix": "Add to allowlist.yaml and regenerate index, or mark as archived",
+          "context": {
+            "run_id": "v05-d3-autogen-pass-authz-allow",
+            "has_manifest": true,
+            "has_verdict": false
+          },
+          "severity": "P2_IMPORTANT"
+        },
+        {
+          "code": "AUDIT-03-RUN-NOT-INDEXED",
+          "layer": "LAYER_2_INDEX",
+          "file": "/Users/jasonwang/Documents/AI_Dev/V1.0_release/Validation_Lab/public/_data/curated-runs.json",
+          "message": "Run directory exists but not in index: v05-d3-langgraph-fail-subject-missing",
+          "suggested_fix": "Add to allowlist.yaml and regenerate index, or mark as archived",
+          "context": {
+            "run_id": "v05-d3-langgraph-fail-subject-missing",
+            "has_manifest": true,
+            "has_verdict": false
+          },
+          "severity": "P2_IMPORTANT"
+        },
+        {
+          "code": "AUDIT-03-RUN-NOT-INDEXED",
+          "layer": "LAYER_2_INDEX",
+          "file": "/Users/jasonwang/Documents/AI_Dev/V1.0_release/Validation_Lab/public/_data/curated-runs.json",
+          "message": "Run directory exists but not in index: v05-d3-langgraph-pass-authz-allow",
+          "suggested_fix": "Add to allowlist.yaml and regenerate index, or mark as archived",
+          "context": {
+            "run_id": "v05-d3-langgraph-pass-authz-allow",
+            "has_manifest": true,
+            "has_verdict": false
+          },
+          "severity": "P2_IMPORTANT"
+        },
+        {
+          "code": "AUDIT-03-RUN-NOT-INDEXED",
+          "layer": "LAYER_2_INDEX",
+          "file": "/Users/jasonwang/Documents/AI_Dev/V1.0_release/Validation_Lab/public/_data/curated-runs.json",
+          "message": "Run directory exists but not in index: v05-d3-sk-fail-subject-missing",
+          "suggested_fix": "Add to allowlist.yaml and regenerate index, or mark as archived",
+          "context": {
+            "run_id": "v05-d3-sk-fail-subject-missing",
+            "has_manifest": true,
+            "has_verdict": false
+          },
+          "severity": "P2_IMPORTANT"
+        },
+        {
+          "code": "AUDIT-03-RUN-NOT-INDEXED",
+          "layer": "LAYER_2_INDEX",
+          "file": "/Users/jasonwang/Documents/AI_Dev/V1.0_release/Validation_Lab/public/_data/curated-runs.json",
+          "message": "Run directory exists but not in index: v05-d3-sk-pass-authz-allow",
+          "suggested_fix": "Add to allowlist.yaml and regenerate index, or mark as archived",
+          "context": {
+            "run_id": "v05-d3-sk-pass-authz-allow",
+            "has_manifest": true,
+            "has_verdict": false
+          },
+          "severity": "P2_IMPORTANT"
+        },
+        {
+          "code": "AUDIT-03-RUN-NOT-INDEXED",
+          "layer": "LAYER_2_INDEX",
+          "file": "/Users/jasonwang/Documents/AI_Dev/V1.0_release/Validation_Lab/public/_data/curated-runs.json",
+          "message": "Run directory exists but not in index: v05-d4-autogen-fail-reason-invalid",
+          "suggested_fix": "Add to allowlist.yaml and regenerate index, or mark as archived",
+          "context": {
+            "run_id": "v05-d4-autogen-fail-reason-invalid",
+            "has_manifest": true,
+            "has_verdict": false
+          },
+          "severity": "P2_IMPORTANT"
+        },
+        {
+          "code": "AUDIT-03-RUN-NOT-INDEXED",
+          "layer": "LAYER_2_INDEX",
+          "file": "/Users/jasonwang/Documents/AI_Dev/V1.0_release/Validation_Lab/public/_data/curated-runs.json",
+          "message": "Run directory exists but not in index: v05-d4-autogen-pass-reason-success",
+          "suggested_fix": "Add to allowlist.yaml and regenerate index, or mark as archived",
+          "context": {
+            "run_id": "v05-d4-autogen-pass-reason-success",
+            "has_manifest": true,
+            "has_verdict": false
+          },
+          "severity": "P2_IMPORTANT"
+        },
+        {
+          "code": "AUDIT-03-RUN-NOT-INDEXED",
+          "layer": "LAYER_2_INDEX",
+          "file": "/Users/jasonwang/Documents/AI_Dev/V1.0_release/Validation_Lab/public/_data/curated-runs.json",
+          "message": "Run directory exists but not in index: v05-d4-langgraph-fail-reason-invalid",
+          "suggested_fix": "Add to allowlist.yaml and regenerate index, or mark as archived",
+          "context": {
+            "run_id": "v05-d4-langgraph-fail-reason-invalid",
+            "has_manifest": true,
+            "has_verdict": false
+          },
+          "severity": "P2_IMPORTANT"
+        },
+        {
+          "code": "AUDIT-03-RUN-NOT-INDEXED",
+          "layer": "LAYER_2_INDEX",
+          "file": "/Users/jasonwang/Documents/AI_Dev/V1.0_release/Validation_Lab/public/_data/curated-runs.json",
+          "message": "Run directory exists but not in index: v05-d4-langgraph-pass-reason-success",
+          "suggested_fix": "Add to allowlist.yaml and regenerate index, or mark as archived",
+          "context": {
+            "run_id": "v05-d4-langgraph-pass-reason-success",
+            "has_manifest": true,
+            "has_verdict": false
+          },
+          "severity": "P2_IMPORTANT"
+        },
+        {
+          "code": "AUDIT-03-RUN-NOT-INDEXED",
+          "layer": "LAYER_2_INDEX",
+          "file": "/Users/jasonwang/Documents/AI_Dev/V1.0_release/Validation_Lab/public/_data/curated-runs.json",
+          "message": "Run directory exists but not in index: v05-d4-sk-fail-reason-invalid",
+          "suggested_fix": "Add to allowlist.yaml and regenerate index, or mark as archived",
+          "context": {
+            "run_id": "v05-d4-sk-fail-reason-invalid",
+            "has_manifest": true,
+            "has_verdict": false
+          },
+          "severity": "P2_IMPORTANT"
+        },
+        {
+          "code": "AUDIT-03-RUN-NOT-INDEXED",
+          "layer": "LAYER_2_INDEX",
+          "file": "/Users/jasonwang/Documents/AI_Dev/V1.0_release/Validation_Lab/public/_data/curated-runs.json",
+          "message": "Run directory exists but not in index: v05-d4-sk-pass-reason-success",
+          "suggested_fix": "Add to allowlist.yaml and regenerate index, or mark as archived",
+          "context": {
+            "run_id": "v05-d4-sk-pass-reason-success",
+            "has_manifest": true,
+            "has_verdict": false
+          },
+          "severity": "P2_IMPORTANT"
+        }
+      ],
+      "execution_time_ms": 1,
+      "timestamp": "2026-01-26T06:14:13.368Z"
+    },
+    {
+      "audit_id": "audit-04",
+      "audit_name": "Ruleset Diff Index Integrity",
+      "phase": "P0",
+      "passed": true,
+      "findings": [],
+      "execution_time_ms": 36,
+      "timestamp": "2026-01-26T06:14:13.406Z"
+    },
+    {
+      "audit_id": "audit-06",
+      "audit_name": "Version Consistency",
+      "phase": "P0",
+      "passed": true,
+      "findings": [],
+      "execution_time_ms": 1,
+      "timestamp": "2026-01-26T06:14:13.408Z"
+    },
+    {
+      "audit_id": "audit-07",
+      "audit_name": "Evidence Reference Resolution",
+      "phase": "P0",
+      "passed": true,
+      "findings": [],
+      "execution_time_ms": 0,
+      "timestamp": "2026-01-26T06:14:13.410Z"
+    },
+    {
+      "audit_id": "audit-12",
+      "audit_name": "Data Pollution Detection",
+      "phase": "P0",
+      "passed": true,
+      "findings": [],
+      "execution_time_ms": 0,
+      "timestamp": "2026-01-26T06:14:13.412Z"
+    },
+    {
+      "audit_id": "audit-13",
+      "audit_name": "SEAL Format Compliance",
+      "phase": "P0",
+      "passed": true,
+      "findings": [],
+      "execution_time_ms": 1,
+      "timestamp": "2026-01-26T06:14:13.414Z"
+    }
+  ]
+}

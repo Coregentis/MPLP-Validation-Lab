@@ -1,0 +1,11 @@
+# Institutional assets MUST be LF to remain bit-identical cross-platform
+governance/** text eol=lf
+public/_meta/** text eol=lf
+brain/** text eol=lf
+
+# Markdown / JSON hardening (defensive)
+*.md text eol=lf
+*.json text eol=lf
+*.ndjson text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf

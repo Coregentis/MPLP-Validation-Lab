@@ -243,16 +243,22 @@ export function loadRunBundle(runId: string): RunBundle {
 
     // Try multiple possible event locations
     const eventPaths = [
-        path.join(packRoot, 'trace', 'events.ndjson'),
-        path.join(base, 'timeline', 'events.ndjson'),  // Legacy location
+        path.join(packRoot, 'timeline', 'events.ndjson'), // EPC 1.0 Canonical
+        path.join(packRoot, 'trace', 'events.ndjson'),    // v0.3 Beta
+        path.join(base, 'timeline', 'events.ndjson'),      // Legacy location
     ];
 
     let trace: TraceData | undefined;
-    for (const eventPath of eventPaths) {
-        if (fs.existsSync(eventPath)) {
+    for (const p of eventPaths) {
+        if (fs.existsSync(p)) {
+            const traceData = fs.readFileSync(p, 'utf-8');
+            const traceEvents = traceData.split('\n')
+                .filter(line => line.trim())
+                .map(line => ({ ...JSON.parse(line), ts: undefined }));
+
             trace = {
-                events: parseNdjson(eventPath),
-                raw_path: eventPath,
+                events: traceEvents as Event[],
+                raw_path: p,
             };
             break;
         }

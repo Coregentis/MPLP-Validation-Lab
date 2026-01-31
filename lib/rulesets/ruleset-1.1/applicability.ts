@@ -63,10 +63,11 @@ export function getEffectiveClauseIds(runId: string): string[] {
 }
 
 /**
- * Check if a run is a v0.3 arbitration pack.
+ * Check if a run is a v0.3 arbitration pack or v0.15 benchmark run.
  */
 export function isArbitrationPack(runId: string): boolean {
-    return runId.toLowerCase().startsWith('arb-');
+    const id = runId.toLowerCase();
+    return id.startsWith('arb-') || id.includes('-d1-budget-');
 }
 
 /**

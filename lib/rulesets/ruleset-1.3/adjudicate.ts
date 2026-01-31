@@ -1,8 +1,8 @@
 /**
- * Ruleset-1.2 Adjudicator
+ * Ruleset-1.3 Adjudicator
  * 
- * v0.4 Semantic Invariant Adjudication
- * - Evaluates 12 clauses (3 per domain)
+ * v0.13.1 Phased Evolution
+ * - Evaluates 12 clauses (3 per domain) with refined CL-D1-03
  * - Returns RulesetEvalResult per registry contract
  */
 
@@ -17,7 +17,7 @@ import { isArbitrationPack } from '@/lib/rulesets/ruleset-1.1/applicability';
 // =============================================================================
 
 /**
- * Adjudicate a run using ruleset-1.2 (12-clause semantic invariants).
+ * Adjudicate a run using ruleset-1.3 (refined D1 budget enforcement).
  */
 export async function adjudicatorFn(bundle: RunBundle): Promise<RulesetEvalResult> {
     // Check applicability
@@ -85,7 +85,7 @@ export async function adjudicatorFn(bundle: RunBundle): Promise<RulesetEvalResul
     }));
 
     return {
-        ruleset_id: 'ruleset-1.2',
+        ruleset_id: 'ruleset-1.3',
         run_id: bundle.run_id,
         evaluated_at: new Date().toISOString(),
         topline_verdict: toplineVerdict,
@@ -100,11 +100,11 @@ export async function adjudicatorFn(bundle: RunBundle): Promise<RulesetEvalResul
  */
 function createNotApplicableResult(bundle: RunBundle): RulesetEvalResult {
     return {
-        ruleset_id: 'ruleset-1.2',
+        ruleset_id: 'ruleset-1.3',
         run_id: bundle.run_id,
         evaluated_at: new Date().toISOString(),
         topline_verdict: 'NOT_EVALUATED',
-        reason_code: 'PACK_NOT_APPLICABLE_FOR_RULESET_1_2',
+        reason_code: 'PACK_NOT_APPLICABLE_FOR_RULESET_1_3',
         clauses: [],
     };
 }
