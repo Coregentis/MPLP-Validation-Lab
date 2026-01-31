@@ -1,0 +1,38 @@
+{
+    "compilerOptions": {
+        "target": "ES2022",
+        "lib": [
+            "esnext"
+        ],
+        "module": "NodeNext",
+        "moduleResolution": "NodeNext",
+        "esModuleInterop": true,
+        "resolveJsonModule": true,
+        "strict": true,
+        "skipLibCheck": true,
+        "noEmit": true,
+        "declaration": false,
+        "isolatedModules": true,
+        "baseUrl": ".",
+        "paths": {
+            "@/*": [
+                "./*"
+            ]
+        }
+    },
+    "include": [
+        "scripts/**/*.ts",
+        "scripts/**/*.mts",
+        "lib/**/*.ts",
+        "producers/**/*.ts",
+        "runners/**/*.ts",
+        "app/_ssot/**/*.ts",
+        "app/v2/_ssot/**/*.ts"
+    ],
+    "exclude": [
+        "node_modules",
+        "app/**",
+        ".next/**",
+        "**/*.test.ts"
+    ]
+}

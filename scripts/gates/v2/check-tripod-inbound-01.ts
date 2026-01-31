@@ -1,6 +1,6 @@
 
 import { GateDefinition, GateResult } from '../_lib/gate-runner';
-import { TRIPOD, PAGE_BINDINGS } from '../../app/_ssot/ux.generated';
+import { TRIPOD, PAGE_BINDINGS } from '../../../app/_ssot/ux.generated';
 
 export const gate: GateDefinition = {
     gate_id: "GATE-V2-TRIPOD-INBOUND-01",

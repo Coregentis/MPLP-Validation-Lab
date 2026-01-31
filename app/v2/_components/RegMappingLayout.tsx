@@ -1,12 +1,17 @@
 
 import React from 'react';
+import fs from 'fs';
+import path from 'path';
 import { PAGE_BINDINGS, TOKENS } from '../_ssot/ux.generated';
 import { BlockRenderer } from './BlockRenderer';
 
 async function getRegMapping() {
     try {
-        const data = await import('../../public/_data/v2/reg-mapping.json');
-        return data.default.data;
+        const mappingPath = path.join(process.cwd(), 'public/_data/v2/reg-mapping.json');
+        if (!fs.existsSync(mappingPath)) return null;
+        const content = fs.readFileSync(mappingPath, 'utf-8');
+        const data = JSON.parse(content);
+        return data.data;
     } catch (e) {
         return null;
     }

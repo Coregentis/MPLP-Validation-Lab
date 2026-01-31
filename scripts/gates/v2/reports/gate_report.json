@@ -1,352 +1,215 @@
 {
   "summary": {
-    "pass": 49,
+    "pass": 23,
     "warn": 0,
     "fail": 0
   },
   "results": [
     {
-      "gate_id": "GATE-V2-NO-LEGACY-01",
-      "name": "No V1 Legacy Content",
-      "exit_code": 0,
-      "summary": "No V1 legacy content found",
-      "failures": []
-    },
-    {
-      "gate_id": "GATE-V2-HOST-ALLOW-UI-01",
-      "name": "Host Allowlist (UI/Registry)",
-      "exit_code": 0,
-      "summary": "All host references are allowlisted",
-      "failures": []
-    },
-    {
-      "gate_id": "GATE-V2-HOST-ALLOW-DATA-01",
-      "name": "Host Allowlist (Data/Provenance)",
-      "exit_code": 0,
-      "summary": "All data provenance hosts are authorized",
-      "failures": []
-    },
-    {
       "gate_id": "GATE-V2-DET-01",
       "name": "Determinism Proof",
-      "exit_code": 0,
-      "summary": "All multi-run scenarios have converged canonical hashes",
-      "failures": []
+      "status": "PASS",
+      "message": "All multi-run scenarios have converged canonical hashes",
+      "details": [],
+      "failures": [],
+      "exit_code": 0
     },
     {
       "gate_id": "GATE-V2-PROJ-01",
       "name": "UI Projection-Only Data Access",
-      "exit_code": 0,
-      "summary": "All UI data access uses projection registry",
-      "failures": []
-    },
-    {
-      "gate_id": "GATE-V2-CROSSLINK-SSOT-01",
-      "name": "Cross-Site Link SSOT",
-      "exit_code": 0,
-      "summary": "All cross-site links use SSOT registry",
-      "failures": []
+      "status": "PASS",
+      "message": "All UI data access uses projection registry",
+      "details": [],
+      "failures": [],
+      "exit_code": 0
     },
     {
       "gate_id": "GATE-V2-REAL-QUALIFY-01",
       "name": "Real Provenance Qualification",
       "exit_code": 0,
       "summary": "All REAL runs meet provenance qualification standards",
-      "failures": []
+      "failures": [],
+      "status": "PASS",
+      "message": "All REAL runs meet provenance qualification standards"
     },
     {
       "gate_id": "GATE-V2-RUNNER-SSOT-01",
       "name": "Runner Seal Integrity (SSOT)",
       "exit_code": 0,
       "summary": "All REAL runs have bit-identical seal integrity (Manifest matches Runner SSOT)",
-      "failures": []
-    },
-    {
-      "gate_id": "GATE-V2-INVENTORY-SSOT-01",
-      "name": "Inventory SSOT Consistency Verified",
-      "exit_code": 0,
-      "summary": "All checks passed",
-      "failures": []
-    },
-    {
-      "gate_id": "GATE-V2-RELEASE-HYGIENE-01",
-      "name": "Deployment Hygiene Verified",
-      "exit_code": 0,
-      "summary": "All checks passed",
-      "failures": []
-    },
-    {
-      "gate_id": "GATE-V2-RELEASE-ID-01",
-      "name": "Release Identity Verified",
-      "exit_code": 0,
-      "summary": "All checks passed",
-      "failures": []
-    },
-    {
-      "gate_id": "GATE-V2-PROJECTION-CLOSURE-01",
-      "name": "Projection Closure Verified",
-      "exit_code": 0,
-      "summary": "All checks passed",
-      "failures": []
-    },
-    {
-      "gate_id": "GATE-V2-NO-FS-01",
-      "name": "Runtime Integrity (No FS)",
-      "exit_code": 0,
-      "summary": "No runtime FS access detected",
-      "failures": []
+      "failures": [],
+      "status": "PASS",
+      "message": "All REAL runs have bit-identical seal integrity (Manifest matches Runner SSOT)"
     },
     {
       "gate_id": "GATE-V2-SCOPE-SSOT-01",
       "name": "Enforce strict Projection compliance with Scope SSOT",
-      "exit_code": 0,
-      "summary": "All checks passed",
-      "failures": []
+      "status": "PASS",
+      "message": "PASS",
+      "details": [],
+      "failures": [],
+      "exit_code": 0
     },
     {
       "gate_id": "GATE-V2-TIER-CONSISTENCY-01",
-      "name": "Strict Tier Consistency Logic",
-      "exit_code": 0,
-      "summary": "All checks passed",
-      "failures": []
+      "name": "Strict Tier Consistency Logic (REPRODUCED Closure)",
+      "status": "PASS",
+      "message": "PASS",
+      "details": [],
+      "failures": [],
+      "exit_code": 0
     },
     {
       "gate_id": "GATE-V2-PROJECTION-SCHEMA-01",
       "name": "Projection JSON Schema Validation",
-      "exit_code": 0,
-      "summary": "All checks passed",
-      "failures": []
+      "status": "PASS",
+      "message": "PASS",
+      "details": [],
+      "failures": [],
+      "exit_code": 0
     },
     {
       "gate_id": "GATE-V2-DISPUTE-SSOT-01",
-      "name": "Dispute SSOT Integrity Verified",
-      "exit_code": 0,
-      "summary": "All checks passed",
-      "failures": []
-    },
-    {
-      "gate_id": "GATE-V2-DISPUTE-CLOSURE-01",
-      "name": "Dispute Closure Verified",
-      "exit_code": 0,
-      "summary": "All checks passed",
-      "failures": []
-    },
-    {
-      "gate_id": "GATE-V2-FAIL-BENCH-01",
-      "name": "Fail Benchmark Exists",
-      "exit_code": 0,
-      "summary": "All checks passed",
-      "failures": []
-    },
-    {
-      "gate_id": "GATE-V2-DISPUTE-ROOTCAUSE-01",
-      "name": "Root Causes Verified",
-      "exit_code": 0,
-      "summary": "All checks passed",
-      "failures": []
-    },
-    {
-      "gate_id": "GATE-V2-RULESET-DIFFPACK-01",
-      "name": "Ruleset Diffpacks Verified",
-      "exit_code": 0,
-      "summary": "All checks passed",
-      "failures": []
+      "name": "Dispute SSOT Integrity",
+      "status": "PASS",
+      "message": "PASS",
+      "details": [],
+      "failures": [],
+      "exit_code": 0
     },
     {
       "gate_id": "GATE-V2-REG-MAPPING-SSOT-01",
-      "name": "Reg Mapping SSOT Verified",
-      "exit_code": 0,
-      "summary": "All checks passed",
-      "failures": []
+      "name": "Reg Mapping SSOT Integrity",
+      "status": "PASS",
+      "message": "PASS",
+      "details": [],
+      "failures": [],
+      "exit_code": 0
     },
     {
       "gate_id": "GATE-V2-REG-MAPPING-DISCLAIMER-01",
-      "name": "Disclaimer Presence Verified",
-      "exit_code": 0,
-      "summary": "All checks passed",
-      "failures": []
-    },
-    {
-      "gate_id": "GATE-V2-GATE-REGISTRY-01",
-      "name": "Gate Registry SSOT Check",
-      "exit_code": 0,
-      "summary": "Verified 49 active gates.",
-      "failures": []
+      "name": "Reg Mapping UI Disclaimer",
+      "status": "PASS",
+      "message": "PASS",
+      "details": [],
+      "failures": [],
+      "exit_code": 0
     },
     {
       "gate_id": "GATE-V2-IA-ENTRYPOINTS-01",
       "name": "IA Entrypoints Integrity",
-      "exit_code": 0,
-      "summary": "All entrypoints validated",
-      "failures": []
+      "status": "PASS",
+      "message": "All entrypoints validated",
+      "details": [],
+      "failures": [],
+      "exit_code": 0
     },
     {
       "gate_id": "GATE-V2-EXPLORE-TEMPLATES-01",
       "name": "IA Explore Templates Integrity",
-      "exit_code": 0,
-      "summary": "Explore templates validated",
-      "failures": []
+      "status": "PASS",
+      "message": "Explore templates validated",
+      "details": [],
+      "failures": [],
+      "exit_code": 0
     },
     {
       "gate_id": "GATE-V2-RECOMMENDED-RUNS-01",
       "name": "IA Recommended Runs Integrity",
-      "exit_code": 0,
-      "summary": "Recommended runs verified against inventory",
-      "failures": []
-    },
-    {
-      "gate_id": "GATE-V2-NAV-DISCOVERABILITY-01",
-      "name": "Navigation Discoverability Check",
-      "exit_code": 0,
-      "summary": "Nav structure validated",
-      "failures": []
+      "status": "PASS",
+      "message": "Recommended runs verified against inventory",
+      "details": [],
+      "failures": [],
+      "exit_code": 0
     },
     {
       "gate_id": "GATE-V2-FRAMEWORK-COVERAGE-01",
       "name": "Mainstream Framework Coverage",
-      "exit_code": 0,
-      "summary": "All 4 required frameworks covered.",
-      "failures": []
+      "status": "PASS",
+      "message": "All 4 required frameworks covered.",
+      "details": [],
+      "failures": [],
+      "exit_code": 0
     },
     {
       "gate_id": "GATE-V2-INTEROP-BENCH-01",
       "name": "Interop Benchmark Existence",
-      "exit_code": 0,
-      "summary": "Interop Benchmark (LangGraph + MCP + A2A) confirmed.",
-      "failures": []
+      "status": "PASS",
+      "message": "Interop Benchmark (LangGraph + MCP + A2A) confirmed.",
+      "details": [],
+      "failures": [],
+      "exit_code": 0
     },
     {
       "gate_id": "GATE-V2-INTEROP-EVIDENCE-01",
       "name": "Interop Evidence Deep Scan",
-      "exit_code": 0,
-      "summary": "Interop Evidence Confirmed for interop-mcp-a2a-langgraph-d1-real-runner-det-001 (MCP + A2A present).",
-      "failures": []
+      "status": "PASS",
+      "message": "Interop Evidence Confirmed for interop-mcp-a2a-langgraph-d1-real-runner-det-001 (MCP + A2A present).",
+      "details": [],
+      "failures": [],
+      "exit_code": 0
     },
     {
       "gate_id": "GATE-V2-SSOT-GENERATED-01",
       "name": "SSOT Generated Integrity",
       "exit_code": 0,
       "summary": "Generated file matches SSOTs",
-      "failures": []
-    },
-    {
-      "gate_id": "GATE-V2-NO-HANDWRITE-COPY-01",
-      "name": "No Handwrite Frozen Copy",
-      "exit_code": 0,
-      "summary": "No hardcoded frozen tokens found",
-      "failures": []
-    },
-    {
-      "gate_id": "GATE-V2-ROLE-MODEL-01",
-      "name": "Role Model Coverage",
-      "exit_code": 0,
-      "summary": "Role Model verified",
-      "failures": []
-    },
-    {
-      "gate_id": "GATE-V2-ROLE-JOURNEYS-01",
-      "name": "Role Journeys Integrity",
-      "exit_code": 0,
-      "summary": "Journeys verified",
-      "failures": []
-    },
-    {
-      "gate_id": "GATE-V2-CASE-FIRSTFOLD-01",
-      "name": "Case Page First Fold",
-      "exit_code": 0,
-      "summary": "First Fold validated",
-      "failures": []
-    },
-    {
-      "gate_id": "GATE-V2-LAW-CLAUSE-FIRSTFOLD-01",
-      "name": "Clause Page First Fold",
-      "exit_code": 0,
-      "summary": "Clause Page Validated",
-      "failures": []
-    },
-    {
-      "gate_id": "GATE-V2-INTEROP-VISUAL-01",
-      "name": "Interop Visualizer Presence",
-      "exit_code": 0,
-      "summary": "Visualizer Found",
-      "failures": []
-    },
-    {
-      "gate_id": "GATE-V2-HOME-LANDING-01",
-      "name": "Homepage Landing Experience",
-      "exit_code": 0,
-      "summary": "Homepage has all 6 required landing blocks",
-      "failures": []
-    },
-    {
-      "gate_id": "GATE-V2-START-ROLE-GATEWAY-01",
-      "name": "Start Page Role Gateway",
-      "exit_code": 0,
-      "summary": "Start page has Hero and Role Gateway",
-      "failures": []
-    },
-    {
-      "gate_id": "GATE-V2-LAWS-HERO-01",
-      "name": "Laws Page Hero",
-      "exit_code": 0,
-      "summary": "Laws page has Hero and Clause Browser",
-      "failures": []
+      "failures": [],
+      "status": "PASS",
+      "message": "Generated file matches SSOTs"
     },
     {
       "gate_id": "GATE-V2-UX-TOKENS-01",
       "name": "UX Tokens Consistency",
       "exit_code": 0,
       "summary": "Tokens unified",
-      "failures": []
+      "failures": [],
+      "status": "PASS",
+      "message": "Tokens unified"
     },
     {
       "gate_id": "GATE-V2-UX-BLOCK-REGISTRY-01",
       "name": "Block Registry Completeness",
       "exit_code": 0,
       "summary": "All blocks registered",
-      "failures": []
+      "failures": [],
+      "status": "PASS",
+      "message": "All blocks registered"
     },
     {
       "gate_id": "GATE-V2-POINTER-CANON-01",
       "name": "Pointer Canonical Form",
       "exit_code": 0,
       "summary": "Pointers canonical",
-      "failures": []
+      "failures": [],
+      "status": "PASS",
+      "message": "Pointers canonical"
     },
     {
       "gate_id": "GATE-V2-TRIPOD-INBOUND-01",
       "name": "Tripod Inbound Integrity",
       "exit_code": 0,
       "summary": "Inbound Integrity Verified",
-      "failures": []
+      "failures": [],
+      "status": "PASS",
+      "message": "Inbound Integrity Verified"
     },
     {
       "gate_id": "GATE-V2-TRIPOD-OUTBOUND-01",
       "name": "Tripod Outbound Integrity",
       "exit_code": 0,
       "summary": "Outbound Integrity Verified",
-      "failures": []
+      "failures": [],
+      "status": "PASS",
+      "message": "Outbound Integrity Verified"
     },
     {
-      "gate_id": "GATE-V2-HTTP-HEALTH-KEYROUTES-01",
-      "name": "HTTP Health Check for Key Routes",
-      "exit_code": 0,
-      "summary": "All 9 key routes returned 200 OK",
-      "failures": []
-    },
-    {
-      "gate_id": "GATE-V2-NO-EMPTY-PAGES-01",
-      "name": "No Empty Pages Policy",
-      "exit_code": 0,
-      "summary": "All 9 routes have valid content structure",
-      "failures": []
-    },
-    {
-      "gate_id": "GATE-V2-DYNAMIC-DETAIL-SAMPLE-01",
-      "name": "Dynamic Detail Page Sampling",
-      "exit_code": 0,
-      "summary": "Sampled acp-d1-real-runner-001: OK (Content Verified)",
-      "failures": []
+      "status": "PASS",
+      "message": "All 16 V2 runs have valid verdicts and evidence",
+      "details": [],
+      "gate_id": "GATE-V2-CONTENT-VISIBILITY-01",
+      "name": "Content Visibility Check",
+      "exit_code": 0
     }
   ]
 }

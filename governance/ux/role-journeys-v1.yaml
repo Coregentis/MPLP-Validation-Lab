@@ -1,0 +1,38 @@
+journeys:
+  - role: "architect"
+    steps:
+      - route: "/start"
+        expect_blocks: ["BLOCK_ROLE_GATEWAY"]
+        expect_ctas: ["CTA_START_JOURNEY"]
+      - route: "/cases/interop-mcp-a2a-langgraph-d1-real-runner-det-001"
+        expect_blocks: ["BLOCK_INTEROP_VISUALIZER", "BLOCK_VERDICT_BADGE"]
+        expect_ctas: ["CTA_VIEW_EVIDENCE"]
+        expect_proof_ptrs: ["mplp://timeline/event/3"]
+
+  - role: "auditor"
+    steps:
+      - route: "/start"
+        expect_blocks: ["BLOCK_ROLE_GATEWAY"]
+        expect_ctas: ["CTA_INSPECT_FAILURE"]
+      - route: "/cases/mcp-d1-fail-benchmark-001"
+        expect_blocks: ["BLOCK_DISPUTE_PANEL", "BLOCK_VERDICT_BADGE"]
+        expect_ctas: ["CTA_VIEW_ROOT_CAUSE"]
+        expect_proof_ptrs: ["mplp://artifacts/verdict.json"]
+
+  - role: "compliance"
+    steps:
+      - route: "/start"
+        expect_blocks: ["BLOCK_ROLE_GATEWAY"]
+        expect_ctas: ["CTA_VIEW_MAPPING"]
+      - route: "/policies/reg-mapping"
+        expect_blocks: ["BLOCK_REG_MAPPING_MATRIX", "BLOCK_DISCLAIMER_BANNER"]
+        expect_ctas: ["CTA_VIEW_EXAMPLE_CASE"]
+
+  - role: "builder"
+    steps:
+      - route: "/start"
+        expect_blocks: ["BLOCK_ROLE_GATEWAY"]
+        expect_ctas: ["CTA_BUILD_EVIDENCE"]
+      - route: "/cases/interop-mcp-a2a-langgraph-d1-real-runner-det-001"
+        expect_blocks: ["BLOCK_MANIFEST_VIEWER"]
+        expect_ctas: ["CTA_DOWNLOAD_ARTIFACTS"]

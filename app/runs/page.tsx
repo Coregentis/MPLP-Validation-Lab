@@ -1,120 +1,207 @@
-import { getCuratedRuns } from '@/lib/curated/load-curated-runs';
-import { CuratedRunsTable } from './_components/CuratedRunsTable';
-import { ScenarioAwareBanner } from './_components/ScenarioAwareBanner';
-import { RunsStatusSummary } from './_components/RunsStatusSummary';
-import { ProvenanceFooter } from '@/components/ProvenanceFooter';
+/**
+ * Unified Runs Page
+ * 
+ * Single entry point for all runs (V1 SIMULATED + V2 REPRODUCED/DISPUTE_READY).
+ * Supports faceted filtering via query params: ?tier=, ?substrate=, ?verdict=
+ * 
+ * Ticket: VLAB-MERGE-P0-ROUTE-01
+ */
 
-export const metadata = {
-    title: 'Curated Runs | MPLP Validation Lab',
-    description: 'Vendor-neutral evidence packs for third-party verification',
-    robots: { index: false, follow: false }
+import Link from 'next/link';
+import { loadAllRuns } from '@/lib/unified/load-all-runs';
+import type { RunTier, UnifiedRunIndexItem } from '@/lib/unified/types';
+import { VersionStrip } from '@/components/VersionStrip';
+import { getVersionStripModel } from '@/lib/unified/version-strip-model';
+import { Nav } from '@/components/Nav';
+
+// Tier badge styling
+const TIER_STYLES: Record<RunTier, { bg: string; text: string; label: string }> = {
+    DISPUTE_READY: { bg: 'bg-red-500/10', text: 'text-red-400', label: 'Dispute Ready' },
+    REPRODUCED: { bg: 'bg-emerald-500/10', text: 'text-emerald-400', label: 'Reproduced' },
+    SIMULATED: { bg: 'bg-blue-500/10', text: 'text-blue-400', label: 'Simulated' },
+    DECLARED: { bg: 'bg-zinc-500/10', text: 'text-zinc-400', label: 'Declared' },
 };
 
-export default function RunsPage() {
-    const data = getCuratedRuns();
+// Verdict badge styling
+const VERDICT_STYLES: Record<string, { bg: string; text: string }> = {
+    PASS: { bg: 'bg-emerald-500/10', text: 'text-emerald-400' },
+    FAIL: { bg: 'bg-red-500/10', text: 'text-red-400' },
+    'N/A': { bg: 'bg-zinc-500/10', text: 'text-zinc-400' },
+};
 
-    // Split runs into v0.2 (ruleset-1.0 / GF), v0.3 (ruleset-1.1), and v0.4 (ruleset-1.2)
-    const v02Runs = data.runs.filter(r => !r.run_id.startsWith('arb-'));
-    const v03Runs = data.runs.filter(r => r.run_id.startsWith('arb-') && r.run_id.endsWith('-v0.3'));
-    const v04Runs = data.runs.filter(r => r.run_id.startsWith('arb-') && r.run_id.endsWith('-v0.4'));
-
-    // Count adjudicated runs (those with adjudication_status === 'ADJUDICATED')
-    const adjudicatedCount = data.runs.filter(r => {
-        const adjStatus = (r as unknown as Record<string, unknown>).adjudication_status;
-        return adjStatus === 'ADJUDICATED';
-    }).length;
-    const totalRuns = data.runs.length;
-    const pendingCount = totalRuns - adjudicatedCount;
-
-    // Count indexable vs archived runs
-    const indexableCount = data.runs.filter(r => (r as any).indexable !== false).length;
-    const archivedCount = totalRuns - indexableCount;
-
+function TierBadge({ tier }: { tier: RunTier }) {
+    const style = TIER_STYLES[tier];
     return (
-        <div className="pt-8">
-            <div className="mb-12">
-                <p className="text-xs font-bold uppercase tracking-[0.4em] text-mplp-text-muted/80 mb-3">Resources</p>
-                <h1 className="text-3xl sm:text-4xl font-bold text-mplp-text mb-6">Curated Runs</h1>
-                <p className="max-w-2xl text-mplp-text-muted leading-relaxed">
-                    Vendor-neutral evidence packs for third-party verification.
-                    Packs are evaluated against their declared ruleset and can be
-                    independently recomputed locally.
-                </p>
-            </div>
-
-            {/* Status Summary Bar */}
-            <RunsStatusSummary
-                totalRuns={totalRuns}
-                adjudicatedCount={adjudicatedCount}
-                pendingCount={pendingCount}
-                indexableCount={indexableCount}
-                archivedCount={archivedCount}
-            />
-
-            <ScenarioAwareBanner />
-
-            {/* Scope Clarification - Updated for v0.4 */}
-            <div className="mb-10 pl-4 border-l-2 border-mplp-border/50">
-                <p className="text-sm text-mplp-text-muted">
-                    <strong className="text-mplp-text font-semibold uppercase tracking-wider text-xs mr-2">Scope Note</strong>
-                    <code className="px-1.5 py-0.5 rounded bg-mplp-dark-soft border border-mplp-border/40 text-xs font-mono text-mplp-text-muted">NOT_ADJUDICATED</code> indicates the run has no applicable ruleset reference or lacks required artifacts for its declared ruleset.
-                    v0.4 packs use <code className="px-1.5 py-0.5 rounded bg-mplp-dark-soft border border-mplp-border/40 text-xs font-mono text-mplp-text-muted">ruleset-1.2</code> with 12 semantic invariant clauses.
-                </p>
-            </div>
-
-            {/* v0.4 Semantic Invariant Packs (Four-Domain) */}
-            {v04Runs.length > 0 && (
-                <section className="mt-8">
-                    <div className="flex items-center justify-between mb-8 pb-4 border-b border-mplp-border/30">
-                        <div className="flex items-center gap-3">
-                            <h2 className="text-sm font-bold uppercase tracking-widest text-mplp-text">Semantic Invariant Packs (v0.4)</h2>
-                            <span className="px-2 py-0.5 text-xs font-mono rounded bg-purple-500/10 text-purple-400 border border-purple-500/20">ruleset-1.2</span>
-                        </div>
-                        <code className="hidden sm:block text-xs text-mplp-text-muted/60 font-mono">12 clauses · 4 domains</code>
-                    </div>
-
-                    <div className="bg-glass rounded-2xl overflow-hidden border border-mplp-border/30 mb-12">
-                        <CuratedRunsTable runs={v04Runs} />
-                    </div>
-                </section>
-            )}
-
-            {/* v0.3 Arbitration Packs (Four-Domain) */}
-            {v03Runs.length > 0 && (
-                <section className="mt-8">
-                    <div className="flex items-center justify-between mb-8 pb-4 border-b border-mplp-border/30">
-                        <div className="flex items-center gap-3">
-                            <h2 className="text-sm font-bold uppercase tracking-widest text-mplp-text">Four-Domain Packs (v0.3)</h2>
-                            <span className="px-2 py-0.5 text-xs font-mono rounded bg-green-500/10 text-green-400 border border-green-500/20">ruleset-1.1</span>
-                        </div>
-                        <code className="hidden sm:block text-xs text-mplp-text-muted/60 font-mono">D1/D2/D3/D4 domains</code>
-                    </div>
-
-                    <div className="bg-glass rounded-2xl overflow-hidden border border-mplp-border/30 mb-12">
-                        <CuratedRunsTable runs={v03Runs} />
-                    </div>
-                </section>
-            )}
-
-            {/* v0.2 GoldenFlow Packs */}
-            <section className="mt-8">
-                <div className="flex items-center justify-between mb-8 pb-4 border-b border-mplp-border/30">
-                    <div className="flex items-center gap-3">
-                        <h2 className="text-sm font-bold uppercase tracking-widest text-mplp-text">GoldenFlow Packs (v0.2)</h2>
-                        <span className="px-2 py-0.5 text-xs font-mono rounded bg-blue-500/10 text-blue-400 border border-blue-500/20">ruleset-1.0</span>
-                    </div>
-                    <code className="hidden sm:block text-xs text-mplp-text-muted/60 font-mono">npm run vlab:recheck-hash</code>
-                </div>
-
-                <div className="bg-glass rounded-2xl overflow-hidden border border-mplp-border/30">
-                    <CuratedRunsTable runs={v02Runs} />
-                </div>
-            </section>
-
-            <div className="mt-16 pt-8 border-t border-mplp-border/30">
-                <ProvenanceFooter ssot={data.ssot} />
-            </div>
-        </div>
+        <span className={`px-2 py-0.5 text-xs font-mono rounded ${style.bg} ${style.text} border border-current/20`}>
+            {style.label}
+        </span>
     );
 }
 
+function VerdictBadge({ verdict }: { verdict: string }) {
+    const style = VERDICT_STYLES[verdict] || VERDICT_STYLES['N/A'];
+    return (
+        <span className={`px-2 py-0.5 text-xs font-bold rounded ${style.bg} ${style.text}`}>
+            {verdict}
+        </span>
+    );
+}
+
+function SourceBadge({ source }: { source: 'v1' | 'v2' }) {
+    return (
+        <span className={`px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wider rounded ${source === 'v2' ? 'bg-purple-500/10 text-purple-400' : 'bg-zinc-500/10 text-zinc-400'
+            }`}>
+            {source}
+        </span>
+    );
+}
+
+function RunRow({ run }: { run: UnifiedRunIndexItem }) {
+    return (
+        <tr className="border-b border-mplp-border/20 hover:bg-white/5 transition-colors">
+            <td className="py-3 px-4">
+                <Link
+                    href={run.href}
+                    className="font-mono text-sm text-mplp-text hover:text-mplp-blue transition-colors"
+                >
+                    {run.id}
+                </Link>
+            </td>
+            <td className="py-3 px-4">
+                <TierBadge tier={run.tier} />
+            </td>
+            <td className="py-3 px-4">
+                <SourceBadge source={run.source} />
+            </td>
+            <td className="py-3 px-4">
+                <span className="text-sm text-mplp-text-muted">{run.substrate}</span>
+            </td>
+            <td className="py-3 px-4">
+                <VerdictBadge verdict={run.verdict} />
+            </td>
+            <td className="py-3 px-4">
+                <code className="text-xs text-mplp-text-muted font-mono">{run.ruleset}</code>
+            </td>
+        </tr>
+    );
+}
+
+interface PageProps {
+    searchParams?: Promise<{ tier?: string; substrate?: string; verdict?: string }>;
+}
+
+export default async function UnifiedRunsPage({ searchParams }: PageProps) {
+    const params = await searchParams;
+    const data = loadAllRuns();
+    const versionModel = await getVersionStripModel();
+
+    // Apply filters from query params
+    let filteredRuns = data.runs;
+
+    const tierFilter = params?.tier as RunTier | undefined;
+    const substrateFilter = params?.substrate;
+    const verdictFilter = params?.verdict;
+
+
+    if (tierFilter && data.facets.tiers.includes(tierFilter)) {
+        filteredRuns = filteredRuns.filter(r => r.tier === tierFilter);
+    }
+    if (substrateFilter) {
+        filteredRuns = filteredRuns.filter(r => r.substrate === substrateFilter);
+    }
+    if (verdictFilter) {
+        filteredRuns = filteredRuns.filter(r => r.verdict === verdictFilter);
+    }
+
+    // Calculate counts by tier
+    const tierCounts = data.facets.tiers.reduce((acc, tier) => {
+        acc[tier] = data.runs.filter(r => r.tier === tier).length;
+        return acc;
+    }, {} as Record<RunTier, number>);
+
+    return (
+        <main className="min-h-screen bg-mplp-dark-bg text-mplp-text">
+            <Nav />
+            <VersionStrip {...versionModel} />
+            <div className="max-w-[1600px] mx-auto p-6">
+                {/* Header */}
+                <div className="mb-12">
+                    <p className="text-xs font-bold uppercase tracking-[0.4em] text-mplp-text-muted/80 mb-3">Resources</p>
+                    <h1 className="text-3xl sm:text-4xl font-bold text-mplp-text mb-6">All Runs</h1>
+                    <p className="max-w-2xl text-mplp-text-muted leading-relaxed">
+                        Unified view of all evidence packs from V1 (simulated) and V2 (real runner) sources.
+                        Filter by tier to see different evidence levels.
+                    </p>
+                </div>
+
+                {/* Stats Summary */}
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
+                    <div className="bg-glass rounded-xl p-4 border border-mplp-border/30">
+                        <div className="text-2xl font-bold text-mplp-text">{data.metadata.total}</div>
+                        <div className="text-xs uppercase tracking-wide text-mplp-text-muted">Total Runs</div>
+                    </div>
+                    <div className="bg-glass rounded-xl p-4 border border-mplp-border/30">
+                        <div className="text-2xl font-bold text-emerald-400">{tierCounts.REPRODUCED || 0}</div>
+                        <div className="text-xs uppercase tracking-wide text-mplp-text-muted">Reproduced (V2)</div>
+                    </div>
+                    <div className="bg-glass rounded-xl p-4 border border-mplp-border/30">
+                        <div className="text-2xl font-bold text-blue-400">{tierCounts.SIMULATED || 0}</div>
+                        <div className="text-xs uppercase tracking-wide text-mplp-text-muted">Simulated (V1)</div>
+                    </div>
+                    <div className="bg-glass rounded-xl p-4 border border-mplp-border/30">
+                        <div className="text-2xl font-bold text-red-400">{tierCounts.DISPUTE_READY || 0}</div>
+                        <div className="text-xs uppercase tracking-wide text-mplp-text-muted">Dispute Ready</div>
+                    </div>
+                </div>
+
+                {/* Tier Facet Filters */}
+                <div className="flex flex-wrap gap-2 mb-8">
+                    <Link
+                        href="/runs"
+                        className={`px-3 py-1.5 text-sm font-medium rounded-lg border transition-colors ${!tierFilter
+                            ? 'bg-mplp-blue text-white border-mplp-blue'
+                            : 'bg-transparent text-mplp-text-muted border-mplp-border hover:bg-white/5'
+                            }`}
+                    >
+                        All ({data.metadata.total})
+                    </Link>
+                    {(Object.keys(TIER_STYLES) as RunTier[]).map(tier => (
+                        <Link
+                            key={tier}
+                            href={`/runs?tier=${tier}`}
+                            className={`px-3 py-1.5 text-sm font-medium rounded-lg border transition-colors ${tierFilter === tier
+                                ? `${TIER_STYLES[tier].bg} ${TIER_STYLES[tier].text} border-current`
+                                : 'bg-transparent text-mplp-text-muted border-mplp-border hover:bg-white/5'
+                                }`}
+                        >
+                            {TIER_STYLES[tier].label} ({tierCounts[tier] || 0})
+                        </Link>
+                    ))}
+                </div>
+
+                {/* Runs Table */}
+                <div className="bg-glass border border-mplp-border/30 rounded-xl overflow-hidden">
+                    <div className="overflow-x-auto">
+                        <table className="w-full text-left">
+                            <thead>
+                                <tr className="bg-mplp-dark-soft/50 border-b border-mplp-border/30">
+                                    <th className="py-4 px-4 text-xs font-bold uppercase tracking-wider text-mplp-text-muted">ID</th>
+                                    <th className="py-4 px-4 text-xs font-bold uppercase tracking-wider text-mplp-text-muted">Tier</th>
+                                    <th className="py-4 px-4 text-xs font-bold uppercase tracking-wider text-mplp-text-muted">Source</th>
+                                    <th className="py-4 px-4 text-xs font-bold uppercase tracking-wider text-mplp-text-muted">Substrate</th>
+                                    <th className="py-4 px-4 text-xs font-bold uppercase tracking-wider text-mplp-text-muted">Verdict</th>
+                                    <th className="py-4 px-4 text-xs font-bold uppercase tracking-wider text-mplp-text-muted">Ruleset</th>
+                                </tr>
+                            </thead>
+                            <tbody className="divide-y divide-mplp-border/10">
+                                {filteredRuns.map((run) => (
+                                    <RunRow key={run.id} run={run} />
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    );
+}

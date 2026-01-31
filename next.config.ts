@@ -27,6 +27,11 @@ const nextConfig: NextConfig = {
         optimizePackageImports: ['lucide-react'],
     },
 
+    // Ignore eslint during builds to tolerate legacy code debt
+    eslint: {
+        ignoreDuringBuilds: true,
+    },
+
     // Security and Caching headers
     async headers() {
         return [

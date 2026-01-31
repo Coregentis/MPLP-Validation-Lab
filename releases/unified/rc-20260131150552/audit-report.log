@@ -1,0 +1,19 @@
+
+> validation-lab@1.0.0 audit:http:local
+> npx tsx scripts/audit/http-health-local-01.ts
+
+🔍 Starting Local HTTP Health Audit against http://localhost:3000
+📋 Auditing 11 key routes...
+✅ /                              [200] OK (5ms)
+✅ /runs                          [200] OK (36ms)
+✅ /runs?tier=SIMULATED           [200] OK (7ms)
+✅ /runs?tier=REPRODUCED          [200] OK (6ms)
+✅ /runs/admission-not-admissible-01 [200] OK (4ms)
+✅ /runs/acp-d1-real-runner-001   [200] OK (2ms)
+✅ /rulesets                      [200] OK (2ms)
+✅ /governance                    [200] OK (2ms)
+✅ /gates                         [200] OK (3ms)
+✅ /audit                         [200] OK (2ms)
+✅ /releases                      [200] OK (2ms)
+--------------------------------------------------
+✅ Audit PASSED: All routes verified

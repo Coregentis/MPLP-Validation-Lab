@@ -1,0 +1,38 @@
+{
+    "version": "governance-index-1",
+    "generated_at": "2026-01-31",
+    "entries": [
+        {
+            "id": "gov-policies",
+            "title": "Policies",
+            "description": "Operational policies and compliance standards.",
+            "href": "/policies",
+            "scope": "public",
+            "tier": "unified"
+        },
+        {
+            "id": "gov-gates",
+            "title": "Gates",
+            "description": "Automated verification logic and status.",
+            "href": "/gates",
+            "scope": "public",
+            "tier": "unified"
+        },
+        {
+            "id": "gov-seals",
+            "title": "Releases & Seals",
+            "description": "Immutable release records and cryptographic seals.",
+            "href": "/releases",
+            "scope": "public",
+            "tier": "unified"
+        },
+        {
+            "id": "gov-audit",
+            "title": "Audit",
+            "description": "Local verification and health checks.",
+            "href": "/audit",
+            "scope": "public",
+            "tier": "unified"
+        }
+    ]
+}

@@ -1,25 +1,22 @@
 /**
- * Navigation Component
- * 
- * Aligned with MPLP Website Header Design
- * Uses: bg-glass, text-[13px], max-w-7xl
+ * Unified Navigation Component
+ *
+ * Ticket: VLAB-MERGE-P1-NAV-01
+ * Supports unified V1+V2 discovery with tier facets
  */
 
 import Link from 'next/link';
 import { Logo } from "@/components/ui/logo";
 
-// Internal Lab navigation (aligned with NAVIGATION_MAP.yaml SSOT)
+// Internal Lab navigation - unified V1+V2 with tier facets
 const NAV_ITEMS = [
     { href: '/', label: 'Home' },
-    { href: '/validation', label: 'Validation' },
-    { href: '/runs', label: 'Runs' },
-    { href: '/adjudication', label: 'Adjudications' },
+    { href: '/runs', label: 'All Runs' },
+    { href: '/runs?tier=REPRODUCED', label: 'Real Runs', badge: 'V2' },
+    { href: '/runs?tier=SIMULATED', label: 'Simulated', badge: 'V1' },
     { href: '/rulesets', label: 'Rulesets' },
-    { href: '/rulesets/evolution', label: 'Evolution' },
-    { href: '/policies/contract', label: 'Contract' },
-    { href: '/methodology', label: 'Methodology' },
+    { href: '/governance', label: 'Governance' },
 ];
-
 
 // External links (Ecosystem backlinks)
 const EXTERNAL_LINKS = [
@@ -32,13 +29,13 @@ export function Nav() {
         <header className="sticky top-0 z-50 bg-glass transition-all">
             <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-[60px]" aria-label="Main navigation">
                 <div className="flex items-center justify-between h-full">
-                    {/* Logo - Premium hover */}
+                    {/* Logo */}
                     <div className="flex items-center gap-4">
                         <Link href="/" className="flex items-center gap-2 group transition hover:scale-[1.02]" aria-label="Validation Lab Home">
                             <Logo className="h-7 w-auto" />
                             <span className="text-mplp-text-muted mt-0.5">|</span>
                             <span className="text-[13px] font-bold text-white uppercase tracking-wider mt-1">Validation Lab</span>
-                            <span className="hidden lg:inline-block ml-2 px-1.5 py-0.5 text-[9px] font-black bg-zinc-800 text-zinc-500 border border-zinc-700 rounded tracking-tighter">V0.12 SUSTAINABILITY</span>
+                            <span className="hidden lg:inline-block ml-2 px-1.5 py-0.5 text-[9px] font-black bg-zinc-800 text-zinc-500 border border-zinc-700 rounded tracking-tighter">V1+V2 UNIFIED</span>
                         </Link>
                     </div>
 
@@ -48,9 +45,17 @@ export function Nav() {
                             <Link
                                 key={item.href}
                                 href={item.href}
-                                className="px-3 py-1.5 text-13 font-semibold text-mplp-text-muted hover:text-mplp-text hover:bg-white/5 transition-all rounded-lg"
+                                className="px-3 py-1.5 text-13 font-semibold text-mplp-text-muted hover:text-mplp-text hover:bg-white/5 transition-all rounded-lg flex items-center gap-1.5"
                             >
                                 {item.label}
+                                {item.badge && (
+                                    <span className={`text-[9px] font-bold px-1 py-0.5 rounded ${item.badge === 'V2'
+                                        ? 'bg-emerald-500/10 text-emerald-400'
+                                        : 'bg-blue-500/10 text-blue-400'
+                                        }`}>
+                                        {item.badge}
+                                    </span>
+                                )}
                             </Link>
                         ))}
                     </div>

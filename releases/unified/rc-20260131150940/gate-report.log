@@ -1,0 +1,394 @@
+
+> validation-lab@1.0.0 gate:all
+> npm run gate:v1:all && npm run gate:unified:inventory && npm run gate:unified:no-escape && npm run gate:unified:governance && npm run gate:unified:nav-single-entry && npm run gate:v2:all
+
+
+> validation-lab@1.0.0 gate:v1:all
+> npm run gate:vlab:00 && npm run gate:vlab:01 && npm run gate:release:01
+
+
+> validation-lab@1.0.0 gate:vlab:00
+> tsx scripts/gates/verify-upstream-pin.ts
+
+=== VLAB-GATE-00: Upstream Pin Verification ===
+
+Check 1: UPSTREAM_BASELINE.yaml exists
+  ✓ PASS
+
+Check 2: Commit SHA valid
+  ✓ PASS: 87702951...
+
+Check 3: SYNC_REPORT.json exists
+  ✓ PASS
+
+Check 4: Report commit matches baseline
+  ✓ PASS
+
+Check 5: Schema files integrity
+  ✓ PASS: 67 files verified
+
+Check 6: Invariant files integrity
+  ✓ PASS: 4 files verified
+
+=== GATE-00 VERDICT ===
+✅ PASS: Upstream pin verified
+   Commit: 877029514f87dd7da1dfb559c178ce57a935d975
+   Report SHA: d6c62d086575980c...
+
+> validation-lab@1.0.0 gate:vlab:01
+> tsx scripts/gates/verify-schema-alignment.ts
+
+=== VLAB-GATE-01: Schema Alignment Verification ===
+
+Found 54 schema files
+
+Found 4 invariant files
+
+Checking ruleset requirement sources...
+  gf-01.yaml:
+    ✓ schema: mplp-context.schema.json
+    ✓ schema: mplp-plan.schema.json
+    ✓ schema: mplp-trace.schema.json
+  gf-02.yaml:
+  gf-03.yaml:
+  gf-04.yaml:
+  gf-05.yaml:
+
+=== GATE-01 VERDICT ===
+✅ PASS: Schema alignment verified
+   Sources checked: 3
+   Sources resolved: 3
+
+> validation-lab@1.0.0 gate:release:01
+> npx tsx scripts/gates/gate-vlab-release-01-triad.ts
+
+🛡️  Running VLAB-GATE-RELEASE-01: SSOT Triad Integrity...
+📋 Validating Manifest vs Filesystem...
+✅ Report SHA256 matches actual file: b65996d81c3b774a...
+✅ Sample Set SHA256 matches actual file: ed0f19067caa901c...
+📋 Validating SEAL Document Parity (SEAL-v0.17.0.md)...
+ℹ️ SEAL format check for sample_sha: undefined vs Manifest: ed0f19067caa901c1c33a24f0dead5816042135f606d42e156c7858c34fcfda1
+✅ SEAL document parity verified (Commit and Boundaries).
+
+🟢 Gate PASS: Release Triad is consistent and verified.
+
+> validation-lab@1.0.0 gate:unified:inventory
+> tsx --tsconfig tsconfig.tools.json scripts/gates/unified/gate-unified-run-inventory-ssot-01.ts
+
+{
+  "gate_id": "GATE-UNIFIED-RUN-INVENTORY-SSOT-01",
+  "name": "Unified Run Inventory SSOT",
+  "status": "PASS",
+  "message": "Inventory SSOT verified: 48 runs (V1:32 + V2:16), tier counts aligned",
+  "details": [
+    "SIMULATED: 32",
+    "REPRODUCED: 11",
+    "DISPUTE_READY: 1",
+    "DECLARED: 4"
+  ]
+}
+
+> validation-lab@1.0.0 gate:unified:no-escape
+> tsx --tsconfig tsconfig.tools.json scripts/gates/unified/gate-no-exclude-escape-01.ts
+
+{
+  "gate_id": "GATE-NO-EXCLUDE-ESCAPE-01",
+  "name": "No Exclude Escape",
+  "status": "PASS",
+  "message": "Gate tooling configuration valid: tsconfig.tools.json properly covers all protected directories",
+  "details": [
+    "Protected: scripts/, scripts/gates/, producers/, runners/",
+    "Includes: scripts/**/*.ts, scripts/**/*.mts, lib/**/*.ts, producers/**/*.ts, runners/**/*.ts, app/_ssot/**/*.ts, app/v2/_ssot/**/*.ts"
+  ]
+}
+
+> validation-lab@1.0.0 gate:unified:governance
+> tsx --tsconfig tsconfig.tools.json scripts/gates/unified/gate-governance-index-ssot-01.ts
+
+
+> validation-lab@1.0.0 gate:unified:nav-single-entry
+> tsx --tsconfig tsconfig.tools.json scripts/gates/unified/gate-nav-single-entry-01.ts
+
+
+> validation-lab@1.0.0 gate:v2:all
+> tsx --tsconfig tsconfig.tools.json scripts/gates/v2/run-core.ts
+
+{
+  "summary": {
+    "pass": 23,
+    "warn": 0,
+    "fail": 7
+  },
+  "results": [
+    {
+      "gate_id": "GATE-V2-DET-01",
+      "name": "Determinism Proof",
+      "status": "PASS",
+      "message": "All multi-run scenarios have converged canonical hashes",
+      "details": [],
+      "failures": [],
+      "exit_code": 0
+    },
+    {
+      "gate_id": "GATE-V2-PROJ-01",
+      "name": "UI Projection-Only Data Access",
+      "status": "PASS",
+      "message": "All UI data access uses projection registry",
+      "details": [],
+      "failures": [],
+      "exit_code": 0
+    },
+    {
+      "gate_id": "GATE-V2-REAL-QUALIFY-01",
+      "name": "Real Provenance Qualification",
+      "exit_code": 0,
+      "summary": "All REAL runs meet provenance qualification standards",
+      "failures": [],
+      "status": "PASS",
+      "message": "All REAL runs meet provenance qualification standards"
+    },
+    {
+      "gate_id": "GATE-V2-RUNNER-SSOT-01",
+      "name": "Runner Seal Integrity (SSOT)",
+      "exit_code": 0,
+      "summary": "All REAL runs have bit-identical seal integrity (Manifest matches Runner SSOT)",
+      "failures": [],
+      "status": "PASS",
+      "message": "All REAL runs have bit-identical seal integrity (Manifest matches Runner SSOT)"
+    },
+    {
+      "gate_id": "GATE-V2-PROJECTION-CLOSURE-01",
+      "name": "Evidence Resolution Integrity",
+      "status": "FAIL",
+      "message": "Gate crashed: runProjections is not iterable",
+      "details": [
+        "{\"message\":\"TypeError: runProjections is not iterable\",\"severity\":\"error\"}"
+      ],
+      "failures": [
+        {
+          "message": "TypeError: runProjections is not iterable",
+          "severity": "error"
+        }
+      ],
+      "exit_code": 1
+    },
+    {
+      "gate_id": "GATE-V2-NO-FS-01",
+      "name": "Runtime Integrity (No FS)",
+      "status": "FAIL",
+      "message": "Gate threw exception: files is not iterable",
+      "details": [],
+      "exit_code": 1
+    },
+    {
+      "gate_id": "GATE-V2-SCOPE-SSOT-01",
+      "name": "Enforce strict Projection compliance with Scope SSOT",
+      "status": "PASS",
+      "message": "PASS",
+      "details": [],
+      "failures": [],
+      "exit_code": 0
+    },
+    {
+      "gate_id": "GATE-V2-TIER-CONSISTENCY-01",
+      "name": "Strict Tier Consistency Logic (REPRODUCED Closure)",
+      "status": "PASS",
+      "message": "PASS",
+      "details": [],
+      "failures": [],
+      "exit_code": 0
+    },
+    {
+      "gate_id": "GATE-V2-PROJECTION-SCHEMA-01",
+      "name": "Projection JSON Schema Validation",
+      "status": "PASS",
+      "message": "PASS",
+      "details": [],
+      "failures": [],
+      "exit_code": 0
+    },
+    {
+      "gate_id": "GATE-V2-DISPUTE-SSOT-01",
+      "name": "Dispute SSOT Integrity",
+      "status": "PASS",
+      "message": "PASS",
+      "details": [],
+      "failures": [],
+      "exit_code": 0
+    },
+    {
+      "gate_id": "GATE-V2-DISPUTE-CLOSURE-01",
+      "name": "Dispute Closure Integrity",
+      "status": "FAIL",
+      "message": "Gate threw exception: runProjections is not iterable",
+      "details": [],
+      "exit_code": 1
+    },
+    {
+      "gate_id": "GATE-V2-FAIL-BENCH-01",
+      "name": "Fail Benchmark Existence",
+      "status": "FAIL",
+      "message": "Gate threw exception: runProjections is not iterable",
+      "details": [],
+      "exit_code": 1
+    },
+    {
+      "gate_id": "GATE-V2-DISPUTE-ROOTCAUSE-01",
+      "name": "Dispute Root Cause Compliance",
+      "status": "FAIL",
+      "message": "Gate threw exception: runProjections is not iterable",
+      "details": [],
+      "exit_code": 1
+    },
+    {
+      "gate_id": "GATE-V2-RULESET-DIFFPACK-01",
+      "name": "Ruleset Diffpack Integrity",
+      "status": "FAIL",
+      "message": "Gate threw exception: diffpacks is not iterable",
+      "details": [],
+      "exit_code": 1
+    },
+    {
+      "gate_id": "GATE-V2-REG-MAPPING-SSOT-01",
+      "name": "Reg Mapping SSOT Integrity",
+      "status": "PASS",
+      "message": "PASS",
+      "details": [],
+      "failures": [],
+      "exit_code": 0
+    },
+    {
+      "gate_id": "GATE-V2-REG-MAPPING-DISCLAIMER-01",
+      "name": "Reg Mapping UI Disclaimer",
+      "status": "PASS",
+      "message": "PASS",
+      "details": [],
+      "failures": [],
+      "exit_code": 0
+    },
+    {
+      "gate_id": "GATE-V2-GATE-REGISTRY-01",
+      "name": "Gate Registry SSOT Check",
+      "status": "FAIL",
+      "message": "Gate threw exception: ENOENT: no such file or directory, open '/Users/jasonwang/Documents/AI_Dev/V1.0_release/Validation_Lab/scripts/gates/run-all.ts'",
+      "details": [],
+      "exit_code": 1
+    },
+    {
+      "gate_id": "GATE-V2-IA-ENTRYPOINTS-01",
+      "name": "IA Entrypoints Integrity",
+      "status": "PASS",
+      "message": "All entrypoints validated",
+      "details": [],
+      "failures": [],
+      "exit_code": 0
+    },
+    {
+      "gate_id": "GATE-V2-EXPLORE-TEMPLATES-01",
+      "name": "IA Explore Templates Integrity",
+      "status": "PASS",
+      "message": "Explore templates validated",
+      "details": [],
+      "failures": [],
+      "exit_code": 0
+    },
+    {
+      "gate_id": "GATE-V2-RECOMMENDED-RUNS-01",
+      "name": "IA Recommended Runs Integrity",
+      "status": "PASS",
+      "message": "Recommended runs verified against inventory",
+      "details": [],
+      "failures": [],
+      "exit_code": 0
+    },
+    {
+      "gate_id": "GATE-V2-FRAMEWORK-COVERAGE-01",
+      "name": "Mainstream Framework Coverage",
+      "status": "PASS",
+      "message": "All 4 required frameworks covered.",
+      "details": [],
+      "failures": [],
+      "exit_code": 0
+    },
+    {
+      "gate_id": "GATE-V2-INTEROP-BENCH-01",
+      "name": "Interop Benchmark Existence",
+      "status": "PASS",
+      "message": "Interop Benchmark (LangGraph + MCP + A2A) confirmed.",
+      "details": [],
+      "failures": [],
+      "exit_code": 0
+    },
+    {
+      "gate_id": "GATE-V2-INTEROP-EVIDENCE-01",
+      "name": "Interop Evidence Deep Scan",
+      "status": "PASS",
+      "message": "Interop Evidence Confirmed for interop-mcp-a2a-langgraph-d1-real-runner-det-001 (MCP + A2A present).",
+      "details": [],
+      "failures": [],
+      "exit_code": 0
+    },
+    {
+      "gate_id": "GATE-V2-SSOT-GENERATED-01",
+      "name": "SSOT Generated Integrity",
+      "exit_code": 0,
+      "summary": "Generated file matches SSOTs",
+      "failures": [],
+      "status": "PASS",
+      "message": "Generated file matches SSOTs"
+    },
+    {
+      "gate_id": "GATE-V2-UX-TOKENS-01",
+      "name": "UX Tokens Consistency",
+      "exit_code": 0,
+      "summary": "Tokens unified",
+      "failures": [],
+      "status": "PASS",
+      "message": "Tokens unified"
+    },
+    {
+      "gate_id": "GATE-V2-UX-BLOCK-REGISTRY-01",
+      "name": "Block Registry Completeness",
+      "exit_code": 0,
+      "summary": "All blocks registered",
+      "failures": [],
+      "status": "PASS",
+      "message": "All blocks registered"
+    },
+    {
+      "gate_id": "GATE-V2-POINTER-CANON-01",
+      "name": "Pointer Canonical Form",
+      "exit_code": 0,
+      "summary": "Pointers canonical",
+      "failures": [],
+      "status": "PASS",
+      "message": "Pointers canonical"
+    },
+    {
+      "gate_id": "GATE-V2-TRIPOD-INBOUND-01",
+      "name": "Tripod Inbound Integrity",
+      "exit_code": 0,
+      "summary": "Inbound Integrity Verified",
+      "failures": [],
+      "status": "PASS",
+      "message": "Inbound Integrity Verified"
+    },
+    {
+      "gate_id": "GATE-V2-TRIPOD-OUTBOUND-01",
+      "name": "Tripod Outbound Integrity",
+      "exit_code": 0,
+      "summary": "Outbound Integrity Verified",
+      "failures": [],
+      "status": "PASS",
+      "message": "Outbound Integrity Verified"
+    },
+    {
+      "status": "PASS",
+      "message": "All 16 V2 runs have valid verdicts and evidence",
+      "details": [],
+      "gate_id": "GATE-V2-CONTENT-VISIBILITY-01",
+      "name": "Content Visibility Check",
+      "exit_code": 0
+    }
+  ]
+}

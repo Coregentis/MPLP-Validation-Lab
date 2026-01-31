@@ -1,12 +1,16 @@
 
 import React from 'react';
+import fs from 'fs';
+import path from 'path';
 import { PAGE_BINDINGS } from '../_ssot/ux.generated';
 import { BlockRenderer } from './BlockRenderer';
 
 async function getRuleset() {
     try {
-        const data = await import('../../public/_data/v2/rulesets/ruleset-v2.0.0.json');
-        return data.default;
+        const rulesetPath = path.join(process.cwd(), 'public/_data/v2/rulesets/ruleset-v2.0.0.json');
+        if (!fs.existsSync(rulesetPath)) return null;
+        const content = fs.readFileSync(rulesetPath, 'utf-8');
+        return JSON.parse(content);
     } catch (e) {
         return null;
     }

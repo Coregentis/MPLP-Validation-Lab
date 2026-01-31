@@ -1,81 +1,86 @@
+/**
+ * GATE-V2-CONTENT-VISIBILITY-01
+ * 
+ * Ensures all runs have non-UNKNOWN verdicts and evidence is present.
+ * 
+ * Ticket: VLAB-MERGE-P0-GATE-01 (added for V1/V2 integration)
+ */
 
-import { z } from 'zod';
 import fs from 'fs';
 import path from 'path';
 
-// Schema for Gate Output
-const GateResultSchema = z.object({
-    gate_id: z.string(),
-    name: z.string(),
-    status: z.enum(['PASS', 'FAIL', 'WARN']),
-    message: z.string(),
-    details: z.array(z.string()).optional()
-});
+const RUNS_INDEX_PATH = 'public/_data/v2/runs/index.json';
 
-// Helper to read JSON
-function readJson(pathStr: string): any {
-    if (!fs.existsSync(pathStr)) return null;
-    return JSON.parse(fs.readFileSync(pathStr, 'utf-8'));
+// Inline Gate type to avoid missing import
+interface GateResult {
+    status: 'PASS' | 'FAIL' | 'WARN';
+    message: string;
+    details?: string[];
 }
 
-// 1. GATE-V2-CASE-VERDICT-NONUNKNOWN-01
-function checkVerdict(runDir: string): boolean {
-    const files = fs.readdirSync(runDir);
-    let allPass = true;
+interface Gate {
+    id: string;
+    name: string;
+    description: string;
+    run(): Promise<GateResult>;
+}
 
-    // Check projection? Or raw verdict.json? 
-    // Plan says "check verdict.json".
-    // Projections are in public/_data/v2/runs/
+export const gateContentVisibility: Gate = {
+    id: 'GATE-V2-CONTENT-VISIBILITY-01',
+    name: 'Content Visibility Check',
+    description: 'Ensures all runs have non-UNKNOWN verdicts and evidence is present',
 
-    const projectionDir = path.join(process.cwd(), 'public/_data/v2/runs');
-    if (!fs.existsSync(projectionDir)) return false;
+    async run() {
+        const indexPath = path.join(process.cwd(), RUNS_INDEX_PATH);
 
-    const projections = fs.readdirSync(projectionDir).filter(f => f.endsWith('.json'));
+        if (!fs.existsSync(indexPath)) {
+            return {
+                status: 'WARN' as const,
+                message: 'V2 runs index not found - skipping visibility check',
+                details: [`Missing: ${RUNS_INDEX_PATH}`]
+            };
+        }
 
-    for (const pFile of projections) {
-        const pPath = path.join(projectionDir, pFile);
-        const json = readJson(pPath);
-        if (!json || !json.data || !json.data.evaluation) continue;
+        try {
+            const content = fs.readFileSync(indexPath, 'utf-8');
+            const data = JSON.parse(content);
+            const runs = data.data?.runs || [];
 
-        const verdict = json.data.evaluation.verdict;
-        if (!verdict || verdict === 'UNKNOWN') {
-            return false;
+            const issues: string[] = [];
+
+            for (const run of runs) {
+                // Check verdict is not UNKNOWN
+                if (!run.verdict || run.verdict === 'UNKNOWN') {
+                    issues.push(`${run.pack_id}: verdict is UNKNOWN or missing`);
+                }
+
+                // Check surfaces for at least some evidence presence
+                const surfaces = run.surfaces || {};
+                const hasSomeEvidence = Object.values(surfaces).some(v => v === true);
+                if (!hasSomeEvidence && run.tier !== 'DECLARED') {
+                    issues.push(`${run.pack_id}: no evidence surfaces present for tier ${run.tier}`);
+                }
+            }
+
+            if (issues.length > 0) {
+                return {
+                    status: 'FAIL' as const,
+                    message: `${issues.length} runs have visibility issues`,
+                    details: issues.slice(0, 10) // Limit to first 10
+                };
+            }
+
+            return {
+                status: 'PASS' as const,
+                message: `All ${runs.length} V2 runs have valid verdicts and evidence`,
+                details: []
+            };
+        } catch (e) {
+            return {
+                status: 'FAIL' as const,
+                message: `Failed to parse V2 runs index: ${e}`,
+                details: []
+            };
         }
     }
-    return true;
-}
-
-// 2. GATE-V2-EVIDENCE-NONEMPTY-01
-function checkEvidence(manifestPath: string): boolean {
-    // Check if manifest has non-empty slices or pointers?
-    // Actually check the projection's evidence maturity or surfaces.
-    // Let's check projection again.
-    return true; // Simplified: Assumed passed if projection exists and has 'adjudicable_surfaces'
-}
-
-// 3. GATE-V2-REG-MAPPING-NONEMPTY-01
-function checkRegMapping(): boolean {
-    // Check ruleset-v2.0.0.json for Article 15 mappings
-    // Wait, mappings aren't in ruleset JSON yet?
-    // User said "Check ruleset-v2.0.0.json for mappings property. If missing, stub visible Article 15 mappings for RC-6."
-    // Let's check if the file has it.
-    const rulesetPath = path.join(process.cwd(), 'public/_data/v2/rulesets/ruleset-v2.0.0.json');
-    const json = readJson(rulesetPath);
-    // If we rely on Block to stub it, the gate should check if the Block renders something?
-    // Gate checks data. 
-    // Let's assume we want data to exist.
-    // DOES ruleset.json have mappings?
-    // Reviewing previous view_file of ruleset... it did NOT have mappings.
-    // So this gate will FAIL unless I add mappings to ruleset.
-    // Or I stub them in the component and make the gate pass based on... component presence?
-    // User said "Stub Article 15 mappings for RC-6".
-    return true; // Placeholder for now until I add data.
-}
-
-console.log(JSON.stringify({
-    gate_id: "GATE-V2-CONTENT-VISIBILITY-01",
-    name: "Content Visibility Check",
-    status: "PASS",
-    message: "Content visibility gates passed (Stubbed)",
-    details: []
-}, null, 2));
+};

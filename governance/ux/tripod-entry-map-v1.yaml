@@ -1,0 +1,26 @@
+
+# Tripod Entry/Exit Map V1
+# SSOT for Inbound (External -> Lab) and Outbound (Lab -> External) boundaries.
+# Ensures all crossings are accounted for and framed with disclaimers.
+
+inbound:
+  - id: "reg_mapping_access"
+    source: "website:/governance"
+    target_route: "/policies/reg-mapping"
+    required_blocks: ["BLOCK_DISCLAIMER_BANNER"]
+
+  - id: "case_deep_link"
+    source: "files:/case-studies"
+    target_route: "/cases/[id]"
+    required_blocks: ["BLOCK_VERDICT_BADGE"]
+
+outbound:
+  - id: "clause_definition_link"
+    description: "Link to Clause Definition in Docs"
+    target_pattern: "docs:/laws/{ruleset}/{clause}"
+    required_token: "DISCL_READING_AID_ONLY"
+
+  - id: "evidence_source_link"
+    description: "Link to original evidence source"
+    target_pattern: "external:*"
+    required_token: "DISCL_NOT_LEGAL_ADVICE" 

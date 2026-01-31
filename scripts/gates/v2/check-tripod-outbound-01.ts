@@ -1,6 +1,6 @@
 
 import { GateDefinition, GateResult } from '../_lib/gate-runner';
-import { TRIPOD, TOKENS } from '../../app/_ssot/ux.generated';
+import { TRIPOD, TOKENS } from '../../../app/_ssot/ux.generated';
 import { glob } from 'glob';
 import fs from 'node:fs';
 

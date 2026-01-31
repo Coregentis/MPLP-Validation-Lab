@@ -17,6 +17,7 @@ const RULESETS_ROOT = path.resolve(process.cwd(), 'data/rulesets');
 export interface RulesetManifest {
     id: string;
     version: string;
+    source?: 'v1' | 'v2';
     name: string;
     status: string;
     protocol?: {
@@ -72,20 +73,47 @@ export function listRulesetVersions(): string[] {
 }
 
 /**
- * List rulesets with summary info
+ * List rulesets with summary info (Unified V1 + V2)
  */
 export function listRulesets(): RulesetManifest[] {
-    const versions = listRulesetVersions();
     const results: RulesetManifest[] = [];
 
-    for (const version of versions) {
+    // 1. Load V1 (Filesystem)
+    const v1Versions = listRulesetVersions();
+    for (const version of v1Versions) {
         const data = loadRuleset(version);
         if (data.manifest) {
-            results.push(data.manifest);
+            // Inject source if missing
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            results.push({ ...data.manifest, source: 'v1' } as any);
         }
     }
 
-    return results;
+    // 2. Load V2 (Index JSON)
+    try {
+        const v2IndexPath = path.join(process.cwd(), 'public/_data/v2/rulesets/index.json');
+        if (fs.existsSync(v2IndexPath)) {
+            const v2Index = JSON.parse(fs.readFileSync(v2IndexPath, 'utf8'));
+            if (v2Index.data && Array.isArray(v2Index.data.rulesets)) {
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                v2Index.data.rulesets.forEach((rs: any) => {
+                    results.push({
+                        id: rs.ruleset_id || rs.id,
+                        version: rs.version,
+                        name: rs.name,
+                        status: rs.status || 'active',
+                        source: 'v2',
+                        clauses: Array(rs.clause_count || 0).fill('placeholder') // approximate for UI count
+                        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                    } as any);
+                });
+            }
+        }
+    } catch (e) {
+        console.warn('Failed to load V2 rulesets', e);
+    }
+
+    return results.sort((a, b) => b.version.localeCompare(a.version));
 }
 
 /**

@@ -1,0 +1,18 @@
+
+> validation-lab@1.0.0 audit:http:local
+> npx tsx scripts/audit/http-health-local-01.ts
+
+🔍 Starting Local HTTP Health Audit against http://localhost:3000
+📋 Auditing 11 key routes...
+❌ /                              [500] Expected 200, got 500
+❌ /runs                          [500] Expected 200, got 500
+❌ /runs?tier=SIMULATED           [500] Expected 200, got 500
+❌ /runs?tier=REPRODUCED          [500] Expected 200, got 500
+❌ /runs/admission-not-admissible-01 [500] Expected 200, got 500
+❌ /runs/acp-d1-real-runner-001   [500] Expected 200, got 500
+❌ /rulesets                      [500] Expected 200, got 500
+❌ /governance                    [500] Expected 200, got 500
+❌ /gates                         [500] Expected 200, got 500
+❌ /audit                         [500] Expected 200, got 500
+❌ /releases                      [500] Expected 200, got 500
+--------------------------------------------------

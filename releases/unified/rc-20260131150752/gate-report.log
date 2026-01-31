@@ -1,0 +1,849 @@
+
+> validation-lab@1.0.0 gate:all
+> npm run gate:v1:all && npm run gate:unified:inventory && npm run gate:unified:no-escape && npm run gate:unified:governance && npm run gate:unified:nav-single-entry && npm run gate:v2:all
+
+
+> validation-lab@1.0.0 gate:v1:all
+> npm run gate:vlab:00 && npm run gate:vlab:01 && npm run gate:release:01
+
+
+> validation-lab@1.0.0 gate:vlab:00
+> tsx scripts/gates/verify-upstream-pin.ts
+
+=== VLAB-GATE-00: Upstream Pin Verification ===
+
+Check 1: UPSTREAM_BASELINE.yaml exists
+  ✓ PASS
+
+Check 2: Commit SHA valid
+  ✓ PASS: 87702951...
+
+Check 3: SYNC_REPORT.json exists
+  ✓ PASS
+
+Check 4: Report commit matches baseline
+  ✓ PASS
+
+Check 5: Schema files integrity
+  ✓ PASS: 67 files verified
+
+Check 6: Invariant files integrity
+  ✓ PASS: 4 files verified
+
+=== GATE-00 VERDICT ===
+✅ PASS: Upstream pin verified
+   Commit: 877029514f87dd7da1dfb559c178ce57a935d975
+   Report SHA: d6c62d086575980c...
+
+> validation-lab@1.0.0 gate:vlab:01
+> tsx scripts/gates/verify-schema-alignment.ts
+
+=== VLAB-GATE-01: Schema Alignment Verification ===
+
+Found 54 schema files
+
+Found 4 invariant files
+
+Checking ruleset requirement sources...
+  gf-01.yaml:
+    ✓ schema: mplp-context.schema.json
+    ✓ schema: mplp-plan.schema.json
+    ✓ schema: mplp-trace.schema.json
+  gf-02.yaml:
+  gf-03.yaml:
+  gf-04.yaml:
+  gf-05.yaml:
+
+=== GATE-01 VERDICT ===
+✅ PASS: Schema alignment verified
+   Sources checked: 3
+   Sources resolved: 3
+
+> validation-lab@1.0.0 gate:release:01
+> npx tsx scripts/gates/gate-vlab-release-01-triad.ts
+
+🛡️  Running VLAB-GATE-RELEASE-01: SSOT Triad Integrity...
+📋 Validating Manifest vs Filesystem...
+✅ Report SHA256 matches actual file: b65996d81c3b774a...
+✅ Sample Set SHA256 matches actual file: ed0f19067caa901c...
+📋 Validating SEAL Document Parity (SEAL-v0.17.0.md)...
+ℹ️ SEAL format check for sample_sha: undefined vs Manifest: ed0f19067caa901c1c33a24f0dead5816042135f606d42e156c7858c34fcfda1
+✅ SEAL document parity verified (Commit and Boundaries).
+
+🟢 Gate PASS: Release Triad is consistent and verified.
+
+> validation-lab@1.0.0 gate:unified:inventory
+> tsx --tsconfig tsconfig.tools.json scripts/gates/unified/gate-unified-run-inventory-ssot-01.ts
+
+{
+  "gate_id": "GATE-UNIFIED-RUN-INVENTORY-SSOT-01",
+  "name": "Unified Run Inventory SSOT",
+  "status": "PASS",
+  "message": "Inventory SSOT verified: 48 runs (V1:32 + V2:16), tier counts aligned",
+  "details": [
+    "SIMULATED: 32",
+    "REPRODUCED: 11",
+    "DISPUTE_READY: 1",
+    "DECLARED: 4"
+  ]
+}
+
+> validation-lab@1.0.0 gate:unified:no-escape
+> tsx --tsconfig tsconfig.tools.json scripts/gates/unified/gate-no-exclude-escape-01.ts
+
+{
+  "gate_id": "GATE-NO-EXCLUDE-ESCAPE-01",
+  "name": "No Exclude Escape",
+  "status": "PASS",
+  "message": "Gate tooling configuration valid: tsconfig.tools.json properly covers all protected directories",
+  "details": [
+    "Protected: scripts/, scripts/gates/, producers/, runners/",
+    "Includes: scripts/**/*.ts, scripts/**/*.mts, lib/**/*.ts, producers/**/*.ts, runners/**/*.ts, app/_ssot/**/*.ts, app/v2/_ssot/**/*.ts"
+  ]
+}
+
+> validation-lab@1.0.0 gate:unified:governance
+> tsx --tsconfig tsconfig.tools.json scripts/gates/unified/gate-governance-index-ssot-01.ts
+
+
+> validation-lab@1.0.0 gate:unified:nav-single-entry
+> tsx --tsconfig tsconfig.tools.json scripts/gates/unified/gate-nav-single-entry-01.ts
+
+
+> validation-lab@1.0.0 gate:v2:all
+> tsx --tsconfig tsconfig.tools.json scripts/gates/v2/run-core.ts
+
+{
+  "summary": {
+    "pass": 21,
+    "warn": 0,
+    "fail": 16
+  },
+  "results": [
+    {
+      "gate_id": "GATE-V2-NO-LEGACY-01",
+      "name": "No V1 Legacy Content",
+      "status": "FAIL",
+      "message": "Found 16 V1 legacy reference(s)",
+      "details": [
+        "{\"file\":\"app/policies/cross-verified/page.tsx\",\"line\":5,\"message\":\"Found V1 legacy pattern: \\\\bv1\\\\.0\\\\b\",\"severity\":\"error\"}",
+        "{\"file\":\"app/policies/fmm/page.tsx\",\"line\":99,\"message\":\"Found V1 legacy pattern: \\\\bv1\\\\.0\\\\b\",\"severity\":\"error\"}",
+        "{\"file\":\"app/policies/fmm/page.tsx\",\"line\":162,\"message\":\"Found V1 legacy pattern: \\\\bv1\\\\.0\\\\b\",\"severity\":\"error\"}",
+        "{\"file\":\"app/policies/fmm/page.tsx\",\"line\":165,\"message\":\"Found V1 legacy pattern: \\\\bv1\\\\.0\\\\b\",\"severity\":\"error\"}",
+        "{\"file\":\"app/policies/strength/page.tsx\",\"line\":148,\"message\":\"Found V1 legacy pattern: \\\\bv1\\\\.0\\\\b\",\"severity\":\"error\"}",
+        "{\"file\":\"app/rulesets/evolution/page.tsx\",\"line\":43,\"message\":\"Found V1 legacy pattern: \\\\bv1\\\\.0\\\\b\",\"severity\":\"error\"}",
+        "{\"file\":\"app/validation/samples/page.tsx\",\"line\":125,\"message\":\"Found V1 legacy pattern: \\\\bv1\\\\.0\\\\b\",\"severity\":\"error\"}",
+        "{\"file\":\"scripts/gates/gate-discovery-seal.ts\",\"line\":5,\"message\":\"Found V1 legacy pattern: \\\\bv1\\\\.0\\\\b\",\"severity\":\"error\"}",
+        "{\"file\":\"scripts/gates/gate-discovery-seal.ts\",\"line\":47,\"message\":\"Found V1 legacy pattern: \\\\bv1\\\\.0\\\\b\",\"severity\":\"error\"}",
+        "{\"file\":\"scripts/gates/gate-discovery-seal.ts\",\"line\":99,\"message\":\"Found V1 legacy pattern: \\\\bv1\\\\.0\\\\b\",\"severity\":\"error\"}",
+        "{\"file\":\"scripts/gates/gate-link-audit.ts\",\"line\":37,\"message\":\"Found V1 legacy pattern: \\\\bv1\\\\.0\\\\b\",\"severity\":\"error\"}",
+        "{\"file\":\"scripts/gates/gate-manifest-validate.ts\",\"line\":17,\"message\":\"Found V1 legacy pattern: \\\\bv1\\\\.0\\\\b\",\"severity\":\"error\"}",
+        "{\"file\":\"scripts/gates/gate-uiux-coverage.ts\",\"line\":15,\"message\":\"Found V1 legacy pattern: \\\\bv1\\\\.0\\\\b\",\"severity\":\"error\"}",
+        "{\"file\":\"scripts/gates/gate-uiux-coverage.ts\",\"line\":84,\"message\":\"Found V1 legacy pattern: \\\\bv1\\\\.0\\\\b\",\"severity\":\"error\"}",
+        "{\"file\":\"scripts/gates/gate-v0.17.0-freeze.ts\",\"line\":9,\"message\":\"Found V1 legacy pattern: \\\\bv1\\\\.0\\\\b\",\"severity\":\"error\"}",
+        "{\"file\":\"scripts/gates/gate-v0.17.0-freeze.ts\",\"line\":141,\"message\":\"Found V1 legacy pattern: \\\\bv1\\\\.0\\\\b\",\"severity\":\"error\"}"
+      ],
+      "failures": [
+        {
+          "file": "app/policies/cross-verified/page.tsx",
+          "line": 5,
+          "message": "Found V1 legacy pattern: \\bv1\\.0\\b",
+          "severity": "error"
+        },
+        {
+          "file": "app/policies/fmm/page.tsx",
+          "line": 99,
+          "message": "Found V1 legacy pattern: \\bv1\\.0\\b",
+          "severity": "error"
+        },
+        {
+          "file": "app/policies/fmm/page.tsx",
+          "line": 162,
+          "message": "Found V1 legacy pattern: \\bv1\\.0\\b",
+          "severity": "error"
+        },
+        {
+          "file": "app/policies/fmm/page.tsx",
+          "line": 165,
+          "message": "Found V1 legacy pattern: \\bv1\\.0\\b",
+          "severity": "error"
+        },
+        {
+          "file": "app/policies/strength/page.tsx",
+          "line": 148,
+          "message": "Found V1 legacy pattern: \\bv1\\.0\\b",
+          "severity": "error"
+        },
+        {
+          "file": "app/rulesets/evolution/page.tsx",
+          "line": 43,
+          "message": "Found V1 legacy pattern: \\bv1\\.0\\b",
+          "severity": "error"
+        },
+        {
+          "file": "app/validation/samples/page.tsx",
+          "line": 125,
+          "message": "Found V1 legacy pattern: \\bv1\\.0\\b",
+          "severity": "error"
+        },
+        {
+          "file": "scripts/gates/gate-discovery-seal.ts",
+          "line": 5,
+          "message": "Found V1 legacy pattern: \\bv1\\.0\\b",
+          "severity": "error"
+        },
+        {
+          "file": "scripts/gates/gate-discovery-seal.ts",
+          "line": 47,
+          "message": "Found V1 legacy pattern: \\bv1\\.0\\b",
+          "severity": "error"
+        },
+        {
+          "file": "scripts/gates/gate-discovery-seal.ts",
+          "line": 99,
+          "message": "Found V1 legacy pattern: \\bv1\\.0\\b",
+          "severity": "error"
+        },
+        {
+          "file": "scripts/gates/gate-link-audit.ts",
+          "line": 37,
+          "message": "Found V1 legacy pattern: \\bv1\\.0\\b",
+          "severity": "error"
+        },
+        {
+          "file": "scripts/gates/gate-manifest-validate.ts",
+          "line": 17,
+          "message": "Found V1 legacy pattern: \\bv1\\.0\\b",
+          "severity": "error"
+        },
+        {
+          "file": "scripts/gates/gate-uiux-coverage.ts",
+          "line": 15,
+          "message": "Found V1 legacy pattern: \\bv1\\.0\\b",
+          "severity": "error"
+        },
+        {
+          "file": "scripts/gates/gate-uiux-coverage.ts",
+          "line": 84,
+          "message": "Found V1 legacy pattern: \\bv1\\.0\\b",
+          "severity": "error"
+        },
+        {
+          "file": "scripts/gates/gate-v0.17.0-freeze.ts",
+          "line": 9,
+          "message": "Found V1 legacy pattern: \\bv1\\.0\\b",
+          "severity": "error"
+        },
+        {
+          "file": "scripts/gates/gate-v0.17.0-freeze.ts",
+          "line": 141,
+          "message": "Found V1 legacy pattern: \\bv1\\.0\\b",
+          "severity": "error"
+        }
+      ],
+      "exit_code": 1
+    },
+    {
+      "gate_id": "GATE-V2-HOST-ALLOW-UI-01",
+      "name": "Host Allowlist (UI/Registry)",
+      "status": "FAIL",
+      "message": "Found 22 host violation(s)",
+      "details": [
+        "{\"file\":\"app/builder/page.tsx\",\"line\":79,\"message\":\"Found forbidden host: staging\",\"severity\":\"error\"}",
+        "{\"file\":\"app/builder/page.tsx\",\"line\":127,\"message\":\"Found forbidden host: localhost\",\"severity\":\"error\"}",
+        "{\"file\":\"app/examples/evidence-producers/[substrate]/page.tsx\",\"line\":52,\"message\":\"Found forbidden host: preview\",\"severity\":\"error\"}",
+        "{\"file\":\"app/examples/evidence-producers/[substrate]/page.tsx\",\"line\":54,\"message\":\"Found forbidden host: preview\",\"severity\":\"error\"}",
+        "{\"file\":\"app/examples/evidence-producers/[substrate]/page.tsx\",\"line\":76,\"message\":\"Found forbidden host: preview\",\"severity\":\"error\"}",
+        "{\"file\":\"app/policies/substrate-scope/page.tsx\",\"line\":228,\"message\":\"https:// string found outside SSOT files (must use HOSTS registry)\",\"severity\":\"error\"}",
+        "{\"file\":\"app/runs/[run_id]/evidence/page.tsx\",\"line\":121,\"message\":\"Found forbidden host: preview\",\"severity\":\"error\"}",
+        "{\"file\":\"app/runs/_components/HashCell.tsx\",\"line\":15,\"message\":\"Found forbidden host: preview\",\"severity\":\"error\"}",
+        "{\"file\":\"scripts/audit/http-health-local-01.ts\",\"line\":6,\"message\":\"Found forbidden host: localhost\",\"severity\":\"error\"}",
+        "{\"file\":\"scripts/audit/http-health-local-01.ts\",\"line\":22,\"message\":\"Found forbidden host: localhost\",\"severity\":\"error\"}",
+        "{\"file\":\"governance/NAVIGATION_MAP.yaml\",\"line\":58,\"message\":\"https:// string found outside SSOT files (must use HOSTS registry)\",\"severity\":\"error\"}",
+        "{\"file\":\"governance/NAVIGATION_MAP.yaml\",\"line\":154,\"message\":\"https:// string found outside SSOT files (must use HOSTS registry)\",\"severity\":\"error\"}",
+        "{\"file\":\"governance/keys/key-ceremony-procedure.yaml\",\"line\":159,\"message\":\"Found forbidden host: staging\",\"severity\":\"error\"}",
+        "{\"file\":\"governance/keys/key-ceremony-procedure.yaml\",\"line\":162,\"message\":\"Found forbidden host: staging\",\"severity\":\"error\"}",
+        "{\"file\":\"governance/keys/key-ceremony-procedure.yaml\",\"line\":163,\"message\":\"Found forbidden host: staging\",\"severity\":\"error\"}",
+        "{\"file\":\"governance/substrates/a2a/fingerprint.yaml\",\"line\":14,\"message\":\"https:// string found outside SSOT files (must use HOSTS registry)\",\"severity\":\"error\"}",
+        "{\"file\":\"governance/substrates/autogen/fingerprint.yaml\",\"line\":13,\"message\":\"https:// string found outside SSOT files (must use HOSTS registry)\",\"severity\":\"error\"}",
+        "{\"file\":\"governance/substrates/langchain/fingerprint.yaml\",\"line\":14,\"message\":\"https:// string found outside SSOT files (must use HOSTS registry)\",\"severity\":\"error\"}",
+        "{\"file\":\"governance/substrates/langgraph/fingerprint.yaml\",\"line\":14,\"message\":\"https:// string found outside SSOT files (must use HOSTS registry)\",\"severity\":\"error\"}",
+        "{\"file\":\"governance/substrates/mcp/fingerprint.yaml\",\"line\":14,\"message\":\"https:// string found outside SSOT files (must use HOSTS registry)\",\"severity\":\"error\"}",
+        "{\"file\":\"governance/substrates/pydantic-ai/fingerprint.yaml\",\"line\":14,\"message\":\"https:// string found outside SSOT files (must use HOSTS registry)\",\"severity\":\"error\"}",
+        "{\"file\":\"governance/substrates/sk/fingerprint.yaml\",\"line\":14,\"message\":\"https:// string found outside SSOT files (must use HOSTS registry)\",\"severity\":\"error\"}"
+      ],
+      "failures": [
+        {
+          "file": "app/builder/page.tsx",
+          "line": 79,
+          "message": "Found forbidden host: staging",
+          "severity": "error"
+        },
+        {
+          "file": "app/builder/page.tsx",
+          "line": 127,
+          "message": "Found forbidden host: localhost",
+          "severity": "error"
+        },
+        {
+          "file": "app/examples/evidence-producers/[substrate]/page.tsx",
+          "line": 52,
+          "message": "Found forbidden host: preview",
+          "severity": "error"
+        },
+        {
+          "file": "app/examples/evidence-producers/[substrate]/page.tsx",
+          "line": 54,
+          "message": "Found forbidden host: preview",
+          "severity": "error"
+        },
+        {
+          "file": "app/examples/evidence-producers/[substrate]/page.tsx",
+          "line": 76,
+          "message": "Found forbidden host: preview",
+          "severity": "error"
+        },
+        {
+          "file": "app/policies/substrate-scope/page.tsx",
+          "line": 228,
+          "message": "https:// string found outside SSOT files (must use HOSTS registry)",
+          "severity": "error"
+        },
+        {
+          "file": "app/runs/[run_id]/evidence/page.tsx",
+          "line": 121,
+          "message": "Found forbidden host: preview",
+          "severity": "error"
+        },
+        {
+          "file": "app/runs/_components/HashCell.tsx",
+          "line": 15,
+          "message": "Found forbidden host: preview",
+          "severity": "error"
+        },
+        {
+          "file": "scripts/audit/http-health-local-01.ts",
+          "line": 6,
+          "message": "Found forbidden host: localhost",
+          "severity": "error"
+        },
+        {
+          "file": "scripts/audit/http-health-local-01.ts",
+          "line": 22,
+          "message": "Found forbidden host: localhost",
+          "severity": "error"
+        },
+        {
+          "file": "governance/NAVIGATION_MAP.yaml",
+          "line": 58,
+          "message": "https:// string found outside SSOT files (must use HOSTS registry)",
+          "severity": "error"
+        },
+        {
+          "file": "governance/NAVIGATION_MAP.yaml",
+          "line": 154,
+          "message": "https:// string found outside SSOT files (must use HOSTS registry)",
+          "severity": "error"
+        },
+        {
+          "file": "governance/keys/key-ceremony-procedure.yaml",
+          "line": 159,
+          "message": "Found forbidden host: staging",
+          "severity": "error"
+        },
+        {
+          "file": "governance/keys/key-ceremony-procedure.yaml",
+          "line": 162,
+          "message": "Found forbidden host: staging",
+          "severity": "error"
+        },
+        {
+          "file": "governance/keys/key-ceremony-procedure.yaml",
+          "line": 163,
+          "message": "Found forbidden host: staging",
+          "severity": "error"
+        },
+        {
+          "file": "governance/substrates/a2a/fingerprint.yaml",
+          "line": 14,
+          "message": "https:// string found outside SSOT files (must use HOSTS registry)",
+          "severity": "error"
+        },
+        {
+          "file": "governance/substrates/autogen/fingerprint.yaml",
+          "line": 13,
+          "message": "https:// string found outside SSOT files (must use HOSTS registry)",
+          "severity": "error"
+        },
+        {
+          "file": "governance/substrates/langchain/fingerprint.yaml",
+          "line": 14,
+          "message": "https:// string found outside SSOT files (must use HOSTS registry)",
+          "severity": "error"
+        },
+        {
+          "file": "governance/substrates/langgraph/fingerprint.yaml",
+          "line": 14,
+          "message": "https:// string found outside SSOT files (must use HOSTS registry)",
+          "severity": "error"
+        },
+        {
+          "file": "governance/substrates/mcp/fingerprint.yaml",
+          "line": 14,
+          "message": "https:// string found outside SSOT files (must use HOSTS registry)",
+          "severity": "error"
+        },
+        {
+          "file": "governance/substrates/pydantic-ai/fingerprint.yaml",
+          "line": 14,
+          "message": "https:// string found outside SSOT files (must use HOSTS registry)",
+          "severity": "error"
+        },
+        {
+          "file": "governance/substrates/sk/fingerprint.yaml",
+          "line": 14,
+          "message": "https:// string found outside SSOT files (must use HOSTS registry)",
+          "severity": "error"
+        }
+      ],
+      "exit_code": 1
+    },
+    {
+      "gate_id": "GATE-V2-HOST-ALLOW-DATA-01",
+      "name": "Host Allowlist (Data/Provenance)",
+      "status": "PASS",
+      "message": "All data provenance hosts are authorized",
+      "details": [],
+      "failures": [],
+      "exit_code": 0
+    },
+    {
+      "gate_id": "GATE-V2-DET-01",
+      "name": "Determinism Proof",
+      "status": "PASS",
+      "message": "All multi-run scenarios have converged canonical hashes",
+      "details": [],
+      "failures": [],
+      "exit_code": 0
+    },
+    {
+      "gate_id": "GATE-V2-PROJ-01",
+      "name": "UI Projection-Only Data Access",
+      "status": "PASS",
+      "message": "All UI data access uses projection registry",
+      "details": [],
+      "failures": [],
+      "exit_code": 0
+    },
+    {
+      "gate_id": "GATE-V2-CROSSLINK-SSOT-01",
+      "name": "Cross-Site Link SSOT",
+      "status": "FAIL",
+      "message": "Found 10 hardcoded cross-site link(s)",
+      "details": [
+        "{\"file\":\"app/adjudication/[run_id]/page.tsx\",\"line\":189,\"message\":\"Hardcoded cross-site URL found (must use HOSTS registry)\",\"severity\":\"error\"}",
+        "{\"file\":\"app/adjudication/[run_id]/page.tsx\",\"line\":189,\"message\":\"Hardcoded cross-site URL found (must use HOSTS registry)\",\"severity\":\"error\"}",
+        "{\"file\":\"app/guarantees/page.tsx\",\"line\":92,\"message\":\"Hardcoded cross-site URL found (must use HOSTS registry)\",\"severity\":\"error\"}",
+        "{\"file\":\"app/guarantees/page.tsx\",\"line\":92,\"message\":\"Hardcoded cross-site URL found (must use HOSTS registry)\",\"severity\":\"error\"}",
+        "{\"file\":\"app/page.tsx\",\"line\":151,\"message\":\"Hardcoded cross-site URL found (must use HOSTS registry)\",\"severity\":\"error\"}",
+        "{\"file\":\"app/page.tsx\",\"line\":151,\"message\":\"Hardcoded cross-site URL found (must use HOSTS registry)\",\"severity\":\"error\"}",
+        "{\"file\":\"app/policies/contract/page.tsx\",\"line\":68,\"message\":\"Hardcoded cross-site URL found (must use HOSTS registry)\",\"severity\":\"error\"}",
+        "{\"file\":\"app/policies/contract/page.tsx\",\"line\":68,\"message\":\"Hardcoded cross-site URL found (must use HOSTS registry)\",\"severity\":\"error\"}",
+        "{\"file\":\"app/v2/_registry/hosts.ts\",\"line\":15,\"message\":\"Hardcoded cross-site URL found (must use HOSTS registry)\",\"severity\":\"error\"}",
+        "{\"file\":\"app/v2/_registry/hosts.ts\",\"line\":18,\"message\":\"Hardcoded cross-site URL found (must use HOSTS registry)\",\"severity\":\"error\"}"
+      ],
+      "failures": [
+        {
+          "file": "app/adjudication/[run_id]/page.tsx",
+          "line": 189,
+          "message": "Hardcoded cross-site URL found (must use HOSTS registry)",
+          "severity": "error"
+        },
+        {
+          "file": "app/adjudication/[run_id]/page.tsx",
+          "line": 189,
+          "message": "Hardcoded cross-site URL found (must use HOSTS registry)",
+          "severity": "error"
+        },
+        {
+          "file": "app/guarantees/page.tsx",
+          "line": 92,
+          "message": "Hardcoded cross-site URL found (must use HOSTS registry)",
+          "severity": "error"
+        },
+        {
+          "file": "app/guarantees/page.tsx",
+          "line": 92,
+          "message": "Hardcoded cross-site URL found (must use HOSTS registry)",
+          "severity": "error"
+        },
+        {
+          "file": "app/page.tsx",
+          "line": 151,
+          "message": "Hardcoded cross-site URL found (must use HOSTS registry)",
+          "severity": "error"
+        },
+        {
+          "file": "app/page.tsx",
+          "line": 151,
+          "message": "Hardcoded cross-site URL found (must use HOSTS registry)",
+          "severity": "error"
+        },
+        {
+          "file": "app/policies/contract/page.tsx",
+          "line": 68,
+          "message": "Hardcoded cross-site URL found (must use HOSTS registry)",
+          "severity": "error"
+        },
+        {
+          "file": "app/policies/contract/page.tsx",
+          "line": 68,
+          "message": "Hardcoded cross-site URL found (must use HOSTS registry)",
+          "severity": "error"
+        },
+        {
+          "file": "app/v2/_registry/hosts.ts",
+          "line": 15,
+          "message": "Hardcoded cross-site URL found (must use HOSTS registry)",
+          "severity": "error"
+        },
+        {
+          "file": "app/v2/_registry/hosts.ts",
+          "line": 18,
+          "message": "Hardcoded cross-site URL found (must use HOSTS registry)",
+          "severity": "error"
+        }
+      ],
+      "exit_code": 1
+    },
+    {
+      "gate_id": "GATE-V2-REAL-QUALIFY-01",
+      "name": "Real Provenance Qualification",
+      "exit_code": 0,
+      "summary": "All REAL runs meet provenance qualification standards",
+      "failures": [],
+      "status": "PASS",
+      "message": "All REAL runs meet provenance qualification standards"
+    },
+    {
+      "gate_id": "GATE-V2-RUNNER-SSOT-01",
+      "name": "Runner Seal Integrity (SSOT)",
+      "exit_code": 0,
+      "summary": "All REAL runs have bit-identical seal integrity (Manifest matches Runner SSOT)",
+      "failures": [],
+      "status": "PASS",
+      "message": "All REAL runs have bit-identical seal integrity (Manifest matches Runner SSOT)"
+    },
+    {
+      "gate_id": "GATE-V2-INVENTORY-SSOT-01",
+      "name": "Inventory SSOT Consistency",
+      "status": "FAIL",
+      "message": "Missing governance files",
+      "details": [
+        "{\"message\":\"Missing releases/rc-6/rc-6.json or leases/rc-6/rc-6-seal.md\",\"severity\":\"error\"}"
+      ],
+      "failures": [
+        {
+          "message": "Missing releases/rc-6/rc-6.json or leases/rc-6/rc-6-seal.md",
+          "severity": "error"
+        }
+      ],
+      "exit_code": 1
+    },
+    {
+      "gate_id": "GATE-V2-RELEASE-HYGIENE-01",
+      "name": "Deployment Hygiene",
+      "status": "FAIL",
+      "message": "Gate crashed: invalid pattern",
+      "details": [
+        "{\"message\":\"TypeError: invalid pattern\",\"severity\":\"error\"}"
+      ],
+      "failures": [
+        {
+          "message": "TypeError: invalid pattern",
+          "severity": "error"
+        }
+      ],
+      "exit_code": 1
+    },
+    {
+      "gate_id": "GATE-V2-RELEASE-ID-01",
+      "name": "Release Identity Integrity",
+      "status": "FAIL",
+      "message": "RC-6 Manifest missing",
+      "details": [
+        "{\"message\":\"Missing releases/rc-6/rc-6.json\",\"severity\":\"error\"}"
+      ],
+      "failures": [
+        {
+          "message": "Missing releases/rc-6/rc-6.json",
+          "severity": "error"
+        }
+      ],
+      "exit_code": 1
+    },
+    {
+      "gate_id": "GATE-V2-PROJECTION-CLOSURE-01",
+      "name": "Evidence Resolution Integrity",
+      "status": "FAIL",
+      "message": "Gate crashed: runProjections is not iterable",
+      "details": [
+        "{\"message\":\"TypeError: runProjections is not iterable\",\"severity\":\"error\"}"
+      ],
+      "failures": [
+        {
+          "message": "TypeError: runProjections is not iterable",
+          "severity": "error"
+        }
+      ],
+      "exit_code": 1
+    },
+    {
+      "gate_id": "GATE-V2-NO-FS-01",
+      "name": "Runtime Integrity (No FS)",
+      "status": "FAIL",
+      "message": "Gate threw exception: files is not iterable",
+      "details": [],
+      "exit_code": 1
+    },
+    {
+      "gate_id": "GATE-V2-SCOPE-SSOT-01",
+      "name": "Enforce strict Projection compliance with Scope SSOT",
+      "status": "FAIL",
+      "message": "Gate crashed: Critical: Scope Freeze file not found at /Users/jasonwang/Documents/AI_Dev/V1.0_release/Validation_Lab/governance/scope-freeze-v2.md",
+      "details": [
+        "{\"message\":\"Error: Critical: Scope Freeze file not found at /Users/jasonwang/Documents/AI_Dev/V1.0_release/Validation_Lab/governance/scope-freeze-v2.md\",\"severity\":\"error\"}"
+      ],
+      "failures": [
+        {
+          "message": "Error: Critical: Scope Freeze file not found at /Users/jasonwang/Documents/AI_Dev/V1.0_release/Validation_Lab/governance/scope-freeze-v2.md",
+          "severity": "error"
+        }
+      ],
+      "exit_code": 1
+    },
+    {
+      "gate_id": "GATE-V2-TIER-CONSISTENCY-01",
+      "name": "Strict Tier Consistency Logic (REPRODUCED Closure)",
+      "status": "PASS",
+      "message": "PASS",
+      "details": [],
+      "failures": [],
+      "exit_code": 0
+    },
+    {
+      "gate_id": "GATE-V2-PROJECTION-SCHEMA-01",
+      "name": "Projection JSON Schema Validation",
+      "status": "PASS",
+      "message": "PASS",
+      "details": [],
+      "failures": [],
+      "exit_code": 0
+    },
+    {
+      "gate_id": "GATE-V2-DISPUTE-SSOT-01",
+      "name": "Dispute SSOT Integrity",
+      "status": "FAIL",
+      "message": "Missing SSOT file",
+      "details": [
+        "{\"message\":\"governance/dispute-freeze-v2.md not found\",\"severity\":\"error\"}"
+      ],
+      "failures": [
+        {
+          "message": "governance/dispute-freeze-v2.md not found",
+          "severity": "error"
+        }
+      ],
+      "exit_code": 1
+    },
+    {
+      "gate_id": "GATE-V2-DISPUTE-CLOSURE-01",
+      "name": "Dispute Closure Integrity",
+      "status": "FAIL",
+      "message": "Gate threw exception: runProjections is not iterable",
+      "details": [],
+      "exit_code": 1
+    },
+    {
+      "gate_id": "GATE-V2-FAIL-BENCH-01",
+      "name": "Fail Benchmark Existence",
+      "status": "FAIL",
+      "message": "Gate threw exception: runProjections is not iterable",
+      "details": [],
+      "exit_code": 1
+    },
+    {
+      "gate_id": "GATE-V2-DISPUTE-ROOTCAUSE-01",
+      "name": "Dispute Root Cause Compliance",
+      "status": "FAIL",
+      "message": "Gate threw exception: runProjections is not iterable",
+      "details": [],
+      "exit_code": 1
+    },
+    {
+      "gate_id": "GATE-V2-RULESET-DIFFPACK-01",
+      "name": "Ruleset Diffpack Integrity",
+      "status": "FAIL",
+      "message": "Gate threw exception: diffpacks is not iterable",
+      "details": [],
+      "exit_code": 1
+    },
+    {
+      "gate_id": "GATE-V2-REG-MAPPING-SSOT-01",
+      "name": "Reg Mapping SSOT Integrity",
+      "status": "FAIL",
+      "message": "Missing SSOT file",
+      "details": [
+        "{\"message\":\"governance/reg-mapping/reg-mapping-v1.md not found\",\"severity\":\"error\"}"
+      ],
+      "failures": [
+        {
+          "message": "governance/reg-mapping/reg-mapping-v1.md not found",
+          "severity": "error"
+        }
+      ],
+      "exit_code": 1
+    },
+    {
+      "gate_id": "GATE-V2-REG-MAPPING-DISCLAIMER-01",
+      "name": "Reg Mapping UI Disclaimer",
+      "status": "PASS",
+      "message": "PASS",
+      "details": [],
+      "failures": [],
+      "exit_code": 0
+    },
+    {
+      "gate_id": "GATE-V2-GATE-REGISTRY-01",
+      "name": "Gate Registry SSOT Check",
+      "status": "FAIL",
+      "message": "Registry file missing",
+      "details": [
+        "{\"message\":\"governance/gates/gate-registry-v2.json not found\",\"severity\":\"error\"}"
+      ],
+      "failures": [
+        {
+          "message": "governance/gates/gate-registry-v2.json not found",
+          "severity": "error"
+        }
+      ],
+      "exit_code": 1
+    },
+    {
+      "gate_id": "GATE-V2-IA-ENTRYPOINTS-01",
+      "name": "IA Entrypoints Integrity",
+      "status": "PASS",
+      "message": "All entrypoints validated",
+      "details": [],
+      "failures": [],
+      "exit_code": 0
+    },
+    {
+      "gate_id": "GATE-V2-EXPLORE-TEMPLATES-01",
+      "name": "IA Explore Templates Integrity",
+      "status": "PASS",
+      "message": "Explore templates validated",
+      "details": [],
+      "failures": [],
+      "exit_code": 0
+    },
+    {
+      "gate_id": "GATE-V2-RECOMMENDED-RUNS-01",
+      "name": "IA Recommended Runs Integrity",
+      "status": "PASS",
+      "message": "Recommended runs verified against inventory",
+      "details": [],
+      "failures": [],
+      "exit_code": 0
+    },
+    {
+      "gate_id": "GATE-V2-FRAMEWORK-COVERAGE-01",
+      "name": "Mainstream Framework Coverage",
+      "status": "PASS",
+      "message": "All 4 required frameworks covered.",
+      "details": [],
+      "failures": [],
+      "exit_code": 0
+    },
+    {
+      "gate_id": "GATE-V2-INTEROP-BENCH-01",
+      "name": "Interop Benchmark Existence",
+      "status": "PASS",
+      "message": "Interop Benchmark (LangGraph + MCP + A2A) confirmed.",
+      "details": [],
+      "failures": [],
+      "exit_code": 0
+    },
+    {
+      "gate_id": "GATE-V2-INTEROP-EVIDENCE-01",
+      "name": "Interop Evidence Deep Scan",
+      "status": "PASS",
+      "message": "Interop Evidence Confirmed for interop-mcp-a2a-langgraph-d1-real-runner-det-001 (MCP + A2A present).",
+      "details": [],
+      "failures": [],
+      "exit_code": 0
+    },
+    {
+      "gate_id": "GATE-V2-SSOT-GENERATED-01",
+      "name": "SSOT Generated Integrity",
+      "exit_code": 0,
+      "summary": "Generated file matches SSOTs",
+      "failures": [],
+      "status": "PASS",
+      "message": "Generated file matches SSOTs"
+    },
+    {
+      "gate_id": "GATE-V2-UX-TOKENS-01",
+      "name": "UX Tokens Consistency",
+      "exit_code": 0,
+      "summary": "Tokens unified",
+      "failures": [],
+      "status": "PASS",
+      "message": "Tokens unified"
+    },
+    {
+      "gate_id": "GATE-V2-UX-BLOCK-REGISTRY-01",
+      "name": "Block Registry Completeness",
+      "exit_code": 0,
+      "summary": "All blocks registered",
+      "failures": [],
+      "status": "PASS",
+      "message": "All blocks registered"
+    },
+    {
+      "gate_id": "GATE-V2-POINTER-CANON-01",
+      "name": "Pointer Canonical Form",
+      "exit_code": 0,
+      "summary": "Pointers canonical",
+      "failures": [],
+      "status": "PASS",
+      "message": "Pointers canonical"
+    },
+    {
+      "gate_id": "GATE-V2-TRIPOD-INBOUND-01",
+      "name": "Tripod Inbound Integrity",
+      "exit_code": 0,
+      "summary": "Inbound Integrity Verified",
+      "failures": [],
+      "status": "PASS",
+      "message": "Inbound Integrity Verified"
+    },
+    {
+      "gate_id": "GATE-V2-TRIPOD-OUTBOUND-01",
+      "name": "Tripod Outbound Integrity",
+      "exit_code": 0,
+      "summary": "Outbound Integrity Verified",
+      "failures": [],
+      "status": "PASS",
+      "message": "Outbound Integrity Verified"
+    },
+    {
+      "status": "PASS",
+      "message": "All 16 V2 runs have valid verdicts and evidence",
+      "details": [],
+      "gate_id": "GATE-V2-CONTENT-VISIBILITY-01",
+      "name": "Content Visibility Check",
+      "exit_code": 0
+    }
+  ]
+}
