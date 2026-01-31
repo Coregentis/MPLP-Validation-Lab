@@ -38,7 +38,7 @@ export default async function GovernancePage() {
 
     // Augment entries with dynamic counts data
     const entriesWithCounts = data.entries.map(entry => {
-        let meta = '';
+        const meta = '';
         if (entry.id === 'gov-policies') {
             // Runsets count (via version model)
             // Wait, Policies is policies. We need Runsets entry. A1 Inventory said Runsets/Rulesets missing from index.json.

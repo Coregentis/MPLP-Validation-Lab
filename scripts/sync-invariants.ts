@@ -9,7 +9,7 @@
 import { readFileSync, writeFileSync, existsSync, mkdirSync, readdirSync, statSync } from 'fs';
 import { join, dirname, basename } from 'path';
 import { createHash } from 'crypto';
-// eslint-disable-next-line @typescript-eslint/no-require-imports
+ 
 const yaml = require('js-yaml');
 
 interface UpstreamBaseline {

@@ -38,7 +38,7 @@ function runGate16() {
         process.exit(0);
     }
 
-    let failures: string[] = [];
+    const failures: string[] = [];
     let checked = 0;
 
     for (const [anchorName, anchorPath] of Object.entries(anchors)) {

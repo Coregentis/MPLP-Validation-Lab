@@ -31,7 +31,7 @@ function runGate02() {
     const canonicalAnchors = baseline.canonical_anchors;
     const allowedDomains = baseline.allowed_domains;
 
-    let failures: string[] = [];
+    const failures: string[] = [];
 
     // Validate canonical anchors are valid URLs with allowed domains
     for (const [anchorName, anchorUrl] of Object.entries(canonicalAnchors)) {

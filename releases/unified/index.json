@@ -1,6 +1,24 @@
 {
   "releases": [
     {
+      "id": "rc-20260131161432",
+      "date": "2026-01-31T16:15:04.985Z",
+      "status": "PASS",
+      "git_sha": "ac7bbcc9e16144cad1671c26ca519928023fe28f",
+      "policy": "tolerant",
+      "metrics": {
+        "lint_errors": 0,
+        "audit_routes": 11
+      },
+      "artifacts": {
+        "seal": "seal.md",
+        "manifest": "manifest.json",
+        "gate_report": "gate-report.log",
+        "audit_report": "audit-report.log",
+        "lint_audit": "lint-audit.json"
+      }
+    },
+    {
       "id": "rc-20260131160755",
       "date": "2026-01-31T16:08:33.152Z",
       "status": "PASS",

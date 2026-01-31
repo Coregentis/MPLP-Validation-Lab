@@ -34,7 +34,7 @@ function runGate03() {
     const baseline = yaml.load(fs.readFileSync(BASELINE_PATH, 'utf8')) as Baseline;
     const requiredBoundaries = baseline.required_boundaries;
 
-    let failures: string[] = [];
+    const failures: string[] = [];
 
     // Check each entry
     for (const [entryName, entryDef] of Object.entries(baseline.entries)) {

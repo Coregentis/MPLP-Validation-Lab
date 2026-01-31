@@ -57,7 +57,7 @@ async function executeGate() {
     const websiteManifest = JSON.parse(fs.readFileSync(WEBSITE_MANIFEST_PATH, 'utf-8'));
     const docsManifest = JSON.parse(fs.readFileSync(DOCS_MANIFEST_PATH, 'utf-8'));
 
-    let failures: string[] = [];
+    const failures: string[] = [];
 
     // 1. Website Canonical & Disclaimer Audit
     websiteManifest.pages.forEach((page: any) => {

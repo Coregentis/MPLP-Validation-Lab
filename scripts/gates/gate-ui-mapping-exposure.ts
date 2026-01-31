@@ -43,7 +43,7 @@ interface MappingEntry {
 function runGate14() {
     console.log('🛡️  Running VLAB-GATE-14: UI Mapping Exposure...');
 
-    let failures: string[] = [];
+    const failures: string[] = [];
 
     // Rule 1: Index must exist and be parseable
     if (!fs.existsSync(INDEX_PATH)) {

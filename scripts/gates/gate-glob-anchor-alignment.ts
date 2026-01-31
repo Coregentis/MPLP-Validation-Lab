@@ -35,7 +35,7 @@ function runGate01() {
 
     console.log(`📋 Canonical versions: protocol=${canonical.protocol}, schema=${canonical.schema_bundle}, lab=${canonical.lab_series}`);
 
-    let failures: string[] = [];
+    const failures: string[] = [];
 
     // Check each entry's manifest
     for (const [entryName, entryDef] of Object.entries(baseline.entries)) {
