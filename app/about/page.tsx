@@ -7,7 +7,7 @@
  * ALIGNMENT FINALITY: Uses SmartLink and BoundText components.
  */
 
-import Link from 'next/link';
+
 import type { Metadata } from 'next';
 import { SmartLink } from '@/components/common/SmartLink';
 import { BoundText } from '@/components/common/BoundText';

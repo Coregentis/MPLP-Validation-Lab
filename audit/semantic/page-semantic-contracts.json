@@ -1,0 +1,958 @@
+{
+  "psc_version": "1.0.0",
+  "generator_version": "1.0.0",
+  "generated_at": "2026-02-03T03:36:02.343Z",
+  "generator_signature": "R1-SEMANTIC-PSC-GENERATOR-V1",
+  "source_contract_version": "R0-page-contracts-v1",
+  "total_contracts": 35,
+  "contracts": [
+    {
+      "route": "/",
+      "page_role": "index",
+      "entities": [
+        "general"
+      ],
+      "version_scope": "version-agnostic",
+      "required_sections": [
+        {
+          "id": "page-title",
+          "selector": "h1, [data-testid=\"page-title\"]",
+          "description": "Page main heading"
+        },
+        {
+          "id": "home-primary-cta",
+          "selector": "[data-testid=\"home-cta\"], .cta-section, a[href*=\"run\"]",
+          "description": "Primary call-to-action"
+        }
+      ],
+      "required_disclaimers": [
+        "non-endorsement-banner",
+        "non-certification-notice"
+      ],
+      "ssot_bindings": [],
+      "forbidden_patterns": [
+        "TODO",
+        "FIXME",
+        "Coming soon",
+        "Under construction",
+        "Lorem ipsum"
+      ]
+    },
+    {
+      "route": "/about",
+      "page_role": "explainer",
+      "entities": [
+        "general"
+      ],
+      "version_scope": "version-agnostic",
+      "required_sections": [],
+      "required_disclaimers": [],
+      "ssot_bindings": [],
+      "forbidden_patterns": [
+        "TODO",
+        "FIXME",
+        "Coming soon",
+        "Under construction",
+        "Lorem ipsum"
+      ]
+    },
+    {
+      "route": "/adjudication",
+      "page_role": "tool",
+      "entities": [
+        "general"
+      ],
+      "version_scope": "version-agnostic",
+      "required_sections": [
+        {
+          "id": "page-title",
+          "selector": "h1, [data-testid=\"page-title\"]",
+          "description": "Page main heading"
+        },
+        {
+          "id": "adjudication-list",
+          "selector": "[data-testid=\"adjudication-list\"], table, tbody",
+          "description": "Adjudication bundles table/list"
+        }
+      ],
+      "required_disclaimers": [
+        "non-certification-notice"
+      ],
+      "ssot_bindings": [],
+      "forbidden_patterns": [
+        "TODO",
+        "FIXME",
+        "Coming soon",
+        "Under construction",
+        "Lorem ipsum"
+      ]
+    },
+    {
+      "route": "/adjudication/[run_id]",
+      "page_role": "detail",
+      "entities": [
+        "runs"
+      ],
+      "version_scope": "version-agnostic",
+      "required_sections": [],
+      "required_disclaimers": [],
+      "ssot_bindings": [],
+      "forbidden_patterns": [
+        "TODO",
+        "FIXME",
+        "Coming soon",
+        "Under construction",
+        "Lorem ipsum"
+      ],
+      "sample_params_key": "run_id"
+    },
+    {
+      "route": "/audit",
+      "page_role": "tool",
+      "entities": [
+        "general"
+      ],
+      "version_scope": "version-agnostic",
+      "required_sections": [],
+      "required_disclaimers": [],
+      "ssot_bindings": [],
+      "forbidden_patterns": [
+        "TODO",
+        "FIXME",
+        "Coming soon",
+        "Under construction",
+        "Lorem ipsum"
+      ]
+    },
+    {
+      "route": "/builder",
+      "page_role": "tool",
+      "entities": [
+        "general"
+      ],
+      "version_scope": "version-agnostic",
+      "required_sections": [],
+      "required_disclaimers": [],
+      "ssot_bindings": [],
+      "forbidden_patterns": [
+        "TODO",
+        "FIXME",
+        "Coming soon",
+        "Under construction",
+        "Lorem ipsum"
+      ]
+    },
+    {
+      "route": "/coverage",
+      "page_role": "index",
+      "entities": [
+        "general"
+      ],
+      "version_scope": "version-agnostic",
+      "required_sections": [],
+      "required_disclaimers": [],
+      "ssot_bindings": [],
+      "forbidden_patterns": [
+        "TODO",
+        "FIXME",
+        "Coming soon",
+        "Under construction",
+        "Lorem ipsum"
+      ]
+    },
+    {
+      "route": "/coverage/adjudication",
+      "page_role": "index",
+      "entities": [
+        "general"
+      ],
+      "version_scope": "version-agnostic",
+      "required_sections": [],
+      "required_disclaimers": [],
+      "ssot_bindings": [],
+      "forbidden_patterns": [
+        "TODO",
+        "FIXME",
+        "Coming soon",
+        "Under construction",
+        "Lorem ipsum"
+      ]
+    },
+    {
+      "route": "/examples/evidence-producers",
+      "page_role": "evidence",
+      "entities": [
+        "general"
+      ],
+      "version_scope": "version-agnostic",
+      "required_sections": [],
+      "required_disclaimers": [],
+      "ssot_bindings": [],
+      "forbidden_patterns": [
+        "TODO",
+        "FIXME",
+        "Coming soon",
+        "Under construction",
+        "Lorem ipsum"
+      ]
+    },
+    {
+      "route": "/examples/evidence-producers/[substrate]",
+      "page_role": "evidence",
+      "entities": [
+        "general"
+      ],
+      "version_scope": "version-agnostic",
+      "required_sections": [],
+      "required_disclaimers": [],
+      "ssot_bindings": [],
+      "forbidden_patterns": [
+        "TODO",
+        "FIXME",
+        "Coming soon",
+        "Under construction",
+        "Lorem ipsum"
+      ],
+      "sample_params_key": "substrate"
+    },
+    {
+      "route": "/gates",
+      "page_role": "index",
+      "entities": [
+        "general"
+      ],
+      "version_scope": "version-agnostic",
+      "required_sections": [],
+      "required_disclaimers": [],
+      "ssot_bindings": [],
+      "forbidden_patterns": [
+        "TODO",
+        "FIXME",
+        "Coming soon",
+        "Under construction",
+        "Lorem ipsum"
+      ]
+    },
+    {
+      "route": "/governance",
+      "page_role": "index",
+      "entities": [
+        "governance"
+      ],
+      "version_scope": "version-agnostic",
+      "required_sections": [],
+      "required_disclaimers": [],
+      "ssot_bindings": [],
+      "forbidden_patterns": [
+        "TODO",
+        "FIXME",
+        "Coming soon",
+        "Under construction",
+        "Lorem ipsum"
+      ]
+    },
+    {
+      "route": "/guarantees",
+      "page_role": "index",
+      "entities": [
+        "guarantees"
+      ],
+      "version_scope": "unified",
+      "required_sections": [
+        {
+          "id": "v1-tab",
+          "selector": "[data-testid=\"guarantees-tab-v1\"], a[href*=\"v=1\"]",
+          "description": "V1 Legacy tab"
+        },
+        {
+          "id": "v2-tab",
+          "selector": "[data-testid=\"guarantees-tab-v2\"], a[href*=\"v=2\"]",
+          "description": "V2 Deterministic tab"
+        },
+        {
+          "id": "ssot-notice",
+          "selector": "[data-testid*=\"ssot\"], code:contains(\"SSOT\")",
+          "description": "SSOT attribution notice"
+        }
+      ],
+      "required_disclaimers": [
+        "non-normative-notice"
+      ],
+      "ssot_bindings": [
+        {
+          "ssot_path": "governance/LIFECYCLE_GUARANTEES.yaml",
+          "binding_type": "loader"
+        },
+        {
+          "ssot_path": "public/_data/v2/rulesets/ruleset-v2.0.0.json",
+          "binding_type": "loader"
+        }
+      ],
+      "forbidden_patterns": [
+        "TODO",
+        "FIXME",
+        "Coming soon",
+        "Under construction",
+        "Lorem ipsum",
+        "GoldenFlow in V2",
+        "LG-0 in V2 context"
+      ]
+    },
+    {
+      "route": "/methodology",
+      "page_role": "explainer",
+      "entities": [
+        "general"
+      ],
+      "version_scope": "version-agnostic",
+      "required_sections": [
+        {
+          "id": "methodology-non-certification",
+          "selector": "[data-testid=\"methodology-non-certification\"]",
+          "description": "Non-certification section"
+        },
+        {
+          "id": "methodology-tier-legend",
+          "selector": "[data-testid=\"methodology-tier-legend\"]",
+          "description": "Tier Legend section"
+        },
+        {
+          "id": "methodology-domains",
+          "selector": "[data-testid=\"methodology-domains\"]",
+          "description": "Domains D1-D4 section"
+        },
+        {
+          "id": "methodology-self-audit-path",
+          "selector": "[data-testid=\"methodology-self-audit-path\"]",
+          "description": "Self Audit Path section"
+        },
+        {
+          "id": "methodology-entry-links",
+          "selector": "[data-testid=\"methodology-entry-links\"]",
+          "description": "Entry links section"
+        }
+      ],
+      "required_disclaimers": [],
+      "ssot_bindings": [],
+      "forbidden_patterns": [
+        "TODO",
+        "FIXME",
+        "Coming soon",
+        "Under construction",
+        "Lorem ipsum"
+      ]
+    },
+    {
+      "route": "/policies",
+      "page_role": "index",
+      "entities": [
+        "governance"
+      ],
+      "version_scope": "version-agnostic",
+      "required_sections": [],
+      "required_disclaimers": [],
+      "ssot_bindings": [],
+      "forbidden_patterns": [
+        "TODO",
+        "FIXME",
+        "Coming soon",
+        "Under construction",
+        "Lorem ipsum"
+      ]
+    },
+    {
+      "route": "/policies/contract",
+      "page_role": "policy",
+      "entities": [
+        "governance"
+      ],
+      "version_scope": "version-agnostic",
+      "required_sections": [],
+      "required_disclaimers": [],
+      "ssot_bindings": [],
+      "forbidden_patterns": [
+        "TODO",
+        "FIXME",
+        "Coming soon",
+        "Under construction",
+        "Lorem ipsum"
+      ]
+    },
+    {
+      "route": "/policies/cross-verified",
+      "page_role": "policy",
+      "entities": [
+        "governance"
+      ],
+      "version_scope": "version-agnostic",
+      "required_sections": [],
+      "required_disclaimers": [],
+      "ssot_bindings": [],
+      "forbidden_patterns": [
+        "TODO",
+        "FIXME",
+        "Coming soon",
+        "Under construction",
+        "Lorem ipsum"
+      ]
+    },
+    {
+      "route": "/policies/fmm",
+      "page_role": "policy",
+      "entities": [
+        "governance"
+      ],
+      "version_scope": "version-agnostic",
+      "required_sections": [],
+      "required_disclaimers": [],
+      "ssot_bindings": [],
+      "forbidden_patterns": [
+        "TODO",
+        "FIXME",
+        "Coming soon",
+        "Under construction",
+        "Lorem ipsum"
+      ]
+    },
+    {
+      "route": "/policies/intake",
+      "page_role": "policy",
+      "entities": [
+        "governance"
+      ],
+      "version_scope": "version-agnostic",
+      "required_sections": [],
+      "required_disclaimers": [],
+      "ssot_bindings": [],
+      "forbidden_patterns": [
+        "TODO",
+        "FIXME",
+        "Coming soon",
+        "Under construction",
+        "Lorem ipsum"
+      ]
+    },
+    {
+      "route": "/policies/strength",
+      "page_role": "policy",
+      "entities": [
+        "governance"
+      ],
+      "version_scope": "version-agnostic",
+      "required_sections": [],
+      "required_disclaimers": [],
+      "ssot_bindings": [],
+      "forbidden_patterns": [
+        "TODO",
+        "FIXME",
+        "Coming soon",
+        "Under construction",
+        "Lorem ipsum"
+      ]
+    },
+    {
+      "route": "/policies/substrate-scope",
+      "page_role": "policy",
+      "entities": [
+        "governance"
+      ],
+      "version_scope": "version-agnostic",
+      "required_sections": [],
+      "required_disclaimers": [],
+      "ssot_bindings": [],
+      "forbidden_patterns": [
+        "TODO",
+        "FIXME",
+        "Coming soon",
+        "Under construction",
+        "Lorem ipsum"
+      ]
+    },
+    {
+      "route": "/releases",
+      "page_role": "index",
+      "entities": [
+        "releases"
+      ],
+      "version_scope": "version-agnostic",
+      "required_sections": [
+        {
+          "id": "page-title",
+          "selector": "h1, [data-testid=\"page-title\"]",
+          "description": "Page main heading"
+        },
+        {
+          "id": "releases-legend",
+          "selector": "[data-testid=\"releases-legend\"]",
+          "description": "Release Legend explaining what seals are and how to verify"
+        },
+        {
+          "id": "release-list",
+          "selector": "[data-testid=\"release-list\"], .release-card, a[href*=\"/releases/\"]",
+          "description": "Release cards list"
+        }
+      ],
+      "required_disclaimers": [
+        "non-certification-notice"
+      ],
+      "ssot_bindings": [
+        {
+          "ssot_path": "releases/unified/",
+          "binding_type": "loader"
+        }
+      ],
+      "forbidden_patterns": [
+        "TODO",
+        "FIXME",
+        "Coming soon",
+        "Under construction",
+        "Lorem ipsum"
+      ]
+    },
+    {
+      "route": "/releases/[build_id]",
+      "page_role": "detail",
+      "entities": [
+        "releases"
+      ],
+      "version_scope": "version-agnostic",
+      "required_sections": [
+        {
+          "id": "seal-status",
+          "selector": "[data-testid=\"seal-status\"], .seal-badge, [class*=\"seal\"]",
+          "description": "Seal status badge"
+        },
+        {
+          "id": "seal-hash",
+          "selector": "[data-testid=\"seal-hash\"]",
+          "description": "Seal SHA-256 hash display"
+        },
+        {
+          "id": "seal-downloads",
+          "selector": "[data-testid=\"seal-downloads\"]",
+          "description": "Evidence artifacts download section"
+        },
+        {
+          "id": "seal-verify-steps",
+          "selector": "[data-testid=\"seal-verify-steps\"]",
+          "description": "How to verify locally steps"
+        },
+        {
+          "id": "seal-non-certification",
+          "selector": "[data-testid=\"seal-non-certification\"]",
+          "description": "Non-certification notice on seal page"
+        }
+      ],
+      "required_disclaimers": [
+        "non-certification-notice"
+      ],
+      "ssot_bindings": [],
+      "forbidden_patterns": [
+        "TODO",
+        "FIXME",
+        "Coming soon",
+        "Under construction",
+        "Lorem ipsum",
+        "certified",
+        "compliant",
+        "certification body",
+        "endorsed",
+        "approved",
+        "guaranteed"
+      ],
+      "sample_params": {
+        "build_id": "rc-20260131161432"
+      },
+      "sample_params_key": "build_id"
+    },
+    {
+      "route": "/adjudication",
+      "page_role": "tool",
+      "entities": [
+        "dispute"
+      ],
+      "version_scope": "version-agnostic",
+      "required_sections": [
+        {
+          "id": "adjudication-what-is",
+          "selector": "[data-testid=\"adjudication-what-is\"]",
+          "description": "Definition of Adjudication"
+        },
+        {
+          "id": "adjudication-non-certification",
+          "selector": "[data-testid=\"adjudication-non-certification\"]",
+          "description": "Non-certification disclaimer"
+        },
+        {
+          "id": "adjudication-when-cards",
+          "selector": "[data-testid=\"adjudication-when-cards\"]",
+          "description": "When to use cards"
+        },
+        {
+          "id": "adjudication-input-manifest",
+          "selector": "[data-testid=\"adjudication-input-manifest\"]",
+          "description": "Manifest input area"
+        },
+        {
+          "id": "adjudication-verify-loop",
+          "selector": "[data-testid=\"adjudication-verify-loop\"]",
+          "description": "Verification loop steps"
+        }
+      ],
+      "required_disclaimers": [
+        "non-certification-notice"
+      ],
+      "ssot_bindings": [],
+      "forbidden_patterns": [
+        "arbitration service",
+        "certification body",
+        "officially approved",
+        "certified",
+        "compliant"
+      ]
+    },
+    {
+      "route": "/rulesets",
+      "page_role": "index",
+      "entities": [
+        "rulesets"
+      ],
+      "version_scope": "unified",
+      "required_sections": [
+        {
+          "id": "page-title",
+          "selector": "h1, [data-testid=\"page-title\"]",
+          "description": "Page main heading"
+        },
+        {
+          "id": "ruleset-list",
+          "selector": "[data-testid=\"rulesets-unified-grid\"], [data-testid=\"ruleset-list\"], a[href*=\"/rulesets/\"]",
+          "description": "Ruleset cards list"
+        }
+      ],
+      "required_disclaimers": [
+        "non-certification-notice"
+      ],
+      "ssot_bindings": [
+        {
+          "ssot_path": "data/rulesets/",
+          "binding_type": "loader"
+        },
+        {
+          "ssot_path": "public/_data/v2/rulesets/",
+          "binding_type": "loader"
+        }
+      ],
+      "forbidden_patterns": [
+        "TODO",
+        "FIXME",
+        "Coming soon",
+        "Under construction",
+        "Lorem ipsum"
+      ]
+    },
+    {
+      "route": "/rulesets/[ruleset_id]",
+      "page_role": "detail",
+      "entities": [
+        "rulesets"
+      ],
+      "version_scope": "version-agnostic",
+      "required_sections": [
+        {
+          "id": "ruleset-header",
+          "selector": "[data-testid=\"ruleset-header\"], h1, [class*=\"header\"]",
+          "description": "Ruleset header"
+        },
+        {
+          "id": "clauses-or-flows",
+          "selector": "[data-testid=\"clauses\"], [data-testid=\"golden-flows\"], [class*=\"clause\"], [class*=\"golden\"]",
+          "description": "Clauses or Golden Flows section"
+        },
+        {
+          "id": "ruleset-domains",
+          "selector": "[data-testid=\"ruleset-domains\"]",
+          "description": "Domain Reference section container"
+        },
+        {
+          "id": "ruleset-domain-d1",
+          "selector": "[data-testid=\"ruleset-domain-d1\"]",
+          "description": "D1 Provenance domain anchor"
+        },
+        {
+          "id": "ruleset-domain-d1-def",
+          "selector": "[data-testid=\"ruleset-domain-d1-def\"]",
+          "description": "D1 definition text"
+        },
+        {
+          "id": "ruleset-domain-d1-evidence",
+          "selector": "[data-testid=\"ruleset-domain-d1-evidence\"]",
+          "description": "D1 evidence criteria"
+        },
+        {
+          "id": "ruleset-domain-d2",
+          "selector": "[data-testid=\"ruleset-domain-d2\"]",
+          "description": "D2 Lifecycle domain anchor"
+        },
+        {
+          "id": "ruleset-domain-d3",
+          "selector": "[data-testid=\"ruleset-domain-d3\"]",
+          "description": "D3 Arbitration domain anchor"
+        },
+        {
+          "id": "ruleset-domain-d4",
+          "selector": "[data-testid=\"ruleset-domain-d4\"]",
+          "description": "D4 Interop domain anchor"
+        }
+      ],
+      "required_disclaimers": [],
+      "ssot_bindings": [],
+      "forbidden_patterns": [
+        "TODO",
+        "FIXME",
+        "Coming soon",
+        "Under construction",
+        "Lorem ipsum"
+      ],
+      "sample_params_key": "ruleset_id"
+    },
+    {
+      "route": "/rulesets/evolution",
+      "page_role": "index",
+      "entities": [
+        "rulesets"
+      ],
+      "version_scope": "version-agnostic",
+      "required_sections": [],
+      "required_disclaimers": [],
+      "ssot_bindings": [],
+      "forbidden_patterns": [
+        "TODO",
+        "FIXME",
+        "Coming soon",
+        "Under construction",
+        "Lorem ipsum"
+      ]
+    },
+    {
+      "route": "/rulesets/evolution/diff/[id]",
+      "page_role": "detail",
+      "entities": [
+        "rulesets"
+      ],
+      "version_scope": "version-agnostic",
+      "required_sections": [],
+      "required_disclaimers": [],
+      "ssot_bindings": [],
+      "forbidden_patterns": [
+        "TODO",
+        "FIXME",
+        "Coming soon",
+        "Under construction",
+        "Lorem ipsum"
+      ],
+      "sample_params_key": "id"
+    },
+    {
+      "route": "/runs",
+      "page_role": "index",
+      "entities": [
+        "runs"
+      ],
+      "version_scope": "unified",
+      "required_sections": [
+        {
+          "id": "page-title",
+          "selector": "h1, [data-testid=\"page-title\"]",
+          "description": "Page main heading"
+        },
+        {
+          "id": "run-list",
+          "selector": "[data-testid=\"run-list\"], .run-card, table, a[href*=\"/runs/\"]",
+          "description": "Run cards/table"
+        },
+        {
+          "id": "runs-legend",
+          "selector": "[data-testid=\"runs-legend\"]",
+          "description": "How to read this table legend (self-explanatory UI)"
+        },
+        {
+          "id": "tier-def-reproduced",
+          "selector": "[data-testid=\"tier-def-reproduced\"]",
+          "description": "Reproduced tier definition with constraint sentence"
+        },
+        {
+          "id": "domain-chip",
+          "selector": "[data-testid^=\"domain-chip-\"]",
+          "description": "At least one domain chip (D1/D2/D3/D4) linking to ruleset"
+        }
+      ],
+      "required_disclaimers": [
+        "non-certification-notice"
+      ],
+      "ssot_bindings": [
+        {
+          "ssot_path": "public/_data/v2/runs/",
+          "binding_type": "loader"
+        }
+      ],
+      "forbidden_patterns": [
+        "TODO",
+        "FIXME",
+        "Coming soon",
+        "Under construction",
+        "Lorem ipsum"
+      ]
+    },
+    {
+      "route": "/runs/[run_id]",
+      "page_role": "detail",
+      "entities": [
+        "runs"
+      ],
+      "version_scope": "version-agnostic",
+      "required_sections": [
+        {
+          "id": "provenance-section",
+          "selector": "[data-testid=\"provenance\"], h2:contains(\"Provenance\"), [class*=\"provenance\"]",
+          "description": "Provenance section"
+        },
+        {
+          "id": "determinism-section",
+          "selector": "[data-testid=\"determinism\"], h2:contains(\"Determinism\"), [class*=\"determinism\"]",
+          "description": "Determinism section"
+        },
+        {
+          "id": "verdict-badge",
+          "selector": "[data-testid=\"verdict\"], .verdict-badge, [class*=\"verdict\"]",
+          "description": "Verdict badge"
+        }
+      ],
+      "required_disclaimers": [
+        "non-certification-notice"
+      ],
+      "ssot_bindings": [],
+      "forbidden_patterns": [
+        "TODO",
+        "FIXME",
+        "Coming soon",
+        "Under construction",
+        "Lorem ipsum"
+      ],
+      "sample_params_key": "run_id"
+    },
+    {
+      "route": "/runs/[run_id]/evidence",
+      "page_role": "evidence",
+      "entities": [
+        "runs"
+      ],
+      "version_scope": "version-agnostic",
+      "required_sections": [],
+      "required_disclaimers": [],
+      "ssot_bindings": [],
+      "forbidden_patterns": [
+        "TODO",
+        "FIXME",
+        "Coming soon",
+        "Under construction",
+        "Lorem ipsum"
+      ],
+      "sample_params_key": "run_id"
+    },
+    {
+      "route": "/runs/[run_id]/replay",
+      "page_role": "evidence",
+      "entities": [
+        "runs"
+      ],
+      "version_scope": "version-agnostic",
+      "required_sections": [],
+      "required_disclaimers": [],
+      "ssot_bindings": [],
+      "forbidden_patterns": [
+        "TODO",
+        "FIXME",
+        "Coming soon",
+        "Under construction",
+        "Lorem ipsum"
+      ],
+      "sample_params_key": "run_id"
+    },
+    {
+      "route": "/runsets",
+      "page_role": "index",
+      "entities": [
+        "runs",
+        "runsets"
+      ],
+      "version_scope": "version-agnostic",
+      "required_sections": [],
+      "required_disclaimers": [],
+      "ssot_bindings": [],
+      "forbidden_patterns": [
+        "TODO",
+        "FIXME",
+        "Coming soon",
+        "Under construction",
+        "Lorem ipsum"
+      ]
+    },
+    {
+      "route": "/runsets/[runset_id]",
+      "page_role": "detail",
+      "entities": [
+        "runs",
+        "runsets"
+      ],
+      "version_scope": "version-agnostic",
+      "required_sections": [],
+      "required_disclaimers": [],
+      "ssot_bindings": [],
+      "forbidden_patterns": [
+        "TODO",
+        "FIXME",
+        "Coming soon",
+        "Under construction",
+        "Lorem ipsum"
+      ],
+      "sample_params_key": "runset_id"
+    },
+    {
+      "route": "/validation",
+      "page_role": "explainer",
+      "entities": [
+        "general"
+      ],
+      "version_scope": "version-agnostic",
+      "required_sections": [],
+      "required_disclaimers": [],
+      "ssot_bindings": [],
+      "forbidden_patterns": [
+        "TODO",
+        "FIXME",
+        "Coming soon",
+        "Under construction",
+        "Lorem ipsum"
+      ]
+    },
+    {
+      "route": "/validation/samples",
+      "page_role": "explainer",
+      "entities": [
+        "general"
+      ],
+      "version_scope": "version-agnostic",
+      "required_sections": [],
+      "required_disclaimers": [],
+      "ssot_bindings": [],
+      "forbidden_patterns": [
+        "TODO",
+        "FIXME",
+        "Coming soon",
+        "Under construction",
+        "Lorem ipsum"
+      ]
+    }
+  ]
+}

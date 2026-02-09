@@ -8,7 +8,7 @@ async function getProjection(runId: string) {
     try {
         const data = await import(`../../public/_data/v2/runs/${runId}.json`);
         return data.default;
-    } catch (e) {
+    } catch {
         return null;
     }
 }

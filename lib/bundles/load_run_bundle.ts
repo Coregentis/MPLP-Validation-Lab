@@ -15,14 +15,10 @@ import * as path from 'path';
 import { mapToNormalizedVerdict } from './normalize';
 import type {
     RunBundle,
-    NormalizedVerdict,
     BundleManifest,
     EvidencePointers,
-    Pack,
     TraceData,
     Event,
-    LoadStatus,
-    LoadError,
 } from './types';
 
 const RUNS_ROOT = path.resolve(process.cwd(), 'data/runs');
@@ -70,26 +66,7 @@ function readJsonSafe<T>(filePath: string): JsonReadResult<T> {
 // NDJSON Parser
 // =============================================================================
 
-function parseNdjson(filePath: string): Event[] {
-    if (!fs.existsSync(filePath)) return [];
 
-    try {
-        const content = fs.readFileSync(filePath, 'utf-8');
-        const lines = content.trim().split('\n').filter(line => line.trim());
-
-        const events: Event[] = [];
-        for (const line of lines) {
-            try {
-                events.push(JSON.parse(line));
-            } catch {
-                // Skip invalid lines
-            }
-        }
-        return events;
-    } catch {
-        return [];
-    }
-}
 
 // =============================================================================
 // Main Loader

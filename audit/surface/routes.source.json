@@ -1,0 +1,353 @@
+{
+  "generated_at": "2026-02-02T09:17:03.779Z",
+  "total_routes": 44,
+  "pages": 35,
+  "apis": 9,
+  "routes": [
+    {
+      "route_path": "/",
+      "kind": "page",
+      "file_path": "app/page.tsx",
+      "dynamic_params": [],
+      "segment_group": "root"
+    },
+    {
+      "route_path": "/about",
+      "kind": "page",
+      "file_path": "app/about/page.tsx",
+      "dynamic_params": [],
+      "segment_group": "about"
+    },
+    {
+      "route_path": "/adjudication",
+      "kind": "page",
+      "file_path": "app/adjudication/page.tsx",
+      "dynamic_params": [],
+      "segment_group": "adjudication"
+    },
+    {
+      "route_path": "/adjudication/[run_id]",
+      "kind": "page",
+      "file_path": "app/adjudication/[run_id]/page.tsx",
+      "dynamic_params": [
+        "run_id"
+      ],
+      "segment_group": "adjudication"
+    },
+    {
+      "route_path": "/api/releases/[build_id]/[filename]",
+      "kind": "api",
+      "file_path": "app/api/releases/[build_id]/[filename]/route.ts",
+      "dynamic_params": [
+        "build_id",
+        "filename"
+      ],
+      "segment_group": "api"
+    },
+    {
+      "route_path": "/api/runs/[run_id]/download",
+      "kind": "api",
+      "file_path": "app/api/runs/[run_id]/download/route.ts",
+      "dynamic_params": [
+        "run_id"
+      ],
+      "segment_group": "api"
+    },
+    {
+      "route_path": "/api/runs/[run_id]/download-zip",
+      "kind": "api",
+      "file_path": "app/api/runs/[run_id]/download-zip/route.ts",
+      "dynamic_params": [
+        "run_id"
+      ],
+      "segment_group": "api"
+    },
+    {
+      "route_path": "/api/runs/[run_id]/download/[...path]",
+      "kind": "api",
+      "file_path": "app/api/runs/[run_id]/download/[...path]/route.ts",
+      "dynamic_params": [
+        "run_id",
+        "...path"
+      ],
+      "segment_group": "api"
+    },
+    {
+      "route_path": "/api/runs/[run_id]/files/[...path]",
+      "kind": "api",
+      "file_path": "app/api/runs/[run_id]/files/[...path]/route.ts",
+      "dynamic_params": [
+        "run_id",
+        "...path"
+      ],
+      "segment_group": "api"
+    },
+    {
+      "route_path": "/api/runs/[run_id]/proof",
+      "kind": "api",
+      "file_path": "app/api/runs/[run_id]/proof/route.ts",
+      "dynamic_params": [
+        "run_id"
+      ],
+      "segment_group": "api"
+    },
+    {
+      "route_path": "/api/test/bundle-loader",
+      "kind": "api",
+      "file_path": "app/api/test/bundle-loader/route.ts",
+      "dynamic_params": [],
+      "segment_group": "api"
+    },
+    {
+      "route_path": "/api/v2/runs/[run_id]",
+      "kind": "api",
+      "file_path": "app/api/v2/runs/[run_id]/route.ts",
+      "dynamic_params": [
+        "run_id"
+      ],
+      "segment_group": "api"
+    },
+    {
+      "route_path": "/api/v2/runs/[run_id]/evidence",
+      "kind": "api",
+      "file_path": "app/api/v2/runs/[run_id]/evidence/route.ts",
+      "dynamic_params": [
+        "run_id"
+      ],
+      "segment_group": "api"
+    },
+    {
+      "route_path": "/audit",
+      "kind": "page",
+      "file_path": "app/audit/page.tsx",
+      "dynamic_params": [],
+      "segment_group": "audit"
+    },
+    {
+      "route_path": "/builder",
+      "kind": "page",
+      "file_path": "app/builder/page.tsx",
+      "dynamic_params": [],
+      "segment_group": "builder"
+    },
+    {
+      "route_path": "/coverage",
+      "kind": "page",
+      "file_path": "app/coverage/page.tsx",
+      "dynamic_params": [],
+      "segment_group": "coverage"
+    },
+    {
+      "route_path": "/coverage/adjudication",
+      "kind": "page",
+      "file_path": "app/coverage/adjudication/page.tsx",
+      "dynamic_params": [],
+      "segment_group": "coverage"
+    },
+    {
+      "route_path": "/examples/evidence-producers",
+      "kind": "page",
+      "file_path": "app/examples/evidence-producers/page.tsx",
+      "dynamic_params": [],
+      "segment_group": "examples"
+    },
+    {
+      "route_path": "/examples/evidence-producers/[substrate]",
+      "kind": "page",
+      "file_path": "app/examples/evidence-producers/[substrate]/page.tsx",
+      "dynamic_params": [
+        "substrate"
+      ],
+      "segment_group": "examples"
+    },
+    {
+      "route_path": "/gates",
+      "kind": "page",
+      "file_path": "app/gates/page.tsx",
+      "dynamic_params": [],
+      "segment_group": "gates"
+    },
+    {
+      "route_path": "/governance",
+      "kind": "page",
+      "file_path": "app/governance/page.tsx",
+      "dynamic_params": [],
+      "segment_group": "governance"
+    },
+    {
+      "route_path": "/guarantees",
+      "kind": "page",
+      "file_path": "app/guarantees/page.tsx",
+      "dynamic_params": [],
+      "segment_group": "guarantees"
+    },
+    {
+      "route_path": "/methodology",
+      "kind": "page",
+      "file_path": "app/methodology/page.tsx",
+      "dynamic_params": [],
+      "segment_group": "methodology"
+    },
+    {
+      "route_path": "/policies",
+      "kind": "page",
+      "file_path": "app/policies/page.tsx",
+      "dynamic_params": [],
+      "segment_group": "policies"
+    },
+    {
+      "route_path": "/policies/contract",
+      "kind": "page",
+      "file_path": "app/policies/contract/page.tsx",
+      "dynamic_params": [],
+      "segment_group": "policies"
+    },
+    {
+      "route_path": "/policies/cross-verified",
+      "kind": "page",
+      "file_path": "app/policies/cross-verified/page.tsx",
+      "dynamic_params": [],
+      "segment_group": "policies"
+    },
+    {
+      "route_path": "/policies/fmm",
+      "kind": "page",
+      "file_path": "app/policies/fmm/page.tsx",
+      "dynamic_params": [],
+      "segment_group": "policies"
+    },
+    {
+      "route_path": "/policies/intake",
+      "kind": "page",
+      "file_path": "app/policies/intake/page.tsx",
+      "dynamic_params": [],
+      "segment_group": "policies"
+    },
+    {
+      "route_path": "/policies/strength",
+      "kind": "page",
+      "file_path": "app/policies/strength/page.tsx",
+      "dynamic_params": [],
+      "segment_group": "policies"
+    },
+    {
+      "route_path": "/policies/substrate-scope",
+      "kind": "page",
+      "file_path": "app/policies/substrate-scope/page.tsx",
+      "dynamic_params": [],
+      "segment_group": "policies"
+    },
+    {
+      "route_path": "/releases",
+      "kind": "page",
+      "file_path": "app/releases/page.tsx",
+      "dynamic_params": [],
+      "segment_group": "releases"
+    },
+    {
+      "route_path": "/releases/[build_id]",
+      "kind": "page",
+      "file_path": "app/releases/[build_id]/page.tsx",
+      "dynamic_params": [
+        "build_id"
+      ],
+      "segment_group": "releases"
+    },
+    {
+      "route_path": "/rulesets",
+      "kind": "page",
+      "file_path": "app/rulesets/page.tsx",
+      "dynamic_params": [],
+      "segment_group": "rulesets"
+    },
+    {
+      "route_path": "/rulesets/[ruleset_id]",
+      "kind": "page",
+      "file_path": "app/rulesets/[ruleset_id]/page.tsx",
+      "dynamic_params": [
+        "ruleset_id"
+      ],
+      "segment_group": "rulesets"
+    },
+    {
+      "route_path": "/rulesets/evolution",
+      "kind": "page",
+      "file_path": "app/rulesets/evolution/page.tsx",
+      "dynamic_params": [],
+      "segment_group": "rulesets"
+    },
+    {
+      "route_path": "/rulesets/evolution/diff/[id]",
+      "kind": "page",
+      "file_path": "app/rulesets/evolution/diff/[id]/page.tsx",
+      "dynamic_params": [
+        "id"
+      ],
+      "segment_group": "rulesets"
+    },
+    {
+      "route_path": "/runs",
+      "kind": "page",
+      "file_path": "app/runs/page.tsx",
+      "dynamic_params": [],
+      "segment_group": "runs"
+    },
+    {
+      "route_path": "/runs/[run_id]",
+      "kind": "page",
+      "file_path": "app/runs/[run_id]/page.tsx",
+      "dynamic_params": [
+        "run_id"
+      ],
+      "segment_group": "runs"
+    },
+    {
+      "route_path": "/runs/[run_id]/evidence",
+      "kind": "page",
+      "file_path": "app/runs/[run_id]/evidence/page.tsx",
+      "dynamic_params": [
+        "run_id"
+      ],
+      "segment_group": "runs"
+    },
+    {
+      "route_path": "/runs/[run_id]/replay",
+      "kind": "page",
+      "file_path": "app/runs/[run_id]/replay/page.tsx",
+      "dynamic_params": [
+        "run_id"
+      ],
+      "segment_group": "runs"
+    },
+    {
+      "route_path": "/runsets",
+      "kind": "page",
+      "file_path": "app/runsets/page.tsx",
+      "dynamic_params": [],
+      "segment_group": "runsets"
+    },
+    {
+      "route_path": "/runsets/[runset_id]",
+      "kind": "page",
+      "file_path": "app/runsets/[runset_id]/page.tsx",
+      "dynamic_params": [
+        "runset_id"
+      ],
+      "segment_group": "runsets"
+    },
+    {
+      "route_path": "/validation",
+      "kind": "page",
+      "file_path": "app/validation/page.tsx",
+      "dynamic_params": [],
+      "segment_group": "validation"
+    },
+    {
+      "route_path": "/validation/samples",
+      "kind": "page",
+      "file_path": "app/validation/samples/page.tsx",
+      "dynamic_params": [],
+      "segment_group": "validation"
+    }
+  ]
+}

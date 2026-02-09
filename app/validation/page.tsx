@@ -7,9 +7,8 @@
 
 import type { Metadata } from 'next';
 import labManifest from '@/public/_meta/lab-manifest.json';
-import globalAlignment from '@/public/_meta/global-alignment.json';
 import gateStatus from '@/public/_meta/gates/gate-status.json';
-import { Shield, CheckCircle, AlertTriangle, XCircle, Layers, GitBranch, Terminal } from 'lucide-react';
+import { Shield, CheckCircle, Layers, Terminal } from 'lucide-react';
 import { DisclaimerBox } from '@/components/common/DisclaimerBox';
 import { SmartLink } from '@/components/common/SmartLink';
 import { SemanticStatusBadge } from '@/components/common/SemanticStatusBadge';

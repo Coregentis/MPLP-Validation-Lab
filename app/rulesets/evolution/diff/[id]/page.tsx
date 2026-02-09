@@ -102,7 +102,7 @@ export default async function DiffDetailPage({ params }: DiffDetailPageProps) {
                             </tr>
                         </thead>
                         <tbody className="divide-y divide-mplp-border/20">
-                            {clausesChanged.map((clause: any) => (
+                            {(clausesChanged as { clause_id: string; change_type: string; rationale: string; code_delta?: string; evidence_refs?: string[] }[]).map((clause) => (
                                 <tr key={clause.clause_id} className="hover:bg-mplp-blue-soft/5 transition-colors group">
                                     <td className="px-6 py-6 align-top">
                                         <div className="space-y-2">

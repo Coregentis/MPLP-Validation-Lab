@@ -21,10 +21,9 @@ import { CLAUSE_DEFINITIONS } from './types';
 // Clause Evaluation Context
 // =============================================================================
 
-interface ClauseContext {
-    bundle: RunBundle;
-    definition: ClauseDefinition;
-}
+// =============================================================================
+// Common Clause Evaluation Helpers
+// =============================================================================
 
 // =============================================================================
 // Common Clause Evaluation Helpers

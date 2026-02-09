@@ -11,7 +11,7 @@ async function getRuleset() {
         if (!fs.existsSync(rulesetPath)) return null;
         const content = fs.readFileSync(rulesetPath, 'utf-8');
         return JSON.parse(content);
-    } catch (e) {
+    } catch {
         return null;
     }
 }

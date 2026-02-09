@@ -17,11 +17,11 @@ export interface RunDisplayContract {
 
 export function isIndexable(run: CuratedRunRecord): boolean {
     // back-compat: undefined => true
-    return (run as any).indexable !== false;
+    return run.indexable !== false;
 }
 
 export function getRunDisplayContract(run: CuratedRunRecord): RunDisplayContract {
-    const status = (run as any).adjudication_status;
+    const status = run.adjudication_status;
 
     if (status === "NOT_ADMISSIBLE") {
         return {
@@ -38,7 +38,7 @@ export function getRunDisplayContract(run: CuratedRunRecord): RunDisplayContract
             badgeText: "Archived",
             badgeTone: "archived",
             hashDisplayMode: "hidden",
-            tooltip: (run as any).unavailable_reason ?? "Evidence unavailable",
+            tooltip: run.unavailable_reason ?? "Evidence unavailable",
             actions: { viewDetail: true, downloadPack: false, viewEvidence: true },
         };
     }

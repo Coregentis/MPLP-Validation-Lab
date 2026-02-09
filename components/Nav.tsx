@@ -11,11 +11,11 @@ import { Logo } from "@/components/ui/logo";
 // Internal Lab navigation - unified V1+V2 with tier facets
 const NAV_ITEMS = [
     { href: '/', label: 'Home' },
-    { href: '/runs', label: 'All Runs' },
-    { href: '/runs?tier=REPRODUCED', label: 'Real Runs', badge: 'V2' },
-    { href: '/runs?tier=SIMULATED', label: 'Simulated', badge: 'V1' },
+    { href: '/runs', label: 'Runs' },
+    { href: '/runsets', label: 'Runsets' },
     { href: '/rulesets', label: 'Rulesets' },
     { href: '/governance', label: 'Governance' },
+    { href: '/releases', label: 'Releases' },
 ];
 
 // External links (Ecosystem backlinks)
@@ -27,7 +27,7 @@ const EXTERNAL_LINKS = [
 export function Nav() {
     return (
         <header className="sticky top-0 z-50 bg-glass transition-all">
-            <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-[60px]" aria-label="Main navigation">
+            <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-[60px]" aria-label="Main navigation" data-testid="global-nav">
                 <div className="flex items-center justify-between h-full">
                     {/* Logo */}
                     <div className="flex items-center gap-4">
@@ -48,14 +48,6 @@ export function Nav() {
                                 className="px-3 py-1.5 text-13 font-semibold text-mplp-text-muted hover:text-mplp-text hover:bg-white/5 transition-all rounded-lg flex items-center gap-1.5"
                             >
                                 {item.label}
-                                {item.badge && (
-                                    <span className={`text-[9px] font-bold px-1 py-0.5 rounded ${item.badge === 'V2'
-                                        ? 'bg-emerald-500/10 text-emerald-400'
-                                        : 'bg-blue-500/10 text-blue-400'
-                                        }`}>
-                                        {item.badge}
-                                    </span>
-                                )}
                             </Link>
                         ))}
                     </div>

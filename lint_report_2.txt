@@ -1,0 +1,218 @@
+
+> validation-lab@1.0.0 lint
+> next lint
+
+`next lint` is deprecated and will be removed in Next.js 16.
+For new projects, use create-next-app to choose your preferred linter.
+For existing projects, migrate to the ESLint CLI:
+npx @next/codemod@canary next-lint-to-eslint-cli .
+
+ ⚠ Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of /Users/jasonwang/Documents/AI_Dev/V1.0_release/pnpm-lock.yaml as the root directory.
+ To silence this warning, set `outputFileTracingRoot` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/output#caveats for more information.
+ Detected additional lockfiles: 
+   * /Users/jasonwang/Documents/AI_Dev/V1.0_release/Validation_Lab/package-lock.json
+
+
+./app/policies/fmm/page.tsx
+15:10  Warning: 'SemanticStatusBadge' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+35:38  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+43:35  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+45:11  Warning: 'coreElements' is assigned a value but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/rulesets/[ruleset_id]/page.tsx
+18:38  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+287:61  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./app/rulesets/evolution/diff/[id]/page.tsx
+105:58  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./app/runs/[run_id]/_components/VerificationPanel.tsx
+82:42  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+86:59  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./app/runs/[run_id]/page.tsx
+305:48  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+312:56  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./app/runs/_components/CuratedRunsTable.tsx
+5:33  Warning: 'isIndexable' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+7:10  Warning: 'HashDisplay' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/runs/_components/MappingProjectionPanel.tsx
+29:42  Warning: 'runId' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/v2/_components/BlockRenderer.tsx
+33:57  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./app/v2/_components/RegMappingLayout.tsx
+8:16  Warning: 'getRegMapping' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/v2/_components/blocks/ClauseList.tsx
+10:22  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+18:11  Warning: 'urlPattern' is assigned a value but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/v2/_components/blocks/DisputePanel.tsx
+11:15  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+14:46  Warning: 'context' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/v2/_components/blocks/EvidenceList.tsx
+13:24  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./app/v2/_components/blocks/HeroBlock.tsx
+5:12  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+8:19  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./app/v2/_components/blocks/HomeStatsRow.tsx
+4:88  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./app/v2/_components/blocks/ManifestViewer.tsx
+11:24  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./app/v2/_components/blocks/RoleSelector.tsx
+7:12  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+35:35  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./app/v2/_ssot/nav.ts
+6:10  Warning: 'JOURNEYS' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+6:20  Warning: 'SHELVES' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/v2/types/projections.ts
+39:21  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./app/validation/page.tsx
+10:8  Warning: 'globalAlignment' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+12:31  Warning: 'AlertTriangle' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+12:46  Warning: 'XCircle' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+12:63  Warning: 'GitBranch' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/validation/samples/page.tsx
+14:7  Warning: 'LAB_CANONICAL_HOST' is assigned a value but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./components/doclets/Doclet.tsx
+4:30  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+16:49  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+25:12  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./components/ssot/GateSummaryPill.tsx
+3:10  Warning: 'Shield' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+7:11  Warning: 'passRate' is assigned a value but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./lib/bundles/load_run_bundle.ts
+18:5  Warning: 'NormalizedVerdict' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+21:5  Warning: 'Pack' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+24:5  Warning: 'LoadStatus' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+25:5  Warning: 'LoadError' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+73:10  Warning: 'parseNdjson' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./lib/engine/ingest.ts
+11:51  Warning: 'EPC_CONSTANTS' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+63:18  Warning: 'e' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./lib/engine/types.ts
+11:27  Warning: 'VerdictStatus' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./lib/engine/verify.ts
+15:13  Warning: 'crypto' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+25:5  Warning: 'CheckCategory' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+27:27  Warning: 'EvidencePointer' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+327:16  Warning: 'checkManifestRequiredFields' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+445:53  Warning: 'skipSet' is assigned a value but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+725:52  Warning: 'skipSet' is assigned a value but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+813:5  Warning: 'skipSet' is assigned a value but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./lib/evaluate/evaluate.ts
+208:14  Warning: 'e' is defined but never used.  @typescript-eslint/no-unused-vars
+428:14  Warning: 'e' is defined but never used.  @typescript-eslint/no-unused-vars
+476:14  Warning: 'e' is defined but never used.  @typescript-eslint/no-unused-vars
+555:14  Warning: 'e' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./lib/gates/gate-14-adjudication-consistency.ts
+12:36  Warning: 'readdirSync' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+45:7  Warning: 'ADJUDICATION_DIR' is assigned a value but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+201:22  Warning: 'err' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./lib/gates/gate-15-curated-adjudication-required.ts
+199:18  Warning: 'err' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./lib/gates/reason-codes/index.ts
+27:62  Warning: 'PatternRule' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./lib/proof/proof-bundle.ts
+9:30  Warning: 'buildCanonicalHashInput' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./lib/proof/sign.ts
+68:41  Warning: 'type' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+213:17  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+214:14  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+252:33  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+275:64  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+277:24  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+279:32  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+287:24  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./lib/reverification/selectCanonicalBundle.ts
+14:16  Warning: 'basename' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./lib/rulesets/loadDiff.ts
+48:55  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./lib/rulesets/loadRuleset.ts
+157:42  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+177:18  Warning: 'e' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./lib/rulesets/ruleset-1.0/adjudicate.ts
+11:26  Warning: 'GoldenFlowVerdict' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./lib/rulesets/ruleset-1.1/adjudicate.ts
+9:50  Warning: 'RegistryClauseResult' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./lib/rulesets/ruleset-1.1/clauses.ts
+24:11  Warning: 'ClauseContext' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./lib/ssot/featured-run.ts
+10:34  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+14:34  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./lib/ssot/gate-summary.ts
+17:31  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+21:19  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+21:27  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./lib/ssot/lab-status.ts
+15:35  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./lib/ssot/mapping-resolver.ts
+20:45  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+26:45  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+45:52  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+53:52  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./lib/ui-contracts.ts
+20:20  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+24:28  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+41:30  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./lib/unified/load-all-runs.ts
+20:31  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+57:44  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+110:50  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./lib/unified/resolve-runset-members.ts
+64:60  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+77:53  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+90:22  Warning: 'runsetId' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+90:40  Warning: 'allRuns' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+96:42  Warning: 'allRuns' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./lib/unified/version-strip-model.ts
+80:14  Warning: '_e' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./lib/v2/evidence/load-run-evidence-model.ts
+73:69  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./lib/v2/rulesets/load-ruleset-v2.ts
+39:51  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/app/api-reference/config/eslint#disabling-rules

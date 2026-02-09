@@ -1,5 +1,5 @@
 
-import { TRIPOD } from '../../_ssot/ux.generated';
+
 
 interface ClauseListProps {
     data?: Array<{
@@ -7,15 +7,14 @@ interface ClauseListProps {
         name: string;
         intent?: string;
         surfaces?: string[];
-        precedents?: any[];
+        precedents?: unknown[];
     }>;
     tokens: Record<string, string>;
 }
 
 export function ClauseList({ data, tokens }: ClauseListProps) {
     // 1. Resolve Outbound Boundary from Tripod
-    const outboundDefinition = TRIPOD.outbound?.find(o => o.id === 'clause_definition_link');
-    const urlPattern = outboundDefinition?.target_pattern; // docs:/laws/{ruleset}/{clause}
+    // const outboundDefinition = TRIPOD.outbound?.find(o => o.id === 'clause_definition_link');
 
     if (!data || data.length === 0) {
         return <div className="p-4 text-gray-400 italic">{tokens['LIT_NO_CLAUSES']}</div>;

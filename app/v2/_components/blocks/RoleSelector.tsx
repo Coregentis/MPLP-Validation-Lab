@@ -3,8 +3,14 @@ import React from 'react';
 import Link from 'next/link';
 import { ROLES, JOURNEYS } from '../../_ssot/ux.generated';
 
+interface Role {
+    id: string;
+    title: string;
+    intent: string;
+}
+
 interface RoleSelectorProps {
-    data?: any; // ssot.roles
+    data?: Role[]; // ssot.roles
     tokens: Record<string, string>;
 }
 
@@ -32,7 +38,7 @@ export function RoleSelector({ data, tokens }: RoleSelectorProps) {
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                {roles.map((role: any) => {
+                {roles.map((role: Role) => {
                     const href = getEntrypoint(role.id);
                     return (
                         <Link

@@ -79,11 +79,11 @@ export function VerificationPanel({ run }: { run: CuratedRunRecord }) {
                                         />
                                     </div>
                                 )}
-                                {(run as any).evaluation_report_hash && (
+                                {run.evaluation_report_hash && (
                                     <div className="bg-black/30 border border-mplp-border/20 rounded-lg p-4">
                                         <HashDisplay
                                             label="evaluation_report_hash"
-                                            hash={(run as any).evaluation_report_hash}
+                                            hash={run.evaluation_report_hash}
                                             mode="full"
                                         />
                                     </div>

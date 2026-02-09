@@ -1,0 +1,83 @@
+{
+    "projection_type": "ruleset_detail",
+    "data": {
+        "ruleset_id": "ruleset-v2.0.1",
+        "name": "MPLP Lab V2 Baseline Adjudication",
+        "version": "2.0.1",
+        "description": "Deterministic rules for V2 evidence packs, enforcing bit-identical trustworthiness. (Patch 2.0.1)",
+        "clauses": [
+            {
+                "id": "PROV-V2-01",
+                "name": "Substrate Reference Integrity",
+                "description": "Manifest must contain a valid substrate_ref with upstream pinning.",
+                "severity": "CRITICAL",
+                "eval_type": "EXISTENCE",
+                "pointer": "mplp://manifest/substrate_ref",
+                "expectation": "NOT_NULL"
+            },
+            {
+                "id": "PROV-V2-02",
+                "name": "Lock Integrity Enforcement",
+                "description": "Manifest must contain a valid lock_ref with a non-pending lock_sha256.",
+                "severity": "CRITICAL",
+                "eval_type": "JSON_MATCH",
+                "pointer": "mplp://manifest/lock_ref/lock_sha256",
+                "expectation": "!~ ^(pending|unknown|none)$"
+            },
+            {
+                "id": "LIFECYCLE-V2-01",
+                "name": "Trace Artifact Existence",
+                "description": "The run must include a valid trace.json artifact with a verdict.",
+                "severity": "CRITICAL",
+                "eval_type": "EXISTENCE",
+                "pointer": "mplp://artifact/trace.json#/verdict",
+                "expectation": "NOT_NULL"
+            },
+            {
+                "id": "LIFECYCLE-V2-02",
+                "name": "Timeline Data Presence",
+                "description": "The run must include non-empty timeline events.",
+                "severity": "CRITICAL",
+                "eval_type": "MIN_COUNT",
+                "pointer": "mplp://timeline/events.ndjson",
+                "expectation": ">= 1"
+            },
+            {
+                "id": "TRUST-V2-01",
+                "name": "Runner Seal Verification",
+                "description": "The run must be sealed with a unique runner image_digest. (Updated in v2.0.1: Hash pinning required)",
+                "severity": "CRITICAL",
+                "eval_type": "JSON_MATCH",
+                "pointer": "mplp://manifest/env_ref/image_digest",
+                "expectation": "!~ ^(unknown|none|pending|null)$"
+            },
+            {
+                "id": "DET-V2-01",
+                "name": "Canonical Determinism Proof",
+                "description": "The manifest must record a valid canonical pack root hash.",
+                "severity": "CRITICAL",
+                "eval_type": "JSON_MATCH",
+                "pointer": "mplp://manifest/hashes/canonical_pack_root_hash",
+                "expectation": "!~ ^(pending|unknown|none|null)$"
+            },
+            {
+                "id": "METADATA-V2-01",
+                "name": "Execution Timestamp Integrity",
+                "description": "The run must have a valid UTC execution timestamp.",
+                "severity": "WARNING",
+                "eval_type": "JSON_MATCH",
+                "pointer": "mplp://manifest/env_ref/executed_at",
+                "expectation": "~ ^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z$"
+            },
+            {
+                "id": "PATCH-V2-01",
+                "name": "Patch Verification",
+                "description": "Ensures patch level integrity.",
+                "severity": "INFO",
+                "eval_type": "EXISTENCE",
+                "pointer": "mplp://manifest/version",
+                "expectation": "NOT_NULL"
+            }
+        ]
+    }
+}

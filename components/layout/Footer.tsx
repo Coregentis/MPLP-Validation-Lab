@@ -49,12 +49,12 @@ export function Footer() {
                                 </li>
                                 <li>
                                     <Link href="/about" className="text-mplp-text-muted hover:text-mplp-blue-light text-13 transition-colors font-medium block py-0.5">
-                                        About (Four Boundaries)
+                                        About
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link href="/validation" className="text-mplp-text hover:text-mplp-blue-light text-13 transition-colors font-bold block py-0.5">
-                                        Validation Dashboard
+                                    <Link href="/runsets" className="text-mplp-text hover:text-mplp-blue-light text-13 transition-colors font-bold block py-0.5">
+                                        Runsets (Collections)
                                     </Link>
                                 </li>
                                 <li>
@@ -64,32 +64,7 @@ export function Footer() {
                                 </li>
                                 <li>
                                     <Link href="/guarantees" className="text-mplp-text-muted hover:text-mplp-blue-light text-13 transition-colors font-medium block py-0.5">
-                                        Lifecycle Guarantees (LG)
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link href="/policies/contract" className="text-mplp-text-muted hover:text-mplp-blue-light text-13 transition-colors font-medium block py-0.5">
-                                        Export Contract
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link href="/policies/cross-verified" className="text-mplp-text-muted hover:text-mplp-blue-light text-13 transition-colors font-medium block py-0.5">
-                                        Cross-Verified Policy
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link href="/policies/substrate-scope" className="text-mplp-text-muted hover:text-mplp-blue-light text-13 transition-colors font-medium block py-0.5">
-                                        Substrate Scope
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link href="/policies/intake" className="text-mplp-text-muted hover:text-mplp-blue-light text-13 transition-colors font-medium block py-0.5">
-                                        Intake Policy
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link href="/policies/strength" className="text-mplp-text-muted hover:text-mplp-blue-light text-13 transition-colors font-medium block py-0.5">
-                                        Ruleset Strength Policy
+                                        Lifecycle Guarantees
                                     </Link>
                                 </li>
                             </ul>
@@ -100,53 +75,29 @@ export function Footer() {
                             <h3 className="text-xs font-bold uppercase tracking-wider text-mplp-text mb-4 border-b border-mplp-border/50 pb-2">Evidence</h3>
                             <ul className="space-y-2">
                                 <li>
-                                    <Link href="/adjudication" className="text-mplp-text-muted hover:text-mplp-blue-light text-13 transition-colors font-medium block py-0.5">
-                                        Adjudication Bundles
+                                    <Link href="/runs" className="text-mplp-text hover:text-mplp-blue-light text-13 transition-colors font-bold block py-0.5">
+                                        All Runs
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link href="/validation/samples" className="text-mplp-text hover:text-mplp-blue-light text-13 transition-colors font-bold block py-0.5">
-                                        Evidence Samples (MUST-1)
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link href="/coverage" className="text-mplp-text-muted hover:text-mplp-blue-light text-13 transition-colors font-medium block py-0.5">
-                                        Test Vector Coverage
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link href="/coverage/adjudication" className="text-mplp-text-muted hover:text-mplp-blue-light text-13 transition-colors font-medium block py-0.5">
-                                        Adjudication Coverage
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link href="/rulesets" className="text-mplp-text-muted hover:text-mplp-blue-light text-13 transition-colors font-medium block py-0.5">
+                                    <Link href="/rulesets" className="text-mplp-text hover:text-mplp-blue-light text-13 transition-colors font-bold block py-0.5">
                                         Rulesets
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link href="/rulesets/evolution" className="text-mplp-text-muted hover:text-mplp-blue-light text-13 transition-colors font-medium block py-0.5">
-                                        Ruleset Evolution
+                                    <Link href="/releases" className="text-mplp-text hover:text-mplp-blue-light text-13 transition-colors font-bold block py-0.5">
+                                        Releases (Seals)
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link href="/runs" className="text-mplp-text-muted hover:text-mplp-blue-light text-13 transition-colors font-medium block py-0.5">
-                                        Curated Runs
+                                    {/* Link to Governance for Evidence Actions per requirements */}
+                                    <Link href="/governance" className="text-mplp-text-muted hover:text-mplp-blue-light text-13 transition-colors font-medium block py-0.5">
+                                        Evidence Actions / APIs
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link href="/policies/fmm" className="text-mplp-text-muted hover:text-mplp-blue-light text-13 transition-colors font-medium block py-0.5">
-                                        Field Mapping Matrix (FMM)
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link href="/examples/evidence-producers" className="text-mplp-text-muted hover:text-mplp-blue-light text-13 transition-colors font-medium block py-0.5">
-                                        Evidence Producers
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link href="/builder" className="text-mplp-text-muted hover:text-mplp-blue-light text-13 transition-colors font-medium block py-0.5">
-                                        Builder Guide
+                                    <Link href="/adjudication" className="text-mplp-text-muted hover:text-mplp-blue-light text-13 transition-colors font-medium block py-0.5">
+                                        Adjudication Bundles
                                     </Link>
                                 </li>
                             </ul>
@@ -219,6 +170,6 @@ export function Footer() {
                     </div>
                 </div>
             </div>
-        </footer>
+        </footer >
     );
 }

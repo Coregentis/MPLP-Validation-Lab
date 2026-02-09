@@ -2,9 +2,8 @@ import type { CuratedRunRecord } from '@/lib/curated/types';
 import { HashCell } from './HashCell';
 import Link from 'next/link';
 import { StatusBadge } from '@/app/_shared/StatusBadge';
-import { getRunDisplayContract, isIndexable } from '@/lib/ui-contracts';
+import { getRunDisplayContract } from '@/lib/ui-contracts';
 import { RunStatusBadge } from '@/components/ui/run-status-badge';
-import { HashDisplay } from '@/components/ui/hash-display';
 
 export function CuratedRunsTable({ runs }: { runs: CuratedRunRecord[] }) {
     return (

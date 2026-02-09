@@ -12,7 +12,6 @@ import fmmData from '@/public/_data/fmm.json';
 import curatedRunsData from '@/public/_data/curated-runs.json';
 import { DisclaimerBox } from '@/components/common/DisclaimerBox';
 import { SmartLink } from '@/components/common/SmartLink';
-import { SemanticStatusBadge } from '@/components/common/SemanticStatusBadge';
 
 interface Mapping {
     source: string;
@@ -20,10 +19,7 @@ interface Mapping {
     rule: string;
 }
 
-interface CoreElement {
-    pointer: string;
-    description: string;
-}
+
 
 type SubstrateKey = keyof typeof fmmData.substrates;
 
@@ -32,7 +28,7 @@ export default function FMMPage() {
 
     // Evidence Availability Gate: only substrates with curated runs are VERIFIED
     const availableSubstratesInCurated = new Set(
-        curatedRunsData.runs.map((r: any) => r.substrate).filter(Boolean)
+        curatedRunsData.runs.map((r) => r.substrate).filter(Boolean)
     );
 
     const substrates = Object.keys(fmmData.substrates) as SubstrateKey[];
@@ -40,9 +36,9 @@ export default function FMMPage() {
     // P0 Evidence Isolation: Only load mappings for VERIFIED substrates
     // This prevents unverified data from entering ANY UI code path (not just display)
     const currentMappings = availableSubstratesInCurated.has(activeSubstrate)
-        ? ((fmmData.substrates as any)[activeSubstrate]?.mappings || [])
+        ? (fmmData.substrates[activeSubstrate]?.mappings || [])
         : []; // Empty for PENDING_EVIDENCE substrates
-    const coreElements = fmmData.core_elements as CoreElement[];
+    // const coreElements = fmmData.core_elements as CoreElement[];
 
     // P0: Filter out header rows that polluted data (regression prevention)
     const HEADER_VALUES = new Set([

@@ -36,7 +36,7 @@ export interface RunProjectionFacets {
 export interface RunProjectionIndex {
     projection_type: 'runs_index';
     generated_at: string;
-    source_version: any;
+    source_version: unknown;
     projection_schema_version?: string;
     scope_ssot_version?: string;
     scope_freeze_ref?: string;

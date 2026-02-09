@@ -1,5 +1,3 @@
 {
-  "pack_id": "arb-d4-termination-fail-uncontrolled-recovery-v0.4",
-  "version": "1.0.0",
-  "trace_path": "trace/events.ndjson"
+  "trace": "timeline/events.ndjson"
 }

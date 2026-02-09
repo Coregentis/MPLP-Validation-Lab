@@ -99,9 +99,9 @@ export function VerdictPanel({ verdict, isLoading, onPointerClick }: VerdictPane
             {/* Header */}
             <div className="bg-mplp-dark-soft/80 px-4 py-3 border-b border-mplp-border/30 shrink-0">
                 <h2 className="text-sm font-bold uppercase tracking-wider text-mplp-text">Verdict</h2>
-                {verdict && (
+                {verdict && verdict.versions && (
                     <p className="text-[10px] text-mplp-text-muted mt-1">
-                        Ruleset: <span className="font-mono">{verdict.versions.ruleset}</span>
+                        Ruleset: <span className="font-mono">{verdict.versions.ruleset || 'N/A'}</span>
                     </p>
                 )}
             </div>
@@ -118,7 +118,7 @@ export function VerdictPanel({ verdict, isLoading, onPointerClick }: VerdictPane
                     </p>
                 )}
 
-                {!isLoading && verdict && verdict.gf_verdicts.map((gfVerdict) => {
+                {!isLoading && verdict && verdict.gf_verdicts && verdict.gf_verdicts.map((gfVerdict) => {
                     const lgId = canonicalizeToLG(gfVerdict.gf_id);
                     const lgName = LG_NAMES[lgId] || '';
 

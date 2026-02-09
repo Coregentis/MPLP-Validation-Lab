@@ -37,7 +37,7 @@ export function RunsStatusSummary({ totalRuns, adjudicatedCount, pendingCount, i
                 {/* Pending */}
                 <div className="flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-zinc-500" />
-                    <span className="text-mplp-text-muted">Registered Only:</span>
+                    <span className="text-mplp-text-muted">Registered (Not Evaluated):</span>
                     <span className="font-bold text-zinc-400">{pendingCount}</span>
                 </div>
 

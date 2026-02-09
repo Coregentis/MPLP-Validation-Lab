@@ -17,13 +17,13 @@ export class MappingResolver {
     static resolve(key: AnchorKey, id?: string): string {
         // 1. Check Tripod (Cross-Surface)
         if (key in manifest.tripod) {
-            const url = (manifest.tripod as any)[key];
+            const url = manifest.tripod[key as keyof typeof manifest.tripod];
             return url;
         }
 
         // 2. Check Anchors (Internal)
         if (key in manifest.anchors) {
-            let path = (manifest.anchors as any)[key];
+            let path = manifest.anchors[key as keyof typeof manifest.anchors];
             if (typeof path !== 'string') return '#';
 
             // Handle dynamic segments if ID provided
@@ -42,7 +42,7 @@ export class MappingResolver {
      * Resolves a governance term from the SSOT.
      */
     static getTerm(key: GovernanceTermKey): string {
-        const term = (manifest.governance_terms as any)[key];
+        const term = manifest.governance_terms[key as keyof typeof manifest.governance_terms];
         return term ? term.text : `[TERM_MISSING: ${key}]`;
     }
 
@@ -50,7 +50,7 @@ export class MappingResolver {
      * Resolves a version for a governance term.
      */
     static getTermVersion(key: GovernanceTermKey): string {
-        const term = (manifest.governance_terms as any)[key];
+        const term = manifest.governance_terms[key as keyof typeof manifest.governance_terms];
         return term ? term.v : 'v0.0.0';
     }
 }

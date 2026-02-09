@@ -21,8 +21,18 @@ export const metadata: Metadata = {
     keywords: ['MPLP', 'Validation Lab', 'Evidence', 'Lifecycle Guarantees', 'Lifecycle Invariants', 'Non-certifying'],
 };
 
-export default function Home() {
+import fs from 'fs';
+import path from 'path';
+import Doclet from '@/components/doclets/Doclet';
+import { getVersionStripModel } from '@/lib/unified/version-strip-model';
+import { LabStatusBadge } from '@/components/ssot/LabStatusBadge';
+import { GateSummaryPill } from '@/components/ssot/GateSummaryPill';
+import { FeaturedRunLink } from '@/components/ssot/FeaturedRunLink';
+
+export default async function Home() {
     loadCurrentRelease();
+    const versionModel = await getVersionStripModel();
+    const homeDocletMd = fs.readFileSync(path.join(process.cwd(), 'content/doclets/home.md'), 'utf-8');
 
     return (
         <>
@@ -33,10 +43,9 @@ export default function Home() {
                 <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/4 w-[400px] h-[400px] bg-mplp-indigo/10 blur-[100px] rounded-full opacity-40 pointer-events-none" />
 
                 <div className="relative z-10 text-center pt-12 pb-16">
-                    {/* Status Pill */}
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-mplp-blue-soft/30 bg-mplp-blue-soft/10 text-[10px] font-bold uppercase tracking-[0.2em] text-mplp-blue-soft mb-8">
-                        <span className="status-dot" />
-                        System Operational
+                    {/* Status Pill (SSOT) */}
+                    <div className="flex justify-center mb-8">
+                        <LabStatusBadge statusModel={versionModel.lab.status} />
                     </div>
 
                     {/* Wordmark */}
@@ -48,9 +57,10 @@ export default function Home() {
                     </h1>
                     <p className="text-sm font-bold uppercase tracking-[0.3em] text-mplp-blue-soft/90 mb-8">Evidence & Conformance Laboratory</p>
 
-                    <p className="max-w-xl mx-auto text-base leading-relaxed text-mplp-text-muted mb-6">
-                        Download evidence packs, recheck verdicts locally, and view deterministic verdict hashes.
-                    </p>
+                    <div className="max-w-xl mx-auto text-base leading-relaxed text-mplp-text-muted mb-6">
+                        {/* Doclet: Home Introduction */}
+                        <Doclet md={homeDocletMd.split('##')[1]} model={versionModel} />
+                    </div>
 
                     {/* Direct Action Flow - P1-1 */}
                     <p className="max-w-lg mx-auto text-sm text-mplp-text mb-8 bg-mplp-dark-soft/60 px-4 py-2 rounded-lg border border-mplp-border/30">
@@ -62,39 +72,55 @@ export default function Home() {
                         We verify evidence integrity and determinism — not runtime performance, not certification.
                     </p>
 
-                    {/* Primary CTAs - P0-4 */}
-                    <div className="flex flex-wrap justify-center gap-4 mb-12">
+                    {/* Primary Entry CTA - 3-Card System */}
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12 max-w-3xl mx-auto">
                         <Link
-                            href="/validation"
-                            className="inline-flex items-center gap-2 px-8 py-3 bg-mplp-blue hover:bg-mplp-blue-soft text-white font-bold rounded-lg transition text-sm tracking-wide shadow-lg shadow-mplp-blue/20"
+                            href="/runsets"
+                            data-testid="home-cta-runsets"
+                            className="group block p-6 bg-mplp-blue/10 hover:bg-mplp-blue/20 border border-mplp-blue/30 hover:border-mplp-blue/50 rounded-xl transition-all text-center"
                         >
-                            Validation Dashboard →
+                            <p className="text-[10px] font-bold uppercase tracking-widest text-mplp-blue-soft mb-2">Start Here</p>
+                            <h3 className="text-lg font-bold text-mplp-text group-hover:text-mplp-blue-soft transition-colors">Browse Runsets</h3>
+                            <p className="text-xs text-mplp-text-muted mt-2">Pick a run, view evidence</p>
                         </Link>
                         <Link
-                            href="/policies/cross-verified"
-                            className="inline-flex items-center gap-2 px-8 py-3 bg-mplp-emerald/10 hover:bg-mplp-emerald/20 text-mplp-emerald font-bold rounded-lg transition border border-mplp-emerald/30 text-sm tracking-wide"
+                            href="/releases"
+                            data-testid="home-cta-release"
+                            className="group block p-6 bg-emerald-500/5 hover:bg-emerald-500/10 border border-emerald-500/20 hover:border-emerald-500/40 rounded-xl transition-all text-center"
                         >
-                            Cross-Framework Report
+                            <p className="text-[10px] font-bold uppercase tracking-widest text-emerald-400/80 mb-2">Audit Trail</p>
+                            <h3 className="text-lg font-bold text-mplp-text group-hover:text-emerald-400 transition-colors">Release Seals</h3>
+                            <p className="text-xs text-mplp-text-muted mt-2">Verify immutable records</p>
+                        </Link>
+                        <Link
+                            href="/rulesets"
+                            data-testid="home-cta-rulesets"
+                            className="group block p-6 bg-mplp-dark-soft/60 hover:bg-mplp-dark-soft/80 border border-mplp-border/30 hover:border-mplp-border/50 rounded-xl transition-all text-center"
+                        >
+                            <p className="text-[10px] font-bold uppercase tracking-widest text-mplp-text-muted mb-2">Learn</p>
+                            <h3 className="text-lg font-bold text-mplp-text group-hover:text-mplp-blue-soft transition-colors">How Verdicts Work</h3>
+                            <p className="text-xs text-mplp-text-muted mt-2">Ruleset logic & clauses</p>
                         </Link>
                     </div>
 
-                    {/* Status Row with Human-Readable Explanations */}
+                    {/* Status Row with Auditable Links */}
                     <div className="grid grid-cols-3 gap-8 pt-8 border-t border-mplp-border/30 max-w-2xl mx-auto">
-                        <div className="text-center">
+                        <Link href="/governance" className="text-center group">
                             <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-mplp-text-muted mb-2">Protocol</p>
-                            <p className="text-xs font-bold text-mplp-text">v{labManifest.protocol_version} SEAL</p>
-                            <p className="text-[10px] text-mplp-text-muted/60 mt-1">Cross-Substrate Baseline</p>
-                        </div>
-                        <div className="text-center">
+                            <p className="text-xs font-bold text-mplp-text group-hover:text-mplp-blue-soft transition-colors">v{labManifest.protocol_version} Frozen</p>
+                            <p className="text-[10px] text-mplp-text-muted/60 mt-1 group-hover:text-mplp-text-muted transition-colors">View Governance →</p>
+                        </Link>
+                        <Link href="/releases" className="text-center flex flex-col items-center group">
                             <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-mplp-text-muted mb-2">Integrity</p>
-                            <p className="text-xs font-bold text-mplp-text">SSOT Locked</p>
-                            <p className="text-[10px] text-mplp-text-muted/60 mt-1">G-24 L1 Sealed</p>
-                        </div>
-                        <div className="text-center">
+                            {/* SSOT Gate Summary */}
+                            <GateSummaryPill summaryModel={versionModel.gates.summary} />
+                            <p className="text-[10px] text-mplp-text-muted/60 mt-1 group-hover:text-mplp-text-muted transition-colors">View Seals →</p>
+                        </Link>
+                        <Link href="/releases" className="text-center group">
                             <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-mplp-text-muted mb-2">Series</p>
-                            <p className="text-xs font-bold text-mplp-text"><VersionText variant="lab" /></p>
-                            <p className="text-[10px] text-mplp-text-muted/60 mt-1">Validation Series</p>
-                        </div>
+                            <p className="text-xs font-bold text-mplp-text group-hover:text-mplp-blue-soft transition-colors"><VersionText variant="lab" /></p>
+                            <p className="text-[10px] text-mplp-text-muted/60 mt-1 group-hover:text-mplp-text-muted transition-colors">View History →</p>
+                        </Link>
                     </div>
                 </div>
             </section>
@@ -108,7 +134,7 @@ export default function Home() {
                             Validation Gates: SEALED
                         </span>
                         <div className="h-3 w-px bg-mplp-border/50" />
-                        <span className="text-mplp-text">Cross-Framework Equivalence Active</span>
+                        <Link href="/policies/cross-verified" className="text-mplp-text hover:text-mplp-blue-soft transition-colors">Cross-Framework Equivalence Active →</Link>
                     </div>
                     <div className="flex items-center gap-6">
                         <Link href="/validation" className="hover:text-mplp-blue-soft transition-colors text-mplp-text">Validation Hub</Link>
@@ -129,27 +155,65 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* Quick Start - Enhanced with specific example */}
-            <section className="mb-16 bg-mplp-dark-soft/40 border border-mplp-border/30 rounded-2xl p-6">
+            {/* Quick Start - Enhanced with SSOT */}
+            <section className="mb-8 bg-mplp-dark-soft/40 border border-mplp-border/30 rounded-2xl p-6">
                 <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-mplp-blue-soft mb-4 flex items-center gap-2">
                     <span className="h-1 w-1 rounded-full bg-mplp-blue-soft" />
                     Quick Start
                 </p>
                 <div className="mb-4">
-                    <p className="text-sm text-mplp-text mb-2">
-                        Start with: <Link href="/adjudication/gf-01-smoke" className="text-mplp-blue-soft hover:text-mplp-blue-light font-mono">gf-01-smoke</Link>
-                        <span className="ml-2 text-xs text-emerald-400 bg-emerald-900/20 px-2 py-0.5 rounded">ADJUDICATED + PASS</span>
-                    </p>
+                    {/* SSOT Featured Run */}
+                    <div className="text-sm text-mplp-text mb-2 flex items-center gap-2">
+                        Start with: <FeaturedRunLink featuredRun={versionModel.featured} />
+                    </div>
                 </div>
                 <div className="bg-black/30 rounded-lg p-4 font-mono text-xs text-mplp-text-muted overflow-x-auto">
                     <p className="text-mplp-text-muted/60 mb-2"># Verify locally (read-only)</p>
-                    <p>npm run vlab:recheck-hash gf-01-smoke</p>
+                    <p>npm run vlab:recheck-hash {versionModel.featured.run_id}</p>
                 </div>
                 <div className="mt-4 flex gap-4 text-xs">
-                    <Link href="/runs" className="text-mplp-blue-soft hover:text-mplp-blue-light">Browse Runs →</Link>
-                    <Link href="/adjudication" className="text-mplp-blue-soft hover:text-mplp-blue-light">View Adjudications →</Link>
+                    <Link href="/runsets" className="text-mplp-blue-soft hover:text-mplp-blue-light">Start with Runsets →</Link>
+                    <Link href="/runs" className="text-mplp-text-muted hover:text-mplp-text">All runs</Link>
                     <a href="https://docs.mplp.io/evaluation/conformance/reviewability" target="_blank" rel="noopener noreferrer" className="text-mplp-text-muted hover:text-mplp-text">How to Recheck Locally ↗</a>
                 </div>
+            </section>
+
+            {/* Audit Loop - 5-Step Verification Path */}
+            <section className="mb-16 bg-gradient-to-r from-emerald-500/5 to-mplp-blue/5 border border-mplp-border/30 rounded-2xl p-6" data-testid="home-audit-loop">
+                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-emerald-400 mb-4 flex items-center gap-2">
+                    <span className="h-1 w-1 rounded-full bg-emerald-400" />
+                    The Audit Loop
+                </p>
+                <p className="text-sm text-mplp-text-muted mb-6">
+                    Download an evidence pack → verify locally → get the same verdict hash.
+                </p>
+                <ol className="grid grid-cols-1 md:grid-cols-5 gap-4 text-center">
+                    <li className="flex flex-col items-center">
+                        <span className="w-8 h-8 rounded-full bg-mplp-blue/20 text-mplp-blue-soft text-sm font-bold flex items-center justify-center mb-2">1</span>
+                        <Link href="/runsets" className="text-xs font-bold text-mplp-text hover:text-mplp-blue-soft transition-colors">Browse Runsets</Link>
+                        <p className="text-[10px] text-mplp-text-muted mt-1">Pick a run</p>
+                    </li>
+                    <li className="flex flex-col items-center">
+                        <span className="w-8 h-8 rounded-full bg-mplp-blue/20 text-mplp-blue-soft text-sm font-bold flex items-center justify-center mb-2">2</span>
+                        <Link href="/runs" className="text-xs font-bold text-mplp-text hover:text-mplp-blue-soft transition-colors">View Evidence</Link>
+                        <p className="text-[10px] text-mplp-text-muted mt-1">Inspect pack</p>
+                    </li>
+                    <li className="flex flex-col items-center">
+                        <span className="w-8 h-8 rounded-full bg-mplp-blue/20 text-mplp-blue-soft text-sm font-bold flex items-center justify-center mb-2">3</span>
+                        <Link href={`/runs/${versionModel.featured.run_id}`} className="text-xs font-bold text-mplp-text hover:text-mplp-blue-soft transition-colors">Download Pack</Link>
+                        <p className="text-[10px] text-mplp-text-muted mt-1">Get JSON/Zip</p>
+                    </li>
+                    <li className="flex flex-col items-center">
+                        <span className="w-8 h-8 rounded-full bg-mplp-blue/20 text-mplp-blue-soft text-sm font-bold flex items-center justify-center mb-2">4</span>
+                        <a href="https://docs.mplp.io/evaluation/conformance/reviewability" target="_blank" rel="noopener noreferrer" className="text-xs font-bold text-mplp-text hover:text-mplp-blue-soft transition-colors">Verify Locally ↗</a>
+                        <p className="text-[10px] text-mplp-text-muted mt-1">Run recheck</p>
+                    </li>
+                    <li className="flex flex-col items-center">
+                        <span className="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center mb-2">✓</span>
+                        <Link href="/releases" className="text-xs font-bold text-mplp-text hover:text-emerald-400 transition-colors">Compare Hash</Link>
+                        <p className="text-[10px] text-mplp-text-muted mt-1">Match Seal</p>
+                    </li>
+                </ol>
             </section>
 
             {/* Navigation Cards - Subtle borders, not boxy */}

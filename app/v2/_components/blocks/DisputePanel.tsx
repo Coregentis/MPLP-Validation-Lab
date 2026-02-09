@@ -8,10 +8,9 @@ interface DisputePanelProps {
         ptr?: string; // Pointer to failure context if any
     };
     tokens: Record<string, string>;
-    context?: any;
 }
 
-export function DisputePanel({ data, tokens, context }: DisputePanelProps) {
+export function DisputePanel({ data, tokens }: DisputePanelProps) {
     const na = tokens['LIT_NOT_APPLICABLE'];
 
     if (!data || (!data.root_cause && !data.replay_instructions)) {

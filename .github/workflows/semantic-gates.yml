@@ -1,0 +1,87 @@
+name: Semantic Gates
+
+on:
+  push:
+    branches: [main, dev]
+    paths:
+      - 'app/**'
+      - 'components/**'
+      - 'lib/**'
+      - 'scripts/audit/semantic/**'
+      - 'audit/semantic/**'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'app/**'
+      - 'components/**'
+      - 'lib/**'
+      - 'scripts/audit/semantic/**'
+
+jobs:
+  semantic-audit:
+    name: R1 Semantic Coverage
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Build
+        run: npm run build
+        
+      - name: Generate PSC
+        run: npm run audit:semantic:psc
+        
+      - name: Generate sample params
+        run: npm run audit:semantic:sample
+        
+      - name: Start server
+        run: |
+          PORT=3000 npm run start &
+          sleep 10
+          
+      - name: Run semantic checker
+        id: check
+        run: BASE_URL=http://localhost:3000 npm run audit:semantic:check
+        continue-on-error: true
+        
+      - name: Upload audit artifacts
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: semantic-audit-report
+          path: |
+            audit/semantic/gaps-report.md
+            audit/semantic/gaps.json
+            audit/semantic/page-semantic-contracts.json
+            audit/semantic/sample-params.json
+          retention-days: 30
+          
+      - name: Verify 0 gaps (GATE-SEMANTIC-0GAPS-01)
+        run: |
+          if grep -q "Total Gaps.*: 0" audit/semantic/gaps-report.md; then
+            echo "✅ GATE-SEMANTIC-0GAPS-01: PASSED"
+          else
+            echo "❌ GATE-SEMANTIC-0GAPS-01: FAILED"
+            echo "Review audit/semantic/gaps-report.md"
+            exit 1
+          fi
+          
+      - name: Verify report artifact (GATE-SEMANTIC-REPORT-ARTIFACT-01)
+        run: |
+          if [ -f "audit/semantic/gaps-report.md" ]; then
+            echo "✅ GATE-SEMANTIC-REPORT-ARTIFACT-01: PASSED"
+          else
+            echo "❌ GATE-SEMANTIC-REPORT-ARTIFACT-01: FAILED"
+            exit 1
+          fi

@@ -1,0 +1,509 @@
+{
+  "generated_at": "2026-02-02T09:31:45.218Z",
+  "total_assets": 71,
+  "by_kind": {
+    "document": 10,
+    "image": 20,
+    "data": 33,
+    "other": 8
+  },
+  "assets": [
+    {
+      "public_path": "/brand/ASSET_STATUS.md",
+      "file_path": "public/brand/ASSET_STATUS.md",
+      "kind": "document",
+      "extension": ".md",
+      "size_bytes": 1847
+    },
+    {
+      "public_path": "/brand/mplp-apple-touch-180.png",
+      "file_path": "public/brand/mplp-apple-touch-180.png",
+      "kind": "image",
+      "extension": ".png",
+      "size_bytes": 40647
+    },
+    {
+      "public_path": "/brand/mplp-favicon-16.png",
+      "file_path": "public/brand/mplp-favicon-16.png",
+      "kind": "image",
+      "extension": ".png",
+      "size_bytes": 1336
+    },
+    {
+      "public_path": "/brand/mplp-favicon-32.png",
+      "file_path": "public/brand/mplp-favicon-32.png",
+      "kind": "image",
+      "extension": ".png",
+      "size_bytes": 2811
+    },
+    {
+      "public_path": "/brand/mplp-favicon-48.png",
+      "file_path": "public/brand/mplp-favicon-48.png",
+      "kind": "image",
+      "extension": ".png",
+      "size_bytes": 4866
+    },
+    {
+      "public_path": "/brand/mplp-icon-512.png",
+      "file_path": "public/brand/mplp-icon-512.png",
+      "kind": "image",
+      "extension": ".png",
+      "size_bytes": 248644
+    },
+    {
+      "public_path": "/brand/mplp-icon-flat.png",
+      "file_path": "public/brand/mplp-icon-flat.png",
+      "kind": "image",
+      "extension": ".png",
+      "size_bytes": 224265
+    },
+    {
+      "public_path": "/brand/mplp-icon-hd.png",
+      "file_path": "public/brand/mplp-icon-hd.png",
+      "kind": "image",
+      "extension": ".png",
+      "size_bytes": 253689
+    },
+    {
+      "public_path": "/brand/mplp-icon-mono-white-hd.png",
+      "file_path": "public/brand/mplp-icon-mono-white-hd.png",
+      "kind": "image",
+      "extension": ".png",
+      "size_bytes": 46120
+    },
+    {
+      "public_path": "/brand/mplp-icon-only-transparent.png",
+      "file_path": "public/brand/mplp-icon-only-transparent.png",
+      "kind": "image",
+      "extension": ".png",
+      "size_bytes": 223421
+    },
+    {
+      "public_path": "/brand/mplp-icon-only.png",
+      "file_path": "public/brand/mplp-icon-only.png",
+      "kind": "image",
+      "extension": ".png",
+      "size_bytes": 486548
+    },
+    {
+      "public_path": "/brand/mplp-logo-mono-white-hd.png",
+      "file_path": "public/brand/mplp-logo-mono-white-hd.png",
+      "kind": "image",
+      "extension": ".png",
+      "size_bytes": 327073
+    },
+    {
+      "public_path": "/brand/mplp-logo-primary-hd.png",
+      "file_path": "public/brand/mplp-logo-primary-hd.png",
+      "kind": "image",
+      "extension": ".png",
+      "size_bytes": 265734
+    },
+    {
+      "public_path": "/brand/mplp-logo-protocol-edition-hd.png",
+      "file_path": "public/brand/mplp-logo-protocol-edition-hd.png",
+      "kind": "image",
+      "extension": ".png",
+      "size_bytes": 406185
+    },
+    {
+      "public_path": "/brand/mplp-og-image-1200x630.png",
+      "file_path": "public/brand/mplp-og-image-1200x630.png",
+      "kind": "image",
+      "extension": ".png",
+      "size_bytes": 162146
+    },
+    {
+      "public_path": "/brand/mplp-protocol-mark-3d-color.png",
+      "file_path": "public/brand/mplp-protocol-mark-3d-color.png",
+      "kind": "image",
+      "extension": ".png",
+      "size_bytes": 265734
+    },
+    {
+      "public_path": "/brand/mplp-protocol-mark-mono-white.png",
+      "file_path": "public/brand/mplp-protocol-mark-mono-white.png",
+      "kind": "image",
+      "extension": ".png",
+      "size_bytes": 336120
+    },
+    {
+      "public_path": "/brand/mplp-social-cover.png",
+      "file_path": "public/brand/mplp-social-cover.png",
+      "kind": "image",
+      "extension": ".png",
+      "size_bytes": 236820
+    },
+    {
+      "public_path": "/brand/mplp-social-square-1024.png",
+      "file_path": "public/brand/mplp-social-square-1024.png",
+      "kind": "image",
+      "extension": ".png",
+      "size_bytes": 435880
+    },
+    {
+      "public_path": "/brand/VI_SPEC.md",
+      "file_path": "public/brand/VI_SPEC.md",
+      "kind": "document",
+      "extension": ".md",
+      "size_bytes": 16369
+    },
+    {
+      "public_path": "/data/runs/mcp-d1-budget-fail-01/bundle.manifest.json",
+      "file_path": "public/data/runs/mcp-d1-budget-fail-01/bundle.manifest.json",
+      "kind": "data",
+      "extension": ".json",
+      "size_bytes": 188
+    },
+    {
+      "public_path": "/data/runs/mcp-d1-budget-fail-01/evidence_pointers.json",
+      "file_path": "public/data/runs/mcp-d1-budget-fail-01/evidence_pointers.json",
+      "kind": "data",
+      "extension": ".json",
+      "size_bytes": 435
+    },
+    {
+      "public_path": "/data/runs/mcp-d1-budget-fail-01/pack/integrity/pack.sha256",
+      "file_path": "public/data/runs/mcp-d1-budget-fail-01/pack/integrity/pack.sha256",
+      "kind": "other",
+      "extension": ".sha256",
+      "size_bytes": 64
+    },
+    {
+      "public_path": "/data/runs/mcp-d1-budget-fail-01/pack/integrity/sha256sums.txt",
+      "file_path": "public/data/runs/mcp-d1-budget-fail-01/pack/integrity/sha256sums.txt",
+      "kind": "document",
+      "extension": ".txt",
+      "size_bytes": 169
+    },
+    {
+      "public_path": "/data/runs/mcp-d1-budget-fail-01/pack/manifest.json",
+      "file_path": "public/data/runs/mcp-d1-budget-fail-01/pack/manifest.json",
+      "kind": "data",
+      "extension": ".json",
+      "size_bytes": 159
+    },
+    {
+      "public_path": "/data/runs/mcp-d1-budget-fail-01/pack/timeline/events.ndjson",
+      "file_path": "public/data/runs/mcp-d1-budget-fail-01/pack/timeline/events.ndjson",
+      "kind": "data",
+      "extension": ".ndjson",
+      "size_bytes": 644
+    },
+    {
+      "public_path": "/data/runs/mcp-d1-budget-fail-02/bundle.manifest.json",
+      "file_path": "public/data/runs/mcp-d1-budget-fail-02/bundle.manifest.json",
+      "kind": "data",
+      "extension": ".json",
+      "size_bytes": 188
+    },
+    {
+      "public_path": "/data/runs/mcp-d1-budget-fail-02/evidence_pointers.json",
+      "file_path": "public/data/runs/mcp-d1-budget-fail-02/evidence_pointers.json",
+      "kind": "data",
+      "extension": ".json",
+      "size_bytes": 435
+    },
+    {
+      "public_path": "/data/runs/mcp-d1-budget-fail-02/pack/integrity/pack.sha256",
+      "file_path": "public/data/runs/mcp-d1-budget-fail-02/pack/integrity/pack.sha256",
+      "kind": "other",
+      "extension": ".sha256",
+      "size_bytes": 64
+    },
+    {
+      "public_path": "/data/runs/mcp-d1-budget-fail-02/pack/integrity/sha256sums.txt",
+      "file_path": "public/data/runs/mcp-d1-budget-fail-02/pack/integrity/sha256sums.txt",
+      "kind": "document",
+      "extension": ".txt",
+      "size_bytes": 169
+    },
+    {
+      "public_path": "/data/runs/mcp-d1-budget-fail-02/pack/manifest.json",
+      "file_path": "public/data/runs/mcp-d1-budget-fail-02/pack/manifest.json",
+      "kind": "data",
+      "extension": ".json",
+      "size_bytes": 159
+    },
+    {
+      "public_path": "/data/runs/mcp-d1-budget-fail-02/pack/timeline/events.ndjson",
+      "file_path": "public/data/runs/mcp-d1-budget-fail-02/pack/timeline/events.ndjson",
+      "kind": "data",
+      "extension": ".ndjson",
+      "size_bytes": 634
+    },
+    {
+      "public_path": "/data/runs/mcp-d1-budget-pass-01/bundle.manifest.json",
+      "file_path": "public/data/runs/mcp-d1-budget-pass-01/bundle.manifest.json",
+      "kind": "data",
+      "extension": ".json",
+      "size_bytes": 188
+    },
+    {
+      "public_path": "/data/runs/mcp-d1-budget-pass-01/evidence_pointers.json",
+      "file_path": "public/data/runs/mcp-d1-budget-pass-01/evidence_pointers.json",
+      "kind": "data",
+      "extension": ".json",
+      "size_bytes": 435
+    },
+    {
+      "public_path": "/data/runs/mcp-d1-budget-pass-01/pack/integrity/pack.sha256",
+      "file_path": "public/data/runs/mcp-d1-budget-pass-01/pack/integrity/pack.sha256",
+      "kind": "other",
+      "extension": ".sha256",
+      "size_bytes": 64
+    },
+    {
+      "public_path": "/data/runs/mcp-d1-budget-pass-01/pack/integrity/sha256sums.txt",
+      "file_path": "public/data/runs/mcp-d1-budget-pass-01/pack/integrity/sha256sums.txt",
+      "kind": "document",
+      "extension": ".txt",
+      "size_bytes": 169
+    },
+    {
+      "public_path": "/data/runs/mcp-d1-budget-pass-01/pack/manifest.json",
+      "file_path": "public/data/runs/mcp-d1-budget-pass-01/pack/manifest.json",
+      "kind": "data",
+      "extension": ".json",
+      "size_bytes": 159
+    },
+    {
+      "public_path": "/data/runs/mcp-d1-budget-pass-01/pack/timeline/events.ndjson",
+      "file_path": "public/data/runs/mcp-d1-budget-pass-01/pack/timeline/events.ndjson",
+      "kind": "data",
+      "extension": ".ndjson",
+      "size_bytes": 647
+    },
+    {
+      "public_path": "/data/runs/mcp-d1-budget-pass-02/bundle.manifest.json",
+      "file_path": "public/data/runs/mcp-d1-budget-pass-02/bundle.manifest.json",
+      "kind": "data",
+      "extension": ".json",
+      "size_bytes": 188
+    },
+    {
+      "public_path": "/data/runs/mcp-d1-budget-pass-02/evidence_pointers.json",
+      "file_path": "public/data/runs/mcp-d1-budget-pass-02/evidence_pointers.json",
+      "kind": "data",
+      "extension": ".json",
+      "size_bytes": 435
+    },
+    {
+      "public_path": "/data/runs/mcp-d1-budget-pass-02/pack/integrity/pack.sha256",
+      "file_path": "public/data/runs/mcp-d1-budget-pass-02/pack/integrity/pack.sha256",
+      "kind": "other",
+      "extension": ".sha256",
+      "size_bytes": 64
+    },
+    {
+      "public_path": "/data/runs/mcp-d1-budget-pass-02/pack/integrity/sha256sums.txt",
+      "file_path": "public/data/runs/mcp-d1-budget-pass-02/pack/integrity/sha256sums.txt",
+      "kind": "document",
+      "extension": ".txt",
+      "size_bytes": 169
+    },
+    {
+      "public_path": "/data/runs/mcp-d1-budget-pass-02/pack/manifest.json",
+      "file_path": "public/data/runs/mcp-d1-budget-pass-02/pack/manifest.json",
+      "kind": "data",
+      "extension": ".json",
+      "size_bytes": 159
+    },
+    {
+      "public_path": "/data/runs/mcp-d1-budget-pass-02/pack/timeline/events.ndjson",
+      "file_path": "public/data/runs/mcp-d1-budget-pass-02/pack/timeline/events.ndjson",
+      "kind": "data",
+      "extension": ".ndjson",
+      "size_bytes": 648
+    },
+    {
+      "public_path": "/data/runs/pydantic-ai-d1-budget-fail-01/bundle.manifest.json",
+      "file_path": "public/data/runs/pydantic-ai-d1-budget-fail-01/bundle.manifest.json",
+      "kind": "data",
+      "extension": ".json",
+      "size_bytes": 204
+    },
+    {
+      "public_path": "/data/runs/pydantic-ai-d1-budget-fail-01/evidence_pointers.json",
+      "file_path": "public/data/runs/pydantic-ai-d1-budget-fail-01/evidence_pointers.json",
+      "kind": "data",
+      "extension": ".json",
+      "size_bytes": 442
+    },
+    {
+      "public_path": "/data/runs/pydantic-ai-d1-budget-fail-01/pack/integrity/pack.sha256",
+      "file_path": "public/data/runs/pydantic-ai-d1-budget-fail-01/pack/integrity/pack.sha256",
+      "kind": "other",
+      "extension": ".sha256",
+      "size_bytes": 64
+    },
+    {
+      "public_path": "/data/runs/pydantic-ai-d1-budget-fail-01/pack/integrity/sha256sums.txt",
+      "file_path": "public/data/runs/pydantic-ai-d1-budget-fail-01/pack/integrity/sha256sums.txt",
+      "kind": "document",
+      "extension": ".txt",
+      "size_bytes": 265
+    },
+    {
+      "public_path": "/data/runs/pydantic-ai-d1-budget-fail-01/pack/manifest.json",
+      "file_path": "public/data/runs/pydantic-ai-d1-budget-fail-01/pack/manifest.json",
+      "kind": "data",
+      "extension": ".json",
+      "size_bytes": 175
+    },
+    {
+      "public_path": "/data/runs/pydantic-ai-d1-budget-fail-01/pack/snapshots/forensic-state.json",
+      "file_path": "public/data/runs/pydantic-ai-d1-budget-fail-01/pack/snapshots/forensic-state.json",
+      "kind": "data",
+      "extension": ".json",
+      "size_bytes": 338
+    },
+    {
+      "public_path": "/data/runs/pydantic-ai-d1-budget-fail-01/pack/timeline/events.ndjson",
+      "file_path": "public/data/runs/pydantic-ai-d1-budget-fail-01/pack/timeline/events.ndjson",
+      "kind": "data",
+      "extension": ".ndjson",
+      "size_bytes": 628
+    },
+    {
+      "public_path": "/data/runs/pydantic-ai-d1-budget-fail-02/bundle.manifest.json",
+      "file_path": "public/data/runs/pydantic-ai-d1-budget-fail-02/bundle.manifest.json",
+      "kind": "data",
+      "extension": ".json",
+      "size_bytes": 204
+    },
+    {
+      "public_path": "/data/runs/pydantic-ai-d1-budget-fail-02/evidence_pointers.json",
+      "file_path": "public/data/runs/pydantic-ai-d1-budget-fail-02/evidence_pointers.json",
+      "kind": "data",
+      "extension": ".json",
+      "size_bytes": 256
+    },
+    {
+      "public_path": "/data/runs/pydantic-ai-d1-budget-fail-02/pack/integrity/pack.sha256",
+      "file_path": "public/data/runs/pydantic-ai-d1-budget-fail-02/pack/integrity/pack.sha256",
+      "kind": "other",
+      "extension": ".sha256",
+      "size_bytes": 64
+    },
+    {
+      "public_path": "/data/runs/pydantic-ai-d1-budget-fail-02/pack/integrity/sha256sums.txt",
+      "file_path": "public/data/runs/pydantic-ai-d1-budget-fail-02/pack/integrity/sha256sums.txt",
+      "kind": "document",
+      "extension": ".txt",
+      "size_bytes": 169
+    },
+    {
+      "public_path": "/data/runs/pydantic-ai-d1-budget-fail-02/pack/manifest.json",
+      "file_path": "public/data/runs/pydantic-ai-d1-budget-fail-02/pack/manifest.json",
+      "kind": "data",
+      "extension": ".json",
+      "size_bytes": 175
+    },
+    {
+      "public_path": "/data/runs/pydantic-ai-d1-budget-fail-02/pack/timeline/events.ndjson",
+      "file_path": "public/data/runs/pydantic-ai-d1-budget-fail-02/pack/timeline/events.ndjson",
+      "kind": "data",
+      "extension": ".ndjson",
+      "size_bytes": 628
+    },
+    {
+      "public_path": "/data/runs/pydantic-ai-d1-budget-pass-01/bundle.manifest.json",
+      "file_path": "public/data/runs/pydantic-ai-d1-budget-pass-01/bundle.manifest.json",
+      "kind": "data",
+      "extension": ".json",
+      "size_bytes": 204
+    },
+    {
+      "public_path": "/data/runs/pydantic-ai-d1-budget-pass-01/evidence_pointers.json",
+      "file_path": "public/data/runs/pydantic-ai-d1-budget-pass-01/evidence_pointers.json",
+      "kind": "data",
+      "extension": ".json",
+      "size_bytes": 256
+    },
+    {
+      "public_path": "/data/runs/pydantic-ai-d1-budget-pass-01/pack/integrity/pack.sha256",
+      "file_path": "public/data/runs/pydantic-ai-d1-budget-pass-01/pack/integrity/pack.sha256",
+      "kind": "other",
+      "extension": ".sha256",
+      "size_bytes": 64
+    },
+    {
+      "public_path": "/data/runs/pydantic-ai-d1-budget-pass-01/pack/integrity/sha256sums.txt",
+      "file_path": "public/data/runs/pydantic-ai-d1-budget-pass-01/pack/integrity/sha256sums.txt",
+      "kind": "document",
+      "extension": ".txt",
+      "size_bytes": 169
+    },
+    {
+      "public_path": "/data/runs/pydantic-ai-d1-budget-pass-01/pack/manifest.json",
+      "file_path": "public/data/runs/pydantic-ai-d1-budget-pass-01/pack/manifest.json",
+      "kind": "data",
+      "extension": ".json",
+      "size_bytes": 175
+    },
+    {
+      "public_path": "/data/runs/pydantic-ai-d1-budget-pass-01/pack/timeline/events.ndjson",
+      "file_path": "public/data/runs/pydantic-ai-d1-budget-pass-01/pack/timeline/events.ndjson",
+      "kind": "data",
+      "extension": ".ndjson",
+      "size_bytes": 618
+    },
+    {
+      "public_path": "/data/runs/pydantic-ai-d1-budget-pass-02/bundle.manifest.json",
+      "file_path": "public/data/runs/pydantic-ai-d1-budget-pass-02/bundle.manifest.json",
+      "kind": "data",
+      "extension": ".json",
+      "size_bytes": 204
+    },
+    {
+      "public_path": "/data/runs/pydantic-ai-d1-budget-pass-02/evidence_pointers.json",
+      "file_path": "public/data/runs/pydantic-ai-d1-budget-pass-02/evidence_pointers.json",
+      "kind": "data",
+      "extension": ".json",
+      "size_bytes": 256
+    },
+    {
+      "public_path": "/data/runs/pydantic-ai-d1-budget-pass-02/pack/integrity/pack.sha256",
+      "file_path": "public/data/runs/pydantic-ai-d1-budget-pass-02/pack/integrity/pack.sha256",
+      "kind": "other",
+      "extension": ".sha256",
+      "size_bytes": 64
+    },
+    {
+      "public_path": "/data/runs/pydantic-ai-d1-budget-pass-02/pack/integrity/sha256sums.txt",
+      "file_path": "public/data/runs/pydantic-ai-d1-budget-pass-02/pack/integrity/sha256sums.txt",
+      "kind": "document",
+      "extension": ".txt",
+      "size_bytes": 169
+    },
+    {
+      "public_path": "/data/runs/pydantic-ai-d1-budget-pass-02/pack/manifest.json",
+      "file_path": "public/data/runs/pydantic-ai-d1-budget-pass-02/pack/manifest.json",
+      "kind": "data",
+      "extension": ".json",
+      "size_bytes": 175
+    },
+    {
+      "public_path": "/data/runs/pydantic-ai-d1-budget-pass-02/pack/timeline/events.ndjson",
+      "file_path": "public/data/runs/pydantic-ai-d1-budget-pass-02/pack/timeline/events.ndjson",
+      "kind": "data",
+      "extension": ".ndjson",
+      "size_bytes": 618
+    },
+    {
+      "public_path": "/logo/mplp-icon.svg",
+      "file_path": "public/logo/mplp-icon.svg",
+      "kind": "image",
+      "extension": ".svg",
+      "size_bytes": 317
+    },
+    {
+      "public_path": "/logo/mplp-logo.svg",
+      "file_path": "public/logo/mplp-logo.svg",
+      "kind": "image",
+      "extension": ".svg",
+      "size_bytes": 480
+    }
+  ]
+}

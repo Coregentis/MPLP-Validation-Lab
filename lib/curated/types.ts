@@ -25,6 +25,8 @@ export interface CuratedRunRecord {
     // Governance
     status: RunStatus;
     indexable: boolean;
+    adjudication_status?: string;
+    unavailable_reason?: string;
     created_at: string;
 }
 

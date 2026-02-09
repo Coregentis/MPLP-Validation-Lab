@@ -4,6 +4,9 @@ import path from 'path';
 
 const ALLOWED_FILES = new Set([
     'manifest.json',
+    'bundle.manifest.json',
+    'evidence_pointers.json',
+    'producer-run.manifest.json',
     'integrity/sha256sums.txt',
     'integrity/pack.sha256',
     'timeline/events.ndjson',

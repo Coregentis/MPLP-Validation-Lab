@@ -3,9 +3,14 @@ import React from 'react';
 import { COMPONENTS, TOKENS } from '../_ssot/ux.generated';
 
 // Simple Dot-Notation Resolver
-function resolveDataBinding(context: any, path: string): any {
+function resolveDataBinding(context: unknown, path: string): unknown {
     if (!path || !context) return undefined;
-    return path.split('.').reduce((acc, part) => acc && acc[part], context);
+    return path.split('.').reduce<unknown>((acc, part) => {
+        if (acc && typeof acc === 'object' && part in acc) {
+            return (acc as Record<string, unknown>)[part];
+        }
+        return undefined;
+    }, context);
 }
 
 import { VerdictBadge } from './blocks/VerdictBadge';
@@ -29,6 +34,7 @@ import { HomeQuickStart } from './blocks/HomeQuickStart';
 import { HomeResourcesMatrix } from './blocks/HomeResourcesMatrix';
 
 // Minimal Component Map (Registry Pattern)
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const COMPONENT_MAP: Record<string, React.ComponentType<any>> = {
     VerdictBadge: VerdictBadge,
     DisclaimerBanner: DisclaimerBanner,
@@ -51,7 +57,7 @@ const COMPONENT_MAP: Record<string, React.ComponentType<any>> = {
 };
 
 // Helper: Pick Tokens
-function pickTokens(allTokens: Record<string, string>, required?: string[], allowed?: string[]) {
+function pickTokens(allTokens: Record<string, string>, required?: string[]) {
     const subset: Record<string, string> = {};
     if (required) {
         required.forEach(k => { if (allTokens[k]) subset[k] = allTokens[k]; });
@@ -62,10 +68,10 @@ function pickTokens(allTokens: Record<string, string>, required?: string[], allo
 interface BlockRendererProps {
     blockId: string;
     context: {
-        projection?: any;
-        ruleset?: any;
-        ssot?: any;
-        ptr?: any; // Start of ptr context
+        projection?: unknown;
+        ruleset?: unknown;
+        ssot?: unknown;
+        ptr?: unknown; // Start of ptr context
     };
 }
 
@@ -105,7 +111,8 @@ export function BlockRenderer({ blockId, context }: BlockRendererProps) {
         <section data-block={blockId} className="block-container">
             <Component
                 data={data}
-                context={context} // Pass full context for deep linking e.g. ctx.ptr
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                context={context as any} // Pass full context for deep linking e.g. ctx.ptr
                 tokens={tokens}
                 policy={policy}
             />

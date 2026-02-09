@@ -105,3 +105,7 @@ jobs:
       # SOP Enforcement (enabled after bootstrap)
       - name: Post-Task Association Gate (SOP)
         run: npm run gate:post-task-association
+
+      # V1/V2/Unified Gates (Lint Zero & Audit)
+      - name: Unified & V2 Gates (gate:all)
+        run: npm run gate:all

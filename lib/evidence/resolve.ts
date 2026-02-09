@@ -157,7 +157,7 @@ export function resolvePointer(bundle: RunBundle, p: EvidencePointer): EvidenceR
         }
 
         case 'canonptr_v1': {
-            const canonPtrs = extractCanonPtrsFromTrace(events as Record<string, unknown>[]) as Array<{ ptr: string; event_id?: string }>;
+            const canonPtrs = extractCanonPtrsFromTrace(events as unknown as Record<string, unknown>[]);
             const match = canonPtrs.find(cp => cp.ptr === loc.value);
 
             if (match && match.event_id) {

@@ -26,7 +26,7 @@ interface RunMappingEntry {
  * MANDATORY DISCLAIMER (Managed via DisclaimerBox):
  * "Mappings describe evidence projection only; they do not describe framework capability."
  */
-export function MappingProjectionPanel({ runId, mappingIndex }: MappingProjectionPanelProps) {
+export function MappingProjectionPanel({ mappingIndex }: MappingProjectionPanelProps) {
     if (!mappingIndex) {
         return (
             <section className="bg-zinc-50 border border-zinc-200 rounded-xl p-6">

@@ -196,7 +196,7 @@ async function runGate15(): Promise<GateResult> {
                 checksFail++;
             }
 
-        } catch (err) {
+        } catch {
             failures.push(`${entry.run_id}: failed to parse verdict.json`);
             checksFail++;
         }

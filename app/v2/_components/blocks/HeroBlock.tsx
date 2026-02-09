@@ -2,10 +2,10 @@
 import React from 'react';
 
 interface HeroBlockProps {
-    data?: any;
+    data?: unknown;
     tokens: Record<string, string>;
     context?: {
-        ruleset?: any;
+        ruleset?: { version?: string };
     };
 }
 

@@ -8,7 +8,7 @@
  * logic without modification.
  */
 
-import type { RunBundle, GoldenFlowVerdict } from '@/lib/bundles/types';
+import type { RunBundle } from '@/lib/bundles/types';
 import type { RulesetEvalResult, ClauseResult } from '@/lib/rulesets/registry';
 
 // =============================================================================

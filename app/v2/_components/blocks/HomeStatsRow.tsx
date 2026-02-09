@@ -1,7 +1,13 @@
 
 import React from 'react';
 
-export function HomeStatsRow({ tokens, data }: { tokens: Record<string, string>, data: any }) {
+interface ValidationStats {
+    run_count?: number | string;
+    ruleset_version?: string;
+    evidence_count?: number | string;
+}
+
+export function HomeStatsRow({ tokens, data }: { tokens: Record<string, string>, data: ValidationStats }) {
     // Fallback if data absent (though binding should provide ssot.stats)
     const stats = [
         { label: tokens.LIT_STATS_RUNS, value: data?.run_count || tokens.LIT_NOT_AVAILABLE },

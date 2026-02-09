@@ -45,7 +45,22 @@ export function getRulesetDiff(id: string): RulesetDiffEntry | undefined {
     return index.diffs.find(d => d.diff_id === id);
 }
 
-export function getRulesetDiffPack(filePath: string): any {
+export interface RulesetDiffPack {
+    metrics: {
+        verdict_flips?: number;
+        verdict_flips_total?: number;
+        equivalence_shift?: {
+            from_rate: number;
+            to_rate: number;
+            delta: number;
+        };
+        total_runs?: number;
+    };
+    clauses_changed?: unknown[];
+    logic_diff?: unknown[];
+}
+
+export function getRulesetDiffPack(filePath: string): RulesetDiffPack | null {
     const fullPath = path.join(process.cwd(), 'public', filePath);
     if (!fs.existsSync(fullPath)) return null;
     return JSON.parse(fs.readFileSync(fullPath, 'utf8'));

@@ -91,7 +91,7 @@ export function parseYamlStrict<T = unknown>(
 
         return result as T;
 
-    } catch (e) {
+    } catch (e: unknown) {
         if (e instanceof YAMLParseError) {
             throw new Error(
                 `YAML parse error in ${filePath}: ${e.message}`

@@ -11,7 +11,7 @@
  */
 
 import { existsSync, readdirSync } from 'fs';
-import { join, basename } from 'path';
+import { join } from 'path';
 
 export interface CanonicalBundleResult {
     /** Bundle name (e.g., "v0.7.2+rev6") */

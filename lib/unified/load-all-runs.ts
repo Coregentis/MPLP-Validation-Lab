@@ -14,10 +14,35 @@ import type { UnifiedRunIndexItem, UnifiedRunsData, RunTier } from './types';
 const V1_PATH = 'public/_data/curated-runs.json';
 const V2_PATH = 'public/_data/v2/runs/index.json';
 
+interface CuratedRunV1 {
+    run_id: string;
+    adjudication_status?: string;
+    substrate?: string;
+    scenario_id?: string;
+    notes?: string;
+    ruleset_version?: string;
+    pack_root_hash?: string;
+    verdict_hash?: string;
+}
+
+interface RunIndexItemV2 {
+    pack_id: string;
+    tier: string;
+    substrate_id?: string;
+    substrate_name?: string;
+    scenario?: string;
+    verdict: string;
+    ruleset?: string;
+    indexability_status?: string;
+    interop_stack?: string[];
+    surfaces?: Record<string, boolean>;
+    tags?: string[];
+}
+
 /**
  * Derive verdict from V1 adjudication_status and run_id patterns
  */
-function deriveV1Verdict(run: any): 'PASS' | 'FAIL' | 'N/A' {
+function deriveV1Verdict(run: CuratedRunV1): 'PASS' | 'FAIL' | 'N/A' {
     const adj = run.adjudication_status;
     const id = run.run_id || '';
 
@@ -53,8 +78,9 @@ function loadV1Runs(): UnifiedRunIndexItem[] {
     try {
         const content = fs.readFileSync(fullPath, 'utf-8');
         const data = JSON.parse(content);
+        const runs: CuratedRunV1[] = Array.isArray(data.runs) ? data.runs : [];
 
-        return (data.runs || []).map((run: any): UnifiedRunIndexItem => ({
+        return runs.map((run): UnifiedRunIndexItem => ({
             id: run.run_id,
             source: 'v1',
             tier: 'SIMULATED', // V1 runs are all simulated
@@ -106,15 +132,16 @@ function loadV2Runs(): UnifiedRunIndexItem[] {
     try {
         const content = fs.readFileSync(fullPath, 'utf-8');
         const data = JSON.parse(content);
+        const runs: RunIndexItemV2[] = Array.isArray(data.data?.runs) ? data.data.runs : [];
 
-        return (data.data?.runs || []).map((run: any): UnifiedRunIndexItem => ({
+        return runs.map((run): UnifiedRunIndexItem => ({
             id: run.pack_id,
             source: 'v2',
             tier: normalizeV2Tier(run.tier),
             substrate: run.substrate_id || run.substrate_name || 'unknown',
             scenario: run.scenario || 'unknown',
             verdict: normalizeV2Verdict(run.verdict),
-            ruleset: 'ruleset-v2.0', // V2 uses unified ruleset
+            ruleset: run.ruleset || 'ruleset-v2.0.1', // V2 uses unified ruleset (default to latest)
             evidence_present: true, // V2 packs always have evidence
             href: `/runs/${run.pack_id}`,
             indexability_status: run.indexability_status,

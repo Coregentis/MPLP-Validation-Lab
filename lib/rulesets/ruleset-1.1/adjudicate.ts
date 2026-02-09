@@ -6,7 +6,7 @@
  */
 
 import type { RunBundle } from '@/lib/bundles/types';
-import type { RulesetEvalResult, ClauseResult as RegistryClauseResult } from '@/lib/rulesets/registry';
+import type { RulesetEvalResult } from '@/lib/rulesets/registry';
 import { CLAUSE_EVALUATORS } from './clauses';
 import {
     CLAUSE_DEFINITIONS,

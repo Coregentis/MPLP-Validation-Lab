@@ -2,6 +2,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { VersionBadge, VersionText } from '@/components/common/VersionBadge';
 import { getLabSeries } from '@/lib/ssot/load-lab-manifest';
+import { TierLegend } from '@/components/unified/TierLegend';
 
 export const metadata: Metadata = {
     title: 'Methodology | MPLP Validation Lab',
@@ -10,321 +11,224 @@ export const metadata: Metadata = {
 };
 
 export default function MethodologyPage() {
-    const labVersion = getLabSeries();
-
     return (
-        <main className="min-h-screen bg-zinc-950 text-zinc-100 py-12 px-4">
-            <div className="max-w-4xl mx-auto">
-                {/* Header */}
-                <header className="mb-12">
-                    <div className="flex items-center gap-2 text-zinc-500 text-sm mb-4">
-                        <Link href="/" className="hover:text-zinc-300">Home</Link>
-                        <span>/</span>
-                        <span className="text-zinc-300">Methodology</span>
-                    </div>
-                    <h1 className="text-3xl font-bold mb-4">Evaluation Methodology</h1>
-                    <p className="text-zinc-400">
-                        Evidence-based verdicts for MPLP lifecycle guarantees under versioned, deterministic rulesets.
-                    </p>
-                    <div className="mt-4 flex items-center gap-4 text-xs text-zinc-500">
-                        <span className="bg-zinc-800 px-2 py-1 rounded">METHOD-VLAB-01</span>
-                        <span>Version 1.0</span>
+        <div className="pt-8" data-testid="methodology-page">
+            {/* Header */}
+            <div className="mb-12">
+                <p className="text-xs font-bold uppercase tracking-[0.4em] text-mplp-text-muted/80 mb-3">Standards</p>
+                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                    <h1 className="text-3xl sm:text-4xl font-bold text-mplp-text">Evaluation Methodology</h1>
+                    <div className="flex items-center gap-3 text-xs text-mplp-text-muted bg-mplp-dark-soft px-3 py-1.5 rounded border border-mplp-border/30">
+                        <span className="font-mono">METHOD-VLAB-01</span>
                         <VersionBadge variant="lab" className="ml-0" />
                     </div>
-                </header>
-
-                {/* Source Declaration */}
-                <div className="bg-blue-900/20 border border-blue-800 rounded-lg p-4 mb-8 space-y-2">
-                    <p className="text-blue-400 text-sm">
-                        📖 <strong>Methodology Narrative</strong>:{' '}
-                        <code className="bg-zinc-800 px-1 rounded">governance/METHOD-VLAB-01_EVALUATION_METHOD.md</code>
-                    </p>
-                    <p className="text-green-400 text-sm">
-                        📊 <strong>Substrate Registry (Live SSOT)</strong>:{' '}
-                        <code className="bg-zinc-800 px-1 rounded">data/curated-runs/substrate-index.yaml</code>
-                    </p>
-                    <p className="text-zinc-500 text-xs">
-                        Substrate status data loaded from SSOT at build time. See <Link href="/coverage/adjudication" className="text-blue-400 hover:underline">/coverage</Link> for real-time matrix.
+                </div>
+                <div className="mt-6 max-w-3xl">
+                    <p className="text-mplp-text-muted text-lg leading-relaxed">
+                        A rigorous, non-certifying approach to verifying MPLP lifecycle invariants using evidence-based verdicts.
                     </p>
                 </div>
-
-                {/* Four Boundaries */}
-                <section className="mb-12">
-                    <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
-                        <span className="text-amber-500">1.</span> Four Boundaries
-                    </h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        {[
-                            { title: 'Non-certification', desc: 'No badges, no ranking, and no compliance certificates' },
-                            { title: 'Non-endorsement', desc: 'Verdict ≠ recommendation or quality assessment' },
-                            { title: 'No execution hosting', desc: 'Lab does not host execution; you provide evidence packs' },
-                            { title: 'Deterministic ruleset', desc: 'Same evidence + same ruleset = same verdict' },
-                        ].map((b, i) => (
-                            <div key={i} className="bg-zinc-900 border border-zinc-800 rounded-lg p-4">
-                                <h3 className="font-semibold text-amber-400 mb-1">{b.title}</h3>
-                                <p className="text-zinc-400 text-sm">{b.desc}</p>
-                            </div>
-                        ))}
-                    </div>
-                    <p className="text-zinc-500 text-sm mt-4">
-                        See <Link href="/about" className="text-blue-400 hover:underline">/about</Link> for full boundary statement.
-                    </p>
-                </section>
-
-                {/* What We Evaluate */}
-                <section className="mb-12">
-                    <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
-                        <span className="text-amber-500">2.</span> What We Evaluate
-                    </h2>
-                    <div className="bg-zinc-900 border border-zinc-800 rounded-lg p-6 mb-4">
-                        <code className="text-green-400 text-lg">
-                            Evidence Pack + Ruleset → Verdict (PASS/FAIL) + verdict_hash
-                        </code>
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <h3 className="font-semibold text-green-400 mb-2">✅ We Evaluate</h3>
-                            <ul className="text-zinc-400 text-sm space-y-1">
-                                <li>• Evidence packs against Lifecycle Guarantees</li>
-                                <li>• Structural completeness and integrity</li>
-                                <li>• Claim satisfaction under frozen rulesets</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h3 className="font-semibold text-red-400 mb-2">❌ We Do NOT Evaluate</h3>
-                            <ul className="text-zinc-400 text-sm space-y-1">
-                                <li>• Runtime performance or latency</li>
-                                <li>• Agent quality or intelligence</li>
-                                <li>• Code correctness or security</li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
-
-                {/* Evidence Pack */}
-                <section className="mb-12">
-                    <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
-                        <span className="text-amber-500">3.</span> Evidence Pack (Input)
-                    </h2>
-                    <div className="bg-zinc-900 border border-zinc-800 rounded-lg p-4 font-mono text-sm text-zinc-400">
-                        <pre>{`pack/
-├── manifest.json            # Pack metadata
-├── integrity/
-│   ├── sha256sums.txt       # File checksums
-│   └── pack.sha256          # Pack root hash
-├── timeline/
-│   └── events.ndjson        # Execution timeline
-└── artifacts/
-    ├── context.json         # Agent context
-    ├── plan.json            # Agent plan
-    └── trace.json           # Execution trace`}</pre>
-                    </div>
-                    <div className="mt-4 flex gap-4 text-sm">
-                        <span className="bg-zinc-800 px-2 py-1 rounded text-zinc-400">pack-v0.2</span>
-                        <span className="bg-zinc-800 px-2 py-1 rounded text-zinc-400">pack-v0.3</span>
-                        <span className="bg-zinc-800 px-2 py-1 rounded text-zinc-400">pack-v0.4</span>
-                    </div>
-                    <p className="text-zinc-500 text-sm mt-4">
-                        See <Link href="/policies/contract" className="text-blue-400 hover:underline">/policies/contract</Link> for full specification.
-                    </p>
-                </section>
-
-                {/* Case Lifecycle */}
-                <section className="mb-12">
-                    <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
-                        <span className="text-amber-500">4.</span> Case Lifecycle
-                    </h2>
-                    <div className="bg-zinc-900 border border-zinc-800 rounded-lg p-6">
-                        <div className="flex flex-wrap items-center justify-center gap-2 text-sm">
-                            <span className="bg-zinc-700 px-3 py-2 rounded">Submitted</span>
-                            <span className="text-zinc-600">→</span>
-                            <span className="bg-amber-900/50 text-amber-400 px-3 py-2 rounded border border-amber-800">Admission Check</span>
-                            <span className="text-zinc-600">→</span>
-                            <span className="bg-blue-900/50 text-blue-400 px-3 py-2 rounded border border-blue-800">REGISTERED</span>
-                            <span className="text-zinc-600">→</span>
-                            <span className="bg-green-900/50 text-green-400 px-3 py-2 rounded border border-green-800">ADJUDICATED</span>
-                        </div>
-                        <div className="mt-4 text-center">
-                            <span className="text-red-400 text-sm bg-red-900/30 px-2 py-1 rounded">
-                                ✗ NOT_ADMISSIBLE (if admission fails)
-                            </span>
-                        </div>
-                    </div>
-                    <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
-                        <div className="bg-zinc-900 border border-zinc-800 rounded p-3">
-                            <h4 className="text-blue-400 font-semibold">REGISTERED</h4>
-                            <p className="text-zinc-500">Pack admitted, awaiting evaluation</p>
-                        </div>
-                        <div className="bg-zinc-900 border border-zinc-800 rounded p-3">
-                            <h4 className="text-green-400 font-semibold">ADJUDICATED</h4>
-                            <p className="text-zinc-500">Evaluation complete, verdict issued</p>
-                        </div>
-                        <div className="bg-zinc-900 border border-zinc-800 rounded p-3">
-                            <h4 className="text-red-400 font-semibold">NOT_ADMISSIBLE</h4>
-                            <p className="text-zinc-500">Pack rejected, no verdict</p>
-                        </div>
-                    </div>
-                </section>
-
-                {/* Rulesets */}
-                <section className="mb-12">
-                    <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
-                        <span className="text-amber-500">5.</span> Rulesets
-                    </h2>
-                    <p className="text-zinc-400 mb-4">
-                        A <strong>Ruleset</strong> is a versioned, immutable set of decision rules. Once frozen, it never changes.
-                    </p>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                        {[
-                            { v: 'ruleset-1.0', format: 'GoldenFlow (LG-01~05)', pack: 'pack-v0.2' },
-                            { v: 'ruleset-1.1', format: 'Four-Domain (D1~D4)', pack: 'pack-v0.3' },
-                            { v: 'ruleset-1.2', format: 'Semantic Invariant (12 clauses)', pack: 'pack-v0.4' },
-                        ].map((r, i) => (
-                            <div key={i} className="bg-zinc-900 border border-zinc-800 rounded-lg p-4">
-                                <h3 className="font-mono text-purple-400 mb-2">{r.v}</h3>
-                                <p className="text-zinc-400 text-sm">{r.format}</p>
-                                <p className="text-zinc-600 text-xs mt-1">{r.pack}</p>
-                            </div>
-                        ))}
-                    </div>
-                    <p className="text-zinc-500 text-sm mt-4">
-                        See <Link href="/rulesets" className="text-blue-400 hover:underline">/rulesets</Link> for all versions.
-                    </p>
-                </section>
-
-                {/* Verdicts & Recheck */}
-                <section className="mb-12">
-                    <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
-                        <span className="text-amber-500">6.</span> Verdicts & Recheck
-                    </h2>
-                    <div className="bg-zinc-900 border border-zinc-800 rounded-lg p-4 mb-4">
-                        <h3 className="text-green-400 font-semibold mb-2">Determinism Guarantee</h3>
-                        <code className="text-zinc-300">Same pack + same ruleset = same verdict_hash</code>
-                    </div>
-                    <div className="bg-zinc-900 border border-zinc-800 rounded-lg p-4">
-                        <h3 className="text-blue-400 font-semibold mb-2">Third-Party Recheck</h3>
-                        <code className="text-zinc-400 text-sm">
-                            npx @mplp/recompute {'<pack_path>'} --ruleset 1.0
-                        </code>
-                        <p className="text-zinc-500 text-sm mt-2">
-                            Anyone can verify a verdict independently without trusting Lab infrastructure.
-                        </p>
-                    </div>
-                </section>
-
-                {/* Substrate Model */}
-                <section className="mb-12">
-                    <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
-                        <span className="text-amber-500">7.</span> Substrate Model
-                    </h2>
-                    <p className="text-zinc-400 mb-4">
-                        A <strong>Substrate</strong> is an execution environment (framework, protocol, runtime) that produces evidence packs.
-                    </p>
-                    <div className="bg-zinc-900 border border-zinc-800 rounded-lg p-6 mb-4">
-                        <p className="text-zinc-300 text-sm mb-4">
-                            Substrate adjudication status is maintained in the <strong>Coverage Matrix</strong>, which is the
-                            authoritative source for current run counts and verdict distribution.
-                        </p>
-                        <div className="flex flex-wrap gap-3">
-                            <Link
-                                href="/coverage/adjudication"
-                                className="px-4 py-2 bg-blue-900/30 text-blue-400 rounded-lg border border-blue-800 hover:bg-blue-900/50 transition text-sm font-medium"
-                            >
-                                View Coverage Matrix →
-                            </Link>
-                            <Link
-                                href="/policies/fmm"
-                                className="px-4 py-2 bg-zinc-800 text-zinc-300 rounded-lg border border-zinc-700 hover:bg-zinc-700 transition text-sm font-medium"
-                            >
-                                Field Mapping Matrix →
-                            </Link>
-                        </div>
-                    </div>
-                    <p className="text-zinc-500 text-sm">
-                        See <Link href="/policies/substrate-scope" className="text-blue-400 hover:underline">/policies/substrate-scope</Link> for admission tiers.
-                    </p>
-                </section>
-
-                {/* Version Taxonomy */}
-                <section className="mb-12">
-                    <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
-                        <span className="text-amber-500">8.</span> Version Taxonomy
-                    </h2>
-                    <div className="overflow-x-auto">
-                        <table className="w-full text-sm">
-                            <thead>
-                                <tr className="border-b border-zinc-800 text-left">
-                                    <th className="py-2 text-zinc-400">Type</th>
-                                    <th className="py-2 text-zinc-400">Prefix</th>
-                                    <th className="py-2 text-zinc-400">Current</th>
-                                    <th className="py-2 text-zinc-400">Scope</th>
-                                </tr>
-                            </thead>
-                            <tbody className="text-zinc-300">
-                                <tr className="border-b border-zinc-800/50">
-                                    <td className="py-2">Lab Series</td>
-                                    <td className="py-2 font-mono text-blue-400">v0.*</td>
-                                    <td className="py-2">{labVersion}</td>
-                                    <td className="py-2 text-zinc-500">Lab release version</td>
-                                </tr>
-                                <tr className="border-b border-zinc-800/50">
-                                    <td className="py-2">Pack Format</td>
-                                    <td className="py-2 font-mono text-green-400">pack-v*</td>
-                                    <td className="py-2">pack-v0.2~0.5</td>
-                                    <td className="py-2 text-zinc-500">Evidence structure</td>
-                                </tr>
-                                <tr className="border-b border-zinc-800/50">
-                                    <td className="py-2">Ruleset</td>
-                                    <td className="py-2 font-mono text-purple-400">ruleset-*</td>
-                                    <td className="py-2">ruleset-1.0~1.2</td>
-                                    <td className="py-2 text-zinc-500">Decision rules</td>
-                                </tr>
-                                <tr>
-                                    <td className="py-2">Governance Seal</td>
-                                    <td className="py-2 font-mono text-amber-400">SEAL-*</td>
-                                    <td className="py-2">{labVersion}</td>
-                                    <td className="py-2 text-zinc-500">Immutable baseline</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </section>
-
-                {/* Quick Links */}
-                <section className="mb-12">
-                    <h2 className="text-xl font-semibold mb-4">Quick Reference</h2>
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                        {[
-                            { href: '/about', label: 'Boundaries' },
-                            { href: '/policies/contract', label: 'Pack Contract' },
-                            { href: '/policies/intake', label: 'Intake Policy' },
-                            { href: '/policies/substrate-scope', label: 'Substrate Scope' },
-                            { href: '/rulesets', label: 'Rulesets' },
-                            { href: '/guarantees', label: 'Guarantees' },
-                            { href: '/coverage/adjudication', label: 'Coverage' },
-                            { href: '/adjudication', label: 'Adjudication' },
-                        ].map((link, i) => (
-                            <Link
-                                key={i}
-                                href={link.href}
-                                className="bg-zinc-900 border border-zinc-800 rounded px-4 py-3 text-center hover:bg-zinc-800 hover:border-zinc-600 transition-colors"
-                            >
-                                <span className="text-zinc-300 text-sm">{link.label}</span>
-                            </Link>
-                        ))}
-                    </div>
-                </section>
-
-                {/* Footer */}
-                <footer className="border-t border-zinc-800 pt-8 text-center text-zinc-500 text-sm">
-                    <p>
-                        SSOT: <code className="bg-zinc-800 px-1 rounded">governance/METHOD-VLAB-01_EVALUATION_METHOD.md</code>
-                    </p>
-                    <p className="mt-2">
-                        Validation Lab • <VersionText variant="lab" />
-                    </p>
-                </footer>
             </div>
-        </main>
+
+            {/* Section 1: Non-Certification Limit */}
+            <div className="mb-12 p-4 bg-amber-900/10 border border-amber-500/20 rounded-lg" data-testid="methodology-non-certification">
+                <div className="flex items-start gap-4">
+                    <span className="text-amber-400 text-lg mt-0.5">⚠</span>
+                    <div>
+                        <h2 className="text-xs font-bold text-amber-400 uppercase tracking-wider mb-2">Non-Certification & Non-Endorsement</h2>
+                        <p className="text-sm text-mplp-text-muted leading-relaxed">
+                            The Validation Lab evaluates <strong>evidence packs</strong>, not agentic systems. We issue <strong>verdicts</strong> based on deterministic rulesets, not certifications of quality or safety. A PASS verdict means the submitted evidence satisfies the claimed invariants under the specified Ruleset.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            {/* Section 2: How to Read a Verdict (Tier) */}
+            <div className="mb-16">
+                <div className="mb-6">
+                    <h2 className="text-2xl font-bold text-mplp-text mb-2">01. How to Read a Verdict</h2>
+                    <p className="text-sm text-mplp-text-muted">Evidence maturity classifications and cryptographic guarantees.</p>
+                </div>
+                <TierLegend />
+            </div>
+
+            {/* Section 3: What is Evaluated (Rulesets & Domains) */}
+            <div className="mb-16">
+                <div className="flex items-center justify-between mb-6">
+                    <div>
+                        <h2 className="text-2xl font-bold text-mplp-text mb-2">02. What We Evaluate</h2>
+                        <p className="text-sm text-mplp-text-muted">Four domains of lifecycle inquiry (D1–D4).</p>
+                    </div>
+                    <Link href="/rulesets" className="hidden sm:block text-xs font-bold uppercase tracking-wider text-mplp-blue-soft hover:text-mplp-text transition-colors">
+                        View Rulesets →
+                    </Link>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="group p-6 rounded-xl bg-glass border border-mplp-border/30 hover:border-amber-500/30 transition-all">
+                        <div className="flex items-center gap-3 mb-4">
+                            <span className="px-2 py-1 rounded bg-amber-500/10 text-amber-500 font-bold text-xs">D1</span>
+                            <Link href="/rulesets/ruleset-1.1#d1" className="text-lg font-bold text-mplp-text group-hover:text-amber-400 transition-colors">Provenance</Link>
+                        </div>
+                        <p className="text-sm text-mplp-text-muted leading-relaxed">
+                            Is the agent identity and execution environment cryptographically verifiable? (e.g., Transparency logs, remote attestation)
+                        </p>
+                    </div>
+
+                    <div className="group p-6 rounded-xl bg-glass border border-mplp-border/30 hover:border-mplp-blue-soft/30 transition-all">
+                        <div className="flex items-center gap-3 mb-4">
+                            <span className="px-2 py-1 rounded bg-mplp-blue/10 text-mplp-blue-soft font-bold text-xs">D2</span>
+                            <Link href="/rulesets/ruleset-1.1#d2" className="text-lg font-bold text-mplp-text group-hover:text-mplp-blue-soft transition-colors">Lifecycle</Link>
+                        </div>
+                        <p className="text-sm text-mplp-text-muted leading-relaxed">
+                            Did the agent respect state transitions (Initialize → Run → Terminate) without leaking resources or zombie processes?
+                        </p>
+                    </div>
+
+                    <div className="group p-6 rounded-xl bg-glass border border-mplp-border/30 hover:border-purple-500/30 transition-all">
+                        <div className="flex items-center gap-3 mb-4">
+                            <span className="px-2 py-1 rounded bg-purple-500/10 text-purple-400 font-bold text-xs">D3</span>
+                            <Link href="/rulesets/ruleset-1.1#d3" className="text-lg font-bold text-mplp-text group-hover:text-purple-400 transition-colors">Arbitration</Link>
+                        </div>
+                        <p className="text-sm text-mplp-text-muted leading-relaxed">
+                            Does the evidence contain necessary pointers (lines, diffs, snapshots) for human or machine arbitration in case of failure?
+                        </p>
+                    </div>
+
+                    <div className="group p-6 rounded-xl bg-glass border border-mplp-border/30 hover:border-emerald-500/30 transition-all">
+                        <div className="flex items-center gap-3 mb-4">
+                            <span className="px-2 py-1 rounded bg-emerald-500/10 text-emerald-400 font-bold text-xs">D4</span>
+                            <Link href="/rulesets/ruleset-1.1#d4" className="text-lg font-bold text-mplp-text group-hover:text-emerald-400 transition-colors">Interop</Link>
+                        </div>
+                        <p className="text-sm text-mplp-text-muted leading-relaxed">
+                            Did the communication between components adhere to standard protocols (MCP, A2A) without proprietary side-channels?
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            {/* Section 4: Evidence Pack Format */}
+            <div className="mb-16">
+                <div className="mb-6">
+                    <h2 className="text-2xl font-bold text-mplp-text mb-2">03. Evidence Pack Format</h2>
+                    <p className="text-sm text-mplp-text-muted">The atomic unit of evaluation.</p>
+                </div>
+
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+                    <div className="prose prose-invert prose-sm text-mplp-text-muted">
+                        <p className="leading-relaxed mb-6">
+                            The <strong>Evidence Pack</strong> is a ZIP archive containing the minimal set of files needed to satisfy the Ruleset. It serves as a portable proof of conformance.
+                        </p>
+                        <ul className="space-y-4 list-none pl-0">
+                            <li className="flex gap-3">
+                                <span className="text-emerald-400 font-bold">✓</span>
+                                <div>
+                                    <strong className="text-mplp-text">manifest.json</strong>
+                                    <span className="block text-xs mt-1">Metadata, claims, and self-reported verdict.</span>
+                                </div>
+                            </li>
+                            <li className="flex gap-3">
+                                <span className="text-emerald-400 font-bold">✓</span>
+                                <div>
+                                    <strong className="text-mplp-text">integrity/</strong>
+                                    <span className="block text-xs mt-1">SHA256 checksums for all artifacts in the pack.</span>
+                                </div>
+                            </li>
+                            <li className="flex gap-3">
+                                <span className="text-emerald-400 font-bold">✓</span>
+                                <div>
+                                    <strong className="text-mplp-text">timeline/</strong>
+                                    <span className="block text-xs mt-1">NDJSON event stream of the execution for replay.</span>
+                                </div>
+                            </li>
+                            <li className="flex gap-3">
+                                <span className="text-emerald-400 font-bold">✓</span>
+                                <div>
+                                    <strong className="text-mplp-text">artifacts/</strong>
+                                    <span className="block text-xs mt-1">Full capture of inputs, outputs, and side-effects.</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div className="bg-mplp-dark-soft rounded-xl p-5 font-mono text-xs text-zinc-400 border border-mplp-border/30">
+                        <div className="flex items-center gap-1.5 mb-4 border-b border-white/5 pb-3">
+                            <span className="text-[10px] text-zinc-500 uppercase tracking-widest">manifest.json structure</span>
+                        </div>
+                        <pre className="overflow-x-auto text-[10px] leading-relaxed text-zinc-300">{`{
+  "id": "run-xyz-123",
+  "tier": "REPRODUCED",
+  "verdict": "PASS",
+  "ruleset": "ruleset-1.1",
+  "claims": {
+    "d1.provenance": true,
+    "d4.mcp_compliance": true
+  },
+  "signatures": { 
+    "signer": "vlab-signer-01",
+    "algo": "ed25519", 
+    "value": "a7f...9c2" 
+  }
+}`}</pre>
+                    </div>
+                </div>
+            </div>
+
+            {/* Section 5: Self-Audit Path */}
+            <div className="mb-16" data-testid="methodology-self-audit-path">
+                <div className="flex items-center justify-between mb-8">
+                    <div>
+                        <h2 className="text-2xl font-bold text-mplp-text mb-2">04. Self-Audit Path</h2>
+                        <p className="text-sm text-mplp-text-muted">Official verification without trusting the Lab UI.</p>
+                    </div>
+                    <Link href="/runs" className="hidden sm:inline-flex px-4 py-2 bg-mplp-blue hover:bg-mplp-blue-soft text-white text-xs font-bold uppercase tracking-wider rounded-lg transition-colors">
+                        Start Self-Audit →
+                    </Link>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <div className="p-5 bg-glass rounded-xl border border-mplp-border/30">
+                        <span className="block text-lg font-bold text-mplp-blue-soft mb-2">1. Select Run</span>
+                        <p className="text-xs text-mplp-text-muted">
+                            Find a run marked <span className="text-emerald-400">REPRODUCED</span> in the <Link href="/runs" className="underline hover:text-white">/runs</Link> index.
+                        </p>
+                    </div>
+                    <div className="p-5 bg-glass rounded-xl border border-mplp-border/30">
+                        <span className="block text-lg font-bold text-mplp-blue-soft mb-2">2. Check Ruleset</span>
+                        <p className="text-xs text-mplp-text-muted">
+                            Verify the evaluation logic matches the  <Link href="/rulesets" className="underline hover:text-white">Ruleset ID</Link> claimed.
+                        </p>
+                    </div>
+                    <div className="p-5 bg-glass rounded-xl border border-mplp-border/30">
+                        <span className="block text-lg font-bold text-mplp-blue-soft mb-2">3. Verify Seal</span>
+                        <p className="text-xs text-mplp-text-muted">
+                            Find the Freeze Date in <Link href="/releases" className="underline hover:text-white">/releases</Link> and get the Seal Hash.
+                        </p>
+                    </div>
+                    <div className="p-5 bg-emerald-500/5 rounded-xl border border-emerald-500/20">
+                        <span className="block text-lg font-bold text-emerald-400 mb-2">4. Local Hash</span>
+                        <p className="text-xs text-mplp-text-muted">
+                            Run <code className="bg-black/20 px-1 rounded">sha256sum</code> on the pack. Must match Seal.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            {/* Footer Links */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-8 border-t border-mplp-border/30">
+                <Link href="/runsets" className="block p-4 border border-mplp-border/20 rounded-lg hover:bg-mplp-blue-soft/5 hover:border-mplp-blue-soft/30 transition-all text-center">
+                    <span className="block text-xs font-bold uppercase tracking-widest text-mplp-text-muted mb-1">Start Here</span>
+                    <span className="text-sm font-bold text-mplp-text">Browse Runsets</span>
+                </Link>
+                <Link href="/runs" className="block p-4 border border-mplp-border/20 rounded-lg hover:bg-mplp-blue-soft/5 hover:border-mplp-blue-soft/30 transition-all text-center">
+                    <span className="block text-xs font-bold uppercase tracking-widest text-mplp-text-muted mb-1">Evidence</span>
+                    <span className="text-sm font-bold text-mplp-text">All Runs</span>
+                </Link>
+                <Link href="/releases" className="block p-4 border border-mplp-border/20 rounded-lg hover:bg-mplp-blue-soft/5 hover:border-mplp-blue-soft/30 transition-all text-center">
+                    <span className="block text-xs font-bold uppercase tracking-widest text-mplp-text-muted mb-1">Verification</span>
+                    <span className="text-sm font-bold text-mplp-text">Release Seals</span>
+                </Link>
+            </div>
+        </div>
     );
 }

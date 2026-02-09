@@ -8,7 +8,7 @@
  * - pointer-contract-v1.0.md
  */
 
-import { AdmissionStatus, VerdictStatus, EvidencePointer } from '../verdict/types';
+import { AdmissionStatus, EvidencePointer } from '../verdict/types';
 import { FailureTaxonomy } from '../verdict/taxonomy';
 
 // =============================================================================

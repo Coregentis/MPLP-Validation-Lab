@@ -1,5 +1,3 @@
 {
-  "pack_id": "arb-d2-lifecycle-fail-post-terminal-exec-v0.4",
-  "version": "1.0.0",
-  "trace_path": "trace/events.ndjson"
+  "trace": "timeline/events.ndjson"
 }

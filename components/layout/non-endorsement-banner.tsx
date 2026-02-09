@@ -6,8 +6,11 @@
  */
 export function NonEndorsementBanner() {
     return (
-        <aside className="bg-amber-950/30 border-b border-amber-900/50 px-6 py-3">
-            <div className="max-w-6xl mx-auto">
+        <aside
+            className="bg-amber-950/30 border-b border-amber-900/50 px-4 sm:px-6 lg:px-8 py-3"
+            data-testid="non-endorsement-banner"
+        >
+            <div className="max-w-7xl mx-auto w-full">
                 <div className="flex items-center justify-between mb-2">
                     <h2 className="text-sm font-semibold text-amber-200">
                         Validation Lab Boundaries

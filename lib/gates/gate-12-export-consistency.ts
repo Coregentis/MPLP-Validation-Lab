@@ -107,7 +107,7 @@ async function runGate12(): Promise<GateResult> {
                 checksPass++;
             }
         }
-    } catch (err) {
+    } catch (err: unknown) {
         return {
             gate_id: 'gate-12-export-consistency',
             status: 'FAIL',

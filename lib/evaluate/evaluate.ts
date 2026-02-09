@@ -205,7 +205,7 @@ async function evaluateGoldenFlow(
     let gfDef: GFDefinition;
     try {
         gfDef = loadYamlStrict<GFDefinition>(reqsPath);
-    } catch (e) {
+    } catch {
         return {
             gf_id: gfId,
             status: 'NOT_EVALUATED',
@@ -425,7 +425,7 @@ function evaluateFileEvidence(
             pointers: [makeFilePointer(artifactPath, reqDef.id)],
             message: `Evidence present: ${artifactPath}`,
         };
-    } catch (e) {
+    } catch {
         return createSeverityAwareFailure(
             reqDef,
             artifactPath,
@@ -473,7 +473,7 @@ function evaluateJsonPointerEvidence(
             pointers: [makeJsonPointer(artifactPath, jsonPointer, reqDef.id)],
             message: `Evidence found at: ${jsonPointer}`,
         };
-    } catch (e) {
+    } catch {
         return createSeverityAwareFailure(
             reqDef,
             artifactPath,
@@ -552,7 +552,7 @@ function evaluateNdjsonEvidence(
             pointers: [makeFilePointer(artifactPath, reqDef.id)],
             message: `NDJSON evidence present: ${lines.length} lines`,
         };
-    } catch (e) {
+    } catch {
         return createSeverityAwareFailure(
             reqDef,
             artifactPath,

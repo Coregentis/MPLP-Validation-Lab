@@ -11,7 +11,7 @@ import { CheckCircle, ArrowRightLeft, FileJson } from 'lucide-react';
 import { SmartLink } from '@/components/common/SmartLink';
 import { SemanticStatusBadge } from '@/components/common/SemanticStatusBadge';
 
-const LAB_CANONICAL_HOST = 'https://lab.mplp.io';
+
 
 export const metadata: Metadata = {
     title: 'Evidence Gallery — MPLP Validation Lab',

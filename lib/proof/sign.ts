@@ -36,6 +36,40 @@ export interface VerifierIdentity {
     rotation_policy: string;
 }
 
+interface SigningKey {
+    key_id: string;
+    public_key_ed25519: string;
+    status: 'active' | 'revoked' | 'expired';
+    not_before?: string;
+    valid_from?: string;
+    not_after?: string;
+    valid_until?: string;
+    note?: string;
+}
+
+interface Revocation {
+    key_id: string;
+    revoked_at: string;
+    reason: string;
+}
+
+interface RawVerifierIdentity {
+    description?: string;
+    active_signing_key?: string;
+    signing_keys?: Record<string, SigningKey>;
+    revocations?: Revocation[];
+    key_policy?: {
+        accepted_statuses?: string[];
+    };
+    // Legacy fields
+    verifier_name?: string;
+    public_key_ed25519?: string;
+    key_id?: string;
+    valid_from?: string;
+    valid_until?: string;
+    rotation_policy?: string;
+}
+
 // =============================================================================
 // Key Generation (for initial setup only)
 // =============================================================================
@@ -65,7 +99,7 @@ export function generateKeyPair(): KeyPair {
 /**
  * Extract raw key bytes from PEM format.
  */
-function extractKeyFromPem(pem: string, type: 'PUBLIC' | 'PRIVATE'): string {
+function extractKeyFromPem(pem: string, _type: 'PUBLIC' | 'PRIVATE'): string {
     const lines = pem.split('\n');
     const keyLines = lines.filter(line =>
         !line.startsWith('-----') && line.trim().length > 0
@@ -204,14 +238,14 @@ export function loadVerifierIdentity(projectRoot: string): VerifierIdentity | nu
         return null;
     }
     const content = fs.readFileSync(identityPath, 'utf-8');
-    const rawIdentity = JSON.parse(content);
+    const rawIdentity = JSON.parse(content) as RawVerifierIdentity;
 
     // Handle new signing_keys structure (v1.1+)
     if (rawIdentity.signing_keys && rawIdentity.active_signing_key) {
         const activeKeyId = rawIdentity.active_signing_key;
         const activeKey = Object.values(rawIdentity.signing_keys).find(
-            (k: any) => k.key_id === activeKeyId
-        ) as any;
+            (k) => k.key_id === activeKeyId
+        );
 
         // SECURITY: Check if active key is revoked (should never happen, but defense in depth)
         if (activeKey && activeKey.status === 'revoked') {
@@ -224,7 +258,7 @@ export function loadVerifierIdentity(projectRoot: string): VerifierIdentity | nu
                 verifier_name: rawIdentity.description || 'MPLP Validation Lab',
                 public_key_ed25519: activeKey.public_key_ed25519,
                 key_id: activeKey.key_id,
-                valid_from: activeKey.not_before || activeKey.valid_from,
+                valid_from: activeKey.not_before || activeKey.valid_from || '',
                 valid_until: activeKey.not_after || activeKey.valid_until,
                 rotation_policy: activeKey.note || 'See governance docs',
             };
@@ -232,7 +266,14 @@ export function loadVerifierIdentity(projectRoot: string): VerifierIdentity | nu
     }
 
     // Fallback to direct fields (legacy)
-    return rawIdentity as VerifierIdentity;
+    return {
+        verifier_name: rawIdentity.verifier_name || '',
+        public_key_ed25519: rawIdentity.public_key_ed25519 || '',
+        key_id: rawIdentity.key_id || '',
+        valid_from: rawIdentity.valid_from || '',
+        valid_until: rawIdentity.valid_until,
+        rotation_policy: rawIdentity.rotation_policy || '',
+    };
 }
 
 /**
@@ -245,11 +286,11 @@ export function isKeyRevoked(keyId: string, projectRoot: string): boolean {
     }
 
     const content = fs.readFileSync(identityPath, 'utf-8');
-    const rawIdentity = JSON.parse(content);
+    const rawIdentity = JSON.parse(content) as RawVerifierIdentity;
 
     // Check revocations array
     const revocations = rawIdentity.revocations || [];
-    return revocations.some((r: any) => r.key_id === keyId);
+    return revocations.some((r) => r.key_id === keyId);
 }
 
 /**
@@ -262,7 +303,7 @@ export function getPublicKeyForKeyId(keyId: string, projectRoot: string): string
     }
 
     const content = fs.readFileSync(identityPath, 'utf-8');
-    const rawIdentity = JSON.parse(content);
+    const rawIdentity = JSON.parse(content) as RawVerifierIdentity;
 
     // Check if key is revoked
     if (isKeyRevoked(keyId, projectRoot)) {
@@ -272,11 +313,11 @@ export function getPublicKeyForKeyId(keyId: string, projectRoot: string): string
 
     // Find key in signing_keys
     const key = rawIdentity.signing_keys?.[keyId] ||
-        Object.values(rawIdentity.signing_keys || {}).find((k: any) => k.key_id === keyId);
+        Object.values(rawIdentity.signing_keys || {}).find((k) => k.key_id === keyId);
 
-    if (key && (key as any).public_key_ed25519) {
+    if (key && key.public_key_ed25519) {
         // Check status
-        const status = (key as any).status;
+        const status = key.status;
         const acceptedStatuses = rawIdentity.key_policy?.accepted_statuses || ['active'];
 
         if (!acceptedStatuses.includes(status)) {
@@ -284,7 +325,7 @@ export function getPublicKeyForKeyId(keyId: string, projectRoot: string): string
             return null;
         }
 
-        return (key as any).public_key_ed25519;
+        return key.public_key_ed25519;
     }
 
     return null;

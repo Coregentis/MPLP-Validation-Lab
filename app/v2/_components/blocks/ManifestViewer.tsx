@@ -8,7 +8,7 @@ interface ManifestViewerProps {
         pack_root_hash?: string;
         env_ref?: { image_digest: string } | string;
         produced_at?: string;
-        [key: string]: any;
+        [key: string]: unknown;
     };
     tokens: Record<string, string>;
 }
@@ -17,7 +17,7 @@ export function ManifestViewer({ data, tokens }: ManifestViewerProps) {
     if (!data) return null;
 
     const discl = tokens['DISCL_NOT_SDK'] || 'Not SDK';
-    const hash = data.pack_root_hash || data.canonical || tokens['LIT_NOT_APPLICABLE'];
+    const hash = data.pack_root_hash || (data.canonical as string) || tokens['LIT_NOT_APPLICABLE'];
     const env = typeof data.env_ref === 'object' ? data.env_ref.image_digest : (data.env_ref || tokens['LIT_NOT_APPLICABLE']);
 
     return (

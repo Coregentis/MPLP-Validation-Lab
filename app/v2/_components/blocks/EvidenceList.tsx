@@ -10,7 +10,7 @@ interface EvidenceListProps {
     tokens: Record<string, string>;
     context?: {
         ptr?: string;
-        [key: string]: any;
+        [key: string]: unknown;
     };
 }
 

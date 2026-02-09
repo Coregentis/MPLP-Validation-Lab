@@ -196,9 +196,11 @@ Validation_Lab/
 │   ├── rulesets/             # Versioned rulesets
 │   ├── runs/                 # Sample runs (engine output)
 │   └── policy/               # Governance policies
-├── app/                      # Next.js App Router
-├── components/               # UI components
-└── scripts/                  # Utilities
+├── app/                      # Next.js App Router (Wrapped in AppShell SSOT)
+ ├── components/               # UI components
+ │   ├── layout/               # AppShell, Nav, VersionStrip
+ │   └── unified/              # TierLegend, Badge, etc.
+ └── scripts/                  # Utilities
 ```
 
 ---

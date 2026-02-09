@@ -1,9 +1,19 @@
 import fs from 'fs';
 import path from 'path';
+import { getLabStatusModel, LabStatusModel } from '../ssot/lab-status';
+import { getGateSummaryModel, GateSummaryModel } from '../ssot/gate-summary';
+import { getFeaturedRunModel, FeaturedRunModel } from '../ssot/featured-run';
 
 export interface VersionStripModel {
     build_id: string; // from seal or package.json
     seal_status: 'VALID' | 'INVALID' | 'UNSEALED';
+    lab: {
+        status: LabStatusModel;
+    };
+    gates: {
+        summary: GateSummaryModel;
+    };
+    featured: FeaturedRunModel;
     run_inventory: {
         total: number;
         v1_count: number;
@@ -67,7 +77,7 @@ export async function getVersionStripModel(): Promise<VersionStripModel> {
                 }
             }
         }
-    } catch (_e) { }
+    } catch { }
 
     // 2. Run Inventory
     // V1
@@ -92,9 +102,17 @@ export async function getVersionStripModel(): Promise<VersionStripModel> {
     const govIndex = readJson('public/_data/governance/index.json');
     const snapshotDate = govIndex?.generated_at || new Date().toISOString().split('T')[0];
 
+    // 5. New SSOT Models
+    const labStatus = getLabStatusModel();
+    const gateSummary = getGateSummaryModel();
+    const featuredRun = getFeaturedRunModel();
+
     return {
         build_id,
         seal_status,
+        lab: { status: labStatus },
+        gates: { summary: gateSummary },
+        featured: featuredRun,
         run_inventory: {
             total: v1Count + v2Count,
             v1_count: v1Count,

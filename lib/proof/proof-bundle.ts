@@ -6,7 +6,7 @@
  */
 
 import type { RulesetEvalResult } from '@/lib/rulesets/registry';
-import { computeVerdictHash, buildCanonicalHashInput } from './verdict-hash';
+import { computeVerdictHash } from './verdict-hash';
 import { signPayload, type Signature } from './sign';
 
 // =============================================================================

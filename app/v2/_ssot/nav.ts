@@ -3,7 +3,6 @@
  * SSOT-Driven Navigation Adapter
  * Derived from ux.generated.ts to ensure compliance with Court IA.
  */
-import { JOURNEYS, SHELVES } from './ux.generated';
 import { HOSTS } from '../_registry/hosts';
 
 import { TOKENS } from './ux.generated';

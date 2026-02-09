@@ -2,7 +2,7 @@
   "gate_id": "GATE-06",
   "gate_name": "Robots/Noindex Policy",
   "status": "PASS",
-  "evaluated_at": "2026-01-21T07:43:17.752Z",
+  "evaluated_at": "2026-02-08T16:47:22.418Z",
   "findings": [],
   "summary": {
     "files_scanned": 1,

@@ -12,6 +12,23 @@ doc_id: "VLAB-OTHER-013"
 All notable changes to the MPLP Validation Lab (lab.mplp.io).
 
 ---
+ 
+ ## [v1.0.1+layout] — 2026-02-09
+ 
+ ### 🏗️ Strategy A: Layout Unification (SSOT)
+ 
+ - **Single Source of Truth**: All layout elements (Nav, VersionStrip, Background, 7xl containers) are now exclusively managed by `AppShell.tsx`.
+ - **Refactored Pages**: `/runs`, `/runsets`, `/rulesets`, `/releases`, `/policies`, `/coverage` now use raw content only (no nested shells).
+ - **Performance**: Reduced DOM depth and eliminated double-rendering of `VersionStrip`.
+ 
+ ### 🔍 SEO & Audit Remediation
+ 
+ - **Navigation Audit**: Confirmed < 3-click depth for all content.
+ - **Crawler Logic**: Validated `sitemap.xml` (added `/governance`) and `robots.txt`.
+ - **Terminology**: Unified "Pending" -> "NOT EVALUATED" to clarify ruleset scope.
+ - **Utilities**: Added direct audit links to Governance Hub.
+ 
+ ---
 
 ## [perf-v1.0] — 2026-01-21
 

@@ -83,7 +83,7 @@ export default function CoveragePage() {
   const allMet = summary.every(s => s.passCount >= 5 && s.failCount >= 5);
 
   return (
-    <div className="pt-8">
+    <div>
       {/* Header */}
       <div className="mb-12">
         <p className="text-xs font-bold uppercase tracking-[0.4em] text-mplp-text-muted/80 mb-3">Evidence</p>

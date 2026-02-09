@@ -1,0 +1,1365 @@
+{
+  "generated_at": "2026-02-02T09:35:43.131Z",
+  "total_contracts": 35,
+  "contracts": [
+    {
+      "route_path": "/",
+      "file_path": "app/page.tsx",
+      "segment_group": "root",
+      "is_dynamic": false,
+      "dynamic_params": [],
+      "loader_chain": [
+        {
+          "loader_name": "getVersionStripModel",
+          "loader_file": "lib/unified/version-strip-model.ts",
+          "data_sources": [
+            "public/_meta/lab-manifest.json"
+          ]
+        }
+      ],
+      "data_dependencies": {
+        "fs_reads": [
+          "readFileSync (fs module)",
+          "readFileSync(path.join"
+        ],
+        "api_calls": [],
+        "lib_calls": [
+          "loadCurrentRelease",
+          "getVersionStripModel"
+        ]
+      },
+      "explicit_no_data": false,
+      "required_entities": [
+        "page_content"
+      ],
+      "required_links": [
+        "back_link"
+      ],
+      "forbidden_patterns": [
+        "TODO",
+        "FIXME",
+        "Coming soon",
+        "Under construction",
+        "Lorem ipsum",
+        "Not implemented",
+        "Clause 1 stub"
+      ],
+      "notes": ""
+    },
+    {
+      "route_path": "/about",
+      "file_path": "app/about/page.tsx",
+      "segment_group": "about",
+      "is_dynamic": false,
+      "dynamic_params": [],
+      "loader_chain": [],
+      "data_dependencies": {
+        "fs_reads": [],
+        "api_calls": [],
+        "lib_calls": []
+      },
+      "explicit_no_data": true,
+      "required_entities": [
+        "page_content"
+      ],
+      "required_links": [
+        "back_link"
+      ],
+      "forbidden_patterns": [
+        "TODO",
+        "FIXME",
+        "Coming soon",
+        "Under construction",
+        "Lorem ipsum",
+        "Not implemented",
+        "Clause 1 stub"
+      ],
+      "notes": ""
+    },
+    {
+      "route_path": "/adjudication",
+      "file_path": "app/adjudication/page.tsx",
+      "segment_group": "adjudication",
+      "is_dynamic": false,
+      "dynamic_params": [],
+      "loader_chain": [],
+      "data_dependencies": {
+        "fs_reads": [],
+        "api_calls": [],
+        "lib_calls": []
+      },
+      "explicit_no_data": false,
+      "required_entities": [
+        "run_data",
+        "adjudication_result"
+      ],
+      "required_links": [
+        "back_link"
+      ],
+      "forbidden_patterns": [
+        "TODO",
+        "FIXME",
+        "Coming soon",
+        "Under construction",
+        "Lorem ipsum",
+        "Not implemented",
+        "Clause 1 stub"
+      ],
+      "notes": ""
+    },
+    {
+      "route_path": "/adjudication/[run_id]",
+      "file_path": "app/adjudication/[run_id]/page.tsx",
+      "segment_group": "adjudication",
+      "is_dynamic": true,
+      "dynamic_params": [
+        "run_id"
+      ],
+      "loader_chain": [],
+      "data_dependencies": {
+        "fs_reads": [],
+        "api_calls": [],
+        "lib_calls": [
+          "loadAdjudicationTextFile"
+        ]
+      },
+      "explicit_no_data": false,
+      "required_entities": [
+        "run_data",
+        "adjudication_result"
+      ],
+      "required_links": [
+        "back_link"
+      ],
+      "forbidden_patterns": [
+        "TODO",
+        "FIXME",
+        "Coming soon",
+        "Under construction",
+        "Lorem ipsum",
+        "Not implemented",
+        "Clause 1 stub"
+      ],
+      "notes": ""
+    },
+    {
+      "route_path": "/audit",
+      "file_path": "app/audit/page.tsx",
+      "segment_group": "audit",
+      "is_dynamic": false,
+      "dynamic_params": [],
+      "loader_chain": [],
+      "data_dependencies": {
+        "fs_reads": [],
+        "api_calls": [],
+        "lib_calls": []
+      },
+      "explicit_no_data": true,
+      "required_entities": [
+        "page_content"
+      ],
+      "required_links": [
+        "back_link"
+      ],
+      "forbidden_patterns": [
+        "TODO",
+        "FIXME",
+        "Coming soon",
+        "Under construction",
+        "Lorem ipsum",
+        "Not implemented",
+        "Clause 1 stub"
+      ],
+      "notes": ""
+    },
+    {
+      "route_path": "/builder",
+      "file_path": "app/builder/page.tsx",
+      "segment_group": "builder",
+      "is_dynamic": false,
+      "dynamic_params": [],
+      "loader_chain": [],
+      "data_dependencies": {
+        "fs_reads": [],
+        "api_calls": [],
+        "lib_calls": []
+      },
+      "explicit_no_data": true,
+      "required_entities": [
+        "page_content"
+      ],
+      "required_links": [
+        "back_link"
+      ],
+      "forbidden_patterns": [
+        "TODO",
+        "FIXME",
+        "Coming soon",
+        "Under construction",
+        "Lorem ipsum",
+        "Not implemented",
+        "Clause 1 stub"
+      ],
+      "notes": ""
+    },
+    {
+      "route_path": "/coverage",
+      "file_path": "app/coverage/page.tsx",
+      "segment_group": "coverage",
+      "is_dynamic": false,
+      "dynamic_params": [],
+      "loader_chain": [],
+      "data_dependencies": {
+        "fs_reads": [
+          "readFileSync (fs module)",
+          "yaml.parse (YAML file read)"
+        ],
+        "api_calls": [],
+        "lib_calls": [
+          "loadAllowlist"
+        ]
+      },
+      "explicit_no_data": false,
+      "required_entities": [
+        "page_content"
+      ],
+      "required_links": [
+        "back_link"
+      ],
+      "forbidden_patterns": [
+        "TODO",
+        "FIXME",
+        "Coming soon",
+        "Under construction",
+        "Lorem ipsum",
+        "Not implemented",
+        "Clause 1 stub"
+      ],
+      "notes": ""
+    },
+    {
+      "route_path": "/coverage/adjudication",
+      "file_path": "app/coverage/adjudication/page.tsx",
+      "segment_group": "coverage",
+      "is_dynamic": false,
+      "dynamic_params": [],
+      "loader_chain": [],
+      "data_dependencies": {
+        "fs_reads": [
+          "readFileSync (fs module)",
+          "yaml.parse (YAML file read)"
+        ],
+        "api_calls": [],
+        "lib_calls": [
+          "loadSubstrateIndex"
+        ]
+      },
+      "explicit_no_data": false,
+      "required_entities": [
+        "page_content"
+      ],
+      "required_links": [
+        "back_link"
+      ],
+      "forbidden_patterns": [
+        "TODO",
+        "FIXME",
+        "Coming soon",
+        "Under construction",
+        "Lorem ipsum",
+        "Not implemented",
+        "Clause 1 stub"
+      ],
+      "notes": ""
+    },
+    {
+      "route_path": "/examples/evidence-producers",
+      "file_path": "app/examples/evidence-producers/page.tsx",
+      "segment_group": "examples",
+      "is_dynamic": false,
+      "dynamic_params": [],
+      "loader_chain": [],
+      "data_dependencies": {
+        "fs_reads": [],
+        "api_calls": [],
+        "lib_calls": []
+      },
+      "explicit_no_data": false,
+      "required_entities": [
+        "substrate_info",
+        "code_samples"
+      ],
+      "required_links": [
+        "back_link"
+      ],
+      "forbidden_patterns": [
+        "TODO",
+        "FIXME",
+        "Coming soon",
+        "Under construction",
+        "Lorem ipsum",
+        "Not implemented",
+        "Clause 1 stub"
+      ],
+      "notes": ""
+    },
+    {
+      "route_path": "/examples/evidence-producers/[substrate]",
+      "file_path": "app/examples/evidence-producers/[substrate]/page.tsx",
+      "segment_group": "examples",
+      "is_dynamic": true,
+      "dynamic_params": [
+        "substrate"
+      ],
+      "loader_chain": [],
+      "data_dependencies": {
+        "fs_reads": [
+          "readFileSync (fs module)",
+          "existsSync (fs check)"
+        ],
+        "api_calls": [],
+        "lib_calls": []
+      },
+      "explicit_no_data": false,
+      "required_entities": [
+        "substrate_info",
+        "code_samples"
+      ],
+      "required_links": [
+        "back_link"
+      ],
+      "forbidden_patterns": [
+        "TODO",
+        "FIXME",
+        "Coming soon",
+        "Under construction",
+        "Lorem ipsum",
+        "Not implemented",
+        "Clause 1 stub"
+      ],
+      "notes": ""
+    },
+    {
+      "route_path": "/gates",
+      "file_path": "app/gates/page.tsx",
+      "segment_group": "gates",
+      "is_dynamic": false,
+      "dynamic_params": [],
+      "loader_chain": [],
+      "data_dependencies": {
+        "fs_reads": [],
+        "api_calls": [],
+        "lib_calls": []
+      },
+      "explicit_no_data": false,
+      "required_entities": [
+        "page_content"
+      ],
+      "required_links": [
+        "back_link"
+      ],
+      "forbidden_patterns": [
+        "TODO",
+        "FIXME",
+        "Coming soon",
+        "Under construction",
+        "Lorem ipsum",
+        "Not implemented",
+        "Clause 1 stub"
+      ],
+      "notes": ""
+    },
+    {
+      "route_path": "/governance",
+      "file_path": "app/governance/page.tsx",
+      "segment_group": "governance",
+      "is_dynamic": false,
+      "dynamic_params": [],
+      "loader_chain": [
+        {
+          "loader_name": "getVersionStripModel",
+          "loader_file": "lib/unified/version-strip-model.ts",
+          "data_sources": [
+            "public/_meta/lab-manifest.json"
+          ]
+        }
+      ],
+      "data_dependencies": {
+        "fs_reads": [
+          "readFileSync (fs module)",
+          "JSON.parse (JSON file read)"
+        ],
+        "api_calls": [],
+        "lib_calls": [
+          "getGovernanceData",
+          "getVersionStripModel"
+        ]
+      },
+      "explicit_no_data": false,
+      "required_entities": [
+        "policy_list",
+        "nav_links"
+      ],
+      "required_links": [
+        "policy_subpages"
+      ],
+      "forbidden_patterns": [
+        "TODO",
+        "FIXME",
+        "Coming soon",
+        "Under construction",
+        "Lorem ipsum",
+        "Not implemented",
+        "Clause 1 stub"
+      ],
+      "notes": ""
+    },
+    {
+      "route_path": "/guarantees",
+      "file_path": "app/guarantees/page.tsx",
+      "segment_group": "guarantees",
+      "is_dynamic": false,
+      "dynamic_params": [],
+      "loader_chain": [
+        {
+          "loader_name": "loadV1Guarantees",
+          "loader_file": "app/guarantees/page.tsx",
+          "data_sources": [
+            "governance/LIFECYCLE_GUARANTEES.yaml"
+          ]
+        },
+        {
+          "loader_name": "loadV2Guarantees",
+          "loader_file": "app/guarantees/page.tsx",
+          "data_sources": [
+            "public/_data/v2/rulesets/ruleset-v2.0.0.json"
+          ]
+        }
+      ],
+      "data_dependencies": {
+        "fs_reads": [
+          "readFileSync (fs module)",
+          "yaml.parse (YAML file read)",
+          "JSON.parse (JSON file read)"
+        ],
+        "api_calls": [],
+        "lib_calls": [
+          "loadV1Guarantees",
+          "loadV2Guarantees"
+        ]
+      },
+      "explicit_no_data": false,
+      "required_entities": [
+        "lg_list OR clause_list",
+        "ssot_notice"
+      ],
+      "required_links": [
+        "ruleset_link",
+        "policies_link"
+      ],
+      "forbidden_patterns": [
+        "TODO",
+        "FIXME",
+        "Coming soon",
+        "Under construction",
+        "Lorem ipsum",
+        "Not implemented",
+        "Clause 1 stub"
+      ],
+      "notes": ""
+    },
+    {
+      "route_path": "/methodology",
+      "file_path": "app/methodology/page.tsx",
+      "segment_group": "methodology",
+      "is_dynamic": false,
+      "dynamic_params": [],
+      "loader_chain": [],
+      "data_dependencies": {
+        "fs_reads": [],
+        "api_calls": [],
+        "lib_calls": [
+          "getLabSeries"
+        ]
+      },
+      "explicit_no_data": true,
+      "required_entities": [
+        "page_content"
+      ],
+      "required_links": [
+        "back_link"
+      ],
+      "forbidden_patterns": [
+        "TODO",
+        "FIXME",
+        "Coming soon",
+        "Under construction",
+        "Lorem ipsum",
+        "Not implemented",
+        "Clause 1 stub"
+      ],
+      "notes": ""
+    },
+    {
+      "route_path": "/policies",
+      "file_path": "app/policies/page.tsx",
+      "segment_group": "policies",
+      "is_dynamic": false,
+      "dynamic_params": [],
+      "loader_chain": [],
+      "data_dependencies": {
+        "fs_reads": [],
+        "api_calls": [],
+        "lib_calls": []
+      },
+      "explicit_no_data": false,
+      "required_entities": [
+        "policy_content",
+        "back_link"
+      ],
+      "required_links": [
+        "back_to_policies"
+      ],
+      "forbidden_patterns": [
+        "TODO",
+        "FIXME",
+        "Coming soon",
+        "Under construction",
+        "Lorem ipsum",
+        "Not implemented",
+        "Clause 1 stub"
+      ],
+      "notes": ""
+    },
+    {
+      "route_path": "/policies/contract",
+      "file_path": "app/policies/contract/page.tsx",
+      "segment_group": "policies",
+      "is_dynamic": false,
+      "dynamic_params": [],
+      "loader_chain": [],
+      "data_dependencies": {
+        "fs_reads": [],
+        "api_calls": [],
+        "lib_calls": []
+      },
+      "explicit_no_data": false,
+      "required_entities": [
+        "policy_content",
+        "back_link"
+      ],
+      "required_links": [
+        "back_to_policies"
+      ],
+      "forbidden_patterns": [
+        "TODO",
+        "FIXME",
+        "Coming soon",
+        "Under construction",
+        "Lorem ipsum",
+        "Not implemented",
+        "Clause 1 stub"
+      ],
+      "notes": ""
+    },
+    {
+      "route_path": "/policies/cross-verified",
+      "file_path": "app/policies/cross-verified/page.tsx",
+      "segment_group": "policies",
+      "is_dynamic": false,
+      "dynamic_params": [],
+      "loader_chain": [],
+      "data_dependencies": {
+        "fs_reads": [],
+        "api_calls": [],
+        "lib_calls": []
+      },
+      "explicit_no_data": false,
+      "required_entities": [
+        "policy_content",
+        "back_link"
+      ],
+      "required_links": [
+        "back_to_policies"
+      ],
+      "forbidden_patterns": [
+        "TODO",
+        "FIXME",
+        "Coming soon",
+        "Under construction",
+        "Lorem ipsum",
+        "Not implemented",
+        "Clause 1 stub"
+      ],
+      "notes": ""
+    },
+    {
+      "route_path": "/policies/fmm",
+      "file_path": "app/policies/fmm/page.tsx",
+      "segment_group": "policies",
+      "is_dynamic": false,
+      "dynamic_params": [],
+      "loader_chain": [],
+      "data_dependencies": {
+        "fs_reads": [],
+        "api_calls": [],
+        "lib_calls": []
+      },
+      "explicit_no_data": false,
+      "required_entities": [
+        "policy_content",
+        "back_link"
+      ],
+      "required_links": [
+        "back_to_policies"
+      ],
+      "forbidden_patterns": [
+        "TODO",
+        "FIXME",
+        "Coming soon",
+        "Under construction",
+        "Lorem ipsum",
+        "Not implemented",
+        "Clause 1 stub"
+      ],
+      "notes": ""
+    },
+    {
+      "route_path": "/policies/intake",
+      "file_path": "app/policies/intake/page.tsx",
+      "segment_group": "policies",
+      "is_dynamic": false,
+      "dynamic_params": [],
+      "loader_chain": [],
+      "data_dependencies": {
+        "fs_reads": [],
+        "api_calls": [],
+        "lib_calls": []
+      },
+      "explicit_no_data": false,
+      "required_entities": [
+        "policy_content",
+        "back_link"
+      ],
+      "required_links": [
+        "back_to_policies"
+      ],
+      "forbidden_patterns": [
+        "TODO",
+        "FIXME",
+        "Coming soon",
+        "Under construction",
+        "Lorem ipsum",
+        "Not implemented",
+        "Clause 1 stub"
+      ],
+      "notes": ""
+    },
+    {
+      "route_path": "/policies/strength",
+      "file_path": "app/policies/strength/page.tsx",
+      "segment_group": "policies",
+      "is_dynamic": false,
+      "dynamic_params": [],
+      "loader_chain": [],
+      "data_dependencies": {
+        "fs_reads": [],
+        "api_calls": [],
+        "lib_calls": []
+      },
+      "explicit_no_data": false,
+      "required_entities": [
+        "policy_content",
+        "back_link"
+      ],
+      "required_links": [
+        "back_to_policies"
+      ],
+      "forbidden_patterns": [
+        "TODO",
+        "FIXME",
+        "Coming soon",
+        "Under construction",
+        "Lorem ipsum",
+        "Not implemented",
+        "Clause 1 stub"
+      ],
+      "notes": ""
+    },
+    {
+      "route_path": "/policies/substrate-scope",
+      "file_path": "app/policies/substrate-scope/page.tsx",
+      "segment_group": "policies",
+      "is_dynamic": false,
+      "dynamic_params": [],
+      "loader_chain": [],
+      "data_dependencies": {
+        "fs_reads": [
+          "readFileSync (fs module)",
+          "yaml.parse (YAML file read)"
+        ],
+        "api_calls": [],
+        "lib_calls": [
+          "loadTier0Substrates"
+        ]
+      },
+      "explicit_no_data": false,
+      "required_entities": [
+        "policy_content",
+        "back_link"
+      ],
+      "required_links": [
+        "back_to_policies"
+      ],
+      "forbidden_patterns": [
+        "TODO",
+        "FIXME",
+        "Coming soon",
+        "Under construction",
+        "Lorem ipsum",
+        "Not implemented",
+        "Clause 1 stub"
+      ],
+      "notes": ""
+    },
+    {
+      "route_path": "/releases",
+      "file_path": "app/releases/page.tsx",
+      "segment_group": "releases",
+      "is_dynamic": false,
+      "dynamic_params": [],
+      "loader_chain": [
+        {
+          "loader_name": "listUniqueReleases",
+          "loader_file": "lib/releases/loadRelease.ts",
+          "data_sources": [
+            "releases/unified/"
+          ]
+        },
+        {
+          "loader_name": "getVersionStripModel",
+          "loader_file": "lib/unified/version-strip-model.ts",
+          "data_sources": [
+            "public/_meta/lab-manifest.json"
+          ]
+        }
+      ],
+      "data_dependencies": {
+        "fs_reads": [],
+        "api_calls": [],
+        "lib_calls": [
+          "getVersionStripModel",
+          "listUniqueReleases"
+        ]
+      },
+      "explicit_no_data": false,
+      "required_entities": [
+        "seal_status",
+        "evidence_files",
+        "build_policy"
+      ],
+      "required_links": [
+        "back_to_list",
+        "evidence_download"
+      ],
+      "forbidden_patterns": [
+        "TODO",
+        "FIXME",
+        "Coming soon",
+        "Under construction",
+        "Lorem ipsum",
+        "Not implemented",
+        "Clause 1 stub"
+      ],
+      "notes": ""
+    },
+    {
+      "route_path": "/releases/[build_id]",
+      "file_path": "app/releases/[build_id]/page.tsx",
+      "segment_group": "releases",
+      "is_dynamic": true,
+      "dynamic_params": [
+        "build_id"
+      ],
+      "loader_chain": [
+        {
+          "loader_name": "getRelease",
+          "loader_file": "lib/releases/loadRelease.ts",
+          "data_sources": [
+            "releases/unified/"
+          ]
+        },
+        {
+          "loader_name": "getVersionStripModel",
+          "loader_file": "lib/unified/version-strip-model.ts",
+          "data_sources": [
+            "public/_meta/lab-manifest.json"
+          ]
+        }
+      ],
+      "data_dependencies": {
+        "fs_reads": [],
+        "api_calls": [],
+        "lib_calls": [
+          "getRelease",
+          "getVersionStripModel"
+        ]
+      },
+      "explicit_no_data": false,
+      "required_entities": [
+        "seal_status",
+        "evidence_files",
+        "build_policy"
+      ],
+      "required_links": [
+        "back_to_list",
+        "evidence_download"
+      ],
+      "forbidden_patterns": [
+        "TODO",
+        "FIXME",
+        "Coming soon",
+        "Under construction",
+        "Lorem ipsum",
+        "Not implemented",
+        "Clause 1 stub"
+      ],
+      "notes": ""
+    },
+    {
+      "route_path": "/rulesets",
+      "file_path": "app/rulesets/page.tsx",
+      "segment_group": "rulesets",
+      "is_dynamic": false,
+      "dynamic_params": [],
+      "loader_chain": [
+        {
+          "loader_name": "loadRuleset",
+          "loader_file": "lib/rulesets/loadRuleset.ts",
+          "data_sources": [
+            "data/rulesets/",
+            "public/_data/v2/rulesets/"
+          ]
+        },
+        {
+          "loader_name": "getVersionStripModel",
+          "loader_file": "lib/unified/version-strip-model.ts",
+          "data_sources": [
+            "public/_meta/lab-manifest.json"
+          ]
+        }
+      ],
+      "data_dependencies": {
+        "fs_reads": [
+          "readFileSync (fs module)",
+          "readFileSync(path.join"
+        ],
+        "api_calls": [],
+        "lib_calls": [
+          "getVersionStripModel",
+          "listRulesets"
+        ]
+      },
+      "explicit_no_data": false,
+      "required_entities": [
+        "clauses OR golden_flows",
+        "evidence_pointers",
+        "ruleset_version"
+      ],
+      "required_links": [
+        "back_to_list",
+        "ruleset_version_link"
+      ],
+      "forbidden_patterns": [
+        "TODO",
+        "FIXME",
+        "Coming soon",
+        "Under construction",
+        "Lorem ipsum",
+        "Not implemented",
+        "Clause 1 stub"
+      ],
+      "notes": ""
+    },
+    {
+      "route_path": "/rulesets/[ruleset_id]",
+      "file_path": "app/rulesets/[ruleset_id]/page.tsx",
+      "segment_group": "rulesets",
+      "is_dynamic": true,
+      "dynamic_params": [
+        "ruleset_id"
+      ],
+      "loader_chain": [
+        {
+          "loader_name": "loadRuleset",
+          "loader_file": "lib/rulesets/loadRuleset.ts",
+          "data_sources": [
+            "data/rulesets/",
+            "public/_data/v2/rulesets/"
+          ]
+        },
+        {
+          "loader_name": "getRuleset",
+          "loader_file": "lib/rulesets/loadRuleset.ts",
+          "data_sources": [
+            "data/rulesets/",
+            "public/_data/v2/rulesets/"
+          ]
+        },
+        {
+          "loader_name": "getVersionStripModel",
+          "loader_file": "lib/unified/version-strip-model.ts",
+          "data_sources": [
+            "public/_meta/lab-manifest.json"
+          ]
+        }
+      ],
+      "data_dependencies": {
+        "fs_reads": [],
+        "api_calls": [],
+        "lib_calls": [
+          "loadRuleset",
+          "getRuleset",
+          "getVersionStripModel"
+        ]
+      },
+      "explicit_no_data": false,
+      "required_entities": [
+        "clauses OR golden_flows",
+        "evidence_pointers",
+        "ruleset_version"
+      ],
+      "required_links": [
+        "back_to_list",
+        "ruleset_version_link"
+      ],
+      "forbidden_patterns": [
+        "TODO",
+        "FIXME",
+        "Coming soon",
+        "Under construction",
+        "Lorem ipsum",
+        "Not implemented",
+        "Clause 1 stub"
+      ],
+      "notes": ""
+    },
+    {
+      "route_path": "/rulesets/evolution",
+      "file_path": "app/rulesets/evolution/page.tsx",
+      "segment_group": "rulesets",
+      "is_dynamic": false,
+      "dynamic_params": [],
+      "loader_chain": [
+        {
+          "loader_name": "getRuleset",
+          "loader_file": "lib/rulesets/loadRuleset.ts",
+          "data_sources": [
+            "data/rulesets/",
+            "public/_data/v2/rulesets/"
+          ]
+        }
+      ],
+      "data_dependencies": {
+        "fs_reads": [],
+        "api_calls": [],
+        "lib_calls": [
+          "getRulesetDiffIndex"
+        ]
+      },
+      "explicit_no_data": false,
+      "required_entities": [
+        "clauses OR golden_flows",
+        "evidence_pointers",
+        "ruleset_version"
+      ],
+      "required_links": [
+        "back_to_list",
+        "ruleset_version_link"
+      ],
+      "forbidden_patterns": [
+        "TODO",
+        "FIXME",
+        "Coming soon",
+        "Under construction",
+        "Lorem ipsum",
+        "Not implemented",
+        "Clause 1 stub"
+      ],
+      "notes": ""
+    },
+    {
+      "route_path": "/rulesets/evolution/diff/[id]",
+      "file_path": "app/rulesets/evolution/diff/[id]/page.tsx",
+      "segment_group": "rulesets",
+      "is_dynamic": true,
+      "dynamic_params": [
+        "id"
+      ],
+      "loader_chain": [
+        {
+          "loader_name": "getRuleset",
+          "loader_file": "lib/rulesets/loadRuleset.ts",
+          "data_sources": [
+            "data/rulesets/",
+            "public/_data/v2/rulesets/"
+          ]
+        }
+      ],
+      "data_dependencies": {
+        "fs_reads": [],
+        "api_calls": [],
+        "lib_calls": [
+          "getRulesetDiff",
+          "getRulesetDiffPack"
+        ]
+      },
+      "explicit_no_data": false,
+      "required_entities": [
+        "clauses OR golden_flows",
+        "evidence_pointers",
+        "ruleset_version"
+      ],
+      "required_links": [
+        "back_to_list",
+        "ruleset_version_link"
+      ],
+      "forbidden_patterns": [
+        "TODO",
+        "FIXME",
+        "Coming soon",
+        "Under construction",
+        "Lorem ipsum",
+        "Not implemented",
+        "Clause 1 stub"
+      ],
+      "notes": ""
+    },
+    {
+      "route_path": "/runs",
+      "file_path": "app/runs/page.tsx",
+      "segment_group": "runs",
+      "is_dynamic": false,
+      "dynamic_params": [],
+      "loader_chain": [
+        {
+          "loader_name": "getVersionStripModel",
+          "loader_file": "lib/unified/version-strip-model.ts",
+          "data_sources": [
+            "public/_meta/lab-manifest.json"
+          ]
+        }
+      ],
+      "data_dependencies": {
+        "fs_reads": [
+          "readFileSync (fs module)",
+          "readFileSync(path.join"
+        ],
+        "api_calls": [],
+        "lib_calls": [
+          "loadAllRuns",
+          "getVersionStripModel"
+        ]
+      },
+      "explicit_no_data": false,
+      "required_entities": [
+        "provenance",
+        "determinism",
+        "adjudication",
+        "verdict_badge"
+      ],
+      "required_links": [
+        "back_to_list",
+        "evidence_tab",
+        "replay_tab"
+      ],
+      "forbidden_patterns": [
+        "TODO",
+        "FIXME",
+        "Coming soon",
+        "Under construction",
+        "Lorem ipsum",
+        "Not implemented",
+        "Clause 1 stub"
+      ],
+      "notes": ""
+    },
+    {
+      "route_path": "/runs/[run_id]",
+      "file_path": "app/runs/[run_id]/page.tsx",
+      "segment_group": "runs",
+      "is_dynamic": true,
+      "dynamic_params": [
+        "run_id"
+      ],
+      "loader_chain": [],
+      "data_dependencies": {
+        "fs_reads": [],
+        "api_calls": [],
+        "lib_calls": [
+          "loadAllRuns",
+          "loadV2RunDetail",
+          "getRunById",
+          "getCuratedRuns"
+        ]
+      },
+      "explicit_no_data": false,
+      "required_entities": [
+        "provenance",
+        "determinism",
+        "adjudication",
+        "verdict_badge"
+      ],
+      "required_links": [
+        "back_to_list",
+        "evidence_tab",
+        "replay_tab"
+      ],
+      "forbidden_patterns": [
+        "TODO",
+        "FIXME",
+        "Coming soon",
+        "Under construction",
+        "Lorem ipsum",
+        "Not implemented",
+        "Clause 1 stub"
+      ],
+      "notes": ""
+    },
+    {
+      "route_path": "/runs/[run_id]/evidence",
+      "file_path": "app/runs/[run_id]/evidence/page.tsx",
+      "segment_group": "runs",
+      "is_dynamic": true,
+      "dynamic_params": [
+        "run_id"
+      ],
+      "loader_chain": [],
+      "data_dependencies": {
+        "fs_reads": [],
+        "api_calls": [],
+        "lib_calls": [
+          "loadEvidence"
+        ]
+      },
+      "explicit_no_data": false,
+      "required_entities": [
+        "provenance",
+        "determinism",
+        "adjudication",
+        "verdict_badge"
+      ],
+      "required_links": [
+        "back_to_list",
+        "evidence_tab",
+        "replay_tab"
+      ],
+      "forbidden_patterns": [
+        "TODO",
+        "FIXME",
+        "Coming soon",
+        "Under construction",
+        "Lorem ipsum",
+        "Not implemented",
+        "Clause 1 stub"
+      ],
+      "notes": ""
+    },
+    {
+      "route_path": "/runs/[run_id]/replay",
+      "file_path": "app/runs/[run_id]/replay/page.tsx",
+      "segment_group": "runs",
+      "is_dynamic": true,
+      "dynamic_params": [
+        "run_id"
+      ],
+      "loader_chain": [],
+      "data_dependencies": {
+        "fs_reads": [
+          "readFileSync (fs module)",
+          "existsSync (fs check)",
+          "JSON.parse (JSON file read)"
+        ],
+        "api_calls": [],
+        "lib_calls": [
+          "loadReplayData",
+          "getCuratedRuns"
+        ]
+      },
+      "explicit_no_data": false,
+      "required_entities": [
+        "provenance",
+        "determinism",
+        "adjudication",
+        "verdict_badge"
+      ],
+      "required_links": [
+        "back_to_list",
+        "evidence_tab",
+        "replay_tab"
+      ],
+      "forbidden_patterns": [
+        "TODO",
+        "FIXME",
+        "Coming soon",
+        "Under construction",
+        "Lorem ipsum",
+        "Not implemented",
+        "Clause 1 stub"
+      ],
+      "notes": ""
+    },
+    {
+      "route_path": "/runsets",
+      "file_path": "app/runsets/page.tsx",
+      "segment_group": "runsets",
+      "is_dynamic": false,
+      "dynamic_params": [],
+      "loader_chain": [
+        {
+          "loader_name": "getVersionStripModel",
+          "loader_file": "lib/unified/version-strip-model.ts",
+          "data_sources": [
+            "public/_meta/lab-manifest.json"
+          ]
+        }
+      ],
+      "data_dependencies": {
+        "fs_reads": [],
+        "api_calls": [],
+        "lib_calls": [
+          "loadAllRunsets",
+          "getVersionStripModel"
+        ]
+      },
+      "explicit_no_data": false,
+      "required_entities": [
+        "member_runs",
+        "substrate_info"
+      ],
+      "required_links": [
+        "back_to_list",
+        "member_run_links"
+      ],
+      "forbidden_patterns": [
+        "TODO",
+        "FIXME",
+        "Coming soon",
+        "Under construction",
+        "Lorem ipsum",
+        "Not implemented",
+        "Clause 1 stub"
+      ],
+      "notes": ""
+    },
+    {
+      "route_path": "/runsets/[runset_id]",
+      "file_path": "app/runsets/[runset_id]/page.tsx",
+      "segment_group": "runsets",
+      "is_dynamic": true,
+      "dynamic_params": [
+        "runset_id"
+      ],
+      "loader_chain": [
+        {
+          "loader_name": "getVersionStripModel",
+          "loader_file": "lib/unified/version-strip-model.ts",
+          "data_sources": [
+            "public/_meta/lab-manifest.json"
+          ]
+        }
+      ],
+      "data_dependencies": {
+        "fs_reads": [
+          "readFileSync (fs module)",
+          "existsSync (fs check)",
+          "JSON.parse (JSON file read)"
+        ],
+        "api_calls": [],
+        "lib_calls": [
+          "getRunset",
+          "getVersionStripModel"
+        ]
+      },
+      "explicit_no_data": false,
+      "required_entities": [
+        "member_runs",
+        "substrate_info"
+      ],
+      "required_links": [
+        "back_to_list",
+        "member_run_links"
+      ],
+      "forbidden_patterns": [
+        "TODO",
+        "FIXME",
+        "Coming soon",
+        "Under construction",
+        "Lorem ipsum",
+        "Not implemented",
+        "Clause 1 stub"
+      ],
+      "notes": ""
+    },
+    {
+      "route_path": "/validation",
+      "file_path": "app/validation/page.tsx",
+      "segment_group": "validation",
+      "is_dynamic": false,
+      "dynamic_params": [],
+      "loader_chain": [],
+      "data_dependencies": {
+        "fs_reads": [],
+        "api_calls": [],
+        "lib_calls": []
+      },
+      "explicit_no_data": true,
+      "required_entities": [
+        "page_content"
+      ],
+      "required_links": [
+        "back_link"
+      ],
+      "forbidden_patterns": [
+        "TODO",
+        "FIXME",
+        "Coming soon",
+        "Under construction",
+        "Lorem ipsum",
+        "Not implemented",
+        "Clause 1 stub"
+      ],
+      "notes": ""
+    },
+    {
+      "route_path": "/validation/samples",
+      "file_path": "app/validation/samples/page.tsx",
+      "segment_group": "validation",
+      "is_dynamic": false,
+      "dynamic_params": [],
+      "loader_chain": [],
+      "data_dependencies": {
+        "fs_reads": [],
+        "api_calls": [],
+        "lib_calls": []
+      },
+      "explicit_no_data": true,
+      "required_entities": [
+        "page_content"
+      ],
+      "required_links": [
+        "back_link"
+      ],
+      "forbidden_patterns": [
+        "TODO",
+        "FIXME",
+        "Coming soon",
+        "Under construction",
+        "Lorem ipsum",
+        "Not implemented",
+        "Clause 1 stub"
+      ],
+      "notes": ""
+    }
+  ]
+}

@@ -8,7 +8,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import * as crypto from 'crypto';
-import { PackHandle, PackManifest, IngestOptions, EPC_CONSTANTS } from './types';
+import { PackHandle, PackManifest, IngestOptions } from './types';
 
 /**
  * Ingest an evidence pack from directory or zip file.
@@ -60,7 +60,7 @@ export async function ingest(
         try {
             const content = fs.readFileSync(manifestPath, 'utf-8');
             manifestRaw = JSON.parse(content) as PackManifest;
-        } catch (e) {
+        } catch {
             // Manifest parse error will be caught by verify.ts
         }
     }

@@ -1,10 +1,8 @@
 import Link from 'next/link';
-import { Nav } from '@/components/Nav';
 
 export default function AuditPage() {
     return (
         <main className="min-h-screen bg-mplp-dark-bg text-mplp-text-primary px-4 py-8">
-            <Nav />
             <div className="max-w-4xl mx-auto mt-12">
                 <div className="mb-6">
                     <Link href="/governance" className="text-mplp-blue hover:underline text-sm font-mono">&larr; Back to Governance</Link>

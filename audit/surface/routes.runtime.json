@@ -1,0 +1,5003 @@
+{
+  "generated_at": "2026-02-02T09:18:25.269Z",
+  "base_url": "http://localhost:3000",
+  "total_discovered": 493,
+  "internal_pages": 479,
+  "external_links": 14,
+  "errors": 14,
+  "routes": [
+    {
+      "url": "http://localhost:3000",
+      "path": "/",
+      "status": 200,
+      "discovered_from": [
+        "entry",
+        "/",
+        "/about"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/webpack-760c4706bab26cf6.js",
+      "path": "/_next/static/chunks/webpack-760c4706bab26cf6.js",
+      "status": 200,
+      "discovered_from": [
+        "/"
+      ],
+      "is_internal": true,
+      "content_type": "application/javascript"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/css/523bef48d50a97e2.css",
+      "path": "/_next/static/css/523bef48d50a97e2.css",
+      "status": 200,
+      "discovered_from": [
+        "/"
+      ],
+      "is_internal": true,
+      "content_type": "text/css"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/media/bb3ef058b751a6ad-s.p.woff2",
+      "path": "/_next/static/media/bb3ef058b751a6ad-s.p.woff2",
+      "status": 200,
+      "discovered_from": [
+        "/"
+      ],
+      "is_internal": true,
+      "content_type": "font/woff2"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/media/e4af272ccee01ff0-s.p.woff2",
+      "path": "/_next/static/media/e4af272ccee01ff0-s.p.woff2",
+      "status": 200,
+      "discovered_from": [
+        "/"
+      ],
+      "is_internal": true,
+      "content_type": "font/woff2"
+    },
+    {
+      "url": "http://localhost:3000/about",
+      "path": "/about",
+      "status": 200,
+      "discovered_from": [
+        "/"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/adjudication",
+      "path": "/adjudication",
+      "status": 200,
+      "discovered_from": [
+        "/",
+        "/about",
+        "/runs",
+        "/runsets",
+        "/rulesets",
+        "/governance",
+        "/releases",
+        "/validation",
+        "/policies/cross-verified",
+        "/adjudication/admission-not-admissible-01",
+        "/methodology",
+        "/guarantees"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/adjudication/admission-not-admissible-01",
+      "path": "/adjudication/admission-not-admissible-01",
+      "status": 200,
+      "discovered_from": [
+        "/"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/adjudication/gf-01-adjudicated-fail-01",
+      "path": "/adjudication/gf-01-adjudicated-fail-01",
+      "status": 200,
+      "discovered_from": [
+        "/adjudication"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/adjudication/gf-01-langchain-pass",
+      "path": "/adjudication/gf-01-langchain-pass",
+      "status": 200,
+      "discovered_from": [
+        "/adjudication"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/adjudication/gf-01-mcp-pass",
+      "path": "/adjudication/gf-01-mcp-pass",
+      "status": 200,
+      "discovered_from": [
+        "/adjudication"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/adjudication/gf-01-smoke",
+      "path": "/adjudication/gf-01-smoke",
+      "status": 200,
+      "discovered_from": [
+        "/adjudication"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/adjudication/gf-02-fail",
+      "path": "/adjudication/gf-02-fail",
+      "status": 200,
+      "discovered_from": [
+        "/adjudication"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/admission-not-admissible-01/download-zip",
+      "path": "/api/runs/admission-not-admissible-01/download-zip",
+      "status": 200,
+      "discovered_from": [
+        "/runs/admission-not-admissible-01"
+      ],
+      "is_internal": true,
+      "content_type": "application/zip"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/admission-not-admissible-01/download/artifacts/context.json",
+      "path": "/api/runs/admission-not-admissible-01/download/artifacts/context.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/admission-not-admissible-01"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/admission-not-admissible-01/download/artifacts/plan.json",
+      "path": "/api/runs/admission-not-admissible-01/download/artifacts/plan.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/admission-not-admissible-01"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/admission-not-admissible-01/download/artifacts/trace.json",
+      "path": "/api/runs/admission-not-admissible-01/download/artifacts/trace.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/admission-not-admissible-01"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/admission-not-admissible-01/download/integrity/pack.sha256",
+      "path": "/api/runs/admission-not-admissible-01/download/integrity/pack.sha256",
+      "status": 200,
+      "discovered_from": [
+        "/runs/admission-not-admissible-01"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/admission-not-admissible-01/download/integrity/sha256sums.txt",
+      "path": "/api/runs/admission-not-admissible-01/download/integrity/sha256sums.txt",
+      "status": 200,
+      "discovered_from": [
+        "/runs/admission-not-admissible-01"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/admission-not-admissible-01/download/manifest.json",
+      "path": "/api/runs/admission-not-admissible-01/download/manifest.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/admission-not-admissible-01"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/admission-not-admissible-01/download/timeline/events.ndjson",
+      "path": "/api/runs/admission-not-admissible-01/download/timeline/events.ndjson",
+      "status": 200,
+      "discovered_from": [
+        "/runs/admission-not-admissible-01"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/admission-not-admissible-01/files/artifacts/context.json",
+      "path": "/api/runs/admission-not-admissible-01/files/artifacts/context.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/admission-not-admissible-01"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/admission-not-admissible-01/files/artifacts/plan.json",
+      "path": "/api/runs/admission-not-admissible-01/files/artifacts/plan.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/admission-not-admissible-01"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/admission-not-admissible-01/files/artifacts/trace.json",
+      "path": "/api/runs/admission-not-admissible-01/files/artifacts/trace.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/admission-not-admissible-01"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/admission-not-admissible-01/files/integrity/pack.sha256",
+      "path": "/api/runs/admission-not-admissible-01/files/integrity/pack.sha256",
+      "status": 200,
+      "discovered_from": [
+        "/runs/admission-not-admissible-01"
+      ],
+      "is_internal": true,
+      "content_type": "text/plain"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/admission-not-admissible-01/files/integrity/sha256sums.txt",
+      "path": "/api/runs/admission-not-admissible-01/files/integrity/sha256sums.txt",
+      "status": 200,
+      "discovered_from": [
+        "/runs/admission-not-admissible-01"
+      ],
+      "is_internal": true,
+      "content_type": "text/plain"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/admission-not-admissible-01/files/manifest.json",
+      "path": "/api/runs/admission-not-admissible-01/files/manifest.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/admission-not-admissible-01"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/admission-not-admissible-01/files/timeline/events.ndjson",
+      "path": "/api/runs/admission-not-admissible-01/files/timeline/events.ndjson",
+      "status": 200,
+      "discovered_from": [
+        "/runs/admission-not-admissible-01"
+      ],
+      "is_internal": true,
+      "content_type": "application/x-ndjson"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d1-budget-fail-deny-missing-gate-v0.4/download-zip",
+      "path": "/api/runs/arb-d1-budget-fail-deny-missing-gate-v0.4/download-zip",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d1-budget-fail-deny-missing-gate-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/zip"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d1-budget-fail-deny-missing-gate-v0.4/download/artifacts/context.json",
+      "path": "/api/runs/arb-d1-budget-fail-deny-missing-gate-v0.4/download/artifacts/context.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d1-budget-fail-deny-missing-gate-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d1-budget-fail-deny-missing-gate-v0.4/download/artifacts/plan.json",
+      "path": "/api/runs/arb-d1-budget-fail-deny-missing-gate-v0.4/download/artifacts/plan.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d1-budget-fail-deny-missing-gate-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d1-budget-fail-deny-missing-gate-v0.4/download/artifacts/trace.json",
+      "path": "/api/runs/arb-d1-budget-fail-deny-missing-gate-v0.4/download/artifacts/trace.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d1-budget-fail-deny-missing-gate-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d1-budget-fail-deny-missing-gate-v0.4/download/integrity/pack.sha256",
+      "path": "/api/runs/arb-d1-budget-fail-deny-missing-gate-v0.4/download/integrity/pack.sha256",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d1-budget-fail-deny-missing-gate-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d1-budget-fail-deny-missing-gate-v0.4/download/integrity/sha256sums.txt",
+      "path": "/api/runs/arb-d1-budget-fail-deny-missing-gate-v0.4/download/integrity/sha256sums.txt",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d1-budget-fail-deny-missing-gate-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d1-budget-fail-deny-missing-gate-v0.4/download/manifest.json",
+      "path": "/api/runs/arb-d1-budget-fail-deny-missing-gate-v0.4/download/manifest.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d1-budget-fail-deny-missing-gate-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d1-budget-fail-deny-missing-gate-v0.4/download/timeline/events.ndjson",
+      "path": "/api/runs/arb-d1-budget-fail-deny-missing-gate-v0.4/download/timeline/events.ndjson",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d1-budget-fail-deny-missing-gate-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d1-budget-fail-deny-missing-gate-v0.4/files/artifacts/context.json",
+      "path": "/api/runs/arb-d1-budget-fail-deny-missing-gate-v0.4/files/artifacts/context.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d1-budget-fail-deny-missing-gate-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d1-budget-fail-deny-missing-gate-v0.4/files/artifacts/plan.json",
+      "path": "/api/runs/arb-d1-budget-fail-deny-missing-gate-v0.4/files/artifacts/plan.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d1-budget-fail-deny-missing-gate-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d1-budget-fail-deny-missing-gate-v0.4/files/artifacts/trace.json",
+      "path": "/api/runs/arb-d1-budget-fail-deny-missing-gate-v0.4/files/artifacts/trace.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d1-budget-fail-deny-missing-gate-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d1-budget-fail-deny-missing-gate-v0.4/files/integrity/pack.sha256",
+      "path": "/api/runs/arb-d1-budget-fail-deny-missing-gate-v0.4/files/integrity/pack.sha256",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d1-budget-fail-deny-missing-gate-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "text/plain"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d1-budget-fail-deny-missing-gate-v0.4/files/integrity/sha256sums.txt",
+      "path": "/api/runs/arb-d1-budget-fail-deny-missing-gate-v0.4/files/integrity/sha256sums.txt",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d1-budget-fail-deny-missing-gate-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "text/plain"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d1-budget-fail-deny-missing-gate-v0.4/files/manifest.json",
+      "path": "/api/runs/arb-d1-budget-fail-deny-missing-gate-v0.4/files/manifest.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d1-budget-fail-deny-missing-gate-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d1-budget-fail-deny-missing-gate-v0.4/files/timeline/events.ndjson",
+      "path": "/api/runs/arb-d1-budget-fail-deny-missing-gate-v0.4/files/timeline/events.ndjson",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d1-budget-fail-deny-missing-gate-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/x-ndjson"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d1-budget-fail-fixture-v0.3/download-zip",
+      "path": "/api/runs/arb-d1-budget-fail-fixture-v0.3/download-zip",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d1-budget-fail-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/zip"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d1-budget-fail-fixture-v0.3/download/artifacts/context.json",
+      "path": "/api/runs/arb-d1-budget-fail-fixture-v0.3/download/artifacts/context.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d1-budget-fail-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d1-budget-fail-fixture-v0.3/download/artifacts/plan.json",
+      "path": "/api/runs/arb-d1-budget-fail-fixture-v0.3/download/artifacts/plan.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d1-budget-fail-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d1-budget-fail-fixture-v0.3/download/artifacts/trace.json",
+      "path": "/api/runs/arb-d1-budget-fail-fixture-v0.3/download/artifacts/trace.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d1-budget-fail-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d1-budget-fail-fixture-v0.3/download/integrity/pack.sha256",
+      "path": "/api/runs/arb-d1-budget-fail-fixture-v0.3/download/integrity/pack.sha256",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d1-budget-fail-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d1-budget-fail-fixture-v0.3/download/integrity/sha256sums.txt",
+      "path": "/api/runs/arb-d1-budget-fail-fixture-v0.3/download/integrity/sha256sums.txt",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d1-budget-fail-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d1-budget-fail-fixture-v0.3/download/manifest.json",
+      "path": "/api/runs/arb-d1-budget-fail-fixture-v0.3/download/manifest.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d1-budget-fail-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d1-budget-fail-fixture-v0.3/download/timeline/events.ndjson",
+      "path": "/api/runs/arb-d1-budget-fail-fixture-v0.3/download/timeline/events.ndjson",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d1-budget-fail-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d1-budget-fail-fixture-v0.3/files/artifacts/context.json",
+      "path": "/api/runs/arb-d1-budget-fail-fixture-v0.3/files/artifacts/context.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d1-budget-fail-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d1-budget-fail-fixture-v0.3/files/artifacts/plan.json",
+      "path": "/api/runs/arb-d1-budget-fail-fixture-v0.3/files/artifacts/plan.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d1-budget-fail-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d1-budget-fail-fixture-v0.3/files/artifacts/trace.json",
+      "path": "/api/runs/arb-d1-budget-fail-fixture-v0.3/files/artifacts/trace.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d1-budget-fail-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d1-budget-fail-fixture-v0.3/files/integrity/pack.sha256",
+      "path": "/api/runs/arb-d1-budget-fail-fixture-v0.3/files/integrity/pack.sha256",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d1-budget-fail-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "text/plain"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d1-budget-fail-fixture-v0.3/files/integrity/sha256sums.txt",
+      "path": "/api/runs/arb-d1-budget-fail-fixture-v0.3/files/integrity/sha256sums.txt",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d1-budget-fail-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "text/plain"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d1-budget-fail-fixture-v0.3/files/manifest.json",
+      "path": "/api/runs/arb-d1-budget-fail-fixture-v0.3/files/manifest.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d1-budget-fail-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d1-budget-fail-fixture-v0.3/files/timeline/events.ndjson",
+      "path": "/api/runs/arb-d1-budget-fail-fixture-v0.3/files/timeline/events.ndjson",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d1-budget-fail-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/x-ndjson"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d1-budget-fail-outcome-invalid-v0.4/download-zip",
+      "path": "/api/runs/arb-d1-budget-fail-outcome-invalid-v0.4/download-zip",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d1-budget-fail-outcome-invalid-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/zip"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d1-budget-fail-outcome-invalid-v0.4/download/artifacts/context.json",
+      "path": "/api/runs/arb-d1-budget-fail-outcome-invalid-v0.4/download/artifacts/context.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d1-budget-fail-outcome-invalid-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d1-budget-fail-outcome-invalid-v0.4/download/artifacts/plan.json",
+      "path": "/api/runs/arb-d1-budget-fail-outcome-invalid-v0.4/download/artifacts/plan.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d1-budget-fail-outcome-invalid-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d1-budget-fail-outcome-invalid-v0.4/download/artifacts/trace.json",
+      "path": "/api/runs/arb-d1-budget-fail-outcome-invalid-v0.4/download/artifacts/trace.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d1-budget-fail-outcome-invalid-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d1-budget-fail-outcome-invalid-v0.4/download/integrity/pack.sha256",
+      "path": "/api/runs/arb-d1-budget-fail-outcome-invalid-v0.4/download/integrity/pack.sha256",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d1-budget-fail-outcome-invalid-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d1-budget-fail-outcome-invalid-v0.4/download/integrity/sha256sums.txt",
+      "path": "/api/runs/arb-d1-budget-fail-outcome-invalid-v0.4/download/integrity/sha256sums.txt",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d1-budget-fail-outcome-invalid-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d1-budget-fail-outcome-invalid-v0.4/download/manifest.json",
+      "path": "/api/runs/arb-d1-budget-fail-outcome-invalid-v0.4/download/manifest.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d1-budget-fail-outcome-invalid-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d1-budget-fail-outcome-invalid-v0.4/download/timeline/events.ndjson",
+      "path": "/api/runs/arb-d1-budget-fail-outcome-invalid-v0.4/download/timeline/events.ndjson",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d1-budget-fail-outcome-invalid-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d1-budget-fail-outcome-invalid-v0.4/files/artifacts/context.json",
+      "path": "/api/runs/arb-d1-budget-fail-outcome-invalid-v0.4/files/artifacts/context.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d1-budget-fail-outcome-invalid-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d1-budget-fail-outcome-invalid-v0.4/files/artifacts/plan.json",
+      "path": "/api/runs/arb-d1-budget-fail-outcome-invalid-v0.4/files/artifacts/plan.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d1-budget-fail-outcome-invalid-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d1-budget-fail-outcome-invalid-v0.4/files/artifacts/trace.json",
+      "path": "/api/runs/arb-d1-budget-fail-outcome-invalid-v0.4/files/artifacts/trace.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d1-budget-fail-outcome-invalid-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d1-budget-fail-outcome-invalid-v0.4/files/integrity/pack.sha256",
+      "path": "/api/runs/arb-d1-budget-fail-outcome-invalid-v0.4/files/integrity/pack.sha256",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d1-budget-fail-outcome-invalid-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "text/plain"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d1-budget-fail-outcome-invalid-v0.4/files/integrity/sha256sums.txt",
+      "path": "/api/runs/arb-d1-budget-fail-outcome-invalid-v0.4/files/integrity/sha256sums.txt",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d1-budget-fail-outcome-invalid-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "text/plain"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d1-budget-fail-outcome-invalid-v0.4/files/manifest.json",
+      "path": "/api/runs/arb-d1-budget-fail-outcome-invalid-v0.4/files/manifest.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d1-budget-fail-outcome-invalid-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d1-budget-fail-outcome-invalid-v0.4/files/timeline/events.ndjson",
+      "path": "/api/runs/arb-d1-budget-fail-outcome-invalid-v0.4/files/timeline/events.ndjson",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d1-budget-fail-outcome-invalid-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/x-ndjson"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d1-budget-pass-fixture-v0.3/download-zip",
+      "path": "/api/runs/arb-d1-budget-pass-fixture-v0.3/download-zip",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d1-budget-pass-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/zip"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d1-budget-pass-fixture-v0.3/download/artifacts/context.json",
+      "path": "/api/runs/arb-d1-budget-pass-fixture-v0.3/download/artifacts/context.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d1-budget-pass-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d1-budget-pass-fixture-v0.3/download/artifacts/plan.json",
+      "path": "/api/runs/arb-d1-budget-pass-fixture-v0.3/download/artifacts/plan.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d1-budget-pass-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d1-budget-pass-fixture-v0.3/download/artifacts/trace.json",
+      "path": "/api/runs/arb-d1-budget-pass-fixture-v0.3/download/artifacts/trace.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d1-budget-pass-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d1-budget-pass-fixture-v0.3/download/integrity/pack.sha256",
+      "path": "/api/runs/arb-d1-budget-pass-fixture-v0.3/download/integrity/pack.sha256",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d1-budget-pass-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d1-budget-pass-fixture-v0.3/download/integrity/sha256sums.txt",
+      "path": "/api/runs/arb-d1-budget-pass-fixture-v0.3/download/integrity/sha256sums.txt",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d1-budget-pass-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d1-budget-pass-fixture-v0.3/download/manifest.json",
+      "path": "/api/runs/arb-d1-budget-pass-fixture-v0.3/download/manifest.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d1-budget-pass-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d1-budget-pass-fixture-v0.3/download/timeline/events.ndjson",
+      "path": "/api/runs/arb-d1-budget-pass-fixture-v0.3/download/timeline/events.ndjson",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d1-budget-pass-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d1-budget-pass-fixture-v0.3/files/artifacts/context.json",
+      "path": "/api/runs/arb-d1-budget-pass-fixture-v0.3/files/artifacts/context.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d1-budget-pass-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d1-budget-pass-fixture-v0.3/files/artifacts/plan.json",
+      "path": "/api/runs/arb-d1-budget-pass-fixture-v0.3/files/artifacts/plan.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d1-budget-pass-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d1-budget-pass-fixture-v0.3/files/artifacts/trace.json",
+      "path": "/api/runs/arb-d1-budget-pass-fixture-v0.3/files/artifacts/trace.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d1-budget-pass-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d1-budget-pass-fixture-v0.3/files/integrity/pack.sha256",
+      "path": "/api/runs/arb-d1-budget-pass-fixture-v0.3/files/integrity/pack.sha256",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d1-budget-pass-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "text/plain"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d1-budget-pass-fixture-v0.3/files/integrity/sha256sums.txt",
+      "path": "/api/runs/arb-d1-budget-pass-fixture-v0.3/files/integrity/sha256sums.txt",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d1-budget-pass-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "text/plain"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d1-budget-pass-fixture-v0.3/files/manifest.json",
+      "path": "/api/runs/arb-d1-budget-pass-fixture-v0.3/files/manifest.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d1-budget-pass-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d1-budget-pass-fixture-v0.3/files/timeline/events.ndjson",
+      "path": "/api/runs/arb-d1-budget-pass-fixture-v0.3/files/timeline/events.ndjson",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d1-budget-pass-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/x-ndjson"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d2-lifecycle-fail-post-terminal-exec-v0.4/download-zip",
+      "path": "/api/runs/arb-d2-lifecycle-fail-post-terminal-exec-v0.4/download-zip",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d2-lifecycle-fail-post-terminal-exec-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/zip"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d2-lifecycle-fail-post-terminal-exec-v0.4/download/artifacts/context.json",
+      "path": "/api/runs/arb-d2-lifecycle-fail-post-terminal-exec-v0.4/download/artifacts/context.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d2-lifecycle-fail-post-terminal-exec-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d2-lifecycle-fail-post-terminal-exec-v0.4/download/artifacts/plan.json",
+      "path": "/api/runs/arb-d2-lifecycle-fail-post-terminal-exec-v0.4/download/artifacts/plan.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d2-lifecycle-fail-post-terminal-exec-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d2-lifecycle-fail-post-terminal-exec-v0.4/download/artifacts/trace.json",
+      "path": "/api/runs/arb-d2-lifecycle-fail-post-terminal-exec-v0.4/download/artifacts/trace.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d2-lifecycle-fail-post-terminal-exec-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d2-lifecycle-fail-post-terminal-exec-v0.4/download/integrity/pack.sha256",
+      "path": "/api/runs/arb-d2-lifecycle-fail-post-terminal-exec-v0.4/download/integrity/pack.sha256",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d2-lifecycle-fail-post-terminal-exec-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d2-lifecycle-fail-post-terminal-exec-v0.4/download/integrity/sha256sums.txt",
+      "path": "/api/runs/arb-d2-lifecycle-fail-post-terminal-exec-v0.4/download/integrity/sha256sums.txt",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d2-lifecycle-fail-post-terminal-exec-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d2-lifecycle-fail-post-terminal-exec-v0.4/download/manifest.json",
+      "path": "/api/runs/arb-d2-lifecycle-fail-post-terminal-exec-v0.4/download/manifest.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d2-lifecycle-fail-post-terminal-exec-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d2-lifecycle-fail-post-terminal-exec-v0.4/download/timeline/events.ndjson",
+      "path": "/api/runs/arb-d2-lifecycle-fail-post-terminal-exec-v0.4/download/timeline/events.ndjson",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d2-lifecycle-fail-post-terminal-exec-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d2-lifecycle-fail-post-terminal-exec-v0.4/files/artifacts/context.json",
+      "path": "/api/runs/arb-d2-lifecycle-fail-post-terminal-exec-v0.4/files/artifacts/context.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d2-lifecycle-fail-post-terminal-exec-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d2-lifecycle-fail-post-terminal-exec-v0.4/files/artifacts/plan.json",
+      "path": "/api/runs/arb-d2-lifecycle-fail-post-terminal-exec-v0.4/files/artifacts/plan.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d2-lifecycle-fail-post-terminal-exec-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d2-lifecycle-fail-post-terminal-exec-v0.4/files/artifacts/trace.json",
+      "path": "/api/runs/arb-d2-lifecycle-fail-post-terminal-exec-v0.4/files/artifacts/trace.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d2-lifecycle-fail-post-terminal-exec-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d2-lifecycle-fail-post-terminal-exec-v0.4/files/integrity/pack.sha256",
+      "path": "/api/runs/arb-d2-lifecycle-fail-post-terminal-exec-v0.4/files/integrity/pack.sha256",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d2-lifecycle-fail-post-terminal-exec-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "text/plain"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d2-lifecycle-fail-post-terminal-exec-v0.4/files/integrity/sha256sums.txt",
+      "path": "/api/runs/arb-d2-lifecycle-fail-post-terminal-exec-v0.4/files/integrity/sha256sums.txt",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d2-lifecycle-fail-post-terminal-exec-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "text/plain"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d2-lifecycle-fail-post-terminal-exec-v0.4/files/manifest.json",
+      "path": "/api/runs/arb-d2-lifecycle-fail-post-terminal-exec-v0.4/files/manifest.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d2-lifecycle-fail-post-terminal-exec-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d2-lifecycle-fail-post-terminal-exec-v0.4/files/timeline/events.ndjson",
+      "path": "/api/runs/arb-d2-lifecycle-fail-post-terminal-exec-v0.4/files/timeline/events.ndjson",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d2-lifecycle-fail-post-terminal-exec-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/x-ndjson"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d2-lifecycle-fail-terminal-state-invalid-v0.4/download-zip",
+      "path": "/api/runs/arb-d2-lifecycle-fail-terminal-state-invalid-v0.4/download-zip",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d2-lifecycle-fail-terminal-state-invalid-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/zip"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d2-lifecycle-fail-terminal-state-invalid-v0.4/download/artifacts/context.json",
+      "path": "/api/runs/arb-d2-lifecycle-fail-terminal-state-invalid-v0.4/download/artifacts/context.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d2-lifecycle-fail-terminal-state-invalid-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d2-lifecycle-fail-terminal-state-invalid-v0.4/download/artifacts/plan.json",
+      "path": "/api/runs/arb-d2-lifecycle-fail-terminal-state-invalid-v0.4/download/artifacts/plan.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d2-lifecycle-fail-terminal-state-invalid-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d2-lifecycle-fail-terminal-state-invalid-v0.4/download/artifacts/trace.json",
+      "path": "/api/runs/arb-d2-lifecycle-fail-terminal-state-invalid-v0.4/download/artifacts/trace.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d2-lifecycle-fail-terminal-state-invalid-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d2-lifecycle-fail-terminal-state-invalid-v0.4/download/integrity/pack.sha256",
+      "path": "/api/runs/arb-d2-lifecycle-fail-terminal-state-invalid-v0.4/download/integrity/pack.sha256",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d2-lifecycle-fail-terminal-state-invalid-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d2-lifecycle-fail-terminal-state-invalid-v0.4/download/integrity/sha256sums.txt",
+      "path": "/api/runs/arb-d2-lifecycle-fail-terminal-state-invalid-v0.4/download/integrity/sha256sums.txt",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d2-lifecycle-fail-terminal-state-invalid-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d2-lifecycle-fail-terminal-state-invalid-v0.4/download/manifest.json",
+      "path": "/api/runs/arb-d2-lifecycle-fail-terminal-state-invalid-v0.4/download/manifest.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d2-lifecycle-fail-terminal-state-invalid-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d2-lifecycle-fail-terminal-state-invalid-v0.4/download/timeline/events.ndjson",
+      "path": "/api/runs/arb-d2-lifecycle-fail-terminal-state-invalid-v0.4/download/timeline/events.ndjson",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d2-lifecycle-fail-terminal-state-invalid-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d2-lifecycle-fail-terminal-state-invalid-v0.4/files/artifacts/context.json",
+      "path": "/api/runs/arb-d2-lifecycle-fail-terminal-state-invalid-v0.4/files/artifacts/context.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d2-lifecycle-fail-terminal-state-invalid-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d2-lifecycle-fail-terminal-state-invalid-v0.4/files/artifacts/plan.json",
+      "path": "/api/runs/arb-d2-lifecycle-fail-terminal-state-invalid-v0.4/files/artifacts/plan.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d2-lifecycle-fail-terminal-state-invalid-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d2-lifecycle-fail-terminal-state-invalid-v0.4/files/artifacts/trace.json",
+      "path": "/api/runs/arb-d2-lifecycle-fail-terminal-state-invalid-v0.4/files/artifacts/trace.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d2-lifecycle-fail-terminal-state-invalid-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d2-lifecycle-fail-terminal-state-invalid-v0.4/files/integrity/pack.sha256",
+      "path": "/api/runs/arb-d2-lifecycle-fail-terminal-state-invalid-v0.4/files/integrity/pack.sha256",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d2-lifecycle-fail-terminal-state-invalid-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "text/plain"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d2-lifecycle-fail-terminal-state-invalid-v0.4/files/integrity/sha256sums.txt",
+      "path": "/api/runs/arb-d2-lifecycle-fail-terminal-state-invalid-v0.4/files/integrity/sha256sums.txt",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d2-lifecycle-fail-terminal-state-invalid-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "text/plain"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d2-lifecycle-fail-terminal-state-invalid-v0.4/files/manifest.json",
+      "path": "/api/runs/arb-d2-lifecycle-fail-terminal-state-invalid-v0.4/files/manifest.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d2-lifecycle-fail-terminal-state-invalid-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d2-lifecycle-fail-terminal-state-invalid-v0.4/files/timeline/events.ndjson",
+      "path": "/api/runs/arb-d2-lifecycle-fail-terminal-state-invalid-v0.4/files/timeline/events.ndjson",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d2-lifecycle-fail-terminal-state-invalid-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/x-ndjson"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d2-lifecycle-state-fail-fixture-v0.3/download-zip",
+      "path": "/api/runs/arb-d2-lifecycle-state-fail-fixture-v0.3/download-zip",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d2-lifecycle-state-fail-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/zip"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d2-lifecycle-state-fail-fixture-v0.3/download/artifacts/context.json",
+      "path": "/api/runs/arb-d2-lifecycle-state-fail-fixture-v0.3/download/artifacts/context.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d2-lifecycle-state-fail-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d2-lifecycle-state-fail-fixture-v0.3/download/artifacts/plan.json",
+      "path": "/api/runs/arb-d2-lifecycle-state-fail-fixture-v0.3/download/artifacts/plan.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d2-lifecycle-state-fail-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d2-lifecycle-state-fail-fixture-v0.3/download/artifacts/trace.json",
+      "path": "/api/runs/arb-d2-lifecycle-state-fail-fixture-v0.3/download/artifacts/trace.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d2-lifecycle-state-fail-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d2-lifecycle-state-fail-fixture-v0.3/download/integrity/pack.sha256",
+      "path": "/api/runs/arb-d2-lifecycle-state-fail-fixture-v0.3/download/integrity/pack.sha256",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d2-lifecycle-state-fail-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d2-lifecycle-state-fail-fixture-v0.3/download/integrity/sha256sums.txt",
+      "path": "/api/runs/arb-d2-lifecycle-state-fail-fixture-v0.3/download/integrity/sha256sums.txt",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d2-lifecycle-state-fail-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d2-lifecycle-state-fail-fixture-v0.3/download/manifest.json",
+      "path": "/api/runs/arb-d2-lifecycle-state-fail-fixture-v0.3/download/manifest.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d2-lifecycle-state-fail-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d2-lifecycle-state-fail-fixture-v0.3/download/timeline/events.ndjson",
+      "path": "/api/runs/arb-d2-lifecycle-state-fail-fixture-v0.3/download/timeline/events.ndjson",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d2-lifecycle-state-fail-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d2-lifecycle-state-fail-fixture-v0.3/files/artifacts/context.json",
+      "path": "/api/runs/arb-d2-lifecycle-state-fail-fixture-v0.3/files/artifacts/context.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d2-lifecycle-state-fail-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d2-lifecycle-state-fail-fixture-v0.3/files/artifacts/plan.json",
+      "path": "/api/runs/arb-d2-lifecycle-state-fail-fixture-v0.3/files/artifacts/plan.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d2-lifecycle-state-fail-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d2-lifecycle-state-fail-fixture-v0.3/files/artifacts/trace.json",
+      "path": "/api/runs/arb-d2-lifecycle-state-fail-fixture-v0.3/files/artifacts/trace.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d2-lifecycle-state-fail-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d2-lifecycle-state-fail-fixture-v0.3/files/integrity/pack.sha256",
+      "path": "/api/runs/arb-d2-lifecycle-state-fail-fixture-v0.3/files/integrity/pack.sha256",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d2-lifecycle-state-fail-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "text/plain"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d2-lifecycle-state-fail-fixture-v0.3/files/integrity/sha256sums.txt",
+      "path": "/api/runs/arb-d2-lifecycle-state-fail-fixture-v0.3/files/integrity/sha256sums.txt",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d2-lifecycle-state-fail-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "text/plain"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d2-lifecycle-state-fail-fixture-v0.3/files/manifest.json",
+      "path": "/api/runs/arb-d2-lifecycle-state-fail-fixture-v0.3/files/manifest.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d2-lifecycle-state-fail-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d2-lifecycle-state-fail-fixture-v0.3/files/timeline/events.ndjson",
+      "path": "/api/runs/arb-d2-lifecycle-state-fail-fixture-v0.3/files/timeline/events.ndjson",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d2-lifecycle-state-fail-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/x-ndjson"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d2-lifecycle-state-pass-fixture-v0.3/download-zip",
+      "path": "/api/runs/arb-d2-lifecycle-state-pass-fixture-v0.3/download-zip",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d2-lifecycle-state-pass-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/zip"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d2-lifecycle-state-pass-fixture-v0.3/download/artifacts/context.json",
+      "path": "/api/runs/arb-d2-lifecycle-state-pass-fixture-v0.3/download/artifacts/context.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d2-lifecycle-state-pass-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d2-lifecycle-state-pass-fixture-v0.3/download/artifacts/plan.json",
+      "path": "/api/runs/arb-d2-lifecycle-state-pass-fixture-v0.3/download/artifacts/plan.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d2-lifecycle-state-pass-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d2-lifecycle-state-pass-fixture-v0.3/download/artifacts/trace.json",
+      "path": "/api/runs/arb-d2-lifecycle-state-pass-fixture-v0.3/download/artifacts/trace.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d2-lifecycle-state-pass-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d2-lifecycle-state-pass-fixture-v0.3/download/integrity/pack.sha256",
+      "path": "/api/runs/arb-d2-lifecycle-state-pass-fixture-v0.3/download/integrity/pack.sha256",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d2-lifecycle-state-pass-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d2-lifecycle-state-pass-fixture-v0.3/download/integrity/sha256sums.txt",
+      "path": "/api/runs/arb-d2-lifecycle-state-pass-fixture-v0.3/download/integrity/sha256sums.txt",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d2-lifecycle-state-pass-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d2-lifecycle-state-pass-fixture-v0.3/download/manifest.json",
+      "path": "/api/runs/arb-d2-lifecycle-state-pass-fixture-v0.3/download/manifest.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d2-lifecycle-state-pass-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d2-lifecycle-state-pass-fixture-v0.3/download/timeline/events.ndjson",
+      "path": "/api/runs/arb-d2-lifecycle-state-pass-fixture-v0.3/download/timeline/events.ndjson",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d2-lifecycle-state-pass-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d2-lifecycle-state-pass-fixture-v0.3/files/artifacts/context.json",
+      "path": "/api/runs/arb-d2-lifecycle-state-pass-fixture-v0.3/files/artifacts/context.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d2-lifecycle-state-pass-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d2-lifecycle-state-pass-fixture-v0.3/files/artifacts/plan.json",
+      "path": "/api/runs/arb-d2-lifecycle-state-pass-fixture-v0.3/files/artifacts/plan.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d2-lifecycle-state-pass-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d2-lifecycle-state-pass-fixture-v0.3/files/artifacts/trace.json",
+      "path": "/api/runs/arb-d2-lifecycle-state-pass-fixture-v0.3/files/artifacts/trace.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d2-lifecycle-state-pass-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d2-lifecycle-state-pass-fixture-v0.3/files/integrity/pack.sha256",
+      "path": "/api/runs/arb-d2-lifecycle-state-pass-fixture-v0.3/files/integrity/pack.sha256",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d2-lifecycle-state-pass-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "text/plain"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d2-lifecycle-state-pass-fixture-v0.3/files/integrity/sha256sums.txt",
+      "path": "/api/runs/arb-d2-lifecycle-state-pass-fixture-v0.3/files/integrity/sha256sums.txt",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d2-lifecycle-state-pass-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "text/plain"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d2-lifecycle-state-pass-fixture-v0.3/files/manifest.json",
+      "path": "/api/runs/arb-d2-lifecycle-state-pass-fixture-v0.3/files/manifest.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d2-lifecycle-state-pass-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d2-lifecycle-state-pass-fixture-v0.3/files/timeline/events.ndjson",
+      "path": "/api/runs/arb-d2-lifecycle-state-pass-fixture-v0.3/files/timeline/events.ndjson",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d2-lifecycle-state-pass-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/x-ndjson"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d3-authz-decision-fail-fixture-v0.3/download-zip",
+      "path": "/api/runs/arb-d3-authz-decision-fail-fixture-v0.3/download-zip",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d3-authz-decision-fail-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/zip"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d3-authz-decision-fail-fixture-v0.3/download/artifacts/context.json",
+      "path": "/api/runs/arb-d3-authz-decision-fail-fixture-v0.3/download/artifacts/context.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d3-authz-decision-fail-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d3-authz-decision-fail-fixture-v0.3/download/artifacts/plan.json",
+      "path": "/api/runs/arb-d3-authz-decision-fail-fixture-v0.3/download/artifacts/plan.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d3-authz-decision-fail-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d3-authz-decision-fail-fixture-v0.3/download/artifacts/trace.json",
+      "path": "/api/runs/arb-d3-authz-decision-fail-fixture-v0.3/download/artifacts/trace.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d3-authz-decision-fail-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d3-authz-decision-fail-fixture-v0.3/download/integrity/pack.sha256",
+      "path": "/api/runs/arb-d3-authz-decision-fail-fixture-v0.3/download/integrity/pack.sha256",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d3-authz-decision-fail-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d3-authz-decision-fail-fixture-v0.3/download/integrity/sha256sums.txt",
+      "path": "/api/runs/arb-d3-authz-decision-fail-fixture-v0.3/download/integrity/sha256sums.txt",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d3-authz-decision-fail-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d3-authz-decision-fail-fixture-v0.3/download/manifest.json",
+      "path": "/api/runs/arb-d3-authz-decision-fail-fixture-v0.3/download/manifest.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d3-authz-decision-fail-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d3-authz-decision-fail-fixture-v0.3/download/timeline/events.ndjson",
+      "path": "/api/runs/arb-d3-authz-decision-fail-fixture-v0.3/download/timeline/events.ndjson",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d3-authz-decision-fail-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d3-authz-decision-fail-fixture-v0.3/files/artifacts/context.json",
+      "path": "/api/runs/arb-d3-authz-decision-fail-fixture-v0.3/files/artifacts/context.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d3-authz-decision-fail-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d3-authz-decision-fail-fixture-v0.3/files/artifacts/plan.json",
+      "path": "/api/runs/arb-d3-authz-decision-fail-fixture-v0.3/files/artifacts/plan.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d3-authz-decision-fail-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d3-authz-decision-fail-fixture-v0.3/files/artifacts/trace.json",
+      "path": "/api/runs/arb-d3-authz-decision-fail-fixture-v0.3/files/artifacts/trace.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d3-authz-decision-fail-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d3-authz-decision-fail-fixture-v0.3/files/integrity/pack.sha256",
+      "path": "/api/runs/arb-d3-authz-decision-fail-fixture-v0.3/files/integrity/pack.sha256",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d3-authz-decision-fail-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "text/plain"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d3-authz-decision-fail-fixture-v0.3/files/integrity/sha256sums.txt",
+      "path": "/api/runs/arb-d3-authz-decision-fail-fixture-v0.3/files/integrity/sha256sums.txt",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d3-authz-decision-fail-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "text/plain"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d3-authz-decision-fail-fixture-v0.3/files/manifest.json",
+      "path": "/api/runs/arb-d3-authz-decision-fail-fixture-v0.3/files/manifest.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d3-authz-decision-fail-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d3-authz-decision-fail-fixture-v0.3/files/timeline/events.ndjson",
+      "path": "/api/runs/arb-d3-authz-decision-fail-fixture-v0.3/files/timeline/events.ndjson",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d3-authz-decision-fail-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/x-ndjson"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d3-authz-decision-pass-fixture-v0.3/download-zip",
+      "path": "/api/runs/arb-d3-authz-decision-pass-fixture-v0.3/download-zip",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d3-authz-decision-pass-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/zip"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d3-authz-decision-pass-fixture-v0.3/download/artifacts/context.json",
+      "path": "/api/runs/arb-d3-authz-decision-pass-fixture-v0.3/download/artifacts/context.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d3-authz-decision-pass-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d3-authz-decision-pass-fixture-v0.3/download/artifacts/plan.json",
+      "path": "/api/runs/arb-d3-authz-decision-pass-fixture-v0.3/download/artifacts/plan.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d3-authz-decision-pass-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d3-authz-decision-pass-fixture-v0.3/download/artifacts/trace.json",
+      "path": "/api/runs/arb-d3-authz-decision-pass-fixture-v0.3/download/artifacts/trace.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d3-authz-decision-pass-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d3-authz-decision-pass-fixture-v0.3/download/integrity/pack.sha256",
+      "path": "/api/runs/arb-d3-authz-decision-pass-fixture-v0.3/download/integrity/pack.sha256",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d3-authz-decision-pass-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d3-authz-decision-pass-fixture-v0.3/download/integrity/sha256sums.txt",
+      "path": "/api/runs/arb-d3-authz-decision-pass-fixture-v0.3/download/integrity/sha256sums.txt",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d3-authz-decision-pass-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d3-authz-decision-pass-fixture-v0.3/download/manifest.json",
+      "path": "/api/runs/arb-d3-authz-decision-pass-fixture-v0.3/download/manifest.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d3-authz-decision-pass-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d3-authz-decision-pass-fixture-v0.3/download/timeline/events.ndjson",
+      "path": "/api/runs/arb-d3-authz-decision-pass-fixture-v0.3/download/timeline/events.ndjson",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d3-authz-decision-pass-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d3-authz-decision-pass-fixture-v0.3/files/artifacts/context.json",
+      "path": "/api/runs/arb-d3-authz-decision-pass-fixture-v0.3/files/artifacts/context.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d3-authz-decision-pass-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d3-authz-decision-pass-fixture-v0.3/files/artifacts/plan.json",
+      "path": "/api/runs/arb-d3-authz-decision-pass-fixture-v0.3/files/artifacts/plan.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d3-authz-decision-pass-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d3-authz-decision-pass-fixture-v0.3/files/artifacts/trace.json",
+      "path": "/api/runs/arb-d3-authz-decision-pass-fixture-v0.3/files/artifacts/trace.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d3-authz-decision-pass-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d3-authz-decision-pass-fixture-v0.3/files/integrity/pack.sha256",
+      "path": "/api/runs/arb-d3-authz-decision-pass-fixture-v0.3/files/integrity/pack.sha256",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d3-authz-decision-pass-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "text/plain"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d3-authz-decision-pass-fixture-v0.3/files/integrity/sha256sums.txt",
+      "path": "/api/runs/arb-d3-authz-decision-pass-fixture-v0.3/files/integrity/sha256sums.txt",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d3-authz-decision-pass-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "text/plain"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d3-authz-decision-pass-fixture-v0.3/files/manifest.json",
+      "path": "/api/runs/arb-d3-authz-decision-pass-fixture-v0.3/files/manifest.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d3-authz-decision-pass-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d3-authz-decision-pass-fixture-v0.3/files/timeline/events.ndjson",
+      "path": "/api/runs/arb-d3-authz-decision-pass-fixture-v0.3/files/timeline/events.ndjson",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d3-authz-decision-pass-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/x-ndjson"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d3-authz-fail-deny-no-confirm-v0.4/download-zip",
+      "path": "/api/runs/arb-d3-authz-fail-deny-no-confirm-v0.4/download-zip",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d3-authz-fail-deny-no-confirm-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/zip"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d3-authz-fail-deny-no-confirm-v0.4/download/artifacts/context.json",
+      "path": "/api/runs/arb-d3-authz-fail-deny-no-confirm-v0.4/download/artifacts/context.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d3-authz-fail-deny-no-confirm-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d3-authz-fail-deny-no-confirm-v0.4/download/artifacts/plan.json",
+      "path": "/api/runs/arb-d3-authz-fail-deny-no-confirm-v0.4/download/artifacts/plan.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d3-authz-fail-deny-no-confirm-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d3-authz-fail-deny-no-confirm-v0.4/download/artifacts/trace.json",
+      "path": "/api/runs/arb-d3-authz-fail-deny-no-confirm-v0.4/download/artifacts/trace.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d3-authz-fail-deny-no-confirm-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d3-authz-fail-deny-no-confirm-v0.4/download/integrity/pack.sha256",
+      "path": "/api/runs/arb-d3-authz-fail-deny-no-confirm-v0.4/download/integrity/pack.sha256",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d3-authz-fail-deny-no-confirm-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d3-authz-fail-deny-no-confirm-v0.4/download/integrity/sha256sums.txt",
+      "path": "/api/runs/arb-d3-authz-fail-deny-no-confirm-v0.4/download/integrity/sha256sums.txt",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d3-authz-fail-deny-no-confirm-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d3-authz-fail-deny-no-confirm-v0.4/download/manifest.json",
+      "path": "/api/runs/arb-d3-authz-fail-deny-no-confirm-v0.4/download/manifest.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d3-authz-fail-deny-no-confirm-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d3-authz-fail-deny-no-confirm-v0.4/download/timeline/events.ndjson",
+      "path": "/api/runs/arb-d3-authz-fail-deny-no-confirm-v0.4/download/timeline/events.ndjson",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d3-authz-fail-deny-no-confirm-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d3-authz-fail-deny-no-confirm-v0.4/files/artifacts/context.json",
+      "path": "/api/runs/arb-d3-authz-fail-deny-no-confirm-v0.4/files/artifacts/context.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d3-authz-fail-deny-no-confirm-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d3-authz-fail-deny-no-confirm-v0.4/files/artifacts/plan.json",
+      "path": "/api/runs/arb-d3-authz-fail-deny-no-confirm-v0.4/files/artifacts/plan.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d3-authz-fail-deny-no-confirm-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d3-authz-fail-deny-no-confirm-v0.4/files/artifacts/trace.json",
+      "path": "/api/runs/arb-d3-authz-fail-deny-no-confirm-v0.4/files/artifacts/trace.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d3-authz-fail-deny-no-confirm-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d3-authz-fail-deny-no-confirm-v0.4/files/integrity/pack.sha256",
+      "path": "/api/runs/arb-d3-authz-fail-deny-no-confirm-v0.4/files/integrity/pack.sha256",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d3-authz-fail-deny-no-confirm-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "text/plain"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d3-authz-fail-deny-no-confirm-v0.4/files/integrity/sha256sums.txt",
+      "path": "/api/runs/arb-d3-authz-fail-deny-no-confirm-v0.4/files/integrity/sha256sums.txt",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d3-authz-fail-deny-no-confirm-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "text/plain"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d3-authz-fail-deny-no-confirm-v0.4/files/manifest.json",
+      "path": "/api/runs/arb-d3-authz-fail-deny-no-confirm-v0.4/files/manifest.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d3-authz-fail-deny-no-confirm-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d3-authz-fail-deny-no-confirm-v0.4/files/timeline/events.ndjson",
+      "path": "/api/runs/arb-d3-authz-fail-deny-no-confirm-v0.4/files/timeline/events.ndjson",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d3-authz-fail-deny-no-confirm-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/x-ndjson"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d3-authz-fail-sra-incomplete-v0.4/download-zip",
+      "path": "/api/runs/arb-d3-authz-fail-sra-incomplete-v0.4/download-zip",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d3-authz-fail-sra-incomplete-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/zip"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d3-authz-fail-sra-incomplete-v0.4/download/artifacts/context.json",
+      "path": "/api/runs/arb-d3-authz-fail-sra-incomplete-v0.4/download/artifacts/context.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d3-authz-fail-sra-incomplete-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d3-authz-fail-sra-incomplete-v0.4/download/artifacts/plan.json",
+      "path": "/api/runs/arb-d3-authz-fail-sra-incomplete-v0.4/download/artifacts/plan.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d3-authz-fail-sra-incomplete-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d3-authz-fail-sra-incomplete-v0.4/download/artifacts/trace.json",
+      "path": "/api/runs/arb-d3-authz-fail-sra-incomplete-v0.4/download/artifacts/trace.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d3-authz-fail-sra-incomplete-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d3-authz-fail-sra-incomplete-v0.4/download/integrity/pack.sha256",
+      "path": "/api/runs/arb-d3-authz-fail-sra-incomplete-v0.4/download/integrity/pack.sha256",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d3-authz-fail-sra-incomplete-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d3-authz-fail-sra-incomplete-v0.4/download/integrity/sha256sums.txt",
+      "path": "/api/runs/arb-d3-authz-fail-sra-incomplete-v0.4/download/integrity/sha256sums.txt",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d3-authz-fail-sra-incomplete-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d3-authz-fail-sra-incomplete-v0.4/download/manifest.json",
+      "path": "/api/runs/arb-d3-authz-fail-sra-incomplete-v0.4/download/manifest.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d3-authz-fail-sra-incomplete-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d3-authz-fail-sra-incomplete-v0.4/download/timeline/events.ndjson",
+      "path": "/api/runs/arb-d3-authz-fail-sra-incomplete-v0.4/download/timeline/events.ndjson",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d3-authz-fail-sra-incomplete-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d3-authz-fail-sra-incomplete-v0.4/files/artifacts/context.json",
+      "path": "/api/runs/arb-d3-authz-fail-sra-incomplete-v0.4/files/artifacts/context.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d3-authz-fail-sra-incomplete-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d3-authz-fail-sra-incomplete-v0.4/files/artifacts/plan.json",
+      "path": "/api/runs/arb-d3-authz-fail-sra-incomplete-v0.4/files/artifacts/plan.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d3-authz-fail-sra-incomplete-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d3-authz-fail-sra-incomplete-v0.4/files/artifacts/trace.json",
+      "path": "/api/runs/arb-d3-authz-fail-sra-incomplete-v0.4/files/artifacts/trace.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d3-authz-fail-sra-incomplete-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d3-authz-fail-sra-incomplete-v0.4/files/integrity/pack.sha256",
+      "path": "/api/runs/arb-d3-authz-fail-sra-incomplete-v0.4/files/integrity/pack.sha256",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d3-authz-fail-sra-incomplete-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "text/plain"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d3-authz-fail-sra-incomplete-v0.4/files/integrity/sha256sums.txt",
+      "path": "/api/runs/arb-d3-authz-fail-sra-incomplete-v0.4/files/integrity/sha256sums.txt",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d3-authz-fail-sra-incomplete-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "text/plain"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d3-authz-fail-sra-incomplete-v0.4/files/manifest.json",
+      "path": "/api/runs/arb-d3-authz-fail-sra-incomplete-v0.4/files/manifest.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d3-authz-fail-sra-incomplete-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d3-authz-fail-sra-incomplete-v0.4/files/timeline/events.ndjson",
+      "path": "/api/runs/arb-d3-authz-fail-sra-incomplete-v0.4/files/timeline/events.ndjson",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d3-authz-fail-sra-incomplete-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/x-ndjson"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d4-termination-fail-reason-invalid-v0.4/download-zip",
+      "path": "/api/runs/arb-d4-termination-fail-reason-invalid-v0.4/download-zip",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d4-termination-fail-reason-invalid-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/zip"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d4-termination-fail-reason-invalid-v0.4/download/artifacts/context.json",
+      "path": "/api/runs/arb-d4-termination-fail-reason-invalid-v0.4/download/artifacts/context.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d4-termination-fail-reason-invalid-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d4-termination-fail-reason-invalid-v0.4/download/artifacts/plan.json",
+      "path": "/api/runs/arb-d4-termination-fail-reason-invalid-v0.4/download/artifacts/plan.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d4-termination-fail-reason-invalid-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d4-termination-fail-reason-invalid-v0.4/download/artifacts/trace.json",
+      "path": "/api/runs/arb-d4-termination-fail-reason-invalid-v0.4/download/artifacts/trace.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d4-termination-fail-reason-invalid-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d4-termination-fail-reason-invalid-v0.4/download/integrity/pack.sha256",
+      "path": "/api/runs/arb-d4-termination-fail-reason-invalid-v0.4/download/integrity/pack.sha256",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d4-termination-fail-reason-invalid-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d4-termination-fail-reason-invalid-v0.4/download/integrity/sha256sums.txt",
+      "path": "/api/runs/arb-d4-termination-fail-reason-invalid-v0.4/download/integrity/sha256sums.txt",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d4-termination-fail-reason-invalid-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d4-termination-fail-reason-invalid-v0.4/download/manifest.json",
+      "path": "/api/runs/arb-d4-termination-fail-reason-invalid-v0.4/download/manifest.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d4-termination-fail-reason-invalid-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d4-termination-fail-reason-invalid-v0.4/download/timeline/events.ndjson",
+      "path": "/api/runs/arb-d4-termination-fail-reason-invalid-v0.4/download/timeline/events.ndjson",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d4-termination-fail-reason-invalid-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d4-termination-fail-reason-invalid-v0.4/files/artifacts/context.json",
+      "path": "/api/runs/arb-d4-termination-fail-reason-invalid-v0.4/files/artifacts/context.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d4-termination-fail-reason-invalid-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d4-termination-fail-reason-invalid-v0.4/files/artifacts/plan.json",
+      "path": "/api/runs/arb-d4-termination-fail-reason-invalid-v0.4/files/artifacts/plan.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d4-termination-fail-reason-invalid-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d4-termination-fail-reason-invalid-v0.4/files/artifacts/trace.json",
+      "path": "/api/runs/arb-d4-termination-fail-reason-invalid-v0.4/files/artifacts/trace.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d4-termination-fail-reason-invalid-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d4-termination-fail-reason-invalid-v0.4/files/integrity/pack.sha256",
+      "path": "/api/runs/arb-d4-termination-fail-reason-invalid-v0.4/files/integrity/pack.sha256",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d4-termination-fail-reason-invalid-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "text/plain"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d4-termination-fail-reason-invalid-v0.4/files/integrity/sha256sums.txt",
+      "path": "/api/runs/arb-d4-termination-fail-reason-invalid-v0.4/files/integrity/sha256sums.txt",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d4-termination-fail-reason-invalid-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "text/plain"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d4-termination-fail-reason-invalid-v0.4/files/manifest.json",
+      "path": "/api/runs/arb-d4-termination-fail-reason-invalid-v0.4/files/manifest.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d4-termination-fail-reason-invalid-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d4-termination-fail-reason-invalid-v0.4/files/timeline/events.ndjson",
+      "path": "/api/runs/arb-d4-termination-fail-reason-invalid-v0.4/files/timeline/events.ndjson",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d4-termination-fail-reason-invalid-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/x-ndjson"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d4-termination-fail-uncontrolled-recovery-v0.4/download-zip",
+      "path": "/api/runs/arb-d4-termination-fail-uncontrolled-recovery-v0.4/download-zip",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d4-termination-fail-uncontrolled-recovery-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/zip"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d4-termination-fail-uncontrolled-recovery-v0.4/download/artifacts/context.json",
+      "path": "/api/runs/arb-d4-termination-fail-uncontrolled-recovery-v0.4/download/artifacts/context.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d4-termination-fail-uncontrolled-recovery-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d4-termination-fail-uncontrolled-recovery-v0.4/download/artifacts/plan.json",
+      "path": "/api/runs/arb-d4-termination-fail-uncontrolled-recovery-v0.4/download/artifacts/plan.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d4-termination-fail-uncontrolled-recovery-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d4-termination-fail-uncontrolled-recovery-v0.4/download/artifacts/trace.json",
+      "path": "/api/runs/arb-d4-termination-fail-uncontrolled-recovery-v0.4/download/artifacts/trace.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d4-termination-fail-uncontrolled-recovery-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d4-termination-fail-uncontrolled-recovery-v0.4/download/integrity/pack.sha256",
+      "path": "/api/runs/arb-d4-termination-fail-uncontrolled-recovery-v0.4/download/integrity/pack.sha256",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d4-termination-fail-uncontrolled-recovery-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d4-termination-fail-uncontrolled-recovery-v0.4/download/integrity/sha256sums.txt",
+      "path": "/api/runs/arb-d4-termination-fail-uncontrolled-recovery-v0.4/download/integrity/sha256sums.txt",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d4-termination-fail-uncontrolled-recovery-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d4-termination-fail-uncontrolled-recovery-v0.4/download/manifest.json",
+      "path": "/api/runs/arb-d4-termination-fail-uncontrolled-recovery-v0.4/download/manifest.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d4-termination-fail-uncontrolled-recovery-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d4-termination-fail-uncontrolled-recovery-v0.4/download/timeline/events.ndjson",
+      "path": "/api/runs/arb-d4-termination-fail-uncontrolled-recovery-v0.4/download/timeline/events.ndjson",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d4-termination-fail-uncontrolled-recovery-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d4-termination-fail-uncontrolled-recovery-v0.4/files/artifacts/context.json",
+      "path": "/api/runs/arb-d4-termination-fail-uncontrolled-recovery-v0.4/files/artifacts/context.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d4-termination-fail-uncontrolled-recovery-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d4-termination-fail-uncontrolled-recovery-v0.4/files/artifacts/plan.json",
+      "path": "/api/runs/arb-d4-termination-fail-uncontrolled-recovery-v0.4/files/artifacts/plan.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d4-termination-fail-uncontrolled-recovery-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d4-termination-fail-uncontrolled-recovery-v0.4/files/artifacts/trace.json",
+      "path": "/api/runs/arb-d4-termination-fail-uncontrolled-recovery-v0.4/files/artifacts/trace.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d4-termination-fail-uncontrolled-recovery-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d4-termination-fail-uncontrolled-recovery-v0.4/files/integrity/pack.sha256",
+      "path": "/api/runs/arb-d4-termination-fail-uncontrolled-recovery-v0.4/files/integrity/pack.sha256",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d4-termination-fail-uncontrolled-recovery-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "text/plain"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d4-termination-fail-uncontrolled-recovery-v0.4/files/integrity/sha256sums.txt",
+      "path": "/api/runs/arb-d4-termination-fail-uncontrolled-recovery-v0.4/files/integrity/sha256sums.txt",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d4-termination-fail-uncontrolled-recovery-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "text/plain"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d4-termination-fail-uncontrolled-recovery-v0.4/files/manifest.json",
+      "path": "/api/runs/arb-d4-termination-fail-uncontrolled-recovery-v0.4/files/manifest.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d4-termination-fail-uncontrolled-recovery-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d4-termination-fail-uncontrolled-recovery-v0.4/files/timeline/events.ndjson",
+      "path": "/api/runs/arb-d4-termination-fail-uncontrolled-recovery-v0.4/files/timeline/events.ndjson",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d4-termination-fail-uncontrolled-recovery-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "application/x-ndjson"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d4-termination-recovery-fail-fixture-v0.3/download-zip",
+      "path": "/api/runs/arb-d4-termination-recovery-fail-fixture-v0.3/download-zip",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d4-termination-recovery-fail-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/zip"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d4-termination-recovery-fail-fixture-v0.3/download/artifacts/context.json",
+      "path": "/api/runs/arb-d4-termination-recovery-fail-fixture-v0.3/download/artifacts/context.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d4-termination-recovery-fail-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d4-termination-recovery-fail-fixture-v0.3/download/artifacts/plan.json",
+      "path": "/api/runs/arb-d4-termination-recovery-fail-fixture-v0.3/download/artifacts/plan.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d4-termination-recovery-fail-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d4-termination-recovery-fail-fixture-v0.3/download/artifacts/trace.json",
+      "path": "/api/runs/arb-d4-termination-recovery-fail-fixture-v0.3/download/artifacts/trace.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d4-termination-recovery-fail-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d4-termination-recovery-fail-fixture-v0.3/download/integrity/pack.sha256",
+      "path": "/api/runs/arb-d4-termination-recovery-fail-fixture-v0.3/download/integrity/pack.sha256",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d4-termination-recovery-fail-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d4-termination-recovery-fail-fixture-v0.3/download/integrity/sha256sums.txt",
+      "path": "/api/runs/arb-d4-termination-recovery-fail-fixture-v0.3/download/integrity/sha256sums.txt",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d4-termination-recovery-fail-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d4-termination-recovery-fail-fixture-v0.3/download/manifest.json",
+      "path": "/api/runs/arb-d4-termination-recovery-fail-fixture-v0.3/download/manifest.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d4-termination-recovery-fail-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d4-termination-recovery-fail-fixture-v0.3/download/timeline/events.ndjson",
+      "path": "/api/runs/arb-d4-termination-recovery-fail-fixture-v0.3/download/timeline/events.ndjson",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d4-termination-recovery-fail-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d4-termination-recovery-fail-fixture-v0.3/files/artifacts/context.json",
+      "path": "/api/runs/arb-d4-termination-recovery-fail-fixture-v0.3/files/artifacts/context.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d4-termination-recovery-fail-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d4-termination-recovery-fail-fixture-v0.3/files/artifacts/plan.json",
+      "path": "/api/runs/arb-d4-termination-recovery-fail-fixture-v0.3/files/artifacts/plan.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d4-termination-recovery-fail-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d4-termination-recovery-fail-fixture-v0.3/files/artifacts/trace.json",
+      "path": "/api/runs/arb-d4-termination-recovery-fail-fixture-v0.3/files/artifacts/trace.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d4-termination-recovery-fail-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d4-termination-recovery-fail-fixture-v0.3/files/integrity/pack.sha256",
+      "path": "/api/runs/arb-d4-termination-recovery-fail-fixture-v0.3/files/integrity/pack.sha256",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d4-termination-recovery-fail-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "text/plain"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d4-termination-recovery-fail-fixture-v0.3/files/integrity/sha256sums.txt",
+      "path": "/api/runs/arb-d4-termination-recovery-fail-fixture-v0.3/files/integrity/sha256sums.txt",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d4-termination-recovery-fail-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "text/plain"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d4-termination-recovery-fail-fixture-v0.3/files/manifest.json",
+      "path": "/api/runs/arb-d4-termination-recovery-fail-fixture-v0.3/files/manifest.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d4-termination-recovery-fail-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d4-termination-recovery-fail-fixture-v0.3/files/timeline/events.ndjson",
+      "path": "/api/runs/arb-d4-termination-recovery-fail-fixture-v0.3/files/timeline/events.ndjson",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d4-termination-recovery-fail-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/x-ndjson"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d4-termination-recovery-pass-fixture-v0.3/download-zip",
+      "path": "/api/runs/arb-d4-termination-recovery-pass-fixture-v0.3/download-zip",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d4-termination-recovery-pass-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/zip"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d4-termination-recovery-pass-fixture-v0.3/download/artifacts/context.json",
+      "path": "/api/runs/arb-d4-termination-recovery-pass-fixture-v0.3/download/artifacts/context.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d4-termination-recovery-pass-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d4-termination-recovery-pass-fixture-v0.3/download/artifacts/plan.json",
+      "path": "/api/runs/arb-d4-termination-recovery-pass-fixture-v0.3/download/artifacts/plan.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d4-termination-recovery-pass-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d4-termination-recovery-pass-fixture-v0.3/download/artifacts/trace.json",
+      "path": "/api/runs/arb-d4-termination-recovery-pass-fixture-v0.3/download/artifacts/trace.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d4-termination-recovery-pass-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d4-termination-recovery-pass-fixture-v0.3/download/integrity/pack.sha256",
+      "path": "/api/runs/arb-d4-termination-recovery-pass-fixture-v0.3/download/integrity/pack.sha256",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d4-termination-recovery-pass-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d4-termination-recovery-pass-fixture-v0.3/download/integrity/sha256sums.txt",
+      "path": "/api/runs/arb-d4-termination-recovery-pass-fixture-v0.3/download/integrity/sha256sums.txt",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d4-termination-recovery-pass-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d4-termination-recovery-pass-fixture-v0.3/download/manifest.json",
+      "path": "/api/runs/arb-d4-termination-recovery-pass-fixture-v0.3/download/manifest.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d4-termination-recovery-pass-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d4-termination-recovery-pass-fixture-v0.3/download/timeline/events.ndjson",
+      "path": "/api/runs/arb-d4-termination-recovery-pass-fixture-v0.3/download/timeline/events.ndjson",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d4-termination-recovery-pass-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d4-termination-recovery-pass-fixture-v0.3/files/artifacts/context.json",
+      "path": "/api/runs/arb-d4-termination-recovery-pass-fixture-v0.3/files/artifacts/context.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d4-termination-recovery-pass-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d4-termination-recovery-pass-fixture-v0.3/files/artifacts/plan.json",
+      "path": "/api/runs/arb-d4-termination-recovery-pass-fixture-v0.3/files/artifacts/plan.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d4-termination-recovery-pass-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d4-termination-recovery-pass-fixture-v0.3/files/artifacts/trace.json",
+      "path": "/api/runs/arb-d4-termination-recovery-pass-fixture-v0.3/files/artifacts/trace.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d4-termination-recovery-pass-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d4-termination-recovery-pass-fixture-v0.3/files/integrity/pack.sha256",
+      "path": "/api/runs/arb-d4-termination-recovery-pass-fixture-v0.3/files/integrity/pack.sha256",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d4-termination-recovery-pass-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "text/plain"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d4-termination-recovery-pass-fixture-v0.3/files/integrity/sha256sums.txt",
+      "path": "/api/runs/arb-d4-termination-recovery-pass-fixture-v0.3/files/integrity/sha256sums.txt",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d4-termination-recovery-pass-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "text/plain"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d4-termination-recovery-pass-fixture-v0.3/files/manifest.json",
+      "path": "/api/runs/arb-d4-termination-recovery-pass-fixture-v0.3/files/manifest.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d4-termination-recovery-pass-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/arb-d4-termination-recovery-pass-fixture-v0.3/files/timeline/events.ndjson",
+      "path": "/api/runs/arb-d4-termination-recovery-pass-fixture-v0.3/files/timeline/events.ndjson",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d4-termination-recovery-pass-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "application/x-ndjson"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/gf-01-a2a-fail/download-zip",
+      "path": "/api/runs/gf-01-a2a-fail/download-zip",
+      "status": 200,
+      "discovered_from": [
+        "/runs/gf-01-a2a-fail"
+      ],
+      "is_internal": true,
+      "content_type": "application/zip"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/gf-01-a2a-fail/download/artifacts/context.json",
+      "path": "/api/runs/gf-01-a2a-fail/download/artifacts/context.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/gf-01-a2a-fail"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/gf-01-a2a-fail/download/artifacts/plan.json",
+      "path": "/api/runs/gf-01-a2a-fail/download/artifacts/plan.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/gf-01-a2a-fail"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/gf-01-a2a-fail/download/artifacts/trace.json",
+      "path": "/api/runs/gf-01-a2a-fail/download/artifacts/trace.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/gf-01-a2a-fail"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/gf-01-a2a-fail/download/integrity/pack.sha256",
+      "path": "/api/runs/gf-01-a2a-fail/download/integrity/pack.sha256",
+      "status": 200,
+      "discovered_from": [
+        "/runs/gf-01-a2a-fail"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/gf-01-a2a-fail/download/integrity/sha256sums.txt",
+      "path": "/api/runs/gf-01-a2a-fail/download/integrity/sha256sums.txt",
+      "status": 200,
+      "discovered_from": [
+        "/runs/gf-01-a2a-fail"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/gf-01-a2a-fail/download/manifest.json",
+      "path": "/api/runs/gf-01-a2a-fail/download/manifest.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/gf-01-a2a-fail"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/gf-01-a2a-fail/download/timeline/events.ndjson",
+      "path": "/api/runs/gf-01-a2a-fail/download/timeline/events.ndjson",
+      "status": 200,
+      "discovered_from": [
+        "/runs/gf-01-a2a-fail"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/gf-01-a2a-fail/files/artifacts/context.json",
+      "path": "/api/runs/gf-01-a2a-fail/files/artifacts/context.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/gf-01-a2a-fail"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/gf-01-a2a-fail/files/artifacts/plan.json",
+      "path": "/api/runs/gf-01-a2a-fail/files/artifacts/plan.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/gf-01-a2a-fail"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/gf-01-a2a-fail/files/artifacts/trace.json",
+      "path": "/api/runs/gf-01-a2a-fail/files/artifacts/trace.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/gf-01-a2a-fail"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/gf-01-a2a-fail/files/integrity/pack.sha256",
+      "path": "/api/runs/gf-01-a2a-fail/files/integrity/pack.sha256",
+      "status": 200,
+      "discovered_from": [
+        "/runs/gf-01-a2a-fail"
+      ],
+      "is_internal": true,
+      "content_type": "text/plain"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/gf-01-a2a-fail/files/integrity/sha256sums.txt",
+      "path": "/api/runs/gf-01-a2a-fail/files/integrity/sha256sums.txt",
+      "status": 200,
+      "discovered_from": [
+        "/runs/gf-01-a2a-fail"
+      ],
+      "is_internal": true,
+      "content_type": "text/plain"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/gf-01-a2a-fail/files/manifest.json",
+      "path": "/api/runs/gf-01-a2a-fail/files/manifest.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/gf-01-a2a-fail"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/gf-01-a2a-fail/files/timeline/events.ndjson",
+      "path": "/api/runs/gf-01-a2a-fail/files/timeline/events.ndjson",
+      "status": 200,
+      "discovered_from": [
+        "/runs/gf-01-a2a-fail"
+      ],
+      "is_internal": true,
+      "content_type": "application/x-ndjson"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/gf-01-a2a-official-v0.2/download-zip",
+      "path": "/api/runs/gf-01-a2a-official-v0.2/download-zip",
+      "status": 200,
+      "discovered_from": [
+        "/runs/gf-01-a2a-official-v0.2"
+      ],
+      "is_internal": true,
+      "content_type": "application/zip"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/gf-01-a2a-official-v0.2/download/artifacts/context.json",
+      "path": "/api/runs/gf-01-a2a-official-v0.2/download/artifacts/context.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/gf-01-a2a-official-v0.2"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/gf-01-a2a-official-v0.2/download/artifacts/plan.json",
+      "path": "/api/runs/gf-01-a2a-official-v0.2/download/artifacts/plan.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/gf-01-a2a-official-v0.2"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/gf-01-a2a-official-v0.2/download/artifacts/trace.json",
+      "path": "/api/runs/gf-01-a2a-official-v0.2/download/artifacts/trace.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/gf-01-a2a-official-v0.2"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/gf-01-a2a-official-v0.2/download/integrity/pack.sha256",
+      "path": "/api/runs/gf-01-a2a-official-v0.2/download/integrity/pack.sha256",
+      "status": 200,
+      "discovered_from": [
+        "/runs/gf-01-a2a-official-v0.2"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/gf-01-a2a-official-v0.2/download/integrity/sha256sums.txt",
+      "path": "/api/runs/gf-01-a2a-official-v0.2/download/integrity/sha256sums.txt",
+      "status": 200,
+      "discovered_from": [
+        "/runs/gf-01-a2a-official-v0.2"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/gf-01-a2a-official-v0.2/download/manifest.json",
+      "path": "/api/runs/gf-01-a2a-official-v0.2/download/manifest.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/gf-01-a2a-official-v0.2"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/gf-01-a2a-official-v0.2/download/timeline/events.ndjson",
+      "path": "/api/runs/gf-01-a2a-official-v0.2/download/timeline/events.ndjson",
+      "status": 200,
+      "discovered_from": [
+        "/runs/gf-01-a2a-official-v0.2"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/gf-01-a2a-official-v0.2/files/artifacts/context.json",
+      "path": "/api/runs/gf-01-a2a-official-v0.2/files/artifacts/context.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/gf-01-a2a-official-v0.2"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/gf-01-a2a-official-v0.2/files/artifacts/plan.json",
+      "path": "/api/runs/gf-01-a2a-official-v0.2/files/artifacts/plan.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/gf-01-a2a-official-v0.2"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/gf-01-a2a-official-v0.2/files/artifacts/trace.json",
+      "path": "/api/runs/gf-01-a2a-official-v0.2/files/artifacts/trace.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/gf-01-a2a-official-v0.2"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/gf-01-a2a-official-v0.2/files/integrity/pack.sha256",
+      "path": "/api/runs/gf-01-a2a-official-v0.2/files/integrity/pack.sha256",
+      "status": 200,
+      "discovered_from": [
+        "/runs/gf-01-a2a-official-v0.2"
+      ],
+      "is_internal": true,
+      "content_type": "text/plain"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/gf-01-a2a-official-v0.2/files/integrity/sha256sums.txt",
+      "path": "/api/runs/gf-01-a2a-official-v0.2/files/integrity/sha256sums.txt",
+      "status": 200,
+      "discovered_from": [
+        "/runs/gf-01-a2a-official-v0.2"
+      ],
+      "is_internal": true,
+      "content_type": "text/plain"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/gf-01-a2a-official-v0.2/files/manifest.json",
+      "path": "/api/runs/gf-01-a2a-official-v0.2/files/manifest.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/gf-01-a2a-official-v0.2"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/gf-01-a2a-official-v0.2/files/timeline/events.ndjson",
+      "path": "/api/runs/gf-01-a2a-official-v0.2/files/timeline/events.ndjson",
+      "status": 200,
+      "discovered_from": [
+        "/runs/gf-01-a2a-official-v0.2"
+      ],
+      "is_internal": true,
+      "content_type": "application/x-ndjson"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/gf-01-a2a-pass/download-zip",
+      "path": "/api/runs/gf-01-a2a-pass/download-zip",
+      "status": 200,
+      "discovered_from": [
+        "/runs/gf-01-a2a-pass"
+      ],
+      "is_internal": true,
+      "content_type": "application/zip"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/gf-01-a2a-pass/download/artifacts/context.json",
+      "path": "/api/runs/gf-01-a2a-pass/download/artifacts/context.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/gf-01-a2a-pass"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/gf-01-a2a-pass/download/artifacts/plan.json",
+      "path": "/api/runs/gf-01-a2a-pass/download/artifacts/plan.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/gf-01-a2a-pass"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/gf-01-a2a-pass/download/artifacts/trace.json",
+      "path": "/api/runs/gf-01-a2a-pass/download/artifacts/trace.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/gf-01-a2a-pass"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/gf-01-a2a-pass/download/integrity/pack.sha256",
+      "path": "/api/runs/gf-01-a2a-pass/download/integrity/pack.sha256",
+      "status": 200,
+      "discovered_from": [
+        "/runs/gf-01-a2a-pass"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/gf-01-a2a-pass/download/integrity/sha256sums.txt",
+      "path": "/api/runs/gf-01-a2a-pass/download/integrity/sha256sums.txt",
+      "status": 200,
+      "discovered_from": [
+        "/runs/gf-01-a2a-pass"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/gf-01-a2a-pass/download/manifest.json",
+      "path": "/api/runs/gf-01-a2a-pass/download/manifest.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/gf-01-a2a-pass"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/gf-01-a2a-pass/download/timeline/events.ndjson",
+      "path": "/api/runs/gf-01-a2a-pass/download/timeline/events.ndjson",
+      "status": 200,
+      "discovered_from": [
+        "/runs/gf-01-a2a-pass"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/gf-01-a2a-pass/files/artifacts/context.json",
+      "path": "/api/runs/gf-01-a2a-pass/files/artifacts/context.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/gf-01-a2a-pass"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/gf-01-a2a-pass/files/artifacts/plan.json",
+      "path": "/api/runs/gf-01-a2a-pass/files/artifacts/plan.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/gf-01-a2a-pass"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/gf-01-a2a-pass/files/artifacts/trace.json",
+      "path": "/api/runs/gf-01-a2a-pass/files/artifacts/trace.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/gf-01-a2a-pass"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/gf-01-a2a-pass/files/integrity/pack.sha256",
+      "path": "/api/runs/gf-01-a2a-pass/files/integrity/pack.sha256",
+      "status": 200,
+      "discovered_from": [
+        "/runs/gf-01-a2a-pass"
+      ],
+      "is_internal": true,
+      "content_type": "text/plain"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/gf-01-a2a-pass/files/integrity/sha256sums.txt",
+      "path": "/api/runs/gf-01-a2a-pass/files/integrity/sha256sums.txt",
+      "status": 200,
+      "discovered_from": [
+        "/runs/gf-01-a2a-pass"
+      ],
+      "is_internal": true,
+      "content_type": "text/plain"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/gf-01-a2a-pass/files/manifest.json",
+      "path": "/api/runs/gf-01-a2a-pass/files/manifest.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/gf-01-a2a-pass"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/gf-01-a2a-pass/files/timeline/events.ndjson",
+      "path": "/api/runs/gf-01-a2a-pass/files/timeline/events.ndjson",
+      "status": 200,
+      "discovered_from": [
+        "/runs/gf-01-a2a-pass"
+      ],
+      "is_internal": true,
+      "content_type": "application/x-ndjson"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/gf-01-adjudicated-fail-01/download-zip",
+      "path": "/api/runs/gf-01-adjudicated-fail-01/download-zip",
+      "status": 200,
+      "discovered_from": [
+        "/runs/gf-01-adjudicated-fail-01"
+      ],
+      "is_internal": true,
+      "content_type": "application/zip"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/gf-01-adjudicated-fail-01/download/integrity/sha256sums.txt",
+      "path": "/api/runs/gf-01-adjudicated-fail-01/download/integrity/sha256sums.txt",
+      "status": 200,
+      "discovered_from": [
+        "/runs/gf-01-adjudicated-fail-01"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/gf-01-adjudicated-fail-01/download/manifest.json",
+      "path": "/api/runs/gf-01-adjudicated-fail-01/download/manifest.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/gf-01-adjudicated-fail-01"
+      ],
+      "is_internal": true,
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/gf-01-adjudicated-fail-01/files/integrity/pack.sha256",
+      "path": "/api/runs/gf-01-adjudicated-fail-01/files/integrity/pack.sha256",
+      "status": 200,
+      "discovered_from": [
+        "/runs/gf-01-adjudicated-fail-01"
+      ],
+      "is_internal": true,
+      "content_type": "text/plain"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/gf-01-adjudicated-fail-01/files/integrity/sha256sums.txt",
+      "path": "/api/runs/gf-01-adjudicated-fail-01/files/integrity/sha256sums.txt",
+      "status": 200,
+      "discovered_from": [
+        "/runs/gf-01-adjudicated-fail-01"
+      ],
+      "is_internal": true,
+      "content_type": "text/plain"
+    },
+    {
+      "url": "http://localhost:3000/api/runs/gf-01-adjudicated-fail-01/files/manifest.json",
+      "path": "/api/runs/gf-01-adjudicated-fail-01/files/manifest.json",
+      "status": 200,
+      "discovered_from": [
+        "/runs/gf-01-adjudicated-fail-01"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/v2/runs/acp-d1-real-runner-001",
+      "path": "/api/v2/runs/acp-d1-real-runner-001",
+      "status": 200,
+      "discovered_from": [
+        "/runs/acp-d1-real-runner-001"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/v2/runs/acp-d1-real-runner-001/evidence",
+      "path": "/api/v2/runs/acp-d1-real-runner-001/evidence",
+      "status": 200,
+      "discovered_from": [
+        "/runs/acp-d1-real-runner-001"
+      ],
+      "is_internal": true,
+      "content_type": "application/zip"
+    },
+    {
+      "url": "http://localhost:3000/api/v2/runs/acp-d1-real-runner-002",
+      "path": "/api/v2/runs/acp-d1-real-runner-002",
+      "status": 200,
+      "discovered_from": [
+        "/runs/acp-d1-real-runner-002"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/v2/runs/acp-d1-real-runner-002/evidence",
+      "path": "/api/v2/runs/acp-d1-real-runner-002/evidence",
+      "status": 200,
+      "discovered_from": [
+        "/runs/acp-d1-real-runner-002"
+      ],
+      "is_internal": true,
+      "content_type": "application/zip"
+    },
+    {
+      "url": "http://localhost:3000/api/v2/runs/interop-mcp-a2a-langgraph-d1-real-runner-det-001",
+      "path": "/api/v2/runs/interop-mcp-a2a-langgraph-d1-real-runner-det-001",
+      "status": 200,
+      "discovered_from": [
+        "/runs/interop-mcp-a2a-langgraph-d1-real-runner-det-001"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/v2/runs/interop-mcp-a2a-langgraph-d1-real-runner-det-001/evidence",
+      "path": "/api/v2/runs/interop-mcp-a2a-langgraph-d1-real-runner-det-001/evidence",
+      "status": 200,
+      "discovered_from": [
+        "/runs/interop-mcp-a2a-langgraph-d1-real-runner-det-001"
+      ],
+      "is_internal": true,
+      "content_type": "application/zip"
+    },
+    {
+      "url": "http://localhost:3000/api/v2/runs/langchain-d1-real-runner-det-001",
+      "path": "/api/v2/runs/langchain-d1-real-runner-det-001",
+      "status": 200,
+      "discovered_from": [
+        "/runs/langchain-d1-real-runner-det-001"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/v2/runs/langchain-d1-real-runner-det-001/evidence",
+      "path": "/api/v2/runs/langchain-d1-real-runner-det-001/evidence",
+      "status": 200,
+      "discovered_from": [
+        "/runs/langchain-d1-real-runner-det-001"
+      ],
+      "is_internal": true,
+      "content_type": "application/zip"
+    },
+    {
+      "url": "http://localhost:3000/api/v2/runs/langgraph-d1-real-runner-det-001",
+      "path": "/api/v2/runs/langgraph-d1-real-runner-det-001",
+      "status": 200,
+      "discovered_from": [
+        "/runs/langgraph-d1-real-runner-det-001"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/v2/runs/langgraph-d1-real-runner-det-001/evidence",
+      "path": "/api/v2/runs/langgraph-d1-real-runner-det-001/evidence",
+      "status": 200,
+      "discovered_from": [
+        "/runs/langgraph-d1-real-runner-det-001"
+      ],
+      "is_internal": true,
+      "content_type": "application/zip"
+    },
+    {
+      "url": "http://localhost:3000/api/v2/runs/mcp-d1-fail-benchmark-001",
+      "path": "/api/v2/runs/mcp-d1-fail-benchmark-001",
+      "status": 200,
+      "discovered_from": [
+        "/runs/mcp-d1-fail-benchmark-001"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/v2/runs/mcp-d1-fail-benchmark-001/evidence",
+      "path": "/api/v2/runs/mcp-d1-fail-benchmark-001/evidence",
+      "status": 200,
+      "discovered_from": [
+        "/runs/mcp-d1-fail-benchmark-001"
+      ],
+      "is_internal": true,
+      "content_type": "application/zip"
+    },
+    {
+      "url": "http://localhost:3000/api/v2/runs/mcp-d1-real-runner-001",
+      "path": "/api/v2/runs/mcp-d1-real-runner-001",
+      "status": 200,
+      "discovered_from": [
+        "/runs/mcp-d1-real-runner-001"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/v2/runs/mcp-d1-real-runner-001/evidence",
+      "path": "/api/v2/runs/mcp-d1-real-runner-001/evidence",
+      "status": 200,
+      "discovered_from": [
+        "/runs/mcp-d1-real-runner-001"
+      ],
+      "is_internal": true,
+      "content_type": "application/zip"
+    },
+    {
+      "url": "http://localhost:3000/api/v2/runs/mcp-d1-real-runner-det-001",
+      "path": "/api/v2/runs/mcp-d1-real-runner-det-001",
+      "status": 200,
+      "discovered_from": [
+        "/runs/mcp-d1-real-runner-det-001"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/v2/runs/mcp-d1-real-runner-det-001/evidence",
+      "path": "/api/v2/runs/mcp-d1-real-runner-det-001/evidence",
+      "status": 200,
+      "discovered_from": [
+        "/runs/mcp-d1-real-runner-det-001"
+      ],
+      "is_internal": true,
+      "content_type": "application/zip"
+    },
+    {
+      "url": "http://localhost:3000/api/v2/runs/mcp-d1-real-runner-det-002",
+      "path": "/api/v2/runs/mcp-d1-real-runner-det-002",
+      "status": 200,
+      "discovered_from": [
+        "/runs/mcp-d1-real-runner-det-002"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/v2/runs/mcp-d1-real-runner-det-002/evidence",
+      "path": "/api/v2/runs/mcp-d1-real-runner-det-002/evidence",
+      "status": 200,
+      "discovered_from": [
+        "/runs/mcp-d1-real-runner-det-002"
+      ],
+      "is_internal": true,
+      "content_type": "application/zip"
+    },
+    {
+      "url": "http://localhost:3000/api/v2/runs/mcp-d1-synthetic-001",
+      "path": "/api/v2/runs/mcp-d1-synthetic-001",
+      "status": 200,
+      "discovered_from": [
+        "/runs/mcp-d1-synthetic-001"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/v2/runs/mcp-d1-synthetic-001/evidence",
+      "path": "/api/v2/runs/mcp-d1-synthetic-001/evidence",
+      "status": 200,
+      "discovered_from": [
+        "/runs/mcp-d1-synthetic-001"
+      ],
+      "is_internal": true,
+      "content_type": "application/zip"
+    },
+    {
+      "url": "http://localhost:3000/api/v2/runs/metagpt-d1-real-runner-det-001",
+      "path": "/api/v2/runs/metagpt-d1-real-runner-det-001",
+      "status": 200,
+      "discovered_from": [
+        "/runs/metagpt-d1-real-runner-det-001"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/v2/runs/metagpt-d1-real-runner-det-001/evidence",
+      "path": "/api/v2/runs/metagpt-d1-real-runner-det-001/evidence",
+      "status": 200,
+      "discovered_from": [
+        "/runs/metagpt-d1-real-runner-det-001"
+      ],
+      "is_internal": true,
+      "content_type": "application/zip"
+    },
+    {
+      "url": "http://localhost:3000/api/v2/runs/semantickernel-d1-real-runner-det-001",
+      "path": "/api/v2/runs/semantickernel-d1-real-runner-det-001",
+      "status": 200,
+      "discovered_from": [
+        "/runs/semantickernel-d1-real-runner-det-001"
+      ],
+      "is_internal": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "http://localhost:3000/api/v2/runs/semantickernel-d1-real-runner-det-001/evidence",
+      "path": "/api/v2/runs/semantickernel-d1-real-runner-det-001/evidence",
+      "status": 200,
+      "discovered_from": [
+        "/runs/semantickernel-d1-real-runner-det-001"
+      ],
+      "is_internal": true,
+      "content_type": "application/zip"
+    },
+    {
+      "url": "http://localhost:3000/audit",
+      "path": "/audit",
+      "status": 200,
+      "discovered_from": [
+        "/governance"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/brand/mplp-apple-touch-180.png",
+      "path": "/brand/mplp-apple-touch-180.png",
+      "status": 200,
+      "discovered_from": [
+        "/"
+      ],
+      "is_internal": true,
+      "content_type": "image/png"
+    },
+    {
+      "url": "http://localhost:3000/brand/mplp-favicon-32.png",
+      "path": "/brand/mplp-favicon-32.png",
+      "status": 200,
+      "discovered_from": [
+        "/"
+      ],
+      "is_internal": true,
+      "content_type": "image/png"
+    },
+    {
+      "url": "http://localhost:3000/brand/mplp-favicon-48.png",
+      "path": "/brand/mplp-favicon-48.png",
+      "status": 200,
+      "discovered_from": [
+        "/"
+      ],
+      "is_internal": true,
+      "content_type": "image/png"
+    },
+    {
+      "url": "http://localhost:3000/brand/mplp-icon-512.png",
+      "path": "/brand/mplp-icon-512.png",
+      "status": 200,
+      "discovered_from": [
+        "/"
+      ],
+      "is_internal": true,
+      "content_type": "image/png"
+    },
+    {
+      "url": "http://localhost:3000/brand/mplp-icon-only-transparent.png",
+      "path": "/brand/mplp-icon-only-transparent.png",
+      "status": 200,
+      "discovered_from": [
+        "/"
+      ],
+      "is_internal": true,
+      "content_type": "image/png"
+    },
+    {
+      "url": "http://localhost:3000/coverage/adjudication",
+      "path": "/coverage/adjudication",
+      "status": 200,
+      "discovered_from": [
+        "/methodology"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/gates",
+      "path": "/gates",
+      "status": 200,
+      "discovered_from": [
+        "/governance"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/governance",
+      "path": "/governance",
+      "status": 200,
+      "discovered_from": [
+        "/",
+        "/about",
+        "/runs",
+        "/runsets",
+        "/rulesets"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/guarantees",
+      "path": "/guarantees",
+      "status": 200,
+      "discovered_from": [
+        "/",
+        "/about",
+        "/runs",
+        "/runsets",
+        "/rulesets",
+        "/governance",
+        "/releases",
+        "/validation",
+        "/policies/cross-verified",
+        "/adjudication/admission-not-admissible-01",
+        "/methodology",
+        "/guarantees"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/methodology",
+      "path": "/methodology",
+      "status": 200,
+      "discovered_from": [
+        "/",
+        "/about",
+        "/runs",
+        "/runsets",
+        "/rulesets",
+        "/governance",
+        "/releases",
+        "/validation",
+        "/policies/cross-verified",
+        "/adjudication/admission-not-admissible-01"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/policies",
+      "path": "/policies",
+      "status": 200,
+      "discovered_from": [
+        "/governance"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/policies/contract",
+      "path": "/policies/contract",
+      "status": 200,
+      "discovered_from": [
+        "/methodology",
+        "/guarantees"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/policies/cross-verified",
+      "path": "/policies/cross-verified",
+      "status": 200,
+      "discovered_from": [
+        "/",
+        "/validation"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/policies/fmm",
+      "path": "/policies/fmm",
+      "status": 200,
+      "discovered_from": [
+        "/validation",
+        "/policies/cross-verified",
+        "/methodology",
+        "/runs/admission-not-admissible-01",
+        "/runs/arb-d1-budget-fail-deny-missing-gate-v0.4",
+        "/runs/arb-d1-budget-fail-fixture-v0.3",
+        "/runs/arb-d1-budget-fail-outcome-invalid-v0.4",
+        "/runs/arb-d1-budget-pass-fixture-v0.3",
+        "/runs/arb-d2-lifecycle-fail-post-terminal-exec-v0.4",
+        "/runs/arb-d2-lifecycle-fail-terminal-state-invalid-v0.4",
+        "/runs/arb-d2-lifecycle-state-fail-fixture-v0.3",
+        "/runs/arb-d2-lifecycle-state-pass-fixture-v0.3",
+        "/runs/arb-d3-authz-decision-fail-fixture-v0.3",
+        "/runs/arb-d3-authz-decision-pass-fixture-v0.3",
+        "/runs/arb-d3-authz-fail-deny-no-confirm-v0.4",
+        "/runs/arb-d3-authz-fail-sra-incomplete-v0.4",
+        "/runs/arb-d4-termination-fail-reason-invalid-v0.4",
+        "/runs/arb-d4-termination-fail-uncontrolled-recovery-v0.4",
+        "/runs/arb-d4-termination-recovery-fail-fixture-v0.3",
+        "/runs/arb-d4-termination-recovery-pass-fixture-v0.3",
+        "/runs/gf-01-a2a-fail",
+        "/runs/gf-01-a2a-official-v0.2",
+        "/runs/gf-01-a2a-pass",
+        "/runs/gf-01-adjudicated-fail-01"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/policies/intake",
+      "path": "/policies/intake",
+      "status": 200,
+      "discovered_from": [
+        "/methodology"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/policies/substrate-scope",
+      "path": "/policies/substrate-scope",
+      "status": 200,
+      "discovered_from": [
+        "/methodology"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/releases",
+      "path": "/releases",
+      "status": 200,
+      "discovered_from": [
+        "/",
+        "/about",
+        "/runs",
+        "/runsets",
+        "/rulesets",
+        "/governance"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/releases/rc-20260131150011",
+      "path": "/releases/rc-20260131150011",
+      "status": 200,
+      "discovered_from": [
+        "/releases"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/releases/rc-20260131150128",
+      "path": "/releases/rc-20260131150128",
+      "status": 200,
+      "discovered_from": [
+        "/releases"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/releases/rc-20260131150232",
+      "path": "/releases/rc-20260131150232",
+      "status": 200,
+      "discovered_from": [
+        "/releases"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/releases/rc-20260131150340",
+      "path": "/releases/rc-20260131150340",
+      "status": 200,
+      "discovered_from": [
+        "/releases"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/releases/rc-20260131150449",
+      "path": "/releases/rc-20260131150449",
+      "status": 200,
+      "discovered_from": [
+        "/releases"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/releases/rc-20260131150552",
+      "path": "/releases/rc-20260131150552",
+      "status": 200,
+      "discovered_from": [
+        "/releases"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/releases/rc-20260131150752",
+      "path": "/releases/rc-20260131150752",
+      "status": 200,
+      "discovered_from": [
+        "/releases"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/releases/rc-20260131150940",
+      "path": "/releases/rc-20260131150940",
+      "status": 200,
+      "discovered_from": [
+        "/releases"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/releases/rc-20260131151110",
+      "path": "/releases/rc-20260131151110",
+      "status": 200,
+      "discovered_from": [
+        "/releases"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/releases/rc-20260131152718",
+      "path": "/releases/rc-20260131152718",
+      "status": 200,
+      "discovered_from": [
+        "/releases"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/releases/rc-20260131152815",
+      "path": "/releases/rc-20260131152815",
+      "status": 200,
+      "discovered_from": [
+        "/releases"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/releases/rc-20260131152847",
+      "path": "/releases/rc-20260131152847",
+      "status": 200,
+      "discovered_from": [
+        "/releases"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/releases/rc-20260131152922",
+      "path": "/releases/rc-20260131152922",
+      "status": 200,
+      "discovered_from": [
+        "/releases"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/releases/rc-20260131152959",
+      "path": "/releases/rc-20260131152959",
+      "status": 200,
+      "discovered_from": [
+        "/releases"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/releases/rc-20260131153122",
+      "path": "/releases/rc-20260131153122",
+      "status": 200,
+      "discovered_from": [
+        "/releases"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/releases/rc-20260131153542",
+      "path": "/releases/rc-20260131153542",
+      "status": 200,
+      "discovered_from": [
+        "/releases"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/releases/rc-20260131153624",
+      "path": "/releases/rc-20260131153624",
+      "status": 200,
+      "discovered_from": [
+        "/releases"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/releases/rc-20260131154319",
+      "path": "/releases/rc-20260131154319",
+      "status": 200,
+      "discovered_from": [
+        "/releases"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/releases/rc-20260131160755",
+      "path": "/releases/rc-20260131160755",
+      "status": 200,
+      "discovered_from": [
+        "/releases"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/releases/rc-20260131161432",
+      "path": "/releases/rc-20260131161432",
+      "status": 200,
+      "discovered_from": [
+        "/releases"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/rulesets",
+      "path": "/rulesets",
+      "status": 200,
+      "discovered_from": [
+        "/",
+        "/about",
+        "/runs",
+        "/runsets"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/rulesets/ruleset-1.0",
+      "path": "/rulesets/ruleset-1.0",
+      "status": 200,
+      "discovered_from": [
+        "/rulesets",
+        "/guarantees"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/rulesets/ruleset-1.1",
+      "path": "/rulesets/ruleset-1.1",
+      "status": 200,
+      "discovered_from": [
+        "/rulesets"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/rulesets/ruleset-1.2",
+      "path": "/rulesets/ruleset-1.2",
+      "status": 200,
+      "discovered_from": [
+        "/rulesets"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/rulesets/ruleset-1.3",
+      "path": "/rulesets/ruleset-1.3",
+      "status": 200,
+      "discovered_from": [
+        "/rulesets"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/rulesets/ruleset-v2.0.0",
+      "path": "/rulesets/ruleset-v2.0.0",
+      "status": 200,
+      "discovered_from": [
+        "/rulesets"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/rulesets/ruleset-v2.0.1",
+      "path": "/rulesets/ruleset-v2.0.1",
+      "status": 200,
+      "discovered_from": [
+        "/rulesets"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs",
+      "path": "/runs",
+      "status": 200,
+      "discovered_from": [
+        "/",
+        "/about",
+        "/runs"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/acp-d1-real-runner-001",
+      "path": "/runs/acp-d1-real-runner-001",
+      "status": 200,
+      "discovered_from": [
+        "/runs"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/acp-d1-real-runner-002",
+      "path": "/runs/acp-d1-real-runner-002",
+      "status": 200,
+      "discovered_from": [
+        "/runs"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/admission-not-admissible-01",
+      "path": "/runs/admission-not-admissible-01",
+      "status": 200,
+      "discovered_from": [
+        "/runs"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/admission-not-admissible-01/replay",
+      "path": "/runs/admission-not-admissible-01/replay",
+      "status": 200,
+      "discovered_from": [
+        "/runs/admission-not-admissible-01"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/arb-d1-budget-fail-deny-missing-gate-v0.4",
+      "path": "/runs/arb-d1-budget-fail-deny-missing-gate-v0.4",
+      "status": 200,
+      "discovered_from": [
+        "/runs"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/arb-d1-budget-fail-deny-missing-gate-v0.4/replay",
+      "path": "/runs/arb-d1-budget-fail-deny-missing-gate-v0.4/replay",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d1-budget-fail-deny-missing-gate-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/arb-d1-budget-fail-fixture-v0.3",
+      "path": "/runs/arb-d1-budget-fail-fixture-v0.3",
+      "status": 200,
+      "discovered_from": [
+        "/runs"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/arb-d1-budget-fail-fixture-v0.3/replay",
+      "path": "/runs/arb-d1-budget-fail-fixture-v0.3/replay",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d1-budget-fail-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/arb-d1-budget-fail-outcome-invalid-v0.4",
+      "path": "/runs/arb-d1-budget-fail-outcome-invalid-v0.4",
+      "status": 200,
+      "discovered_from": [
+        "/runs"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/arb-d1-budget-fail-outcome-invalid-v0.4/replay",
+      "path": "/runs/arb-d1-budget-fail-outcome-invalid-v0.4/replay",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d1-budget-fail-outcome-invalid-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/arb-d1-budget-pass-fixture-v0.3",
+      "path": "/runs/arb-d1-budget-pass-fixture-v0.3",
+      "status": 200,
+      "discovered_from": [
+        "/runs"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/arb-d1-budget-pass-fixture-v0.3/replay",
+      "path": "/runs/arb-d1-budget-pass-fixture-v0.3/replay",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d1-budget-pass-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/arb-d2-lifecycle-fail-post-terminal-exec-v0.4",
+      "path": "/runs/arb-d2-lifecycle-fail-post-terminal-exec-v0.4",
+      "status": 200,
+      "discovered_from": [
+        "/runs"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/arb-d2-lifecycle-fail-post-terminal-exec-v0.4/replay",
+      "path": "/runs/arb-d2-lifecycle-fail-post-terminal-exec-v0.4/replay",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d2-lifecycle-fail-post-terminal-exec-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/arb-d2-lifecycle-fail-terminal-state-invalid-v0.4",
+      "path": "/runs/arb-d2-lifecycle-fail-terminal-state-invalid-v0.4",
+      "status": 200,
+      "discovered_from": [
+        "/runs"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/arb-d2-lifecycle-fail-terminal-state-invalid-v0.4/replay",
+      "path": "/runs/arb-d2-lifecycle-fail-terminal-state-invalid-v0.4/replay",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d2-lifecycle-fail-terminal-state-invalid-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/arb-d2-lifecycle-state-fail-fixture-v0.3",
+      "path": "/runs/arb-d2-lifecycle-state-fail-fixture-v0.3",
+      "status": 200,
+      "discovered_from": [
+        "/runs"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/arb-d2-lifecycle-state-fail-fixture-v0.3/replay",
+      "path": "/runs/arb-d2-lifecycle-state-fail-fixture-v0.3/replay",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d2-lifecycle-state-fail-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/arb-d2-lifecycle-state-pass-fixture-v0.3",
+      "path": "/runs/arb-d2-lifecycle-state-pass-fixture-v0.3",
+      "status": 200,
+      "discovered_from": [
+        "/runs"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/arb-d2-lifecycle-state-pass-fixture-v0.3/replay",
+      "path": "/runs/arb-d2-lifecycle-state-pass-fixture-v0.3/replay",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d2-lifecycle-state-pass-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/arb-d3-authz-decision-fail-fixture-v0.3",
+      "path": "/runs/arb-d3-authz-decision-fail-fixture-v0.3",
+      "status": 200,
+      "discovered_from": [
+        "/runs"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/arb-d3-authz-decision-fail-fixture-v0.3/replay",
+      "path": "/runs/arb-d3-authz-decision-fail-fixture-v0.3/replay",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d3-authz-decision-fail-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/arb-d3-authz-decision-pass-fixture-v0.3",
+      "path": "/runs/arb-d3-authz-decision-pass-fixture-v0.3",
+      "status": 200,
+      "discovered_from": [
+        "/runs"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/arb-d3-authz-decision-pass-fixture-v0.3/replay",
+      "path": "/runs/arb-d3-authz-decision-pass-fixture-v0.3/replay",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d3-authz-decision-pass-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/arb-d3-authz-fail-deny-no-confirm-v0.4",
+      "path": "/runs/arb-d3-authz-fail-deny-no-confirm-v0.4",
+      "status": 200,
+      "discovered_from": [
+        "/runs"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/arb-d3-authz-fail-deny-no-confirm-v0.4/replay",
+      "path": "/runs/arb-d3-authz-fail-deny-no-confirm-v0.4/replay",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d3-authz-fail-deny-no-confirm-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/arb-d3-authz-fail-sra-incomplete-v0.4",
+      "path": "/runs/arb-d3-authz-fail-sra-incomplete-v0.4",
+      "status": 200,
+      "discovered_from": [
+        "/runs"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/arb-d3-authz-fail-sra-incomplete-v0.4/replay",
+      "path": "/runs/arb-d3-authz-fail-sra-incomplete-v0.4/replay",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d3-authz-fail-sra-incomplete-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/arb-d4-termination-fail-reason-invalid-v0.4",
+      "path": "/runs/arb-d4-termination-fail-reason-invalid-v0.4",
+      "status": 200,
+      "discovered_from": [
+        "/runs"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/arb-d4-termination-fail-reason-invalid-v0.4/replay",
+      "path": "/runs/arb-d4-termination-fail-reason-invalid-v0.4/replay",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d4-termination-fail-reason-invalid-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/arb-d4-termination-fail-uncontrolled-recovery-v0.4",
+      "path": "/runs/arb-d4-termination-fail-uncontrolled-recovery-v0.4",
+      "status": 200,
+      "discovered_from": [
+        "/runs"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/arb-d4-termination-fail-uncontrolled-recovery-v0.4/replay",
+      "path": "/runs/arb-d4-termination-fail-uncontrolled-recovery-v0.4/replay",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d4-termination-fail-uncontrolled-recovery-v0.4"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/arb-d4-termination-recovery-fail-fixture-v0.3",
+      "path": "/runs/arb-d4-termination-recovery-fail-fixture-v0.3",
+      "status": 200,
+      "discovered_from": [
+        "/runs"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/arb-d4-termination-recovery-fail-fixture-v0.3/replay",
+      "path": "/runs/arb-d4-termination-recovery-fail-fixture-v0.3/replay",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d4-termination-recovery-fail-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/arb-d4-termination-recovery-pass-fixture-v0.3",
+      "path": "/runs/arb-d4-termination-recovery-pass-fixture-v0.3",
+      "status": 200,
+      "discovered_from": [
+        "/runs"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/arb-d4-termination-recovery-pass-fixture-v0.3/replay",
+      "path": "/runs/arb-d4-termination-recovery-pass-fixture-v0.3/replay",
+      "status": 200,
+      "discovered_from": [
+        "/runs/arb-d4-termination-recovery-pass-fixture-v0.3"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/crewai-d1-real-runner-det-001",
+      "path": "/runs/crewai-d1-real-runner-det-001",
+      "status": 200,
+      "discovered_from": [
+        "/runs"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/crewai-d1-real-runner-det-002",
+      "path": "/runs/crewai-d1-real-runner-det-002",
+      "status": 200,
+      "discovered_from": [
+        "/runs"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/gf-01-a2a-fail",
+      "path": "/runs/gf-01-a2a-fail",
+      "status": 200,
+      "discovered_from": [
+        "/runs"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/gf-01-a2a-fail/replay",
+      "path": "/runs/gf-01-a2a-fail/replay",
+      "status": 200,
+      "discovered_from": [
+        "/runs/gf-01-a2a-fail"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/gf-01-a2a-official-v0.2",
+      "path": "/runs/gf-01-a2a-official-v0.2",
+      "status": 200,
+      "discovered_from": [
+        "/runs"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/gf-01-a2a-official-v0.2/replay",
+      "path": "/runs/gf-01-a2a-official-v0.2/replay",
+      "status": 200,
+      "discovered_from": [
+        "/runs/gf-01-a2a-official-v0.2"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/gf-01-a2a-pass",
+      "path": "/runs/gf-01-a2a-pass",
+      "status": 200,
+      "discovered_from": [
+        "/runs"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/gf-01-a2a-pass/replay",
+      "path": "/runs/gf-01-a2a-pass/replay",
+      "status": 200,
+      "discovered_from": [
+        "/runs/gf-01-a2a-pass"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/gf-01-adjudicated-fail-01",
+      "path": "/runs/gf-01-adjudicated-fail-01",
+      "status": 200,
+      "discovered_from": [
+        "/runs"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/gf-01-adjudicated-fail-01/replay",
+      "path": "/runs/gf-01-adjudicated-fail-01/replay",
+      "status": 200,
+      "discovered_from": [
+        "/runs/gf-01-adjudicated-fail-01"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/gf-01-langchain-official-v0.2",
+      "path": "/runs/gf-01-langchain-official-v0.2",
+      "status": 200,
+      "discovered_from": [
+        "/runs"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/gf-01-langchain-pass",
+      "path": "/runs/gf-01-langchain-pass",
+      "status": 200,
+      "discovered_from": [
+        "/runs"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/gf-01-mcp-official-v0.2",
+      "path": "/runs/gf-01-mcp-official-v0.2",
+      "status": 200,
+      "discovered_from": [
+        "/runs"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/gf-01-mcp-pass",
+      "path": "/runs/gf-01-mcp-pass",
+      "status": 200,
+      "discovered_from": [
+        "/runs"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/gf-02-fail",
+      "path": "/runs/gf-02-fail",
+      "status": 200,
+      "discovered_from": [
+        "/runs"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/interop-mcp-a2a-langgraph-d1-real-runner-det-001",
+      "path": "/runs/interop-mcp-a2a-langgraph-d1-real-runner-det-001",
+      "status": 200,
+      "discovered_from": [
+        "/runs"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/langchain-d1-real-runner-det-001",
+      "path": "/runs/langchain-d1-real-runner-det-001",
+      "status": 200,
+      "discovered_from": [
+        "/runs"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/langgraph-d1-real-runner-det-001",
+      "path": "/runs/langgraph-d1-real-runner-det-001",
+      "status": 200,
+      "discovered_from": [
+        "/runs"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/magentic-one-d1-real-runner-det-001",
+      "path": "/runs/magentic-one-d1-real-runner-det-001",
+      "status": 200,
+      "discovered_from": [
+        "/runs"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/magentic-one-d1-real-runner-det-002",
+      "path": "/runs/magentic-one-d1-real-runner-det-002",
+      "status": 200,
+      "discovered_from": [
+        "/runs"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/mcp-d1-fail-benchmark-001",
+      "path": "/runs/mcp-d1-fail-benchmark-001",
+      "status": 200,
+      "discovered_from": [
+        "/runs"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/mcp-d1-real-runner-001",
+      "path": "/runs/mcp-d1-real-runner-001",
+      "status": 200,
+      "discovered_from": [
+        "/runs"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/mcp-d1-real-runner-det-001",
+      "path": "/runs/mcp-d1-real-runner-det-001",
+      "status": 200,
+      "discovered_from": [
+        "/runs"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/mcp-d1-real-runner-det-002",
+      "path": "/runs/mcp-d1-real-runner-det-002",
+      "status": 200,
+      "discovered_from": [
+        "/runs"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/mcp-d1-synthetic-001",
+      "path": "/runs/mcp-d1-synthetic-001",
+      "status": 200,
+      "discovered_from": [
+        "/runs"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/metagpt-d1-real-runner-det-001",
+      "path": "/runs/metagpt-d1-real-runner-det-001",
+      "status": 200,
+      "discovered_from": [
+        "/runs"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/pydantic-ai-d1-budget-fail-01",
+      "path": "/runs/pydantic-ai-d1-budget-fail-01",
+      "status": 200,
+      "discovered_from": [
+        "/runs"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/pydantic-ai-d1-budget-fail-02",
+      "path": "/runs/pydantic-ai-d1-budget-fail-02",
+      "status": 200,
+      "discovered_from": [
+        "/runs"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/pydantic-ai-d1-budget-pass-01",
+      "path": "/runs/pydantic-ai-d1-budget-pass-01",
+      "status": 200,
+      "discovered_from": [
+        "/runs"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/pydantic-ai-d1-budget-pass-02",
+      "path": "/runs/pydantic-ai-d1-budget-pass-02",
+      "status": 200,
+      "discovered_from": [
+        "/runs"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/semantickernel-d1-real-runner-det-001",
+      "path": "/runs/semantickernel-d1-real-runner-det-001",
+      "status": 200,
+      "discovered_from": [
+        "/runs"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/v05-d1-autogen-fail-outcome-invalid",
+      "path": "/runs/v05-d1-autogen-fail-outcome-invalid",
+      "status": 200,
+      "discovered_from": [
+        "/policies/cross-verified"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/v05-d1-autogen-pass-budget-allow",
+      "path": "/runs/v05-d1-autogen-pass-budget-allow",
+      "status": 200,
+      "discovered_from": [
+        "/policies/cross-verified"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/v05-d1-langgraph-fail-outcome-invalid",
+      "path": "/runs/v05-d1-langgraph-fail-outcome-invalid",
+      "status": 200,
+      "discovered_from": [
+        "/policies/cross-verified"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/v05-d1-langgraph-pass-budget-allow",
+      "path": "/runs/v05-d1-langgraph-pass-budget-allow",
+      "status": 200,
+      "discovered_from": [
+        "/runs",
+        "/policies/cross-verified"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/v05-d1-sk-pass-budget-allow",
+      "path": "/runs/v05-d1-sk-pass-budget-allow",
+      "status": 200,
+      "discovered_from": [
+        "/runs"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/v05-d2-autogen-fail-invalid-terminal",
+      "path": "/runs/v05-d2-autogen-fail-invalid-terminal",
+      "status": 200,
+      "discovered_from": [
+        "/policies/cross-verified"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/v05-d2-autogen-pass-terminal-success",
+      "path": "/runs/v05-d2-autogen-pass-terminal-success",
+      "status": 200,
+      "discovered_from": [
+        "/policies/cross-verified"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/v05-d2-langgraph-fail-invalid-terminal",
+      "path": "/runs/v05-d2-langgraph-fail-invalid-terminal",
+      "status": 200,
+      "discovered_from": [
+        "/policies/cross-verified"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/v05-d2-langgraph-pass-terminal-success",
+      "path": "/runs/v05-d2-langgraph-pass-terminal-success",
+      "status": 200,
+      "discovered_from": [
+        "/policies/cross-verified"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/v05-d3-autogen-fail-subject-missing",
+      "path": "/runs/v05-d3-autogen-fail-subject-missing",
+      "status": 200,
+      "discovered_from": [
+        "/policies/cross-verified"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/v05-d3-autogen-pass-authz-allow",
+      "path": "/runs/v05-d3-autogen-pass-authz-allow",
+      "status": 200,
+      "discovered_from": [
+        "/policies/cross-verified"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/v05-d3-langgraph-fail-subject-missing",
+      "path": "/runs/v05-d3-langgraph-fail-subject-missing",
+      "status": 200,
+      "discovered_from": [
+        "/policies/cross-verified"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/v05-d3-langgraph-pass-authz-allow",
+      "path": "/runs/v05-d3-langgraph-pass-authz-allow",
+      "status": 200,
+      "discovered_from": [
+        "/policies/cross-verified"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/v05-d4-autogen-fail-reason-invalid",
+      "path": "/runs/v05-d4-autogen-fail-reason-invalid",
+      "status": 200,
+      "discovered_from": [
+        "/policies/cross-verified"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/v05-d4-autogen-pass-reason-success",
+      "path": "/runs/v05-d4-autogen-pass-reason-success",
+      "status": 200,
+      "discovered_from": [
+        "/policies/cross-verified"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/v05-d4-langgraph-fail-reason-invalid",
+      "path": "/runs/v05-d4-langgraph-fail-reason-invalid",
+      "status": 200,
+      "discovered_from": [
+        "/policies/cross-verified"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/v05-d4-langgraph-pass-reason-success",
+      "path": "/runs/v05-d4-langgraph-pass-reason-success",
+      "status": 200,
+      "discovered_from": [
+        "/policies/cross-verified"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runs/v05-d4-sk-fail-reason-invalid",
+      "path": "/runs/v05-d4-sk-fail-reason-invalid",
+      "status": 200,
+      "discovered_from": [
+        "/policies/cross-verified"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runsets",
+      "path": "/runsets",
+      "status": 200,
+      "discovered_from": [
+        "/",
+        "/about",
+        "/runs"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runsets/v1-curated",
+      "path": "/runsets/v1-curated",
+      "status": 200,
+      "discovered_from": [
+        "/runsets"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/runsets/v2-index",
+      "path": "/runsets/v2-index",
+      "status": 200,
+      "discovered_from": [
+        "/runsets"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/validation",
+      "path": "/validation",
+      "status": 200,
+      "discovered_from": [
+        "/",
+        "/about"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "http://localhost:3000/validation/samples",
+      "path": "/validation/samples",
+      "status": 200,
+      "discovered_from": [
+        "/about"
+      ],
+      "is_internal": true,
+      "content_type": "text/html"
+    },
+    {
+      "url": "https://docs.mplp.io",
+      "path": "https://docs.mplp.io",
+      "status": -1,
+      "discovered_from": [
+        "/"
+      ],
+      "is_internal": false
+    },
+    {
+      "url": "https://docs.mplp.io/evaluation/conformance/reviewability",
+      "path": "https://docs.mplp.io/evaluation/conformance/reviewability",
+      "status": -1,
+      "discovered_from": [
+        "/"
+      ],
+      "is_internal": false
+    },
+    {
+      "url": "https://github.com/Coregentis/MPLP-Protocol",
+      "path": "https://github.com/Coregentis/MPLP-Protocol",
+      "status": -1,
+      "discovered_from": [
+        "/"
+      ],
+      "is_internal": false
+    },
+    {
+      "url": "https://lab.mplp.io",
+      "path": "https://lab.mplp.io",
+      "status": -1,
+      "discovered_from": [
+        "/"
+      ],
+      "is_internal": false
+    },
+    {
+      "url": "https://lab.mplp.io/about",
+      "path": "https://lab.mplp.io/about",
+      "status": -1,
+      "discovered_from": [
+        "/about"
+      ],
+      "is_internal": false
+    },
+    {
+      "url": "https://lab.mplp.io/adjudication",
+      "path": "https://lab.mplp.io/adjudication",
+      "status": -1,
+      "discovered_from": [
+        "/adjudication"
+      ],
+      "is_internal": false
+    },
+    {
+      "url": "https://lab.mplp.io/guarantees",
+      "path": "https://lab.mplp.io/guarantees",
+      "status": -1,
+      "discovered_from": [
+        "/guarantees"
+      ],
+      "is_internal": false
+    },
+    {
+      "url": "https://lab.mplp.io/policies/cross-verified",
+      "path": "https://lab.mplp.io/policies/cross-verified",
+      "status": -1,
+      "discovered_from": [
+        "/policies/cross-verified"
+      ],
+      "is_internal": false
+    },
+    {
+      "url": "https://lab.mplp.io/rulesets",
+      "path": "https://lab.mplp.io/rulesets",
+      "status": -1,
+      "discovered_from": [
+        "/rulesets"
+      ],
+      "is_internal": false
+    },
+    {
+      "url": "https://lab.mplp.io/validation",
+      "path": "https://lab.mplp.io/validation",
+      "status": -1,
+      "discovered_from": [
+        "/validation"
+      ],
+      "is_internal": false
+    },
+    {
+      "url": "https://www.apache.org/licenses/LICENSE-2.0",
+      "path": "https://www.apache.org/licenses/LICENSE-2.0",
+      "status": -1,
+      "discovered_from": [
+        "/"
+      ],
+      "is_internal": false
+    },
+    {
+      "url": "https://www.mplp.io",
+      "path": "https://www.mplp.io",
+      "status": -1,
+      "discovered_from": [
+        "/"
+      ],
+      "is_internal": false
+    },
+    {
+      "url": "https://www.mplp.io/governance/overview",
+      "path": "https://www.mplp.io/governance/overview",
+      "status": -1,
+      "discovered_from": [
+        "/"
+      ],
+      "is_internal": false
+    },
+    {
+      "url": "https://x.com/mplp_io",
+      "path": "https://x.com/mplp_io",
+      "status": -1,
+      "discovered_from": [
+        "/"
+      ],
+      "is_internal": false
+    }
+  ]
+}
