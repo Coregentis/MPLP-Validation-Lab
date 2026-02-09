@@ -220,6 +220,14 @@ export default async function UnifiedRunsPage({ searchParams }: PageProps) {
                 <div className="max-w-2xl text-mplp-text-muted leading-relaxed">
                     <Doclet md={runsDocletMd.split('##')[1]} model={versionModel} />
                 </div>
+                {/* Sitemap Clarification */}
+                <div className="mt-4 p-3 bg-amber-500/5 border border-amber-500/20 rounded-lg text-xs text-mplp-text-muted flex items-start gap-2 max-w-2xl">
+                    <span className="text-amber-500 font-bold mt-0.5">Note:</span>
+                    <span>
+                        The public <code>sitemap.xml</code> indexes only high-value (Reproduced/Dispute-Ready) runs to maintain SEO quality.
+                        For a complete inventory of all runs (including simulated baselines), use this index or the <Link href="/governance/topology" className="text-mplp-blue-soft hover:underline">Site Topology Map</Link>.
+                    </span>
+                </div>
             </div>
 
             {/* Stats Summary */}

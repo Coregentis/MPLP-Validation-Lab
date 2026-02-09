@@ -48,6 +48,11 @@ export function Footer() {
                                     </Link>
                                 </li>
                                 <li>
+                                    <Link href="/governance/topology" className="text-mplp-text-muted hover:text-mplp-blue-light text-13 transition-colors font-medium block py-0.5">
+                                        Site Topology (Map)
+                                    </Link>
+                                </li>
+                                <li>
                                     <Link href="/about" className="text-mplp-text-muted hover:text-mplp-blue-light text-13 transition-colors font-medium block py-0.5">
                                         About
                                     </Link>

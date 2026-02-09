@@ -115,6 +115,8 @@ export default async function GovernancePage() {
                         Audit Utilities
                     </h3>
                     <div className="flex flex-wrap gap-4 text-xs font-mono">
+                        <Link href="/governance/topology" className="text-indigo-600 hover:underline font-bold">Site Topology (Map) ↗</Link>
+                        <span className="text-mplp-border/50">|</span>
                         <a href="/sitemap.xml" target="_blank" className="text-mplp-blue-soft hover:underline">sitemap.xml ↗</a>
                         <span className="text-mplp-border/50">|</span>
                         <a href="/robots.txt" target="_blank" className="text-mplp-blue-soft hover:underline">robots.txt ↗</a>
