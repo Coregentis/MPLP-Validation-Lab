@@ -4,6 +4,8 @@
     "generated_at": "2026-01-24T20:06:53+08:00",
     "protocol_version": "1.0.0",
     "schema_bundle_version": "2.0.0",
+    "validation_lab_release_version": "1.0.1",
+    "validation_ruleset_version": "ruleset-1.0",
     "lab_series": "v0.17.0",
     "baseline_commit_sha": "2b01caa26fd4c189050b5ba6820b071dd0314190",
     "tripod": {
@@ -84,7 +86,8 @@
     "boundaries": [
         "BOUNDARY-NON-CERTIFICATION",
         "BOUNDARY-NON-ENDORSEMENT",
-        "BOUNDARY-VENDOR-NEUTRAL"
+        "BOUNDARY-VENDOR-NEUTRAL",
+        "BOUNDARY-NO-EXECUTION-HOSTING"
     ],
     "gates": {
         "public_minimum": [

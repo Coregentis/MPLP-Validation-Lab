@@ -8,7 +8,7 @@ const LAB_CANONICAL_HOST = 'https://lab.mplp.io';
 
 export const metadata: Metadata = {
     title: 'Ruleset Evolution — MPLP Validation Lab',
-    description: 'Track adjudication deltas and projection shifts between ruleset versions.',
+    description: 'Track source-bounded adjudication deltas and reported projection shifts between ruleset versions.',
     alternates: {
         canonical: `${LAB_CANONICAL_HOST}/rulesets/evolution`,
     },
@@ -23,8 +23,8 @@ export default function EvolutionHubPage() {
                 <p className="text-xs font-bold uppercase tracking-[0.4em] text-mplp-text-muted/80 mb-3">Governance Track</p>
                 <h1 className="text-3xl sm:text-4xl font-bold text-mplp-text mb-6">Ruleset Evolution</h1>
                 <p className="max-w-2xl text-mplp-text-muted leading-relaxed">
-                    Institutional Explainability: Ruleset evolution is machine-verified and forensic in nature.
-                    These metrics describe the structural shift in evaluation logic between bit-identical ruleset versions.
+                    Source-bound diff view over published ruleset evolution assets.
+                    These metrics describe reported changes in adjudication logic between versions; they are not framework rankings or protocol authority.
                 </p>
             </div>
 
@@ -74,7 +74,7 @@ export default function EvolutionHubPage() {
                                             </p>
                                         </div>
                                         <div className="space-y-1">
-                                            <p className="text-[10px] uppercase tracking-widest text-mplp-text-muted font-bold">Equiv. Shift</p>
+                                            <p className="text-[10px] uppercase tracking-widest text-mplp-text-muted font-bold">Reported Shift</p>
                                             <p className={`text-2xl font-mono ${diff.metrics.equivalence_shift?.delta !== 0 ? 'text-blue-400' : 'text-mplp-text opacity-40'}`}>
                                                 {diff.metrics.equivalence_shift?.delta > 0 ? '+' : ''}{diff.metrics.equivalence_shift?.delta || 0}
                                             </p>

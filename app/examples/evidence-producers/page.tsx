@@ -1,15 +1,18 @@
 /**
  * Evidence Producers Index Page
- * 
- * Lists all available evidence producer templates.
- * Entry point for /examples/evidence-producers/* dynamic routes.
- * 
- * NAV-FIX-01: Created to eliminate orphan status of producer pages.
+ *
+ * Runtime binding:
+ * - producers/contract/matrix.yaml
+ * - producer run scripts under producers/
+ *
+ * The index is derived from the current producer matrix plus only the
+ * substrates that have a live producer script.
  */
 
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { DisclaimerBox } from '@/components/common/DisclaimerBox';
+import { listProducerCatalog } from '@/lib/producers/loadProducerCatalog';
 
 const LAB_CANONICAL_HOST = 'https://lab.mplp.io';
 
@@ -25,31 +28,9 @@ export const metadata: Metadata = {
     },
 };
 
-const PRODUCERS = [
-    {
-        id: 'langgraph',
-        name: 'LangGraph',
-        type: 'Framework',
-        description: 'Graph-based agent orchestration producer',
-        status: 'Available',
-    },
-    {
-        id: 'autogen',
-        name: 'AutoGen',
-        type: 'Framework',
-        description: 'Multi-agent conversation producer',
-        status: 'Available',
-    },
-    {
-        id: 'sk',
-        name: 'Semantic Kernel',
-        type: 'Framework',
-        description: 'AI orchestration SDK producer',
-        status: 'Available',
-    },
-];
-
 export default function EvidenceProducersIndexPage() {
+    const producers = listProducerCatalog();
+
     return (
         <main className="min-h-screen bg-zinc-950 text-zinc-100 py-12 px-4">
             <div className="max-w-4xl mx-auto">
@@ -75,10 +56,10 @@ export default function EvidenceProducersIndexPage() {
 
                 {/* Producer Cards */}
                 <div className="grid gap-4">
-                    {PRODUCERS.map((producer) => (
+                    {producers.map((producer) => (
                         <Link
-                            key={producer.id}
-                            href={`/examples/evidence-producers/${producer.id}`}
+                            key={producer.routeId}
+                            href={`/examples/evidence-producers/${producer.routeId}`}
                             className="block p-6 bg-zinc-900 border border-zinc-800 rounded-lg hover:border-zinc-600 hover:bg-zinc-800/50 transition-all group"
                         >
                             <div className="flex items-start justify-between">

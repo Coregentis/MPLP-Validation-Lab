@@ -1,7 +1,7 @@
-## How to read a run
-Each run displays source, tier, verdict, and available evidence surfaces.
-If an item is missing in **{{run_inventory.v1_count}}** V1 or **{{run_inventory.v2_count}}** V2 runs, that is an evidence signal — not a UI error.
+## How to use this page
+This page lists the Lab's public run inventory across published V1 and V2 evidence lines.
+Each row shows the run ID, verdict, evidence tier, linked ruleset, and available evidence surfaces.
 
-## Evidence surfaces
-Surfaces represent *which artifacts are present* (plan/confirm/trace/snapshots etc.).
-Use “View JSON” only to inspect the raw pack behind the run.
+## What to look for
+Use a run to inspect its published evidence pack and the ruleset tied to that verdict.
+If an artifact is missing, treat that as an evidence signal rather than a UI error.

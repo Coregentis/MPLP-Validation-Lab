@@ -2,11 +2,11 @@
  * Lifecycle Guarantees Index Page — V1/V2 Unified View
  * 
  * SSOT:
- *   - V1: governance/LIFECYCLE_GUARANTEES.yaml (LG-01~05 GoldenFlow)
+ *   - V1: governance/LIFECYCLE_GUARANTEES.yaml (legacy LG-01~05 line)
  *   - V2: public/_data/v2/rulesets/ruleset-v2.0.0.json (Baseline Clauses)
  * 
  * TERMINOLOGY:
- *   - V1 (Legacy): LG-01 ~ LG-05 (GoldenFlow, presence-level)
+ *   - V1 (Legacy): LG-01 ~ LG-05 (legacy V1 guarantee line, presence-level)
  *   - V2: PROV-V2-*, LIFECYCLE-V2-*, TRUST-V2-*, DET-V2-*, METADATA-V2-*
  * 
  * IMPORTANT: This page is NON-NORMATIVE.
@@ -23,7 +23,7 @@ const LAB_CANONICAL_HOST = 'https://lab.mplp.io';
 
 export const metadata: Metadata = {
     title: 'Lifecycle Guarantees — MPLP Validation Lab',
-    description: 'Lifecycle Guarantees (V1 GoldenFlow + V2 Deterministic) overview. Non-normative guide to MPLP lifecycle invariants.',
+    description: 'Aggregate Lab view of the legacy V1 LG line and the V2 clause bundle line. Non-normative and distinct from protocol invariant definitions.',
     alternates: {
         canonical: `${LAB_CANONICAL_HOST}/guarantees`,
     },
@@ -108,7 +108,8 @@ export default async function GuaranteesPage({ searchParams }: PageProps) {
                 <p className="text-xs font-bold uppercase tracking-[0.4em] text-mplp-text-muted/80 mb-3">Scope & Invariants</p>
                 <h1 className="text-3xl sm:text-4xl font-bold text-mplp-text mb-6">Lifecycle Guarantees</h1>
                 <p className="max-w-2xl text-mplp-text-muted leading-relaxed">
-                    Unified view of lifecycle guarantees — adjudication targets that define what the MPLP Validation Lab evaluates.
+                    Aggregate Lab view of two public adjudication lines: the legacy V1 LG line and the V2 clause bundle line.
+                    These are Lab-side adjudication targets, not protocol invariant definitions.
                 </p>
             </div>
 
@@ -122,7 +123,7 @@ export default async function GuaranteesPage({ searchParams }: PageProps) {
                         : 'bg-mplp-dark-soft border border-mplp-border/40 text-mplp-text-muted hover:text-mplp-text hover:border-mplp-blue-soft/30'
                         }`}
                 >
-                    Legacy (V1)
+                    Legacy V1 LG
                 </Link>
                 <Link
                     href="/guarantees?v=2"
@@ -132,7 +133,7 @@ export default async function GuaranteesPage({ searchParams }: PageProps) {
                         : 'bg-mplp-dark-soft border border-mplp-border/40 text-mplp-text-muted hover:text-mplp-text hover:border-mplp-blue-soft/30'
                         }`}
                 >
-                    V2 — Deterministic
+                    V2 Clause Bundle
                 </Link>
             </div>
 
@@ -140,7 +141,7 @@ export default async function GuaranteesPage({ searchParams }: PageProps) {
             <div className="mb-10 pl-4 border-l-2 border-amber-500/30" data-testid="non-normative-notice">
                 <p className="text-sm text-mplp-text-muted">
                     <strong className="text-amber-500 font-semibold uppercase tracking-wider text-xs mr-2">Non-Normative</strong>
-                    For authoritative definitions, see the <a href="https://docs.mplp.io" className="text-mplp-blue-soft hover:underline">MPLP Protocol</a>.
+                    For authoritative protocol definitions, see the <a href="https://docs.mplp.io/docs/reference/entrypoints" className="text-mplp-blue-soft hover:underline">MPLP docs entry points</a>.
                 </p>
             </div>
 
@@ -180,7 +181,7 @@ function V1Content({ data }: { data: V1GuaranteesData }) {
             <div className="mb-8 p-3 rounded-lg bg-blue-900/20 border border-blue-800/30" data-testid="ssot-notice-v1">
                 <p className="text-xs text-blue-400">
                     📊 <strong>SSOT</strong>: <code className="bg-zinc-800 px-1 rounded">governance/LIFECYCLE_GUARANTEES.yaml</code>
-                    <span className="ml-2 text-zinc-500">Frozen at {metadata.freeze_tag}</span>
+                    <span className="ml-2 text-zinc-500">Legacy V1 line frozen at {metadata.freeze_tag}</span>
                 </p>
             </div>
 
@@ -198,8 +199,8 @@ function V1Content({ data }: { data: V1GuaranteesData }) {
                         <span className="text-amber-400 font-bold">{metadata.strength}</span>
                     </div>
                     <div>
-                        <span className="text-xs font-bold uppercase tracking-widest text-mplp-text-muted block mb-1">Adjudicates</span>
-                        <span className="text-mplp-text">Evidence presence + integrity anchors</span>
+                        <span className="text-xs font-bold uppercase tracking-widest text-mplp-text-muted block mb-1">Line</span>
+                        <span className="text-mplp-text">Legacy V1 LG line</span>
                     </div>
                 </div>
             </div>
@@ -265,8 +266,8 @@ function V2Content({ ruleset, clauses }: { ruleset: V2RulesetData['data']; claus
                         </Link>
                     </div>
                     <div>
-                        <span className="text-xs font-bold uppercase tracking-widest text-mplp-text-muted block mb-1">Strength</span>
-                        <span className="text-emerald-400 font-bold">Deterministic</span>
+                        <span className="text-xs font-bold uppercase tracking-widest text-mplp-text-muted block mb-1">Line</span>
+                        <span className="text-emerald-400 font-bold">V2 clause bundle</span>
                     </div>
                     <div>
                         <span className="text-xs font-bold uppercase tracking-widest text-mplp-text-muted block mb-1">Clauses</span>

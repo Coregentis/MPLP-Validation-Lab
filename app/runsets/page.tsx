@@ -1,10 +1,30 @@
+/**
+ * Runsets Index Page
+ *
+ * Runtime sources:
+ * - public/_data/curated-runs.json
+ * - public/_data/v2/runs/index.json
+ *
+ * Upstream provenance:
+ * - governance/runsets.yaml
+ */
+
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import { loadAllRunsets } from '@/lib/unified/load-all-runsets';
 
+const LAB_CANONICAL_HOST = 'https://lab.mplp.io';
 
-export const metadata = {
-    title: 'Runsets | MPLP Validation Lab',
+export const metadata: Metadata = {
+    title: 'Runsets',
     description: 'Manage evidence collections (Runsets) across V1 (Simulated) and V2 (Reproduced) substrates.',
+    alternates: {
+        canonical: `${LAB_CANONICAL_HOST}/runsets`,
+    },
+    robots: {
+        index: true,
+        follow: true,
+    },
 };
 
 export default async function RunsetsPage() {
@@ -18,6 +38,10 @@ export default async function RunsetsPage() {
                     <h1 className="text-4xl font-bold text-mplp-text mb-6">Runsets</h1>
                     <p className="text-xl text-mplp-text-muted max-w-2xl">
                         Unified indexes of evidence packs. Select a runset to drill down into specific validation series.
+                    </p>
+                    <p className="mt-3 text-xs text-mplp-text-muted/70 max-w-3xl">
+                        Runtime source: <code className="font-mono">public/_data/curated-runs.json</code> + <code className="font-mono">public/_data/v2/runs/index.json</code>.
+                        Upstream provenance and set relationships are governed by <code className="font-mono">governance/runsets.yaml</code>.
                     </p>
                 </header>
 

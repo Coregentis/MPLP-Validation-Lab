@@ -7,26 +7,25 @@ export function ScenarioAwareBanner() {
             <div className="relative z-10">
                 <h3 className="font-bold text-mplp-blue-soft uppercase tracking-wider text-sm mb-4 flex items-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-mplp-blue-soft animate-pulse" />
-                    Cross-Vendor Evidence Spine
+                    Scenario-Aware Reading
                 </h3>
                 <ul className="space-y-2 text-sm text-mplp-text-muted">
                     <li className="flex gap-2">
                         <span className="text-mplp-blue-soft">•</span>
                         <span>
-                            <strong className="text-mplp-text">Scenario Focus:</strong> LG-01 (Single Agent Lifecycle)
+                            <strong className="text-mplp-text">Use the run context:</strong> read the current run&apos;s scenario ID, substrate, and ruleset identity first.
                         </span>
                     </li>
                     <li className="flex gap-2">
                         <span className="text-mplp-blue-soft">•</span>
                         <span>
-                            <strong className="text-mplp-text">Ruleset:</strong> ruleset-1.0 (presence-level validation)
+                            <strong className="text-mplp-text">Legacy labels are not shortcuts:</strong> older <code>LG-*</code>, <code>gf-*</code>, or ruleset-family labels should be treated as identifiers only when they appear in bound run data.
                         </span>
                     </li>
                     <li className="flex gap-2">
                         <span className="text-mplp-blue-soft">•</span>
                         <span>
-                            <strong className="text-mplp-text">Important:</strong> LG-02~05 PASS results indicate artifact presence only,
-                            not semantic correctness for those flows.
+                            <strong className="text-mplp-text">Do not over-read a verdict:</strong> PASS/FAIL language on a run stays limited to the submitted evidence and pinned ruleset behind that run.
                         </span>
                     </li>
                 </ul>

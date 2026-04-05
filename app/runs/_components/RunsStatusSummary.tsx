@@ -61,7 +61,8 @@ export function RunsStatusSummary({ totalRuns, adjudicatedCount, pendingCount, i
 
             {/* Explanation */}
             <p className="mt-3 text-xs text-mplp-text-muted/80">
-                Runs are curated references from <code className="px-1 py-0.5 rounded bg-mplp-dark-soft text-mplp-text-muted font-mono text-[10px]">runsets.yaml</code>.
+                Runs are unified runtime projections from <code className="px-1 py-0.5 rounded bg-mplp-dark-soft text-mplp-text-muted font-mono text-[10px]">public/_data/curated-runs.json</code> and <code className="px-1 py-0.5 rounded bg-mplp-dark-soft text-mplp-text-muted font-mono text-[10px]">public/_data/v2/runs/index.json</code>.
+                <span className="ml-1">Runset relationships are governed upstream in <code className="px-1 py-0.5 rounded bg-mplp-dark-soft text-mplp-text-muted font-mono text-[10px]">runsets.yaml</code>.</span>
                 Only runs with an adjudication bundle have deterministic <code className="px-1 py-0.5 rounded bg-mplp-dark-soft text-mplp-text-muted font-mono text-[10px]">verdict_hash</code> and can be rechecked.
             </p>
         </div>

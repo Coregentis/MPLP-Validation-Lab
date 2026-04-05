@@ -1,8 +1,10 @@
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import fs from 'fs';
 import path from 'path';
-import { VersionStrip } from '@/components/VersionStrip';
 import { getVersionStripModel } from '@/lib/unified/version-strip-model';
+
+const LAB_CANONICAL_HOST = 'https://lab.mplp.io';
 
 interface GovernanceEntry {
     id: string;
@@ -25,9 +27,16 @@ async function getGovernanceData(): Promise<GovernanceData> {
     return JSON.parse(fileContent);
 }
 
-export const metadata = {
-    title: 'Governance | MPLP Validation Lab',
-    description: 'Unified governance entry point for policies, gates, releases, and audits.',
+export const metadata: Metadata = {
+    title: 'Governance',
+    description: 'Lab governance index for policies, gates, releases, and audit utilities. Non-protocol authority.',
+    alternates: {
+        canonical: `${LAB_CANONICAL_HOST}/governance`,
+    },
+    robots: {
+        index: true,
+        follow: true,
+    },
 };
 
 export default async function GovernancePage() {
@@ -61,13 +70,11 @@ export default async function GovernancePage() {
 
     return (
         <div className="pt-8">
-            <VersionStrip {...versionModel} />
-
             {/* Header */}
-            <div className="mb-12 mt-4">
-                <p className="text-xs font-bold uppercase tracking-[0.4em] text-mplp-text-muted/80 mb-3">Protocol Standards</p>
+            <div className="mb-12">
+                <p className="text-xs font-bold uppercase tracking-[0.4em] text-mplp-text-muted/80 mb-3">Lab Governance</p>
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-                    <h1 className="text-3xl sm:text-4xl font-bold text-mplp-text">Unified Governance</h1>
+                    <h1 className="text-3xl sm:text-4xl font-bold text-mplp-text">Governance Index</h1>
                     <div className="flex items-center gap-3 text-xs text-mplp-text-muted bg-mplp-dark-soft px-3 py-1.5 rounded border border-mplp-border/30 font-mono">
                         <span>GOV-INDEX-V{data.version}</span>
                         <span className="w-px h-3 bg-mplp-border/50" />
@@ -76,7 +83,8 @@ export default async function GovernancePage() {
                 </div>
                 <div className="mt-6 max-w-3xl">
                     <p className="text-mplp-text-muted text-lg leading-relaxed">
-                        Single point of truth for operational policies, verification gates, release seals, and audit reports.
+                        Aggregated entry point for Lab policies, gate feeds, release seals, and audit utilities.
+                        This page is navigation for Lab governance only, not protocol-definition authority.
                     </p>
                 </div>
             </div>
@@ -94,7 +102,7 @@ export default async function GovernancePage() {
                                     {entry.title}
                                 </h2>
                                 <span className="text-[10px] px-2 py-0.5 rounded bg-mplp-dark-soft text-mplp-text-muted font-mono uppercase tracking-wider">
-                                    {entry.scope}
+                                    {entry.id === 'gov-policies' || entry.id === 'gov-gates' ? 'secondary' : entry.scope}
                                 </span>
                             </div>
                             <p className="text-sm text-mplp-text-muted leading-relaxed mb-6">
@@ -127,22 +135,22 @@ export default async function GovernancePage() {
 
                 <div className="flex items-center gap-4 mb-6">
                     <h3 className="text-sm font-bold font-mono text-mplp-text-muted uppercase tracking-widest">
-                        Conformance Status
+                        Boundary Notes
                     </h3>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
                     <div className="bg-mplp-dark-soft/20 p-5 rounded-lg border border-mplp-border/20">
-                        <strong className="block mb-2 text-mplp-text">Deterministic</strong>
-                        <p className="text-mplp-text-muted leading-relaxed text-xs">All gates and seals are cryptographically verifiable and deterministic.</p>
+                        <strong className="block mb-2 text-mplp-text">Deterministic Feeds</strong>
+                        <p className="text-mplp-text-muted leading-relaxed text-xs">Gates and seals are published as machine-readable Lab records for recheck and audit.</p>
                     </div>
                     <div className="bg-mplp-dark-soft/20 p-5 rounded-lg border border-mplp-border/20">
-                        <strong className="block mb-2 text-mplp-text">Unified</strong>
-                        <p className="text-mplp-text-muted leading-relaxed text-xs">Covers both V1 (Simulated) and V2 (Reproduced) substrates.</p>
+                        <strong className="block mb-2 text-mplp-text">Version Domains</strong>
+                        <p className="text-mplp-text-muted leading-relaxed text-xs">Protocol baseline, ruleset identity, and Lab release version remain separate domains.</p>
                     </div>
                     <div className="bg-mplp-dark-soft/20 p-5 rounded-lg border border-mplp-border/20">
-                        <strong className="block mb-2 text-mplp-text">Source of Truth</strong>
-                        <p className="text-mplp-text-muted leading-relaxed text-xs">Governance index is the root of trust for all policy assets.</p>
+                        <strong className="block mb-2 text-mplp-text">Aggregated Inputs</strong>
+                        <p className="text-mplp-text-muted leading-relaxed text-xs">Governance index, runtime inventories, and release records are combined here for navigation and discovery.</p>
                     </div>
                 </div>
             </div>

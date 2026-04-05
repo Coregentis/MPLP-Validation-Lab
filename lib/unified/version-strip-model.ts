@@ -25,9 +25,8 @@ export interface VersionStripModel {
         total: number;
         v1_active_count: number;
         v2_active_count: number;
-        current_default: string;
     };
-    snapshot_date: string;
+    inventory_snapshot_date: string;
 }
 
 const PROJECT_ROOT = process.cwd();
@@ -57,6 +56,8 @@ function countDirs(relPath: string) {
 }
 
 export async function getVersionStripModel(): Promise<VersionStripModel> {
+    const manifest = readJson('public/_meta/lab-manifest.json');
+
     // 1. Build ID & Seal Status
     // Look for latest unified seal
     let build_id = 'DEV-BUILD';
@@ -71,9 +72,9 @@ export async function getVersionStripModel(): Promise<VersionStripModel> {
                 const sealPath = path.join(unifiedReleasesDir, latest, 'seal.md');
                 if (fs.existsSync(sealPath)) {
                     build_id = latest;
-                    // rapid check content for "Status: PASS"
+                    // Accept either plain or markdown-emphasized "Status: PASS"
                     const content = fs.readFileSync(sealPath, 'utf8');
-                    seal_status = content.includes('Status: PASS') ? 'VALID' : 'INVALID';
+                    seal_status = /(?:\*\*)?Status(?:\*\*)?:\s*PASS/i.test(content) ? 'VALID' : 'INVALID';
                 }
             }
         }
@@ -98,9 +99,9 @@ export async function getVersionStripModel(): Promise<VersionStripModel> {
     const v2RulesetData = readJson('public/_data/v2/rulesets/index.json');
     const v2RulesetCount = v2RulesetData?.data?.rulesets?.length || 0;
 
-    // 4. Governance/Snapshot
+    // 4. Governance inventory snapshot
     const govIndex = readJson('public/_data/governance/index.json');
-    const snapshotDate = govIndex?.generated_at || new Date().toISOString().split('T')[0];
+    const inventorySnapshotDate = govIndex?.generated_at || new Date().toISOString().split('T')[0];
 
     // 5. New SSOT Models
     const labStatus = getLabStatusModel();
@@ -124,8 +125,7 @@ export async function getVersionStripModel(): Promise<VersionStripModel> {
             total: v1RulesetCount + v2RulesetCount,
             v1_active_count: v1RulesetCount, // simplified assumption
             v2_active_count: v2RulesetCount,
-            current_default: 'ruleset-1.0' // hardcoded default for now until V2 flip
         },
-        snapshot_date: snapshotDate
+        inventory_snapshot_date: inventorySnapshotDate
     };
 }

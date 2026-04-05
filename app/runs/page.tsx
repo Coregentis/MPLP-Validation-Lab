@@ -1,14 +1,25 @@
 
 /**
  * Unified Runs Page
- * 
- * Single entry point for all runs (V1 SIMULATED + V2 REPRODUCED/DISPUTE_READY).
+ *
+ * Actual runtime sources:
+ * - public/_data/curated-runs.json
+ * - public/_data/v2/runs/index.json
+ *
+ * Upstream provenance:
+ * - governance/runsets.yaml
+ * - data/curated-runs/allowlist.yaml
+ * - export/curated-runs.json
+ * - data/curated-runs/substrate-index.yaml
+ *
+ * This route is an aggregate runtime projection, not a direct projection of runsets.yaml.
  * Supports faceted filtering via query params: ?tier=, ?substrate=, ?verdict=
- * 
+ *
  * Ticket: VLAB-MERGE-P0-ROUTE-01
  */
 
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import { loadAllRuns } from '@/lib/unified/load-all-runs';
 import type { RunTier, UnifiedRunIndexItem } from '@/lib/unified/types';
 import { getVersionStripModel } from '@/lib/unified/version-strip-model';
@@ -18,6 +29,20 @@ import Doclet from '@/components/doclets/Doclet';
 
 // DOMAIN_LABELS and TIER_STYLES import
 import { TierLegend, TierBadge, DOMAIN_LABELS, TIER_STYLES } from '@/components/unified/TierLegend';
+
+const LAB_CANONICAL_HOST = 'https://lab.mplp.io';
+
+export const metadata: Metadata = {
+    title: 'Runs',
+    description: 'Public run inventory for MPLP Validation Lab. Browse evidence packs, verdicts, evidence tiers, and linked rulesets across published V1 and V2 runs.',
+    alternates: {
+        canonical: `${LAB_CANONICAL_HOST}/runs`,
+    },
+    robots: {
+        index: true,
+        follow: true,
+    },
+};
 
 // Verdict badge styling
 const VERDICT_STYLES: Record<string, { bg: string; text: string }> = {
@@ -212,9 +237,9 @@ export default async function UnifiedRunsPage({ searchParams }: PageProps) {
             {/* Header */}
             <div className="mb-12">
                 <p className="text-xs font-bold uppercase tracking-[0.4em] text-mplp-text-muted/80 mb-3 flex items-center gap-2">
-                    Resources
+                    Evidence Inventory
                     <span className="w-px h-3 bg-mplp-border/50 mx-2" />
-                    <span className="text-[10px] tracking-widest opacity-60 font-mono">SSOT: RUN-INDEX-V{versionModel.run_inventory.v1_version}</span>
+                    <span className="text-[10px] tracking-widest opacity-60 font-mono">Public V1 + V2 run index</span>
                 </p>
                 <h1 className="text-3xl sm:text-4xl font-bold text-mplp-text mb-6" data-testid="runs-index-header">All Runs</h1>
                 <div className="max-w-2xl text-mplp-text-muted leading-relaxed">
@@ -224,8 +249,8 @@ export default async function UnifiedRunsPage({ searchParams }: PageProps) {
                 <div className="mt-4 p-3 bg-amber-500/5 border border-amber-500/20 rounded-lg text-xs text-mplp-text-muted flex items-start gap-2 max-w-2xl">
                     <span className="text-amber-500 font-bold mt-0.5">Note:</span>
                     <span>
-                        The public <code>sitemap.xml</code> indexes only high-value (Reproduced/Dispute-Ready) runs to maintain SEO quality.
-                        For a complete inventory of all runs (including simulated baselines), use this index or the <Link href="/governance/topology" className="text-mplp-blue-soft hover:underline">Site Topology Map</Link>.
+                        Search engines are pointed at a smaller subset of high-value runs.
+                        This page remains the full public run index, including simulated baselines and other valid records that are not prioritized for search. For a complete route inventory, use the <Link href="/governance/topology" className="text-mplp-blue-soft hover:underline">Site Topology Map</Link>.
                     </span>
                 </div>
             </div>

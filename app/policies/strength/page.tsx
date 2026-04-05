@@ -1,15 +1,8 @@
 /**
- * Ruleset Strength Policy Page
- * 
- * Governance document to prevent narrative drift.
- * Defines ruleset strength levels and anti-drift rules.
- * 
- * NON-NORMATIVE: This is Lab governance, not MPLP protocol spec.
- * GATE-04 COMPLIANCE: No certification/endorsement language.
- * 
- * B-Type Hardcode (Stable Governance Definition)
- * ruleset-1.0 reference is stable within current lab series
- * Source: data/rulesets/ruleset-1.0/manifest.yaml (active ruleset)
+ * Ruleset strength policy source model:
+ * - this page is the public Lab policy surface for strength framing
+ * - governance/evidence/EVIDENCE_STRENGTH.md remains supporting provenance,
+ *   not the page's direct runtime source
  */
 
 import Link from 'next/link';
@@ -19,7 +12,7 @@ const LAB_CANONICAL_HOST = 'https://lab.mplp.io';
 
 export const metadata: Metadata = {
     title: 'Ruleset Strength Policy — MPLP Validation Lab',
-    description: 'Anti-drift governance for ruleset strength. Stronger claims require new ruleset version. ruleset-1.0 = presence-level only.',
+    description: 'Anti-drift framing for Lab ruleset strength. Stronger public claims require a new ruleset identity or published adjudication line.',
     alternates: {
         canonical: `${LAB_CANONICAL_HOST}/policies/strength`,
     },
@@ -49,13 +42,16 @@ export default function StrengthPolicyPage() {
                         Core Rule: UI MAY ONLY project claims supported by the active ruleset version.
                     </p>
                 </div>
+                <p className="text-zinc-500 text-xs mt-4">
+                    Legacy V1 LG lines and V2 clause bundles coexist publicly. They must not be collapsed into one single strength doctrine.
+                </p>
             </section>
 
             {/* Strength Levels */}
             <section className="bg-zinc-900 border border-zinc-800 rounded-lg p-6 mb-6">
                 <h2 className="text-xl font-semibold mb-4">Strength Levels</h2>
                 <p className="text-zinc-500 text-xs mb-4">
-                    Rulesets are classified by their adjudication strength. Higher levels require more sophisticated evaluation logic.
+                    Current public Lab lines should be described conservatively and source-by-source.
                 </p>
                 <div className="space-y-4">
                     {/* Presence-level */}
@@ -75,35 +71,18 @@ export default function StrengthPolicyPage() {
                         </p>
                     </div>
 
-                    {/* Structural-level */}
-                    <div className="border border-zinc-700 rounded-lg p-4 opacity-60">
+                    <div className="border border-zinc-700 rounded-lg p-4 opacity-80">
                         <div className="flex items-center gap-3 mb-2">
                             <span className="px-2 py-1 bg-zinc-800 text-zinc-500 rounded text-xs font-semibold">
-                                FUTURE
+                                DISTINCT LINE
                             </span>
-                            <h3 className="font-semibold text-zinc-400">Structural-level</h3>
+                            <h3 className="font-semibold text-zinc-400">V2 Clause Bundle Line</h3>
                         </div>
                         <p className="text-zinc-500 text-sm mb-2">
-                            Will evaluate: Schema validity, field type conformance
+                            Public V2 bundle pages must describe the published clause line as its own adjudication line, not as a silent upgrade of legacy V1 LG strength.
                         </p>
                         <p className="text-zinc-600 text-xs">
-                            Requires: New ruleset version (e.g., ruleset-2.x)
-                        </p>
-                    </div>
-
-                    {/* Invariant-level */}
-                    <div className="border border-zinc-700 rounded-lg p-4 opacity-60">
-                        <div className="flex items-center gap-3 mb-2">
-                            <span className="px-2 py-1 bg-zinc-800 text-zinc-500 rounded text-xs font-semibold">
-                                FUTURE
-                            </span>
-                            <h3 className="font-semibold text-zinc-400">Invariant-level</h3>
-                        </div>
-                        <p className="text-zinc-500 text-sm mb-2">
-                            Will evaluate: Semantic invariant satisfaction, lifecycle correctness
-                        </p>
-                        <p className="text-zinc-600 text-xs">
-                            Requires: New ruleset version + invariant definitions from MPLP Protocol
+                            Stronger or different Lab claims require an explicit new ruleset identity or published bundle line.
                         </p>
                     </div>
                 </div>
@@ -129,23 +108,19 @@ export default function StrengthPolicyPage() {
 
             {/* Current Ruleset Status */}
             <section className="bg-zinc-900 border border-zinc-800 rounded-lg p-6 mb-6">
-                <h2 className="text-lg font-semibold mb-3">Current Ruleset Status</h2>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+                <h2 className="text-lg font-semibold mb-3">Current Public Lines</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
                     <div>
-                        <p className="text-zinc-500">Version</p>
+                        <p className="text-zinc-500">Legacy V1</p>
                         <p className="text-zinc-300 font-mono">ruleset-1.0</p>
-                    </div>
-                    <div>
-                        <p className="text-zinc-500">Strength</p>
                         <p className="text-amber-400">presence-level</p>
+                        <p className="text-zinc-500 text-xs mt-1">LG-01 ~ LG-05 legacy line</p>
                     </div>
                     <div>
-                        <p className="text-zinc-500">Lifecycle Guarantees</p>
-                        <p className="text-zinc-300">LG-01 ~ LG-05</p>
-                    </div>
-                    <div>
-                        <p className="text-zinc-500">Contract</p>
-                        <p className="text-zinc-300">v1.0</p>
+                        <p className="text-zinc-500">V2 Bundles</p>
+                        <p className="text-zinc-300 font-mono">ruleset-v2.0.0 / v2.0.1</p>
+                        <p className="text-emerald-400">clause bundle line</p>
+                        <p className="text-zinc-500 text-xs mt-1">clause IDs remain distinct from legacy LG IDs</p>
                     </div>
                 </div>
             </section>

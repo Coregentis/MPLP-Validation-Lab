@@ -6,13 +6,13 @@
     "full": "Multi-Agent Lifecycle Protocol",
     "short": "MPLP",
     "slogan": "MPLP — The Agent OS Protocol.",
-    "technical_subtitle": "The Lifecycle Protocol for AI Agents.",
+    "technical_subtitle": "A vendor-neutral lifecycle protocol for AI agent systems.",
     "enterprise_subtitle": "Observable. Governed. Vendor-neutral."
   },
   "canonical_versions": {
     "protocol": "1.0.0",
     "schema_bundle": "2.0.0",
-    "lab_series": "v0.10.2"
+    "lab_series": "v0.17.0"
   },
   "canonical_anchors": {
     "website_definition": "https://www.mplp.io/definition",

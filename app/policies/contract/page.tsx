@@ -2,8 +2,10 @@
  * Export Contract Page (v1.2)
  * 
  * Public compatibility contract for the export/ directory.
- * SSOT (scoped): This page is the source of truth for the *public export/ contract surface*
+ * This route is a SURFACE AUTHORITY PAGE for the public export contract surface
  * within the MPLP Validation Lab. It does not define MPLP protocol semantics.
+ * Supporting markdown contracts in governance/contracts/ are provenance references,
+ * not this route's direct runtime source.
  * 
  * NON-NORMATIVE: This is Lab governance, not MPLP protocol spec.
  * Compliance: No certification/endorsement language. Passing gates ≠ certification.

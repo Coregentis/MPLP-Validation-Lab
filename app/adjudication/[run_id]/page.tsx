@@ -1,10 +1,9 @@
 /**
- * Adjudication Detail Page
- * 
- * Shows full adjudication bundle details for a specific run_id.
- * Includes verdict summary, integrity info, and recheck instructions.
- * 
- * GOVERNANCE: Reviewability ≠ Reproducibility
+ * Adjudication detail source model:
+ * - direct runtime sources: export/adjudication-index.json, adjudication/<run_id>/verdict.json,
+ *   adjudication/<run_id>/sha256sums.txt
+ * - the bundle directory is existence-checked before rendering, but the page facts come from the
+ *   verdict and integrity files plus the index cross-reference
  */
 
 import { Metadata } from 'next';

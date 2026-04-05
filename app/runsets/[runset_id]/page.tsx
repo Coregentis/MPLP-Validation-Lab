@@ -1,3 +1,17 @@
+/**
+ * Runset Detail Page
+ *
+ * Actual runtime sources:
+ * - public/_data/curated-runs.json
+ * - public/_data/v2/runs/index.json
+ * - public/_data/unified/runset-aliases.json (optional)
+ *
+ * Upstream provenance:
+ * - governance/runsets.yaml
+ *
+ * This route is an aggregate projection, not a direct projection of runsets.yaml.
+ */
+
 import Link from 'next/link';
 import { notFound, redirect } from 'next/navigation';
 import { getRunset } from '@/lib/unified/load-all-runsets';
@@ -287,7 +301,8 @@ export default async function RunsetDetailPage({ params }: PageProps) {
                     <h3>About this Runset</h3>
                     <p>
                         A Runset is a snapshot of evidence packs at a specific point in time.
-                        The content here reflects the state of the <code>{runset.source === 'v1' ? 'curated-runs.json' : 'v2/runs/index.json'}</code> source file.
+                        This detail page resolves membership from the unified runtime inventories <code>public/_data/curated-runs.json</code> and <code>public/_data/v2/runs/index.json</code>, with optional alias resolution from <code>public/_data/unified/runset-aliases.json</code>.
+                        Upstream runset relationships are governed separately in <code>governance/runsets.yaml</code>.
                     </p>
                 </div>
             </div>

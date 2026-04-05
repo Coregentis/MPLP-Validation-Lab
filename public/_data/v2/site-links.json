@@ -11,42 +11,42 @@
       {
         "source_page": "/runs",
         "target_site": "docs",
-        "target_path": "/evaluation/overview",
-        "rationale": "Link to evaluation methodology documentation",
+        "target_path": "/docs/evaluation",
+        "rationale": "Link to evaluation and Validation Lab reference entry surfaces",
         "rel_type": "related",
-        "link_text": "Learn about MPLP Evaluation"
+        "link_text": "Evaluation & Governance"
       },
       {
         "source_page": "/runs/[run_id]",
         "target_site": "docs",
-        "target_path": "/evaluation/evidence-packs",
-        "rationale": "Link to evidence pack structure documentation",
+        "target_path": "/docs/evaluation/validation-lab/evidence-pack-contract",
+        "rationale": "Link to Lab-side evidence-pack contract reference",
         "rel_type": "related",
-        "link_text": "Evidence Pack Documentation"
+        "link_text": "Evidence Pack Contract Reference"
       },
       {
         "source_page": "/rulesets",
         "target_site": "docs",
-        "target_path": "/evaluation/rulesets",
-        "rationale": "Link to ruleset documentation",
-        "rel_type": "canonical",
-        "link_text": "Ruleset Documentation"
+        "target_path": "/docs/evaluation/validation-lab/rulesets",
+        "rationale": "Link to Validation Lab ruleset reference documentation",
+        "rel_type": "related",
+        "link_text": "Ruleset Reference"
       },
       {
         "source_page": "/policies/fmm",
         "target_site": "docs",
-        "target_path": "/protocol/field-mapping",
-        "rationale": "Link to field mapping methodology",
+        "target_path": "/docs/evaluation/validation-lab",
+        "rationale": "Link to the bounded Validation Lab reference entry in docs",
         "rel_type": "related",
-        "link_text": "Field Mapping Methodology"
+        "link_text": "Validation Lab Reference"
       },
       {
         "source_page": "/policies/contract",
         "target_site": "docs",
-        "target_path": "/evaluation/indexability-contract",
-        "rationale": "Link to indexability contract definition",
-        "rel_type": "canonical",
-        "link_text": "Indexability Contract Definition"
+        "target_path": "/docs/evaluation/validation-lab/evidence-pack-contract",
+        "rationale": "Link to Lab-side evidence-pack contract reference",
+        "rel_type": "related",
+        "link_text": "Evidence Pack Contract Reference"
       },
       {
         "source_page": "/",
@@ -75,14 +75,14 @@
       ],
       "from_docs": [
         {
-          "source_path": "/evaluation/overview",
+          "source_path": "/docs/evaluation",
           "expected_target": "/runs",
-          "rationale": "Docs should link to Lab runs from evaluation overview"
+          "rationale": "Docs evaluation entry should link to Lab runs as downstream examples"
         },
         {
-          "source_path": "/evaluation/evidence-packs",
+          "source_path": "/docs/evaluation/validation-lab/evidence-pack-contract",
           "expected_target": "/runs",
-          "rationale": "Docs should link to Lab runs as examples"
+          "rationale": "Evidence-pack reference should link to Lab runs as examples"
         }
       ]
     },

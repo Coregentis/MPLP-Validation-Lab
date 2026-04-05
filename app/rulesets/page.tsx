@@ -1,20 +1,22 @@
 /**
  * Rulesets Index Page
  * 
- * Lists available rulesets from data/rulesets/
- * Non-normative: only reflects what's in the ruleset files.
+ * Lists available rulesets from a dual-source runtime model:
+ * - V1: data/rulesets/*
+ * - V2: public/_data/v2/rulesets/index.json
+ *
+ * Non-normative: only reflects what's in the runtime ruleset sources.
  */
 
 import Link from 'next/link';
 import { listRulesets } from '@/lib/rulesets/loadRuleset';
 import type { Metadata } from 'next';
-import { getVersionStripModel } from '@/lib/unified/version-strip-model';
 
 const LAB_CANONICAL_HOST = 'https://lab.mplp.io';
 
 export const metadata: Metadata = {
-    title: 'Rulesets — MPLP Validation Lab',
-    description: 'Versioned rulesets for MPLP evidence-based verdicts. Each ruleset defines requirements for Lifecycle Guarantees evaluation.',
+    title: 'Rulesets',
+    description: 'Versioned adjudication lines for evidence-based verdicts. Ruleset identity remains distinct from protocol and schema bundle versions.',
     alternates: {
         canonical: `${LAB_CANONICAL_HOST}/rulesets`,
     },
@@ -32,7 +34,6 @@ import Doclet from '@/components/doclets/Doclet';
 
 export default async function RulesetsPage() {
     const rulesets = listRulesets();
-    const versionModel = await getVersionStripModel();
     const rulesetsDocletMd = fs.readFileSync(path.join(process.cwd(), 'content/doclets/rulesets.md'), 'utf-8');
 
     return (
@@ -41,19 +42,25 @@ export default async function RulesetsPage() {
                 <p className="text-xs font-bold uppercase tracking-[0.4em] text-mplp-text-muted/80 mb-3 flex items-center gap-2">
                     Evaluation Logic
                     <span className="w-px h-3 bg-mplp-border/50 mx-2" />
-                    <span className="text-[10px] tracking-widest opacity-60 font-mono">SSOT: RULESET-REGISTRY-V{versionModel.ruleset_inventory.current_default.split('-')[1] || '1.1'}</span>
+                    <span className="text-[10px] tracking-widest opacity-60 font-mono">Public index of active and historical adjudication lines</span>
                 </p>
                 <h1 className="text-3xl sm:text-4xl font-bold text-mplp-text mb-6">Rulesets</h1>
                 <div className="max-w-2xl text-mplp-text-muted leading-relaxed">
-                    <Doclet md={rulesetsDocletMd.split('##')[1]} model={versionModel} />
+                    <Doclet md={rulesetsDocletMd.split('##')[1]} model={{}} />
                 </div>
+                <p className="mt-3 text-xs text-mplp-text-muted/70 max-w-3xl">
+                    Runtime sources: <code className="font-mono">data/rulesets/*</code> + <code className="font-mono">public/_data/v2/rulesets/index.json</code>.
+                </p>
+                <p className="mt-2 text-xs text-mplp-text-muted/60 max-w-3xl">
+                    Ruleset identity is a Lab adjudication concept. It does not redefine <code className="font-mono">protocol_version</code> or <code className="font-mono">schema_bundle_version</code>.
+                </p>
 
                 {/* Status Legend */}
                 <div className="mt-6 flex flex-wrap gap-6 text-[11px] uppercase tracking-widest font-bold">
                     <div className="flex items-center gap-2">
                         <span className="w-2 h-2 rounded-full bg-mplp-blue-soft ring-4 ring-mplp-blue-soft/10" />
                         <span className="text-mplp-text">Active</span>
-                        <span className="text-mplp-text-muted font-normal lowercase tracking-normal">— Authoritative for official verdicts</span>
+                        <span className="text-mplp-text-muted font-normal lowercase tracking-normal">— available for current Lab adjudication outputs</span>
                     </div>
                     <div className="flex items-center gap-2">
                         <span className="w-2 h-2 rounded-full bg-mplp-text-muted/40" />
@@ -107,7 +114,7 @@ export default async function RulesetsPage() {
                                 <span className="text-xs font-bold uppercase tracking-widest text-mplp-text-muted/60 group-hover:text-mplp-text-muted transition-colors">
                                     {rs.clauses?.length
                                         ? `${rs.clauses.length} Clauses`
-                                        : `${rs.golden_flows?.length || 0} Lifecycle Guarantees`}
+                                        : `${rs.golden_flows?.length || 0} Legacy V1 LG entries`}
                                 </span>
                                 <span className="text-mplp-blue-soft opacity-0 group-hover:opacity-100 transition-all transform translate-x-[-10px] group-hover:translate-x-0">
                                     →

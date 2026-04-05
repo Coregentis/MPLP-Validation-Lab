@@ -1,13 +1,14 @@
 /**
- * Evidence Samples Gallery (MUST-1)
+ * Evidence Pair Gallery
  * 
- * Showcases "Same-Scale" equivalence pairs across substrates.
+ * Source-bound projection over the historical cross-verified report.
+ * This page only promotes pairs when the bound report also carries non-unknown
+ * verdict/admission status for both sides.
  */
 
 import type { Metadata } from 'next';
 import crossVerifiedReport from '@/public/_data/cross-verified/v0.10.2-report.json';
-import { DisclaimerBox } from '@/components/common/DisclaimerBox';
-import { CheckCircle, ArrowRightLeft, FileJson } from 'lucide-react';
+import { ArrowRightLeft, FileJson } from 'lucide-react';
 import { SmartLink } from '@/components/common/SmartLink';
 import { SemanticStatusBadge } from '@/components/common/SemanticStatusBadge';
 
@@ -15,7 +16,7 @@ import { SemanticStatusBadge } from '@/components/common/SemanticStatusBadge';
 
 export const metadata: Metadata = {
     title: 'Evidence Gallery — MPLP Validation Lab',
-    description: 'MUST-1: Cross-substrate same-scale evidence samples comparing identical scenarios.',
+    description: 'Source-bound evidence pair gallery from the historical cross-verified report. No equivalence proof is implied by this page alone.',
 };
 
 interface ReportEntry {
@@ -24,6 +25,7 @@ interface ReportEntry {
     scenario_family: string;
     normalized_hash: string;
     verdict_status: string;
+    admission_status: string;
 }
 
 interface EquivalenceMatrix {
@@ -41,7 +43,15 @@ interface CrossVerifiedReport {
 export default function EvidenceGallery() {
     const report = crossVerifiedReport as unknown as CrossVerifiedReport;
 
-    const heroSamples = report.equivalence_matrix.filter(m => m.equivalent);
+    const heroSamples = report.equivalence_matrix.filter((m) => {
+        const left = report.entries.find((e) => e.run_id === m.left_run_id);
+        const right = report.entries.find((e) => e.run_id === m.right_run_id);
+        if (!m.equivalent || !left || !right) return false;
+        return left.verdict_status !== 'unknown'
+            && right.verdict_status !== 'unknown'
+            && left.admission_status !== 'unknown'
+            && right.admission_status !== 'unknown';
+    });
     const hasSamples = heroSamples.length > 0;
 
     return (
@@ -53,15 +63,22 @@ export default function EvidenceGallery() {
                     <span className="text-mplp-text text-mplp-text-muted">Evidence Gallery</span>
                 </div>
                 <h1 className="text-3xl sm:text-4xl font-bold text-mplp-text mb-4">
-                    Same-Scale Samples (MUST-1) {!hasSamples && '— None yet'}
+                    Evidence Pair Gallery {!hasSamples && '— No promotable pairs yet'}
                 </h1>
                 <p className="max-w-2xl text-mplp-text-muted leading-relaxed">
-                    Institutional Domain Breadth proof: Direct comparison of identical scenarios across disparate substrates.
-                    These bit-identical samples establish a substrate-neutral scale for adjudication.
+                    Source-bound snapshot over the historical cross-verified report.
+                    This page only promotes pairs when both sides carry non-unknown verdict and admission status in the bound report.
                 </p>
             </header>
 
-            <DisclaimerBox kind="equivalence" className="mb-12" />
+            <div className="mb-12 p-4 bg-amber-900/20 border border-amber-500/30 rounded-lg">
+                <p className="text-xs text-amber-400/90 font-medium uppercase tracking-wider mb-2">
+                    Source Boundary
+                </p>
+                <p className="text-sm text-mplp-text-muted">
+                    The current bound report remains a historical comparison snapshot. Unknown verdict or admission status means this page must not present the pair as verified equivalence or proof.
+                </p>
+            </div>
 
             <div className="space-y-8">
                 {heroSamples.map((sample, i) => {
@@ -78,8 +95,9 @@ export default function EvidenceGallery() {
                                     <div className="p-4 rounded-2xl bg-black/40 border border-mplp-border/20">
                                         <p className="font-mono text-xs text-mplp-text truncate mb-1">{left.run_id}</p>
                                         <div className="flex items-center gap-2 text-[10px] text-mplp-text-muted">
-                                            <CheckCircle size={10} className="text-emerald-500" />
-                                            <span>Admission: PASS</span>
+                                            <span>Admission: {left.admission_status}</span>
+                                            <span>•</span>
+                                            <span>Verdict: {left.verdict_status}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -91,8 +109,9 @@ export default function EvidenceGallery() {
                                     <div className="p-4 rounded-2xl bg-black/40 border border-mplp-border/20">
                                         <p className="font-mono text-xs text-mplp-text truncate mb-1">{right.run_id}</p>
                                         <div className="flex items-center gap-2 text-[10px] text-mplp-text-muted justify-end">
-                                            <CheckCircle size={10} className="text-emerald-500" />
-                                            <span>Admission: PASS</span>
+                                            <span>Admission: {right.admission_status}</span>
+                                            <span>•</span>
+                                            <span>Verdict: {right.verdict_status}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -100,8 +119,8 @@ export default function EvidenceGallery() {
 
                             <div className="mt-8 pt-6 border-t border-mplp-border/20 flex flex-col sm:flex-row items-center justify-between gap-4">
                                 <div className="flex items-center gap-2">
-                                    <SemanticStatusBadge status="PASS" />
-                                    <span className="text-[10px] text-mplp-text-muted uppercase tracking-widest">Equivalent result: {left.scenario_family}</span>
+                                    <SemanticStatusBadge status="UNAVAILABLE" />
+                                    <span className="text-[10px] text-mplp-text-muted uppercase tracking-widest">Resolved comparison pair: {left.scenario_family}</span>
                                 </div>
                                 <div className="flex gap-4">
                                     <SmartLink
@@ -122,8 +141,8 @@ export default function EvidenceGallery() {
                         <SemanticStatusBadge status="PENDING_NORMALIZATION" className="mb-4 inline-block" />
                         <p className="text-sm font-bold text-mplp-text mb-2 tracking-tight transition-all">Normalization Convergence in Progress</p>
                         <p className="text-xs text-mplp-text-muted max-w-sm mx-auto leading-relaxed">
-                            No identical &quot;Hero Samples&quot; are currently bit-locked for the v1.0 series.
-                            This is a planned latency state as substrates migrate toward the new SSOT projection mapping.
+                            No public pair currently qualifies as a front-door example.
+                            The bound report keeps comparison rows at unknown verdict/admission status, so this page does not promote any pair as equivalence proof.
                         </p>
                         <div className="mt-8">
                             <SmartLink anchor="repo_anchor" className="text-mplp-blue-soft text-xs font-bold hover:underline">
@@ -135,22 +154,23 @@ export default function EvidenceGallery() {
             </div>
 
             <section className="mt-20 p-8 rounded-3xl bg-glass border border-mplp-border/20">
-                <h2 className="text-xl font-bold text-mplp-text mb-4">About Same-Scale Samples</h2>
+                <h2 className="text-xl font-bold text-mplp-text mb-4">How to Read This Snapshot</h2>
                 <p className="text-sm text-mplp-text-muted leading-relaxed mb-6">
-                    MUST-1 ensures that the Validation Lab can compare disparate frameworks on an identical scale.
+                    Historical labels such as <code>MUST-1</code> or &quot;same-scale&quot; remain lineage context only.
+                    The current public page is a source-bound comparison snapshot, not an equivalence constitution.
                 </p>
                 <div className="grid sm:grid-cols-3 gap-6">
                     <div className="p-4 rounded-xl bg-black/20 font-mono">
-                        <h3 className="text-xs font-bold text-mplp-text mb-2 uppercase tracking-wider">Step 1: Capture</h3>
-                        <p className="text-[10px] text-mplp-text-muted">Events captured via observers.</p>
+                        <h3 className="text-xs font-bold text-mplp-text mb-2 uppercase tracking-wider">Step 1: Read the report</h3>
+                        <p className="text-[10px] text-mplp-text-muted">Treat the comparison matrix as historical report output.</p>
                     </div>
                     <div className="p-4 rounded-xl bg-black/20 font-mono">
-                        <h3 className="text-xs font-bold text-mplp-text mb-2 uppercase tracking-wider">Step 2: Map</h3>
-                        <p className="text-[10px] text-mplp-text-muted">Normalized via Field Mapping Matrix (FMM).</p>
+                        <h3 className="text-xs font-bold text-mplp-text mb-2 uppercase tracking-wider">Step 2: Check status fields</h3>
+                        <p className="text-[10px] text-mplp-text-muted">Unknown verdict/admission status blocks stronger public proof language.</p>
                     </div>
                     <div className="p-4 rounded-xl bg-black/20 font-mono">
-                        <h3 className="text-xs font-bold text-mplp-text mb-2 uppercase tracking-wider">Step 3: Anchor</h3>
-                        <p className="text-[10px] text-mplp-text-muted">Semantic hash anchored for bit-level proof.</p>
+                        <h3 className="text-xs font-bold text-mplp-text mb-2 uppercase tracking-wider">Step 3: Follow source links</h3>
+                        <p className="text-[10px] text-mplp-text-muted">Use the report, runs, and rulesets together before making any interpretation claim.</p>
                     </div>
                 </div>
             </section>

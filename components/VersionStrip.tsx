@@ -34,14 +34,16 @@ export function VersionStrip(props: VersionStripModel) {
                     <span>
                         <span className="text-mplp-text">{props.ruleset_inventory.total} Sets</span>
                         <span className="mx-1 opacity-40">|</span>
-                        <span>Def: {props.ruleset_inventory.current_default}</span>
+                        <span>V1:{props.ruleset_inventory.v1_active_count}</span>
+                        <span className="mx-1 opacity-40">/</span>
+                        <span>V2:{props.ruleset_inventory.v2_active_count}</span>
                     </span>
                 </div>
 
-                {/* Snapshot Date */}
+                {/* Inventory Snapshot */}
                 <div className="flex items-center gap-2 ml-auto">
-                    <span className="uppercase font-bold text-mplp-text-muted/60">SSOT</span>
-                    <span>{props.snapshot_date}</span>
+                    <span className="uppercase font-bold text-mplp-text-muted/60">Updated</span>
+                    <span title="Governance inventory snapshot date">{props.inventory_snapshot_date}</span>
                 </div>
             </div>
         </div>

@@ -4,7 +4,8 @@
  * Shows Substrate × Domain coverage matrix for adjudication bundles.
  * Answers: "Which substrates have been adjudicated, for which domains?"
  * 
- * SSOT: substrate-index.yaml + adjudication-index.json
+ * Runtime source: substrate-index.yaml.
+ * Adjudication index provenance may exist elsewhere, but this page currently renders from the substrate index only.
  * 
  * GOVERNANCE: Non-certification. This shows adjudication coverage, not capability.
  */
@@ -19,7 +20,7 @@ const LAB_CANONICAL_HOST = 'https://lab.mplp.io';
 
 export const metadata: Metadata = {
     title: 'Adjudication Coverage — MPLP Validation Lab',
-    description: 'Substrate × Domain coverage matrix showing adjudicated evidence packs.',
+    description: 'Substrate-index snapshot of adjudication-oriented coverage markers. Use /adjudication for bundle records.',
     alternates: {
         canonical: `${LAB_CANONICAL_HOST}/coverage/adjudication`,
     },
@@ -117,10 +118,10 @@ export default function AdjudicationCoveragePage() {
             {/* Header */}
             <div className="mb-12">
                 <p className="text-xs font-bold uppercase tracking-[0.4em] text-mplp-text-muted/80 mb-3">Evidence</p>
-                <h1 className="text-3xl sm:text-4xl font-bold text-mplp-text mb-6">Adjudication Coverage Matrix</h1>
+                <h1 className="text-3xl sm:text-4xl font-bold text-mplp-text mb-6">Adjudication Coverage Snapshot</h1>
                 <div className="flex flex-col sm:flex-row sm:items-center gap-4">
                     <p className="max-w-2xl text-mplp-text-muted leading-relaxed">
-                        Tier-0 Substrate × Domain coverage from{' '}
+                        Projection over Tier-0 substrate status markers from{' '}
                         <code className="text-xs bg-mplp-dark-soft px-2 py-1 rounded font-mono border border-mplp-border/40">substrate-index.yaml</code>
                     </p>
                     <Link
@@ -138,7 +139,7 @@ export default function AdjudicationCoveragePage() {
                     Governance Boundary
                 </p>
                 <p className="text-sm text-mplp-text-muted">
-                    <strong className="text-amber-400">Non-certification</strong> · This matrix shows <em>adjudication coverage</em>, not framework capability ·{' '}
+                    <strong className="text-amber-400">Non-certification</strong> · This matrix reflects substrate-index status markers, not full adjudication-bundle truth or framework capability ·{' '}
                     <Link href="/about" className="text-mplp-blue-soft hover:underline">Full statement →</Link>
                 </p>
             </div>
@@ -147,22 +148,25 @@ export default function AdjudicationCoveragePage() {
             <div className="bg-glass border border-mplp-border/30 rounded-2xl p-6 mb-10">
                 <div className="flex items-center gap-2 mb-4">
                     <span className="text-lg">📊</span>
-                    <span className="text-sm font-semibold text-mplp-text">Current Recheckable Verdicts</span>
+                    <span className="text-sm font-semibold text-mplp-text">Source-Bound Snapshot</span>
                 </div>
                 <div className="grid sm:grid-cols-2 gap-6 text-sm">
                     <div>
-                        <p className="text-xs text-mplp-text-muted uppercase tracking-wider mb-2">ADJUDICATED (Recheckable)</p>
+                        <p className="text-xs text-mplp-text-muted uppercase tracking-wider mb-2">ADJUDICATED in substrate index</p>
                         <p className="text-green-400 font-medium">MCP, LangChain — GF-01</p>
-                        <p className="text-xs text-mplp-text-muted/60 mt-1">Has verdict.json with deterministic verdict_hash</p>
+                        <p className="text-xs text-mplp-text-muted/60 mt-1">Tagged as adjudicated in substrate-index.yaml</p>
                     </div>
                     <div>
-                        <p className="text-xs text-mplp-text-muted uppercase tracking-wider mb-2">REGISTERED (Pending)</p>
+                        <p className="text-xs text-mplp-text-muted uppercase tracking-wider mb-2">REGISTERED in substrate index</p>
                         <p className="text-mplp-text-muted font-medium">LangGraph, AutoGen, Semantic Kernel, A2A</p>
-                        <p className="text-xs text-mplp-text-muted/60 mt-1">Admissible but not yet adjudicated; no recheckable verdict</p>
+                        <p className="text-xs text-mplp-text-muted/60 mt-1">Tracked in the registry but not yet presented here as adjudication-bundle proof</p>
                     </div>
                 </div>
                 <p className="text-xs text-mplp-text-muted/50 mt-4 pt-4 border-t border-mplp-border/30">
                     REGISTERED ≠ PASS. It means evidence pack is eligible for adjudication, not that the substrate passes any guarantee.
+                </p>
+                <p className="text-xs text-mplp-text-muted/50 mt-2">
+                    D1–D4 and GF-01 labels shown below are historical labels carried through from the substrate index, not a new Lab-side doctrine.
                 </p>
             </div>
 
@@ -182,7 +186,7 @@ export default function AdjudicationCoveragePage() {
                 </div>
                 <div className="bg-glass rounded-2xl p-5 text-center border border-mplp-border/30">
                     <p className="text-2xl font-bold text-mplp-text">{domains.length}</p>
-                    <p className="text-xs text-mplp-text-muted uppercase tracking-wider mt-1">Domains</p>
+                    <p className="text-xs text-mplp-text-muted uppercase tracking-wider mt-1">Historical Domains</p>
                 </div>
             </div>
 

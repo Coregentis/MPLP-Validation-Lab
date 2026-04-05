@@ -9,213 +9,134 @@ doc_id: "VLAB-DGB-01"
 
 # Validation Lab Development Governance Baseline (VLAB-DGB-01)
 
-**Baseline ID**: VLAB-DGB-01  
-**Version**: 1.0.0  
-**Status**: GOVERNANCE-ACTIVE  
-**Effective Date**: 2026-01-09
-
----
+**Baseline ID**: `VLAB-DGB-01`  
+**Version**: `1.0.0`  
+**Status**: `GOVERNANCE-ACTIVE`
 
 ## 1. Purpose
 
-This document defines the **development governance baseline** for MPLP Validation Lab v1.0.x.
-It establishes the authority chain, truth sources, derivation rules, change processes, gates, and audit requirements.
+This document defines the Lab-side governance baseline for Validation Lab
+development and projection behavior.
 
----
+It governs:
 
-## 2. Authority Chain (Immutable)
+- Lab role and boundaries
+- Lab truth-source handling
+- Lab derivation discipline
+- Lab gate and contract behavior
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    MPLP-Protocol Repository                      │
-│                      (Ultimate Truth Source)                     │
-│                                                                  │
-│   schemas/v2/**  │  tests/golden/**  │  packages/**              │
-└─────────────────────────────────────────────────────────────────┘
-                              │
-                              ▼ (UPSTREAM_BASELINE pin)
-┌─────────────────────────────────────────────────────────────────┐
-│                     Validation Lab                               │
-│                   (Fourth Surface - Projection)                  │
-│                                                                  │
-│   lib/schemas/  │  lib/invariants/  │  data/rulesets/            │
-└─────────────────────────────────────────────────────────────────┘
-                              │
-                              ▼ (Deterministic evaluation)
-┌─────────────────────────────────────────────────────────────────┐
-│                    Evidence-based Verdicts                       │
-│                  (PASS/FAIL/NE/NOT_ADMISSIBLE)                   │
-└─────────────────────────────────────────────────────────────────┘
-```
+It does **not** define MPLP protocol semantics.
 
-### Key Principles
+## 2. Authority Split
 
-1. **Protocol Truth Source**: MPLP-Protocol Repository (schemas + tests + implementations)
-2. **Lab Role**: Fourth Surface (evidence adjudication), NOT truth definer
-3. **Docs/Website**: Projection layers, cannot define protocol facts
-4. **Validation Lab**: Does NOT define truth, only evaluates evidence against versioned rulesets
+### Repository Protocol Authority
 
----
+Repository-backed schemas, invariants, profiles, taxonomy files, and approved
+governance records remain the protocol truth source.
 
-## 3. Truth Source Hierarchy
+### Validation Lab Authority
 
-| Priority | Source | Authority |
-|:---:|:---|:---|
-| 1 | `schemas/v2/**` (JSON Schema) | Field and constraint definition |
-| 2 | `packages/**` / `sources/**` | Implementation and parsing logic |
-| 3 | `tests/**` | Evaluability and regression boundaries |
-| 4 | Documentation | Explanatory only, NOT normative |
+Validation Lab authority is bounded to:
 
-### Prohibited Actions
+- evidence adjudication
+- Lab rulesets
+- Lab evidence-pack and pointer contracts
+- Lab public projection/runtime assets
 
-- ❌ Inventing fields not in schema
-- ❌ Deriving rules from page copy
-- ❌ Using framework conventions as evidence structure
-- ❌ Letting "customer wants" drive protocol fields
+Validation Lab does **not** become protocol-definition authority by evaluating
+evidence.
 
----
+## 3. Current Lab Home Rule
 
-## 4. Schema-first Patch Rule
+Within the current repository governance scope:
 
-Any new/modified fixture, test, patch, or UI field MUST:
+- `Validation_Lab` is the authoritative Lab home in this repository
+- `Validation_Lab_V2` is a non-authoritative `engineering_track`
+- no external or mirrored repository may be cited here as a competing current
+  Lab authority home
 
-1. **Find evidence in `schemas/v2`** or derivable from schema
-2. **Produce Schema Alignment Table** (schema file + JSON pointer + constraint)
-3. **Pass schema validation** before invariant checks
-4. **Be auditable and replayable** (evidence pointers resolvable)
+## 4. Upstream Baseline Rule
 
-> Violation = PR rejected at VLAB-GATE-01
+Protocol-aligned Lab derivations must remain pinned to the upstream baseline in:
 
----
+- `UPSTREAM_BASELINE.yaml`
 
-## 5. Derivation Graph
+The Lab may derive or mirror from the pinned upstream baseline, but derivation
+does not transfer protocol-definition authority into Lab governance files.
 
-### Lab Objects and Their Sources
+## 5. Truth-Source Order
 
-| Lab Object | Derived From |
+For Lab work, read sources in this order:
+
+1. repository-backed protocol artifacts for protocol meaning
+2. Lab governance contracts/rulesets for Lab adjudication meaning
+3. Lab runtime-consumed manifests and projections for Lab UI/projection meaning
+
+### Prohibited Moves
+
+- inventing protocol semantics from Lab page copy
+- treating Lab governance as a substitute for repository protocol truth
+- letting UI language outrun the ruleset/contract/projection assets it is bound
+  to
+
+## 6. Four Hard Boundaries
+
+These boundaries apply across Lab governance and public Lab surfaces:
+
+| Boundary | Meaning |
 |:---|:---|
-| Evidence Pack Contract | `schemas/v2` (manifest/artifacts/timeline/snapshots) |
-| Ruleset Contract | Repo ruleset definitions (versioned) |
-| GF Verdict Model | tests/invariants + admission criteria |
-| Evidence Pointer Contract | Artifact structure from schema |
-| Failure Taxonomy | Ruleset requirements + admission checks |
+| Non-certification / Non-endorsement | no compliance marks, badges, rankings, or endorsements |
+| Non-normative | Lab does not define protocol semantics |
+| No execution hosting | Lab does not run user code or host sandboxes |
+| Deterministic ruleset | same evidence + same ruleset identity = same verdict hash |
 
-### Prohibited Derivations
+## 7. Version Domains
 
-- ❌ Page copy → field invention
-- ❌ Framework habits → evidence structure
-- ❌ "Enterprise needs" → protocol fields
+Lab governance must use explicit version domains first:
 
----
+- `protocol_version`
+- `schema_bundle_version`
+- `validation_ruleset_version`
+- `validation_lab_release_version`
 
-## 6. Gate System
+Historical labels such as `site-v*`, `pack-v*`, and `rel-lab-*` may remain only
+as historical or explanatory labels.
 
-| Gate ID | Purpose | Blocking |
-|:---|:---|:---:|
-| VLAB-GATE-00 | Upstream pin verification | ✅ |
-| VLAB-GATE-01 | Schema alignment (UI + ruleset sources) | ✅ |
-| VLAB-GATE-02 | Integrity-first enforcement | ✅ |
-| VLAB-GATE-03 | Deterministic verdict | ✅ |
-| VLAB-GATE-04 | Non-endorsement language | ✅ |
-| VLAB-GATE-05 | NoIndex policy (curated allowlist) | ✅ |
+## 8. Derivation Discipline
 
----
+Lab-side objects may be derived from:
 
-## 7. Four Hard Boundaries
+- repository protocol artifacts
+- Lab rulesets
+- Lab contracts
+- Lab projection/runtime assets
 
-These boundaries MUST be structurally enforced across all pages:
+But Lab-side derivations must not:
 
-| Boundary | Enforcement |
-|:---|:---|
-| **Non-certification / Non-endorsement** | Global banner + GATE-04 |
-| **Non-normative** | README + About page |
-| **No execution hosting** | No upload-and-run features |
-| **Deterministic ruleset** | GATE-03 verification |
+- create new protocol fields
+- create new protocol invariants
+- create new protocol authority claims
 
----
+## 9. Gate Role
 
-## 8. Version Control
+Lab gates enforce bounded Lab behavior such as:
 
-### Ruleset Versioning
+- upstream pin integrity
+- schema alignment of Lab-bound artifacts
+- deterministic adjudication behavior
+- non-endorsement / no-hosting boundaries
 
-- Independent version (e.g., `ruleset-1.0`)
-- Breaking vs non-breaking changes declared
-- Compatibility range for evidence packs
+Passing Lab gates does not create certification or protocol-definition
+authority.
 
-### Evidence Pack Contract Versioning
+## 10. References
 
-- Follows EVC (Evolution Compatibility Verification)
-- New versions cannot silently break old packs
-
-### Baseline Versioning
-
-- This document: MINOR (clarification) / MAJOR (rule change)
+- `UPSTREAM_BASELINE.yaml`
+- `README.md`
+- `governance/contracts/`
+- `governance/registry/`
 
 ---
 
-## 9. Repo Authority & Mirror Policy
-
-### Authority Repository
-
-The **authoritative development repository** for MPLP Validation Lab is:
-
-```
-https://github.com/Coregentis/MPLP-Validation-Lab
-```
-
-All feature branches, PRs, and releases originate from this repository.
-
-### Mirror Directory
-
-The main MPLP-Protocol repository contains a **mirror directory**:
-
-```
-mplp_prerelease/Validation_Lab/
-```
-
-This mirror:
-- ✅ Provides visibility for integration verification
-- ✅ Contains frozen snapshots aligned with Lab releases
-- ❌ Is NOT the development authority
-- ❌ PRs should NOT originate here
-
-### Sync Policy
-
-1. Lab development occurs on `MPLP-Validation-Lab` branches
-2. After Lab release/merge, a **sync PR** is created for the mirror
-3. Mirror PR must reference the Lab commit hash
-4. Hash/Gate alignment is verified before mirror merge
-
-### Branch Naming
-
-| Repo | Branch | Purpose |
-|:---|:---|:---|
-| MPLP-Validation-Lab | `main` | Stable release |
-| MPLP-Validation-Lab | `phase-*/*` | Feature development |
-| mplp_prerelease | `dev` | Contains mirror, not authority |
-| mplp_prerelease | `sync/vlab-*` | Mirror sync PRs |
-
----
-
-## 10. Amendment Process
-
-Changes to this baseline require:
-1. Governance review
-2. Impact assessment
-3. Version bump and changelog
-
----
-
-## 10. Related Documents
-
-- [TERMINOLOGY_MAPPING.md](./TERMINOLOGY_MAPPING.md)
-- [admission-criteria-v1.0.md](./contracts/admission-criteria-v1.0.md)
-- [VLAB-GATE-00-upstream-pin.md](./gates/VLAB-GATE-00-upstream-pin.md)
-- [SUBSTRATE_SCOPE_POLICY.md](./SUBSTRATE_SCOPE_POLICY.md) — Tier-0/1/2 substrate scope & inclusion policy
-- [ADJUDICATION_MATURITY_MODEL.md](./ADJUDICATION_MATURITY_MODEL.md) — v0.2→v0.5 strength ladder & stop criteria
-
----
-
-**Document Status**: Development Governance Baseline  
-**Version**: 1.0.0  
-**Governed By**: MPGC
+**Final Boundary**: Validation Lab governance is bounded Lab governance only.
+Repository-backed protocol sources prevail on protocol meaning.

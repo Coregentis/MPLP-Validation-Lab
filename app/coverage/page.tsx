@@ -5,8 +5,8 @@ import { join } from 'path';
 import yaml from 'yaml';
 
 export const metadata: Metadata = {
-  title: 'Test Vectors Coverage | MPLP Validation Lab',
-  description: 'MPLP v0.5 test vector coverage matrix - D1/D2/D3/D4 domains',
+  title: 'Historical Test Vector Coverage | MPLP Validation Lab',
+  description: 'Historical v0.5 allowlist coverage snapshot for test vectors. This page does not define the current public Lab methodology.',
   robots: { index: true, follow: true }
 };
 
@@ -87,9 +87,9 @@ export default function CoveragePage() {
       {/* Header */}
       <div className="mb-12">
         <p className="text-xs font-bold uppercase tracking-[0.4em] text-mplp-text-muted/80 mb-3">Evidence</p>
-        <h1 className="text-3xl sm:text-4xl font-bold text-mplp-text mb-6">Test Vectors Coverage (v0.5)</h1>
+        <h1 className="text-3xl sm:text-4xl font-bold text-mplp-text mb-6">Historical Test Vector Coverage (v0.5)</h1>
         <p className="max-w-2xl text-mplp-text-muted leading-relaxed">
-          Coverage matrix from SSOT: <code className="ml-2 text-xs bg-mplp-dark-soft px-2 py-1 rounded font-mono border border-mplp-border/40">test-vectors/v0.5/allowlist-v0.5.yaml</code>
+          Historical allowlist projection from <code className="ml-2 text-xs bg-mplp-dark-soft px-2 py-1 rounded font-mono border border-mplp-border/40">test-vectors/v0.5/allowlist-v0.5.yaml</code>
         </p>
         <p className="text-mplp-text-muted/60 text-sm mt-2">
           Ruleset: <code className="text-mplp-blue-soft">{allowlist.ruleset_pin}</code>
@@ -104,7 +104,7 @@ export default function CoveragePage() {
         <ul className="text-sm text-mplp-text-muted space-y-1">
           <li>• <strong className="text-amber-400">NOT</strong> a certification program</li>
           <li>• Does <strong className="text-amber-400">NOT</strong> host execution</li>
-          <li>• Evidence viewing &amp; adjudication only</li>
+          <li>• Historical allowlist snapshot only; not the current public Lab teaching model</li>
         </ul>
       </div>
 
@@ -113,7 +113,7 @@ export default function CoveragePage() {
         <Link href="/coverage/adjudication" className="block rounded-2xl border border-mplp-border/30 bg-glass p-6 hover:bg-mplp-blue-soft/5 hover:border-mplp-blue-soft/30 transition-all">
           <div className="flex items-center gap-2 mb-2">
             <span className="text-lg">📊</span>
-            <span className="text-sm font-semibold text-mplp-text">Adjudication Coverage Matrix</span>
+            <span className="text-sm font-semibold text-mplp-text">Adjudication Coverage Snapshot</span>
           </div>
           <p className="text-sm text-mplp-text-muted">
             Substrate × GF/Domain matrix with clickable verdicts
@@ -126,7 +126,7 @@ export default function CoveragePage() {
             <span className="text-sm font-semibold text-mplp-text">All Adjudication Bundles</span>
           </div>
           <p className="text-sm text-mplp-text-muted">
-            Browse bundles, verdict hashes &amp; recheck status
+            Browse published bundle records, verdict hashes &amp; recheck status
           </p>
         </Link>
       </div>
@@ -199,8 +199,7 @@ export default function CoveragePage() {
         <h3 className="font-bold mb-3 text-mplp-text">Coverage Target</h3>
         <p className="text-sm text-mplp-text-muted">
           Each domain requires <strong className="text-mplp-text">≥5 PASS</strong> and <strong className="text-mplp-text">≥5 FAIL</strong> vectors
-          to meet the v0.5 coverage target. All vectors are adjudicable via shadow-validator
-          and signable via proof-signature gate.
+          to meet the historical v0.5 allowlist target. This page reflects listed vectors only; it does not prove current adjudication completeness.
         </p>
       </div>
 

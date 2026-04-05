@@ -1,18 +1,20 @@
-# Lifecycle Guarantees SSOT
+# Legacy V1 Lifecycle Guarantees SSOT
 # Authority: governance/LIFECYCLE_GUARANTEES.yaml
 # Freeze: site-v0.5 / rel-lab-0.5
 # Last Updated: 2026-01-20
 #
-# This is the Single Source of Truth for LG-01~05 definitions.
-# Pages loading this data: /guarantees, /methodology (partial)
-# Ruleset mapping: ruleset-1.0 (GoldenFlow packs)
+# This file is the single source of truth for the legacy V1 LG-01~05 line only.
+# The current public /guarantees surface is an aggregate V1/V2 view and also
+# renders the V2 clause bundle line from public/_data/v2/rulesets/.
+# Ruleset mapping here remains the legacy V1 line: ruleset-1.0.
 
 metadata:
   schema_version: "1.0"
   freeze_tag: "site-v0.5"
+  line_id: "legacy_v1_guarantee_line"
   ruleset_ref: "ruleset-1.0"
   strength: "presence-level"
-  notes: "ruleset-1.0 performs presence-level adjudication only"
+  notes: "ruleset-1.0 performs presence-level adjudication only; the public guarantees surface also includes a separate V2 clause bundle line"
 
 guarantees:
   - id: LG-01

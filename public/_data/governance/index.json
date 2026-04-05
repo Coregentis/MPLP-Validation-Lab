@@ -5,7 +5,7 @@
         {
             "id": "gov-policies",
             "title": "Policies",
-            "description": "Operational policies and compliance standards.",
+            "description": "Operational Lab policies and bounded governance references.",
             "href": "/policies",
             "scope": "public",
             "tier": "unified"
@@ -13,7 +13,7 @@
         {
             "id": "gov-gates",
             "title": "Gates",
-            "description": "Automated verification logic and status.",
+            "description": "Automated gate status and verification logic.",
             "href": "/gates",
             "scope": "public",
             "tier": "unified"
@@ -29,7 +29,7 @@
         {
             "id": "gov-audit",
             "title": "Audit",
-            "description": "Local verification and health checks.",
+            "description": "Local verification utilities and health checks.",
             "href": "/audit",
             "scope": "public",
             "tier": "unified"

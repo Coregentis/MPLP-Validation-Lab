@@ -1,31 +1,58 @@
-# Governance Directory
+# Validation Lab Governance Index
 
-This directory contains **non-normative governance documentation** for operating the Validation Lab repository (process, seals, reports, registries, and templates). It does NOT define MPLP protocol requirements, and it MUST NOT be interpreted as certification or endorsement.
+This directory contains **bounded Lab governance material**.
 
-## Non-Endorsement Boundary
+It does:
 
-Governance documents describe **process and evidence closure** only. They MUST NOT rank, certify, endorse, or approve any framework, vendor, or substrate.
+- govern Lab role, contracts, gates, projections, and operational policy
+- contain runtime-consumed governance/config assets used by the current Lab
 
-## Directory Index
+It does **not**:
 
-- `seals/` — Capability / projection seals (evidence closure snapshots, non-normative)
-  - Catalog: `governance/seals/README.md`
-- `sop/` — Standard Operating Procedures (how changes must be executed and reported)
-- `registry/` — Registry three-file set (routes, truth sources, gates)
-- `projection/` — Projection SSOT and projection-related seals
-- `reports/` — Audit reports and Task Completion Reports (filing structure + references)
-- `templates/` — Templates used by governance and reporting workflows
+- define MPLP protocol semantics
+- create a second protocol truth source
+- override repository-backed constitutional or protocol records
 
-## Primary References (v0.8)
+## Current Repository Boundary
 
-- Capability Seal: `governance/seals/CAPABILITY-SEAL.v0.8.0.md`
-- Projection Seal baseline: `governance/projection/PROJECTION-SEAL.v0.7.2.md`
-- SOP baseline: `governance/sop/SOP-VLAB-PROJ-SYNC-01.md`
+Within the current repository governance scope:
 
-## How to Navigate
+- `Validation_Lab` is the authoritative Lab home in this repository
+- `governance/v2/` is a non-authoritative mirror residue subtree
+- `Validation_Lab_V2` is an external archived engineering track, not an active
+  Lab authority line
 
-Start from the seals catalog, then follow links to related task reports and evidence anchors:
+## Handling Classes
 
-1) `governance/seals/README.md`
-2) Select a seal → open the seal document
-3) Follow "Related Documents" to task reports and evidence artifacts
+| Class | Meaning | Use Rule |
+|:---|:---|:---|
+| Lab governance authority | active Lab governance text constraining Lab role, contract, gate, or projection behavior | use for current Lab governance only |
+| Runtime-consumed active files | machine-readable governance/config files used by current runtime or generators | use as bounded support inputs, not protocol doctrine |
+| Historical evidence | seals, reports, closures, and historical release evidence | preserve; do not treat as current guidance |
+| Non-authoritative residue | mirror or stale residue that can mislead future edits | do not use as active guidance |
+
+## Current Path Map
+
+| Path / File Family | Class | Status |
+|:---|:---|:---|
+| `VLAB-DGB-01.md`, `METHOD-VLAB-01_EVALUATION_METHOD.md`, `ADJUDICATION_MATURITY_MODEL.md`, `PROVENANCE_MODEL.md`, `SUBSTRATE_SCOPE_POLICY.md`, `contracts/**`, `erc/**`, `gates/**`, `sop/**`, `runbooks/**` | Lab governance authority | active |
+| `LIFECYCLE_GUARANTEES.yaml`, `runsets.yaml`, `registry/**`, `ia/**`, `ux/**`, `mappings/**`, `schemas/**`, `keys/**`, `linkmap.v2.yaml`, `releases/release-index.yaml`, `truth-chain-manifest.json` | runtime-consumed active files | active |
+| `seals/**`, `records/**`, `reports/**`, `audits/**`, `projection/**`, `releases/*.md`, `preflight/**`, `plans/**`, `charters/**`, `external/**`, `evolution/**`, `heartbeat/history.json` | historical evidence | retained |
+| `v2/**` | non-authoritative residue | non-authoritative mirror subtree |
+
+## Usage Rule
+
+- if the question is about **protocol meaning**, repository doctrine prevails
+- if the question is about **bounded Lab operation**, use the active Lab
+  governance and runtime-consumed files listed above
+- do not treat `governance/v2/` as an active authority line
+
+## Priority References
+
+- Active Lab home: [`../README.md`](../README.md)
+- Repository governance index: [`../../governance/README.md`](../../governance/README.md)
+
+---
+
+**Final Boundary**: this directory governs Lab operation only. It does not
+define MPLP protocol semantics.

@@ -35,20 +35,23 @@ Use in: Site header, navigation, browser title, URLs, GitHub repo name
 ### Tier 2: Formal Definition (Hero second line / About first paragraph)
 
 ```
-Evidence & Conformance Laboratory for MPLP Lifecycle Invariants (Non-certifying)
+A non-normative evidence adjudication lab for MPLP.
 ```
 
 Use in: Hero subtitle, About page opening, any first-impression surface
 
+### Tier 2B: Secondary Explanatory Phrase
+
+```
+Evaluates lifecycle guarantees / invariants against versioned rulesets and evidence.
+```
+
+Use in: About page support copy, methodology pages, explanatory metadata
+
 ### Tier 3: Citation Name (Academic / Standard references / Export manifests)
 
 ```
-MPLP Evidence & Conformance Lab
-```
-
-or abbreviated:
-```
-MPLP Conformance Lab
+MPLP Validation Lab
 ```
 
 Use in: Papers, standards references, verdict export manifests (`lab_identity.citation`)
@@ -102,11 +105,12 @@ When implementing verdict export, include:
 {
   "lab_identity": {
     "name": "MPLP Validation Lab",
-    "formal_definition": "Evidence & Conformance Laboratory for MPLP Lifecycle Invariants (Non-certifying)",
-    "citation": "MPLP Evidence & Conformance Lab",
+    "formal_definition": "A non-normative evidence adjudication lab for MPLP.",
+    "secondary_explanation": "Evaluates lifecycle guarantees / invariants against versioned rulesets and evidence.",
+    "citation": "MPLP Validation Lab",
     "version": "1.0",
     "domain": "lab.mplp.io",
-    "repo": "https://github.com/Coregentis/MPLP-Validation-Lab"
+    "repo": "https://github.com/Coregentis/MPLP-Protocol/tree/main/Validation_Lab"
   }
 }
 ```

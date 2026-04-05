@@ -17,6 +17,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         "/methodology",
         "/validation",
         "/runs",
+        "/runsets",
         "/adjudication",
         "/rulesets",
         "/rulesets/evolution",
@@ -105,4 +106,3 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         ...releaseRoutes,
     ];
 }
-

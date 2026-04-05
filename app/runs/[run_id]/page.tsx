@@ -1,9 +1,21 @@
 /**
  * Unified Run Detail Page
- * 
- * Dispatches to V1 or V2 detail renderer based on run source.
- * Supports both V1 curated-runs and V2 real runner packs.
- * 
+ *
+ * Entry dispatch runtime sources:
+ * - public/_data/curated-runs.json
+ * - public/_data/v2/runs/index.json
+ * - public/_data/run-mapping-index.json
+ *
+ * Branch detail sources:
+ * - V1: data/runs/*
+ * - V2: public/_data/v2/runs/*.json
+ *
+ * Upstream provenance:
+ * - governance/runsets.yaml
+ * - export/curated-runs.json
+ *
+ * This route is a branch-aware aggregate projection across V1 and V2 run assets.
+ *
  * Ticket: VLAB-MERGE-P0-ROUTE-02
  */
 
@@ -246,7 +258,7 @@ function V2RunDetail({ run }: { run: V2RunDetailModel }) {
                     ))}
                 </div>
                 <div className="mt-4 text-xs text-mplp-text-muted">
-                    Source: <code className="px-1 py-0.5 bg-mplp-dark-soft rounded">public/_data/v2/runs/</code>
+                    Detail runtime source: <code className="px-1 py-0.5 bg-mplp-dark-soft rounded">public/_data/v2/runs/*.json</code> after unified index dispatch from <code className="px-1 py-0.5 bg-mplp-dark-soft rounded">public/_data/v2/runs/index.json</code>.
                 </div>
             </div>
 

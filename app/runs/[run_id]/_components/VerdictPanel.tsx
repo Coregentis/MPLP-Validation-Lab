@@ -1,36 +1,15 @@
 /**
- * Verdict Panel — Displays GF verdicts with evidence pointers.
+ * Verdict Panel — Displays reported target verdicts with evidence pointers.
  *
- * GOVERNANCE: Part of P0 Evidence Replayer (VLAB-DGB-01)
- * 
- * TERMINOLOGY (FROZEN):
- *   - External display: LG-xx (Lifecycle Guarantees)
- *   - Internal ID: gf-xx (frozen, do not change)
- *   - UI MUST show LG-xx, NOT gf-xx
+ * Source model:
+ * - uses only the loaded verdict artifact
+ * - does not upgrade target IDs into a broader doctrine layer
  */
 
 import type { VerdictStatus, EvidencePointer, RequirementCoverage } from '@/lib/verdict/types';
 
-// Canonical mapping from internal gf-xx to external LG-xx
-// NOTE: Only lowercase keys - canonicalizeToLG handles uppercase via .toLowerCase()
-const GF_TO_LG_MAP: Record<string, string> = {
-    'gf-01': 'LG-01',
-    'gf-02': 'LG-02',
-    'gf-03': 'LG-03',
-    'gf-04': 'LG-04',
-    'gf-05': 'LG-05',
-};
-
-const LG_NAMES: Record<string, string> = {
-    'LG-01': 'Single Agent Lifecycle',
-    'LG-02': 'Multi-Agent Collaboration',
-    'LG-03': 'Human-in-the-Loop Gating',
-    'LG-04': 'Drift Detection & Recovery',
-    'LG-05': 'External Tool Integration',
-};
-
-function canonicalizeToLG(gfId: string): string {
-    return GF_TO_LG_MAP[gfId] || GF_TO_LG_MAP[gfId.toLowerCase()] || gfId;
+function normalizeTargetId(gfId: string): string {
+    return gfId.toUpperCase();
 }
 
 export interface GFVerdictData {
@@ -75,7 +54,7 @@ function CoverageBar({ coverage }: { coverage: RequirementCoverage }) {
     return (
         <div className="mt-2">
             <div className="flex items-center justify-between text-[10px] text-mplp-text-muted mb-1">
-                <span>Coverage</span>
+                <span>Reported coverage</span>
                 <span>{coverage.passed}/{coverage.total} passed</span>
             </div>
             <div className="h-1.5 bg-mplp-dark-soft/60 rounded-full overflow-hidden flex">
@@ -98,11 +77,16 @@ export function VerdictPanel({ verdict, isLoading, onPointerClick }: VerdictPane
         <section className="bg-mplp-dark-soft/60 border border-mplp-border/30 rounded-xl overflow-hidden h-full flex flex-col">
             {/* Header */}
             <div className="bg-mplp-dark-soft/80 px-4 py-3 border-b border-mplp-border/30 shrink-0">
-                <h2 className="text-sm font-bold uppercase tracking-wider text-mplp-text">Verdict</h2>
+                <h2 className="text-sm font-bold uppercase tracking-wider text-mplp-text">Adjudication Summary</h2>
                 {verdict && verdict.versions && (
-                    <p className="text-[10px] text-mplp-text-muted mt-1">
-                        Ruleset: <span className="font-mono">{verdict.versions.ruleset || 'N/A'}</span>
-                    </p>
+                    <div className="text-[10px] text-mplp-text-muted mt-1 space-y-1">
+                        <p>
+                            Ruleset: <span className="font-mono">{verdict.versions.ruleset || 'N/A'}</span>
+                        </p>
+                        <p>
+                            Displays only the target IDs and status values present in the loaded verdict artifact.
+                        </p>
+                    </div>
                 )}
             </div>
 
@@ -119,23 +103,20 @@ export function VerdictPanel({ verdict, isLoading, onPointerClick }: VerdictPane
                 )}
 
                 {!isLoading && verdict && verdict.gf_verdicts && verdict.gf_verdicts.map((gfVerdict) => {
-                    const lgId = canonicalizeToLG(gfVerdict.gf_id);
-                    const lgName = LG_NAMES[lgId] || '';
+                    const targetId = normalizeTargetId(gfVerdict.gf_id);
 
                     return (
                         <div
                             key={gfVerdict.gf_id}
                             className="bg-black/30 border border-mplp-border/20 rounded-lg p-4"
                         >
-                            {/* LG Header */}
+                            {/* Target Header */}
                             <div className="flex items-center justify-between mb-2">
                                 <div>
-                                    <span className="text-sm font-bold text-mplp-text">{lgId}</span>
-                                    {lgName && (
-                                        <span className="text-xs text-mplp-text-muted ml-2">
-                                            {lgName}
-                                        </span>
-                                    )}
+                                    <span className="text-sm font-bold text-mplp-text">{targetId}</span>
+                                    <span className="text-xs text-mplp-text-muted ml-2">
+                                        reported target ID
+                                    </span>
                                 </div>
                                 <span className={`text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded border ${statusColors[gfVerdict.status]}`}>
                                     {gfVerdict.status}
@@ -178,6 +159,8 @@ export function VerdictPanel({ verdict, isLoading, onPointerClick }: VerdictPane
                 <div className="border-t border-mplp-border/30 px-4 py-2 shrink-0 text-[10px] text-mplp-text-muted">
                     <span className="uppercase tracking-wider">Run:</span>{' '}
                     <span className="font-mono">{verdict.run_id}</span>
+                    <span className="mx-2">•</span>
+                    <span>This panel does not infer stronger proof than the loaded verdict fields provide.</span>
                 </div>
             )}
         </section>

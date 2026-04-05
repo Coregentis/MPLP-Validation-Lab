@@ -48,7 +48,7 @@ export default async function DiffDetailPage({ params }: DiffDetailPageProps) {
                     {diff.from_ruleset} <span className="text-mplp-text-muted opacity-40 mx-2">→</span> {diff.to_ruleset}
                 </h1>
                 <p className="text-mplp-text-muted max-w-2xl leading-relaxed">
-                    Detailed analysis of adjudication deltas between ruleset versions. All results are derived from the locked shadow-verification baseline.
+                    Detailed view over diffpack-reported adjudication deltas between ruleset versions. This page reports bundle metrics; it does not define protocol semantics or framework performance.
                 </p>
             </div>
 
@@ -62,7 +62,7 @@ export default async function DiffDetailPage({ params }: DiffDetailPageProps) {
                     <p className="text-[10px] text-mplp-text-muted italic">Total PASS/FAIL status changes</p>
                 </div>
                 <div className="p-6 bg-glass border border-mplp-border/30 rounded-2xl space-y-3">
-                    <p className="text-[10px] font-bold uppercase tracking-widest text-mplp-text-muted/60">Equivalence Shift</p>
+                    <p className="text-[10px] font-bold uppercase tracking-widest text-mplp-text-muted/60">Reported equivalence_shift</p>
                     {equivalenceShift ? (
                         <>
                             <p className="text-3xl font-mono text-mplp-text">
@@ -83,9 +83,9 @@ export default async function DiffDetailPage({ params }: DiffDetailPageProps) {
                     )}
                 </div>
                 <div className="p-6 bg-glass border border-mplp-border/30 rounded-2xl space-y-3">
-                    <p className="text-[10px] font-bold uppercase tracking-widest text-mplp-text-muted/60">Sample Density</p>
+                    <p className="text-[10px] font-bold uppercase tracking-widest text-mplp-text-muted/60">Reported run count</p>
                     <p className="text-3xl font-mono text-mplp-text">{totalRuns}</p>
-                    <p className="text-[10px] text-mplp-text-muted italic">Runs in shadow-verification set</p>
+                    <p className="text-[10px] text-mplp-text-muted italic">Runs represented in this diffpack</p>
                 </div>
             </div>
 

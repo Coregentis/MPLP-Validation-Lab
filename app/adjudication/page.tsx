@@ -1,10 +1,8 @@
 /**
- * Adjudication Index Page
- * 
- * Lists all adjudication bundles from export/adjudication-index.json.
- * Factual display only - non-endorsement, non-certification, and no ranking.
- * 
- * GOVERNANCE: Reviewability ≠ Reproducibility
+ * Adjudication index source model:
+ * - direct runtime source: export/adjudication-index.json
+ * - inline dispute-prep helper is manual assistance, not a file-backed truth source
+ * - factual display only: non-endorsement, non-certification, and no ranking
  */
 
 import { Metadata } from 'next';
@@ -18,7 +16,7 @@ const LAB_CANONICAL_HOST = 'https://lab.mplp.io';
 
 export const metadata: Metadata = {
     title: 'Adjudication Bundles — MPLP Validation Lab',
-    description: 'Browse adjudication bundles with deterministic verdict hashes. Recheckable locally.',
+    description: 'Browse adjudication bundle records with verdict hashes and local recheck pointers.',
     alternates: {
         canonical: `${LAB_CANONICAL_HOST}/adjudication`,
     },
@@ -48,7 +46,7 @@ export default function AdjudicationPage() {
                 <h1 className="text-3xl sm:text-4xl font-bold text-mplp-text mb-6">Adjudication &amp; Dispute Prep</h1>
                 <p className="max-w-2xl text-mplp-text-muted leading-relaxed" data-testid="adjudication-what-is">
                     <strong>Adjudication</strong> is the deterministic evaluation of an Evidence Pack against a Ruleset.
-                    This tool helps you prepare materials for dispute resolution or local re-verification.
+                    This page indexes published adjudication bundle outputs and helps prepare materials for dispute review or local re-verification.
                 </p>
             </header>
 
@@ -58,7 +56,7 @@ export default function AdjudicationPage() {
                     ⚠️ Non-certification Notice
                 </p>
                 <p className="text-sm text-mplp-text-muted">
-                    This is an evidence-based verification tool, NOT a certifying authority. Results generated here are for internal audit and dispute preparation only.
+                    This is an evidence-based verification tool, NOT a certifying authority. Results generated here are for public audit, local recheck, and dispute preparation only.
                     We do not issue regulatory approvals or endorsements.
                 </p>
             </div>
@@ -82,7 +80,7 @@ export default function AdjudicationPage() {
                 </div>
             </section>
 
-            {/* Client-Side Dispute Prep Tool */}
+            {/* Inline helper only; route facts still come from adjudication-index.json */}
             <DisputePrepTool />
 
             {/* Verify Loop */}

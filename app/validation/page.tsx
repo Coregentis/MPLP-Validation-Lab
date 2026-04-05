@@ -1,8 +1,8 @@
 /**
  * Validation Dashboard Page
  * 
- * Hub for "Institutional Integrity" and "Governance Gates".
- * All links derived from lab-manifest.json (SSOT).
+ * Hub for Lab gate feeds and projection-integrity status.
+ * Manifest anchors come from lab-manifest.json; gate state comes from gate-status.json.
  */
 
 import type { Metadata } from 'next';
@@ -30,7 +30,7 @@ interface GateStatus {
 
 export const metadata: Metadata = {
     title: 'Validation Dashboard — MPLP Validation Lab',
-    description: 'Protocol alignment, governance gates, and structural integrity status for the MPLP Validation Lab.',
+    description: 'Gate feeds and projection-integrity status for the MPLP Validation Lab public surface.',
     alternates: {
         canonical: `${LAB_CANONICAL_HOST}/validation`,
     },
@@ -55,12 +55,12 @@ export default function ValidationDashboard() {
                     <SemanticStatusBadge status="UNAVAILABLE" className="opacity-80" />
                     <div className="px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-[10px] text-emerald-500 font-bold uppercase tracking-widest flex items-center gap-1.5">
                         <Shield size={10} />
-                        Publication Integrity Verified
+                        Publication Integrity Gates
                     </div>
                 </div>
                 <p className="max-w-2xl text-mplp-text-muted leading-relaxed">
-                    Authoritative status of Protocol alignment and automated Publication Integrity gates.
-                    This release ({labVersion}) is cryptographically anchored and audited.
+                    Source-bound snapshot of Lab publication gates and projection integrity for release {labVersion}.
+                    This page does not determine protocol truth or certification status.
                 </p>
             </header>
 
@@ -103,12 +103,12 @@ export default function ValidationDashboard() {
 
                         <div className="space-y-4">
                             <SmartLink anchor="cross_verified" className="block p-4 rounded-2xl bg-mplp-blue-soft/10 border border-mplp-blue-soft/20 group hover:bg-mplp-blue-soft/20 transition-all text-left">
-                                <h4 className="font-bold text-mplp-text text-sm mb-1">Cross-Framework Equivalence</h4>
+                                <h4 className="font-bold text-mplp-text text-sm mb-1">Cross-Verification Snapshot</h4>
                                 <SemanticStatusBadge status="PENDING_NORMALIZATION" className="mt-2" />
                             </SmartLink>
 
                             <SmartLink anchor="fmm" className="block p-4 rounded-2xl bg-mplp-dark/60 border border-mplp-border/30 hover:border-mplp-blue-soft/30 transition-all text-left">
-                                <h4 className="font-bold text-mplp-text text-sm mb-1">Field Mapping Matrix (FMM)</h4>
+                                <h4 className="font-bold text-mplp-text text-sm mb-1">Field Mapping Projection (FMM)</h4>
                                 <SemanticStatusBadge status="UNAVAILABLE" className="mt-2" />
                             </SmartLink>
                         </div>
@@ -116,7 +116,7 @@ export default function ValidationDashboard() {
                         <div className="mt-8 pt-6 border-t border-mplp-border/30">
                             <h3 className="text-xs font-bold text-mplp-text mb-4 flex items-center gap-2">
                                 <Terminal size={14} className="text-mplp-text-muted" />
-                                Institutional Anchors
+                                Repository Anchors
                             </h3>
                             <div className="p-3 rounded-xl bg-mplp-blue-soft/5 border border-mplp-blue-soft/20">
                                 <SmartLink anchor="repo_anchor" showExternalIcon className="text-[10px] font-bold text-mplp-blue-soft hover:underline flex items-center gap-1">

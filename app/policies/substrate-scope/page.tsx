@@ -1,8 +1,8 @@
 /**
  * Substrate Scope Policy Page
  * 
- * Public projection of governance/SUBSTRATE_SCOPE_POLICY.md
- * Explains: tier definitions, admission criteria, claim levels
+ * Runtime substrate list comes from data/curated-runs/substrate-index.yaml.
+ * governance/SUBSTRATE_SCOPE_POLICY.md is supporting policy provenance for this surface.
  * 
  * GOVERNANCE: Non-certification. This describes evidence admissibility, not capability.
  */
@@ -39,7 +39,7 @@ function loadTier0Substrates() {
 
 export const metadata: Metadata = {
     title: 'Substrate Scope Policy | MPLP Validation Lab',
-    description: 'Which execution substrates may appear in the Validation Lab and under what admission criteria',
+    description: 'Which execution substrates may appear in the Validation Lab evidence indexes and under what admission criteria',
 };
 
 export default function SubstrateScopePage() {
@@ -101,7 +101,7 @@ export default function SubstrateScopePage() {
                             Canonical Target List
                         </h3>
                         <p className="text-sm text-mplp-text-muted mb-4">
-                            The minimal mainstream set required to credibly claim cross-framework adjudication.
+                            The minimal mainstream set tracked for bounded cross-substrate evidence coverage.
                         </p>
 
                         <div className="grid md:grid-cols-2 gap-4">
@@ -177,8 +177,8 @@ export default function SubstrateScopePage() {
                                 <td className="py-2 px-3 text-mplp-text-muted">Deterministic reproduction demonstrated (run-twice hash match)</td>
                             </tr>
                             <tr>
-                                <td className="py-2 px-3 font-mono text-purple-400">Cross-Verified</td>
-                                <td className="py-2 px-3 text-mplp-text-muted">Equivalence evidence across paradigms under the same ruleset</td>
+                                <td className="py-2 px-3 font-mono text-purple-400">Cross-Verified (historical label)</td>
+                                <td className="py-2 px-3 text-mplp-text-muted">Comparison-ready snapshot across substrates; does not by itself prove equivalence or certification</td>
                             </tr>
                         </tbody>
                     </table>

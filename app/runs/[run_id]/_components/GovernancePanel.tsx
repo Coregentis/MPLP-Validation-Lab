@@ -9,18 +9,29 @@ export function GovernancePanel() {
 
             <div className="p-6 space-y-6 text-sm">
                 <div>
-                    <h3 className="font-bold text-mplp-text mb-2">v0.2 Scenario Focus</h3>
+                    <h3 className="font-bold text-mplp-text mb-2">Source-Bound Reading</h3>
                     <p className="text-mplp-text-muted">
-                        This spine validates <strong className="text-mplp-text">LG-01: Single Agent Lifecycle</strong>.
-                        While ruleset-1.0 checks LG-02~05, these checks are <strong className="text-amber-400">presence-level only</strong>.
+                        Read this run through the facts bound to the run itself:
+                        <strong className="text-mplp-text"> scenario ID</strong>,
+                        <strong className="text-mplp-text"> ruleset identity</strong>,
+                        <strong className="text-mplp-text"> admission/adjudication status</strong>,
+                        and the published evidence surfaces.
                     </p>
                 </div>
 
                 <div>
-                    <h3 className="font-bold text-mplp-text mb-2">Presence-Level Validation</h3>
+                    <h3 className="font-bold text-mplp-text mb-2">No Universal Spine</h3>
                     <p className="text-mplp-text-muted">
-                        ruleset-1.0 verifies artifact <em>presence</em>, not semantic correctness.
-                        A &quot;PASS&quot; for LG-02~05 indicates required files exist, not that they are semantically valid for those Lifecycle Guarantees.
+                        Legacy labels such as <code>LG-*</code>, <code>gf-*</code>, or older ruleset families may appear in run artifacts.
+                        They should be read only as identifiers carried by the bound evidence/adjudication data, not as a universal governance doctrine for every run.
+                    </p>
+                </div>
+
+                <div>
+                    <h3 className="font-bold text-mplp-text mb-2">Verdict Boundary</h3>
+                    <p className="text-mplp-text-muted">
+                        PASS, FAIL, NOT_EVALUATED, or NOT_ADMISSIBLE on this run mean only what the bound adjudication artifact says under its pinned ruleset.
+                        They do not by themselves imply protocol truth, certification, or broader capability claims.
                     </p>
                 </div>
 

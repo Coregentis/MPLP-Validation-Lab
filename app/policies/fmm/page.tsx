@@ -3,8 +3,9 @@
 /**
  * Field Mapping Matrix (FMM) Page
  * 
- * SSOT: Uses SmartLink and SemanticStatusBadge for alignment finality.
- * NEUTRALITY: Normalizes unmapped fields to "Pending" to maintain narrative credibility.
+ * Runtime mappings come from fmm.json and are evidence-scoped by curated-runs.json.
+ * This page is a source-bound mapping projection and must not imply protocol
+ * authority or independently verified capability.
  */
 
 import React, { useState } from 'react';
@@ -26,7 +27,7 @@ type SubstrateKey = keyof typeof fmmData.substrates;
 export default function FMMPage() {
     const [activeSubstrate, setActiveSubstrate] = useState<SubstrateKey>('fixture');
 
-    // Evidence Availability Gate: only substrates with curated runs are VERIFIED
+    // Evidence availability gate: only substrates with curated runs are shown as evidence-linked
     const availableSubstratesInCurated = new Set(
         curatedRunsData.runs.map((r) => r.substrate).filter(Boolean)
     );
@@ -47,6 +48,7 @@ export default function FMMPage() {
     ]);
 
     const cleanMappings = currentMappings.filter((m: Mapping) =>
+        (m.rule === 'direct' || m.rule === 'derived') &&
         !HEADER_VALUES.has(m.source) &&
         !HEADER_VALUES.has(m.target) &&
         !HEADER_VALUES.has(m.rule)
@@ -62,8 +64,8 @@ export default function FMMPage() {
                 </div>
                 <h1 className="text-4xl font-bold text-white mb-4">Field Mapping Matrix (FMM)</h1>
                 <p className="text-zinc-400 max-w-3xl leading-relaxed">
-                    Machine-readable cross-substrate consistency crosswalk. Reference for mapping
-                    substrate-specific observers to MPLP Lifecycle Invariants.
+                    Source-bound mapping projection for substrate-specific observers into Lab evidence pointers.
+                    This page describes evidence projection only; it does not define protocol semantics or certify framework capability.
                 </p>
             </header>
 
@@ -92,7 +94,7 @@ export default function FMMPage() {
                     {/* Evidence Scope Disclaimer */}
                     <div className="px-8 pt-6 pb-4 bg-blue-500/5 border-b border-blue-500/20">
                         <p className="text-xs text-blue-400">
-                            <span className="font-bold">Evidence-Scoped FMM:</span> Only substrates with publishable evidence in the v1.0 release set are shown as VERIFIED. Mappings reflect actual evidence packs.
+                            <span className="font-bold">Evidence-Scoped FMM:</span> Only substrates with publishable evidence in the v1.0 release set are shown as evidence-linked. Displayed rows reflect mapping projections, not independent verification of mapping correctness.
                         </p>
                     </div>
                     <div className="p-8 border-b border-zinc-800 bg-zinc-900/80 flex justify-between items-center">
@@ -100,11 +102,11 @@ export default function FMMPage() {
                             {activeSubstrate.toUpperCase()} Integration Map
                             {availableSubstratesInCurated.has(activeSubstrate) ? (
                                 <span className="text-[10px] font-bold uppercase tracking-wider text-green-400 bg-green-500/10 px-2 py-1 rounded border border-green-500/30">
-                                    VERIFIED
+                                    EVIDENCE-LINKED
                                 </span>
                             ) : (
                                 <span className="text-[10px] font-bold uppercase tracking-wider text-amber-400 bg-amber-500/10 px-2 py-1 rounded border border-amber-500/30">
-                                    PENDING EVIDENCE
+                                    NO PUBLISHED EVIDENCE
                                 </span>
                             )}
                         </h2>
@@ -114,7 +116,7 @@ export default function FMMPage() {
                     </div>
 
                     {availableSubstratesInCurated.has(activeSubstrate) ? (
-                        /* VERIFIED: Show mappings table */
+                        /* Evidence-linked: show mappings table */
                         <table className="w-full text-left border-collapse">
                             <thead className="bg-zinc-950/50 text-zinc-500 text-[10px] font-bold uppercase tracking-widest">
                                 <tr>
@@ -147,7 +149,7 @@ export default function FMMPage() {
                             </tbody>
                         </table>
                     ) : (
-                        /* PENDING_EVIDENCE: Show status card instead of mappings */
+                        /* No published evidence: show status card instead of mappings */
                         <div className="p-12">
                             <div className="max-w-2xl mx-auto bg-amber-500/5 border border-amber-500/20 rounded-xl p-8">
                                 <div className="flex items-start gap-4 mb-6">
@@ -158,7 +160,7 @@ export default function FMMPage() {
                                         <h3 className="font-bold text-amber-400 text-lg mb-2">Evidence Not Available (v1.0)</h3>
                                         <p className="text-sm text-zinc-400 leading-relaxed">
                                             No curated runs for <span className="font-mono text-amber-400">{activeSubstrate}</span> substrate
-                                            exist in the v1.0 release set. Field mappings cannot be verified without publishable evidence.
+                                            exist in the v1.0 release set. This page therefore does not promote the mapping as evidence-linked.
                                         </p>
                                     </div>
                                 </div>
@@ -184,7 +186,7 @@ export default function FMMPage() {
 
             <footer className="mt-16 text-zinc-500 text-[10px] font-mono flex justify-between uppercase tracking-widest border-t border-zinc-800 pt-8 opacity-40">
                 <span>Ref: FMM-v{fmmData.version}</span>
-                <span>Verified by VLAB-GATE-10</span>
+                <span>Gate-linked projection: VLAB-GATE-10</span>
             </footer>
         </div>
     );
