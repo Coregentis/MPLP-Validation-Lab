@@ -122,6 +122,36 @@ npm run typecheck
 npm run build
 ```
 
+## Production Deployment Truth-Chain
+
+The production Validation Lab site is:
+
+- production domain:
+  - `lab.mplp.io`
+- production platform/path:
+  - published through the repository's GitHub -> Vercel deployment path
+- authoritative production branch:
+  - `main`
+
+The repository's formal production build truth is the existing Next.js
+build/start flow already defined in this repository:
+
+- `npm run build`
+- `npm start`
+
+Operational expectation:
+
+- pushes to `origin/main` are expected to flow through the repository's
+  deployment path and update the production Validation Lab site at
+  `lab.mplp.io`
+
+Classification rule:
+
+- if local repo truth, remote repo truth, and formal build truth are all
+  correct but live still remains stale, that condition must be classified as a
+  downstream live/deployment-outcome blocker, not as a repo-side
+  deploy-chain-proof blocker
+
 ## References
 
 - `UPSTREAM_BASELINE.yaml`
