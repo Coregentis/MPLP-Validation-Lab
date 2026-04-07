@@ -205,8 +205,8 @@ export default async function RunsetDetailPage({ params }: PageProps) {
                         </div>
                         <div className="text-center p-4 bg-emerald-500/10 rounded-lg">
                             <div className="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto mb-2 text-sm font-bold">✓</div>
-                            <div className="text-sm font-bold text-mplp-text mb-1">Compare Seal</div>
-                            <Link href="/releases" className="text-xs text-mplp-blue-soft hover:underline">Check Release Seals</Link>
+                            <div className="text-sm font-bold text-mplp-text mb-1">Compare Record</div>
+                            <Link href="/releases" className="text-xs text-mplp-blue-soft hover:underline">Check Release Records</Link>
                         </div>
                     </div>
                 </div>

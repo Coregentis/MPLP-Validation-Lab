@@ -1,14 +1,10 @@
 /**
- * Unified Navigation Component
- *
- * Ticket: VLAB-MERGE-P1-NAV-01
- * Supports unified V1+V2 discovery with tier facets
+ * Shared Public Brand Shell navigation for Validation Lab.
  */
 
 import Link from 'next/link';
 import { Logo } from "@/components/ui/logo";
 
-// Internal Lab navigation - unified V1+V2 with tier facets
 const NAV_ITEMS = [
     { href: '/', label: 'Home' },
     { href: '/runs', label: 'Runs' },
@@ -35,7 +31,6 @@ export function Nav() {
                             <Logo className="h-7 w-auto" />
                             <span className="text-mplp-text-muted mt-0.5">|</span>
                             <span className="text-[13px] font-bold text-white uppercase tracking-wider mt-1">Validation Lab</span>
-                            <span className="hidden lg:inline-block ml-2 px-1.5 py-0.5 text-[9px] font-black bg-zinc-800 text-zinc-500 border border-zinc-700 rounded tracking-tighter">V1+V2 UNIFIED</span>
                         </Link>
                     </div>
 

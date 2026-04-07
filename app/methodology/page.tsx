@@ -181,15 +181,15 @@ export default function MethodologyPage() {
                         </p>
                     </div>
                     <div className="p-5 bg-glass rounded-xl border border-mplp-border/30">
-                        <span className="block text-lg font-bold text-mplp-blue-soft mb-2">3. Verify Seal</span>
+                        <span className="block text-lg font-bold text-mplp-blue-soft mb-2">3. Verify Record</span>
                         <p className="text-xs text-mplp-text-muted">
-                            Find the release seal in <Link href="/releases" className="underline hover:text-white">/releases</Link> and compare the published hash.
+                            Find the release record in <Link href="/releases" className="underline hover:text-white">/releases</Link> and compare the published hash.
                         </p>
                     </div>
                     <div className="p-5 bg-emerald-500/5 rounded-xl border border-emerald-500/20">
                         <span className="block text-lg font-bold text-emerald-400 mb-2">4. Local Hash</span>
                         <p className="text-xs text-mplp-text-muted">
-                            Run a local hash recheck on the pack. Matching the published seal confirms projection integrity, not runtime quality.
+                            Run a local hash recheck on the pack. Matching the published record confirms projection integrity, not runtime quality.
                         </p>
                     </div>
                 </div>
@@ -207,7 +207,7 @@ export default function MethodologyPage() {
                 </Link>
                 <Link href="/releases" className="block p-4 border border-mplp-border/20 rounded-lg hover:bg-mplp-blue-soft/5 hover:border-mplp-blue-soft/30 transition-all text-center">
                     <span className="block text-xs font-bold uppercase tracking-widest text-mplp-text-muted mb-1">Verification</span>
-                    <span className="text-sm font-bold text-mplp-text">Release Seals</span>
+                    <span className="text-sm font-bold text-mplp-text">Release Records</span>
                 </Link>
             </div>
         </div>

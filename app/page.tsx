@@ -117,7 +117,7 @@ export default async function Home() {
                             <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-mplp-text-muted mb-2">Integrity</p>
                             {/* SSOT Gate Summary */}
                             <GateSummaryPill summaryModel={versionModel.gates.summary} />
-                            <p className="text-[10px] text-mplp-text-muted/60 mt-1 group-hover:text-mplp-text-muted transition-colors">View Seals →</p>
+                            <p className="text-[10px] text-mplp-text-muted/60 mt-1 group-hover:text-mplp-text-muted transition-colors">View Records →</p>
                         </Link>
                         <Link href="/releases" className="text-center group">
                             <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-mplp-text-muted mb-2">Series</p>

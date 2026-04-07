@@ -83,7 +83,7 @@ export default async function GovernancePage() {
                 </div>
                 <div className="mt-6 max-w-3xl">
                     <p className="text-mplp-text-muted text-lg leading-relaxed">
-                        Aggregated entry point for Lab policies, gate feeds, release seals, and audit utilities.
+                        Aggregated entry point for Lab policies, gate feeds, release records, and audit utilities.
                         This page is navigation for Lab governance only, not protocol-definition authority.
                     </p>
                 </div>

@@ -23,9 +23,9 @@ export async function AppShell({ children }: AppShellProps) {
 
             {/* Main Content Wrapper */}
             <div className="relative z-10 flex flex-col min-h-screen" data-testid="app-shell-container">
+                <Nav />
                 <NonEndorsementBanner />
                 <NonCertificationNotice />
-                <Nav />
                 <VersionStrip {...versionModel} />
 
                 {/* 

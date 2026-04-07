@@ -4,8 +4,8 @@ import { getVersionStripModel } from '@/lib/unified/version-strip-model';
 import { ShieldCheck, ShieldAlert, FileText, Clock } from 'lucide-react';
 
 export const metadata = {
-    title: 'Release Seals | MPLP Validation Lab',
-    description: 'Immutable release artifacts and verification seals.',
+    title: 'Release Records | MPLP Validation Lab',
+    description: 'Immutable release records and verification artifacts.',
 };
 
 export default async function ReleaseIndexPage() {
@@ -17,10 +17,10 @@ export default async function ReleaseIndexPage() {
             {/* Header */}
             <div className="mb-12 mt-4">
                 <p className="text-xs font-bold uppercase tracking-[0.4em] text-mplp-text-muted/80 mb-3">Audit Trail</p>
-                <h1 className="text-3xl sm:text-4xl font-bold text-mplp-text mb-6">Release Seals</h1>
+                <h1 className="text-3xl sm:text-4xl font-bold text-mplp-text mb-6">Release Records</h1>
                 <div className="max-w-3xl">
                     <p className="text-mplp-text-muted text-lg leading-relaxed">
-                        Immutable verification records for every release candidate. Each entry represents a sealed state of the Validation Lab.
+                        Immutable verification records for every release candidate. Each entry represents a published release record for the Validation Lab.
                     </p>
                 </div>
             </div>
@@ -32,8 +32,8 @@ export default async function ReleaseIndexPage() {
                         <ShieldCheck className="text-mplp-blue-soft w-5 h-5" />
                     </div>
                     <div>
-                        <h2 className="text-base font-bold text-mplp-text mb-1">What is a Release Seal?</h2>
-                        <p className="text-sm text-mplp-text-muted">A frozen fingerprint of adjudication results and evidence artifacts.</p>
+                        <h2 className="text-base font-bold text-mplp-text mb-1">What is a Release Record?</h2>
+                        <p className="text-sm text-mplp-text-muted">A published fingerprint of adjudication results and evidence artifacts.</p>
                     </div>
                 </div>
 
@@ -44,7 +44,7 @@ export default async function ReleaseIndexPage() {
                                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
                                 <span className="font-bold text-emerald-400 uppercase tracking-wider text-xs">Reproduced</span>
                             </div>
-                            <p className="text-xs opacity-80">Downloadable evidence pack + deterministic recheck + hash matches release seal.</p>
+                            <p className="text-xs opacity-80">Downloadable evidence pack + deterministic recheck + hash matches the published release record.</p>
                         </div>
                         <div className="p-3 bg-red-500/5 border border-red-500/10 rounded-lg">
                             <div className="flex items-center gap-2 mb-1">
@@ -68,7 +68,7 @@ export default async function ReleaseIndexPage() {
                             </div>
                             <div className="flex flex-col gap-1">
                                 <span className="text-xs text-mplp-blue-soft font-bold">03. Local Check</span>
-                                <p className="text-xs opacity-60">Run sha256sum and match with Seal Hash.</p>
+                                <p className="text-xs opacity-60">Run sha256sum and match with the published record hash.</p>
                             </div>
                         </div>
                     </div>
@@ -78,7 +78,7 @@ export default async function ReleaseIndexPage() {
             <div className="space-y-4">
                 {releases.length === 0 && (
                     <div className="p-8 text-center text-mplp-text-muted bg-mplp-dark-soft/40 border border-mplp-border/20 rounded-xl">
-                        <p className="mb-1">No sealed releases found.</p>
+                        <p className="mb-1">No release records found.</p>
                         <code className="text-xs text-mplp-text-muted/60">Check releases/unified/ directory.</code>
                     </div>
                 )}

@@ -91,7 +91,7 @@ export function Footer() {
                                 </li>
                                 <li>
                                     <Link href="/releases" className="text-mplp-text hover:text-mplp-blue-light text-13 transition-colors font-bold block py-0.5">
-                                        Releases (Seals)
+                                        Release Records
                                     </Link>
                                 </li>
                                 <li>

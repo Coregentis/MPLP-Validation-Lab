@@ -3,12 +3,14 @@ import { VersionStripModel } from "@/lib/unified/version-strip-model";
 
 export function VersionStrip(props: VersionStripModel) {
     return (
-        <div data-testid="version-strip" className="w-full bg-mplp-dark-soft/50 border-b border-mplp-border/40 backdrop-blur-md">
+        <div
+            data-testid="version-strip"
+            className="w-full bg-mplp-dark-soft/50 border-b border-mplp-border/40 backdrop-blur-md"
+            aria-label="Validation Lab inventory strip"
+        >
             <div className="max-w-7xl mx-auto px-4 py-2 flex flex-wrap items-center justify-between gap-4 text-[10px] sm:text-xs font-mono tracking-wide text-mplp-text-muted">
-
-                {/* Build / Seal */}
                 <div className="flex items-center gap-2">
-                    <span className="uppercase font-bold text-mplp-text-muted/60">Build</span>
+                    <span className="uppercase font-bold text-mplp-text-muted/60">Snapshot</span>
                     <span className={`px-1.5 py-0.5 rounded ${props.seal_status === 'VALID' ? 'bg-emerald-500/10 text-emerald-400' :
                         props.seal_status === 'INVALID' ? 'bg-red-500/10 text-red-400' : 'bg-zinc-500/10 text-zinc-400'
                         }`}>
@@ -16,9 +18,8 @@ export function VersionStrip(props: VersionStripModel) {
                     </span>
                 </div>
 
-                {/* Run Inventory */}
                 <div className="flex items-center gap-2 hidden sm:flex">
-                    <span className="uppercase font-bold text-mplp-text-muted/60">Inventory</span>
+                    <span className="uppercase font-bold text-mplp-text-muted/60">Runs</span>
                     <span>
                         <span className="text-mplp-text">{props.run_inventory.total} Runs</span>
                         <span className="mx-1 opacity-40">|</span>
@@ -28,9 +29,8 @@ export function VersionStrip(props: VersionStripModel) {
                     </span>
                 </div>
 
-                {/* Ruleset Inventory */}
                 <div className="flex items-center gap-2 hidden md:flex">
-                    <span className="uppercase font-bold text-mplp-text-muted/60">Logic</span>
+                    <span className="uppercase font-bold text-mplp-text-muted/60">Rulesets</span>
                     <span>
                         <span className="text-mplp-text">{props.ruleset_inventory.total} Sets</span>
                         <span className="mx-1 opacity-40">|</span>
@@ -40,9 +40,8 @@ export function VersionStrip(props: VersionStripModel) {
                     </span>
                 </div>
 
-                {/* Inventory Snapshot */}
                 <div className="flex items-center gap-2 ml-auto">
-                    <span className="uppercase font-bold text-mplp-text-muted/60">Updated</span>
+                    <span className="uppercase font-bold text-mplp-text-muted/60">Inventory Date</span>
                     <span title="Governance inventory snapshot date">{props.inventory_snapshot_date}</span>
                 </div>
             </div>

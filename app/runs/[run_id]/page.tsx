@@ -227,7 +227,7 @@ function V2RunDetail({ run }: { run: V2RunDetailModel }) {
                     </li>
                     <li className="flex items-start gap-3">
                         <span className="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold flex items-center justify-center shrink-0">✓</span>
-                        <span className="text-mplp-text-muted">Compare verdict hash with <Link href="/releases" className="text-mplp-blue-soft hover:underline">Release Seals</Link></span>
+                        <span className="text-mplp-text-muted">Compare verdict hash with <Link href="/releases" className="text-mplp-blue-soft hover:underline">Release Records</Link></span>
                     </li>
                 </ol>
                 {run.determinism?.verdict_hash && (
