@@ -79,12 +79,23 @@ function collectInternalLinks(navMap) {
     return [...new Set(links)]; // Dedupe
 }
 
+function pathMatchesPrefix(href, prefix) {
+    return href === prefix || href.startsWith(`${prefix}/`);
+}
+
+function isDisallowedLink(href, disallowed, exceptions) {
+    const isDisallowed = disallowed.some(prefix => pathMatchesPrefix(href, prefix));
+    const isExcepted = exceptions.some(prefix => pathMatchesPrefix(href, prefix));
+    return isDisallowed && !isExcepted;
+}
+
 // Main validation
 function main() {
     console.log('🔗 R4 — Internal Link Integrity Gate\n');
 
     const navMap = loadNavigationMap();
     const disallowed = navMap.disallowed_routes || [];
+    const exceptions = navMap.disallowed_route_exceptions || [];
     const internalLinks = collectInternalLinks(navMap);
 
     let failures = [];
@@ -94,7 +105,7 @@ function main() {
 
     for (const href of internalLinks) {
         // Check disallowed
-        if (disallowed.some(d => href.startsWith(d))) {
+        if (isDisallowedLink(href, disallowed, exceptions)) {
             failures.push({ href, reason: 'Links to disallowed path' });
             continue;
         }

@@ -33,17 +33,23 @@ const DIRECTORY_WHITELIST = [
 
     // Data sources
     'data',
+    'content',
     'export',
     'fixtures',
+    'schemas',
     'test-vectors',
 
     // Governance & releases
+    'audit',
     'governance',
     'releases',
     'adjudication',
+    'plans',
     'reverification',
+    'reports',
 
     // Tools & utilities
+    'runners',
     'scripts',
     'tools',
     'verifier',

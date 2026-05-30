@@ -13,17 +13,33 @@ const REQUIRED_PAGES = [
     'app/governance/page.tsx'
 ];
 
+function hasGlobalVersionStrip(projectRoot: string): boolean {
+    const appLayoutPath = path.join(projectRoot, 'app/layout.tsx');
+    const appShellPath = path.join(projectRoot, 'components/layout/AppShell.tsx');
+    if (!fs.existsSync(appLayoutPath) || !fs.existsSync(appShellPath)) {
+        return false;
+    }
+
+    const appLayout = fs.readFileSync(appLayoutPath, 'utf8');
+    const appShell = fs.readFileSync(appShellPath, 'utf8');
+    return appLayout.includes('<AppShell>') && appShell.includes('<VersionStrip');
+}
+
 export const gate = {
     id: 'GATE-UNIFIED-UI-VERSION-STRIP-01',
     name: 'UI Version Strip Presence',
     run: async () => {
         const missing: string[] = [];
         const projectRoot = process.cwd();
+        const globalVersionStrip = hasGlobalVersionStrip(projectRoot);
 
         for (const relPath of REQUIRED_PAGES) {
             const fullPath = path.join(projectRoot, relPath);
             if (!fs.existsSync(fullPath)) {
                 missing.push(`${relPath} (File Not Found)`);
+                continue;
+            }
+            if (globalVersionStrip) {
                 continue;
             }
             const content = fs.readFileSync(fullPath, 'utf8');
@@ -35,7 +51,9 @@ export const gate = {
         if (missing.length > 0) {
             return fail('Missing VersionStrip in key pages', missing);
         }
-        return pass('All key pages include VersionStrip');
+        return pass(globalVersionStrip
+            ? 'All key pages inherit VersionStrip from AppShell'
+            : 'All key pages include VersionStrip');
     }
 };
 

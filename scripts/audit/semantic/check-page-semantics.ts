@@ -145,6 +145,7 @@ Base URL: ${BASE_URL}
 - **Total Checked**: ${totalPass + totalFail}
 - **Passed**: ${totalPass}
 - **Failed**: ${totalFail}
+- **Total Gaps**: ${totalFail}
 
 ## Failures
 ${Object.entries(results).map(([route, missing]) => `### ${route}

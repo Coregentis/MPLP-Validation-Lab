@@ -41,6 +41,11 @@ export const REASON_CODE_PATTERNS: PatternRule[] = [
         description: 'Evaluation not applicable for a requirement',
     },
     {
+        name: 'PACK_NOT_APPLICABLE',
+        pattern: /^PACK_NOT_APPLICABLE_FOR_RULESET_[0-9_]+$/,
+        description: 'Evidence pack is not applicable for a ruleset version',
+    },
+    {
         name: 'GF_FAILED',
         pattern: /^GF-[A-Z0-9-]+-FAILED$/,
         description: 'GoldenFlow evaluation failure',

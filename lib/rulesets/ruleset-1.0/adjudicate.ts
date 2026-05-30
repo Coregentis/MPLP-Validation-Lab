@@ -92,6 +92,8 @@ export async function adjudicatorFn(bundle: RunBundle): Promise<RulesetEvalResul
     } else if (verdict.topline === 'NOT_ADMISSIBLE') {
         toplineVerdict = 'NOT_ADMISSIBLE';
         toplineReasonCode = verdict.reason_code || 'ADMISSION_FAILED';
+    } else {
+        toplineReasonCode = verdict.reason_code || 'VERDICT_MISSING';
     }
 
     // Handle admission status (takes precedence)
