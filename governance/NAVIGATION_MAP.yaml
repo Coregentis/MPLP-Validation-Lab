@@ -253,6 +253,9 @@ disallowed_routes:
   - "/_next"
   - "/_data"
 
+disallowed_route_exceptions:
+  - "/examples/evidence-producers"
+
 # =============================================================================
 # INDEXING POLICY (Cross-reference with sitemap/robots)
 # =============================================================================

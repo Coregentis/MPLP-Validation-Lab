@@ -130,7 +130,7 @@ export function generateSignedProof(
 // Proof Verification
 // =============================================================================
 
-import { verifyPayload, loadVerifierIdentity, isValidKeyId, isIdentityValid } from './sign';
+import { verifyPayload, loadVerifierIdentity, getPublicKeyForKeyId, isIdentityValid } from './sign';
 
 export interface ProofVerificationResult {
     valid: boolean;
@@ -171,10 +171,11 @@ export function verifySignedProof(
         return result;
     }
 
-    // Check key_id
-    result.checks.key_id_valid = isValidKeyId(proof.signature.key_id, identity);
+    // Check key_id against the signing key registry, not only the active key.
+    const publicKey = getPublicKeyForKeyId(proof.signature.key_id, projectRoot);
+    result.checks.key_id_valid = publicKey !== null;
     if (!result.checks.key_id_valid) {
-        result.errors.push(`Key ID mismatch: ${proof.signature.key_id} vs ${identity.key_id}`);
+        result.errors.push(`Key ID not accepted: ${proof.signature.key_id}`);
     }
 
     // Check identity validity
@@ -184,11 +185,9 @@ export function verifySignedProof(
     }
 
     // Verify signature
-    result.checks.signature_valid = verifyPayload(
-        proof.payload,
-        proof.signature,
-        identity.public_key_ed25519
-    );
+    result.checks.signature_valid = publicKey
+        ? verifyPayload(proof.payload, proof.signature, publicKey)
+        : false;
     if (!result.checks.signature_valid) {
         result.errors.push('Signature verification failed');
     }

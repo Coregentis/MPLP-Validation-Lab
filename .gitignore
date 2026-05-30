@@ -19,6 +19,9 @@ yarn-error.log*
 # But allow the app/coverage route (Next.js page)
 !app/coverage/
 
+# Generated audits
+reports/lint-raw.json
+
 # Misc
 .DS_Store
 *.pem

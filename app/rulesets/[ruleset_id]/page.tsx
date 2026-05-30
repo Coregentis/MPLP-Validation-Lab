@@ -175,11 +175,11 @@ export default async function RulesetDetailPage({ params }: PageProps) {
                         </div>
                     )}
 
-                    {/* Mode B: Golden Flows (Legacy) */}
+                    {/* Mode B: Lifecycle Guarantees (Legacy) */}
                     {ruleset.kind === 'golden_flows' && (
                         <div className="mb-8" data-testid="golden-flows">
                             <div className="flex items-center gap-2 mb-4">
-                                <h3 className="text-lg font-bold text-mplp-text">Legacy V1 Line (Golden Flow IDs)</h3>
+                                <h3 className="text-lg font-bold text-mplp-text">Legacy V1 Line (Lifecycle Guarantee IDs)</h3>
                                 <div className="text-[10px] bg-amber-500/10 text-amber-500 border border-amber-500/20 px-2 py-0.5 rounded uppercase font-bold tracking-wider inline-flex items-center gap-1">
                                     <AlertTriangle size={10} />
                                     Legacy Format
