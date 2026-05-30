@@ -140,7 +140,7 @@ export function Footer() {
                             <strong>Non-Certification</strong> — The Lab evaluates evidence, not agentic systems.
                         </p>
                         <p className="text-mplp-text-muted text-xs">
-                            © {currentYear} Bangshi Beijing Network Technology Co., Ltd. Licensed under the{' '}
+                            Copyright © {currentYear} Jearon Wong. Licensed under the{' '}
                             <a href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank" rel="noopener noreferrer" className="hover:text-mplp-blue-light underline">
                                 Apache License, Version 2.0
                             </a>. Governed by{' '}
