@@ -49,6 +49,8 @@ const DIRECTORY_WHITELIST = [
     'reports',
 
     // Tools & utilities
+    '.agents',
+    '.codex',
     'runners',
     'scripts',
     'tools',
