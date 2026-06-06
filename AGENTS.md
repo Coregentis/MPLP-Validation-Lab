@@ -6,6 +6,26 @@ This repository is part of the Coregentis MPLP / Cognitive OS / SoloCrew / Valid
 
 Validation Lab owns run packs, rulesets, evidence records, deterministic adjudication, pointer resolution, failure cases, and public validation UI. It may present reproducible evidence and failure analysis, but it must remain projection-only and runner/source-of-truth disciplined. It must not fabricate evidence, host unsupported evidence, or claim certification authority, endorsement authority, regulator approval, or legal-compliance proof.
 
+## Coregentis Workspace Authority
+
+The Coregentis canonical workspace root is
+`/Users/jasonwang/Documents/AI_Dev/Coregentis`.
+
+This repository is the validation evidence surface. It must not be treated as
+MPLP protocol truth, package truth, release truth, or package publication root.
+MPLP-Protocol-Dev is protocol/package/release Dev truth:
+`/Users/jasonwang/Documents/AI_Dev/Coregentis/MPLP-Protocol-Dev`.
+
+V1.0_release is frozen as migration/evidence source. Do not treat
+V1.0_release as global MPLP SOT.
+V1.0_release is frozen as migration/evidence source; do not treat V1.0_release as global MPLP SOT.
+
+Package/source recovery belongs to MPLP-Protocol-Dev. Cross-repo sync requires
+an explicit migration, backport, or projection goal.
+
+Future Dev-side goals remain `DEV-HARNESS-BACKPORT-01` and
+`PACKAGE-DEV-TRUTH-SOURCE-RECOVERY-PLAN-01`; this repo grants no publish, no upload, no tag, no seal, and no merge authorization.
+
 ## Repo Truth First
 
 Before implementation, inspect repository truth:
