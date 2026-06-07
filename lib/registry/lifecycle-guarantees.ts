@@ -10,7 +10,7 @@
  *   - FLOW = Test Scenarios (main repo: tests/golden/flows/)
  *   - LG = Lifecycle Guarantees (Lab: adjudication targets)
  * 
- * © 2026 Bangshi Beijing Network Technology Co., Ltd.
+ * © 2026 Coregentis AI
  * Licensed under Apache License 2.0. Governed by MPGC.
  */
 
